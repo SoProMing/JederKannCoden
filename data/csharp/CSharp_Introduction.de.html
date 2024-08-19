@@ -7517,14 +7517,13 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h1 id="Einf%C3%BChrung-in-C%23">Einführung in C#<a class="anchor-link" href="#Einf%C3%BChrung-in-C%23">¶</a></h1><img alt="No description has been provided for this image" src="Introduction_csharp.webp" style="width:280px; height:280px;"/>
-<iframe height="400px" src="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3458764554347680798&amp;cot=14" width="100%"></iframe>
+<img alt="No description has been provided for this image" src="Red_thread.miro.de.jpg" style="width:100%;"/>
+<details>
+<summary>Inline miro frame...</summary>
+<iframe height="600px" src="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3458764554347680798&amp;cot=14" width="100%"></iframe>
+</details>
 <p><a href="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3458764554347680798&amp;cot=14">Link auf Miro Frame...</a></p>
-<ul>
-<li><p><a href="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3458764554347680798&amp;cot=14">Link zur Übersicht auf Miro</a></p>
-</li>
-<li><p><a href="https://learn.microsoft.com/de-de/dotnet/csharp/tour-of-csharp/tutorials/">Link zur Microsoft Dokumentation</a></p>
-</li>
-</ul>
+<p><a href="https://learn.microsoft.com/de-de/dotnet/csharp/tour-of-csharp/tutorials/">Link zur Microsoft Dokumentation</a></p>
 </div>
 </div>
 </div>
@@ -8052,6 +8051,45 @@ a.anchor-link {
 <li>Vergleichsoperatoren:  <code>==</code>,  <code>!=</code>,  <code>&gt;</code>,  <code>&lt;</code>,  <code>&gt;=</code>,  <code>&lt;=</code></li>
 <li>Logische Operatoren:  <code>&amp;&amp;</code>,  <code>||</code>,  <code>!</code></li>
 </ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Modulo-%25">Modulo <code>%</code><a class="anchor-link" href="#Modulo-%25">¶</a></h3><img alt="No description has been provided for this image" src="Modulo.miro.de.jpg" style="width:100%;"/>
+<details>
+<summary>Inline miro frame...</summary>
+<iframe height="600px" src="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3458764535327088595&amp;cot=14" width="100%"></iframe>
+</details>
+<p><a href="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3458764535327088595&amp;cot=14">Link auf Miro Frame...</a></p>
+<p>Modulo ist eine mathematische Operation, die den Rest einer Division zweier Zahlen bestimmt. Sie wird häufig in der Informatik und Mathematik verwendet, um zyklische oder periodische Phänomene zu beschreiben. Die Modulo-Operation wird oft durch das Zeichen <code>%</code> dargestellt.</p>
+<h4 id="Beispiel:">Beispiel:<a class="anchor-link" href="#Beispiel:">¶</a></h4><p>Wenn du $a \mod b$ berechnest, dann teilst du $a$ durch $b$ und nimmst den Rest dieser Division.</p>
+<p><strong>Beispielrechnung:</strong></p>
+<ul>
+<li>$10 \mod 3$ bedeutet, dass du 10 durch 3 teilst.</li>
+<li>Das Ergebnis der Division ist $10 \div 3 = 3$ mit einem Rest von 1.</li>
+<li>Somit ist $10 \mod 3 = 1$.</li>
+</ul>
+<p>In diesem Fall ist 3 der Divisor, und 1 ist der Rest, den die Modulo-Operation liefert.</p>
+<h4 id="Eigenschaften:">Eigenschaften:<a class="anchor-link" href="#Eigenschaften:">¶</a></h4><ol>
+<li><p><strong>Zyklisch:</strong> Modulo wird oft verwendet, um zyklische Abläufe zu modellieren, wie zum Beispiel Uhrzeiten oder Kalender. Bei einer Uhr mit 12 Stunden entspricht $14 \mod 12$ der 2, weil 14 Stunden 12 Stunden plus 2 Stunden sind.</p>
+</li>
+<li><p><strong>Ganzzahlige Division:</strong> Modulo ist eng mit der ganzzahligen Division verknüpft, bei der der Quotient ignoriert und nur der Rest betrachtet wird.</p>
+</li>
+<li><p><strong>Negative Zahlen:</strong> Der Modulo-Operator kann auch auf negative Zahlen angewendet werden, aber das Verhalten kann je nach Definition unterschiedlich sein. Beispielsweise könnte $-10 \mod 3$ entweder $-1$ oder $2$ sein, je nachdem, wie die Modulo-Operation definiert ist.</p>
+</li>
+</ol>
+<h4 id="Anwendung:">Anwendung:<a class="anchor-link" href="#Anwendung:">¶</a></h4><ul>
+<li><strong>Programmierung:</strong> Modulo wird oft verwendet, um eine Zahl in einem bestimmten Bereich zu halten, beispielsweise, um sicherzustellen, dass ein Index innerhalb eines Arrays bleibt.</li>
+<li><strong>Kryptographie:</strong> Modulo spielt eine zentrale Rolle in Verschlüsselungsalgorithmen wie RSA, da es hilft, mit großen Zahlen umzugehen und periodische Muster zu erzeugen.</li>
+<li><strong>Zahlenrätsel:</strong> Modulo hilft auch, gewisse Muster oder Regelmäßigkeiten in Zahlen zu erkennen, wie etwa, ob eine Zahl durch eine andere teilbar ist (zum Beispiel ist eine Zahl durch 3 teilbar, wenn $n \mod 3 = 0$).</li>
+</ul>
+<p>Zusammengefasst: Die Modulo-Operation gibt den Rest einer Division an und ist ein nützliches Werkzeug, um mit periodischen Strukturen zu arbeiten.</p>
 </div>
 </div>
 </div>
