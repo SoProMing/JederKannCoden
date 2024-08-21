@@ -7510,238 +7510,312 @@ a.anchor-link {
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3adfadcf">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Zahlensysteme-und-Zeichendarstellung">Zahlensysteme und Zeichendarstellung<a class="anchor-link" href="#Zahlensysteme-und-Zeichendarstellung">¶</a></h1><img alt="No description has been provided for this image" src="Number_systems.webp" style="width:280px; height:280px;"/>
-<p>In der Programmierung spielen verschiedene Zahlensysteme eine wichtige Rolle. Hier sind die wichtigsten:</p>
-<h3 id="1.-Dezimalsystem-(Basis-10)">1. Dezimalsystem (Basis 10)<a class="anchor-link" href="#1.-Dezimalsystem-(Basis-10)">¶</a></h3><ul>
-<li>Dies ist das übliche Zahlensystem, das im täglichen Leben verwendet wird. Es besteht aus den Ziffern 0 bis 9. Jede Stelle einer Zahl repräsentiert eine Potenz von 10.</li>
-<li>Beispiel: Die Zahl 345 bedeutet $3 \times 10^2 + 4 \times 10^1 + 5 \times 10^0$.</li>
-</ul>
-<h3 id="2.-Bin%C3%A4rsystem-(Basis-2)">2. Binärsystem (Basis 2)<a class="anchor-link" href="#2.-Bin%C3%A4rsystem-(Basis-2)">¶</a></h3><ul>
-<li>Das Binärsystem verwendet nur die Ziffern 0 und 1. Es ist das grundlegende Zahlensystem in Computern, da sie intern mit elektrischen Zuständen (Ein/Aus, 1/0) arbeiten.</li>
-<li>Beispiel: Die Binärzahl 1011 bedeutet $1 \times 2^3 + 0 \times 2^2 + 1 \times 2^1 + 1 \times 2^0 = 11$.</li>
-</ul>
-<h3 id="3.-Hexadezimalsystem-(Basis-16)">3. Hexadezimalsystem (Basis 16)<a class="anchor-link" href="#3.-Hexadezimalsystem-(Basis-16)">¶</a></h3><ul>
-<li>Das Hexadezimalsystem verwendet die Ziffern 0 bis 9 und die Buchstaben A bis F (für die Werte 10 bis 15). Es ist in der Programmierung häufig, weil es sich leicht in Binärzahlen umwandeln lässt.</li>
-<li>Beispiel: Die Hexadezimalzahl 1F bedeutet $1 \times 16^1 + F \times 16^0 = 31$.</li>
-</ul>
-<h3 id="4.-Oktalsystem-(Basis-8)">4. Oktalsystem (Basis 8)<a class="anchor-link" href="#4.-Oktalsystem-(Basis-8)">¶</a></h3><ul>
-<li>Das Oktalsystem verwendet die Ziffern 0 bis 7. Es wurde früher in der Programmierung verwendet, insbesondere bei frühen Computersystemen.</li>
-<li>Beispiel: Die Oktalzahl 17 bedeutet $1 \times 8^1 + 7 \times 8^0 = 15$.</li>
-</ul>
-<h2 id="Windows-Rechner">Windows Rechner<a class="anchor-link" href="#Windows-Rechner">¶</a></h2><p>Die verschiedenen Zahlensysteme kann man auch beispielsweise im Windows Rechner im Modus "Programmierer" nachvollziehen:</p>
-<img alt="No description has been provided for this image" src="Number_systems.miro.de.jpg" style="width:100%;"/>
-<details>
-<summary>Inline miro frame...</summary>
-<iframe height="600px" src="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3074457365420394375&amp;cot=14" width="100%"></iframe>
-</details>
-<p><a href="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3074457365420394375&amp;cot=14">Link auf Miro Frame...</a></p>
-<h2 id="Spiel-mit-10-Fingern">Spiel mit 10 Fingern<a class="anchor-link" href="#Spiel-mit-10-Fingern">¶</a></h2><p>Mit den Fingern kann man tatsächlich im Binärsystem zählen. Dabei repräsentiert jeder Finger einen Bit (0 oder 1). Wenn ein Finger ausgestreckt ist, zählt er als 1, und wenn er eingeklappt ist, zählt er als 0. Insgesamt hat man 10 Finger, was 10 Bits entspricht.</p>
-<ul>
-<li>10 Bits können Werte von 0 bis $2^{10} - 1$ darstellen, also von 0 bis 1023.</li>
-<li>Beispiel:<ul>
-<li>Alle Finger eingeklappt: $0000000000$ im Binärsystem = 0 im Dezimalsystem.</li>
-<li>Nur der Daumen der rechten Hand ausgestreckt: $0000000001$ im Binärsystem = 1 im Dezimalsystem.</li>
-<li>Daumen und Zeigefinger der rechten Hand ausgestreckt: $0000000011$ im Binärsystem = 3 im Dezimalsystem.</li>
-<li>Alle Finger ausgestreckt: $1111111111$ im Binärsystem = 1023 im Dezimalsystem.</li>
-</ul>
-</li>
-</ul>
-<h3 id="Bytes-und-die-Darstellung-von-Text">Bytes und die Darstellung von Text<a class="anchor-link" href="#Bytes-und-die-Darstellung-von-Text">¶</a></h3><p>Ein Byte besteht aus 8 Bits und kann 256 verschiedene Werte darstellen (von 0 bis 255). Bytes werden verwendet, um Daten, einschließlich Text, in Computern zu speichern.</p>
-<h4 id="ASCII">ASCII<a class="anchor-link" href="#ASCII">¶</a></h4><ul>
-<li><strong>ASCII (American Standard Code for Information Interchange)</strong> ist ein älterer Standard, der jedem Buchstaben, Zahl und Symbol eine Zahl im Bereich von 0 bis 127 zuordnet (also 7 Bits).<ul>
-<li>Beispiel: Der Buchstabe „A“ hat den ASCII-Wert 65.</li>
-</ul>
-</li>
-<li>ASCII kann nur englische Zeichen und einige Steuerzeichen darstellen, was für viele Sprachen und Symbole nicht ausreicht.</li>
-</ul>
-<h4 id="UTF-8">UTF-8<a class="anchor-link" href="#UTF-8">¶</a></h4><ul>
-<li><strong>UTF-8</strong> ist eine variable Länge Codierung für Unicode, die 1 bis 4 Bytes pro Zeichen verwendet.<ul>
-<li>Zeichen, die in ASCII enthalten sind, werden mit einem Byte kodiert (die Werte 0 bis 127).</li>
-<li>Komplexere Zeichen (z.B. viele nicht-lateinische Zeichen oder Emojis) benötigen mehr Bytes.</li>
-</ul>
-</li>
-<li>UTF-8 ist rückwärtskompatibel mit ASCII und sehr speichereffizient für Texte, die hauptsächlich aus ASCII-Zeichen bestehen.</li>
-</ul>
-<h4 id="UTF-16">UTF-16<a class="anchor-link" href="#UTF-16">¶</a></h4><ul>
-<li><strong>UTF-16</strong> verwendet 2 oder 4 Bytes pro Zeichen.<ul>
-<li>Die meisten häufig verwendeten Zeichen (z.B. lateinische Buchstaben) werden mit 2 Bytes kodiert.</li>
-<li>Seltenere Zeichen, wie bestimmte asiatische Schriftzeichen oder Emojis, benötigen 4 Bytes.</li>
-</ul>
-</li>
-<li>UTF-16 wird oft in internen Systemen von Betriebssystemen verwendet, z.B. Windows.</li>
-</ul>
-<h4 id="UTF-32">UTF-32<a class="anchor-link" href="#UTF-32">¶</a></h4><ul>
-<li><strong>UTF-32</strong> verwendet immer 4 Bytes pro Zeichen.<ul>
-<li>Dies macht die Verarbeitung einfacher, da jedes Zeichen die gleiche Größe hat, ist aber weniger speichereffizient, da auch einfache Zeichen, die nur ein Byte benötigen würden, 4 Bytes belegen.</li>
-</ul>
-</li>
-<li>UTF-32 wird selten verwendet, außer in speziellen Fällen, in denen konstante Speicherplatzanforderungen für jedes Zeichen benötigt werden.</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Tabellarische-Darstellung-von-Zeichen-in-ASCII,-UTF-8,-UTF-16-und-UTF-32">Tabellarische Darstellung von Zeichen in ASCII, UTF-8, UTF-16 und UTF-32<a class="anchor-link" href="#Tabellarische-Darstellung-von-Zeichen-in-ASCII,-UTF-8,-UTF-16-und-UTF-32">¶</a></h3><p>Die folgende Tabelle zeigt, wie verschiedene Zeichen in den Codierungen  <strong>ASCII</strong>,  <strong>UTF-8</strong>,  <strong>UTF-16</strong>, und  <strong>UTF-32</strong>dargestellt werden.</p>
-<table>
-<thead>
+<h1 id="C%23-WriteLine-samples">C# WriteLine samples<a class="anchor-link" href="#C%23-WriteLine-samples">¶</a></h1><table border="0">
 <tr>
-<th>Zeichen</th>
-<th>ASCII</th>
-<th>UTF-8 (Hex)</th>
-<th>UTF-16 (Hex)</th>
-<th>UTF-32 (Hex)</th>
-</tr>
-</thead>
-<tbody>
+<td>
+<img alt="No description has been provided for this image" src="writeline.webp" style="width:280px; height:280px;"/>
+</td>
+<td rowspan="2">
+<img <="" alt="No description has been provided for this image" src="Radar_WriteLine.de.jpg" style="width:480px;" td=""/>
+</td></tr>
 <tr>
-<td><code>A</code></td>
-<td>65</td>
-<td>41</td>
-<td>0041</td>
-<td>00000041</td>
+<td>
+<a href="https://learn.microsoft.com/de-de/dotnet/api/system.console.writeline?view=net-5.0">Link zur Microsoft Dokumentation</a>
+</td>
 </tr>
-<tr>
-<td><code>B</code></td>
-<td>66</td>
-<td>42</td>
-<td>0042</td>
-<td>00000042</td>
-</tr>
-<tr>
-<td><code>Z</code></td>
-<td>90</td>
-<td>5A</td>
-<td>005A</td>
-<td>0000005A</td>
-</tr>
-<tr>
-<td><code>a</code></td>
-<td>97</td>
-<td>61</td>
-<td>0061</td>
-<td>00000061</td>
-</tr>
-<tr>
-<td><code>0</code></td>
-<td>48</td>
-<td>30</td>
-<td>0030</td>
-<td>00000030</td>
-</tr>
-<tr>
-<td><code>#</code></td>
-<td>35</td>
-<td>23</td>
-<td>0023</td>
-<td>00000023</td>
-</tr>
-<tr>
-<td><code>©</code></td>
-<td>Nicht verfügbar</td>
-<td>C2 A9</td>
-<td>00A9</td>
-<td>000000A9</td>
-</tr>
-<tr>
-<td><code>€</code></td>
-<td>Nicht verfügbar</td>
-<td>E2 82 AC</td>
-<td>20AC</td>
-<td>000020AC</td>
-</tr>
-<tr>
-<td><code>你</code> (chinesisches Zeichen)</td>
-<td>Nicht verfügbar</td>
-<td>E4 BD A0</td>
-<td>4F60</td>
-<td>00004F60</td>
-</tr>
-<tr>
-<td><code>😊</code> (Smiley Emoji)</td>
-<td>Nicht verfügbar</td>
-<td>F0 9F 98 8A</td>
-<td>D83D DE0A</td>
-<td>0001F60A</td>
-</tr>
-</tbody>
 </table>
-<h4 id="Erkl%C3%A4rung-der-Tabelle:"><strong>Erklärung der Tabelle:</strong><a class="anchor-link" href="#Erkl%C3%A4rung-der-Tabelle:">¶</a></h4><ol>
-<li><strong>ASCII</strong>: Zeichen von 0 bis 127 sind verfügbar. Zeichen wie  <code>©</code>,  <code>€</code>, chinesische Schriftzeichen oder Emojis sind nicht im ASCII-Standard enthalten.</li>
-<li><strong>UTF-8</strong>: UTF-8 verwendet eine variable Anzahl von Bytes. ASCII-Zeichen (wie  <code>A</code>) werden mit einem Byte dargestellt, während komplexere Zeichen wie  <code>©</code>  und  <code>€</code>  mehr Bytes benötigen.</li>
-<li><strong>UTF-16</strong>: UTF-16 verwendet 2 Bytes (z.B.  <code>A</code>) oder 4 Bytes für komplexere Zeichen (z.B. das Emoji  <code>😊</code>).</li>
-<li><strong>UTF-32</strong>: UTF-32 verwendet immer 4 Bytes pro Zeichen, unabhängig von der Komplexität des Zeichens.</li>
-</ol>
-<h3 id="Beispiele-f%C3%BCr-Textdarstellungen:"><strong>Beispiele für Textdarstellungen:</strong><a class="anchor-link" href="#Beispiele-f%C3%BCr-Textdarstellungen:">¶</a></h3><ul>
-<li><p><strong>ASCII Beispiel:</strong></p>
-<ul>
-<li>Der Text "Hello" würde in ASCII folgendermaßen dargestellt:<ul>
-<li><code>H = 72</code>,  <code>e = 101</code>,  <code>l = 108</code>,  <code>l = 108</code>,  <code>o = 111</code>.</li>
-<li>Als Byte-Sequenz:  <code>72 101 108 108 111</code>  (dezimal).</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><strong>UTF-8 Beispiel:</strong></p>
-<ul>
-<li>Der Text "Hello" bleibt im UTF-8 identisch, da UTF-8 rückwärtskompatibel mit ASCII ist:<ul>
-<li><code>H = 48 65 6C 6C 6F</code>  (hexadezimal).</li>
-</ul>
-</li>
-<li>Für den Text „© 2024“ würde die UTF-8-Darstellung folgendermaßen aussehen:<ul>
-<li><code>C2 A9 32 30 32 34</code>  (hexadezimal).</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><strong>UTF-16 Beispiel:</strong></p>
-<ul>
-<li>Der Text „Hello“ in UTF-16:<ul>
-<li><code>0048 0065 006C 006C 006F</code>  (hexadezimal).</li>
-</ul>
-</li>
-<li>Für den Text „你好“ (chinesisch für „Hallo“) würde die UTF-16-Darstellung folgendermaßen aussehen:<ul>
-<li><code>4F60 597D</code>  (hexadezimal).</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><strong>UTF-32 Beispiel:</strong></p>
-<ul>
-<li>Der Text „Hello“ in UTF-32:<ul>
-<li><code>00000048 00000065 0000006C 0000006C 0000006F</code>  (hexadezimal).</li>
-</ul>
-</li>
-<li>Für den Text „😊“ (Smiley Emoji) würde die UTF-32-Darstellung folgendermaßen aussehen:<ul>
-<li><code>0001F60A</code>  (hexadezimal).</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="Fazit:"><strong>Fazit:</strong><a class="anchor-link" href="#Fazit:">¶</a></h3><ul>
-<li><strong>ASCII</strong>  eignet sich gut für einfache englische Texte, ist aber begrenzt in der Zeichenvielfalt.</li>
-<li><strong>UTF-8</strong>  ist eine flexible Codierung und der Standard im Web, da es effizient für ASCII-Texte ist und gleichzeitig internationale Zeichen unterstützt.</li>
-<li><strong>UTF-16</strong>  ist in vielen Betriebssystemen und Programmiersprachen verbreitet, insbesondere in Windows.</li>
-<li><strong>UTF-32</strong>  wird seltener verwendet, bietet jedoch eine konstante Größe für jedes Zeichen, was in bestimmten technischen Anwendungsfällen nützlich sein kann.</li>
-</ul>
-<h3 id="**ASCII-Tabelle***">**ASCII Tabelle***<a class="anchor-link" href="#**ASCII-Tabelle***">¶</a></h3><img alt="No description has been provided for this image" src="ASCII.miro.de.jpg" style="width:100%;"/>
-<details>
-<summary>Inline miro frame...</summary>
-<iframe height="600px" src="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3074457365420876511&amp;cot=14" width="100%"></iframe>
-</details>
-<p><a href="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3074457365420876511&amp;cot=14">Link auf Miro Frame...</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c516b857">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Formatierungsoptionen">Formatierungsoptionen<a class="anchor-link" href="#Formatierungsoptionen">¶</a></h2><p>Der folgende C#-Code zeigt die Anwendung der <code>Console.WriteLine()</code>-Methode zur Ausgabe von Werten in verschiedenen Formaten. Er demonstriert numerische Formatbezeichner, Datums-/Uhrzeitformatbezeichner sowie Aufzählungs- (Enum) Formatbezeichner. Verschiedene Formatierungsmuster wie Währung, Wissenschaftliche Notation, Hexadezimal und Datumsformatierung werden verwendet, um die Flexibilität der Ausgabeoptionen in .NET zu zeigen.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b368150d">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-C#"><pre><span></span><span class="c1">// Definition einer Enumeration namens "Color".</span>
+<span class="k">enum</span><span class="w"> </span><span class="n">Color</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">Yellow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">Blue</span><span class="p">,</span><span class="w"> </span><span class="n">Green</span><span class="w"> </span><span class="p">};</span>
+
+<span class="c1">// Variable, die das aktuelle Datum speichert.</span>
+<span class="k">static</span><span class="w"> </span><span class="n">DateTime</span><span class="w"> </span><span class="n">thisDate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">;</span>
+
+<span class="c1">// Löscht den Konsoleninhalt.</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">Clear</span><span class="p">();</span>
+
+<span class="c1">// Ausgabe von Zahlen mit verschiedenen Standardformatbezeichnern.</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"Standard Numeric Format Specifiers"</span><span class="p">);</span>
+<span class="c1">// Formatierungsbeispiele für negative Ganzzahlen und Gleitkommazahlen.</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span>
+<span class="w">    </span><span class="s">"(C) Currency: . . . . . . . . {0:C}\n"</span><span class="w"> </span><span class="o">+</span><span class="w">    </span><span class="c1">// Währungsformatierung</span>
+<span class="w">    </span><span class="s">"(D) Decimal:. . . . . . . . . {0:D}\n"</span><span class="w"> </span><span class="o">+</span><span class="w">    </span><span class="c1">// Dezimalformatierung</span>
+<span class="w">    </span><span class="s">"(E) Scientific: . . . . . . . {1:E}\n"</span><span class="w"> </span><span class="o">+</span><span class="w">   </span><span class="c1">// Wissenschaftliche Notation</span>
+<span class="w">    </span><span class="s">"(F) Fixed point:. . . . . . . {1:F}\n"</span><span class="w"> </span><span class="o">+</span><span class="w">   </span><span class="c1">// Festkommaformat</span>
+<span class="w">    </span><span class="s">"(G) General:. . . . . . . . . {0:G}\n"</span><span class="w"> </span><span class="o">+</span><span class="w">   </span><span class="c1">// Allgemeines Zahlenformat</span>
+<span class="w">    </span><span class="s">"    (default):. . . . . . . . {0} (default = 'G')\n"</span><span class="w"> </span><span class="o">+</span><span class="w">  </span><span class="c1">// Standardformat</span>
+<span class="w">    </span><span class="s">"(N) Number: . . . . . . . . . {0:N}\n"</span><span class="w"> </span><span class="o">+</span><span class="w">   </span><span class="c1">// Zahlenformat mit Tausendertrennung</span>
+<span class="w">    </span><span class="s">"(P) Percent:. . . . . . . . . {1:P}\n"</span><span class="w"> </span><span class="o">+</span><span class="w">   </span><span class="c1">// Prozentformatierung</span>
+<span class="w">    </span><span class="s">"(R) Round-trip: . . . . . . . {1:R}\n"</span><span class="w"> </span><span class="o">+</span><span class="w">   </span><span class="c1">// Round-Trip-Format für Gleitkommazahlen</span>
+<span class="w">    </span><span class="s">"(X) Hexadecimal:. . . . . . . {0:X}\n"</span><span class="p">,</span><span class="w">    </span><span class="c1">// Hexadezimalformatierung</span>
+<span class="w">    </span><span class="o">-</span><span class="m">123</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="m">123.45f</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Standard Numeric Format Specifiers
+(C) Currency: . . . . . . . . -123,00 ¤
+(D) Decimal:. . . . . . . . . -123
+(E) Scientific: . . . . . . . -1,234500E+002
+(F) Fixed point:. . . . . . . -123,450
+(G) General:. . . . . . . . . -123
+    (default):. . . . . . . . -123 (default = 'G')
+(N) Number: . . . . . . . . . -123,000
+(P) Percent:. . . . . . . . . -12.345,000 %
+(R) Round-trip: . . . . . . . -123,45
+(X) Hexadecimal:. . . . . . . FFFFFF85
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=ec4fbc0b">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-C#"><pre><span></span><span class="c1">// Ausgabe des aktuellen Datums in verschiedenen Formaten.</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"Standard DateTime Format Specifiers"</span><span class="p">);</span>
+<span class="c1">// Formatierungsbeispiele für Datums- und Uhrzeitangaben.</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span>
+<span class="w">    </span><span class="s">"(d) Short date: . . . . . . . {0:d}\n"</span><span class="w"> </span><span class="o">+</span><span class="w">   </span><span class="c1">// Kurzes Datumsformat</span>
+<span class="w">    </span><span class="s">"(D) Long date:. . . . . . . . {0:D}\n"</span><span class="w"> </span><span class="o">+</span><span class="w">   </span><span class="c1">// Langes Datumsformat</span>
+<span class="w">    </span><span class="s">"(t) Short time: . . . . . . . {0:t}\n"</span><span class="w"> </span><span class="o">+</span><span class="w">   </span><span class="c1">// Kurzes Zeitformat</span>
+<span class="w">    </span><span class="s">"(T) Long time:. . . . . . . . {0:T}\n"</span><span class="w"> </span><span class="o">+</span><span class="w">   </span><span class="c1">// Langes Zeitformat</span>
+<span class="w">    </span><span class="s">"(f) Full date/short time: . . {0:f}\n"</span><span class="w"> </span><span class="o">+</span><span class="w">   </span><span class="c1">// Volles Datum und kurze Zeit</span>
+<span class="w">    </span><span class="s">"(F) Full date/long time:. . . {0:F}\n"</span><span class="w"> </span><span class="o">+</span><span class="w">   </span><span class="c1">// Volles Datum und lange Zeit</span>
+<span class="w">    </span><span class="s">"(g) General date/short time:. {0:g}\n"</span><span class="w"> </span><span class="o">+</span><span class="w">   </span><span class="c1">// Generelles Datum und kurze Zeit</span>
+<span class="w">    </span><span class="s">"(G) General date/long time: . {0:G}\n"</span><span class="w"> </span><span class="o">+</span><span class="w">   </span><span class="c1">// Generelles Datum und lange Zeit</span>
+<span class="w">    </span><span class="s">"    (default):. . . . . . . . {0} (default = 'G')\n"</span><span class="w"> </span><span class="o">+</span><span class="w">  </span><span class="c1">// Standardformat</span>
+<span class="w">    </span><span class="s">"(M) Month:. . . . . . . . . . {0:M}\n"</span><span class="w"> </span><span class="o">+</span><span class="w">   </span><span class="c1">// Monatsformat</span>
+<span class="w">    </span><span class="s">"(R) RFC1123:. . . . . . . . . {0:R}\n"</span><span class="w"> </span><span class="o">+</span><span class="w">   </span><span class="c1">// RFC1123-Datumsformat</span>
+<span class="w">    </span><span class="s">"(s) Sortable: . . . . . . . . {0:s}\n"</span><span class="w"> </span><span class="o">+</span><span class="w">   </span><span class="c1">// Sortierbares Datumsformat</span>
+<span class="w">    </span><span class="s">"(u) Universal sortable: . . . {0:u} (invariant)\n"</span><span class="w"> </span><span class="o">+</span><span class="w">   </span><span class="c1">// Universell sortierbares Format</span>
+<span class="w">    </span><span class="s">"(U) Universal full date/time: {0:U}\n"</span><span class="w"> </span><span class="o">+</span><span class="w">   </span><span class="c1">// Universelles volles Datums-/Zeitformat</span>
+<span class="w">    </span><span class="s">"(Y) Year: . . . . . . . . . . {0:Y}\n"</span><span class="p">,</span><span class="w">    </span><span class="c1">// Jahresformat</span>
+<span class="w">    </span><span class="n">thisDate</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Standard DateTime Format Specifiers
+(d) Short date: . . . . . . . 21.08.2024
+(D) Long date:. . . . . . . . Mittwoch, 21. August 2024
+(t) Short time: . . . . . . . 20:27
+(T) Long time:. . . . . . . . 20:27:20
+(f) Full date/short time: . . Mittwoch, 21. August 2024 20:27
+(F) Full date/long time:. . . Mittwoch, 21. August 2024 20:27:20
+(g) General date/short time:. 21.08.2024 20:27
+(G) General date/long time: . 21.08.2024 20:27:20
+    (default):. . . . . . . . 21.08.2024 20:27:20 (default = 'G')
+(M) Month:. . . . . . . . . . 21. August
+(R) RFC1123:. . . . . . . . . Wed, 21 Aug 2024 20:27:20 GMT
+(s) Sortable: . . . . . . . . 2024-08-21T20:27:20
+(u) Universal sortable: . . . 2024-08-21 20:27:20Z (invariant)
+(U) Universal full date/time: Mittwoch, 21. August 2024 18:27:20
+(Y) Year: . . . . . . . . . . August 2024
+
+Standard Enumeration Format Specifiers
+(G) General:. . . . . . . . . Green
+    (default):. . . . . . . . Green (default = 'G')
+(F) Flags:. . . . . . . . . . Green (flags or integer)
+(D) Decimal number: . . . . . 3
+(X) Hexadecimal:. . . . . . . 00000003
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=066eaf64">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-C#"><pre><span></span><span class="c1">// Ausgabe einer Aufzählung in verschiedenen Formaten.</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"Standard Enumeration Format Specifiers"</span><span class="p">);</span>
+<span class="c1">// Formatierungsbeispiele für eine Enumeration.</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span>
+<span class="w">    </span><span class="s">"(G) General:. . . . . . . . . {0:G}\n"</span><span class="w"> </span><span class="o">+</span><span class="w">   </span><span class="c1">// Allgemeines Format für Enumerationen</span>
+<span class="w">    </span><span class="s">"    (default):. . . . . . . . {0} (default = 'G')\n"</span><span class="w"> </span><span class="o">+</span><span class="w">  </span><span class="c1">// Standardformat</span>
+<span class="w">    </span><span class="s">"(F) Flags:. . . . . . . . . . {0:F} (flags or integer)\n"</span><span class="w"> </span><span class="o">+</span><span class="w">  </span><span class="c1">// Flags-Format für Enumerationen</span>
+<span class="w">    </span><span class="s">"(D) Decimal number: . . . . . {0:D}\n"</span><span class="w"> </span><span class="o">+</span><span class="w">   </span><span class="c1">// Dezimalformat für Enumerationen</span>
+<span class="w">    </span><span class="s">"(X) Hexadecimal:. . . . . . . {0:X}\n"</span><span class="p">,</span><span class="w">    </span><span class="c1">// Hexadezimalformat für Enumerationen</span>
+<span class="w">    </span><span class="n">Color</span><span class="p">.</span><span class="n">Green</span><span class="p">);</span><span class="w">  </span><span class="c1">// Gibt die Farbe Grün aus.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=12708ce4">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="WriteLine-&amp;-tabellarische-Darstellung">WriteLine &amp; tabellarische Darstellung<a class="anchor-link" href="#WriteLine-&amp;-tabellarische-Darstellung">¶</a></h2><p>Der nächste Code berechnet das Trinkgeld für eine Rechnung basierend auf einem festen Trinkgeldsatz von 18 %. Es wird die Rechnung, das Trinkgeld und die Gesamtsumme formatiert und in der Konsole ausgegeben.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=542c80cb">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-C#"><pre><span></span><span class="c1">// Definiert eine konstante Variable für den Trinkgeldsatz.</span>
+<span class="k">private</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">tipRate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.18</span><span class="p">;</span>
+
+<span class="c1">// Deklariert eine Variable für die Gesamtrechnung.</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">billTotal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">42.42</span><span class="p">;</span>
+
+<span class="c1">// Berechnet das Trinkgeld basierend auf der Gesamtrechnung und dem Trinkgeldsatz.</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">tip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">billTotal</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">tipRate</span><span class="p">;</span>
+
+<span class="c1">// Gibt die Gesamtrechnung, das Trinkgeld und den Gesamtsumme mit Formatierung in die Konsole aus.</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">();</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$"Bill total:\t{billTotal,8:c}"</span><span class="p">);</span><span class="w">            </span><span class="c1">// Formatierte Ausgabe der Gesamtrechnung.</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$"Tip total/rate:\t{tip,8:c} ({tipRate:p1})"</span><span class="p">);</span><span class="w"> </span><span class="c1">// Ausgabe des Trinkgelds und des Prozentsatzes.</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">((</span><span class="s">""</span><span class="p">).</span><span class="n">PadRight</span><span class="p">(</span><span class="m">24</span><span class="p">,</span><span class="w"> </span><span class="sc">'-'</span><span class="p">));</span><span class="w">                       </span><span class="c1">// Trennlinie.</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$"Grand total:\t{billTotal + tip,8:c}"</span><span class="p">);</span><span class="w">       </span><span class="c1">// Ausgabe der Gesamtsumme (Rechnung + Trinkgeld).</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>
+Bill total:	 42,42 ¤
+Tip total/rate:	  7,64 ¤ (18,0 %)
+------------------------
+Grand total:	 50,06 ¤
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f3617c0c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="WriteLine-&amp;-%22new-line%22">WriteLine &amp; "new line"<a class="anchor-link" href="#WriteLine-&amp;-%22new-line%22">¶</a></h2><p>Der folgende Code zeigt, wie man den Zeilenumbruch (Newline) in der Konsole ändern kann. Zuerst werden die Zeilen mit der Standard-Zeilenumbruchsequenz ausgegeben. Danach wird der Zeilenumbruch auf einen doppelten Abstand gesetzt, und die Zeilen werden erneut mit dieser neuen Zeilenumbruchsequenz ausgegeben.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=74c81362">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-C#"><pre><span></span><span class="c1">// Ein Array von Zeichenfolgen, das zwei Zeilen enthält.</span>
+<span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">lines</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">"This is the first line."</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                   </span><span class="s">"This is the second line."</span><span class="w"> </span><span class="p">};</span>
+
+<span class="c1">// Ausgabe der Zeilen unter Verwendung der Standard-Zeilenumbruchsequenz.</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"With the default new line characters:"</span><span class="p">);</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">();</span>
+<span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">line</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">lines</span><span class="p">)</span>
+<span class="w">   </span><span class="c1">// Gibt jede Zeile mit dem Standard-Zeilenumbruch aus.</span>
+<span class="w">   </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">line</span><span class="p">);</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">();</span>
+
+<span class="c1">// Die Zeilenumbruchsequenz wird neu definiert, um einen doppelten Abstand zu verwenden.</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">Out</span><span class="p">.</span><span class="n">NewLine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"\r\n\r\n"</span><span class="p">;</span>
+<span class="c1">// Ausgabe der Zeilen unter Verwendung der neu definierten Zeilenumbruchsequenz.</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"With redefined new line characters:"</span><span class="p">);</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">();</span>
+<span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">line</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">lines</span><span class="p">)</span>
+<span class="w">   </span><span class="c1">// Gibt jede Zeile mit der neuen Zeilenumbruchsequenz aus.</span>
+<span class="w">   </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">line</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>With the default new line characters:
+
+This is the first line.
+This is the second line.
+
+With redefined new line characters:
+
+This is the first line.
+This is the second line.
+</pre>
+</div>
 </div>
 </div>
 </div>

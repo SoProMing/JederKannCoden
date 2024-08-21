@@ -7516,14 +7516,8 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Einf%C3%BChrung-in-C%23">Einführung in C#<a class="anchor-link" href="#Einf%C3%BChrung-in-C%23">¶</a></h1><img alt="No description has been provided for this image" src="Introduction_csharp.webp" style="width:280px; height:280px;"/>
-<img alt="No description has been provided for this image" src="Red_thread.miro.de.jpg" style="width:100%;"/>
-<details>
-<summary>Inline miro frame...</summary>
-<iframe height="600px" src="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3458764554347680798&amp;cot=14" width="100%"></iframe>
-</details>
-<p><a href="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3458764554347680798&amp;cot=14">Link auf Miro Frame...</a></p>
-<p><a href="https://learn.microsoft.com/de-de/dotnet/csharp/tour-of-csharp/tutorials/">Link zur Microsoft Dokumentation</a></p>
+<h1 id="Create-portable-version">Create portable version<a class="anchor-link" href="#Create-portable-version">¶</a></h1><img alt="No description has been provided for this image" src="Export_jupiter.webp" style="width:280px; height:280px;"/>
+<p>This page describes and actually impliments, how to make the jupyter notebooks of the whole project portable.</p>
 </div>
 </div>
 </div>
@@ -7534,134 +7528,120 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Dieses Notebook bietet eine umfassende Einführung in die Grundlagen von C# und behandelt verschiedene Konzepte und Syntaxelemente dieser Programmiersprache. C# ist eine der Hauptsprachen, die auf der .NET-Plattform verwendet werden, und eignet sich für eine Vielzahl von Anwendungen, von Desktop-Programmen bis hin zu Web-Anwendungen und Spielen.</p>
-<h2 id="Mit-C%23-loslegen">Mit C# loslegen<a class="anchor-link" href="#Mit-C%23-loslegen">¶</a></h2><h3 id="Was-ist-C%23?">Was ist C#?<a class="anchor-link" href="#Was-ist-C%23?">¶</a></h3><ul>
-<li><p>Moderne, objektorientierte Programmiersprache</p>
-</li>
-<li><p>Von Microsoft entwickelt</p>
-</li>
-<li><p>Teil des .NET-Frameworks</p>
-</li>
-<li><p>Leistungsstark und leicht zu erlernen</p>
-</li>
-<li><p>Funktionen: stark typisierte Variablen, Klassen, Vererbung, reichhaltige Standardbibliothek</p>
-</li>
-<li><p><strong>Compiler:</strong></p>
-<ul>
-<li>Spezielles Programm zur Übersetzung von Quellcode in Maschinensprache</li>
-<li>Bei C#: zweistufiger Übersetzungsprozess:<ol>
-<li>Quellcode → Intermediate Language (IL)</li>
-<li>IL → Maschinencode (durch .NET Common Language Runtime - CLR)</li>
-</ol>
-</li>
-<li>Vorteil: Plattformunabhängigkeit (vorausgesetzt .NET-Framework ist vorhanden)</li>
-</ul>
-</li>
-<li><p><strong>C# grundlegende Syntax:</strong></p>
-<ul>
-<li>Programm besteht aus  <code>using</code>-Anweisungen (Import von Namespaces)</li>
-<li>Klasse als Container für Code</li>
-<li><code>Main</code>-Methode als Einstiegspunkt des Programms</li>
-</ul>
-</li>
-</ul>
-<details>
-<summary>Nochmal zum Nachlesen...</summary>
-<p>C# ist eine fortschrittliche und moderne Programmiersprache, die speziell von Microsoft entwickelt wurde und eine zentrale Komponente des leistungsfähigen .NET-Frameworks darstellt. Sie wurde mit dem Ziel entworfen, eine Programmiersprache zu schaffen, die sowohl die Leistungsfähigkeit und Flexibilität bietet, die von professionellen Entwicklern benötigt wird, als auch eine einfache und intuitive Lernkurve für Einsteiger aufweist. C# kombiniert die bewährten Prinzipien der objektorientierten Programmierung mit einer Vielzahl von fortschrittlichen Funktionen, die es Entwicklern ermöglichen, robuste, skalierbare und wiederverwendbare Anwendungen zu erstellen.</p>
-<p>Die Sprache ist stark typisiert, was bedeutet, dass der Datentyp einer Variablen explizit festgelegt wird und somit eine strenge Typprüfung durch den Compiler erfolgt. Dies trägt zur Fehlervermeidung bei und sorgt für eine höhere Codequalität. Zusätzlich bietet C# eine umfangreiche Unterstützung für die Definition von Klassen, die als Baupläne für Objekte dienen und zentrale Elemente der objektorientierten Programmierung sind. Durch die Möglichkeit der Vererbung können Klassen Funktionalitäten von anderen Klassen erben, was zu einer besseren Wiederverwendbarkeit und Organisation des Codes führt. Darüber hinaus bietet C# eine reichhaltige Standardbibliothek, die eine Vielzahl vorgefertigter Funktionen und Klassen zur Verfügung stellt, welche die Entwicklung beschleunigen und die Implementierung komplexer Aufgaben vereinfachen.</p>
-<h3 id="Was-ist-ein-Compiler?">Was ist ein Compiler?<a class="anchor-link" href="#Was-ist-ein-Compiler?">¶</a></h3><p>Ein Compiler ist ein spezielles Softwarewerkzeug, das den von einem Entwickler in einer höheren Programmiersprache wie C# verfassten Quellcode in eine Form übersetzt, die von einem Computer direkt ausgeführt werden kann. Dieser Prozess ist von zentraler Bedeutung in der Softwareentwicklung, da Computer selbst den Quellcode in seiner ursprünglichen Form nicht verstehen können. Stattdessen muss dieser Code in Maschinensprache umgewandelt werden, eine Sprache, die aus einer Reihe von binären Instruktionen besteht, die die CPU des Computers direkt verarbeiten kann.</p>
-<p>Im Kontext von C# erfolgt diese Übersetzung in zwei Schritten, um eine optimale Ausführung und Plattformunabhängigkeit zu gewährleisten:</p>
+<h1 id="Recursive-HTML-exporting-and-link-replacement">Recursive HTML exporting and link replacement<a class="anchor-link" href="#Recursive-HTML-exporting-and-link-replacement">¶</a></h1><p>This one is in use right now to create linked and working html pages.</p>
+<p>To achieve this, you can write a Python script that:</p>
 <ol>
-<li><p><strong>Übersetzung des Quellcodes in die Intermediate Language (IL)</strong>: Der C#-Compiler, auch als C#-Kompilierer bekannt, nimmt den geschriebenen Quellcode und wandelt ihn zunächst in eine Zwischensprache um, die als Intermediate Language (IL) bezeichnet wird. Diese IL ist eine plattformunabhängige Repräsentation des Codes, die noch nicht direkt von der Hardware ausgeführt werden kann, aber bereits wesentlich näher an der Maschinensprache liegt als der ursprüngliche Quellcode.</p>
-</li>
-<li><p><strong>Konvertierung der IL in Maschinencode</strong>: Beim Starten der Anwendung übernimmt die .NET Common Language Runtime (CLR) die Verantwortung für den nächsten Schritt. Sie übersetzt die IL in den nativen Maschinencode, der spezifisch auf der Zielmaschine ausgeführt werden kann. Dieser Just-In-Time- (JIT-)Kompilierungsprozess sorgt dafür, dass der Code optimal auf der jeweiligen Hardware ausgeführt wird. Der Vorteil dieses zweistufigen Kompilierungsprozesses besteht darin, dass der gleiche C#-Code auf verschiedenen Plattformen laufen kann, solange diese das .NET-Framework oder eine kompatible Umgebung unterstützen.</p>
-</li>
+<li>Recursively searches for <code>.ipynb</code> files in a directory.</li>
+<li>Exports each <code>.ipynb</code> file to an HTML file.</li>
+<li>Replaces links within the HTML files that point to <code>.ipynb</code> files with <code>.html</code> links (so that the links work correctly in a browser).</li>
 </ol>
-<h3 id="Grundlegende-Syntax-von-C%23">Grundlegende Syntax von C#<a class="anchor-link" href="#Grundlegende-Syntax-von-C%23">¶</a></h3><p>Ein typisches C#-Programm folgt einer klar strukturierten Syntax, die den Aufbau des Programms definiert. Ein einfaches C#-Programm besteht aus mehreren wesentlichen Elementen:</p>
+<p>You can use the following libraries:</p>
 <ul>
-<li><p><strong><code>using</code>-Anweisungen</strong>: Diese befinden sich am Anfang des Programms und dienen dazu, Namespaces zu importieren. Namespaces sind Sammlungen von Klassen und anderen Typen, die das Programm verwendet. Durch das Importieren eines Namespaces können Sie auf dessen Inhalte zugreifen, ohne deren vollständigen Pfad angeben zu müssen. Beispielsweise ermöglicht <code>using System;</code> den Zugriff auf grundlegende Funktionalitäten wie das Schreiben von Ausgaben auf die Konsole.</p>
-</li>
-<li><p><strong>Klasse</strong>: In C# wird der gesamte Code innerhalb von Klassen organisiert. Eine Klasse fungiert als Container für Felder, Methoden und andere Mitglieder, die zusammen die Funktionalität des Programms definieren. Jede Anwendung in C# hat mindestens eine Klasse, die den Hauptcode enthält.</p>
-</li>
-<li><p><strong><code>Main</code>-Methode</strong>: Diese Methode stellt den Einstiegspunkt eines jeden C#-Programms dar. Wenn das Programm gestartet wird, beginnt die Ausführung mit der <code>Main</code>-Methode. Diese Methode kann Parameter empfangen und steuert die Ausführung des Programms.</p>
-</li></ul></details>
-
-
-<h3 id="Hello-world!">Hello world!<a class="anchor-link" href="#Hello-world!">¶</a></h3>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
-
-<span class="k">class</span><span class="w"> </span><span class="nc">Program</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"Hello, World!"</span><span class="p">);</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Hier wird  <code>System</code>  importiert, ein Namespace, der grundlegende Funktionen bereitstellt, wie das Drucken auf der Konsole. Die  <code>Main</code>-Methode ist der Einstiegspunkt des Programms.</p>
-<p><a href="procedural-functional/CSharp_HelloWorld_Explanation.de.html">Hier gehts zur Vertiefung in das "Hello World" Beispiel...</a></p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><a href="procedural-functional/Console_WriteLine_Basics.de.html">Hier gehts zu den Grundlagen zu <code>WriteLine()</code>...</a></p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Einf%C3%BChrung-in-das-Konzept-einer-Variablen">Einführung in das Konzept einer Variablen<a class="anchor-link" href="#Einf%C3%BChrung-in-das-Konzept-einer-Variablen">¶</a></h2><p>Eine Variable in C# ist ein benannter Speicherort im Arbeitsspeicher eines Programms, der dazu verwendet wird, Daten zu speichern und darauf zuzugreifen. Variablen ermöglichen es, Werte vorübergehend zu speichern, um sie im weiteren Verlauf des Programms zu verwenden. Sie sind ein fundamentales Konzept in der Programmierung, da sie es erlauben, mit Daten flexibel und dynamisch zu arbeiten.</p>
-<h3 id="Aufbau-einer-Variable">Aufbau einer Variable<a class="anchor-link" href="#Aufbau-einer-Variable">¶</a></h3><ol>
-<li><p><strong>Deklaration</strong>: Um eine Variable in C# zu verwenden, muss sie zuerst deklariert werden. Bei der Deklaration einer Variablen wird der Typ festgelegt, der angibt, welche Art von Daten die Variable speichern kann. Der Variablenname muss eindeutig sein und den Namenskonventionen von C# folgen.</p>
-<ul>
-<li>Beispiel:  <code>int age;</code>  Hier wird eine Variable namens  <code>age</code>  deklariert, die einen Ganzzahlwert speichern kann.</li>
+<li><code>os</code> or <code>pathlib</code> for file traversal.</li>
+<li><code>nbconvert</code> for converting <code>.ipynb</code> to <code>.html</code>.</li>
+<li><code>re</code> for regular expressions to replace links in HTML content.</li>
 </ul>
-</li>
-<li><p><strong>Initialisierung</strong>: Nach der Deklaration kann der Variablen ein Wert zugewiesen werden. Dies kann entweder direkt bei der Deklaration oder zu einem späteren Zeitpunkt im Code geschehen.</p>
-<ul>
-<li>Beispiel:  <code>int age = 25;</code>  Hier wird der Variablen  <code>age</code>  direkt ein Wert zugewiesen.</li>
-</ul>
-</li>
-<li><p><strong>Zugriff und Modifikation</strong>: Nachdem eine Variable deklariert und initialisiert wurde, kann auf ihren Wert zugegriffen und dieser bei Bedarf geändert werden.</p>
-<ul>
-<li>Beispiel:  <code>age = 30;</code>  Hier wird der Wert von  <code>age</code>  auf 30 geändert.</li>
-</ul>
-</li>
+<h2 id="Prerequesits">Prerequesits<a class="anchor-link" href="#Prerequesits">¶</a></h2><h3 id="Install-the-Required-Modules">Install the Required Modules<a class="anchor-link" href="#Install-the-Required-Modules">¶</a></h3><p>You can install the necessary modules using the following commands in your terminal or command prompt.</p>
+<ol>
+<li><strong>Install  <code>nbconvert</code></strong>: This module is used to convert Jupyter notebooks to HTML.</li>
 </ol>
 </div>
 </div>
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">nbconvert</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>17172.36s - pydevd: Sending message related to process being replaced timed-out after 5 seconds
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Collecting nbconvert
+  Downloading nbconvert-7.16.4-py3-none-any.whl (257 kB)
+     <span class="ansi-black-intense-fg">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">257.4/257.4 KB</span> <span class="ansi-red-fg">4.5 MB/s</span> eta <span class="ansi-cyan-fg">0:00:00</span>a <span class="ansi-cyan-fg">0:00:01</span>
+Collecting nbclient&gt;=0.5.0
+  Downloading nbclient-0.10.0-py3-none-any.whl (25 kB)
+Collecting tinycss2
+  Downloading tinycss2-1.3.0-py3-none-any.whl (22 kB)
+Collecting bleach!=5.0.0
+  Downloading bleach-6.1.0-py3-none-any.whl (162 kB)
+     <span class="ansi-black-intense-fg">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">162.8/162.8 KB</span> <span class="ansi-red-fg">7.0 MB/s</span> eta <span class="ansi-cyan-fg">0:00:00</span>
+Collecting nbformat&gt;=5.7
+  Downloading nbformat-5.10.4-py3-none-any.whl (78 kB)
+     <span class="ansi-black-intense-fg">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">78.5/78.5 KB</span> <span class="ansi-red-fg">6.3 MB/s</span> eta <span class="ansi-cyan-fg">0:00:00</span>
+Collecting markupsafe&gt;=2.0
+  Downloading MarkupSafe-2.1.5-cp310-cp310-macosx_10_9_x86_64.whl (14 kB)
+Requirement already satisfied: pygments&gt;=2.4.1 in /Users/starkj/Library/Python/3.10/lib/python/site-packages (from nbconvert) (2.18.0)
+Collecting jinja2&gt;=3.0
+  Downloading jinja2-3.1.4-py3-none-any.whl (133 kB)
+     <span class="ansi-black-intense-fg">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">133.3/133.3 KB</span> <span class="ansi-red-fg">6.8 MB/s</span> eta <span class="ansi-cyan-fg">0:00:00</span>
+Collecting jupyterlab-pygments
+  Downloading jupyterlab_pygments-0.3.0-py3-none-any.whl (15 kB)
+Requirement already satisfied: jupyter-core&gt;=4.7 in /Users/starkj/Library/Python/3.10/lib/python/site-packages (from nbconvert) (5.7.2)
+Requirement already satisfied: packaging in /Users/starkj/Library/Python/3.10/lib/python/site-packages (from nbconvert) (24.1)
+Collecting pandocfilters&gt;=1.4.1
+  Downloading pandocfilters-1.5.1-py2.py3-none-any.whl (8.7 kB)
+Collecting mistune&lt;4,&gt;=2.0.3
+  Downloading mistune-3.0.2-py3-none-any.whl (47 kB)
+     <span class="ansi-black-intense-fg">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">48.0/48.0 KB</span> <span class="ansi-red-fg">4.0 MB/s</span> eta <span class="ansi-cyan-fg">0:00:00</span>
+Collecting defusedxml
+  Downloading defusedxml-0.7.1-py2.py3-none-any.whl (25 kB)
+Requirement already satisfied: traitlets&gt;=5.1 in /Users/starkj/Library/Python/3.10/lib/python/site-packages (from nbconvert) (5.14.3)
+Requirement already satisfied: beautifulsoup4 in /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages (from nbconvert) (4.12.3)
+Requirement already satisfied: six&gt;=1.9.0 in /Users/starkj/Library/Python/3.10/lib/python/site-packages (from bleach!=5.0.0-&gt;nbconvert) (1.16.0)
+Collecting webencodings
+  Downloading webencodings-0.5.1-py2.py3-none-any.whl (11 kB)
+Requirement already satisfied: platformdirs&gt;=2.5 in /Users/starkj/Library/Python/3.10/lib/python/site-packages (from jupyter-core&gt;=4.7-&gt;nbconvert) (4.2.2)
+Requirement already satisfied: jupyter-client&gt;=6.1.12 in /Users/starkj/Library/Python/3.10/lib/python/site-packages (from nbclient&gt;=0.5.0-&gt;nbconvert) (8.6.2)
+Collecting fastjsonschema&gt;=2.15
+  Downloading fastjsonschema-2.20.0-py3-none-any.whl (23 kB)
+Collecting jsonschema&gt;=2.6
+  Downloading jsonschema-4.23.0-py3-none-any.whl (88 kB)
+     <span class="ansi-black-intense-fg">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">88.5/88.5 KB</span> <span class="ansi-red-fg">4.9 MB/s</span> eta <span class="ansi-cyan-fg">0:00:00</span>
+Requirement already satisfied: soupsieve&gt;1.2 in /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages (from beautifulsoup4-&gt;nbconvert) (2.6)
+Collecting attrs&gt;=22.2.0
+  Downloading attrs-24.2.0-py3-none-any.whl (63 kB)
+     <span class="ansi-black-intense-fg">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">63.0/63.0 KB</span> <span class="ansi-red-fg">5.2 MB/s</span> eta <span class="ansi-cyan-fg">0:00:00</span>
+Collecting referencing&gt;=0.28.4
+  Downloading referencing-0.35.1-py3-none-any.whl (26 kB)
+Collecting jsonschema-specifications&gt;=2023.03.6
+  Downloading jsonschema_specifications-2023.12.1-py3-none-any.whl (18 kB)
+Collecting rpds-py&gt;=0.7.1
+  Downloading rpds_py-0.20.0-cp310-cp310-macosx_10_12_x86_64.whl (318 kB)
+     <span class="ansi-black-intense-fg">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">318.4/318.4 KB</span> <span class="ansi-red-fg">2.5 MB/s</span> eta <span class="ansi-cyan-fg">0:00:00</span>00:01
+Requirement already satisfied: python-dateutil&gt;=2.8.2 in /Users/starkj/Library/Python/3.10/lib/python/site-packages (from jupyter-client&gt;=6.1.12-&gt;nbclient&gt;=0.5.0-&gt;nbconvert) (2.9.0.post0)
+Requirement already satisfied: tornado&gt;=6.2 in /Users/starkj/Library/Python/3.10/lib/python/site-packages (from jupyter-client&gt;=6.1.12-&gt;nbclient&gt;=0.5.0-&gt;nbconvert) (6.4.1)
+Requirement already satisfied: pyzmq&gt;=23.0 in /Users/starkj/Library/Python/3.10/lib/python/site-packages (from jupyter-client&gt;=6.1.12-&gt;nbclient&gt;=0.5.0-&gt;nbconvert) (26.1.0)
+Installing collected packages: webencodings, fastjsonschema, tinycss2, rpds-py, pandocfilters, mistune, markupsafe, jupyterlab-pygments, defusedxml, bleach, attrs, referencing, jinja2, jsonschema-specifications, jsonschema, nbformat, nbclient, nbconvert
+Successfully installed attrs-24.2.0 bleach-6.1.0 defusedxml-0.7.1 fastjsonschema-2.20.0 jinja2-3.1.4 jsonschema-4.23.0 jsonschema-specifications-2023.12.1 jupyterlab-pygments-0.3.0 markupsafe-2.1.5 mistune-3.0.2 nbclient-0.10.0 nbconvert-7.16.4 nbformat-5.10.4 pandocfilters-1.5.1 referencing-0.35.1 rpds-py-0.20.0 tinycss2-1.3.0 webencodings-0.5.1
+<span class="ansi-yellow-fg">WARNING: You are using pip version 22.0.4; however, version 24.2 is available.
+You should consider upgrading via the '/usr/local/bin/python3.10 -m pip install --upgrade pip' command.</span><span class="ansi-yellow-fg">
+</span>Note: you may need to restart the kernel to use updated packages.
+</pre>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -7669,439 +7649,9 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Typen-von-Variablen">Typen von Variablen<a class="anchor-link" href="#Typen-von-Variablen">¶</a></h3><p>In C# sind Variablen stark typisiert, was bedeutet, dass der Typ einer Variablen zur Zeit der Deklaration festgelegt wird und sich nicht mehr ändern kann. Die wichtigsten Typen von Variablen sind:</p>
-<ul>
-<li><strong>Primitive Datentypen</strong>: Diese umfassen einfache Datentypen wie Ganzzahlen (<code>int</code>), Gleitkommazahlen (<code>float</code>,  <code>double</code>), Zeichen (<code>char</code>) und Wahrheitswerte (<code>bool</code>).</li>
-<li><strong>Referenztypen</strong>: Zu den Referenztypen gehören komplexere Datentypen wie Klassen, Arrays, Strings und Objekte. Im Gegensatz zu primitiven Datentypen speichern Referenztypen einen Verweis (Referenz) auf den tatsächlichen Speicherort der Daten, nicht die Daten selbst.</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Lebensdauer-und-Sichtbarkeit">Lebensdauer und Sichtbarkeit<a class="anchor-link" href="#Lebensdauer-und-Sichtbarkeit">¶</a></h3><p>Der Gültigkeitsbereich (Scope) einer Variablen bestimmt, wo im Code auf sie zugegriffen werden kann. Variablen können lokal (innerhalb einer Methode) oder global (z.B. als Klassenfelder) deklariert werden.</p>
-<ul>
-<li><strong>Lokale Variablen</strong>: Diese existieren nur innerhalb der Methode oder des Blocks, in dem sie deklariert wurden. Nach Verlassen des Blocks wird der Speicher, der der Variablen zugewiesen wurde, freigegeben.<ul>
-<li>Beispiel:  <code>void MyMethod() { int x = 5; }</code></li>
-</ul>
-</li>
-<li><strong>Globale bzw. Klassenvariablen</strong>: Diese werden in der Klasse selbst deklariert und sind für alle Methoden dieser Klasse zugänglich, solange sie im entsprechenden Gültigkeitsbereich liegen.<ul>
-<li>Beispiel:  <code>class MyClass { int y; }</code></li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Wichtige-Konzepte-im-Zusammenhang-mit-Variablen">Wichtige Konzepte im Zusammenhang mit Variablen<a class="anchor-link" href="#Wichtige-Konzepte-im-Zusammenhang-mit-Variablen">¶</a></h3><ol>
-<li><p><strong>Konstanten</strong>: In C# gibt es auch die Möglichkeit, Variablen als konstant zu deklarieren. Diese Variablen können nach ihrer Initialisierung nicht mehr verändert werden. Das Schlüsselwort dafür ist  <code>const</code>.</p>
-<ul>
-<li>Beispiel:  <code>const int MAX_AGE = 100;</code></li>
-</ul>
-</li>
-<li><p><strong>Nullable-Typen</strong>: Normalerweise kann eine Variable eines Wertetyps (z.B.  <code>int</code>) keinen  <code>null</code>-Wert enthalten. C# bietet jedoch sogenannte Nullable-Typen, die es ermöglichen, dass Wertetypen  <code>null</code>  sein können.</p>
-<ul>
-<li>Beispiel:  <code>int? nullableInt = null;</code></li>
-</ul>
-</li>
-<li><p><strong>Automatisch implementierte Eigenschaften</strong>: In modernen C#-Versionen gibt es zudem die Möglichkeit, Variablen mit dem Schlüsselwort  <code>var</code>  automatisch den Typ zuzuweisen, basierend auf dem initial zugewiesenen Wert. Dies nennt man Typinferenz.</p>
-<ul>
-<li>Beispiel:  <code>var name = "John";</code>  Der Compiler leitet automatisch ab, dass  <code>name</code>  vom Typ  <code>string</code>  ist.</li>
-</ul>
-</li>
-<li><p><strong>Speicherverwaltung</strong>: Für den Umgang mit Variablen ist es wichtig zu verstehen, dass C# über eine automatische Speicherverwaltung verfügt, die durch den Garbage Collector gesteuert wird. Dieser sorgt dafür, dass nicht mehr benötigter Speicher automatisch freigegeben wird.</p>
-</li>
+<ol start="2">
+<li><strong>Install  <code>nbformat</code></strong>: This module is used to read and write Jupyter notebook files.</li>
 </ol>
-<h3 id="Beispiel:">Beispiel:<a class="anchor-link" href="#Beispiel:">¶</a></h3>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [38]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="nb">int</span> <span class="n">number</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
-<span class="n">string</span> <span class="n">name</span> <span class="o">=</span> <span class="s2">"John"</span><span class="p">;</span>
-<span class="n">double</span> <span class="n">price</span> <span class="o">=</span> <span class="mf">9.99</span><span class="p">;</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ul>
-<li><code>int</code>  ist ein Datentyp für ganze Zahlen.</li>
-<li><code>string</code>  speichert eine Zeichenkette.</li>
-<li><code>double</code>  ist ein Datentyp für Gleitkommazahlen.</li>
-</ul>
-<h2 id="Datentypen:--int,--float,-und--double">Datentypen:  <code>int</code>,  <code>float</code>, und  <code>double</code><a class="anchor-link" href="#Datentypen:--int,--float,-und--double">¶</a></h2><h3 id="int"><code>int</code><a class="anchor-link" href="#int">¶</a></h3><p>Der  <code>int</code>-Typ speichert ganze Zahlen (ohne Dezimalstellen). Er ist 32 Bit breit und kann Werte im Bereich von -2.147.483.648 bis 2.147.483.647 speichern.</p>
-<h3 id="float"><code>float</code><a class="anchor-link" href="#float">¶</a></h3><p>Der  <code>float</code>-Typ speichert Gleitkommazahlen (Zahlen mit Dezimalstellen). Er ist 32 Bit breit und eignet sich für die Speicherung von Werten mit weniger Genauigkeit, aber größerem Bereich. Ein  <code>float</code>-Wert benötigt das Suffix  <code>f</code>:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [39]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="nb">float</span> <span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14</span><span class="n">f</span><span class="p">;</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="double"><code>double</code><a class="anchor-link" href="#double">¶</a></h3><p>Der  <code>double</code>-Typ ist ein 64-Bit-Gleitkommatyp und bietet eine höhere Genauigkeit und einen größeren Bereich als  <code>float</code>. Dies ist der am häufigsten verwendete Typ für Gleitkommazahlen:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [40]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">double</span> <span class="n">precisePi</span> <span class="o">=</span> <span class="mf">3.14159265358979</span><span class="p">;</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Mit-Strings-arbeiten">Mit Strings arbeiten<a class="anchor-link" href="#Mit-Strings-arbeiten">¶</a></h2><p>Strings sind Folgen von Zeichen. Sie können wie folgt deklariert und verwendet werden:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [41]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">string</span> <span class="n">greeting</span> <span class="o">=</span> <span class="s2">"Hello"</span><span class="p">;</span>
-<span class="n">string</span> <span class="n">verbatim</span> <span class="o">=</span> <span class="o">@</span><span class="s2">"This is a verbatim string"</span><span class="p">;</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Ein verbatim string (<code>@""</code>) ignoriert Escape-Zeichen wie  <code>\n</code>  und ermöglicht das Schreiben von Pfaden und Texten, die Sonderzeichen enthalten.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Strings-vertiefen">Strings vertiefen<a class="anchor-link" href="#Strings-vertiefen">¶</a></h2><p>Strings bieten zahlreiche Methoden zur Manipulation, z.B. zur Änderung der Groß-/Kleinschreibung oder zur Extraktion von Teilstrings:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [42]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">string</span> <span class="n">hello</span> <span class="o">=</span> <span class="s2">"Hello, World!"</span><span class="p">;</span>
-<span class="nb">int</span> <span class="n">length</span> <span class="o">=</span> <span class="n">hello</span><span class="o">.</span><span class="n">Length</span><span class="p">;</span>       <span class="o">//</span> <span class="n">Länge</span> <span class="n">des</span> <span class="n">Strings</span>
-<span class="n">string</span> <span class="n">upper</span> <span class="o">=</span> <span class="n">hello</span><span class="o">.</span><span class="n">ToUpper</span><span class="p">();</span>  <span class="o">//</span> <span class="s2">"HELLO, WORLD!"</span>
-<span class="n">string</span> <span class="n">sub</span> <span class="o">=</span> <span class="n">hello</span><span class="o">.</span><span class="n">Substring</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span> <span class="o">//</span> <span class="s2">"World!"</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Strings-durchsuchen">Strings durchsuchen<a class="anchor-link" href="#Strings-durchsuchen">¶</a></h2><p>Strings können durchsucht werden, um das Vorkommen bestimmter Zeichen oder Wörter zu finden:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [43]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">string</span> <span class="n">sentence</span> <span class="o">=</span> <span class="s2">"The quick brown fox jumps over the lazy dog."</span><span class="p">;</span>
-<span class="nb">bool</span> <span class="n">containsFox</span> <span class="o">=</span> <span class="n">sentence</span><span class="o">.</span><span class="n">Contains</span><span class="p">(</span><span class="s2">"fox"</span><span class="p">);</span>
-<span class="nb">int</span> <span class="n">indexOfDog</span> <span class="o">=</span> <span class="n">sentence</span><span class="o">.</span><span class="n">IndexOf</span><span class="p">(</span><span class="s2">"dog"</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ul>
-<li><code>Contains()</code>  gibt  <code>true</code>  zurück, wenn der String das angegebene Wort enthält.</li>
-<li><code>IndexOf()</code>  gibt die Position des ersten Vorkommens des Wortes zurück.</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Kommentare">Kommentare<a class="anchor-link" href="#Kommentare">¶</a></h2><p>Kommentare sind Anmerkungen im Code, die nicht ausgeführt werden. Sie dienen dazu, den Code zu dokumentieren und zu erklären:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [44]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="o">//</span> <span class="n">Dies</span> <span class="n">ist</span> <span class="n">ein</span> <span class="n">Einzelzeilenkommentar</span>
-<span class="o">/*</span> <span class="n">Dies</span> <span class="n">ist</span> <span class="n">ein</span>
-   <span class="n">Blockkommentar</span> <span class="o">*/</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Eingebaute-Variablentypen">Eingebaute Variablentypen<a class="anchor-link" href="#Eingebaute-Variablentypen">¶</a></h2><h3 id="Var-Schl%C3%BCsselwort">Var Schlüsselwort<a class="anchor-link" href="#Var-Schl%C3%BCsselwort">¶</a></h3><p>Das  <code>var</code>-Schlüsselwort ermöglicht es, Variablen ohne explizite Typangabe zu deklarieren. Der Typ wird vom Compiler zur Kompilierzeit bestimmt:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [45]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">var</span> <span class="n">number</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>  <span class="o">//</span> <span class="n">number</span> <span class="n">wird</span> <span class="n">als</span> <span class="nb">int</span> <span class="n">deklariert</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Echte-Literale">Echte Literale<a class="anchor-link" href="#Echte-Literale">¶</a></h3><p>C# unterstützt verschiedene Zahlensysteme wie Dezimal, Hexadezimal und Binär:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [46]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="nb">int</span> <span class="n">decimalNumber</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
-<span class="nb">int</span> <span class="n">hexNumber</span> <span class="o">=</span> <span class="mh">0x2A</span><span class="p">;</span>   <span class="o">//</span> <span class="mi">42</span> <span class="ow">in</span> <span class="n">Hexadezimal</span>
-<span class="nb">int</span> <span class="n">binaryNumber</span> <span class="o">=</span> <span class="mb">0b101010</span><span class="p">;</span> <span class="o">//</span> <span class="mi">42</span> <span class="ow">in</span> <span class="n">Binär</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Typen-casting">Typen casting<a class="anchor-link" href="#Typen-casting">¶</a></h2><p>Casting ermöglicht die Umwandlung eines Datentyps in einen anderen. Dies kann explizit oder implizit geschehen:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [47]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="nb">int</span> <span class="n">number</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
-<span class="n">double</span> <span class="n">castedNumber</span> <span class="o">=</span> <span class="p">(</span><span class="n">double</span><span class="p">)</span><span class="n">number</span><span class="p">;</span>  <span class="o">//</span> <span class="n">Explizites</span> <span class="n">Casting</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Operatoren">Operatoren<a class="anchor-link" href="#Operatoren">¶</a></h2><p>C# bietet eine Vielzahl von Operatoren wie Zuweisungsoperatoren, Arithmetische Operatoren, Vergleichsoperatoren und Logische Operatoren:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [48]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="nb">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
-<span class="nb">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
-<span class="nb">int</span> <span class="nb">sum</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
-<span class="nb">bool</span> <span class="n">isEqual</span> <span class="o">=</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">;</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ul>
-<li>Arithmetische Operatoren:  <code>+</code>,  <code>-</code>,  <code>*</code>,  <code>/</code>,  <code>%</code></li>
-<li>Vergleichsoperatoren:  <code>==</code>,  <code>!=</code>,  <code>&gt;</code>,  <code>&lt;</code>,  <code>&gt;=</code>,  <code>&lt;=</code></li>
-<li>Logische Operatoren:  <code>&amp;&amp;</code>,  <code>||</code>,  <code>!</code></li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Modulo-%25">Modulo <code>%</code><a class="anchor-link" href="#Modulo-%25">¶</a></h3><img alt="No description has been provided for this image" src="Modulo.miro.de.jpg" style="width:100%;"/>
-<details>
-<summary>Inline miro frame...</summary>
-<iframe height="600px" src="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3458764535327088595&amp;cot=14" width="100%"></iframe>
-</details>
-<p><a href="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3458764535327088595&amp;cot=14">Link auf Miro Frame...</a></p>
-<p>Modulo ist eine mathematische Operation, die den Rest einer Division zweier Zahlen bestimmt. Sie wird häufig in der Informatik und Mathematik verwendet, um zyklische oder periodische Phänomene zu beschreiben. Die Modulo-Operation wird oft durch das Zeichen <code>%</code> dargestellt.</p>
-<h4 id="Beispiel:">Beispiel:<a class="anchor-link" href="#Beispiel:">¶</a></h4><p>Wenn du $a \mod b$ berechnest, dann teilst du $a$ durch $b$ und nimmst den Rest dieser Division.</p>
-<p><strong>Beispielrechnung:</strong></p>
-<ul>
-<li>$10 \mod 3$ bedeutet, dass du 10 durch 3 teilst.</li>
-<li>Das Ergebnis der Division ist $10 \div 3 = 3$ mit einem Rest von 1.</li>
-<li>Somit ist $10 \mod 3 = 1$.</li>
-</ul>
-<p>In diesem Fall ist 3 der Divisor, und 1 ist der Rest, den die Modulo-Operation liefert.</p>
-<h4 id="Eigenschaften:">Eigenschaften:<a class="anchor-link" href="#Eigenschaften:">¶</a></h4><ol>
-<li><p><strong>Zyklisch:</strong> Modulo wird oft verwendet, um zyklische Abläufe zu modellieren, wie zum Beispiel Uhrzeiten oder Kalender. Bei einer Uhr mit 12 Stunden entspricht $14 \mod 12$ der 2, weil 14 Stunden 12 Stunden plus 2 Stunden sind.</p>
-</li>
-<li><p><strong>Ganzzahlige Division:</strong> Modulo ist eng mit der ganzzahligen Division verknüpft, bei der der Quotient ignoriert und nur der Rest betrachtet wird.</p>
-</li>
-<li><p><strong>Negative Zahlen:</strong> Der Modulo-Operator kann auch auf negative Zahlen angewendet werden, aber das Verhalten kann je nach Definition unterschiedlich sein. Beispielsweise könnte $-10 \mod 3$ entweder $-1$ oder $2$ sein, je nachdem, wie die Modulo-Operation definiert ist.</p>
-</li>
-</ol>
-<h4 id="Anwendung:">Anwendung:<a class="anchor-link" href="#Anwendung:">¶</a></h4><ul>
-<li><strong>Programmierung:</strong> Modulo wird oft verwendet, um eine Zahl in einem bestimmten Bereich zu halten, beispielsweise, um sicherzustellen, dass ein Index innerhalb eines Arrays bleibt.</li>
-<li><strong>Kryptographie:</strong> Modulo spielt eine zentrale Rolle in Verschlüsselungsalgorithmen wie RSA, da es hilft, mit großen Zahlen umzugehen und periodische Muster zu erzeugen.</li>
-<li><strong>Zahlenrätsel:</strong> Modulo hilft auch, gewisse Muster oder Regelmäßigkeiten in Zahlen zu erkennen, wie etwa, ob eine Zahl durch eine andere teilbar ist (zum Beispiel ist eine Zahl durch 3 teilbar, wenn $n \mod 3 = 0$).</li>
-</ul>
-<p>Zusammengefasst: Die Modulo-Operation gibt den Rest einer Division an und ist ein nützliches Werkzeug, um mit periodischen Strukturen zu arbeiten.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Bedingte-Anweisungen">Bedingte Anweisungen<a class="anchor-link" href="#Bedingte-Anweisungen">¶</a></h2><p>Bedingte Anweisungen wie  <code>if</code>,  <code>else</code>, und  <code>switch</code>  ermöglichen es, verschiedene Codepfade basierend auf bestimmten Bedingungen auszuführen.</p>
-<h3 id="Beispiel-mit--if:">Beispiel mit  <code>if</code>:<a class="anchor-link" href="#Beispiel-mit--if:">¶</a></h3>
 </div>
 </div>
 </div>
@@ -8110,19 +7660,211 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="nb">int</span> <span class="n">age</span> <span class="o">=</span> <span class="mi">16</span><span class="p">;</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">nbformat</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>17192.76s - pydevd: Sending message related to process being replaced timed-out after 5 seconds
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Requirement already satisfied: nbformat in /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages (5.10.4)
+Requirement already satisfied: fastjsonschema&gt;=2.15 in /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages (from nbformat) (2.20.0)
+Requirement already satisfied: jupyter-core!=5.0.*,&gt;=4.12 in /Users/starkj/Library/Python/3.10/lib/python/site-packages (from nbformat) (5.7.2)
+Requirement already satisfied: traitlets&gt;=5.1 in /Users/starkj/Library/Python/3.10/lib/python/site-packages (from nbformat) (5.14.3)
+Requirement already satisfied: jsonschema&gt;=2.6 in /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages (from nbformat) (4.23.0)
+Requirement already satisfied: jsonschema-specifications&gt;=2023.03.6 in /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages (from jsonschema&gt;=2.6-&gt;nbformat) (2023.12.1)
+Requirement already satisfied: attrs&gt;=22.2.0 in /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages (from jsonschema&gt;=2.6-&gt;nbformat) (24.2.0)
+Requirement already satisfied: rpds-py&gt;=0.7.1 in /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages (from jsonschema&gt;=2.6-&gt;nbformat) (0.20.0)
+Requirement already satisfied: referencing&gt;=0.28.4 in /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages (from jsonschema&gt;=2.6-&gt;nbformat) (0.35.1)
+Requirement already satisfied: platformdirs&gt;=2.5 in /Users/starkj/Library/Python/3.10/lib/python/site-packages (from jupyter-core!=5.0.*,&gt;=4.12-&gt;nbformat) (4.2.2)
+<span class="ansi-yellow-fg">WARNING: You are using pip version 22.0.4; however, version 24.2 is available.
+You should consider upgrading via the '/usr/local/bin/python3.10 -m pip install --upgrade pip' command.</span><span class="ansi-yellow-fg">
+</span>Note: you may need to restart the kernel to use updated packages.
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Here's an outline of the script:</p>
+<h3 id="Script:-Convert-and-Modify-Links-in-HTML">Script: Convert and Modify Links in HTML<a class="anchor-link" href="#Script:-Convert-and-Modify-Links-in-HTML">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">nbformat</span>
+<span class="kn">from</span> <span class="nn">nbconvert</span> <span class="kn">import</span> <span class="n">HTMLExporter</span>
+<span class="kn">import</span> <span class="nn">re</span>
 
-<span class="k">if</span> <span class="p">(</span><span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"You are an adult."</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="k">else</span>
-<span class="p">{</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"You are not an adult."</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="k">def</span> <span class="nf">convert_ipynb_to_html</span><span class="p">(</span><span class="n">ipynb_file</span><span class="p">):</span>
+    <span class="c1"># Load the notebook</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">ipynb_file</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">notebook</span> <span class="o">=</span> <span class="n">nbformat</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">as_version</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+    
+    <span class="c1"># Convert to HTML</span>
+    <span class="n">html_exporter</span> <span class="o">=</span> <span class="n">HTMLExporter</span><span class="p">()</span>
+    <span class="p">(</span><span class="n">body</span><span class="p">,</span> <span class="n">resources</span><span class="p">)</span> <span class="o">=</span> <span class="n">html_exporter</span><span class="o">.</span><span class="n">from_notebook_node</span><span class="p">(</span><span class="n">notebook</span><span class="p">)</span>
+    
+    <span class="c1"># Define the HTML filename</span>
+    <span class="n">html_filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">ipynb_file</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">'.html'</span>
+
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">html_filename</span><span class="p">):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">html_filename</span><span class="p">)</span>
+    
+    <span class="c1"># Write the HTML file in the same directory as the ipynb file</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">html_filename</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">body</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">html_filename</span>
+
+<span class="k">def</span> <span class="nf">replace_ipynb_links_in_html</span><span class="p">(</span><span class="n">html_file</span><span class="p">,</span> <span class="n">root_dir</span><span class="p">):</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">html_file</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">content</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    
+    <span class="c1"># Replace .ipynb links with relative .html links</span>
+    <span class="n">updated_content</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span>
+        <span class="sa">r</span><span class="s1">'(?&lt;=href=["</span><span class="se">\'</span><span class="s1">])(.*?\.ipynb)(?=["</span><span class="se">\'</span><span class="s1">])'</span><span class="p">,</span> 
+        <span class="k">lambda</span> <span class="n">match</span><span class="p">:</span> <span class="n">make_relative_html_link</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">root_dir</span><span class="p">),</span> 
+        <span class="n">content</span>
+    <span class="p">)</span>
+    
+    <span class="c1"># Write the updated content back to the file</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">html_file</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">updated_content</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">make_relative_html_link</span><span class="p">(</span><span class="n">ipynb_link</span><span class="p">,</span> <span class="n">root_dir</span><span class="p">):</span>
+    <span class="c1"># Convert .ipynb link to corresponding .html link</span>
+    <span class="n">html_link</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">ipynb_link</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">'.html'</span>
+    
+    <span class="c1"># Get the absolute path of the html link</span>
+    <span class="n">absolute_html_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">html_link</span><span class="p">)</span>
+    
+    <span class="c1"># Remove the root directory (CWD) from the absolute path to make it relative</span>
+    <span class="n">relative_html_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span><span class="n">absolute_html_path</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="n">root_dir</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">relative_html_path</span>
+
+<span class="k">def</span> <span class="nf">recursive_convert_and_replace_links</span><span class="p">(</span><span class="n">root_dir</span><span class="p">):</span>
+    <span class="c1"># Recursively find .ipynb files</span>
+    <span class="k">for</span> <span class="n">subdir</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">root_dir</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">'.ipynb'</span><span class="p">):</span>
+                <span class="n">ipynb_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">subdir</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
+                
+                <span class="c1"># Convert to HTML and save it in the same directory</span>
+                <span class="n">html_file</span> <span class="o">=</span> <span class="n">convert_ipynb_to_html</span><span class="p">(</span><span class="n">ipynb_path</span><span class="p">)</span>
+                
+                <span class="c1"># Replace .ipynb links with relative .html links, removing the cwd from the path</span>
+                <span class="n">replace_ipynb_links_in_html</span><span class="p">(</span><span class="n">html_file</span><span class="p">,</span> <span class="n">root_dir</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+    <span class="c1"># Use the current working directory as the root directory</span>
+    <span class="n">root_directory</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+    
+    <span class="n">recursive_convert_and_replace_links</span><span class="p">(</span><span class="n">root_directory</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="How-the-Script-Works:">How the Script Works:<a class="anchor-link" href="#How-the-Script-Works:">¶</a></h3><ol>
+<li><p><strong>Convert <code>.ipynb</code> to <code>.html</code></strong>:</p>
+<ul>
+<li>The <code>convert_ipynb_to_html</code> function uses <code>nbconvert</code> to convert a Jupyter Notebook (<code>.ipynb</code>) to an HTML file and saves it in the <code>output_dir</code>.</li>
+</ul>
+</li>
+<li><p><strong>Replace <code>.ipynb</code> Links with <code>.html</code> Links</strong>:</p>
+<ul>
+<li>The <code>replace_ipynb_links_in_html</code> function reads the generated HTML file, finds any links to <code>.ipynb</code> files, and replaces them with <code>.html</code> links.</li>
+<li>This is done using a regular expression that matches the links in the HTML content.</li>
+</ul>
+</li>
+<li><p><strong>Recursively Process Files</strong>:</p>
+<ul>
+<li>The <code>recursive_convert_and_replace_links</code> function walks through the directory tree (<code>os.walk</code>) and processes all <code>.ipynb</code> files. It calls the conversion and replacement functions for each file found.</li>
+</ul>
+</li>
+</ol>
+<h3 id="Notes:">Notes:<a class="anchor-link" href="#Notes:">¶</a></h3><ul>
+<li><strong>File Paths</strong>: Make sure to update the <code>root_directory</code> and <code>output_directory</code> variables to match your desired input and output paths.</li>
+<li><strong>Dependencies</strong>: You may need to install <code>nbconvert</code> and <code>nbformat</code> via <code>pip install nbconvert nbformat</code>.</li>
+</ul>
+<p>This script will help you convert all <code>.ipynb</code> files to HTML and ensure that the links between notebooks are correctly pointing to the corresponding <code>.html</code> files.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="Create-PDF-with-beautiful-soup-and-pdfkit">Create PDF with beautiful soup and pdfkit<a class="anchor-link" href="#Create-PDF-with-beautiful-soup-and-pdfkit">¶</a></h1><p>Does not work so well.</p>
+<h3 id="1.--Extract-Headlines-from-HTML-Files:">1.  <strong>Extract Headlines from HTML Files:</strong><a class="anchor-link" href="#1.--Extract-Headlines-from-HTML-Files:">¶</a></h3><ul>
+<li>You'll need to parse the HTML files to extract the headline tags (<code>&lt;h1&gt;</code>,  <code>&lt;h2&gt;</code>, etc.) and use them to generate the table of contents.</li>
+<li>The  <code>BeautifulSoup</code>  library from  <code>bs4</code>  is perfect for parsing HTML.</li>
+</ul>
+<h3 id="2.--Create-the-Table-of-Contents:">2.  <strong>Create the Table of Contents:</strong><a class="anchor-link" href="#2.--Create-the-Table-of-Contents:">¶</a></h3><ul>
+<li>Use the extracted headlines to create a TOC in HTML format, with links to the corresponding sections.</li>
+</ul>
+<h3 id="3.--Insert-the-TOC-at-the-Beginning-of-the-Combined-HTML-File:">3.  <strong>Insert the TOC at the Beginning of the Combined HTML File:</strong><a class="anchor-link" href="#3.--Insert-the-TOC-at-the-Beginning-of-the-Combined-HTML-File:">¶</a></h3><ul>
+<li>Add the generated TOC to the beginning of your combined HTML file before converting it to PDF.</li>
+</ul>
+<h3 id="4.--Convert-to-PDF:">4.  <strong>Convert to PDF:</strong><a class="anchor-link" href="#4.--Convert-to-PDF:">¶</a></h3><ul>
+<li>Once you have the HTML with the TOC, convert it to PDF as before.</li>
+</ul>
+<p>Here’s a Python script that implements these steps:</p>
+<h4 id="Step-1:-Install-Necessary-Libraries"><strong>Step 1: Install Necessary Libraries</strong><a class="anchor-link" href="#Step-1:-Install-Necessary-Libraries">¶</a></h4><p>You’ll need to install the required libraries:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">beautifulsoup4</span> <span class="n">pdfkit</span>
 </pre></div>
 </div>
 </div>
@@ -8135,7 +7877,18 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>You are not an adult.
+<pre>Collecting beautifulsoup4
+  Downloading beautifulsoup4-4.12.3-py3-none-any.whl (147 kB)
+     <span class="ansi-black-intense-fg">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">147.9/147.9 KB</span> <span class="ansi-red-fg">549.8 kB/s</span> eta <span class="ansi-cyan-fg">0:00:00</span>a <span class="ansi-cyan-fg">0:00:01</span>
+Collecting pdfkit
+  Downloading pdfkit-1.0.0-py3-none-any.whl (12 kB)
+Collecting soupsieve&gt;1.2
+  Downloading soupsieve-2.6-py3-none-any.whl (36 kB)
+Installing collected packages: pdfkit, soupsieve, beautifulsoup4
+Successfully installed beautifulsoup4-4.12.3 pdfkit-1.0.0 soupsieve-2.6
+<span class="ansi-yellow-fg">WARNING: You are using pip version 22.0.4; however, version 24.2 is available.
+You should consider upgrading via the '/usr/local/bin/python3.10 -m pip install --upgrade pip' command.</span><span class="ansi-yellow-fg">
+</span>Note: you may need to restart the kernel to use updated packages.
 </pre>
 </div>
 </div>
@@ -8148,7 +7901,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Switch-Anweisung">Switch Anweisung<a class="anchor-link" href="#Switch-Anweisung">¶</a></h3><p>Die  <code>switch</code>-Anweisung bietet eine strukturierte Möglichkeit, mehrere Bedingungen zu prüfen:</p>
+<h4 id="Step-2:-Python-Script-to-Generate-TOC-and-Convert-HTML-to-PDF">Step 2: Python Script to Generate TOC and Convert HTML to PDF<a class="anchor-link" href="#Step-2:-Python-Script-to-Generate-TOC-and-Convert-HTML-to-PDF">¶</a></h4>
 </div>
 </div>
 </div>
@@ -8157,22 +7910,70 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [50]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="nb">int</span> <span class="n">day</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
-<span class="n">switch</span> <span class="p">(</span><span class="n">day</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">case</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Monday"</span><span class="p">);</span>
-        <span class="k">break</span><span class="p">;</span>
-    <span class="k">case</span> <span class="mi">2</span><span class="p">:</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Tuesday"</span><span class="p">);</span>
-        <span class="k">break</span><span class="p">;</span>
-    <span class="n">default</span><span class="p">:</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Another day"</span><span class="p">);</span>
-        <span class="k">break</span><span class="p">;</span>
-<span class="p">}</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<span class="kn">import</span> <span class="nn">pdfkit</span>
+
+<span class="c1"># Function to extract headlines from HTML</span>
+<span class="k">def</span> <span class="nf">extract_headlines</span><span class="p">(</span><span class="n">html_content</span><span class="p">,</span> <span class="n">file_index</span><span class="p">):</span>
+    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html_content</span><span class="p">,</span> <span class="s1">'html.parser'</span><span class="p">)</span>
+    <span class="n">headlines</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">'h1'</span><span class="p">,</span> <span class="s1">'h2'</span><span class="p">,</span> <span class="s1">'h3'</span><span class="p">,</span> <span class="s1">'h4'</span><span class="p">,</span> <span class="s1">'h5'</span><span class="p">,</span> <span class="s1">'h6'</span><span class="p">]:</span>
+        <span class="k">for</span> <span class="n">header</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="n">tag</span><span class="p">):</span>
+            <span class="c1"># Create an anchor link for each headline</span>
+            <span class="n">anchor</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"section_</span><span class="si">{</span><span class="n">file_index</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">headlines</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
+            <span class="n">header</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]</span> <span class="o">=</span> <span class="n">anchor</span>
+            <span class="n">headlines</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">header</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">(),</span> <span class="n">tag</span><span class="p">,</span> <span class="n">anchor</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">headlines</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">soup</span><span class="p">)</span>
+
+<span class="c1"># Function to gather all HTML files recursively</span>
+<span class="k">def</span> <span class="nf">gather_html_files</span><span class="p">(</span><span class="n">directory</span><span class="p">):</span>
+    <span class="n">html_files</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">directory</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">'.ipynb.html'</span><span class="p">):</span>
+                <span class="n">html_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">file</span><span class="p">))</span>
+    <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">html_files</span><span class="p">)</span>  <span class="c1"># Sorting ensures the order is preserved</span>
+
+<span class="c1"># Specify the top-level folder containing the HTML files</span>
+<span class="n">top_level_folder</span> <span class="o">=</span> <span class="s1">'csharp'</span>
+<span class="n">output_html</span> <span class="o">=</span> <span class="s1">'combined_with_toc.html'</span>
+
+<span class="c1"># Gather all HTML files recursively</span>
+<span class="n">html_files</span> <span class="o">=</span> <span class="n">gather_html_files</span><span class="p">(</span><span class="n">top_level_folder</span><span class="p">)</span>
+
+<span class="n">toc_entries</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">full_html_content</span> <span class="o">=</span> <span class="s2">"&lt;html&gt;&lt;head&gt;&lt;title&gt;Document with TOC&lt;/title&gt;&lt;/head&gt;&lt;body&gt;"</span>
+
+<span class="c1"># Generate the TOC and combine HTML files</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">filepath</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">html_files</span><span class="p">):</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
+        <span class="n">content</span> <span class="o">=</span> <span class="n">infile</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+        <span class="n">headlines</span><span class="p">,</span> <span class="n">updated_html</span> <span class="o">=</span> <span class="n">extract_headlines</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+        <span class="n">toc_entries</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">headlines</span><span class="p">)</span>
+        <span class="n">full_html_content</span> <span class="o">+=</span> <span class="n">updated_html</span>
+        <span class="n">full_html_content</span> <span class="o">+=</span> <span class="s1">'&lt;div style="page-break-after: always;"&gt;&lt;/div&gt;'</span>
+
+<span class="c1"># Create the TOC HTML structure</span>
+<span class="n">toc_html</span> <span class="o">=</span> <span class="s1">'&lt;h1&gt;Table of Contents&lt;/h1&gt;&lt;ul&gt;'</span>
+<span class="k">for</span> <span class="n">text</span><span class="p">,</span> <span class="n">tag</span><span class="p">,</span> <span class="n">anchor</span> <span class="ow">in</span> <span class="n">toc_entries</span><span class="p">:</span>
+    <span class="n">toc_html</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">'&lt;li&gt;&lt;a href="#</span><span class="si">{</span><span class="n">anchor</span><span class="si">}</span><span class="s1">"&gt;</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s1">&lt;/a&gt;&lt;/li&gt;'</span>
+<span class="n">toc_html</span> <span class="o">+=</span> <span class="s1">'&lt;/ul&gt;&lt;div style="page-break-after: always;"&gt;&lt;/div&gt;'</span>
+
+<span class="c1"># Add the TOC to the beginning of the document</span>
+<span class="n">full_html_content</span> <span class="o">=</span> <span class="n">toc_html</span> <span class="o">+</span> <span class="n">full_html_content</span> <span class="o">+</span> <span class="s2">"&lt;/body&gt;&lt;/html&gt;"</span>
+
+<span class="c1"># Write the combined HTML with TOC to a file</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">output_html</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
+    <span class="n">outfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">full_html_content</span><span class="p">)</span>
+
+<span class="c1"># Convert the combined HTML file with TOC to PDF</span>
+<span class="n">pdfkit</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="n">output_html</span><span class="p">,</span> <span class="s1">'output_with_toc.pdf'</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"PDF with Table of Contents has been generated as 'output_with_toc.pdf'."</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8184,8 +7985,47 @@ a.anchor-link {
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Another day
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">OSError</span>                                   Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[3], line 59</span>
+<span class="ansi-green-intense-fg ansi-bold">     56</span>     outfile<span style="color: rgb(98,98,98)">.</span>write(full_html_content)
+<span class="ansi-green-intense-fg ansi-bold">     58</span> <span style="color: rgb(95,135,135)"># Convert the combined HTML file with TOC to PDF</span>
+<span class="ansi-green-fg">---&gt; 59</span> <span class="ansi-yellow-bg">pdfkit</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">from_file</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">output_html</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">'</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">output_with_toc.pdf</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">'</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     61</span> <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">"</span><span style="color: rgb(175,0,0)">PDF with Table of Contents has been generated as </span><span style="color: rgb(175,0,0)">'</span><span style="color: rgb(175,0,0)">output_with_toc.pdf</span><span style="color: rgb(175,0,0)">'</span><span style="color: rgb(175,0,0)">.</span><span style="color: rgb(175,0,0)">"</span>)
+
+File <span class="ansi-green-fg">/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/pdfkit/api.py:51</span>, in <span class="ansi-cyan-fg">from_file</span><span class="ansi-blue-fg">(input, output_path, options, toc, cover, css, configuration, cover_first, verbose)</span>
+<span class="ansi-green-intense-fg ansi-bold">     32</span> <span style="color: rgb(175,0,0)">"""</span>
+<span class="ansi-green-intense-fg ansi-bold">     33</span> <span style="color: rgb(175,0,0)">Convert HTML file or files to PDF document</span>
+<span class="ansi-green-intense-fg ansi-bold">     34</span> 
+<span class="ansi-green-fg">   (...)</span>
+<span class="ansi-green-intense-fg ansi-bold">     45</span> <span style="color: rgb(175,0,0)">Returns: True on success</span>
+<span class="ansi-green-intense-fg ansi-bold">     46</span> <span style="color: rgb(175,0,0)">"""</span>
+<span class="ansi-green-intense-fg ansi-bold">     48</span> r <span style="color: rgb(98,98,98)">=</span> PDFKit(<span style="color: rgb(0,135,0)">input</span>, <span style="color: rgb(175,0,0)">'</span><span style="color: rgb(175,0,0)">file</span><span style="color: rgb(175,0,0)">'</span>, options<span style="color: rgb(98,98,98)">=</span>options, toc<span style="color: rgb(98,98,98)">=</span>toc, cover<span style="color: rgb(98,98,98)">=</span>cover, css<span style="color: rgb(98,98,98)">=</span>css,
+<span class="ansi-green-intense-fg ansi-bold">     49</span>            configuration<span style="color: rgb(98,98,98)">=</span>configuration, cover_first<span style="color: rgb(98,98,98)">=</span>cover_first, verbose<span style="color: rgb(98,98,98)">=</span>verbose)
+<span class="ansi-green-fg">---&gt; 51</span> <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg">r</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">to_pdf</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">output_path</span><span class="ansi-yellow-bg">)</span>
+
+File <span class="ansi-green-fg">/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/pdfkit/pdfkit.py:201</span>, in <span class="ansi-cyan-fg">PDFKit.to_pdf</span><span class="ansi-blue-fg">(self, path)</span>
+<span class="ansi-green-intense-fg ansi-bold">    199</span> stderr <span style="color: rgb(98,98,98)">=</span> stderr<span style="color: rgb(98,98,98)">.</span>decode(<span style="color: rgb(175,0,0)">'</span><span style="color: rgb(175,0,0)">utf-8</span><span style="color: rgb(175,0,0)">'</span>, errors<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(175,0,0)">'</span><span style="color: rgb(175,0,0)">replace</span><span style="color: rgb(175,0,0)">'</span>)
+<span class="ansi-green-intense-fg ansi-bold">    200</span> exit_code <span style="color: rgb(98,98,98)">=</span> result<span style="color: rgb(98,98,98)">.</span>returncode
+<span class="ansi-green-fg">--&gt; 201</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">handle_error</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">exit_code</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">stderr</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    203</span> <span style="color: rgb(95,135,135)"># Since wkhtmltopdf sends its output to stderr we will capture it</span>
+<span class="ansi-green-intense-fg ansi-bold">    204</span> <span style="color: rgb(95,135,135)"># and properly send to stdout</span>
+<span class="ansi-green-intense-fg ansi-bold">    205</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span style="color: rgb(175,0,0)">'</span><span style="color: rgb(175,0,0)">--quiet</span><span style="color: rgb(175,0,0)">'</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> args:
+
+File <span class="ansi-green-fg">/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/pdfkit/pdfkit.py:155</span>, in <span class="ansi-cyan-fg">PDFKit.handle_error</span><span class="ansi-blue-fg">(exit_code, stderr)</span>
+<span class="ansi-green-intense-fg ansi-bold">    149</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> <span class="ansi-bold" style="color: rgb(215,95,95)">IOError</span>(<span style="color: rgb(175,0,0)">'</span><span class="ansi-bold" style="color: rgb(175,95,135)">%s</span><span class="ansi-bold" style="color: rgb(175,95,0)">\n</span><span style="color: rgb(175,0,0)">'</span>
+<span class="ansi-green-intense-fg ansi-bold">    150</span>                   <span style="color: rgb(175,0,0)">'</span><span style="color: rgb(175,0,0)">You will need to run wkhtmltopdf within a </span><span style="color: rgb(175,0,0)">"</span><span style="color: rgb(175,0,0)">virtual</span><span style="color: rgb(175,0,0)">"</span><span style="color: rgb(175,0,0)"> X server.</span><span class="ansi-bold" style="color: rgb(175,95,0)">\n</span><span style="color: rgb(175,0,0)">'</span>
+<span class="ansi-green-intense-fg ansi-bold">    151</span>                   <span style="color: rgb(175,0,0)">'</span><span style="color: rgb(175,0,0)">Go to the link below for more information</span><span class="ansi-bold" style="color: rgb(175,95,0)">\n</span><span style="color: rgb(175,0,0)">'</span>
+<span class="ansi-green-intense-fg ansi-bold">    152</span>                   <span style="color: rgb(175,0,0)">'</span><span style="color: rgb(175,0,0)">https://github.com/JazzCore/python-pdfkit/wiki/Using-wkhtmltopdf-without-X-server</span><span style="color: rgb(175,0,0)">'</span> <span style="color: rgb(98,98,98)">%</span> stderr)
+<span class="ansi-green-intense-fg ansi-bold">    154</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span style="color: rgb(175,0,0)">'</span><span style="color: rgb(175,0,0)">Error</span><span style="color: rgb(175,0,0)">'</span> <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> stderr:
+<span class="ansi-green-fg">--&gt; 155</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> <span class="ansi-bold" style="color: rgb(215,95,95)">IOError</span>(<span style="color: rgb(175,0,0)">'</span><span style="color: rgb(175,0,0)">wkhtmltopdf reported an error:</span><span class="ansi-bold" style="color: rgb(175,95,0)">\n</span><span style="color: rgb(175,0,0)">'</span> <span style="color: rgb(98,98,98)">+</span> stderr)
+<span class="ansi-green-intense-fg ansi-bold">    157</span> error_msg <span style="color: rgb(98,98,98)">=</span> stderr <span class="ansi-bold" style="color: rgb(175,0,255)">or</span> <span style="color: rgb(175,0,0)">'</span><span style="color: rgb(175,0,0)">Unknown Error</span><span style="color: rgb(175,0,0)">'</span>
+<span class="ansi-green-intense-fg ansi-bold">    158</span> <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> <span class="ansi-bold" style="color: rgb(215,95,95)">IOError</span>(<span style="color: rgb(175,0,0)">"</span><span style="color: rgb(175,0,0)">wkhtmltopdf exited with non-zero code </span><span class="ansi-bold" style="color: rgb(175,95,135)">{0}</span><span style="color: rgb(175,0,0)">. error:</span><span class="ansi-bold" style="color: rgb(175,95,0)">\n</span><span class="ansi-bold" style="color: rgb(175,95,135)">{1}</span><span style="color: rgb(175,0,0)">"</span><span style="color: rgb(98,98,98)">.</span>format(exit_code, error_msg))
+
+<span class="ansi-red-fg">OSError</span>: wkhtmltopdf reported an error:
+Exit with code 1 due to network error: ProtocolUnknownError
 </pre>
 </div>
 </div>
@@ -8198,223 +8038,11 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Schleifen">Schleifen<a class="anchor-link" href="#Schleifen">¶</a></h2><h3 id="for-Schleife">for Schleife<a class="anchor-link" href="#for-Schleife">¶</a></h3><p>Die  <code>for</code>-Schleife wird verwendet, um einen Block von Anweisungen eine bestimmte Anzahl von Malen auszuführen:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [51]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>0
-1
-2
-3
-4
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="break-und-continue-Schl%C3%BCsselworte">break und continue Schlüsselworte<a class="anchor-link" href="#break-und-continue-Schl%C3%BCsselworte">¶</a></h3><p><code>break</code>  beendet die Schleife, während  <code>continue</code>  den aktuellen Schleifendurchlauf überspringt und mit dem nächsten fortfährt:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [52]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="mi">5</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>      <span class="o">//</span> <span class="n">Schleife</span> <span class="n">wird</span> <span class="n">beendet</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span> <span class="o">//</span> <span class="n">Springt</span> <span class="n">zur</span> <span class="n">nächsten</span> <span class="n">Iteration</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>1
-3
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="foreach-Schleife">foreach Schleife<a class="anchor-link" href="#foreach-Schleife">¶</a></h3><p>Die  <code>foreach</code>-Schleife durchläuft alle Elemente einer Sammlung, z.B. ein Array oder eine Liste:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [53]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">string</span><span class="p">[]</span> <span class="n">fruits</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">"Apple"</span><span class="p">,</span> <span class="s2">"Banana"</span><span class="p">,</span> <span class="s2">"Cherry"</span> <span class="p">};</span>
-<span class="n">foreach</span> <span class="p">(</span><span class="n">string</span> <span class="n">fruit</span> <span class="ow">in</span> <span class="n">fruits</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">fruit</span><span class="p">);</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Apple
-Banana
-Cherry
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="while-Schleife-und-do-Schleife">while Schleife und do Schleife<a class="anchor-link" href="#while-Schleife-und-do-Schleife">¶</a></h3><p><code>while</code>-Schleifen wiederholen eine Anweisung, solange eine Bedingung wahr ist, während  <code>do</code>-Schleifen die Anweisung mindestens einmal ausführen, bevor die Bedingung geprüft wird:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [54]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="nb">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="k">while</span> <span class="p">(</span><span class="n">count</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">count</span><span class="p">);</span>
-    <span class="n">count</span><span class="o">++</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>0
-1
-2
-3
-4
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [55]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="nb">int</span> <span class="n">count2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="n">do</span>
-<span class="p">{</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">count2</span><span class="p">);</span>
-    <span class="n">count2</span><span class="o">++</span><span class="p">;</span>
-<span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="n">count2</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>0
-1
-2
-3
-4
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Zusammenfassung">Zusammenfassung<a class="anchor-link" href="#Zusammenfassung">¶</a></h2><p>Dieses Notebook hat eine Einführung in die Grundlagen von C# gegeben, einschließlich der Syntax, Variablen, grundlegender Datentypen wie  <code>int</code>,  <code>float</code>, und  <code>double</code>, Strings, Kommentare, Operatoren, bedingte Anweisungen und Schleifen. Außerdem wurde das Konzept des Compilers erläutert, der den geschriebenen C#-Code in ausführbaren Maschinencode übersetzt. C# ist eine vielseitige und leistungsfähige Sprache, die sich für viele verschiedene Arten von Anwendungen eignet.</p>
+<h3 id="Requirements:"><strong>Requirements:</strong><a class="anchor-link" href="#Requirements:">¶</a></h3><ol>
+<li><strong>wkhtmltopdf:</strong>  Make sure  <code>wkhtmltopdf</code>  is installed on your system for  <code>pdfkit</code>  to work. You can download it from  wkhtmltopdf.org.</li>
+<li><strong>HTML Structure:</strong>  Ensure that your HTML files are well-formed, with proper heading tags for the TOC to be generated accurately.</li>
+</ol>
+<p>This script will produce a PDF with a generated Table of Contents at the beginning, linking to all the headlines within your HTML files.</p>
 </div>
 </div>
 </div>
