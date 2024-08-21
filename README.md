@@ -8,7 +8,7 @@ Code zu Lernvideos im Youtube-Kanal [2handsbyjohannesglück](https://www.youtube
 
 Hier findest Du die Unterlagen zu meiner Veranstaltung in Umweltinformatik an der HTW Berlin.
 
-* [Vorlesung Programmieren 1 in der Umweltinformatik (Wintersemester)](Programmieren1.de.ipynb)
+* [Vorlesung Programmieren 1 in der Umweltinformatik (Wintersemester)](notebooks/programming/Programmieren1.de.ipynb)
 
 ## Copyright
 
