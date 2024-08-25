@@ -7751,11 +7751,13 @@ In einem Spiel wie TicTacToe stellt das Spielbrett ein 3x3-Raster dar. Jedes Fel
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <details>
 <summary>Ausführliche Erklärung...</summary>
--   **Initialisierung des Spielbretts:**
-
-<pre><code>-   Ein 3x3-Array (Liste von Listen) wird erstellt, um das TicTacToe-Spielfeld zu repräsentieren.
--   Jedes Feld des Arrays wird mit einem Leerzeichen (`' '`) initialisiert, was ein leeres Spielfeld darstellt.</code></pre>
 <ul>
+<li><p><strong>Initialisierung des Spielbretts:</strong></p>
+<ul>
+<li>Ein 3x3-Array (Liste von Listen) wird erstellt, um das TicTacToe-Spielfeld zu repräsentieren.</li>
+<li>Jedes Feld des Arrays wird mit einem Leerzeichen (<code>' '</code>) initialisiert, was ein leeres Spielfeld darstellt.</li>
+</ul>
+</li>
 <li><p><strong>Beispielhafte Spielzüge:</strong></p>
 <ul>
 <li><code>spielbrett[0][0] = 'X'</code>: Spieler X setzt seine Spielfigur in die obere linke Position des Spielfeldes.</li>
@@ -7839,10 +7841,12 @@ TicTacToe hat klare Regeln, die durch verschiedene Bedingungen und Wiederholunge
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <details>
 <summary>Ausführliche Erklärung...</summary>
--   **Initialisierung der Variable  `gefunden`:**
-
-<pre><code>-   Zu Beginn wird die Variable  `gefunden`  auf  `False`  gesetzt. Diese Variable dient als Flag, um festzustellen, ob eine Zeile mit drei gleichen Zeichen gefunden wurde.</code></pre>
 <ul>
+<li><p><strong>Initialisierung der Variable  <code>gefunden</code>:</strong></p>
+<ul>
+<li>Zu Beginn wird die Variable  <code>gefunden</code>  auf  <code>False</code>  gesetzt. Diese Variable dient als Flag, um festzustellen, ob eine Zeile mit drei gleichen Zeichen gefunden wurde.</li>
+</ul>
+</li>
 <li><p><strong>Schleife über das Spielbrett (<code>for reihe in spielbrett</code>):</strong></p>
 <ul>
 <li>Der Code durchläuft jede Zeile (<code>reihe</code>) des 2D-Arrays  <code>spielbrett</code>.</li>
@@ -8023,9 +8027,9 @@ Unentschieden!
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <details>
 <summary>Ausführliche Erklärung...</summary>
--   **Spielstart:**  Die Funktion  `spiel_starten`  initialisiert das Spielfeld und gibt es zurück. Dies ist ähnlich wie eine Initialisierungsphase, in der alle relevanten Parameter vorbereitet werden.
-
 <ul>
+<li><p><strong>Spielstart:</strong>  Die Funktion  <code>spiel_starten</code>  initialisiert das Spielfeld und gibt es zurück. Dies ist ähnlich wie eine Initialisierungsphase, in der alle relevanten Parameter vorbereitet werden.</p>
+</li>
 <li><p><strong>Spielzug:</strong>  In der Funktion  <code>spielzug_machen</code>  wird der Spieler aufgefordert, eine Zeile und eine Spalte zu wählen. Es wird geprüft, ob das gewählte Feld leer ist. Falls nicht, muss der Spieler einen anderen Zug machen. Diese Phase umfasst die Regeln für gültige Züge.</p>
 </li>
 <li><p><strong>Spielende:</strong>  Die Funktion  <code>spiel_ende</code>  überprüft, ob ein Spieler gewonnen hat oder ob das Spiel unentschieden ist. Dies entspricht der Endphase des Spiels, in der überprüft wird, ob eine der Gewinnbedingungen erfüllt wurde.</p>
@@ -8129,9 +8133,9 @@ Das Feld ist bereits belegt. Wähle ein anderes Feld.
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <details>
 <summary>Ausführliche Erklärung...</summary>
--   **Arithmetik beim Zählen der Spielzüge:**  In der Funktion  `spielzug_machen`  wird der Zähler  `zug_zaehler`  nach jedem gültigen Spielzug um 1 erhöht. Dies entspricht der Verwendung von arithmetischen Operationen wie Addition, um den Fortschritt des Spiels zu verfolgen.
-
 <ul>
+<li><p><strong>Arithmetik beim Zählen der Spielzüge:</strong>  In der Funktion  <code>spielzug_machen</code>  wird der Zähler  <code>zug_zaehler</code>  nach jedem gültigen Spielzug um 1 erhöht. Dies entspricht der Verwendung von arithmetischen Operationen wie Addition, um den Fortschritt des Spiels zu verfolgen.</p>
+</li>
 <li><p><strong>Arithmetische Bedingung für Unentschieden:</strong>  Die Funktion  <code>check_unentschieden</code>  überprüft, ob genau 9 Züge gemacht wurden, indem sie den Wert von  <code>zug_zaehler</code>  vergleicht. Dies ist ein Beispiel für eine arithmetische Bedingung, die eine Regel im Spiel steuert.</p>
 </li>
 <li><p><strong>Vergleich mit Arithmetik in Python:</strong>  Diese arithmetischen Operationen (z.B. Zählen, Vergleichen) sind in Python genauso nützlich wie in den Spielregeln, da sie den Zustand verwalten und Entscheidungen im Spiel beeinflussen.</p>
@@ -8223,9 +8227,9 @@ In einem Spiel wie TicTacToe können Dictionaries verwendet werden, um Informati
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <details>
 <summary>Ausführliche Erklärung...</summary>
--   **Datenstruktur Dictionary:**  Hier wird ein Dictionary  `spielstatistik`  verwendet, um die Anzahl der Siege für "Spieler X", "Spieler O" und "Unentschieden" zu speichern. Die Schlüssel sind die Namen der Spielergebnisse, und die Werte sind die Anzahl der Siege.
-
 <ul>
+<li><p><strong>Datenstruktur Dictionary:</strong>  Hier wird ein Dictionary  <code>spielstatistik</code>  verwendet, um die Anzahl der Siege für "Spieler X", "Spieler O" und "Unentschieden" zu speichern. Die Schlüssel sind die Namen der Spielergebnisse, und die Werte sind die Anzahl der Siege.</p>
+</li>
 <li><p><strong>Arbeiten mit Schlüsseln und Werten:</strong>  In der Funktion  <code>aktualisiere_statistik</code>  wird der Zähler für den Gewinner anhand des Schlüssels im Dictionary um 1 erhöht. Dies zeigt, wie einfach und flexibel der Zugriff auf Daten mit einem Dictionary ist.</p>
 </li>
 <li><p><strong>Vergleich mit Datenstrukturen in Python:</strong>  Ein Dictionary in Python bietet im Vergleich zu einfachen Listen oder Arrays den Vorteil, dass Daten klar strukturiert und leicht zugänglich sind, insbesondere wenn sie komplexer werden. Durch die Verwendung von Schlüsseln ist der Zugriff auf spezifische Daten sehr effizient und leicht nachvollziehbar.</p>
