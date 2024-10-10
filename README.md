@@ -2,7 +2,7 @@
 
 JederKannCoden is german for everybodyCanCode.
 
-Code zu Lernvideos im Youtube-Kanal [2handsbyjohannesglück](https://www.youtube.com/@2handsbyjohannesgluck40)
+Code zu Lernvideos im Youtube-Kanal [2handsbyjohannesglück](https://www.youtube.com/@2handsbyjohannesgluck40) (WiP)
 
 ## Lehre an der HTW (lecture @HTW)
 

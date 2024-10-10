@@ -7518,7 +7518,63 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h1 id="Programmierung-und-Tic-Tac-Toe">Programmierung und Tic-Tac-Toe<a class="anchor-link" href="#Programmierung-und-Tic-Tac-Toe">¶</a></h1><img alt="No description has been provided for this image" src="Programming_And_TicTacToe.webp" style="width:280px; height:280px;"/>
 <h2 id="Einleitung:-Die-Spielregeln-von-Tic-Tac-Toe">Einleitung: Die Spielregeln von Tic-Tac-Toe<a class="anchor-link" href="#Einleitung:-Die-Spielregeln-von-Tic-Tac-Toe">¶</a></h2><p>Tic-Tac-Toe ist ein einfaches und beliebtes Spiel, das auf einem 3x3-Raster gespielt wird. Zwei Spieler, normalerweise als „X“ und „O“ bezeichnet, platzieren abwechselnd ihre Symbole auf dem Raster. Das Ziel ist es, eine Reihe von drei eigenen Symbolen in einer Reihe, Spalte oder Diagonale zu bilden. Der erste Spieler, der dies erreicht, gewinnt das Spiel. Wenn alle Zellen des Rasters besetzt sind und niemand gewonnen hat, endet das Spiel unentschieden.</p>
-<h2 id="Grundlegende-Programmierkonzepte-mit-Tic-Tac-Toe">Grundlegende Programmierkonzepte mit Tic-Tac-Toe<a class="anchor-link" href="#Grundlegende-Programmierkonzepte-mit-Tic-Tac-Toe">¶</a></h2><h3 id="1.-Navigation-durch-den-Text">1. Navigation durch den Text<a class="anchor-link" href="#1.-Navigation-durch-den-Text">¶</a></h3><ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<details>
+<summary>Diagramm...</summary>
+<div class="jp-Mermaid"><pre class="mermaid">
+graph TD;
+    A[Start] --&gt; B[Board initialisieren]
+    B --&gt; C{Ist das Spiel beendet?}
+    C --&gt;|Ja| D[Beende das Spiel]
+    C --&gt;|Nein| E{Ist es X's Zug?}
+    E --&gt;|Ja| F[X wählt ein Feld]
+    F --&gt; G{Hat X gewonnen?}
+    G --&gt;|Ja| D[Beende das Spiel]
+    G --&gt;|Nein| H{Ist das Board voll?}
+    H --&gt;|Ja| D[Beende das Spiel]
+    H --&gt;|Nein| E
+    E --&gt;|Nein| I[O wählt ein Feld]
+    I --&gt; J{Hat O gewonnen?}
+    J --&gt;|Ja| D[Beende das Spiel]
+    J --&gt;|Nein| K{Ist das Board voll?}
+    K --&gt;|Ja| D[Beende das Spiel]
+    K --&gt;|Nein| E
+</pre></div></details>
+<details>
+<summary>Schrittweiser Ablauf...</summary>
+<ol>
+<li><strong>Start</strong>: Das Spiel beginnt.</li>
+<li><strong>Board initialisieren</strong>: Ein leeres Spielfeld wird erstellt.</li>
+<li><strong>Ist das Spiel beendet?</strong>: Überprüfung, ob das Spiel zu Ende ist.</li>
+<li><strong>Ist es X's Zug?</strong>: Bestimmt, ob der Spieler X an der Reihe ist.</li>
+<li><strong>X wählt ein Feld</strong>: Spieler X wählt ein Feld auf dem Board.</li>
+<li><strong>Hat X gewonnen?</strong>: Überprüfung, ob Spieler X gewonnen hat.</li>
+<li><strong>Ist das Board voll?</strong>: Überprüfung, ob das Spielfeld voll ist.</li>
+<li><strong>O wählt ein Feld</strong>: Wenn es nicht X's Zug ist, wählt Spieler O ein Feld.</li>
+<li><strong>Hat O gewonnen?</strong>: Überprüfung, ob Spieler O gewonnen hat.</li>
+<li><strong>Ende</strong>: Das Spiel wird beendet, wenn ein Spieler gewonnen hat oder das Board voll ist.</li></ol></details>
+
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Grundlegende-Programmierkonzepte-mit-Tic-Tac-Toe">Grundlegende Programmierkonzepte mit Tic-Tac-Toe<a class="anchor-link" href="#Grundlegende-Programmierkonzepte-mit-Tic-Tac-Toe">¶</a></h2><h3 id="Navigation-durch-den-Text">Navigation durch den Text<a class="anchor-link" href="#Navigation-durch-den-Text">¶</a></h3><ul>
 <li><strong>Schrittweises Verständnis:</strong>  Spielregeln werden schrittweise gelesen und verstanden, ähnlich wie ein Algorithmus.</li>
 <li><strong>Sequentielle Verarbeitung:</strong>  Ein Python-Interpreter verarbeitet den Code zeichenweise und zeilenweise, ähnlich wie ein Mensch die Spielregeln sequentiell liest.</li>
 <li><strong>Unterschied:</strong>  Der Mensch versteht das Regelwerk global, während der Interpreter den Code strikt sequenziell abarbeitet.</li>
@@ -7529,7 +7585,7 @@ Wenn man Spielregeln wie die von TicTacToe liest, erfolgt der Prozess schrittwei
 
 <p>Ähnlich dazu verarbeitet ein Python-Interpreter den Code zeichenweise und zeilenweise. Der Interpreter liest den Code, zerlegt ihn in Einheiten (Tokens) und führt dann die entsprechenden Anweisungen aus. Dies geschieht streng sequentiell, wobei jede Zeile Code analysiert und ausgeführt wird, bevor zur nächsten Zeile übergegangen wird. Die Bedeutung der Zeichen (Tokens) wird basierend auf den Sprachregeln von Python interpretiert.</p>
 </details>
-<h4 id="Codebeispiel:">Codebeispiel:<a class="anchor-link" href="#Codebeispiel:">¶</a></h4><p>Hier ist eine einfache Version des TicTacToe-Spiels, die nur den Ablauf einer Runde als lesbaren Text ausgibt:</p>
+<p>Hier ist eine einfache Version des TicTacToe-Spiels, die nur den Ablauf einer Runde als lesbaren Text ausgibt:</p>
 </div>
 </div>
 </div>
@@ -7538,7 +7594,7 @@ Wenn man Spielregeln wie die von TicTacToe liest, erfolgt der Prozess schrittwei
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Textbasierte TicTacToe-Spielsimulation ohne Methoden</span>
@@ -7669,28 +7725,45 @@ Spiel beendet.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="2.-Datentypen-&amp;-Variablen">2. <strong>Datentypen &amp; Variablen</strong><a class="anchor-link" href="#2.-Datentypen-&amp;-Variablen">¶</a></h3><ul>
+<p><a href="csharp/CSharp_Introduction.de.html">Einführung in C#</a> →</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Datentypen-und-Variablen"><strong>Datentypen und Variablen</strong><a class="anchor-link" href="#Datentypen-und-Variablen">¶</a></h3><ul>
 <li>Das TicTacToe-Spielbrett kann als 2D-Array (Liste von Listen) gespeichert werden.</li>
 <li>Jede Zelle des Arrays repräsentiert den Zustand eines Spielfeldes (leer, X, O).</li>
-<li>In Python werden Variablen und Datentypen genutzt, um den Spielstand zu speichern und zu verwalten.</li>
+<li>In Programmiersprachen können Variablen und Datentypen genutzt werden, um den Spielstand zu speichern und zu verwalten.</li>
 <li>Durch das Aktualisieren der Datenstruktur (Liste von Listen) wird der Spielstand im Programm gespeichert.</li>
 <li>Der Spielstand kann durch eine Funktion ausgegeben und damit für die Spieler sichtbar gemacht werden.</li>
+<li><code>Integer</code>-Variablen können zur Zählung von Zügen oder zum Speichern von Spielergebnissen verwendet werden.</li>
 </ul>
-<details>
-<summary>Ausführliche Erklärung...</summary>
-In einem Spiel wie TicTacToe stellt das Spielbrett ein 3x3-Raster dar. Jedes Feld dieses Rasters kann leer sein oder von einer Spielfigur (X oder O) besetzt werden. Um den aktuellen Spielstand zu speichern, kann man ein 2D-Array (Liste von Listen) verwenden. Jede Position in diesem Array repräsentiert dabei eine Position auf dem Spielfeld. In Python könnten wir beispielsweise eine Liste von Listen verwenden, um den Zustand des Spiels zu speichern. Der Typ der Variablen in jeder Zelle könnte entweder ein Zeichen (`'X'`, `'O'`) oder ein Leerzeichen (`' '`) sein, um ein unbesetztes Feld darzustellen.
+<details> <summary>Ausführliche Erklärung...</summary> In einem Spiel wie TicTacToe stellt das Spielbrett ein 3x3-Raster dar. Jedes Feld dieses Rasters kann leer sein oder von einer Spielfigur (X oder O) besetzt werden. Um den aktuellen Spielstand zu speichern, kann man ein 2D-Array (Liste von Listen) verwenden. Jede Position in diesem Array repräsentiert dabei eine Position auf dem Spielfeld. In Python könnten wir beispielsweise eine Liste von Listen verwenden, um den Zustand des Spiels zu speichern. Der Typ der Variablen in jeder Zelle könnte entweder ein Zeichen (`'X'`, `'O'`) oder ein Leerzeichen (`' '`) sein, um ein unbesetztes Feld darzustellen.
+
+<p>Zusätzlich können  <code>Integer</code>-Variablen genutzt werden, um Zähler für die Anzahl der Züge oder die Anzahl der gewonnenen Spiele zu speichern. Beispielsweise könnte eine Variable  <code>move_count</code>  verwendet werden, um die Anzahl der bereits getätigten Züge zu zählen. Der Wert dieser Variablen erhöht sich nach jedem Zug um eins, was es ermöglicht, den Fortschritt des Spiels nachzuvollziehen und mögliche Gewinnbedingungen zu überprüfen.</p>
 </details>
-<p><strong>Konzept:</strong> Datentypen definieren die Art der Daten, die in Variablen gespeichert werden können.</p>
+<p><strong>Konzept:</strong>  Datentypen definieren die Art der Daten, die in Variablen gespeichert werden können.</p>
 <p><strong>Beispiel in Tic-Tac-Toe:</strong></p>
 <ol>
-<li><p><strong>Datentyp <code>List</code> für das Board:</strong></p>
+<li><p><strong>Datentyp  <code>List</code>  für das Board:</strong></p>
 <ul>
-<li>Das <code>board</code> ist eine Liste von Listen (2D-Array), wobei jede innere Liste eine Reihe des Boards darstellt. Die Elemente der Listen sind Zeichen (<code>'X'</code>, <code>'O'</code> oder <code>' '</code>).</li>
+<li>Das  <code>board</code>  ist eine Liste von Listen (2D-Array), wobei jede innere Liste eine Reihe des Boards darstellt. Die Elemente der Listen sind Zeichen (<code>'X'</code>,  <code>'O'</code>  oder  <code>' '</code>).</li>
 </ul>
 </li>
-<li><p><strong>Datentyp <code>String</code> für die Spielerzeichen:</strong></p>
+<li><p><strong>Datentyp  <code>String</code>  für die Spielerzeichen:</strong></p>
 <ul>
-<li>Die Spielerzeichen sind Strings (<code>'X'</code> und <code>'O'</code>), die in den Zellen des Boards gespeichert werden.</li>
+<li>Die Spielerzeichen sind Strings (<code>'X'</code>  und  <code>'O'</code>), die in den Zellen des Boards gespeichert werden.</li>
+</ul>
+</li>
+<li><p><strong>Datentyp  <code>Integer</code>  für Zählvariablen:</strong></p>
+<ul>
+<li><code>Integer</code>  kann verwendet werden, um Zähler für die Anzahl der Züge oder die Anzahl der gewonnenen Spiele zu speichern. Beispielsweise könnte eine Variable  <code>move_count</code>  verwendet werden, um die Anzahl der bereits getätigten Züge zu zählen. Der Wert dieser Variablen erhöht sich nach jedem Zug um eins.</li>
 </ul>
 </li>
 </ol>
@@ -7703,7 +7776,7 @@ In einem Spiel wie TicTacToe stellt das Spielbrett ein 3x3-Raster dar. Jedes Fel
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Initialisierung des Spielbretts als 3x3-Array</span>
@@ -7713,15 +7786,18 @@ In einem Spiel wie TicTacToe stellt das Spielbrett ein 3x3-Raster dar. Jedes Fel
     <span class="p">[</span><span class="s1">' '</span><span class="p">,</span> <span class="s1">' '</span><span class="p">,</span> <span class="s1">' '</span><span class="p">]</span>
 <span class="p">]</span>
 
+<span class="c1"># Zähler für die erste Zeile</span>
+<span class="n">erste_zeile_index</span> <span class="o">=</span> <span class="mi">0</span>
+
 <span class="c1"># Beispielhafte Spielzüge</span>
 <span class="n">spielbrett</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'X'</span>  <span class="c1"># Spieler X setzt auf die obere linke Position</span>
 <span class="n">spielbrett</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'O'</span>  <span class="c1"># Spieler O setzt auf die mittlere Position</span>
 <span class="n">spielbrett</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'X'</span>  <span class="c1"># Spieler X setzt auf die untere rechte Position</span>
 
 <span class="c1"># Ausgabe des Spielbretts</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">spielbrett</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="s2">" "</span><span class="o">+</span><span class="n">spielbrett</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="s2">" "</span><span class="o">+</span><span class="n">spielbrett</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># Ausgabe der ersten Zeile</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">spielbrett</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="s2">" "</span><span class="o">+</span><span class="n">spielbrett</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="s2">" "</span><span class="o">+</span><span class="n">spielbrett</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># Ausgabe der zweiten Zeile</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">spielbrett</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="s2">" "</span><span class="o">+</span><span class="n">spielbrett</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="s2">" "</span><span class="o">+</span><span class="n">spielbrett</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># Ausgabe der dritten Zeile</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">spielbrett</span><span class="p">[</span><span class="n">erste_zeile_index</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s2">" "</span> <span class="o">+</span> <span class="n">spielbrett</span><span class="p">[</span><span class="n">erste_zeile_index</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s2">" "</span> <span class="o">+</span> <span class="n">spielbrett</span><span class="p">[</span><span class="n">erste_zeile_index</span><span class="p">][</span><span class="mi">2</span><span class="p">])</span>  <span class="c1"># Ausgabe der ersten Zeile</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">spielbrett</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s2">" "</span> <span class="o">+</span> <span class="n">spielbrett</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s2">" "</span> <span class="o">+</span> <span class="n">spielbrett</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">])</span>  <span class="c1"># Ausgabe der zweiten Zeile</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">spielbrett</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s2">" "</span> <span class="o">+</span> <span class="n">spielbrett</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s2">" "</span> <span class="o">+</span> <span class="n">spielbrett</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">2</span><span class="p">])</span>  <span class="c1"># Ausgabe der dritten Zeile</span>
 </pre></div>
 </div>
 </div>
@@ -7752,37 +7828,104 @@ In einem Spiel wie TicTacToe stellt das Spielbrett ein 3x3-Raster dar. Jedes Fel
 <details>
 <summary>Ausführliche Erklärung...</summary>
 <ul>
-<li><p><strong>Initialisierung des Spielbretts:</strong></p>
+<li><p><strong>Initialisierung des Spielbretts</strong>:</p>
 <ul>
-<li>Ein 3x3-Array (Liste von Listen) wird erstellt, um das TicTacToe-Spielfeld zu repräsentieren.</li>
-<li>Jedes Feld des Arrays wird mit einem Leerzeichen (<code>' '</code>) initialisiert, was ein leeres Spielfeld darstellt.</li>
+<li>Der Code erstellt ein 2D-Array (Liste von Listen) namens  <code>spielbrett</code>, das ein 3x3-Raster darstellt, welches dem TicTacToe-Spielbrett entspricht.</li>
+<li>Zu Beginn wird jede Zelle des Arrays mit einem Leerzeichen (<code>' '</code>) initialisiert, um anzuzeigen, dass das Spielfeld leer ist.</li>
 </ul>
 </li>
-<li><p><strong>Beispielhafte Spielzüge:</strong></p>
+<li><p><strong>Zähler für die erste Zeile</strong>:</p>
 <ul>
-<li><code>spielbrett[0][0] = 'X'</code>: Spieler X setzt seine Spielfigur in die obere linke Position des Spielfeldes.</li>
-<li><code>spielbrett[1][1] = 'O'</code>: Spieler O setzt seine Spielfigur in die mittlere Position des Spielfeldes.</li>
-<li><code>spielbrett[2][2] = 'X'</code>: Spieler X setzt seine Spielfigur in die untere rechte Position des Spielfeldes.</li>
+<li>Eine Variable namens  <code>erste_zeile_index</code>  wird deklariert und auf  <code>0</code>  gesetzt. Diese Variable dient dazu, die Indizierung für die erste Zeile des Spielbretts zu speichern.</li>
+<li>In Python beginnt die Indizierung von Listen bei  <code>0</code>, sodass die erste Zeile des Arrays  <code>spielbrett</code>  tatsächlich  <code>spielbrett[0]</code>  entspricht.</li>
 </ul>
 </li>
-<li><p><strong>Ausgabe des Spielbretts:</strong></p>
+<li><p><strong>Beispielhafte Spielzüge</strong>:</p>
 <ul>
-<li><code>print(spielbrett[0][0]+" "+spielbrett[0][1]+" "+spielbrett[0][2])</code>: Ausgabe der ersten Zeile des Spielbretts.</li>
-<li><code>print(spielbrett[1][0]+" "+spielbrett[1][1]+" "+spielbrett[1][2])</code>: Ausgabe der zweiten Zeile des Spielbretts.</li>
-<li><code>print(spielbrett[2][0]+" "+spielbrett[2][1]+" "+spielbrett[2][2])</code>: Ausgabe der dritten Zeile des Spielbretts.</li></ul></li></ul></details>
+<li>Im Code werden drei Spielzüge durchgeführt:<ul>
+<li>Spieler X setzt ein X in die obere linke Position des Spielbretts (0. Zeile, 0. Spalte).</li>
+<li>Spieler O setzt ein O in die mittlere Position des Spielbretts (1. Zeile, 1. Spalte).</li>
+<li>Spieler X setzt ein X in die untere rechte Position des Spielbretts (2. Zeile, 2. Spalte).</li>
+</ul>
+</li>
+<li>Diese Zuweisungen aktualisieren den Zustand des Spielbretts entsprechend den Spielzügen der Spieler.</li>
+</ul>
+</li>
+<li><p><strong>Ausgabe des Spielbretts</strong>:</p>
+<ul>
+<li>Der aktuelle Zustand des Spielbretts wird ausgegeben.</li>
+<li>Die erste Zeile wird mit Hilfe der  <code>erste_zeile_index</code>-Variable ausgegeben, indem die Werte der ersten Zeile in einen String kombiniert werden.</li>
+<li>Für die zweite und dritte Zeile werden die Indizes direkt verwendet, um die Werte der entsprechenden Zeilen auszugeben.</li>
+<li>Das Ergebnis zeigt den aktuellen Zustand des Spielbretts in der Konsole, sodass die Spieler den Fortschritt des Spiels sehen können.</li></ul></li></ul></details>
 
 
 
 
-<h3 id="3.-Kontrollstrukturen">3. <strong>Kontrollstrukturen</strong><a class="anchor-link" href="#3.-Kontrollstrukturen">¶</a></h3><ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Tic-Tac-Toe-Gitter-mit-Indizes">Tic Tac Toe Gitter mit Indizes<a class="anchor-link" href="#Tic-Tac-Toe-Gitter-mit-Indizes">¶</a></h4><table>
+<thead>
+<tr>
+<th><code>[0,0]</code></th>
+<th><code>[0,1]</code></th>
+<th><code>[0,2]</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[1,0]</code></td>
+<td><code>[1,1]</code></td>
+<td><code>[1,2]</code></td>
+</tr>
+<tr>
+<td><code>[2,0]</code></td>
+<td><code>[2,1]</code></td>
+<td><code>[2,2]</code></td>
+</tr>
+</tbody>
+</table>
+<h5 id="Erkl%C3%A4rung:">Erklärung:<a class="anchor-link" href="#Erkl%C3%A4rung:">¶</a></h5><ul>
+<li>Jede Zelle wird durch ihren Zeilen- und Spaltenindex dargestellt, wobei die obere linke Ecke als <code>[0,0]</code> bezeichnet ist.</li>
+<li>Die Zeilen sind von 0 bis 2 und die Spalten sind ebenfalls von 0 bis 2 indiziert.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><a href="csharp/CSharp_Introduction.de.html#Das-Konzept-einer-Variablen">Das Konzept einer Variablen in C#</a> →</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Kontrollstrukturen"><strong>Kontrollstrukturen</strong><a class="anchor-link" href="#Kontrollstrukturen">¶</a></h3><ul>
 <li>Spielregeln in TicTacToe werden durch Bedingungen und Schleifen gesteuert.</li>
 <li><code>if</code>-Bedingungen prüfen bestimmte Situationen (z.B. Sieg, ungültige Züge).</li>
-<li><code>while</code>-Schleifen steuern den Spielfluss, bis eine Endbedingung (Sieg, Unentschieden) erreicht ist.</li>
-<li>Kontrollstrukturen in Python (z.B.  <code>if</code>,  <code>while</code>) setzen diese Regeln um, um den Spielstand zu prüfen und das Spiel zu steuern.</li>
+<li><code>for</code>-Schleifen steuern den Spielfluss, bis eine Endbedingung (Sieg, Unentschieden) erreicht ist.</li>
+<li>Kontrollstrukturen in Python (z.B.  <code>if</code>,  <code>for</code>) setzen diese Regeln um, um den Spielstand zu prüfen und das Spiel zu steuern.</li>
 </ul>
 <details>
 <summary>Ausführliche Erklärung...</summary>
-TicTacToe hat klare Regeln, die durch verschiedene Bedingungen und Wiederholungen gesteuert werden können. Beispielsweise muss überprüft werden, ob ein Spieler gewonnen hat, ob das Spielfeld voll ist oder ob ein Zug erlaubt ist. Diese Regeln lassen sich gut mit den Kontrollstrukturen in Python umsetzen. Mit `if`-Bedingungen können wir bestimmte Situationen (z.B. Siegbedingungen) behandeln, während Schleifen (wie `while`) verwendet werden, um das Spiel so lange laufen zu lassen, bis eine Endbedingung (z.B. Sieg oder Unentschieden) erreicht ist.
+TicTacToe hat klare Regeln, die durch verschiedene Bedingungen und Wiederholungen gesteuert werden können. Beispielsweise muss überprüft werden, ob ein Spieler gewonnen hat, ob das Spielfeld voll ist oder ob ein Zug erlaubt ist. Diese Regeln lassen sich gut mit den Kontrollstrukturen in Python umsetzen. Mit `if`-Bedingungen können wir bestimmte Situationen (z.B. Siegbedingungen) behandeln, während Schleifen (wie `for`) verwendet werden, um das Spiel so lange laufen zu lassen, bis eine Endbedingung (z.B. Sieg oder Unentschieden) erreicht ist.
 </details>
 <p><strong>Konzept:</strong> Kontrollstrukturen steuern den Ablauf eines Programms, wie Bedingungen und Schleifen.</p>
 <p><strong>Beispiel in Tic-Tac-Toe:</strong></p>
@@ -7882,7 +8025,19 @@ TicTacToe hat klare Regeln, die durch verschiedene Bedingungen und Wiederholunge
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="4.-Funktionen">4. <strong>Funktionen</strong><a class="anchor-link" href="#4.-Funktionen">¶</a></h3><ul>
+<p><a href="csharp/CSharp_Introduction.de.html#bedingte-anweisungen">Bedingte Anweisungen in C#</a> →</p>
+<p><a href="csharp/CSharp_Introduction.de.html#schleifen">Schleifen in C#</a> →</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Funktionen"><strong>Funktionen</strong><a class="anchor-link" href="#Funktionen">¶</a></h3><ul>
 <li>Spielregeln werden in verschiedene Phasen unterteilt (Spielstart, Spielzug, Spielende).</li>
 <li>Jede Phase hat eigene Regeln und Aufgaben.</li>
 <li>Ähnlich wie Funktionen in Python, die spezifische Aufgaben übernehmen und durch Namensgebung und Struktur Zusammenhänge verdeutlichen.</li>
@@ -8048,7 +8203,7 @@ Unentschieden!
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="5.-Arithmetik">5. Arithmetik<a class="anchor-link" href="#5.-Arithmetik">¶</a></h3><ul>
+<h3 id="Arithmetik"><strong>Arithmetik</strong><a class="anchor-link" href="#Arithmetik">¶</a></h3><ul>
 <li>Arithmetische Operationen helfen, Spielregeln zu verwalten, z.B. das Zählen von Zügen oder das Berechnen von Positionen.</li>
 <li>Arithmetik wird genutzt, um Regeln zu steuern, wie z.B. das Erkennen eines Unentschiedens nach einer bestimmten Anzahl von Zügen.</li>
 <li>In Python entsprechen diese Operationen typischen arithmetischen Berechnungen wie Addition, Subtraktion und Vergleichen, um Zustände im Spiel zu verwalten.</li>
@@ -8142,7 +8297,17 @@ Das Feld ist bereits belegt. Wähle ein anderes Feld.
 </li></ul></details>
 
 
-<h3 id="6.-Datenstrukturen">6. <strong>Datenstrukturen</strong><a class="anchor-link" href="#6.-Datenstrukturen">¶</a></h3><ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Komplexere-Datenstrukturen"><strong>Komplexere Datenstrukturen</strong><a class="anchor-link" href="#Komplexere-Datenstrukturen">¶</a></h3><ul>
 <li>Datenstrukturen wie Dictionaries speichern Informationen in Schlüssel-Wert-Paaren.</li>
 <li>Sie ermöglichen schnellen Zugriff auf Daten über eindeutige Schlüssel.</li>
 <li>In Python sind Dictionaries nützlich für komplexe Spielzustände, z.B. das Speichern von Spielergebnissen oder Statistiken.</li>
@@ -8257,7 +8422,7 @@ In einem Spiel wie TicTacToe können Dictionaries verwendet werden, um Informati
 </li>
 <li><p><strong>Arithmetik in Regeln:</strong>  Arithmetische Operationen helfen, Spielregeln umzusetzen, wie das Zählen der Züge oder das Erkennen eines Unentschiedens. In Python entsprechen diese Operationen typischen Berechnungen wie Addition und Vergleichsoperationen.</p>
 </li>
-<li><p><strong>Datenstrukturen (Dictionary):</strong>  Dictionaries in Python speichern Daten in Schlüssel-Wert-Paaren und bieten schnellen Zugriff auf komplexe Spielinformationen, wie z.B. Spielergebnisse. Sie sind nützlich, um strukturierte und flexible Datenverwaltung im Spiel zu ermöglichen.</p>
+<li><p><strong>Komplexere Datenstrukturen (Dictionary):</strong>  Dictionaries in Python speichern Daten in Schlüssel-Wert-Paaren und bieten schnellen Zugriff auf komplexe Spielinformationen, wie z.B. Spielergebnisse. Sie sind nützlich, um strukturierte und flexible Datenverwaltung im Spiel zu ermöglichen.</p>
 </li>
 </ul>
 </div>
