@@ -7883,6 +7883,70 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Ternary-Operator-in-C%23">Ternary Operator in C#<a class="anchor-link" href="#Ternary-Operator-in-C%23">¶</a></h2><p>Der <strong>ternäre Operator</strong> in C# ist eine kompakte Möglichkeit, eine Bedingung zu prüfen und basierend darauf einen von zwei Werten zurückzugeben. Der ternäre Operator wird auch als <strong>bedingter Operator</strong> bezeichnet, da er auf einer Bedingung (<code>true</code> oder <code>false</code>) basiert. Er hat die folgende Syntax:</p>
+<div class="highlight"><pre><span></span><span class="n">condition</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">value_if_true</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">value_if_false</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Der Name "ternary" leitet sich davon ab, dass der Operator <strong>drei Operanden</strong> verwendet:</p>
+<ol>
+<li>Eine Bedingung</li>
+<li>Den Wert, der zurückgegeben wird, wenn die Bedingung <code>true</code> ist</li>
+<li>Den Wert, der zurückgegeben wird, wenn die Bedingung <code>false</code> ist</li>
+</ol>
+<p>Dies unterscheidet ihn von Operatoren wie <code>+</code>, <code>-</code>, <code>*</code> usw., die nur zwei Operanden verwenden, und daher als binäre Operatoren bezeichnet werden.</p>
+<h3 id="Beispiel-f%C3%BCr-den-tern%C3%A4ren-Operator">Beispiel für den ternären Operator<a class="anchor-link" href="#Beispiel-f%C3%BCr-den-tern%C3%A4ren-Operator">¶</a></h3><p>Angenommen, wir möchten entscheiden, ob der aktuelle Spieler <code>X</code> oder <code>O</code> ist, und basierend darauf eine Nachricht anzeigen:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">char</span> <span class="n">currentPlayer</span> <span class="o">=</span> <span class="s1">'X'</span><span class="p">;</span>
+<span class="n">string</span> <span class="n">message</span> <span class="o">=</span> <span class="n">currentPlayer</span> <span class="o">==</span> <span class="s1">'X'</span> <span class="err">?</span> <span class="s2">"Spieler X ist an der Reihe"</span> <span class="p">:</span> <span class="s2">"Spieler O ist an der Reihe"</span><span class="p">;</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">message</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>Erläuterung:</strong></p>
+<ul>
+<li>Die Bedingung <code>currentPlayer == 'X'</code> wird zuerst geprüft.</li>
+<li>Wenn diese Bedingung <code>true</code> ist, wird der Wert <code>"Spieler X ist an der Reihe"</code> zurückgegeben.</li>
+<li>Wenn die Bedingung <code>false</code> ist, wird der Wert <code>"Spieler O ist an der Reihe"</code> zurückgegeben.</li>
+</ul>
+<p>In diesem Beispiel wird der ternäre Operator verwendet, um die Entscheidung kompakter darzustellen, ohne dass ein <code>if</code>-Block benötigt wird. Dies kann den Code lesbarer und kürzer machen, besonders wenn einfache Bedingungen geprüft werden.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p><a href="CSharp_Conditional_TicTacToe.de.html">Bedingte Anweisungen &amp; TicTacToe</a> →</p>
 <p>← <a href="../CSharp_Introduction.de.html#Schleifen">Grundlagen zu Schleifen in C#</a></p>
 </div>

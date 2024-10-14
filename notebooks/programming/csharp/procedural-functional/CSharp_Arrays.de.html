@@ -7533,6 +7533,16 @@ a.anchor-link {
 </td>
 </tr>
 </table>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>In C# gibt es verschiedene Arten von Arrays. Hier eine umfassende Übersicht, inklusive einer neuen Betrachtung von verzweigten Arrays (oder auch "Zickzack-Arrays" genannt) und implizit typisierten Arrays.</p>
 <h2 id="Einfaches-Array-(Single-Dimensional-Array)">Einfaches Array (Single-Dimensional Array)<a class="anchor-link" href="#Einfaches-Array-(Single-Dimensional-Array)">¶</a></h2><p>Ein eindimensionales Array ist das grundlegendste Array. Es speichert eine Liste von Elementen des gleichen Datentyps in einer einzigen Dimension.</p>
 <p><strong>Deklaration und Initialisierung:</strong></p>
@@ -7749,19 +7759,34 @@ Bob
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="nb">int</span><span class="p">[]</span> <span class="n">zahlen</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="p">};</span>
 <span class="n">Array</span><span class="o">.</span><span class="n">Sort</span><span class="p">(</span><span class="n">zahlen</span><span class="p">);</span> <span class="o">//</span> <span class="n">Sortiert</span> <span class="n">das</span> <span class="n">Array</span>
 <span class="n">Array</span><span class="o">.</span><span class="n">Reverse</span><span class="p">(</span><span class="n">zahlen</span><span class="p">);</span> <span class="o">//</span> <span class="n">Kehrt</span> <span class="n">die</span> <span class="n">Reihenfolge</span> <span class="n">um</span>
-<span class="nb">int</span> <span class="n">gefunden</span> <span class="o">=</span> <span class="n">Array</span><span class="o">.</span><span class="n">Find</span><span class="p">(</span><span class="n">zahlen</span><span class="p">,</span> <span class="n">x</span> <span class="o">=&gt;</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">3</span><span class="p">);</span> <span class="o">//</span> <span class="n">Findet</span> <span class="n">die</span> <span class="n">Zahl</span> <span class="mi">3</span>
+<span class="nb">int</span> <span class="n">gefunden</span> <span class="o">=</span> <span class="n">Array</span><span class="o">.</span><span class="n">Find</span><span class="p">(</span><span class="n">zahlen</span><span class="p">,</span> <span class="n">x</span> <span class="o">=&gt;</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">3</span><span class="p">);</span> <span class="o">//</span> <span class="n">Findet</span> <span class="n">die</span> <span class="n">Zahl</span> 
+
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">zahlen</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>8
+</pre>
 </div>
 </div>
 </div>
@@ -7914,19 +7939,34 @@ graph TD
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="nb">int</span><span class="p">[]</span> <span class="n">originalArray</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span> <span class="p">};</span>
 <span class="nb">int</span><span class="p">[]</span> <span class="n">zielArray</span> <span class="o">=</span> <span class="n">new</span> <span class="nb">int</span><span class="p">[</span><span class="mi">5</span><span class="p">];</span>
 
 <span class="n">Array</span><span class="o">.</span><span class="n">ConstrainedCopy</span><span class="p">(</span><span class="n">originalArray</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">zielArray</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">originalArray</span><span class="o">.</span><span class="n">Length</span><span class="p">);</span> <span class="o">//</span> <span class="n">Sichere</span> <span class="n">Kopie</span>
+
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">zielArray</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>2
+</pre>
 </div>
 </div>
 </div>
