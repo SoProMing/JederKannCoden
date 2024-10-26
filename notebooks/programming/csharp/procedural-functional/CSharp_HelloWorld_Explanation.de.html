@@ -7516,21 +7516,8 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="C%23---Struktur-eines-Programms">C# - Struktur eines Programms<a class="anchor-link" href="#C%23---Struktur-eines-Programms">¶</a></h1><table border="0">
-<tr>
-<td>
-<img alt="No description has been provided for this image" src="helloworld.webp" style="width:280px; height:280px;"/>
-</td>
-<td rowspan="2">
-<img <="" alt="No description has been provided for this image" src="Radar_Hello_World.de.jpg" style="width:480px;" td=""/>
-</td></tr>
-<tr>
-<td>
-<a href="https://learn.microsoft.com/de-de/dotnet/csharp/tour-of-csharp/tutorials/hello-world">Link zum interaktiven Microsoft Tutorial</a><br/>
-<a href="https://www.w3schools.com/cs/cs_getstarted.php">Link zu Tutorial auf w3schools</a>
-</td>
-</tr>
-</table>
+<h1 id="C%23---Struktur-eines-Programms">C# - Struktur eines Programms<a class="anchor-link" href="#C%23---Struktur-eines-Programms">¶</a></h1><img alt="No description has been provided for this image" src="helloworld.webp" style="width:280px; height:280px;"/>
+<p><a href="https://learn.microsoft.com/de-de/dotnet/api/system.console.writeline?view=net-5.0">Link zur Microsoft Dokumentation</a></p>
 </div>
 </div>
 </div>
@@ -7557,7 +7544,7 @@ a.anchor-link {
 <h3 id="Schritt-1:-Neues-Projekt-erstellen">Schritt 1: Neues Projekt erstellen<a class="anchor-link" href="#Schritt-1:-Neues-Projekt-erstellen">¶</a></h3><ol>
 <li><p><strong>Terminal öffnen:</strong></p>
 <ul>
-<li>Öffnen Sie das Terminal in Visual Studio Code (View -&gt; Terminal oder Terminal -&gt; Neues Terminal).</li>
+<li>Öffnen Sie das Terminal in Visual Studio Code (View -&gt; Terminal oder <code>Ctrl + ö</code>).</li>
 </ul>
 </li>
 <li><p><strong>Neues C# Konsolenprojekt erstellen:</strong></p>
@@ -7574,10 +7561,10 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="o">../</span><span class="n">sandbox</span><span class="o">/</span><span class="n">helloworld2</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="o">../</span><span class="n">sandbox</span><span class="o">/</span><span class="n">helloworld</span>
 </pre></div>
 </div>
 </div>
@@ -7611,31 +7598,6 @@ a.anchor-link {
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=afdfdb92">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Um ein Programm mit den sogenannten "top level elements" anzulugen, rufe einfach stattdessen folgendes auf:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=2e97dd6a">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>dotnet<span class="w"> </span>new<span class="w"> </span>console<span class="w"> </span>-o<span class="w"> </span>../sandbox/helloworld<span class="w"> </span>--use-program-main
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c5a95baa">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7644,7 +7606,7 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ol start="3">
 <li><strong>Projektordner öffnen:</strong><ul>
-<li>Navigiere in Visual Studio Code zum Menü <strong>File</strong> -&gt; <strong>Open Folder</strong> und wähle den neu erstellten Ordner <code>sandbox/helloworld</code> aus.</li>
+<li>Navigiere in Visual Studio Code zum Menü <strong>File</strong> -&gt; <strong>Open Folder</strong> und wähle den neu erstellten Ordner <code>MeinKonsolenProgramm</code> aus.</li>
 </ul>
 </li>
 </ol>
@@ -7740,7 +7702,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><a href="Console_WriteLine_Basics.de.html">Hier gehts zu den Grundlagen zu <code>WriteLine()</code>...</a></p>
+<p><a href="Console_WriteLine_Basics.de.html">Hier gehts zu den Grundlagen zu <code>WriteLine()</code></a> →</p>
 </div>
 </div>
 </div>
@@ -8042,17 +8004,6 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>Wir haben nun die grundlegende Struktur eines C#-Programms durchgearbeitet. Jede Komponente hat ihre spezifische Rolle, von der Definition von Namespaces und Klassen bis zur <code>Main</code>-Methode, die als Einstiegspunkt dient. Das Verständnis dieser Struktur ist wesentlich, um komplexere Programme zu entwickeln.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=be8b1dbb">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>← <a href="../CSharp_Introduction.de.html">Einführung in C#</a></p>
 </div>
 </div>
 </div>

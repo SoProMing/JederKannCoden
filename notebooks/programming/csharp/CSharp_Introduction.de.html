@@ -7673,6 +7673,37 @@ a.anchor-link {
 </div>
 </div>
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="nb">int</span> <span class="n">age</span><span class="p">;</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">age</span><span class="p">);</span>
+<span class="n">string</span> <span class="n">name</span><span class="p">;</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"&gt;</span><span class="si">{name}</span><span class="s2">&lt;"</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>0
+&gt;&lt;
+</pre>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -7685,6 +7716,34 @@ a.anchor-link {
 <li><strong>Primitive Datentypen</strong>: Diese umfassen einfache Datentypen wie Ganzzahlen (<code>int</code>), Gleitkommazahlen (<code>float</code>,  <code>double</code>), Zeichen (<code>char</code>) und Wahrheitswerte (<code>bool</code>).</li>
 <li><strong>Referenztypen</strong>: Zu den Referenztypen gehören komplexere Datentypen wie Klassen, Arrays, Strings und Objekte. Im Gegensatz zu primitiven Datentypen speichern Referenztypen einen Verweis (Referenz) auf den tatsächlichen Speicherort der Daten, nicht die Daten selbst.</li>
 </ul>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="nb">bool</span> <span class="n">test</span><span class="p">;</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">test</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>False
+</pre>
+</div>
 </div>
 </div>
 </div>
@@ -7724,7 +7783,7 @@ a.anchor-link {
 </li>
 <li><p><strong>Nullable-Typen</strong>: Normalerweise kann eine Variable eines Wertetyps (z.B.  <code>int</code>) keinen  <code>null</code>-Wert enthalten. C# bietet jedoch sogenannte Nullable-Typen, die es ermöglichen, dass Wertetypen  <code>null</code>  sein können.</p>
 <ul>
-<li>Beispiel:  <code>int? nullableInt = null;</code></li>
+<li>Beispiel:  <code>string? nullableString = null;</code></li>
 </ul>
 </li>
 <li><p><strong>Automatisch implementierte Eigenschaften</strong>: In modernen C#-Versionen gibt es zudem die Möglichkeit, Variablen mit dem Schlüsselwort  <code>var</code>  automatisch den Typ zuzuweisen, basierend auf dem initial zugewiesenen Wert. Dies nennt man Typinferenz.</p>
@@ -7854,17 +7913,31 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [41]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="n">string</span> <span class="n">greeting</span> <span class="o">=</span> <span class="s2">"Hello"</span><span class="p">;</span>
-<span class="n">string</span> <span class="n">verbatim</span> <span class="o">=</span> <span class="o">@</span><span class="s2">"This is a verbatim string"</span><span class="p">;</span>
+<span class="n">string</span> <span class="n">verbatim</span> <span class="o">=</span> <span class="o">@</span><span class="s2">"This is a verbatim string</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">verbatim</span><span class="p">);</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>This is a verbatim string\n
+</pre>
 </div>
 </div>
 </div>

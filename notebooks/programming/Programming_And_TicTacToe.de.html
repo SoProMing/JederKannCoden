@@ -7977,9 +7977,9 @@ Spiel beendet.
 <span class="n">spielbrett</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'X'</span>  <span class="c1"># Spieler X setzt auf die untere rechte Position</span>
 
 <span class="c1"># Ausgabe des Spielbretts</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">spielbrett</span><span class="p">[</span><span class="n">erste_zeile_index</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s2">" "</span> <span class="o">+</span> <span class="n">spielbrett</span><span class="p">[</span><span class="n">erste_zeile_index</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s2">" "</span> <span class="o">+</span> <span class="n">spielbrett</span><span class="p">[</span><span class="n">erste_zeile_index</span><span class="p">][</span><span class="mi">2</span><span class="p">])</span>  <span class="c1"># Ausgabe der ersten Zeile</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">spielbrett</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s2">" "</span> <span class="o">+</span> <span class="n">spielbrett</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s2">" "</span> <span class="o">+</span> <span class="n">spielbrett</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">])</span>  <span class="c1"># Ausgabe der zweiten Zeile</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">spielbrett</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s2">" "</span> <span class="o">+</span> <span class="n">spielbrett</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s2">" "</span> <span class="o">+</span> <span class="n">spielbrett</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">2</span><span class="p">])</span>  <span class="c1"># Ausgabe der dritten Zeile</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">spielbrett</span><span class="p">[</span><span class="n">erste_zeile_index</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s2">"|"</span> <span class="o">+</span> <span class="n">spielbrett</span><span class="p">[</span><span class="n">erste_zeile_index</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s2">"|"</span> <span class="o">+</span> <span class="n">spielbrett</span><span class="p">[</span><span class="n">erste_zeile_index</span><span class="p">][</span><span class="mi">2</span><span class="p">])</span>  <span class="c1"># Ausgabe der ersten Zeile</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">spielbrett</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s2">"|"</span> <span class="o">+</span> <span class="n">spielbrett</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s2">"|"</span> <span class="o">+</span> <span class="n">spielbrett</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">])</span>  <span class="c1"># Ausgabe der zweiten Zeile</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">spielbrett</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s2">"|"</span> <span class="o">+</span> <span class="n">spielbrett</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s2">"|"</span> <span class="o">+</span> <span class="n">spielbrett</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">2</span><span class="p">])</span>  <span class="c1"># Ausgabe der dritten Zeile</span>
 </pre></div>
 </div>
 </div>
@@ -7992,9 +7992,9 @@ Spiel beendet.
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>X    
-  O  
-    X
+<pre>X| | 
+ |O| 
+ | |X
 </pre>
 </div>
 </div>
@@ -8056,21 +8056,21 @@ Spiel beendet.
 <h4 id="Tic-Tac-Toe-Gitter-mit-Indizes">Tic Tac Toe Gitter mit Indizes<a class="anchor-link" href="#Tic-Tac-Toe-Gitter-mit-Indizes">¶</a></h4><table>
 <thead>
 <tr>
-<th><code>[0,0]</code></th>
-<th><code>[0,1]</code></th>
-<th><code>[0,2]</code></th>
+<th><code>[0][0]</code></th>
+<th><code>[0][1]</code></th>
+<th><code>[0][2]</code></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>[1,0]</code></td>
-<td><code>[1,1]</code></td>
-<td><code>[1,2]</code></td>
+<td><code>[1][0]</code></td>
+<td><code>[1][1]</code></td>
+<td><code>[1][2]</code></td>
 </tr>
 <tr>
-<td><code>[2,0]</code></td>
-<td><code>[2,1]</code></td>
-<td><code>[2,2]</code></td>
+<td><code>[2][0]</code></td>
+<td><code>[2][1]</code></td>
+<td><code>[2][2]</code></td>
 </tr>
 </tbody>
 </table>
