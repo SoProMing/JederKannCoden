@@ -7614,6 +7614,119 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div style="border:2px solid #008CBA; padding:10px; background-color:#E0F7FA;">
+<h2 id="%F0%9F%92%A1-Praxistipp">💡 Praxistipp<a class="anchor-link" href="#%F0%9F%92%A1-Praxistipp">¶</a></h2><p>Wenn ein <code>unsigned int</code> den Wert <code>0</code> hat und um <code>1</code> dekrementiert wird, tritt ein sogenannter <strong>Umbruch</strong> oder <strong>Wrap-around</strong> ein. Das bedeutet, dass der Wert von <code>0</code> zum maximal möglichen Wert für diesen Datentyp zurückspringt.</p>
+<h3 id="Erkl%C3%A4rung-des-Umbruchs-bei-unsigned-int">Erklärung des Umbruchs bei <code>unsigned int</code><a class="anchor-link" href="#Erkl%C3%A4rung-des-Umbruchs-bei-unsigned-int">¶</a></h3><p>Ein <code>unsigned int</code> (ohne Vorzeichen) kann nur positive Werte und <code>0</code> speichern. Nehmen wir an, wir haben einen 32-Bit-<code>unsigned int</code>. Die Werte reichen dann von <code>0</code> bis <code>2^32 - 1</code> (das ist <code>4.294.967.295</code>).</p>
+<ul>
+<li>Wenn du also <code>0</code> um <code>1</code> dekrementierst, gibt es keine Möglichkeit, einen negativen Wert zu speichern.</li>
+<li>Stattdessen springt der Wert auf das höchste mögliche Ergebnis für diesen Datentyp: <code>4.294.967.295</code>.</li>
+</ul>
+<p>Dies wird als <strong>Umbruch</strong> bezeichnet, da der Wert wie ein Zähler "um die Null herum" auf den maximal möglichen Wert "umbricht".</p>
+<p>Hier ein Beispiel, das zu einem Absturz führt, da durch den Umbruch auf eine Stelle im Array zugegriffen wird, die weit außerhalb des Arrays liegt.</p>
+<p>Um das Beispiel zu verstehen, solltest du folgende Kapitel kennen:</p>
+<p><a href="CSharp_Other_Operators_Basics.de.html">Grundlagen weiterer Operatoren</a> →</p>
+<p><a href="CSharp_Conditional.de.html">Bedingte Anweisungen in C#</a> →</p>
+<p><a href="CSharp_Loops.de.html">Schleifen in C#</a> →</p>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">uint</span> <span class="n">zaehler</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span> <span class="o">//</span> <span class="n">Initialisierung</span> <span class="n">eines</span> <span class="n">Integers</span> <span class="n">namens</span> <span class="s2">"zaehler"</span> <span class="n">mit</span> <span class="n">dem</span> <span class="n">Wert</span> <span class="mi">5</span>
+<span class="n">string</span> <span class="n">test</span> <span class="o">=</span> <span class="s2">"ABCDEF"</span><span class="p">;</span> <span class="o">//</span> <span class="n">Initialisierung</span> <span class="n">einer</span> <span class="n">Zeichenkette</span> <span class="p">(</span><span class="n">String</span><span class="p">)</span> <span class="s2">"test"</span> <span class="n">mit</span> <span class="n">dem</span> <span class="n">Wert</span> <span class="s2">"ABCDEF"</span>
+<span class="n">char</span> <span class="n">search</span> <span class="o">=</span> <span class="s1">'9'</span><span class="p">;</span> <span class="o">//</span> <span class="n">Initialisierung</span> <span class="n">einer</span> <span class="n">char</span><span class="o">-</span><span class="n">Variable</span> <span class="s2">"search"</span> <span class="n">mit</span> <span class="n">dem</span> <span class="n">Zeichen</span> <span class="s1">'9'</span>
+
+<span class="o">//</span> <span class="n">Die</span> <span class="k">while</span><span class="o">-</span><span class="n">Schleife</span> <span class="n">wird</span> <span class="n">so</span> <span class="n">lange</span> <span class="n">ausgeführt</span><span class="p">,</span> <span class="n">wie</span> <span class="n">der</span> <span class="n">Wert</span> <span class="n">von</span> <span class="s2">"zaehler"</span> <span class="n">größer</span> <span class="n">oder</span> <span class="n">gleich</span> <span class="mi">0</span> <span class="n">ist</span><span class="o">.</span>
+<span class="k">while</span> <span class="p">(</span><span class="n">zaehler</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span> 
+    <span class="o">//</span> <span class="n">Gibt</span> <span class="n">den</span> <span class="n">Index</span> <span class="n">und</span> <span class="n">den</span> <span class="n">aktuellen</span> <span class="n">Wert</span> <span class="n">des</span> <span class="n">Zeichens</span> <span class="ow">in</span> <span class="n">der</span> <span class="n">Zeichenkette</span> <span class="s2">"test"</span> <span class="n">an</span> <span class="n">der</span> <span class="n">Position</span> <span class="s2">"zaehler"</span> <span class="n">aus</span><span class="o">.</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">Write</span><span class="p">(</span><span class="err">$</span><span class="s2">"test[</span><span class="si">{zaehler}</span><span class="s2">]:"</span><span class="p">);</span> 
+    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"</span><span class="si">{test[(int)zaehler]}</span><span class="s2">"</span><span class="p">);</span> <span class="o">//</span> <span class="n">Gibt</span> <span class="n">das</span> <span class="n">Zeichen</span> <span class="ow">in</span> <span class="s2">"test"</span> <span class="n">an</span> <span class="n">der</span> <span class="n">Stelle</span> <span class="s2">"zaehler"</span> <span class="n">aus</span><span class="o">.</span>
+    
+    <span class="o">//</span> <span class="n">Überprüft</span><span class="p">,</span> <span class="n">ob</span> <span class="n">das</span> <span class="n">aktuelle</span> <span class="n">Zeichen</span> <span class="ow">in</span> <span class="s2">"test"</span> <span class="n">an</span> <span class="n">der</span> <span class="n">Position</span> <span class="s2">"zaehler"</span> <span class="n">dem</span> <span class="n">Suchzeichen</span> <span class="s2">"search"</span> <span class="n">entspricht</span><span class="o">.</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">test</span><span class="p">[(</span><span class="nb">int</span><span class="p">)</span><span class="n">zaehler</span><span class="p">]</span> <span class="o">==</span> <span class="n">search</span><span class="p">)</span> <span class="p">{</span> 
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Treffer"</span><span class="p">);</span> <span class="o">//</span> <span class="n">Gibt</span> <span class="s2">"Treffer"</span> <span class="n">aus</span><span class="p">,</span> <span class="n">wenn</span> <span class="n">das</span> <span class="n">Suchzeichen</span> <span class="n">gefunden</span> <span class="n">wurde</span><span class="o">.</span>
+        <span class="k">break</span><span class="p">;</span> <span class="o">//</span> <span class="n">Beendet</span> <span class="n">die</span> <span class="n">Schleife</span><span class="p">,</span> <span class="n">wenn</span> <span class="n">das</span> <span class="n">Suchzeichen</span> <span class="n">gefunden</span> <span class="n">wurde</span><span class="o">.</span>
+    <span class="p">}</span>
+
+    <span class="o">//</span> <span class="n">Verringert</span> <span class="n">den</span> <span class="n">Wert</span> <span class="n">von</span> <span class="s2">"zaehler"</span> <span class="n">um</span> <span class="mi">1</span> <span class="n">und</span> <span class="n">fährt</span> <span class="n">mit</span> <span class="n">der</span> <span class="n">nächsten</span> <span class="n">Iteration</span> <span class="n">der</span> <span class="n">Schleife</span> <span class="n">fort</span><span class="o">.</span>
+    <span class="n">zaehler</span> <span class="o">=</span> <span class="n">zaehler</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="o">//</span> <span class="n">Diese</span> <span class="n">Anweisung</span> <span class="n">wird</span> <span class="n">ausgeführt</span><span class="p">,</span> <span class="n">wenn</span> <span class="n">die</span> <span class="n">Schleife</span> <span class="n">endet</span> <span class="p">(</span><span class="n">entweder</span> <span class="n">durch</span> <span class="n">das</span> <span class="s2">"break"</span> <span class="n">oder</span> <span class="n">weil</span> <span class="s2">"zaehler"</span> <span class="n">kleiner</span> <span class="n">als</span> <span class="mi">0</span> <span class="n">ist</span><span class="p">)</span><span class="o">.</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Ende"</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>test[5]:F
+test[4]:E
+test[3]:D
+test[2]:C
+test[1]:B
+test[0]:A
+test[4294967295]:</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+
+   at System.String.get_Chars(Int32 index)
+
+   at Submission#9.&lt;&lt;Initialize&gt;&gt;d__0.MoveNext()
+
+--- End of stack trace from previous location ---
+
+   at Microsoft.CodeAnalysis.Scripting.ScriptExecutionState.RunSubmissionsAsync[TResult](ImmutableArray`1 precedingExecutors, Func`2 currentExecutor, StrongBox`1 exceptionHolderOpt, Func`2 catchExceptionOpt, CancellationToken cancellationToken)</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div style="border:2px solid #008CBA; padding:10px; background-color:#E0F7FA;">
+<h3 id="Zusammenfassung-des-Programmablaufs:">Zusammenfassung des Programmablaufs:<a class="anchor-link" href="#Zusammenfassung-des-Programmablaufs:">¶</a></h3><ol>
+<li>Der  <code>zaehler</code>  wird auf den Wert  <code>5</code>  gesetzt, um von der letzten Position der Zeichenkette  <code>test</code>  zu starten.</li>
+<li>Die  <code>while</code>-Schleife läuft, bis  <code>zaehler</code>  negativ wird.</li>
+<li>Innerhalb der Schleife wird jedes Zeichen in  <code>test</code>  an der aktuellen Position ausgegeben.</li>
+<li>Falls das Zeichen  <code>search</code>  (der Wert  <code>'9'</code>) in  <code>test</code>  gefunden wird, wird  <code>Treffer</code>  ausgegeben, und die Schleife wird mit  <code>break</code>  beendet.</li>
+<li>Der Wert von  <code>zaehler</code>  wird nach jeder Iteration um 1 verringert.</li>
+<li>Wenn die Schleife endet, gibt das Programm  <code>Ende</code>  aus.</li>
+</ol>
+<p><strong>Hinweis:</strong>  Die Schleife führt zu einem Fehler, da  <code>zaehler</code>  irgendwann auf  <code>-1</code>  sinkt, wodurch ein Fehler bei der Indexierung von  <code>test</code>  entsteht.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Beispiele-zur-Verwendung">Beispiele zur Verwendung<a class="anchor-link" href="#Beispiele-zur-Verwendung">¶</a></h2><h3 id="sbyte">sbyte<a class="anchor-link" href="#sbyte">¶</a></h3><div class="highlight"><pre><span></span><span class="kt">sbyte</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="m">100</span><span class="p">;</span>
 <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
 </pre></div>
@@ -7677,14 +7790,41 @@ a.anchor-link {
 <li><strong>Implizite Konvertierung:</strong> von <code>byte</code> nach <code>int</code>.</li>
 <li><strong>Explizite Konvertierung:</strong> von <code>int</code> nach <code>byte</code>.</li>
 </ul>
-<h3 id="Beispiel-f%C3%BCr-Konvertierungen">Beispiel für Konvertierungen<a class="anchor-link" href="#Beispiel-f%C3%BCr-Konvertierungen">¶</a></h3><div class="highlight"><pre><span></span><span class="kt">byte</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">255</span><span class="p">;</span>
-<span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"> </span><span class="c1">// implizite Konvertierung</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<h3 id="Beispiel-f%C3%BCr-Konvertierungen">Beispiel für Konvertierungen<a class="anchor-link" href="#Beispiel-f%C3%BCr-Konvertierungen">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">byte</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">255</span><span class="p">;</span>
+<span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span> <span class="o">//</span> <span class="n">implizite</span> <span class="n">Konvertierung</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
 
-<span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">300</span><span class="p">;</span>
-<span class="kt">byte</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">byte</span><span class="p">)</span><span class="n">j</span><span class="p">;</span><span class="w"> </span><span class="c1">// explizite Konvertierung</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>
+<span class="nb">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">300</span><span class="p">;</span>
+<span class="n">byte</span> <span class="n">c</span> <span class="o">=</span> <span class="p">(</span><span class="n">byte</span><span class="p">)</span><span class="n">j</span><span class="p">;</span> <span class="o">//</span> <span class="n">explizite</span> <span class="n">Konvertierung</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>255
+44
+</pre>
+</div>
 </div>
 </div>
 </div>

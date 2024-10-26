@@ -7629,23 +7629,63 @@ Nächste Zeile...
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a651fb2b">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div style="border:2px solid #008CBA; padding:10px; background-color:#E0F7FA;">
+<h3 id="%F0%9F%92%A1-Praxistipp">💡 Praxistipp<a class="anchor-link" href="#%F0%9F%92%A1-Praxistipp">¶</a></h3><p>In C# verhält sich der + Operator unterschiedlich, je nachdem, ob er mit int (Integer) oder string Typen verwendet wird:</p>
+<ul>
+<li><code>int</code>  +  <code>int</code>  ergibt eine Addition.</li>
+<li><code>string</code>  +  <code>string</code>  ergibt eine Verkettung.</li>
+<li><code>string</code>  +  <code>int</code>  oder  <code>int</code>  +  <code>string</code>  führt zu einer Verkettung, indem  <code>int</code>  automatisch in  <code>string</code>  umgewandelt wird.</li>
+<li>Kombinierte Ausdrücke folgen der Auswertungsreihenfolge von links nach rechts, und sobald ein  <code>string</code>  involviert ist, wird alles als  <code>string</code>  behandelt, sofern keine Klammern die Reihenfolge ändern.</li>
+</ul>
+<p>Um das Beispiel zu verstehen, solltest du folgende Kapitel kennen:</p>
+<p><a href="CSharp_Other_Operators_Basics.de.html">Grundlagen weiterer Operatoren</a> →</p>
+</div>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=aae37cc0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [29]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [40]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-C#"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">alter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">13</span><span class="p">;</span>
-<span class="kt">int</span><span class="w"> </span><span class="n">alter2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">21</span><span class="p">;</span>
-<span class="kt">string</span><span class="w"> </span><span class="n">alter3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"24"</span><span class="p">;</span>
-<span class="kt">string</span><span class="w"> </span><span class="n">alter4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"25"</span><span class="p">;</span>
+<div class="highlight hl-C#"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">alter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">13</span><span class="p">;</span><span class="w"> </span>
+<span class="kt">int</span><span class="w"> </span><span class="n">alter2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">21</span><span class="p">;</span><span class="w"> </span>
+<span class="kt">string</span><span class="w"> </span><span class="n">alter3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"24"</span><span class="p">;</span><span class="w"> </span>
+<span class="kt">string</span><span class="w"> </span><span class="n">alter4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"25"</span><span class="p">;</span><span class="w"> </span>
+
 <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$"Ich bin {alter3} + {alter4} Jahre alt"</span><span class="p">);</span>
+<span class="c1">// Verwendet String-Interpolation, um die Zeichenfolgen alter3 und alter4 in die Ausgabe einzubetten.</span>
+<span class="c1">// Da sie als Text ausgegeben werden, sieht der Benutzer die Ausgabe: "Ich bin 24 + 25 Jahre alt".</span>
+
 <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$"Ich bin {alter3 + alter4} Jahre alt"</span><span class="p">);</span>
+<span class="c1">// Da alter3 und alter4 Zeichenfolgen sind, wird bei der Verwendung von '+' keine mathematische Addition, sondern eine Verkettung durchgeführt.</span>
+<span class="c1">// Ergebnis: Die Ausgabe zeigt "Ich bin 2425 Jahre alt".</span>
+
 <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$"Ich bin {alter + alter4} Jahre alt"</span><span class="p">);</span>
+<span class="c1">// Hier wird versucht, die Ganzzahl alter mit der Zeichenfolge alter4 zu verknüpfen. </span>
+<span class="c1">// 'alter' wird implizit in eine Zeichenfolge konvertiert und mit 'alter4' verkettet, wodurch der Text "Ich bin 1325 Jahre alt" ausgegeben wird.</span>
+
 <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$"Ich bin {alter3 + alter2} Jahre alt"</span><span class="p">);</span>
+<span class="c1">// In diesem Fall wird alter3 (eine Zeichenfolge) mit alter2 (eine Ganzzahl) verknüpft. </span>
+<span class="c1">// alter2 wird zuerst implizit in eine Zeichenfolge konvertiert, sodass das Ergebnis der Verkettung "Ich bin 2421 Jahre alt" lautet.</span>
+
 <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$"Ich bin {alter + alter2} Jahre alt"</span><span class="p">);</span>
+<span class="c1">// Hier wird die Addition von zwei Ganzzahlen, 'alter' und 'alter2', durchgeführt. </span>
+<span class="c1">// Das Ergebnis, 34, wird dann in die Ausgabe eingebettet, sodass der Benutzer "Ich bin 34 Jahre alt" sieht.</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"Ich bin {alter + alter2} Jahre alt"</span><span class="p">);</span>
+<span class="c1">// Da hier keine String-Interpolation verwendet wird (fehlendes $ vor dem String), werden die Variablen nicht aufgelöst.</span>
+<span class="c1">// Der Text wird unverändert ausgegeben: "Ich bin {alter + alter2} Jahre alt".</span>
 </pre></div>
 </div>
 </div>
@@ -7663,6 +7703,7 @@ Ich bin 2425 Jahre alt
 Ich bin 1325 Jahre alt
 Ich bin 2421 Jahre alt
 Ich bin 34 Jahre alt
+Ich bin {alter + alter2} Jahre alt
 </pre>
 </div>
 </div>
@@ -7679,16 +7720,29 @@ Ich bin 34 Jahre alt
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=4e9b2154">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=4e9b2154">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [31]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-C#"><pre><span></span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"Dies ist eine "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"verkettete Nachricht."</span><span class="p">);</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Dies ist eine verkettete Nachricht.
+</pre>
 </div>
 </div>
 </div>
@@ -7709,11 +7763,15 @@ Ich bin 34 Jahre alt
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [28]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [41]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-C#"><pre><span></span><span class="kt">string</span><span class="w"> </span><span class="n">gender</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"weiblich"</span><span class="p">;</span><span class="w"> </span>
+<div class="highlight hl-C#"><pre><span></span><span class="kt">string</span><span class="w"> </span><span class="n">gender</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"weiblich"</span><span class="p">;</span>
 <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"Name: {0}, Alter: {1} {2}"</span><span class="p">,</span><span class="w"> </span><span class="s">"Anna"</span><span class="p">,</span><span class="w"> </span><span class="m">30</span><span class="p">,</span><span class="w"> </span><span class="n">gender</span><span class="p">);</span>
+<span class="cm">/*                        |           |   |      |     |     |</span>
+<span class="cm">                          |           |   +------------------^</span>
+<span class="cm">                          |           +----------------^</span>
+<span class="cm">                          +----------------------^ */</span>
 </pre></div>
 </div>
 </div>
@@ -7743,16 +7801,31 @@ Ich bin 34 Jahre alt
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=61156a35">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=61156a35">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [32]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-C#"><pre><span></span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"Erste Zeile\nZweite Zeile\nDritte Zeile"</span><span class="p">);</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Erste Zeile
+Zweite Zeile
+Dritte Zeile
+</pre>
 </div>
 </div>
 </div>
@@ -7768,16 +7841,30 @@ Ich bin 34 Jahre alt
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=15162ddc">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=15162ddc">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [39]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-C#"><pre><span></span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"Das ist ein \"Zitat\"."</span><span class="p">);</span>
+<div class="highlight hl-C#"><pre><span></span><span class="c1">// dies ist ein Kommentar für eine Zeile</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"Das ist ein \"Zitat\" mit backslash(\\)."</span><span class="p">);</span><span class="w"> </span><span class="c1">// kann ich auch hier machen</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Das ist ein "Zitat" mit backslash(\).
+</pre>
 </div>
 </div>
 </div>
