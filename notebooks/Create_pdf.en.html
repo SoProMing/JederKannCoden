@@ -7676,7 +7676,7 @@ Note: you may need to restart the kernel to use updated packages.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
@@ -7798,6 +7798,396 @@ Note: you may need to restart the kernel to use updated packages.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Create-pdf-with-chrome-headless">Create pdf with chrome headless<a class="anchor-link" href="#Create-pdf-with-chrome-headless">¶</a></h2><p>WiP</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [30]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>/Applications/Google<span class="se">\ </span>Chrome.app/Contents/MacOS/Google<span class="se">\ </span>Chrome<span class="w"> </span>--headless<span class="w"> </span>--print-to-pdf-no-header<span class="w"> </span>--no-margins<span class="w"> </span>--window-size<span class="o">=</span><span class="m">1280</span>,1024<span class="w"> </span>--print-to-pdf<span class="o">=</span><span class="s2">"output.pdf"</span><span class="w"> </span>programming/Programmieren1.de.html
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>[76146:259:1027/095612.882640:ERROR:chrome_browser_main.cc(1141)] The use of Rosetta to run the x64 version of Chromium on Arm is neither tested nor maintained, and unexpected behavior will likely result. Please check that all tools that spawn Chromium are Arm-native.
+[76146:36099:1027/095616.001720:ERROR:trust_store_mac.cc(821)] Error parsing certificate:
+ERROR: Failed parsing extensions
+
+3300299 bytes written to file output.pdf
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Create-pdf-with-wkhtmltopdf">Create pdf with wkhtmltopdf<a class="anchor-link" href="#Create-pdf-with-wkhtmltopdf">¶</a></h2><p>WiP</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>brew<span class="w"> </span>install<span class="w"> </span>wkhtmltopdf
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre><span class="ansi-blue-fg">==&gt;</span> <span class="ansi-bold">Auto-updating Homebrew...</span>
+Adjust how often this is run with HOMEBREW_AUTO_UPDATE_SECS or disable with
+HOMEBREW_NO_AUTO_UPDATE. Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
+<span class="ansi-yellow-fg">Warning:</span> wkhtmltopdf has been deprecated because it is discontinued upstream! It will be disabled on 2024-12-17.
+<span class="ansi-blue-fg">==&gt;</span> <span class="ansi-bold">Downloading https://github.com/wkhtmltopdf/packaging/releases/download/0.12.</span>
+<span class="ansi-blue-fg">==&gt;</span> <span class="ansi-bold">Downloading from https://objects.githubusercontent.com/github-production-rel</span>
+######################################################################### 100.0%
+<span class="ansi-green-fg">==&gt;</span> <span class="ansi-bold">Installing Cask </span><span class="ansi-green-intense-fg ansi-bold">wkhtmltopdf</span>
+<span class="ansi-blue-fg">==&gt;</span> <span class="ansi-bold">Running installer for wkhtmltopdf with sudo; the password may be necessary.</span>
+Password:
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>wkhtmltopdf<span class="w"> </span>--enable-local-file-access<span class="w"> </span>--no-stop-slow-scripts<span class="w"> </span>--print-media-type<span class="w"> </span>programming/Programmieren1.de.html<span class="w"> </span>output.pdf
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Loading pages (1/6)
+Counting pages (2/6)                                                             ] 46%           ] 47%==&gt;                             ] 50%
+Resolving links (4/6)                                                       
+Loading headers and footers (5/6)                                           
+Printing pages (6/6)
+Done                                          ===============] Page 3 of 3                            
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="Create-with-pdfkit">Create with pdfkit<a class="anchor-link" href="#Create-with-pdfkit">¶</a></h1><p>WiP</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">pdfkit</span> <span class="n">bs4</span> <span class="n">requests</span> <span class="n">pypdf2</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Defaulting to user installation because normal site-packages is not writeable
+Requirement already satisfied: pdfkit in /Users/starkj/Library/Python/3.9/lib/python/site-packages (1.0.0)
+Requirement already satisfied: bs4 in /Users/starkj/Library/Python/3.9/lib/python/site-packages (0.0.2)
+Requirement already satisfied: requests in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (2.32.3)
+Collecting pypdf2
+  Downloading pypdf2-3.0.1-py3-none-any.whl.metadata (6.8 kB)
+Requirement already satisfied: beautifulsoup4 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from bs4) (4.12.3)
+Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from requests) (3.3.2)
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from requests) (3.7)
+Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from requests) (2.2.2)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from requests) (2024.7.4)
+Requirement already satisfied: typing_extensions&gt;=3.10.0.0 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from pypdf2) (4.12.2)
+Requirement already satisfied: soupsieve&gt;1.2 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from beautifulsoup4-&gt;bs4) (2.5)
+Downloading pypdf2-3.0.1-py3-none-any.whl (232 kB)
+Installing collected packages: pypdf2
+Successfully installed pypdf2-3.0.1
+Note: you may need to restart the kernel to use updated packages.
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<span class="kn">import</span> <span class="nn">pdfkit</span>
+<span class="kn">from</span> <span class="nn">PyPDF2</span> <span class="kn">import</span> <span class="n">PdfMerger</span>
+
+<span class="k">def</span> <span class="nf">get_all_local_links</span><span class="p">(</span><span class="n">html_file</span><span class="p">,</span> <span class="n">base_folder</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Extracts all local links to other HTML files within the same folder.</span>
+<span class="sd">    """</span>
+    <span class="n">links</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">html_file</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+        <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s1">'html.parser'</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">a_tag</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">'a'</span><span class="p">,</span> <span class="n">href</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+            <span class="n">href</span> <span class="o">=</span> <span class="n">a_tag</span><span class="p">[</span><span class="s1">'href'</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">href</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">'.html'</span><span class="p">)</span> <span class="ow">and</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">base_folder</span><span class="p">,</span> <span class="n">href</span><span class="p">)):</span>
+                <span class="n">links</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">base_folder</span><span class="p">,</span> <span class="n">href</span><span class="p">))</span>
+    <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">links</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">save_as_pdf</span><span class="p">(</span><span class="n">input_html</span><span class="p">,</span> <span class="n">output_pdf</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Converts a local HTML file to a PDF.</span>
+<span class="sd">    """</span>
+    <span class="n">options</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">'enable-local-file-access'</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s1">'quiet'</span><span class="p">:</span> <span class="s1">''</span>
+    <span class="p">}</span>
+    <span class="n">pdfkit</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="n">input_html</span><span class="p">,</span> <span class="n">output_pdf</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="n">options</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">create_pdf_with_toc</span><span class="p">(</span><span class="n">main_html</span><span class="p">,</span> <span class="n">base_folder</span><span class="p">,</span> <span class="n">output_pdf</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Main function to create a merged PDF with a table of contents.</span>
+<span class="sd">    """</span>
+    <span class="n">visited</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>  <span class="c1"># Track visited HTML files to avoid duplicates</span>
+    <span class="n">links_to_visit</span> <span class="o">=</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">base_folder</span><span class="p">,</span> <span class="n">main_html</span><span class="p">)]</span>
+    <span class="n">merger</span> <span class="o">=</span> <span class="n">PdfMerger</span><span class="p">()</span>  <span class="c1"># PdfMerger to combine PDFs</span>
+
+    <span class="n">page_number</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">links_to_visit</span><span class="p">:</span>
+        <span class="n">html_file</span> <span class="o">=</span> <span class="n">links_to_visit</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">html_file</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">html_file</span><span class="p">)</span>
+        
+        <span class="n">pdf_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"page_</span><span class="si">{</span><span class="n">page_number</span><span class="si">}</span><span class="s2">.pdf"</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Converting: </span><span class="si">{</span><span class="n">html_file</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        <span class="n">save_as_pdf</span><span class="p">(</span><span class="n">html_file</span><span class="p">,</span> <span class="n">pdf_path</span><span class="p">)</span>  <span class="c1"># Convert each HTML to a PDF</span>
+        <span class="n">merger</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pdf_path</span><span class="p">)</span>  <span class="c1"># Append PDF to the merger</span>
+        <span class="n">merger</span><span class="o">.</span><span class="n">addBookmark</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Page </span><span class="si">{</span><span class="n">page_number</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">html_file</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="n">page_number</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># Add bookmark</span>
+        
+        <span class="c1"># Find additional links within the current HTML file</span>
+        <span class="n">new_links</span> <span class="o">=</span> <span class="n">get_all_local_links</span><span class="p">(</span><span class="n">html_file</span><span class="p">,</span> <span class="n">base_folder</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">new_links</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">link</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
+                <span class="n">links_to_visit</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">link</span><span class="p">)</span>
+
+        <span class="n">page_number</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="n">merger</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">output_pdf</span><span class="p">)</span>
+    <span class="n">merger</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Merged PDF successfully created as '</span><span class="si">{</span><span class="n">output_pdf</span><span class="si">}</span><span class="s2">'"</span><span class="p">)</span>
+
+<span class="c1"># Example usage:</span>
+<span class="c1"># Assume `base_folder` contains the main HTML file and all linked HTML files</span>
+<span class="n">base_folder</span> <span class="o">=</span> <span class="s2">"./programming"</span>
+<span class="n">main_html</span> <span class="o">=</span> <span class="s2">"Programmieren1.de.html"</span>  <span class="c1"># Main HTML file to start with</span>
+<span class="n">output_pdf</span> <span class="o">=</span> <span class="s2">"merged_document.pdf"</span>
+<span class="n">create_pdf_with_toc</span><span class="p">(</span><span class="n">main_html</span><span class="p">,</span> <span class="n">base_folder</span><span class="p">,</span> <span class="n">output_pdf</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Converting: ./programming/Programmieren1.de.html
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>Illegal character in Name Object (b'/\x91i8\xf8\x92_E\x1e\x89\xed\xff\xc5\x06!\x84\xf3\xbd\xcd~\x9e')
+Illegal character in Name Object (b'/f\xeaQ\xbd\x15\xb4\x15\x13\x9e\xbc\x1b\xad(y\x98\xfbP\xadeF')
+Illegal character in Name Object (b'/7\xf5\xb6n\r\x19\xbe"\x8ai\x9ex\xb9\xcfr|#\x16\xd2\xcf')
+Illegal character in Name Object (b'/\x9e\xda#\xde\x0cq\x87\xdd\xef\xd6x\xe6\xef\x18Z\x90\xfaPU\xc2')
+Illegal character in Name Object (b"/!\x01\xa8e\xcc\xd0\x82\xa1\x96\x9d\xb1'UT\xa9p\x0b'!L")
+Illegal character in Name Object (b"/\xd9\x12\xefl'\xca\xcaF2\xaf&lt;uKs%\xa8\xe0\xde\x93\x1e")
+Illegal character in Name Object (b'/#\\\xa7J\xd4\xfc4\xe50\x9e\x18X"#\x1b=\x7f\xcf\x03\x9e')
+Illegal character in Name Object (b'/\xc0%\xc5|\x8e\xfd\x15\x05\xda\x0f\xd8\x13\x81\x13\xc4I\x8cOOa')
+Illegal character in Name Object (b'/\xee\xc0\xf3\xfdj\xac\xeb\x84\x1f;!\xb4\xf8\x86J\xa9\xe2:0\xa4')
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">DeprecationError</span>                          Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[16], line 67</span>
+<span class="ansi-green-intense-fg ansi-bold">     65</span> main_html <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(175,0,0)">"</span><span style="color: rgb(175,0,0)">Programmieren1.de.html</span><span style="color: rgb(175,0,0)">"</span>  <span style="color: rgb(95,135,135)"># Main HTML file to start with</span>
+<span class="ansi-green-intense-fg ansi-bold">     66</span> output_pdf <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(175,0,0)">"</span><span style="color: rgb(175,0,0)">merged_document.pdf</span><span style="color: rgb(175,0,0)">"</span>
+<span class="ansi-green-fg">---&gt; 67</span> <span class="ansi-yellow-bg">create_pdf_with_toc</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">main_html</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">base_folder</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">output_pdf</span><span class="ansi-yellow-bg">)</span>
+
+Cell <span class="ansi-green-fg">In[16], line 48</span>, in <span class="ansi-cyan-fg">create_pdf_with_toc</span><span class="ansi-blue-fg">(main_html, base_folder, output_pdf)</span>
+<span class="ansi-green-intense-fg ansi-bold">     46</span> save_as_pdf(html_file, pdf_path)  <span style="color: rgb(95,135,135)"># Convert each HTML to a PDF</span>
+<span class="ansi-green-intense-fg ansi-bold">     47</span> merger<span style="color: rgb(98,98,98)">.</span>append(pdf_path)  <span style="color: rgb(95,135,135)"># Append PDF to the merger</span>
+<span class="ansi-green-fg">---&gt; 48</span> <span class="ansi-yellow-bg">merger</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">addBookmark</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">f</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">"</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">Page </span><span class="ansi-yellow-bg ansi-bold" style="color: rgb(175,95,135)">{</span><span class="ansi-yellow-bg">page_number</span><span class="ansi-yellow-bg ansi-bold" style="color: rgb(175,95,135)">}</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">: </span><span class="ansi-yellow-bg ansi-bold" style="color: rgb(175,95,135)">{</span><span class="ansi-yellow-bg">os</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">path</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">basename</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">html_file</span><span class="ansi-yellow-bg">)</span><span class="ansi-yellow-bg ansi-bold" style="color: rgb(175,95,135)">}</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">"</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">page_number</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">-</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">1</span><span class="ansi-yellow-bg">)</span>  <span style="color: rgb(95,135,135)"># Add bookmark</span>
+<span class="ansi-green-intense-fg ansi-bold">     50</span> <span style="color: rgb(95,135,135)"># Find additional links within the current HTML file</span>
+<span class="ansi-green-intense-fg ansi-bold">     51</span> new_links <span style="color: rgb(98,98,98)">=</span> get_all_local_links(html_file, base_folder)
+
+File <span class="ansi-green-fg">~/Library/Python/3.9/lib/python/site-packages/PyPDF2/_merger.py:731</span>, in <span class="ansi-cyan-fg">PdfMerger.addBookmark</span><span class="ansi-blue-fg">(self, title, pagenum, parent, color, bold, italic, fit, *args)</span>
+<span class="ansi-green-intense-fg ansi-bold">    716</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">addBookmark</span>(
+<span class="ansi-green-intense-fg ansi-bold">    717</span>     <span style="color: rgb(0,135,0)">self</span>,
+<span class="ansi-green-intense-fg ansi-bold">    718</span>     title: <span style="color: rgb(0,135,0)">str</span>,
+<span class="ansi-green-fg">   (...)</span>
+<span class="ansi-green-intense-fg ansi-bold">    725</span>     <span style="color: rgb(98,98,98)">*</span>args: ZoomArgType,
+<span class="ansi-green-intense-fg ansi-bold">    726</span> ) <span style="color: rgb(98,98,98)">-</span><span style="color: rgb(98,98,98)">&gt;</span> IndirectObject:  <span style="color: rgb(95,135,135)"># pragma: no cover</span>
+<span class="ansi-green-intense-fg ansi-bold">    727</span> <span style="color: rgb(188,188,188)">    </span><span style="color: rgb(175,0,0)">"""</span>
+<span class="ansi-green-intense-fg ansi-bold">    728</span> <span style="color: rgb(175,0,0)">    .. deprecated:: 1.28.0</span>
+<span class="ansi-green-intense-fg ansi-bold">    729</span> <span style="color: rgb(175,0,0)">        Use :meth:`add_outline_item` instead.</span>
+<span class="ansi-green-intense-fg ansi-bold">    730</span> <span style="color: rgb(175,0,0)">    """</span>
+<span class="ansi-green-fg">--&gt; 731</span>     <span class="ansi-yellow-bg">deprecation_with_replacement</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">"</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">addBookmark</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">"</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">"</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">add_outline_item</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">"</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">"</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">3.0.0</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">"</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    732</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>add_outline_item(
+<span class="ansi-green-intense-fg ansi-bold">    733</span>         title,
+<span class="ansi-green-intense-fg ansi-bold">    734</span>         pagenum,
+<span class="ansi-green-fg">   (...)</span>
+<span class="ansi-green-intense-fg ansi-bold">    739</span>         Fit(fit_type<span style="color: rgb(98,98,98)">=</span>fit, fit_args<span style="color: rgb(98,98,98)">=</span>args),
+<span class="ansi-green-intense-fg ansi-bold">    740</span>     )
+
+File <span class="ansi-green-fg">~/Library/Python/3.9/lib/python/site-packages/PyPDF2/_utils.py:369</span>, in <span class="ansi-cyan-fg">deprecation_with_replacement</span><span class="ansi-blue-fg">(old_name, new_name, removed_in)</span>
+<span class="ansi-green-intense-fg ansi-bold">    363</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">deprecation_with_replacement</span>(
+<span class="ansi-green-intense-fg ansi-bold">    364</span>     old_name: <span style="color: rgb(0,135,0)">str</span>, new_name: <span style="color: rgb(0,135,0)">str</span>, removed_in: <span style="color: rgb(0,135,0)">str</span> <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(175,0,0)">"</span><span style="color: rgb(175,0,0)">3.0.0</span><span style="color: rgb(175,0,0)">"</span>
+<span class="ansi-green-intense-fg ansi-bold">    365</span> ) <span style="color: rgb(98,98,98)">-</span><span style="color: rgb(98,98,98)">&gt;</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>:
+<span class="ansi-green-intense-fg ansi-bold">    366</span> <span style="color: rgb(188,188,188)">    </span><span style="color: rgb(175,0,0)">"""</span>
+<span class="ansi-green-intense-fg ansi-bold">    367</span> <span style="color: rgb(175,0,0)">    Raise an exception that a feature was already removed, but has a replacement.</span>
+<span class="ansi-green-intense-fg ansi-bold">    368</span> <span style="color: rgb(175,0,0)">    """</span>
+<span class="ansi-green-fg">--&gt; 369</span>     <span class="ansi-yellow-bg">deprecation</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">DEPR_MSG_HAPPENED</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">format</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">old_name</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">removed_in</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">new_name</span><span class="ansi-yellow-bg">)</span><span class="ansi-yellow-bg">)</span>
+
+File <span class="ansi-green-fg">~/Library/Python/3.9/lib/python/site-packages/PyPDF2/_utils.py:351</span>, in <span class="ansi-cyan-fg">deprecation</span><span class="ansi-blue-fg">(msg)</span>
+<span class="ansi-green-intense-fg ansi-bold">    350</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">deprecation</span>(msg: <span style="color: rgb(0,135,0)">str</span>) <span style="color: rgb(98,98,98)">-</span><span style="color: rgb(98,98,98)">&gt;</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>:
+<span class="ansi-green-fg">--&gt; 351</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> DeprecationError(msg)
+
+<span class="ansi-red-fg">DeprecationError</span>: addBookmark is deprecated and was removed in PyPDF2 3.0.0. Use add_outline_item instead.</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Create-PDF-with-pandoc">Create PDF with pandoc<a class="anchor-link" href="#Create-PDF-with-pandoc">¶</a></h2><p>WiP</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>pandoc<span class="w"> </span>-s<span class="w"> </span>programming/Programmieren1.de.html<span class="w"> </span>-o<span class="w"> </span>output.pdf<span class="w"> </span>--toc
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>[WARNING] Could not fetch resource Programmieren1.webp: replacing image with description
+[WARNING] Could not fetch resource Kanban1.miro.de.jpg: replacing image with description
+The SVG /private/var/folders/29/66ymvpfx7j7dxrkh4vzx5zyc0000gn/T/tex2pdf.-bbc607c786810983/d9088db889f93d7c57c17520ee1d8a39d1bbe06a.svg has no dimensions
+[WARNING] Could not convert image /private/var/folders/29/66ymvpfx7j7dxrkh4vzx5zyc0000gn/T/tex2pdf.-bbc607c786810983/d9088db889f93d7c57c17520ee1d8a39d1bbe06a.svg: conversion from SVG failed
+The SVG /private/var/folders/29/66ymvpfx7j7dxrkh4vzx5zyc0000gn/T/tex2pdf.-bbc607c786810983/d9088db889f93d7c57c17520ee1d8a39d1bbe06a.svg has no dimensions
+[WARNING] Could not convert image /private/var/folders/29/66ymvpfx7j7dxrkh4vzx5zyc0000gn/T/tex2pdf.-bbc607c786810983/d9088db889f93d7c57c17520ee1d8a39d1bbe06a.svg: conversion from SVG failed
+Error producing PDF.
+! Package svg Error: File `d9088db889f93d7c57c17520ee1d8a39d1bbe06a_svg-tex.pdf
+' is missing.
+
+See the svg package documentation for explanation.
+Type  H &lt;return&gt;  for immediate help.
+ ...                                              
+                                                  
+l.101 ...db889f93d7c57c17520ee1d8a39d1bbe06a.svg}}
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h1 id="Create-PDF-with-beautiful-soup-and-pdfkit">Create PDF with beautiful soup and pdfkit<a class="anchor-link" href="#Create-PDF-with-beautiful-soup-and-pdfkit">¶</a></h1><p>Does not work so well.</p>
 <h3 id="1.--Extract-Headlines-from-HTML-Files:">1.  <strong>Extract Headlines from HTML Files:</strong><a class="anchor-link" href="#1.--Extract-Headlines-from-HTML-Files:">¶</a></h3><ul>
 <li>You'll need to parse the HTML files to extract the headline tags (<code>&lt;h1&gt;</code>,  <code>&lt;h2&gt;</code>, etc.) and use them to generate the table of contents.</li>
@@ -7822,7 +8212,7 @@ Note: you may need to restart the kernel to use updated packages.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">beautifulsoup4</span> <span class="n">pdfkit</span>
@@ -7839,13 +8229,19 @@ Note: you may need to restart the kernel to use updated packages.
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>Defaulting to user installation because normal site-packages is not writeable
-Requirement already satisfied: beautifulsoup4 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (4.12.3)
-Collecting pdfkit
-  Downloading pdfkit-1.0.0-py3-none-any.whl.metadata (9.3 kB)
-Requirement already satisfied: soupsieve&gt;1.2 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from beautifulsoup4) (2.5)
-Downloading pdfkit-1.0.0-py3-none-any.whl (12 kB)
-Installing collected packages: pdfkit
-Successfully installed pdfkit-1.0.0
+Requirement already satisfied: pdfkit in /Users/starkj/Library/Python/3.9/lib/python/site-packages (1.0.0)
+Collecting bs4
+  Downloading bs4-0.0.2-py2.py3-none-any.whl.metadata (411 bytes)
+Requirement already satisfied: requests in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (2.32.3)
+Requirement already satisfied: beautifulsoup4 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from bs4) (4.12.3)
+Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from requests) (3.3.2)
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from requests) (3.7)
+Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from requests) (2.2.2)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from requests) (2024.7.4)
+Requirement already satisfied: soupsieve&gt;1.2 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from beautifulsoup4-&gt;bs4) (2.5)
+Downloading bs4-0.0.2-py2.py3-none-any.whl (1.2 kB)
+Installing collected packages: bs4
+Successfully installed bs4-0.0.2
 Note: you may need to restart the kernel to use updated packages.
 </pre>
 </div>
@@ -7868,7 +8264,7 @@ Note: you may need to restart the kernel to use updated packages.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
