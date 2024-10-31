@@ -8107,6 +8107,147 @@ Spiel beendet.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Arithmetik"><strong>Arithmetik</strong><a class="anchor-link" href="#Arithmetik">¶</a></h3><ul>
+<li>Arithmetische Operationen helfen, Spielregeln zu verwalten, z.B. das Zählen von Zügen oder das Berechnen von Positionen.</li>
+<li>Arithmetik wird genutzt, um Regeln zu steuern, wie z.B. das Erkennen eines Unentschiedens nach einer bestimmten Anzahl von Zügen.</li>
+<li>In Python entsprechen diese Operationen typischen arithmetischen Berechnungen wie Addition, Subtraktion und Vergleichen, um Zustände im Spiel zu verwalten.</li>
+</ul>
+<details>
+<summary>Ausführliche Erklärung...</summary>
+Arithmetik spielt in den Regeln von Spielen wie TicTacToe eine Rolle, um die Spiellogik effizient zu verwalten. Zum Beispiel kann das Zählen der Anzahl der Spielzüge genutzt werden, um zu erkennen, wann das Spiel unentschieden endet (nach genau 9 Zügen). Auch das Berechnen von Indexpositionen oder das Überprüfen von Gewinnbedingungen kann arithmetische Operationen beinhalten.
+
+<p>In Python entsprechen diese arithmetischen Operationen typischen mathematischen Berechnungen, wie Addition, Subtraktion, Zählen oder Vergleiche. Diese Operationen helfen, den Zustand des Spiels zu verwalten und auf bestimmte Ereignisse zu reagieren.</p>
+</details>
+<p>Schauen wir uns ein Codebeispiel an, das arithmetische Operationen in TicTacToe-Regeln verwendet:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Tic-Tac-Toe-Spielbrett</span>
+<span class="n">spielbrett</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">' '</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
+
+<span class="c1"># Zähler für die Anzahl der Spielzüge</span>
+<span class="n">zug_zaehler</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># Arithmetik: Startwert für die Anzahl der Züge</span>
+
+<span class="c1"># Beispielhafte Spielzüge</span>
+<span class="n">spielbrett</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'X'</span>  <span class="c1"># Spieler X macht einen Zug</span>
+<span class="n">zug_zaehler</span> <span class="o">+=</span> <span class="mi">1</span>  <span class="c1"># Arithmetik: Spielzugzähler um 1 erhöhen</span>
+
+<span class="n">spielbrett</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'O'</span>  <span class="c1"># Spieler O macht einen Zug</span>
+<span class="n">zug_zaehler</span> <span class="o">+=</span> <span class="mi">1</span>  <span class="c1"># Arithmetik: Spielzugzähler um 1 erhöhen</span>
+
+<span class="n">spielbrett</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'X'</span>  <span class="c1"># Spieler X macht einen weiteren Zug</span>
+<span class="n">zug_zaehler</span> <span class="o">+=</span> <span class="mi">1</span>  <span class="c1"># Arithmetik: Spielzugzähler um 1 erhöhen</span>
+
+<span class="n">spielbrett</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'O'</span>  <span class="c1"># Spieler O macht einen weiteren Zug</span>
+<span class="n">zug_zaehler</span> <span class="o">+=</span> <span class="mi">1</span>  <span class="c1"># Arithmetik: Spielzugzähler um 1 erhöhen</span>
+
+<span class="n">spielbrett</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'X'</span>  <span class="c1"># Spieler X macht einen weiteren Zug</span>
+<span class="n">zug_zaehler</span> <span class="o">+=</span> <span class="mi">1</span>  <span class="c1"># Arithmetik: Spielzugzähler um 1 erhöhen</span>
+
+<span class="n">spielbrett</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'O'</span>  <span class="c1"># Spieler O macht einen weiteren Zug</span>
+<span class="n">zug_zaehler</span> <span class="o">+=</span> <span class="mi">1</span>  <span class="c1"># Arithmetik: Spielzugzähler um 1 erhöhen</span>
+
+<span class="n">spielbrett</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'X'</span>  <span class="c1"># Spieler X macht einen weiteren Zug</span>
+<span class="n">zug_zaehler</span> <span class="o">+=</span> <span class="mi">1</span>  <span class="c1"># Arithmetik: Spielzugzähler um 1 erhöhen</span>
+
+<span class="n">spielbrett</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'O'</span>  <span class="c1"># Spieler O macht einen weiteren Zug</span>
+<span class="n">zug_zaehler</span> <span class="o">+=</span> <span class="mi">1</span>  <span class="c1"># Arithmetik: Spielzugzähler um 1 erhöhen</span>
+
+<span class="n">spielbrett</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'X'</span>  <span class="c1"># Spieler X macht den letzten Zug</span>
+<span class="n">zug_zaehler</span> <span class="o">+=</span> <span class="mi">1</span>  <span class="c1"># Arithmetik: Spielzugzähler um 1 erhöhen</span>
+
+<span class="c1"># Überprüfen, ob das Spiel unentschieden ist</span>
+<span class="k">if</span> <span class="n">zug_zaehler</span> <span class="o">==</span> <span class="mi">9</span><span class="p">:</span>  <span class="c1"># Arithmetik: Wenn 9 Züge gemacht wurden, ist das Spiel unentschieden</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Das Spiel endet unentschieden!"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Das Spiel ist noch nicht unentschieden."</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Das Spiel endet unentschieden!
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<details>
+<summary>Ausführliche Erklärung...</summary>
+<ul>
+<li><p><strong>Initialisierung des Spielbretts</strong>:</p>
+<ul>
+<li>Ein 3x3-Array (<code>spielbrett</code>) wird erstellt, in dem alle Felder zunächst leer (<code>' '</code>) sind.</li>
+</ul>
+</li>
+<li><p><strong>Zähler für Spielzüge</strong>:</p>
+<ul>
+<li>Die Variable <code>zug_zaehler</code> startet bei 0 und repräsentiert die Anzahl der bisherigen Spielzüge.</li>
+</ul>
+</li>
+<li><p><strong>Spielzüge der Spieler</strong>:</p>
+<ul>
+<li>Jeder Zug eines Spielers (<code>'X'</code> oder <code>'O'</code>) wird in ein bestimmtes Feld des <code>spielbrett</code> eingetragen.</li>
+<li>Nach jedem Zug wird <code>zug_zaehler</code> um 1 erhöht (Arithmetik: <code>zug_zaehler += 1</code>).</li>
+</ul>
+</li>
+<li><p><strong>Überprüfung auf Unentschieden</strong>:</p>
+<ul>
+<li>Nach den Spielzügen wird geprüft, ob <code>zug_zaehler</code> den Wert 9 erreicht hat.</li>
+<li>Wenn <code>zug_zaehler == 9</code>, sind alle Felder belegt, und das Spiel endet unentschieden.</li>
+<li>Andernfalls ist das Spiel noch offen.</li>
+</ul>
+</li>
+<li><p><strong>Ausgabe des Ergebnisses</strong>:</p>
+<ul>
+<li>Je nach Zustand des <code>zug_zaehler</code> wird entweder eine Nachricht für ein unentschiedenes Spiel oder eine Fortsetzung des Spiels angezeigt.</li>
+</ul>
+</li>
+</ul>
+</details>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><a href="csharp/CSharp_Introduction.de.html#operstoren">Operatoren in C#</a> →</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="Kontrollstrukturen"><strong>Kontrollstrukturen</strong><a class="anchor-link" href="#Kontrollstrukturen">¶</a></h3><ul>
 <li>Spielregeln in TicTacToe werden durch Bedingungen und Schleifen gesteuert.</li>
 <li><code>if</code>-Bedingungen prüfen bestimmte Situationen (z.B. Sieg, ungültige Züge).</li>
@@ -8217,110 +8358,6 @@ TicTacToe hat klare Regeln, die durch verschiedene Bedingungen und Wiederholunge
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p><a href="csharp/CSharp_Introduction.de.html#bedingte-anweisungen">Bedingte Anweisungen in C#</a> →</p>
 <p><a href="csharp/CSharp_Introduction.de.html#schleifen">Schleifen in C#</a> →</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Arithmetik"><strong>Arithmetik</strong><a class="anchor-link" href="#Arithmetik">¶</a></h3><ul>
-<li>Arithmetische Operationen helfen, Spielregeln zu verwalten, z.B. das Zählen von Zügen oder das Berechnen von Positionen.</li>
-<li>Arithmetik wird genutzt, um Regeln zu steuern, wie z.B. das Erkennen eines Unentschiedens nach einer bestimmten Anzahl von Zügen.</li>
-<li>In Python entsprechen diese Operationen typischen arithmetischen Berechnungen wie Addition, Subtraktion und Vergleichen, um Zustände im Spiel zu verwalten.</li>
-</ul>
-<details>
-<summary>Ausführliche Erklärung...</summary>
-Arithmetik spielt in den Regeln von Spielen wie TicTacToe eine Rolle, um die Spiellogik effizient zu verwalten. Zum Beispiel kann das Zählen der Anzahl der Spielzüge genutzt werden, um zu erkennen, wann das Spiel unentschieden endet (nach genau 9 Zügen). Auch das Berechnen von Indexpositionen oder das Überprüfen von Gewinnbedingungen kann arithmetische Operationen beinhalten.
-
-<p>In Python entsprechen diese arithmetischen Operationen typischen mathematischen Berechnungen, wie Addition, Subtraktion, Zählen oder Vergleiche. Diese Operationen helfen, den Zustand des Spiels zu verwalten und auf bestimmte Ereignisse zu reagieren.</p>
-</details>
-<p>Schauen wir uns ein Codebeispiel an, das arithmetische Operationen in TicTacToe-Regeln verwendet:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Zähler für die Anzahl der Spielzüge</span>
-<span class="n">zug_zaehler</span> <span class="o">=</span> <span class="mi">0</span>
-
-<span class="c1"># Beispielhafte Spielzüge</span>
-<span class="k">def</span> <span class="nf">spielzug_machen</span><span class="p">(</span><span class="n">spielbrett</span><span class="p">,</span> <span class="n">spieler</span><span class="p">,</span> <span class="n">zeile</span><span class="p">,</span> <span class="n">spalte</span><span class="p">):</span>
-    <span class="k">global</span> <span class="n">zug_zaehler</span>
-    <span class="k">if</span> <span class="n">spielbrett</span><span class="p">[</span><span class="n">zeile</span><span class="p">][</span><span class="n">spalte</span><span class="p">]</span> <span class="o">==</span> <span class="s1">' '</span><span class="p">:</span>
-        <span class="n">spielbrett</span><span class="p">[</span><span class="n">zeile</span><span class="p">][</span><span class="n">spalte</span><span class="p">]</span> <span class="o">=</span> <span class="n">spieler</span>
-        <span class="n">zug_zaehler</span> <span class="o">+=</span> <span class="mi">1</span>  <span class="c1"># Arithmetik: Spielzugzähler um 1 erhöhen</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">"Das Feld ist bereits belegt. Wähle ein anderes Feld."</span><span class="p">)</span>
-    
-    <span class="k">return</span> <span class="n">zug_zaehler</span>
-
-<span class="c1"># Überprüfen, ob das Spiel unentschieden ist</span>
-<span class="k">def</span> <span class="nf">check_unentschieden</span><span class="p">(</span><span class="n">zug_zaehler</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">zug_zaehler</span> <span class="o">==</span> <span class="mi">9</span><span class="p">:</span>  <span class="c1"># Arithmetik: Wenn 9 Züge gemacht wurden, ist das Spiel unentschieden</span>
-        <span class="k">return</span> <span class="kc">True</span>
-    <span class="k">return</span> <span class="kc">False</span>
-
-<span class="c1"># Beispielhafte Nutzung</span>
-<span class="n">spielzug_machen</span><span class="p">(</span><span class="n">spielbrett</span><span class="p">,</span> <span class="s1">'X'</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="n">spielzug_machen</span><span class="p">(</span><span class="n">spielbrett</span><span class="p">,</span> <span class="s1">'O'</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">spielzug_machen</span><span class="p">(</span><span class="n">spielbrett</span><span class="p">,</span> <span class="s1">'X'</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">spielzug_machen</span><span class="p">(</span><span class="n">spielbrett</span><span class="p">,</span> <span class="s1">'O'</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="n">spielzug_machen</span><span class="p">(</span><span class="n">spielbrett</span><span class="p">,</span> <span class="s1">'X'</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">spielzug_machen</span><span class="p">(</span><span class="n">spielbrett</span><span class="p">,</span> <span class="s1">'O'</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">spielzug_machen</span><span class="p">(</span><span class="n">spielbrett</span><span class="p">,</span> <span class="s1">'X'</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="n">spielzug_machen</span><span class="p">(</span><span class="n">spielbrett</span><span class="p">,</span> <span class="s1">'O'</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">spielzug_machen</span><span class="p">(</span><span class="n">spielbrett</span><span class="p">,</span> <span class="s1">'X'</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="n">check_unentschieden</span><span class="p">(</span><span class="n">zug_zaehler</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Das Spiel endet unentschieden!"</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Das Feld ist bereits belegt. Wähle ein anderes Feld.
-Das Feld ist bereits belegt. Wähle ein anderes Feld.
-Das Feld ist bereits belegt. Wähle ein anderes Feld.
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<details>
-<summary>Ausführliche Erklärung...</summary>
-<ul>
-<li><p><strong>Arithmetik beim Zählen der Spielzüge:</strong>  In der Funktion  <code>spielzug_machen</code>  wird der Zähler  <code>zug_zaehler</code>  nach jedem gültigen Spielzug um 1 erhöht. Dies entspricht der Verwendung von arithmetischen Operationen wie Addition, um den Fortschritt des Spiels zu verfolgen.</p>
-</li>
-<li><p><strong>Arithmetische Bedingung für Unentschieden:</strong>  Die Funktion  <code>check_unentschieden</code>  überprüft, ob genau 9 Züge gemacht wurden, indem sie den Wert von  <code>zug_zaehler</code>  vergleicht. Dies ist ein Beispiel für eine arithmetische Bedingung, die eine Regel im Spiel steuert.</p>
-</li>
-<li><p><strong>Vergleich mit Arithmetik in Python:</strong>  Diese arithmetischen Operationen (z.B. Zählen, Vergleichen) sind in Python genauso nützlich wie in den Spielregeln, da sie den Zustand verwalten und Entscheidungen im Spiel beeinflussen.</p>
-</li></ul></details>
-
-
 </div>
 </div>
 </div>
@@ -8497,6 +8534,17 @@ Unentschieden!
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><a href="csharp/CSharp_Introduction.de.html#prozeduren-und-funktionen">Prozeduren und Funktionen in C#</a> →</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="Komplexere-Datenstrukturen"><strong>Komplexere Datenstrukturen</strong><a class="anchor-link" href="#Komplexere-Datenstrukturen">¶</a></h3><ul>
 <li>Datenstrukturen wie Dictionaries speichern Informationen in Schlüssel-Wert-Paaren.</li>
 <li>Sie ermöglichen schnellen Zugriff auf Daten über eindeutige Schlüssel.</li>
@@ -8615,6 +8663,17 @@ In einem Spiel wie TicTacToe können Dictionaries verwendet werden, um Informati
 <li><p><strong>Komplexere Datenstrukturen (Dictionary):</strong>  Dictionaries in Python speichern Daten in Schlüssel-Wert-Paaren und bieten schnellen Zugriff auf komplexe Spielinformationen, wie z.B. Spielergebnisse. Sie sind nützlich, um strukturierte und flexible Datenverwaltung im Spiel zu ermöglichen.</p>
 </li>
 </ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><a href="csharp/CSharp_Introduction.de.html#komplexere-datenstrukturen">Komplexere Datenstrukturen in C#</a> →</p>
 </div>
 </div>
 </div>
