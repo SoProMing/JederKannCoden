@@ -7990,19 +7990,43 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="n">string</span> <span class="n">hello</span> <span class="o">=</span> <span class="s2">"Hello, World!"</span><span class="p">;</span>
 <span class="nb">int</span> <span class="n">length</span> <span class="o">=</span> <span class="n">hello</span><span class="o">.</span><span class="n">Length</span><span class="p">;</span>       <span class="o">//</span> <span class="n">Länge</span> <span class="n">des</span> <span class="n">Strings</span>
 <span class="n">string</span> <span class="n">upper</span> <span class="o">=</span> <span class="n">hello</span><span class="o">.</span><span class="n">ToUpper</span><span class="p">();</span>  <span class="o">//</span> <span class="s2">"HELLO, WORLD!"</span>
 <span class="n">string</span> <span class="n">sub</span> <span class="o">=</span> <span class="n">hello</span><span class="o">.</span><span class="n">Substring</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span> <span class="o">//</span> <span class="s2">"World!"</span>
+<span class="n">char</span> <span class="n">buchstabe</span> <span class="o">=</span> <span class="s1">'b'</span><span class="p">;</span>
+<span class="nb">bool</span> <span class="n">gleich</span> <span class="o">=</span> <span class="n">buchstabe</span><span class="o">.</span><span class="n">Equals</span><span class="p">(</span><span class="n">buchstabe</span><span class="p">);</span>
+<span class="nb">bool</span> <span class="n">gleich2</span> <span class="o">=</span> <span class="n">buchstabe</span> <span class="o">==</span> <span class="s1">'b'</span><span class="p">;</span>
+
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">upper</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">sub</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">gleich</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">gleich2</span><span class="p">);</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>HELLO, WORLD!
+World!
+True
+True
+</pre>
 </div>
 </div>
 </div>
@@ -8018,18 +8042,37 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [43]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="n">string</span> <span class="n">sentence</span> <span class="o">=</span> <span class="s2">"The quick brown fox jumps over the lazy dog."</span><span class="p">;</span>
 <span class="nb">bool</span> <span class="n">containsFox</span> <span class="o">=</span> <span class="n">sentence</span><span class="o">.</span><span class="n">Contains</span><span class="p">(</span><span class="s2">"fox"</span><span class="p">);</span>
 <span class="nb">int</span> <span class="n">indexOfDog</span> <span class="o">=</span> <span class="n">sentence</span><span class="o">.</span><span class="n">IndexOf</span><span class="p">(</span><span class="s2">"dog"</span><span class="p">);</span>
+
+<span class="nb">bool</span> <span class="n">containsBrown</span> <span class="o">=</span> <span class="n">sentence</span><span class="o">.</span><span class="n">IndexOf</span><span class="p">(</span><span class="s2">"brown"</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">indexOfDog</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">containsBrown</span><span class="p">);</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>40
+True
+</pre>
 </div>
 </div>
 </div>
@@ -8096,10 +8139,16 @@ Speichert Daten in mehreren Dimensionen, z.B. Tabellenform.</li>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="nb">int</span><span class="p">[,]</span> <span class="n">matrix</span> <span class="o">=</span> <span class="p">{</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span> <span class="p">},</span> <span class="p">{</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span> <span class="p">}</span> <span class="p">};</span>
+
+<span class="n">string</span><span class="p">[,]</span> <span class="n">ticTacToeBoard</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="p">{</span> <span class="s2">"X"</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span><span class="p">},</span>
+        <span class="p">{</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span><span class="p">},</span>
+        <span class="p">{</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span><span class="p">}</span>
+    <span class="p">};</span>
 </pre></div>
 </div>
 </div>
@@ -8224,6 +8273,7 @@ Ein Array von Arrays, bei dem die inneren Arrays unterschiedliche Längen haben 
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="n">var</span> <span class="n">number</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>  <span class="o">//</span> <span class="n">number</span> <span class="n">wird</span> <span class="n">als</span> <span class="nb">int</span> <span class="n">deklariert</span>
+<span class="n">var</span> <span class="n">text</span> <span class="o">=</span> <span class="s2">"Mein Text"</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -8272,7 +8322,7 @@ Ein Array von Arrays, bei dem die inneren Arrays unterschiedliche Längen haben 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [47]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [23]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="nb">int</span> <span class="n">number</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
@@ -8294,19 +8344,56 @@ Ein Array von Arrays, bei dem die inneren Arrays unterschiedliche Längen haben 
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [48]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [37]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="nb">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
 <span class="nb">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
 <span class="nb">int</span> <span class="nb">sum</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
 <span class="nb">bool</span> <span class="n">isEqual</span> <span class="o">=</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">;</span>
+
+<span class="nb">bool</span> <span class="ow">and</span> <span class="o">=</span> <span class="n">false</span> <span class="o">&amp;&amp;</span> <span class="n">true</span><span class="p">;</span>
+<span class="nb">bool</span> <span class="ow">or</span> <span class="o">=</span> <span class="n">false</span> <span class="o">||</span> <span class="n">true</span><span class="p">;</span>
+
+<span class="nb">int</span> <span class="n">alter</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">(</span> <span class="p">(</span> <span class="n">alter</span> <span class="o">&gt;</span> <span class="mi">12</span> <span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span> <span class="n">alter</span> <span class="o">&lt;=</span> <span class="mi">19</span> <span class="p">)</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Teen!"</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="o">//</span> <span class="k">if</span> <span class="p">(</span> <span class="p">(</span> <span class="n">alter</span> <span class="o">&lt;</span> <span class="mi">12</span> <span class="p">)</span> <span class="o">||</span> <span class="p">(</span> <span class="n">alter</span> <span class="o">&gt;</span> <span class="mi">19</span> <span class="p">)</span> <span class="p">)</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Kein Teen!"</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">if</span> <span class="p">(</span> <span class="p">(</span> <span class="n">alter</span> <span class="o">&gt;=</span> <span class="mi">19</span> <span class="p">)</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Autofahren"</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="ow">and</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="ow">or</span><span class="p">);</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Kein Teen!
+False
+True
+</pre>
 </div>
 </div>
 </div>
@@ -8356,14 +8443,22 @@ Ein Array von Arrays, bei dem die inneren Arrays unterschiedliche Längen haben 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [46]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="nb">int</span> <span class="n">age</span> <span class="o">=</span> <span class="mi">16</span><span class="p">;</span>
+<div class="highlight hl-python"><pre><span></span><span class="nb">int</span> <span class="n">age</span> <span class="o">=</span> <span class="mi">65</span><span class="p">;</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"You are an adult."</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">64</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"With pension."</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span> <span class="p">(</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="mi">4</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"You are a toddler."</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="k">else</span>
 <span class="p">{</span>
@@ -8381,7 +8476,8 @@ Ein Array von Arrays, bei dem die inneren Arrays unterschiedliche Längen haben 
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>You are not an adult.
+<pre>You are an adult.
+With pension.
 </pre>
 </div>
 </div>
@@ -8403,7 +8499,7 @@ Ein Array von Arrays, bei dem die inneren Arrays unterschiedliche Längen haben 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [50]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [39]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="nb">int</span> <span class="n">day</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
@@ -8465,12 +8561,18 @@ Ein Array von Arrays, bei dem die inneren Arrays unterschiedliche Längen haben 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [51]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [50]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<div class="highlight hl-python"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">6</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nb">int</span> <span class="n">j</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">j</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span><span class="o">--</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">j</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -8489,6 +8591,14 @@ Ein Array von Arrays, bei dem die inneren Arrays unterschiedliche Längen haben 
 2
 3
 4
+5
+6
+5
+4
+3
+2
+1
+0
 </pre>
 </div>
 </div>
@@ -8510,12 +8620,14 @@ Ein Array von Arrays, bei dem die inneren Arrays unterschiedliche Längen haben 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [52]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [53]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
 <span class="p">{</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">Write</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Zeile1: "</span> <span class="o">+</span> <span class="n">i</span> <span class="o">+</span> <span class="s2">"|"</span><span class="p">);</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="mi">5</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>      <span class="o">//</span> <span class="n">Schleife</span> <span class="n">wird</span> <span class="n">beendet</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">Write</span><span class="p">(</span><span class="s2">"Zeile2: "</span> <span class="o">+</span> <span class="n">i</span> <span class="o">+</span> <span class="s2">"|"</span><span class="p">);</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span> <span class="o">//</span> <span class="n">Springt</span> <span class="n">zur</span> <span class="n">nächsten</span> <span class="n">Iteration</span>
     <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
 <span class="p">}</span>
@@ -8531,9 +8643,15 @@ Ein Array von Arrays, bei dem die inneren Arrays unterschiedliche Längen haben 
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>1
-3
-</pre>
+<pre>
+Zeile1: 0|Zeile2: 0|
+Zeile1: 1|Zeile2: 1|1
+
+Zeile1: 2|Zeile2: 2|
+Zeile1: 3|Zeile2: 3|3
+
+Zeile1: 4|Zeile2: 4|
+Zeile1: 5|</pre>
 </div>
 </div>
 </div>
@@ -8554,13 +8672,17 @@ Ein Array von Arrays, bei dem die inneren Arrays unterschiedliche Längen haben 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [53]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [55]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="n">string</span><span class="p">[]</span> <span class="n">fruits</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">"Apple"</span><span class="p">,</span> <span class="s2">"Banana"</span><span class="p">,</span> <span class="s2">"Cherry"</span> <span class="p">};</span>
 <span class="n">foreach</span> <span class="p">(</span><span class="n">string</span> <span class="n">fruit</span> <span class="ow">in</span> <span class="n">fruits</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">fruit</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="n">foreach</span><span class="p">(</span> <span class="n">char</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">fruits</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -8577,6 +8699,11 @@ Ein Array von Arrays, bei dem die inneren Arrays unterschiedliche Längen haben 
 <pre>Apple
 Banana
 Cherry
+A
+p
+p
+l
+e
 </pre>
 </div>
 </div>
@@ -8593,55 +8720,38 @@ Cherry
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [54]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [60]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="nb">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<div class="highlight hl-python"><pre><span></span><span class="nb">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
 <span class="k">while</span> <span class="p">(</span><span class="n">count</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">count</span><span class="p">);</span>
     <span class="n">count</span><span class="o">++</span><span class="p">;</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">count</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>0
-1
-2
-3
-4
-</pre>
-</div>
-</div>
-</div>
-</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [55]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [61]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="nb">int</span> <span class="n">count2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<div class="highlight hl-python"><pre><span></span><span class="nb">int</span> <span class="n">count2</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
 <span class="n">do</span>
 <span class="p">{</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">count2</span><span class="p">);</span>
     <span class="n">count2</span><span class="o">++</span><span class="p">;</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">count2</span><span class="p">);</span>
 <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="n">count2</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -8655,11 +8765,7 @@ Cherry
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>0
-1
-2
-3
-4
+<pre>6
 </pre>
 </div>
 </div>
