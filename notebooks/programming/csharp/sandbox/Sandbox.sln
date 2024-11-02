@@ -3,17 +3,26 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "helloworld", "helloworld\helloworld.csproj", "{AEC25DC4-0E41-46BA-8E2C-9525EAA9F007}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "helloworld", "helloworld\helloworld.csproj", "{AEC25DC4-0E41-46BA-8E2C-9525EAA9F007}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tictactoe", "tictactoe\tictactoe.csproj", "{DFC36D4A-DCCC-40F7-85DF-CA393DF58192}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tictactoe", "tictactoe\tictactoe.csproj", "{DFC36D4A-DCCC-40F7-85DF-CA393DF58192}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Projektmappenelemente", "Projektmappenelemente", "{0CB386B6-D6C6-411B-AD39-6ED30AA6E9D1}"
+	ProjectSection(SolutionItems) = preProject
+		..\procedural-functional\Console_ReadLine_Basics.de.html = ..\procedural-functional\Console_ReadLine_Basics.de.html
+		..\procedural-functional\Console_WriteLine_TicTacToe.de.html = ..\procedural-functional\Console_WriteLine_TicTacToe.de.html
+		..\procedural-functional\CSharp_Boolean_Operators_Basics.de.html = ..\procedural-functional\CSharp_Boolean_Operators_Basics.de.html
+		..\procedural-functional\CSharp_Conditional_TicTacToe.de.html = ..\procedural-functional\CSharp_Conditional_TicTacToe.de.html
+		..\CSharp_Introduction.de.html = ..\CSharp_Introduction.de.html
+		..\procedural-functional\CSharp_Loops_TicTacToe.de.html = ..\procedural-functional\CSharp_Loops_TicTacToe.de.html
+		..\procedural-functional\CSharp_Other_Operators_Basics.de.html = ..\procedural-functional\CSharp_Other_Operators_Basics.de.html
+		..\..\Programmieren1.de.html = ..\..\Programmieren1.de.html
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{AEC25DC4-0E41-46BA-8E2C-9525EAA9F007}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -24,5 +33,11 @@ Global
 		{DFC36D4A-DCCC-40F7-85DF-CA393DF58192}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DFC36D4A-DCCC-40F7-85DF-CA393DF58192}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DFC36D4A-DCCC-40F7-85DF-CA393DF58192}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3D2D669D-11F5-4C99-BB98-60F09016CAAE}
 	EndGlobalSection
 EndGlobal
