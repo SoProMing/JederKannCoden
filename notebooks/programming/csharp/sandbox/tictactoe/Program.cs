@@ -19,9 +19,9 @@ class Program
         string spieler2 = "O";
         string aktuellerSpieler = spieler1;
 
-        for (int runde = 0; runde < maxRunden; runde++) // bool gameover = false; while (!gameover) {}
+        for (int runde = 0; runde < maxRunden; runde++) // Alternative: bool gameover = false; while (!gameover) {}
         {
-            // Aktuellen Spieler anhand von Runde setzen (Variante 1)
+            // Aktuellen Spieler anhand von Runde setzen (Spieler ändern, Variante 1)
             // if (runde % 2 == 0) aktuellerSpieler = spieler1; // % ist Modulo -> öffne Number_Systems.de.html
             // else aktuellerSpieler = spieler2;
 
@@ -75,10 +75,27 @@ class Program
             while (!korrekteEingabe);
 
             // Sieg überprüfen -> öffne CSharp_Conditional_TicTacToe.de.html
+            bool gewinner = false;
+            // Checke Zeilen
+
+            for (int i = 0; i < 3; i++)
+            {
+                if ((spielfeld[i, 0] == spielfeld[i, 1])
+                    && (spielfeld[i, 1] == spielfeld[i, 2])
+                    && (spielfeld[i, 0] != " ")) gewinner = true;
+            }
+            if (gewinner)
+            {
+                Console.WriteLine("Spieler " + aktuellerSpieler + "hat gewonnen!");
+                Console.WriteLine("Drücke Enter, um das Programm zu beenden!");
+                Console.ReadLine();
+                return;
+            }
+            
 
             // Unentschieden überprüfen -> öffne CSharp_Conditional_TicTacToe.de.html
 
-            // Spieler wechseln -> öffne CSharp_Other_Operators_Basics.de.html (Variante 2)
+            // Spieler wechseln -> öffne CSharp_Other_Operators_Basics.de.html (Spieler ändern, Variante 2)
             if (aktuellerSpieler == spieler1) aktuellerSpieler = spieler2;
             else aktuellerSpieler = spieler1;
         }
