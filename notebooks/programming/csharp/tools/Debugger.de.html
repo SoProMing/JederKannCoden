@@ -7510,142 +7510,162 @@ a.anchor-link {
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3adfadcf">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="C%23-WriteLine-&amp;-TicTacToe">C# WriteLine &amp; TicTacToe<a class="anchor-link" href="#C%23-WriteLine-&amp;-TicTacToe">¶</a></h1><table border="0">
+<h1 id="Debugger-und-Breakpoints">Debugger und Breakpoints<a class="anchor-link" href="#Debugger-und-Breakpoints">¶</a></h1><table border="0">
 <tr>
 <td>
-<img alt="No description has been provided for this image" src="writeline.webp"/>
+<img alt="No description has been provided for this image" src="Debugger.webp"/>
 </td>
 <td rowspan="2">
-<a href="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3458764554347680798&amp;cot=14"><img alt="No description has been provided for this image" src="Radar_WriteLine.de.jpg"/></a>
+<a href="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3458764554347680798&amp;cot=14"><img alt="No description has been provided for this image" src="Radar_Debugger.de.jpg"/></a>
 </td>
 </tr>
 <tr>
 <td>
-<a href="https://learn.microsoft.com/de-de/dotnet/api/system.console.writeline?view=net-5.0">Link zur Microsoft Dokumentation</a><br/>
-<a href="Console_WriteLine_Basics.de.html">Link zu WriteLine Basics</a><br/>
-<a href="Console_WriteLine_Samples.de.html">Link zu WriteLine Samples</a><br/>
-<a href="Console_ReadLine_Basics.de.html">Link zu ReadLine</a><br/>
 <a href="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3458764554347680798&amp;cot=14">Link zum roten Faden auf Miro</a><br/>
-<a href="https://www.w3schools.com/cs/cs_output.php">Link zu Tutorial auf w3schools</a>
 </td>
 </tr>
 </table>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=34d68b03">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Um ein Tic-Tac-Toe-Spielbrett zu malen, kannst du die Methode Console.WriteLine() verwenden, um den aktuellen Zustand des Bretts zu zeichnen. Das Brett besteht aus 3x3 Feldern, die entweder leer sind oder ein "X" oder "O" enthalten. Fangen wir mit einem leeren Brett an:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=d549d608">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-C#"><pre><span></span><span class="c1">// Malen des leeren Tic-Tac-Toe-Bretts</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"   |   |   "</span><span class="p">);</span><span class="w">  </span><span class="c1">// Erste Reihe</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"---+---+---"</span><span class="p">);</span><span class="w">  </span><span class="c1">// Trennlinie</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"   |   |   "</span><span class="p">);</span><span class="w">  </span><span class="c1">// Zweite Reihe</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"---+---+---"</span><span class="p">);</span><span class="w">  </span><span class="c1">// Trennlinie</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"   |   |   "</span><span class="p">);</span><span class="w">  </span><span class="c1">// Dritte Reihe</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>   |   |   
----+---+---
-   |   |   
----+---+---
-   |   |   
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=caa10411">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Und nun erweitert um 9 Variablen:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e4417676">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-C#"><pre><span></span><span class="kt">string</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"X"</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"O"</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"X"</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"."</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"O"</span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"X"</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"X"</span><span class="p">,</span><span class="w"> </span><span class="n">h</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"X"</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"O"</span><span class="p">;</span>
-
-<span class="c1">// Malen des leeren Tic-Tac-Toe-Bretts</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$" {a} | {b} | {c} "</span><span class="p">);</span><span class="w">  </span><span class="c1">// Erste Reihe</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$"---+---+---"</span><span class="p">);</span><span class="w">  </span><span class="c1">// Trennlinie</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$" {d} | {e} | {f} "</span><span class="p">);</span><span class="w">  </span><span class="c1">// Zweite Reihe</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$"---+---+---"</span><span class="p">);</span><span class="w">  </span><span class="c1">// Trennlinie</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$" {g} | {h} | {i} "</span><span class="p">);</span><span class="w">  </span><span class="c1">// Dritte Reihe</span>
-
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"Unentschieden... :-)"</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre> X | O | X 
----+---+---
- . | O | X 
----+---+---
- X | X | O 
-Unentschieden... :-)
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=eab2400e">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>← <a href="Console_WriteLine_Samples.de.html"><code>WriteLine()</code> Samples</a></p>
+<h4 id="Debugger"><strong>Debugger</strong><a class="anchor-link" href="#Debugger">¶</a></h4><ul>
+<li>Tool, um Fehler im Code zu finden und zu beheben.</li>
+<li>Ermöglicht:<ul>
+<li>Schrittweise Ausführung (Zeile für Zeile).</li>
+<li>Überprüfung von Variablenwerten.</li>
+<li>Analyse des Call-Stacks.</li>
+<li>Testen von Ausdrücken.</li>
+<li>Identifikation von Fehlerstellen.</li>
+</ul>
+</li>
+</ul>
+<h4 id="Breakpoint"><strong>Breakpoint</strong><a class="anchor-link" href="#Breakpoint">¶</a></h4><ul>
+<li>Markierung im Code, an der die Ausführung stoppt.</li>
+<li>Funktionen:<ul>
+<li>Programm anhalten, um Variablen und Abläufe zu prüfen.</li>
+<li>Bedingungen für das Anhalten definieren (z. B.  <code>x == 10</code>).</li>
+<li>Ausnahmen fangen und analysieren.</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<h4 id="Debuggen-in-Visual-Studio-Code"><strong>Debuggen in Visual Studio Code</strong><a class="anchor-link" href="#Debuggen-in-Visual-Studio-Code">¶</a></h4><ol>
+<li><strong>Breakpoint setzen:</strong>  Klicke links neben die Zeilennummer (roter Punkt erscheint).</li>
+<li><strong>Start:</strong>  Drücke  <code>F5</code>  oder klicke auf  <strong>Start Debugging</strong>.</li>
+<li><strong>Steuerung:</strong><ul>
+<li><strong>Weiter:</strong> <code>F5</code>  (bis nächster Breakpoint).</li>
+<li><strong>Step Over:</strong> <code>F10</code>  (aktuelle Zeile ausführen).</li>
+<li><strong>Step Into:</strong> <code>F11</code>  (in Methode springen).</li>
+<li><strong>Step Out:</strong> <code>Shift+F11</code>  (Methode verlassen).</li>
+</ul>
+</li>
+<li><strong>Überprüfung:</strong>  Werte im Debug-Fenster analysieren.</li>
+</ol>
+<hr/>
+<h4 id="Debuggen-in-Visual-Studio"><strong>Debuggen in Visual Studio</strong><a class="anchor-link" href="#Debuggen-in-Visual-Studio">¶</a></h4><ol>
+<li><strong>Breakpoint setzen:</strong>  Klicke links von der Zeilennummer oder wähle  <strong>Breakpoint</strong>.</li>
+<li><strong>Optionen:</strong>  Bedingungen und Hit Counts einstellen.</li>
+<li><strong>Start:</strong>  Drücke  <code>F5</code>  (Debug starten).</li>
+<li><strong>Weitere Tools:</strong><ul>
+<li><strong>Watches:</strong>  Variablen/Ausdrücke überwachen.</li>
+<li><strong>Locals &amp; Autos:</strong>  Lokale und kürzlich genutzte Variablen.</li>
+<li><strong>Immediate Window:</strong>  Ausdrücke testen.</li>
+</ul>
+</li>
+</ol>
+<details><summary>Nochmal zum Nachlesen...</summary>
+<p>Ein  <strong>Debugger</strong>  ist ein Tool, das Dir dabei hilft, Fehler im Code zu finden und zu beheben. Damit kannst Du den Code schrittweise durchgehen und den Zustand des Programms sowie die Werte von Variablen während der Laufzeit überprüfen. Der Debugger ist besonders nützlich, wenn es darum geht, komplexe Fehler zu verstehen und gezielt zu lösen.</p>
+<h3 id="Wie-funktioniert-ein-Debugger?">Wie funktioniert ein Debugger?<a class="anchor-link" href="#Wie-funktioniert-ein-Debugger?">¶</a></h3><p>Im Debugging-Modus läuft Dein Programm nicht wie gewohnt, sondern wird so gesteuert, dass Du es jederzeit anhalten und untersuchen kannst. Hier sind einige Dinge, die Du mit einem Debugger machen kannst:</p>
+<ol>
+<li><strong>Schrittweise Ausführung:</strong>  Du kannst den Code Zeile für Zeile durchlaufen und sehen, was passiert.</li>
+<li><strong>Variablen-Überprüfung:</strong>  Du kannst die aktuellen Werte von Variablen sehen und nachvollziehen, wie sie sich ändern.</li>
+<li><strong>Ausdrucksauswertung:</strong>  Der Debugger erlaubt Dir, Berechnungen oder Ausdrücke direkt zu testen.</li>
+<li><strong>Call Stack und Rückverfolgung:</strong>  Du kannst sehen, welche Funktionen oder Methoden aufgerufen wurden, um zur aktuellen Stelle zu gelangen.</li>
+<li><strong>Fehlermeldungen und Ausnahmen:</strong>  Der Debugger zeigt Dir die genaue Stelle im Code, an der ein Fehler oder eine Ausnahme aufgetreten ist.</li>
+</ol>
+<h3 id="Was-ist-ein-Breakpoint?">Was ist ein Breakpoint?<a class="anchor-link" href="#Was-ist-ein-Breakpoint?">¶</a></h3><p>Ein  <strong>Breakpoint</strong>  ist ein Punkt im Code, an dem die Programmausführung stoppt, sobald der Debugger aktiv ist. Mit Breakpoints kannst Du das Programm an einer bestimmten Stelle anhalten, um zu überprüfen, was bis dahin passiert ist.</p>
+<p>Einige Dinge, die Du mit Breakpoints tun kannst:</p>
+<ul>
+<li>Den Wert von Variablen zu einem bestimmten Zeitpunkt beobachten.</li>
+<li>Den Ablauf des Programms an bestimmten Stellen stoppen.</li>
+<li>Bedingungen setzen, unter denen das Programm anhält (z. B. nur, wenn eine Variable einen bestimmten Wert hat).</li>
+<li>Ausnahmen abfangen und die Fehlerquelle finden.</li>
+</ul>
+<h3 id="Debuggen-in-Visual-Studio-Code-f%C3%BCr-C%23">Debuggen in Visual Studio Code für C#<a class="anchor-link" href="#Debuggen-in-Visual-Studio-Code-f%C3%BCr-C%23">¶</a></h3><p>In  <strong>Visual Studio Code</strong>  gibt es eine Debugging-Erweiterung für .NET (C#), die Dir das Debuggen von C#-Code ermöglicht. Hier ist ein Leitfaden für das Debuggen und die Verwendung von Breakpoints:</p>
+<ol>
+<li><p><strong>Breakpoints setzen:</strong></p>
+<ul>
+<li>Öffne die Datei, die Du debuggen möchtest.</li>
+<li>Klicke links neben die Zeilennummer, um einen roten Punkt zu setzen, der den Breakpoint markiert.</li>
+</ul>
+</li>
+<li><p><strong>Debugging starten:</strong></p>
+<ul>
+<li>Drücke  <code>F5</code>  oder klicke auf  <strong>Start Debugging</strong>  in der Debug-Symbolleiste.</li>
+<li>Visual Studio Code startet das Programm und stoppt an Deinem ersten Breakpoint.</li>
+</ul>
+</li>
+<li><p><strong>Debugging-Steuerung:</strong></p>
+<ul>
+<li><strong>Weiter (Continue):</strong>  Setzt die Ausführung bis zum nächsten Breakpoint fort (<code>F5</code>).</li>
+<li><strong>Schrittweise Ausführung (Step Over):</strong>  Führt die aktuelle Zeile aus, ohne in eine Funktion hineinzuspringen (<code>F10</code>).</li>
+<li><strong>Schritt in (Step Into):</strong>  Tritt in die Methode oder Funktion ein, falls es sich um einen Aufruf handelt (<code>F11</code>).</li>
+<li><strong>Schritt zurück (Step Out):</strong>  Verlasse die aktuelle Methode und kehre zur aufrufenden Methode zurück (<code>Shift+F11</code>).</li>
+</ul>
+</li>
+<li><p><strong>Variablen und Ausdrücke überprüfen:</strong></p>
+<ul>
+<li>Im Debug-Fenster kannst Du die aktuellen Variablen und ihre Werte sehen.</li>
+<li>Du kannst auch eigene Ausdrücke hinzufügen und überwachen.</li>
+<li>Im  <strong>Call Stack</strong>  siehst Du, wie die Methoden aufgerufen wurden.</li>
+</ul>
+</li>
+</ol>
+<h3 id="Debuggen-in-Visual-Studio-f%C3%BCr-C%23">Debuggen in Visual Studio für C#<a class="anchor-link" href="#Debuggen-in-Visual-Studio-f%C3%BCr-C%23">¶</a></h3><p><strong>Visual Studio</strong>  bietet eine umfangreiche Debugging-Umgebung mit vielen hilfreichen Funktionen. So nutzt Du den Debugger und Breakpoints in Visual Studio:</p>
+<ol>
+<li><p><strong>Breakpoints setzen:</strong></p>
+<ul>
+<li>Öffne den Code und klicke links von der Zeilennummer auf die graue Leiste, um einen Breakpoint zu setzen, oder klicke mit der rechten Maustaste und wähle  <strong>Breakpoint</strong>  aus.</li>
+</ul>
+</li>
+<li><p><strong>Erweiterte Breakpoint-Optionen:</strong></p>
+<ul>
+<li><strong>Bedingte Breakpoints:</strong>  Setze Bedingungen, wann der Breakpoint ausgelöst wird (z. B.  <code>x == 10</code>).</li>
+<li><strong>Hit Count Breakpoints:</strong>  Der Breakpoint wird nur ausgelöst, wenn eine bestimmte Anzahl an Treffern erreicht ist.</li>
+<li><strong>Logische Ausdrücke:</strong>  Füge komplexere Bedingungen hinzu, um gezielt anzuhalten.</li>
+</ul>
+</li>
+<li><p><strong>Debugging starten:</strong></p>
+<ul>
+<li>Klicke auf  <strong>Start Debugging</strong>  oder drücke  <code>F5</code>.</li>
+<li>Dein Programm stoppt am ersten Breakpoint, und Du kannst den Code untersuchen.</li>
+</ul>
+</li>
+<li><p><strong>Zusätzliche Debugging-Funktionen:</strong></p>
+<ul>
+<li><strong>Watches:</strong>  Beobachte Variablen und Ausdrücke im Watch-Fenster.</li>
+<li><strong>Locals und Autos:</strong>  Im  <strong>Locals</strong>-Fenster siehst Du alle lokalen Variablen, und  <strong>Autos</strong>  zeigt Variablen an, die kürzlich verwendet wurden.</li>
+<li><strong>Immediate Window:</strong>  Hier kannst Du Ausdrücke testen und Ergebnisse sofort sehen.</li>
+</ul>
+</li>
+<li><p><strong>Debugging beenden oder fortsetzen:</strong></p>
+<ul>
+<li>Du kannst jederzeit das Debuggen beenden oder fortsetzen.</li>
+<li>Mit  <strong>Continue (F5)</strong>  läuft das Programm weiter bis zum nächsten Breakpoint oder bis zur Fertigstellung.</li>
+</ul>
+</li>
+</ol>
+<h3 id="Tipps-f%C3%BCr-effektives-Debuggen">Tipps für effektives Debuggen<a class="anchor-link" href="#Tipps-f%C3%BCr-effektives-Debuggen">¶</a></h3><ol>
+<li><strong>Bedingte Breakpoints nutzen:</strong>  So stoppst Du das Programm nur unter bestimmten Bedingungen.</li>
+<li><strong>Variablen und den Call Stack analysieren:</strong>  Das hilft, den Zustand des Programms und die Ursache für Fehler zu verstehen.</li>
+<li><strong>Watches und Immediate Window verwenden:</strong>  Damit kannst Du Variablen gezielt beobachten und Code testen.</li>
+<li><strong>Schrittweise vorgehen:</strong>  Setze Dir beim Debuggen klare Ziele, um die Fehlerquelle schneller zu finden.</li>
+</ol>
+<p>Mit diesen Werkzeugen und Tipps kannst Du den Debugger in Visual Studio Code und Visual Studio optimal nutzen, um Fehler in Deinem C#-Code zu beheben.</p>
+</details>
 </div>
 </div>
 </div>
