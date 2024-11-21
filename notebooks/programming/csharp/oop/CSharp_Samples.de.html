@@ -7510,142 +7510,413 @@ a.anchor-link {
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3adfadcf">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="C%23-WriteLine-&amp;-TicTacToe">C# WriteLine &amp; TicTacToe<a class="anchor-link" href="#C%23-WriteLine-&amp;-TicTacToe">¶</a></h1><table border="0">
+<h1 id="Objektorientierte-Programmierung-in-C%23-Samples">Objektorientierte Programmierung in C# Samples<a class="anchor-link" href="#Objektorientierte-Programmierung-in-C%23-Samples">¶</a></h1><table border="0">
 <tr>
 <td>
-<img alt="No description has been provided for this image" src="writeline.webp"/>
+<img alt="No description has been provided for this image" src="CSharp_Samples.webp"/>
 </td>
 <td rowspan="2">
-<a href="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3458764554347680798&amp;cot=14"><img alt="No description has been provided for this image" src="Radar_WriteLine.de.jpg"/></a>
+<a href="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3458764554347680798&amp;cot=14"><img alt="No description has been provided for this image" src="Radar_OOP.jpg"/></a>
 </td>
 </tr>
 <tr>
 <td>
-<a href="https://learn.microsoft.com/de-de/dotnet/api/system.console.writeline?view=net-5.0">Link zur Microsoft Dokumentation</a><br/>
-<a href="Console_WriteLine_Basics.de.html">Link zu WriteLine Basics</a><br/>
-<a href="Console_WriteLine_Samples.de.html">Link zu WriteLine Samples</a><br/>
-<a href="Console_ReadLine_Basics.de.html">Link zu ReadLine</a><br/>
+<a href="https://learn.microsoft.com/de-de/dotnet/csharp/fundamentals/tutorials/oop">Link zur Microsoft Dokumentation</a><br/>
+<a href="CSharp_Basics.de.html">Link zu OOP Basics</a><br/>
 <a href="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3458764554347680798&amp;cot=14">Link zum roten Faden auf Miro</a><br/>
-<a href="https://www.w3schools.com/cs/cs_output.php">Link zu Tutorial auf w3schools</a>
+<a href="https://www.w3schools.com/cs/cs_oop.php">Link zu Tutorial auf w3schools</a>
 </td>
 </tr>
 </table>
+<p>Die objektorientierte Programmierung in C# hilft Entwicklern, Programme in strukturierte, wiederverwendbare und organisierte Einheiten aufzuteilen. Die Kernkonzepte der OOP sind Klassen, Objekte, Vererbung, Polymorphismus, Abstraktion und Kapselung.</p>
+<h3 id="1.-Klassen-und-Objekte">1. Klassen und Objekte<a class="anchor-link" href="#1.-Klassen-und-Objekte">¶</a></h3><p>Eine Klasse ist eine Blaupause, die Eigenschaften (Attribute) und Methoden (Funktionen) definiert. Ein Objekt ist eine Instanz einer Klasse.</p>
+<h4 id="Codebeispiel:-Erstellen-einer-einfachen-Klasse-Person">Codebeispiel: Erstellen einer einfachen Klasse <code>Person</code><a class="anchor-link" href="#Codebeispiel:-Erstellen-einer-einfachen-Klasse-Person">¶</a></h4>
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=34d68b03">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Um ein Tic-Tac-Toe-Spielbrett zu malen, kannst du die Methode Console.WriteLine() verwenden, um den aktuellen Zustand des Bretts zu zeichnen. Das Brett besteht aus 3x3 Feldern, die entweder leer sind oder ein "X" oder "O" enthalten. Fangen wir mit einem leeren Brett an:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=d549d608">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-C#"><pre><span></span><span class="c1">// Malen des leeren Tic-Tac-Toe-Bretts</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"   |   |   "</span><span class="p">);</span><span class="w">  </span><span class="c1">// Erste Reihe</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"---+---+---"</span><span class="p">);</span><span class="w">  </span><span class="c1">// Trennlinie</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"   |   |   "</span><span class="p">);</span><span class="w">  </span><span class="c1">// Zweite Reihe</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"---+---+---"</span><span class="p">);</span><span class="w">  </span><span class="c1">// Trennlinie</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"   |   |   "</span><span class="p">);</span><span class="w">  </span><span class="c1">// Dritte Reihe</span>
+<div class="highlight hl-python"><pre><span></span><span class="o">//</span> <span class="n">Definiert</span> <span class="n">eine</span> <span class="n">Klasse</span> <span class="n">namens</span> <span class="s1">'Person'</span> <span class="n">mit</span> <span class="n">den</span> <span class="n">Eigenschaften</span> <span class="s1">'FirstName'</span> <span class="n">und</span> <span class="s1">'LastName'</span> <span class="n">und</span> <span class="n">einer</span> <span class="n">Methode</span> <span class="s1">'Introduce'</span><span class="o">.</span>
+<span class="n">public</span> <span class="k">class</span> <span class="nc">Person</span>
+<span class="p">{</span>
+    <span class="n">public</span> <span class="n">string</span> <span class="n">FirstName</span><span class="p">;</span>  <span class="o">//</span> <span class="n">Vorname</span> <span class="n">der</span> <span class="n">Person</span>
+    <span class="n">public</span> <span class="n">string</span> <span class="n">LastName</span><span class="p">;</span>   <span class="o">//</span> <span class="n">Nachname</span> <span class="n">der</span> <span class="n">Person</span>
+    
+    <span class="o">//</span> <span class="n">Methode</span><span class="p">,</span> <span class="n">die</span> <span class="n">die</span> <span class="n">Person</span> <span class="n">vorstellt</span><span class="o">.</span>
+    <span class="n">public</span> <span class="n">void</span> <span class="n">Introduce</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Hello, my name is </span><span class="si">{FirstName}</span><span class="s2"> </span><span class="si">{LastName}</span><span class="s2">"</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="o">//</span> <span class="n">Erstellen</span> <span class="n">und</span> <span class="n">Verwenden</span> <span class="n">eines</span> <span class="n">Objekts</span> <span class="n">der</span> <span class="n">Klasse</span> <span class="s1">'Person'</span>
+<span class="n">public</span> <span class="k">class</span> <span class="nc">Program</span>
+<span class="p">{</span>
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">Main</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="o">//</span> <span class="n">Instanz</span> <span class="n">der</span> <span class="n">Klasse</span> <span class="s1">'Person'</span> <span class="n">erstellen</span> <span class="n">und</span> <span class="n">Eigenschaften</span> <span class="n">festlegen</span>
+        <span class="n">var</span> <span class="n">person</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Person</span><span class="p">();</span>
+        <span class="n">person</span><span class="o">.</span><span class="n">FirstName</span> <span class="o">=</span> <span class="s2">"John"</span><span class="p">;</span>
+        <span class="n">person</span><span class="o">.</span><span class="n">LastName</span> <span class="o">=</span> <span class="s2">"Doe"</span><span class="p">;</span>
+        
+        <span class="o">//</span> <span class="n">Aufrufen</span> <span class="n">der</span> <span class="n">Methode</span> <span class="s1">'Introduce'</span><span class="p">,</span> <span class="n">um</span> <span class="n">eine</span> <span class="n">Ausgabe</span> <span class="n">zu</span> <span class="n">erzeugen</span>
+        <span class="n">person</span><span class="o">.</span><span class="n">Introduce</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>   |   |   
----+---+---
-   |   |   
----+---+---
-   |   |   
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=caa10411">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Und nun erweitert um 9 Variablen:</p>
+<h3 id="2.-Eigenschaften-(Properties)">2. Eigenschaften (Properties)<a class="anchor-link" href="#2.-Eigenschaften-(Properties)">¶</a></h3><p>Eigenschaften ermöglichen den Zugriff auf private Felder einer Klasse und steuern, wie diese Felder gelesen und geschrieben werden können.</p>
+<h4 id="Codebeispiel:-Eigenschaft-mit-get-und-set">Codebeispiel: Eigenschaft mit <code>get</code> und <code>set</code><a class="anchor-link" href="#Codebeispiel:-Eigenschaft-mit-get-und-set">¶</a></h4>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e4417676">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-C#"><pre><span></span><span class="kt">string</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"X"</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"O"</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"X"</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"."</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"O"</span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"X"</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"X"</span><span class="p">,</span><span class="w"> </span><span class="n">h</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"X"</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"O"</span><span class="p">;</span>
+<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">Person</span>
+<span class="p">{</span>
+    <span class="n">private</span> <span class="n">string</span> <span class="n">_lastName</span><span class="p">;</span>  <span class="o">//</span> <span class="n">Privates</span> <span class="n">Feld</span><span class="p">,</span> <span class="n">das</span> <span class="n">nur</span> <span class="n">über</span> <span class="n">eine</span> <span class="n">Eigenschaft</span> <span class="n">zugänglich</span> <span class="n">ist</span>
+    
+    <span class="o">//</span> <span class="n">Eigenschaft</span> <span class="s1">'LastName'</span> <span class="n">mit</span> <span class="n">Lese</span><span class="o">-</span> <span class="n">und</span> <span class="n">Schreibzugriff</span>
+    <span class="n">public</span> <span class="n">string</span> <span class="n">LastName</span>
+    <span class="p">{</span>
+        <span class="n">get</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_lastName</span><span class="p">;</span> <span class="p">}</span>
+        <span class="nb">set</span> <span class="p">{</span> <span class="n">_lastName</span> <span class="o">=</span> <span class="n">value</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="o">//</span> <span class="n">Methode</span><span class="p">,</span> <span class="n">um</span> <span class="n">den</span> <span class="n">vollständigen</span> <span class="n">Namen</span> <span class="n">auszugeben</span>
+    <span class="n">public</span> <span class="n">void</span> <span class="n">PrintFullName</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Full Name: </span><span class="si">{_lastName}</span><span class="s2">"</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-<span class="c1">// Malen des leeren Tic-Tac-Toe-Bretts</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$" {a} | {b} | {c} "</span><span class="p">);</span><span class="w">  </span><span class="c1">// Erste Reihe</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$"---+---+---"</span><span class="p">);</span><span class="w">  </span><span class="c1">// Trennlinie</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$" {d} | {e} | {f} "</span><span class="p">);</span><span class="w">  </span><span class="c1">// Zweite Reihe</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$"---+---+---"</span><span class="p">);</span><span class="w">  </span><span class="c1">// Trennlinie</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$" {g} | {h} | {i} "</span><span class="p">);</span><span class="w">  </span><span class="c1">// Dritte Reihe</span>
-
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"Unentschieden... :-)"</span><span class="p">)</span>
+<span class="n">public</span> <span class="k">class</span> <span class="nc">Program</span>
+<span class="p">{</span>
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">Main</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">var</span> <span class="n">person</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Person</span><span class="p">();</span>
+        <span class="n">person</span><span class="o">.</span><span class="n">LastName</span> <span class="o">=</span> <span class="s2">"Smith"</span><span class="p">;</span>  <span class="o">//</span> <span class="n">Setzen</span> <span class="n">des</span> <span class="n">Nachnamens</span> <span class="n">über</span> <span class="n">die</span> <span class="n">Eigenschaft</span>
+        
+        <span class="n">person</span><span class="o">.</span><span class="n">PrintFullName</span><span class="p">();</span>  <span class="o">//</span> <span class="n">Ausgabe</span> <span class="n">des</span> <span class="n">vollständigen</span> <span class="n">Namens</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre> X | O | X 
----+---+---
- . | O | X 
----+---+---
- X | X | O 
-Unentschieden... :-)
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=eab2400e">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>← <a href="Console_WriteLine_Samples.de.html"><code>WriteLine()</code> Samples</a></p>
+<h3 id="3.-Konstruktoren">3. Konstruktoren<a class="anchor-link" href="#3.-Konstruktoren">¶</a></h3><p>Ein Konstruktor initialisiert ein neues Objekt und legt bei Bedarf Startwerte fest.</p>
+<h4 id="Codebeispiel:-Konstruktor-in-der-Klasse-Person">Codebeispiel: Konstruktor in der Klasse <code>Person</code><a class="anchor-link" href="#Codebeispiel:-Konstruktor-in-der-Klasse-Person">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">Person</span>
+<span class="p">{</span>
+    <span class="n">public</span> <span class="n">string</span> <span class="n">FirstName</span> <span class="p">{</span> <span class="n">get</span><span class="p">;</span> <span class="p">}</span>  <span class="o">//</span> <span class="n">Nur</span><span class="o">-</span><span class="n">Lese</span><span class="o">-</span><span class="n">Eigenschaft</span> <span class="n">für</span> <span class="n">Vorname</span>
+    <span class="n">public</span> <span class="n">string</span> <span class="n">LastName</span> <span class="p">{</span> <span class="n">get</span><span class="p">;</span> <span class="p">}</span>   <span class="o">//</span> <span class="n">Nur</span><span class="o">-</span><span class="n">Lese</span><span class="o">-</span><span class="n">Eigenschaft</span> <span class="n">für</span> <span class="n">Nachname</span>
+    
+    <span class="o">//</span> <span class="n">Konstruktor</span><span class="p">,</span> <span class="n">der</span> <span class="n">Vor</span><span class="o">-</span> <span class="n">und</span> <span class="n">Nachnamen</span> <span class="n">als</span> <span class="n">Argumente</span> <span class="n">annimmt</span>
+    <span class="n">public</span> <span class="n">Person</span><span class="p">(</span><span class="n">string</span> <span class="n">firstName</span><span class="p">,</span> <span class="n">string</span> <span class="n">lastName</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">FirstName</span> <span class="o">=</span> <span class="n">firstName</span><span class="p">;</span>
+        <span class="n">LastName</span> <span class="o">=</span> <span class="n">lastName</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="o">//</span> <span class="n">Methode</span><span class="p">,</span> <span class="n">um</span> <span class="n">eine</span> <span class="n">Begrüßung</span> <span class="n">auszugeben</span>
+    <span class="n">public</span> <span class="n">void</span> <span class="n">Greet</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Hi, I am </span><span class="si">{FirstName}</span><span class="s2"> </span><span class="si">{LastName}</span><span class="s2">"</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">Program</span>
+<span class="p">{</span>
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">Main</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="o">//</span> <span class="n">Erstellen</span> <span class="n">eines</span> <span class="n">Objekts</span> <span class="n">mit</span> <span class="n">dem</span> <span class="n">Konstruktor</span> <span class="n">und</span> <span class="n">Ausgabe</span> <span class="n">der</span> <span class="n">Begrüßung</span>
+        <span class="n">var</span> <span class="n">person</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Person</span><span class="p">(</span><span class="s2">"Jane"</span><span class="p">,</span> <span class="s2">"Doe"</span><span class="p">);</span>
+        <span class="n">person</span><span class="o">.</span><span class="n">Greet</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="4.-Vererbung">4. Vererbung<a class="anchor-link" href="#4.-Vererbung">¶</a></h3><p>Vererbung ermöglicht es einer Klasse, von einer anderen Klasse zu erben, sodass sie die Eigenschaften und Methoden der Basisklasse verwenden kann.</p>
+<h4 id="Codebeispiel:-Vererbung-von-einer-Basisklasse-Person">Codebeispiel: Vererbung von einer Basisklasse <code>Person</code><a class="anchor-link" href="#Codebeispiel:-Vererbung-von-einer-Basisklasse-Person">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">Person</span>
+<span class="p">{</span>
+    <span class="n">public</span> <span class="n">string</span> <span class="n">FirstName</span> <span class="p">{</span> <span class="n">get</span><span class="p">;</span> <span class="p">}</span>
+    <span class="n">public</span> <span class="n">string</span> <span class="n">LastName</span> <span class="p">{</span> <span class="n">get</span><span class="p">;</span> <span class="p">}</span>
+    
+    <span class="n">public</span> <span class="n">Person</span><span class="p">(</span><span class="n">string</span> <span class="n">firstName</span><span class="p">,</span> <span class="n">string</span> <span class="n">lastName</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">FirstName</span> <span class="o">=</span> <span class="n">firstName</span><span class="p">;</span>
+        <span class="n">LastName</span> <span class="o">=</span> <span class="n">lastName</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="n">public</span> <span class="n">virtual</span> <span class="n">void</span> <span class="n">Introduce</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Hello, I am </span><span class="si">{FirstName}</span><span class="s2"> </span><span class="si">{LastName}</span><span class="s2">"</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="o">//</span> <span class="n">Klasse</span> <span class="s1">'Employee'</span><span class="p">,</span> <span class="n">die</span> <span class="n">von</span> <span class="s1">'Person'</span> <span class="n">erbt</span> <span class="n">und</span> <span class="n">eine</span> <span class="n">zusätzliche</span> <span class="n">Eigenschaft</span> <span class="s1">'EmployeeId'</span> <span class="n">besitzt</span>
+<span class="n">public</span> <span class="k">class</span> <span class="nc">Employee</span> <span class="p">:</span> <span class="n">Person</span>
+<span class="p">{</span>
+    <span class="n">public</span> <span class="nb">int</span> <span class="n">EmployeeId</span> <span class="p">{</span> <span class="n">get</span><span class="p">;</span> <span class="nb">set</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="n">public</span> <span class="n">Employee</span><span class="p">(</span><span class="n">string</span> <span class="n">firstName</span><span class="p">,</span> <span class="n">string</span> <span class="n">lastName</span><span class="p">,</span> <span class="nb">int</span> <span class="n">employeeId</span><span class="p">)</span> 
+        <span class="p">:</span> <span class="n">base</span><span class="p">(</span><span class="n">firstName</span><span class="p">,</span> <span class="n">lastName</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">EmployeeId</span> <span class="o">=</span> <span class="n">employeeId</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="o">//</span> <span class="n">Methode</span> <span class="n">überschreiben</span><span class="p">,</span> <span class="n">um</span> <span class="n">auch</span> <span class="n">die</span> <span class="n">Mitarbeiter</span><span class="o">-</span><span class="n">ID</span> <span class="n">anzuzeigen</span>
+    <span class="n">public</span> <span class="n">override</span> <span class="n">void</span> <span class="n">Introduce</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Hello, I am </span><span class="si">{FirstName}</span><span class="s2"> </span><span class="si">{LastName}</span><span class="s2">, Employee ID: </span><span class="si">{EmployeeId}</span><span class="s2">"</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">Program</span>
+<span class="p">{</span>
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">Main</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">var</span> <span class="n">employee</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Employee</span><span class="p">(</span><span class="s2">"Alice"</span><span class="p">,</span> <span class="s2">"Johnson"</span><span class="p">,</span> <span class="mi">1234</span><span class="p">);</span>
+        <span class="n">employee</span><span class="o">.</span><span class="n">Introduce</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="5.-Abstrakte-Klassen-und-Methoden">5. Abstrakte Klassen und Methoden<a class="anchor-link" href="#5.-Abstrakte-Klassen-und-Methoden">¶</a></h3><p>Abstrakte Klassen können nicht instanziiert werden und dienen als Vorlage für abgeleitete Klassen.</p>
+<h4 id="Codebeispiel:-Abstrakte-Klasse-Shape-und-abgeleitete-Klasse-Circle">Codebeispiel: Abstrakte Klasse <code>Shape</code> und abgeleitete Klasse <code>Circle</code><a class="anchor-link" href="#Codebeispiel:-Abstrakte-Klasse-Shape-und-abgeleitete-Klasse-Circle">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="n">abstract</span> <span class="k">class</span> <span class="nc">Shape</span>
+<span class="p">{</span>
+    <span class="n">public</span> <span class="n">abstract</span> <span class="n">double</span> <span class="n">GetArea</span><span class="p">();</span>  <span class="o">//</span> <span class="n">Abstrakte</span> <span class="n">Methode</span> <span class="n">zur</span> <span class="n">Berechnung</span> <span class="n">der</span> <span class="n">Fläche</span>
+<span class="p">}</span>
+
+<span class="o">//</span> <span class="s1">'Circle'</span> <span class="n">erbt</span> <span class="n">von</span> <span class="s1">'Shape'</span> <span class="n">und</span> <span class="n">implementiert</span> <span class="n">die</span> <span class="n">Methode</span> <span class="s1">'GetArea'</span>
+<span class="n">public</span> <span class="k">class</span> <span class="nc">Circle</span> <span class="p">:</span> <span class="n">Shape</span>
+<span class="p">{</span>
+    <span class="n">public</span> <span class="n">double</span> <span class="n">Radius</span> <span class="p">{</span> <span class="n">get</span><span class="p">;</span> <span class="nb">set</span><span class="p">;</span> <span class="p">}</span>
+    
+    <span class="n">public</span> <span class="n">override</span> <span class="n">double</span> <span class="n">GetArea</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">Math</span><span class="o">.</span><span class="n">PI</span> <span class="o">*</span> <span class="n">Radius</span> <span class="o">*</span> <span class="n">Radius</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">Program</span>
+<span class="p">{</span>
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">Main</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">var</span> <span class="n">circle</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Circle</span> <span class="p">{</span> <span class="n">Radius</span> <span class="o">=</span> <span class="mf">5.0</span> <span class="p">};</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Area of Circle: {circle.GetArea()}"</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="6.-Schnittstellen-(Interfaces)">6. Schnittstellen (Interfaces)<a class="anchor-link" href="#6.-Schnittstellen-(Interfaces)">¶</a></h3><p>Schnittstellen definieren einen Vertrag, den Klassen erfüllen müssen, die die Schnittstelle implementieren.</p>
+<h4 id="Codebeispiel:-Schnittstelle-IMovable-und-Implementierung">Codebeispiel: Schnittstelle <code>IMovable</code> und Implementierung<a class="anchor-link" href="#Codebeispiel:-Schnittstelle-IMovable-und-Implementierung">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="n">interface</span> <span class="n">IMovable</span>
+<span class="p">{</span>
+    <span class="n">void</span> <span class="n">Move</span><span class="p">();</span>  <span class="o">//</span> <span class="n">Methode</span><span class="p">,</span> <span class="n">die</span> <span class="n">implementierende</span> <span class="n">Klassen</span> <span class="n">definieren</span> <span class="n">müssen</span>
+<span class="p">}</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">Car</span> <span class="p">:</span> <span class="n">IMovable</span>
+<span class="p">{</span>
+    <span class="n">public</span> <span class="n">void</span> <span class="n">Move</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"The car is moving"</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">Program</span>
+<span class="p">{</span>
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">Main</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">IMovable</span> <span class="n">myCar</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Car</span><span class="p">();</span>
+        <span class="n">myCar</span><span class="o">.</span><span class="n">Move</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="7.-Kapselung-(Encapsulation)">7. Kapselung (Encapsulation)<a class="anchor-link" href="#7.-Kapselung-(Encapsulation)">¶</a></h3><p>Kapselung schützt Daten innerhalb einer Klasse und bietet nur durch definierte Methoden und Eigenschaften Zugriff darauf.</p>
+<h4 id="Codebeispiel:-Verwendung-privater-Felder-und-%C3%B6ffentlicher-Eigenschaften">Codebeispiel: Verwendung privater Felder und öffentlicher Eigenschaften<a class="anchor-link" href="#Codebeispiel:-Verwendung-privater-Felder-und-%C3%B6ffentlicher-Eigenschaften">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">BankAccount</span>
+<span class="p">{</span>
+    <span class="n">private</span> <span class="n">decimal</span> <span class="n">balance</span><span class="p">;</span>  <span class="o">//</span> <span class="n">Privates</span> <span class="n">Feld</span> <span class="n">für</span> <span class="n">den</span> <span class="n">Kontostand</span>
+    
+    <span class="o">//</span> <span class="n">Eigenschaft</span> <span class="s1">'Balance'</span> <span class="n">erlaubt</span> <span class="n">nur</span> <span class="n">Lesezugriff</span> <span class="n">von</span> <span class="n">außen</span>
+    <span class="n">public</span> <span class="n">decimal</span> <span class="n">Balance</span>
+    <span class="p">{</span>
+        <span class="n">get</span> <span class="p">{</span> <span class="k">return</span> <span class="n">balance</span><span class="p">;</span> <span class="p">}</span>
+        <span class="n">private</span> <span class="nb">set</span> <span class="p">{</span> <span class="n">balance</span> <span class="o">=</span> <span class="n">value</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="o">//</span> <span class="n">Methode</span><span class="p">,</span> <span class="n">um</span> <span class="n">eine</span> <span class="n">Einzahlung</span> <span class="n">durchzuführen</span> <span class="n">und</span> <span class="n">den</span> <span class="n">Kontostand</span> <span class="n">zu</span> <span class="n">aktualisieren</span>
+    <span class="n">public</span> <span class="n">void</span> <span class="n">Deposit</span><span class="p">(</span><span class="n">decimal</span> <span class="n">amount</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">amount</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">Balance</span> <span class="o">+=</span> <span class="n">amount</span><span class="p">;</span>
+            <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Deposited </span><span class="si">{amount}</span><span class="s2">. New Balance: </span><span class="si">{Balance}</span><span class="s2">"</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">else</span>
+        <span class="p">{</span>
+            <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Invalid deposit amount"</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">Program</span>
+<span class="p">{</span>
+    <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">Main</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">var</span> <span class="n">account</span> <span class="o">=</span> <span class="n">new</span> <span class="n">BankAccount</span><span class="p">();</span>
+        <span class="n">account</span><span class="o">.</span><span class="n">Deposit</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>  <span class="o">//</span> <span class="n">Gültige</span> <span class="n">Einzahlung</span>
+        <span class="n">account</span><span class="o">.</span><span class="n">Deposit</span><span class="p">(</span><span class="o">-</span><span class="mi">50</span><span class="p">);</span>  <span class="o">//</span> <span class="n">Ungültige</span> <span class="n">Einzahlung</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Diese erweiterte Zusammenfassung bietet Erklärungen und eine sinnvolle Ausgabe für jedes Codebeispiel, um das Verständnis der Konzepte zu unterstützen und die Funktionsweise der Objektorientierung in C# zu verdeutlichen.</p>
 </div>
 </div>
 </div>

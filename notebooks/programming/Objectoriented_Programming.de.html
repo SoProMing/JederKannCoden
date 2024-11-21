@@ -7510,142 +7510,386 @@ a.anchor-link {
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3adfadcf">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="C%23-WriteLine-&amp;-TicTacToe">C# WriteLine &amp; TicTacToe<a class="anchor-link" href="#C%23-WriteLine-&amp;-TicTacToe">¶</a></h1><table border="0">
-<tr>
-<td>
-<img alt="No description has been provided for this image" src="writeline.webp"/>
-</td>
-<td rowspan="2">
-<a href="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3458764554347680798&amp;cot=14"><img alt="No description has been provided for this image" src="Radar_WriteLine.de.jpg"/></a>
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://learn.microsoft.com/de-de/dotnet/api/system.console.writeline?view=net-5.0">Link zur Microsoft Dokumentation</a><br/>
-<a href="Console_WriteLine_Basics.de.html">Link zu WriteLine Basics</a><br/>
-<a href="Console_WriteLine_Samples.de.html">Link zu WriteLine Samples</a><br/>
-<a href="Console_ReadLine_Basics.de.html">Link zu ReadLine</a><br/>
-<a href="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3458764554347680798&amp;cot=14">Link zum roten Faden auf Miro</a><br/>
-<a href="https://www.w3schools.com/cs/cs_output.php">Link zu Tutorial auf w3schools</a>
-</td>
-</tr>
-</table>
+<h1 id="Objektorientierte-Programmierung">Objektorientierte Programmierung<a class="anchor-link" href="#Objektorientierte-Programmierung">¶</a></h1><img alt="No description has been provided for this image" src="OOP_Basics.webp" style="width:280px; height:280px;"/>
+<p>Wir können die Prinzipien der objektorientierten Programmierung anhand eines <strong>Ökosystems</strong> veranschaulichen. In einem Ökosystem gibt es viele verschiedene Elemente wie Pflanzen, Tiere und Gewässer. Diese Elemente interagieren miteinander, und jedes hat bestimmte Eigenschaften und Verhaltensweisen. Lass uns die OOP-Konzepte hier anwenden:</p>
+<h3 id="1.-Klassen-und-Objekte">1. Klassen und Objekte<a class="anchor-link" href="#1.-Klassen-und-Objekte">¶</a></h3><p><strong>Analogie</strong>: Stell dir vor, wir möchten verschiedene <strong>Lebewesen</strong> in einem Ökosystem darstellen. Die Klasse <strong>Lebewesen</strong> ist wie eine Vorlage für alle Lebewesen und beschreibt allgemeine Eigenschaften und Verhaltensweisen. Daraus können wir dann Objekte wie <strong>Bäume</strong> oder <strong>Tiere</strong> erstellen.</p>
+<p><strong>Diagramm</strong>:</p>
+<div class="jp-Mermaid"><pre class="mermaid">
+classDiagram
+    class Lebewesen {
+        +name : String
+        +alter : int
+        +wachsen() : void
+    }
+
+    class Pflanze {
+        +leben() : void
+    }
+    
+    class Tier {
+        +leben() : void
+    }
+
+    Lebewesen &lt;|-- Pflanze
+    Lebewesen &lt;|-- Tier
+
+    class Eiche {
+        +Photosynthese() : void
+    }
+
+    class Reh {
+        +atmen() : void
+    }
+
+    Pflanze &lt;|-- Eiche
+    Tier &lt;|-- Reh
+</pre></div><p><strong>Codebeispiel</strong>:</p>
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=34d68b03">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Um ein Tic-Tac-Toe-Spielbrett zu malen, kannst du die Methode Console.WriteLine() verwenden, um den aktuellen Zustand des Bretts zu zeichnen. Das Brett besteht aus 3x3 Feldern, die entweder leer sind oder ein "X" oder "O" enthalten. Fangen wir mit einem leeren Brett an:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=d549d608">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-C#"><pre><span></span><span class="c1">// Malen des leeren Tic-Tac-Toe-Bretts</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"   |   |   "</span><span class="p">);</span><span class="w">  </span><span class="c1">// Erste Reihe</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"---+---+---"</span><span class="p">);</span><span class="w">  </span><span class="c1">// Trennlinie</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"   |   |   "</span><span class="p">);</span><span class="w">  </span><span class="c1">// Zweite Reihe</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"---+---+---"</span><span class="p">);</span><span class="w">  </span><span class="c1">// Trennlinie</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"   |   |   "</span><span class="p">);</span><span class="w">  </span><span class="c1">// Dritte Reihe</span>
+<div class="highlight hl-python"><pre><span></span><span class="k">class</span> <span class="nc">Lebewesen</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">alter</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">alter</span> <span class="o">=</span> <span class="n">alter</span>
+    
+    <span class="k">def</span> <span class="nf">wachsen</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> wächst."</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>   |   |   
----+---+---
-   |   |   
----+---+---
-   |   |   
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=caa10411">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Und nun erweitert um 9 Variablen:</p>
+<p><strong>Bäume</strong> und <strong>Tiere</strong> sind beides Lebewesen, also können wir Instanzen der Klasse <code>Lebewesen</code> erstellen:</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e4417676">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-C#"><pre><span></span><span class="kt">string</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"X"</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"O"</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"X"</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"."</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"O"</span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"X"</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"X"</span><span class="p">,</span><span class="w"> </span><span class="n">h</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"X"</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"O"</span><span class="p">;</span>
-
-<span class="c1">// Malen des leeren Tic-Tac-Toe-Bretts</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$" {a} | {b} | {c} "</span><span class="p">);</span><span class="w">  </span><span class="c1">// Erste Reihe</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$"---+---+---"</span><span class="p">);</span><span class="w">  </span><span class="c1">// Trennlinie</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$" {d} | {e} | {f} "</span><span class="p">);</span><span class="w">  </span><span class="c1">// Zweite Reihe</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$"---+---+---"</span><span class="p">);</span><span class="w">  </span><span class="c1">// Trennlinie</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$" {g} | {h} | {i} "</span><span class="p">);</span><span class="w">  </span><span class="c1">// Dritte Reihe</span>
-
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"Unentschieden... :-)"</span><span class="p">)</span>
+<div class="highlight hl-python"><pre><span></span><span class="n">baum</span> <span class="o">=</span> <span class="n">Lebewesen</span><span class="p">(</span><span class="s2">"Eiche"</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">tier</span> <span class="o">=</span> <span class="n">Lebewesen</span><span class="p">(</span><span class="s2">"Reh"</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">baum</span><span class="o">.</span><span class="n">wachsen</span><span class="p">()</span>
+<span class="n">tier</span><span class="o">.</span><span class="n">wachsen</span><span class="p">()</span>
+<span class="c1"># Ausgabe:</span>
+<span class="c1"># Eiche wächst.</span>
+<span class="c1"># Reh wächst.</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre> X | O | X 
----+---+---
- . | O | X 
----+---+---
- X | X | O 
-Unentschieden... :-)
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=eab2400e">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>← <a href="Console_WriteLine_Samples.de.html"><code>WriteLine()</code> Samples</a></p>
+<h3 id="2.-Kapselung">2. Kapselung<a class="anchor-link" href="#2.-Kapselung">¶</a></h3><p><strong>Analogie</strong>: Angenommen, ein Baum hat seine eigenen Prozesse wie <strong>Photosynthese</strong>. Das ist ein interner Prozess, der nicht direkt sichtbar ist. Andere Lebewesen müssen nicht wissen, wie Photosynthese genau funktioniert – sie sehen nur das Ergebnis, dass der Baum wächst.</p>
+<p><strong>Diagramm:</strong></p>
+<div class="jp-Mermaid"><pre class="mermaid">
+classDiagram
+    class Baum {
+        +String name
+        +int alter
+        -bool __photosynthese_aktiv
+        +wachsen()
+        -__photosynthese_starten()
+    }
+    
+    Baum : +wachsen()
+    Baum : -__photosynthese_starten()
+    Baum : +name
+    Baum : +alter
+    Baum : -__photosynthese_aktiv
+</pre></div><p><strong>Codebeispiel</strong>:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="k">class</span> <span class="nc">Baum</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">alter</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">alter</span> <span class="o">=</span> <span class="n">alter</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__photosynthese_aktiv</span> <span class="o">=</span> <span class="kc">False</span>  <span class="c1"># Diese Information ist privat</span>
+
+    <span class="k">def</span> <span class="nf">wachsen</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__photosynthese_starten</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> wächst."</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__photosynthese_starten</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__photosynthese_aktiv</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Photosynthese gestartet."</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Hier ist <code>__photosynthese_aktiv</code> ein privates Attribut, und <code>__photosynthese_starten</code> ist eine Methode, die nur intern verwendet wird. Der Baum führt die Photosynthese nur für sich selbst aus, ohne dass andere Lebewesen eingreifen können.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">eiche</span> <span class="o">=</span> <span class="n">Baum</span><span class="p">(</span><span class="s2">"Eiche"</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">eiche</span><span class="o">.</span><span class="n">wachsen</span><span class="p">()</span>
+<span class="c1"># Ausgabe:</span>
+<span class="c1"># Photosynthese gestartet.</span>
+<span class="c1"># Eiche wächst.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="3.-Vererbung">3. Vererbung<a class="anchor-link" href="#3.-Vererbung">¶</a></h3><p><strong>Analogie</strong>: Innerhalb eines Ökosystems gibt es verschiedene Arten von Lebewesen. Zum Beispiel könnten wir eine allgemeine Klasse <strong>Tier</strong> haben, und davon abgeleitet spezielle Klassen wie <strong>Vogel</strong> oder <strong>Säugetier</strong>. Diese Spezies haben gemeinsame Eigenschaften (wie "Atmung"), aber auch individuelle Unterschiede.</p>
+<p><strong>Diagramm:</strong></p>
+<div class="jp-Mermaid"><pre class="mermaid">
+classDiagram
+    class Lebewesen {
+        -name: String
+        -alter: int
+        +wachsen(): void
+    }
+
+    class Tier {
+        +atmen(): void
+    }
+    
+    class Vogel {
+        +fliegen(): void
+    }
+
+    class Säugetier {
+        +laufen(): void
+    }
+
+    Lebewesen &lt;|-- Tier
+    Tier &lt;|-- Vogel
+    Tier &lt;|-- Säugetier
+</pre></div><p><strong>Codebeispiel</strong>:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="k">class</span> <span class="nc">Tier</span><span class="p">(</span><span class="n">Lebewesen</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">alter</span><span class="p">,</span> <span class="n">art</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">alter</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">art</span> <span class="o">=</span> <span class="n">art</span>
+
+    <span class="k">def</span> <span class="nf">atmen</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> atmet."</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Vogel</span><span class="p">(</span><span class="n">Tier</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">alter</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">alter</span><span class="p">,</span> <span class="s2">"Vogel"</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">fliegen</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> fliegt."</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><code>Vogel</code> erbt die <code>atmen</code>-Methode von <code>Tier</code>, aber es hat auch eine eigene Methode, <code>fliegen</code>.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">spatz</span> <span class="o">=</span> <span class="n">Vogel</span><span class="p">(</span><span class="s2">"Spatz"</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">spatz</span><span class="o">.</span><span class="n">atmen</span><span class="p">()</span>    <span class="c1"># Ausgabe: Spatz atmet.</span>
+<span class="n">spatz</span><span class="o">.</span><span class="n">fliegen</span><span class="p">()</span>  <span class="c1"># Ausgabe: Spatz fliegt.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="4.-Polymorphismus">4. Polymorphismus<a class="anchor-link" href="#4.-Polymorphismus">¶</a></h3><p><strong>Analogie</strong>: In einem Ökosystem sind Pflanzen, Tiere und Pilze unterschiedliche Lebewesen. Alle "leben" auf ihre Weise, aber Pflanzen betreiben Photosynthese, Tiere atmen, und Pilze zersetzen organisches Material. Polymorphismus bedeutet, dass sie alle eine Methode <code>leben</code> haben können, die jeweils unterschiedlich funktioniert.</p>
+<p><strong>Diagramm</strong>:</p>
+<div class="jp-Mermaid"><pre class="mermaid">
+classDiagram
+    class Lebewesen {
+        +name: str
+        +alter: int
+        +leben()
+    }
+
+    class Pflanze {
+        +leben()
+        "Photosyntehese"
+    }
+
+    class Tier {
+        +leben()
+        "Atmung"
+    }
+
+    class Pilz {
+        +leben()
+        "Zersetzung"
+    }
+
+    Lebewesen &lt;|-- Pflanze
+    Lebewesen &lt;|-- Tier
+    Lebewesen &lt;|-- Pilz
+</pre></div><p><strong>Codebeispiel</strong>:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="k">class</span> <span class="nc">Pflanze</span><span class="p">(</span><span class="n">Lebewesen</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">leben</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> wächst durch Photosynthese."</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Tier</span><span class="p">(</span><span class="n">Lebewesen</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">leben</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> atmet."</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Pilz</span><span class="p">(</span><span class="n">Lebewesen</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">leben</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> zersetzt organisches Material."</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Jetzt können wir jedes Lebewesen-Objekt durch <code>leben</code> beschreiben, ohne genau zu wissen, wie es funktioniert. So funktioniert Polymorphismus – wir rufen die Methode <code>leben</code> auf, und jedes Objekt führt es auf seine Weise aus.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">pflanze</span> <span class="o">=</span> <span class="n">Pflanze</span><span class="p">(</span><span class="s2">"Eiche"</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">tier</span> <span class="o">=</span> <span class="n">Tier</span><span class="p">(</span><span class="s2">"Reh"</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">pilz</span> <span class="o">=</span> <span class="n">Pilz</span><span class="p">(</span><span class="s2">"Champignon"</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">lebewesen</span> <span class="o">=</span> <span class="p">[</span><span class="n">pflanze</span><span class="p">,</span> <span class="n">tier</span><span class="p">,</span> <span class="n">pilz</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">leb</span> <span class="ow">in</span> <span class="n">lebewesen</span><span class="p">:</span>
+    <span class="n">leb</span><span class="o">.</span><span class="n">leben</span><span class="p">()</span>
+
+<span class="c1"># Ausgabe:</span>
+<span class="c1"># Eiche wächst durch Photosynthese.</span>
+<span class="c1"># Reh atmet.</span>
+<span class="c1"># Champignon zersetzt organisches Material.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Zusammenfassung-mit-dem-%C3%96kosystem-Beispiel:">Zusammenfassung mit dem Ökosystem-Beispiel:<a class="anchor-link" href="#Zusammenfassung-mit-dem-%C3%96kosystem-Beispiel:">¶</a></h3><ol>
+<li><strong>Klassen und Objekte</strong>: Eine Klasse ist wie ein Entwurf für Lebewesen, und Objekte sind konkrete Pflanzen, Tiere, usw.</li>
+<li><strong>Kapselung</strong>: Interne Prozesse wie Photosynthese sind privat und nur für das jeweilige Lebewesen sichtbar.</li>
+<li><strong>Vererbung</strong>: Lebewesen wie Tiere und Pflanzen haben gemeinsame Eigenschaften, aber auch eigene Besonderheiten.</li>
+<li><strong>Polymorphismus</strong>: Verschiedene Lebewesen "leben" auf ihre Weise, und der gleiche Aufruf (<code>leben</code>) kann unterschiedliche Ergebnisse haben.</li>
+</ol>
+<p>Dieses Modell hilft, verschiedene Lebewesen in einem Ökosystem strukturiert und flexibel darzustellen und ihr Verhalten klar zu definieren, was für die Modellierung und Simulation in der Umweltinformatik nützlich ist.</p>
 </div>
 </div>
 </div>

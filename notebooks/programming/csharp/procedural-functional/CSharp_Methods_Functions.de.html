@@ -7510,142 +7510,372 @@ a.anchor-link {
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3adfadcf">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="C%23-WriteLine-&amp;-TicTacToe">C# WriteLine &amp; TicTacToe<a class="anchor-link" href="#C%23-WriteLine-&amp;-TicTacToe">¶</a></h1><table border="0">
+<h1 id="Prozeduren,-Funktionen-und-Methoden-in-C%23">Prozeduren, Funktionen und Methoden in C#<a class="anchor-link" href="#Prozeduren,-Funktionen-und-Methoden-in-C%23">¶</a></h1><table border="0">
 <tr>
 <td>
-<img alt="No description has been provided for this image" src="writeline.webp"/>
+<img alt="No description has been provided for this image" src="Methods.webp"/>
 </td>
 <td rowspan="2">
-<a href="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3458764554347680798&amp;cot=14"><img alt="No description has been provided for this image" src="Radar_WriteLine.de.jpg"/></a>
+<a href="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3458764554347680798&amp;cot=14"><img alt="No description has been provided for this image" src="Radar_methods.jpg"/></a>
 </td>
 </tr>
 <tr>
 <td>
-<a href="https://learn.microsoft.com/de-de/dotnet/api/system.console.writeline?view=net-5.0">Link zur Microsoft Dokumentation</a><br/>
-<a href="Console_WriteLine_Basics.de.html">Link zu WriteLine Basics</a><br/>
-<a href="Console_WriteLine_Samples.de.html">Link zu WriteLine Samples</a><br/>
-<a href="Console_ReadLine_Basics.de.html">Link zu ReadLine</a><br/>
-<a href="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3458764554347680798&amp;cot=14">Link zum roten Faden auf Miro</a><br/>
-<a href="https://www.w3schools.com/cs/cs_output.php">Link zu Tutorial auf w3schools</a>
+<a href="https://learn.microsoft.com/de-de/dotnet/csharp/programming-guide/classes-and-structs/methods">Link zur Microsoft Dokumentation</a><br/>
+<a href="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3458764554345659185&amp;cot=14">Link zum roten Faden auf Miro</a><br/>
+<a href="https://www.w3schools.com/cs/cs_methods.php">Link zu Tutorial auf w3schools</a>
 </td>
 </tr>
 </table>
+<p>In C# sind Prozeduren und Funktionen spezielle Arten von  <strong>Methoden</strong>, die in Klassen oder Strukturen definiert werden. Der Unterschied zwischen Prozeduren und Funktionen liegt im  <strong>Rückgabewert</strong>:</p>
+<ul>
+<li><strong>Prozedur:</strong>  Eine Methode, die keinen Rückgabewert hat (definiert mit  <code>void</code>).</li>
+<li><strong>Funktion:</strong>  Eine Methode, die einen Rückgabewert hat.</li>
+</ul>
+<h3 id="Methodensignaturen">Methodensignaturen<a class="anchor-link" href="#Methodensignaturen">¶</a></h3><p>Eine Methodensignatur definiert den Namen, die Parameter und den Rückgabewert einer Methode. Sie ist eindeutig, wenn:</p>
+<ul>
+<li>Der Name der Methode</li>
+<li>Die Anzahl der Parameter</li>
+<li>Die Reihenfolge und Typen der Parameter</li>
+</ul>
+<p><strong>Codebeispiel (Umweltinformatik – Berechnung des CO₂-Fußabdrucks):</strong></p>
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=34d68b03">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Um ein Tic-Tac-Toe-Spielbrett zu malen, kannst du die Methode Console.WriteLine() verwenden, um den aktuellen Zustand des Bretts zu zeichnen. Das Brett besteht aus 3x3 Feldern, die entweder leer sind oder ein "X" oder "O" enthalten. Fangen wir mit einem leeren Brett an:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=d549d608">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-C#"><pre><span></span><span class="c1">// Malen des leeren Tic-Tac-Toe-Bretts</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"   |   |   "</span><span class="p">);</span><span class="w">  </span><span class="c1">// Erste Reihe</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"---+---+---"</span><span class="p">);</span><span class="w">  </span><span class="c1">// Trennlinie</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"   |   |   "</span><span class="p">);</span><span class="w">  </span><span class="c1">// Zweite Reihe</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"---+---+---"</span><span class="p">);</span><span class="w">  </span><span class="c1">// Trennlinie</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"   |   |   "</span><span class="p">);</span><span class="w">  </span><span class="c1">// Dritte Reihe</span>
+<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">CO2Berechnung</span>
+<span class="p">{</span>
+    <span class="o">//</span> <span class="n">Methode</span> <span class="n">ohne</span> <span class="n">Rückgabewert</span> <span class="p">(</span><span class="n">Prozedur</span><span class="p">)</span>
+    <span class="n">public</span> <span class="n">void</span> <span class="n">Begrüßung</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Willkommen zur CO₂-Fußabdruck-Berechnung!"</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="o">//</span> <span class="n">Methode</span> <span class="n">mit</span> <span class="n">Rückgabewert</span> <span class="p">(</span><span class="n">Funktion</span><span class="p">)</span>
+    <span class="n">public</span> <span class="n">double</span> <span class="n">BerechneEmissionen</span><span class="p">(</span><span class="n">double</span> <span class="n">streckeInKm</span><span class="p">,</span> <span class="n">double</span> <span class="n">emissionsFaktor</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="o">//</span> <span class="n">Signatur</span><span class="p">:</span> <span class="n">BerechneEmissionen</span><span class="p">(</span><span class="n">double</span><span class="p">,</span> <span class="n">double</span><span class="p">)</span> <span class="p">:</span> <span class="n">double</span>
+        <span class="k">return</span> <span class="n">streckeInKm</span> <span class="o">*</span> <span class="n">emissionsFaktor</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>   |   |   
----+---+---
-   |   |   
----+---+---
-   |   |   
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=caa10411">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Und nun erweitert um 9 Variablen:</p>
+<h3 id="Methodenzugriff">Methodenzugriff<a class="anchor-link" href="#Methodenzugriff">¶</a></h3><p>Methoden können mit Zugriffsmodifizierern definiert werden:</p>
+<ul>
+<li><strong>public</strong>: Zugriff von überall.</li>
+<li><strong>private</strong>: Zugriff nur innerhalb der gleichen Klasse.</li>
+<li><strong>protected</strong>: Zugriff in der gleichen Klasse und abgeleiteten Klassen.</li>
+<li><strong>internal</strong>: Zugriff innerhalb der gleichen Assembly.</li>
+<li><strong>protected internal</strong>: Mischung aus  <code>protected</code>  und  <code>internal</code>.</li>
+</ul>
+<p><strong>Beispiel:</strong></p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e4417676">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-C#"><pre><span></span><span class="kt">string</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"X"</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"O"</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"X"</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"."</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"O"</span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"X"</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"X"</span><span class="p">,</span><span class="w"> </span><span class="n">h</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"X"</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"O"</span><span class="p">;</span>
+<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">CO2Berechnung</span>
+<span class="p">{</span>
+    <span class="n">private</span> <span class="n">double</span> <span class="n">emissionsFaktor</span> <span class="o">=</span> <span class="mf">0.21</span><span class="p">;</span> <span class="o">//</span> <span class="n">nur</span> <span class="n">innerhalb</span> <span class="n">der</span> <span class="n">Klasse</span> <span class="n">sichtbar</span>
 
-<span class="c1">// Malen des leeren Tic-Tac-Toe-Bretts</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$" {a} | {b} | {c} "</span><span class="p">);</span><span class="w">  </span><span class="c1">// Erste Reihe</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$"---+---+---"</span><span class="p">);</span><span class="w">  </span><span class="c1">// Trennlinie</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$" {d} | {e} | {f} "</span><span class="p">);</span><span class="w">  </span><span class="c1">// Zweite Reihe</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$"---+---+---"</span><span class="p">);</span><span class="w">  </span><span class="c1">// Trennlinie</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$" {g} | {h} | {i} "</span><span class="p">);</span><span class="w">  </span><span class="c1">// Dritte Reihe</span>
-
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"Unentschieden... :-)"</span><span class="p">)</span>
+    <span class="n">public</span> <span class="n">double</span> <span class="n">BerechneEmissionen</span><span class="p">(</span><span class="n">double</span> <span class="n">streckeInKm</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">streckeInKm</span> <span class="o">*</span> <span class="n">emissionsFaktor</span><span class="p">;</span> <span class="o">//</span> <span class="n">Zugriff</span> <span class="n">auf</span> <span class="n">private</span> <span class="n">Variable</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre> X | O | X 
----+---+---
- . | O | X 
----+---+---
- X | X | O 
-Unentschieden... :-)
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=eab2400e">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>← <a href="Console_WriteLine_Samples.de.html"><code>WriteLine()</code> Samples</a></p>
+<h3 id="Methodenparameter-und-Argumente">Methodenparameter und Argumente<a class="anchor-link" href="#Methodenparameter-und-Argumente">¶</a></h3><p>Methoden können Parameter enthalten, die bei ihrem Aufruf mit Werten (Argumenten) belegt werden.</p>
+<p><strong>Beispiel:</strong></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="n">double</span> <span class="n">BerechneEmissionen</span><span class="p">(</span><span class="n">double</span> <span class="n">streckeInKm</span><span class="p">,</span> <span class="n">double</span> <span class="n">emissionsFaktor</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">streckeInKm</span> <span class="o">*</span> <span class="n">emissionsFaktor</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="o">//</span> <span class="n">Aufruf</span>
+<span class="n">double</span> <span class="n">ergebnis</span> <span class="o">=</span> <span class="n">BerechneEmissionen</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mf">0.21</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="%C3%9Cbergeben-nach-Wert-und-%C3%9Cbergeben-nach-Verweis">Übergeben nach Wert und Übergeben nach Verweis<a class="anchor-link" href="#%C3%9Cbergeben-nach-Wert-und-%C3%9Cbergeben-nach-Verweis">¶</a></h3><ul>
+<li><strong>Nach Wert (by value):</strong>  Standardverhalten, der Wert wird kopiert.</li>
+<li><strong>Nach Verweis (by reference):</strong>  Übergabe eines Verweises auf die ursprüngliche Variable mit  <code>ref</code>  oder  <code>out</code>.</li>
+</ul>
+<p><strong>Beispiel:</strong></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="n">void</span> <span class="n">ÄndereWert</span><span class="p">(</span><span class="n">ref</span> <span class="n">double</span> <span class="n">emissionsFaktor</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">emissionsFaktor</span> <span class="o">=</span> <span class="mf">0.25</span><span class="p">;</span> <span class="o">//</span> <span class="n">Originalvariable</span> <span class="n">wird</span> <span class="n">geändert</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="R%C3%BCckgabewerte">Rückgabewerte<a class="anchor-link" href="#R%C3%BCckgabewerte">¶</a></h3><p>Eine Methode kann:</p>
+<ul>
+<li>Keinen Rückgabewert haben (<code>void</code>).</li>
+<li>Einen Wert zurückgeben (z. B.  <code>int</code>,  <code>double</code>,  <code>string</code>).</li>
+</ul>
+<p><strong>Beispiel:</strong></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="n">double</span> <span class="n">BerechneEmissionen</span><span class="p">(</span><span class="n">double</span> <span class="n">streckeInKm</span><span class="p">,</span> <span class="n">double</span> <span class="n">emissionsFaktor</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">streckeInKm</span> <span class="o">*</span> <span class="n">emissionsFaktor</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Asynchrone-Methoden">Asynchrone Methoden<a class="anchor-link" href="#Asynchrone-Methoden">¶</a></h3><p>Asynchrone Methoden erlauben es, langlaufende Operationen nicht-blockierend auszuführen, z. B. Daten von einer API abrufen.</p>
+<p><strong>Beispiel (Daten von einer Umwelt-API abrufen):</strong></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">using</span> <span class="n">System</span><span class="o">.</span><span class="n">Net</span><span class="o">.</span><span class="n">Http</span><span class="p">;</span>
+<span class="n">using</span> <span class="n">System</span><span class="o">.</span><span class="n">Threading</span><span class="o">.</span><span class="n">Tasks</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="k">async</span> <span class="n">Task</span><span class="o">&lt;</span><span class="n">double</span><span class="o">&gt;</span> <span class="n">LadeEmissionsFaktorAsync</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">HttpClient</span> <span class="n">client</span> <span class="o">=</span> <span class="n">new</span> <span class="n">HttpClient</span><span class="p">();</span>
+    <span class="n">string</span> <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">GetStringAsync</span><span class="p">(</span><span class="s2">"https://api.umweltinfo.de/emissionsfaktor"</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">double</span><span class="o">.</span><span class="n">Parse</span><span class="p">(</span><span class="n">response</span><span class="p">);</span> <span class="o">//</span> <span class="n">Beispielwert</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Ausdruckstextdefinitionen">Ausdruckstextdefinitionen<a class="anchor-link" href="#Ausdruckstextdefinitionen">¶</a></h3><p>Kurzform für einfache Methoden, die eine Berechnung oder Rückgabe durchführen.</p>
+<p><strong>Beispiel:</strong></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="n">double</span> <span class="n">BerechneEmissionen</span><span class="p">(</span><span class="n">double</span> <span class="n">streckeInKm</span><span class="p">,</span> <span class="n">double</span> <span class="n">emissionsFaktor</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">streckeInKm</span> <span class="o">*</span> <span class="n">emissionsFaktor</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Iterators">Iterators<a class="anchor-link" href="#Iterators">¶</a></h3><p>Iterators erlauben das schrittweise Durchlaufen von Elementen (z. B. mit  <code>yield return</code>).</p>
+<p><strong>Beispiel:</strong></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="n">IEnumerable</span><span class="o">&lt;</span><span class="n">double</span><span class="o">&gt;</span> <span class="n">Emissionsfaktoren</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">yield</span> <span class="k">return</span> <span class="mf">0.21</span><span class="p">;</span> <span class="o">//</span> <span class="n">Auto</span>
+    <span class="k">yield</span> <span class="k">return</span> <span class="mf">0.05</span><span class="p">;</span> <span class="o">//</span> <span class="n">Zug</span>
+    <span class="k">yield</span> <span class="k">return</span> <span class="mf">0.12</span><span class="p">;</span> <span class="o">//</span> <span class="n">Flugzeug</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Gesamtbeispiel">Gesamtbeispiel<a class="anchor-link" href="#Gesamtbeispiel">¶</a></h3><p><strong>Code zur Berechnung und Iteration von CO₂-Emissionen:</strong></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">using</span> <span class="n">System</span><span class="p">;</span>
+<span class="n">using</span> <span class="n">System</span><span class="o">.</span><span class="n">Collections</span><span class="o">.</span><span class="n">Generic</span><span class="p">;</span>
+<span class="n">using</span> <span class="n">System</span><span class="o">.</span><span class="n">Net</span><span class="o">.</span><span class="n">Http</span><span class="p">;</span>
+<span class="n">using</span> <span class="n">System</span><span class="o">.</span><span class="n">Threading</span><span class="o">.</span><span class="n">Tasks</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">CO2Berechnung</span>
+<span class="p">{</span>
+    <span class="n">public</span> <span class="n">void</span> <span class="n">Begrüßung</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Willkommen zur CO₂-Fußabdruck-Berechnung!"</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="n">public</span> <span class="n">double</span> <span class="n">BerechneEmissionen</span><span class="p">(</span><span class="n">double</span> <span class="n">streckeInKm</span><span class="p">,</span> <span class="n">double</span> <span class="n">emissionsFaktor</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">streckeInKm</span> <span class="o">*</span> <span class="n">emissionsFaktor</span><span class="p">;</span>
+
+    <span class="n">public</span> <span class="k">async</span> <span class="n">Task</span><span class="o">&lt;</span><span class="n">double</span><span class="o">&gt;</span> <span class="n">LadeEmissionsFaktorAsync</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">HttpClient</span> <span class="n">client</span> <span class="o">=</span> <span class="n">new</span> <span class="n">HttpClient</span><span class="p">();</span>
+        <span class="n">string</span> <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">GetStringAsync</span><span class="p">(</span><span class="s2">"https://api.umweltinfo.de/emissionsfaktor"</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">double</span><span class="o">.</span><span class="n">Parse</span><span class="p">(</span><span class="n">response</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="n">public</span> <span class="n">IEnumerable</span><span class="o">&lt;</span><span class="n">double</span><span class="o">&gt;</span> <span class="n">Emissionsfaktoren</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">yield</span> <span class="k">return</span> <span class="mf">0.21</span><span class="p">;</span> <span class="o">//</span> <span class="n">Auto</span>
+        <span class="k">yield</span> <span class="k">return</span> <span class="mf">0.05</span><span class="p">;</span> <span class="o">//</span> <span class="n">Zug</span>
+        <span class="k">yield</span> <span class="k">return</span> <span class="mf">0.12</span><span class="p">;</span> <span class="o">//</span> <span class="n">Flugzeug</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">Program</span>
+<span class="p">{</span>
+    <span class="n">static</span> <span class="k">async</span> <span class="n">Task</span> <span class="n">Main</span><span class="p">(</span><span class="n">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">CO2Berechnung</span> <span class="n">co2Berechnung</span> <span class="o">=</span> <span class="n">new</span> <span class="n">CO2Berechnung</span><span class="p">();</span>
+        <span class="n">co2Berechnung</span><span class="o">.</span><span class="n">Begrüßung</span><span class="p">();</span>
+
+        <span class="n">double</span> <span class="n">strecke</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span> <span class="o">//</span> <span class="mi">100</span> <span class="n">km</span>
+        <span class="n">double</span> <span class="n">emissionsFaktor</span> <span class="o">=</span> <span class="mf">0.21</span><span class="p">;</span> <span class="o">//</span> <span class="n">Auto</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Emissionen: {co2Berechnung.BerechneEmissionen(strecke, emissionsFaktor)} kg CO₂"</span><span class="p">);</span>
+
+        <span class="n">double</span> <span class="n">apiFaktor</span> <span class="o">=</span> <span class="k">await</span> <span class="n">co2Berechnung</span><span class="o">.</span><span class="n">LadeEmissionsFaktorAsync</span><span class="p">();</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Lade Emissionsfaktor von API: </span><span class="si">{apiFaktor}</span><span class="s2">"</span><span class="p">);</span>
+
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Verfügbare Emissionsfaktoren:"</span><span class="p">);</span>
+        <span class="n">foreach</span> <span class="p">(</span><span class="n">double</span> <span class="n">faktor</span> <span class="ow">in</span> <span class="n">co2Berechnung</span><span class="o">.</span><span class="n">Emissionsfaktoren</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"- </span><span class="si">{faktor}</span><span class="s2"> kg/km"</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>
