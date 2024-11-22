@@ -7510,90 +7510,88 @@ a.anchor-link {
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3adfadcf">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="C%23-WriteLine-&amp;-TicTacToe">C# WriteLine &amp; TicTacToe<a class="anchor-link" href="#C%23-WriteLine-&amp;-TicTacToe">¶</a></h1><table border="0">
+<h1 id="Grundlagen-der-objektorientierten-Programmierung-(OOP)-in-C%23">Grundlagen der objektorientierten Programmierung (OOP) in C#<a class="anchor-link" href="#Grundlagen-der-objektorientierten-Programmierung-(OOP)-in-C%23">¶</a></h1><table border="0">
 <tr>
 <td>
-<img alt="No description has been provided for this image" src="writeline.webp" style="width:280px; height:280px;"/>
+<img alt="No description has been provided for this image" src="CSharp_Basics.webp"/>
 </td>
 <td rowspan="2">
-<img <="" alt="No description has been provided for this image" src="Radar_WriteLine.de.jpg" style="width:480px;" td=""/>
-</td></tr>
+<a href="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3458764554347680798&amp;cot=14"><img alt="No description has been provided for this image" src="Radar_OOP.jpg"/></a>
+</td>
+</tr>
 <tr>
 <td>
-<a href="https://learn.microsoft.com/de-de/dotnet/api/system.console.writeline?view=net-5.0">Link zur Microsoft Dokumentation</a><br/>
-<a href="Console_WriteLine_Basics.de.html">Link zu WriteLine Basics</a><br/>
-<a href="Console_WriteLine_Samples.de.html">Link zu WriteLine Samples</a><br/>
+<a href="https://learn.microsoft.com/de-de/dotnet/csharp/fundamentals/tutorials/oop">Link zur Microsoft Dokumentation</a><br/>
+<a href="CSharp_Samples.de.html">Link zu OOP &amp; Samples</a><br/>
 <a href="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3458764554347680798&amp;cot=14">Link zum roten Faden auf Miro</a><br/>
-<a href="https://www.w3schools.com/cs/cs_output.php">Link zu Tutorial auf w3schools</a>
+<a href="https://www.w3schools.com/cs/cs_oop.php">Link zu Tutorial auf w3schools</a>
 </td>
 </tr>
 </table>
+<p>Die objektorientierte Programmierung (OOP) in C# ermöglicht es, komplexe Systeme durch das Erstellen und Verwalten von Objekten zu modellieren, was besonders in der Umweltinformatik hilfreich ist, um reale Entitäten wie Flüsse, Seen und andere Umweltkomponenten zu repräsentieren. C# verwendet dabei die Prinzipien Klassen und Objekte, Vererbung, Polymorphismus, Kapselung und Abstraktion. Im Folgenden wird jedes Prinzip ausführlich erklärt, und wir betrachten auch die Verwendung des Operators <code>new</code>, der eine Schlüsselrolle bei der Instanziierung von Objekten spielt.</p>
+<h3 id="1.-Klassen-und-Objekte">1. Klassen und Objekte<a class="anchor-link" href="#1.-Klassen-und-Objekte">¶</a></h3><p>In der OOP werden <strong>Klassen</strong> als Baupläne für Objekte verwendet. Eine Klasse definiert Eigenschaften (Daten) und Methoden (Verhalten) von Objekten. <strong>Objekte</strong> sind Instanzen dieser Klassen, die mit konkreten Daten versehen sind.</p>
+<h4 id="Beispiel:">Beispiel:<a class="anchor-link" href="#Beispiel:">¶</a></h4><p>Angenommen, wir möchten einen Fluss in der Umweltinformatik modellieren. Dafür erstellen wir eine <code>Fluss</code>-Klasse mit Eigenschaften wie <code>Name</code>, <code>Laenge</code> und <code>Durchfluss</code>.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=34d68b03">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Um ein Tic-Tac-Toe-Spielbrett zu malen, kannst du die Methode Console.WriteLine() verwenden, um den aktuellen Zustand des Bretts zu zeichnen. Das Brett besteht aus 3x3 Feldern, die entweder leer sind oder ein "X" oder "O" enthalten. Fangen wir mit einem leeren Brett an:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=d549d608">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-C#"><pre><span></span><span class="c1">// Malen des leeren Tic-Tac-Toe-Bretts</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"   |   |   "</span><span class="p">);</span><span class="w">  </span><span class="c1">// Erste Reihe</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"---+---+---"</span><span class="p">);</span><span class="w">  </span><span class="c1">// Trennlinie</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"   |   |   "</span><span class="p">);</span><span class="w">  </span><span class="c1">// Zweite Reihe</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"---+---+---"</span><span class="p">);</span><span class="w">  </span><span class="c1">// Trennlinie</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"   |   |   "</span><span class="p">);</span><span class="w">  </span><span class="c1">// Dritte Reihe</span>
+<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">Fluss</span>
+<span class="p">{</span>
+    <span class="n">public</span> <span class="n">string</span> <span class="n">Name</span> <span class="p">{</span> <span class="n">get</span><span class="p">;</span> <span class="nb">set</span><span class="p">;</span> <span class="p">}</span> <span class="o">//</span> <span class="n">Name</span> <span class="n">des</span> <span class="n">Flusses</span>
+    <span class="n">public</span> <span class="n">double</span> <span class="n">Laenge</span> <span class="p">{</span> <span class="n">get</span><span class="p">;</span> <span class="nb">set</span><span class="p">;</span> <span class="p">}</span> <span class="o">//</span> <span class="n">Länge</span> <span class="ow">in</span> <span class="n">Kilometern</span>
+    <span class="n">public</span> <span class="n">double</span> <span class="n">Durchfluss</span> <span class="p">{</span> <span class="n">get</span><span class="p">;</span> <span class="nb">set</span><span class="p">;</span> <span class="p">}</span> <span class="o">//</span> <span class="n">Durchfluss</span> <span class="ow">in</span> <span class="n">Kubikmeter</span> <span class="n">pro</span> <span class="n">Sekunde</span>
+
+    <span class="n">public</span> <span class="n">Fluss</span><span class="p">(</span><span class="n">string</span> <span class="n">name</span><span class="p">,</span> <span class="n">double</span> <span class="n">laenge</span><span class="p">,</span> <span class="n">double</span> <span class="n">durchfluss</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span>
+        <span class="n">Laenge</span> <span class="o">=</span> <span class="n">laenge</span><span class="p">;</span>
+        <span class="n">Durchfluss</span> <span class="o">=</span> <span class="n">durchfluss</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">public</span> <span class="n">void</span> <span class="n">FlussInformation</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"</span><span class="si">{Name}</span><span class="s2"> hat eine Länge von </span><span class="si">{Laenge}</span><span class="s2"> km und einen Durchfluss von </span><span class="si">{Durchfluss}</span><span class="s2"> m³/s."</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=caa10411">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Und nun erweitert um 9 Variablen:</p>
+<h4 id="Verwendung-von-new:">Verwendung von <code>new</code>:<a class="anchor-link" href="#Verwendung-von-new:">¶</a></h4><p>Der Operator <code>new</code> wird verwendet, um eine Instanz der Klasse zu erstellen, also ein Objekt. Der Operator reserviert Speicherplatz und initialisiert das Objekt.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e4417676">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-C#"><pre><span></span><span class="kt">string</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">" "</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">" "</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">" "</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">" "</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">" "</span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">" "</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">" "</span><span class="p">,</span><span class="w"> </span><span class="n">h</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">" "</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">" "</span><span class="p">;</span>
-
-<span class="c1">// Malen des leeren Tic-Tac-Toe-Bretts</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$" {a} | {b} | {c} "</span><span class="p">);</span><span class="w">  </span><span class="c1">// Erste Reihe</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$"---+---+---"</span><span class="p">);</span><span class="w">  </span><span class="c1">// Trennlinie</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$" {d} | {e} | {f} "</span><span class="p">);</span><span class="w">  </span><span class="c1">// Zweite Reihe</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$"---+---+---"</span><span class="p">);</span><span class="w">  </span><span class="c1">// Trennlinie</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$" {g} | {h} | {i} "</span><span class="p">);</span><span class="w">  </span><span class="c1">// Dritte Reihe</span>
+<div class="highlight hl-python"><pre><span></span><span class="n">Fluss</span> <span class="n">rhein</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Fluss</span><span class="p">(</span><span class="s2">"Rhein"</span><span class="p">,</span> <span class="mi">1233</span><span class="p">,</span> <span class="mi">2900</span><span class="p">);</span>
+<span class="n">rhein</span><span class="o">.</span><span class="n">FlussInformation</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
@@ -7606,13 +7604,337 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>   |   |   
----+---+---
-   |   |   
----+---+---
-   |   |   
+<pre>Rhein hat eine Länge von 1233 km und einen Durchfluss von 2900 m³/s.
 </pre>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Hier erzeugt <code>new Fluss(...)</code> ein neues <code>Fluss</code>-Objekt und weist es der Variablen <code>rhein</code> zu. Dieses <code>rhein</code>-Objekt repräsentiert einen spezifischen Fluss und kann über die Methoden und Eigenschaften der Klasse angesprochen werden.</p>
+<h3 id="2.-Vererbung">2. Vererbung<a class="anchor-link" href="#2.-Vererbung">¶</a></h3><p><strong>Vererbung</strong> ermöglicht es, von einer Basisklasse (Elternklasse) zu erben und eine abgeleitete Klasse (Kindklasse) zu erstellen, die zusätzliche oder spezialisierte Eigenschaften und Methoden hat. Das spart Wiederholungen im Code und hilft dabei, gemeinsame Eigenschaften in der Basisklasse zu definieren.</p>
+<h4 id="Beispiel:">Beispiel:<a class="anchor-link" href="#Beispiel:">¶</a></h4><p>Erstellen einer abgeleiteten Klasse <code>VerschmutzterFluss</code>, die von der Basisklasse <code>Fluss</code> erbt und eine zusätzliche Eigenschaft zur Schadstoffkonzentration hat.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">VerschmutzterFluss</span> <span class="p">:</span> <span class="n">Fluss</span>
+<span class="p">{</span>
+    <span class="n">public</span> <span class="n">double</span> <span class="n">Schadstoffkonzentration</span> <span class="p">{</span> <span class="n">get</span><span class="p">;</span> <span class="nb">set</span><span class="p">;</span> <span class="p">}</span> <span class="o">//</span> <span class="n">Schadstoffkonzentration</span> <span class="ow">in</span> <span class="n">mg</span><span class="o">/</span><span class="n">L</span>
+
+    <span class="n">public</span> <span class="n">VerschmutzterFluss</span><span class="p">(</span><span class="n">string</span> <span class="n">name</span><span class="p">,</span> <span class="n">double</span> <span class="n">laenge</span><span class="p">,</span> <span class="n">double</span> <span class="n">durchfluss</span><span class="p">,</span> <span class="n">double</span> <span class="n">schadstoffkonzentration</span><span class="p">)</span>
+        <span class="p">:</span> <span class="n">base</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">laenge</span><span class="p">,</span> <span class="n">durchfluss</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Schadstoffkonzentration</span> <span class="o">=</span> <span class="n">schadstoffkonzentration</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">public</span> <span class="n">void</span> <span class="n">VerschmutzungsInfo</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"</span><span class="si">{Name}</span><span class="s2"> hat eine Schadstoffkonzentration von </span><span class="si">{Schadstoffkonzentration}</span><span class="s2"> mg/L."</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Verwendung-von-new:">Verwendung von <code>new</code>:<a class="anchor-link" href="#Verwendung-von-new:">¶</a></h4><p>Auch hier wird <code>new</code> verwendet, um eine Instanz der abgeleiteten Klasse <code>VerschmutzterFluss</code> zu erstellen.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">VerschmutzterFluss</span> <span class="n">main</span> <span class="o">=</span> <span class="n">new</span> <span class="n">VerschmutzterFluss</span><span class="p">(</span><span class="s2">"Main"</span><span class="p">,</span> <span class="mi">524</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">);</span>
+<span class="n">main</span><span class="o">.</span><span class="n">FlussInformation</span><span class="p">();</span>
+<span class="n">main</span><span class="o">.</span><span class="n">VerschmutzungsInfo</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Main hat eine Länge von 524 km und einen Durchfluss von 200 m³/s.
+Main hat eine Schadstoffkonzentration von 3,5 mg/L.
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="3.-Polymorphismus">3. Polymorphismus<a class="anchor-link" href="#3.-Polymorphismus">¶</a></h3><p><strong>Polymorphismus</strong> ermöglicht es, Objekte der abgeleiteten Klasse auf die gleiche Weise wie Objekte der Basisklasse zu behandeln. Es vereinfacht das Arbeiten mit mehreren Objekten, die sich zwar in Details unterscheiden, aber eine gemeinsame Schnittstelle oder Basisklasse haben.</p>
+<h4 id="Beispiel:">Beispiel:<a class="anchor-link" href="#Beispiel:">¶</a></h4><p>Eine Methode, die Informationen über verschiedene <code>Fluss</code>-Objekte (verschmutzt oder nicht) anzeigt, ohne die genaue Typzugehörigkeit zu kennen.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="n">void</span> <span class="n">ZeigeFlussInfo</span><span class="p">(</span><span class="n">Fluss</span> <span class="n">fluss</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">fluss</span><span class="o">.</span><span class="n">FlussInformation</span><span class="p">();</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">fluss</span> <span class="ow">is</span> <span class="n">VerschmutzterFluss</span> <span class="n">verschmutzterFluss</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">verschmutzterFluss</span><span class="o">.</span><span class="n">VerschmutzungsInfo</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Verwendung:">Verwendung:<a class="anchor-link" href="#Verwendung:">¶</a></h4><p>Durch Polymorphismus können wir verschiedene Objekte, die die gleiche Basisklasse teilen, in derselben Methode verwenden.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">Fluss</span> <span class="n">donau</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Fluss</span><span class="p">(</span><span class="s2">"Donau"</span><span class="p">,</span> <span class="mi">2850</span><span class="p">,</span> <span class="mi">6500</span><span class="p">);</span>
+<span class="n">VerschmutzterFluss</span> <span class="n">elbe</span> <span class="o">=</span> <span class="n">new</span> <span class="n">VerschmutzterFluss</span><span class="p">(</span><span class="s2">"Elbe"</span><span class="p">,</span> <span class="mi">1094</span><span class="p">,</span> <span class="mi">700</span><span class="p">,</span> <span class="mf">2.8</span><span class="p">);</span>
+
+<span class="n">ZeigeFlussInfo</span><span class="p">(</span><span class="n">donau</span><span class="p">);</span>
+<span class="n">ZeigeFlussInfo</span><span class="p">(</span><span class="n">elbe</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Donau hat eine Länge von 2850 km und einen Durchfluss von 6500 m³/s.
+Elbe hat eine Länge von 1094 km und einen Durchfluss von 700 m³/s.
+Elbe hat eine Schadstoffkonzentration von 2,8 mg/L.
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="4.-Kapselung">4. Kapselung<a class="anchor-link" href="#4.-Kapselung">¶</a></h3><p><strong>Kapselung</strong> bedeutet, dass Daten und Methoden einer Klasse geschützt werden und nur über bestimmte Schnittstellen darauf zugegriffen werden kann. Das hilft, die Datenintegrität zu bewahren.</p>
+<h4 id="Beispiel:">Beispiel:<a class="anchor-link" href="#Beispiel:">¶</a></h4><p>Wir verhindern, dass die Schadstoffkonzentration eines <code>VerschmutzterFluss</code>-Objekts negativ sein kann.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">VerschmutzterFluss</span> <span class="p">:</span> <span class="n">Fluss</span>
+<span class="p">{</span>
+    <span class="n">private</span> <span class="n">double</span> <span class="n">schadstoffkonzentration</span><span class="p">;</span>
+
+    <span class="n">public</span> <span class="n">double</span> <span class="n">Schadstoffkonzentration</span>
+    <span class="p">{</span>
+        <span class="n">get</span> <span class="p">{</span> <span class="k">return</span> <span class="n">schadstoffkonzentration</span><span class="p">;</span> <span class="p">}</span>
+        <span class="nb">set</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">value</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="n">schadstoffkonzentration</span> <span class="o">=</span> <span class="n">value</span><span class="p">;</span>
+            <span class="k">else</span>
+                <span class="n">throw</span> <span class="n">new</span> <span class="n">ArgumentException</span><span class="p">(</span><span class="s2">"Schadstoffkonzentration muss positiv sein."</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="n">public</span> <span class="n">VerschmutzterFluss</span><span class="p">(</span><span class="n">string</span> <span class="n">name</span><span class="p">,</span> <span class="n">double</span> <span class="n">laenge</span><span class="p">,</span> <span class="n">double</span> <span class="n">durchfluss</span><span class="p">,</span> <span class="n">double</span> <span class="n">schadstoffkonzentration</span><span class="p">)</span>
+        <span class="p">:</span> <span class="n">base</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">laenge</span><span class="p">,</span> <span class="n">durchfluss</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Schadstoffkonzentration</span> <span class="o">=</span> <span class="n">schadstoffkonzentration</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Die <code>Schadstoffkonzentration</code>-Eigenschaft wird über eine Zugriffsmethode geschützt, die sicherstellt, dass keine negativen Werte gesetzt werden können.</p>
+<h3 id="5.-Abstraktion">5. Abstraktion<a class="anchor-link" href="#5.-Abstraktion">¶</a></h3><p><strong>Abstraktion</strong> hilft dabei, nur die wichtigen Eigenschaften und Methoden einer Klasse freizugeben und unnötige Details auszublenden. Dadurch bleibt der Code übersichtlich und verständlich.</p>
+<h4 id="Beispiel:">Beispiel:<a class="anchor-link" href="#Beispiel:">¶</a></h4><p>Wir erstellen eine abstrakte Basisklasse <code>Gewaesser</code>, die die gemeinsamen Eigenschaften und Methoden aller Gewässer enthält.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="n">abstract</span> <span class="k">class</span> <span class="nc">Gewaesser</span>
+<span class="p">{</span>
+    <span class="n">public</span> <span class="n">string</span> <span class="n">Name</span> <span class="p">{</span> <span class="n">get</span><span class="p">;</span> <span class="nb">set</span><span class="p">;</span> <span class="p">}</span>
+    <span class="n">public</span> <span class="n">abstract</span> <span class="n">void</span> <span class="n">ZeigeGewaesserInfo</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">See</span> <span class="p">:</span> <span class="n">Gewaesser</span>
+<span class="p">{</span>
+    <span class="n">public</span> <span class="n">double</span> <span class="n">Flaeche</span> <span class="p">{</span> <span class="n">get</span><span class="p">;</span> <span class="nb">set</span><span class="p">;</span> <span class="p">}</span> <span class="o">//</span> <span class="n">Fläche</span> <span class="ow">in</span> <span class="n">Quadratkilometern</span>
+
+    <span class="n">public</span> <span class="n">See</span><span class="p">(</span><span class="n">string</span> <span class="n">name</span><span class="p">,</span> <span class="n">double</span> <span class="n">flaeche</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span>
+        <span class="n">Flaeche</span> <span class="o">=</span> <span class="n">flaeche</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">public</span> <span class="n">override</span> <span class="n">void</span> <span class="n">ZeigeGewaesserInfo</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Der See </span><span class="si">{Name}</span><span class="s2"> hat eine Fläche von </span><span class="si">{Flaeche}</span><span class="s2"> km²."</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">public</span> <span class="k">class</span> <span class="nc">Fluss</span> <span class="p">:</span> <span class="n">Gewaesser</span>
+<span class="p">{</span>
+    <span class="n">public</span> <span class="n">double</span> <span class="n">Laenge</span> <span class="p">{</span> <span class="n">get</span><span class="p">;</span> <span class="nb">set</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="n">public</span> <span class="n">Fluss</span><span class="p">(</span><span class="n">string</span> <span class="n">name</span><span class="p">,</span> <span class="n">double</span> <span class="n">laenge</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span>
+        <span class="n">Laenge</span> <span class="o">=</span> <span class="n">laenge</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">public</span> <span class="n">override</span> <span class="n">void</span> <span class="n">ZeigeGewaesserInfo</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Der Fluss </span><span class="si">{Name}</span><span class="s2"> hat eine Länge von </span><span class="si">{Laenge}</span><span class="s2"> km."</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Verwendung:">Verwendung:<a class="anchor-link" href="#Verwendung:">¶</a></h4><p>Wir erstellen eine Liste von <code>Gewaesser</code>-Objekten, ohne uns um die Details jedes spezifischen Gewässers zu kümmern.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Gewaesser</span><span class="o">&gt;</span> <span class="n">gewaesserListe</span> <span class="o">=</span> <span class="n">new</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Gewaesser</span><span class="o">&gt;</span>
+<span class="p">{</span>
+    <span class="n">new</span> <span class="n">See</span><span class="p">(</span><span class="s2">"Bodensee"</span><span class="p">,</span> <span class="mi">536</span><span class="p">),</span>
+    <span class="n">new</span> <span class="n">Fluss</span><span class="p">(</span><span class="s2">"Rhein"</span><span class="p">,</span> <span class="mi">1233</span><span class="p">)</span>
+<span class="p">};</span>
+
+<span class="n">foreach</span> <span class="p">(</span><span class="n">var</span> <span class="n">gewaesser</span> <span class="ow">in</span> <span class="n">gewaesserListe</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">gewaesser</span><span class="o">.</span><span class="n">ZeigeGewaesserInfo</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Der See Bodensee hat eine Fläche von 536 km².
+Der Fluss Rhein hat eine Länge von 1233 km.
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Zusammenfassung">Zusammenfassung<a class="anchor-link" href="#Zusammenfassung">¶</a></h3><p>In der OOP ermöglicht der <code>new</code>-Operator das Erstellen neuer Objekte und damit das Modellieren von Umweltkomponenten in der Softwareentwicklung. Klassen und Objekte, Vererbung, Polymorphismus, Kapselung und Abstraktion helfen, komplexe Systeme realistisch abzubilden und strukturierte, wartbare Software zu entwickeln.</p>
 </div>
 </div>
 </div>

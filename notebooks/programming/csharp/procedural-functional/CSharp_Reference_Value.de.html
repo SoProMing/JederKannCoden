@@ -7510,142 +7510,242 @@ a.anchor-link {
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3adfadcf">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="C%23-WriteLine-&amp;-TicTacToe">C# WriteLine &amp; TicTacToe<a class="anchor-link" href="#C%23-WriteLine-&amp;-TicTacToe">¶</a></h1><table border="0">
+<h1 id="Referenztypen-und-Werttypen-in-C%23">Referenztypen und Werttypen in C#<a class="anchor-link" href="#Referenztypen-und-Werttypen-in-C%23">¶</a></h1><table border="0">
 <tr>
 <td>
-<img alt="No description has been provided for this image" src="writeline.webp"/>
+<img alt="No description has been provided for this image" src="Reference_Value.webp"/>
 </td>
 <td rowspan="2">
-<a href="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3458764554347680798&amp;cot=14"><img alt="No description has been provided for this image" src="Radar_WriteLine.de.jpg"/></a>
+<a href="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3458764554347680798&amp;cot=14"><img alt="No description has been provided for this image" src="Radar_Ref.jpg"/></a>
 </td>
 </tr>
 <tr>
 <td>
-<a href="https://learn.microsoft.com/de-de/dotnet/api/system.console.writeline?view=net-5.0">Link zur Microsoft Dokumentation</a><br/>
-<a href="Console_WriteLine_Basics.de.html">Link zu WriteLine Basics</a><br/>
-<a href="Console_WriteLine_Samples.de.html">Link zu WriteLine Samples</a><br/>
-<a href="Console_ReadLine_Basics.de.html">Link zu ReadLine</a><br/>
-<a href="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3458764554347680798&amp;cot=14">Link zum roten Faden auf Miro</a><br/>
-<a href="https://www.w3schools.com/cs/cs_output.php">Link zu Tutorial auf w3schools</a>
+<a href="https://learn.microsoft.com/de-de/dotnet/csharp/language-reference/keywords/reference-types">Link zur Microsoft Dokumentation (Quelle)</a><br/>
+<a href="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3458764554345659185&amp;cot=14">Link zum roten Faden auf Miro</a>
 </td>
 </tr>
 </table>
+<p>In C# werden Datentypen in zwei Kategorien unterteilt:</p>
+<ol>
+<li><p><strong>Werttypen</strong>:</p>
+<ul>
+<li>Enthalten die tatsächlichen Werte.</li>
+<li>Werden auf dem  <strong>Stack</strong>  gespeichert.</li>
+<li>Beispiele:  <code>int</code>,  <code>float</code>,  <code>bool</code>,  <code>struct</code>.</li>
+</ul>
+</li>
+<li><p><strong>Referenztypen</strong>:</p>
+<ul>
+<li>Enthalten einen  <strong>Verweis (Referenz)</strong>  auf den Speicherort, an dem die Daten tatsächlich gespeichert sind.</li>
+<li>Der eigentliche Wert wird auf dem  <strong>Heap</strong>  gespeichert, während die Referenz auf dem  <strong>Stack</strong>  gespeichert wird.</li>
+<li>Beispiele:  <code>class</code>,  <code>string</code>,  <code>array</code>.</li>
+</ul>
+</li>
+</ol>
+<h3 id="Stack-und-Heap">Stack und Heap<a class="anchor-link" href="#Stack-und-Heap">¶</a></h3><ul>
+<li><p><strong>Stack</strong>:</p>
+<ul>
+<li>Schneller Speicherbereich, der für lokale Variablen und Methodenaufrufe verwendet wird.</li>
+<li>Organisiert als LIFO (Last In, First Out).</li>
+<li>Jede Methode hat ihren eigenen Stackrahmen (Stack Frame) für Parameter, Rückgabewerte und lokale Variablen.</li>
+</ul>
+</li>
+<li><p><strong>Heap</strong>:</p>
+<ul>
+<li>Speicher für dynamisch erzeugte Objekte.</li>
+<li>Langsamer als der Stack, aber erlaubt flexiblere Speicherverwaltung.</li>
+<li>Referenzen auf Objekte im Heap werden auf dem Stack gespeichert.</li>
+</ul>
+</li>
+</ul>
+<p><img alt="No description has been provided for this image" src="stack_heap.png"/></p>
+<details><summary>Embedded miro board...</summary>
+<iframe allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen="" frameborder="0" height="768" scrolling="no" src="https://miro.com/app/live-embed/o9J_lOJi2o0=/?moveToViewport=-1518,-280,1369,799&amp;embedId=521724089499" width="768"></iframe>
+</details>
+<h3 id="%C3%9Cbergabe-von-Parametern">Übergabe von Parametern<a class="anchor-link" href="#%C3%9Cbergabe-von-Parametern">¶</a></h3><ol>
+<li><p><strong>Werttypen</strong>:</p>
+<ul>
+<li>Standardmäßig erfolgt die Übergabe  <strong>per Wert</strong>. Es wird eine Kopie der Variablen erstellt, sodass Änderungen an der Kopie keinen Einfluss auf das Original haben.</li>
+</ul>
+</li>
+<li><p><strong>Referenztypen</strong>:</p>
+<ul>
+<li>Der Verweis wird standardmäßig  <strong>per Wert</strong>  übergeben. Das bedeutet, dass zwar das Objekt selbst geändert werden kann, aber nicht die Referenz.</li>
+</ul>
+</li>
+<li><p><strong>Übergabe per  <code>ref</code></strong>:</p>
+<ul>
+<li>Übermittelt den tatsächlichen Speicherort der Variable (Stack oder Heap).</li>
+<li>Änderungen am Parameter beeinflussen die ursprüngliche Variable direkt.</li>
+</ul>
+</li>
+<li><p><strong>Übergabe per  <code>out</code></strong>:</p>
+<ul>
+<li>Ähnlich wie  <code>ref</code>, jedoch muss die Variable vor der Verwendung initialisiert werden.</li>
+</ul>
+</li>
+</ol>
+<p><img alt="No description has been provided for this image" src="Reference_Debugger.jpg"/></p>
+<h3 id="Zusammenarbeit-von-Stack-und-Heap">Zusammenarbeit von Stack und Heap<a class="anchor-link" href="#Zusammenarbeit-von-Stack-und-Heap">¶</a></h3><p>Wenn ein Referenztyp (z. B. ein Objekt) übergeben wird:</p>
+<ol>
+<li>Der Verweis auf das Objekt wird auf dem Stack gespeichert.</li>
+<li>Das Objekt selbst liegt auf dem Heap.</li>
+<li>Änderungen am Objekt über den Verweis wirken sich auf das Original aus.</li>
+</ol>
+<h3 id="Codebeispiele">Codebeispiele<a class="anchor-link" href="#Codebeispiele">¶</a></h3><h4 id="1.--%C3%84nderung-eines-Referenztyps">1.  <strong>Änderung eines Referenztyps</strong><a class="anchor-link" href="#1.--%C3%84nderung-eines-Referenztyps">¶</a></h4>
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=34d68b03">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Um ein Tic-Tac-Toe-Spielbrett zu malen, kannst du die Methode Console.WriteLine() verwenden, um den aktuellen Zustand des Bretts zu zeichnen. Das Brett besteht aus 3x3 Feldern, die entweder leer sind oder ein "X" oder "O" enthalten. Fangen wir mit einem leeren Brett an:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=d549d608">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-C#"><pre><span></span><span class="c1">// Malen des leeren Tic-Tac-Toe-Bretts</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"   |   |   "</span><span class="p">);</span><span class="w">  </span><span class="c1">// Erste Reihe</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"---+---+---"</span><span class="p">);</span><span class="w">  </span><span class="c1">// Trennlinie</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"   |   |   "</span><span class="p">);</span><span class="w">  </span><span class="c1">// Zweite Reihe</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"---+---+---"</span><span class="p">);</span><span class="w">  </span><span class="c1">// Trennlinie</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"   |   |   "</span><span class="p">);</span><span class="w">  </span><span class="c1">// Dritte Reihe</span>
+<div class="highlight hl-python"><pre><span></span><span class="n">using</span> <span class="n">System</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Program</span>
+<span class="p">{</span>
+    <span class="k">class</span> <span class="nc">Person</span>
+    <span class="p">{</span>
+        <span class="n">public</span> <span class="n">string</span> <span class="n">Name</span> <span class="p">{</span> <span class="n">get</span><span class="p">;</span> <span class="nb">set</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="n">static</span> <span class="n">void</span> <span class="n">ChangeName</span><span class="p">(</span><span class="n">Person</span> <span class="n">person</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">person</span><span class="o">.</span><span class="n">Name</span> <span class="o">=</span> <span class="s2">"Changed"</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">static</span> <span class="n">void</span> <span class="n">Main</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Person</span> <span class="n">p</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Person</span> <span class="p">{</span> <span class="n">Name</span> <span class="o">=</span> <span class="s2">"Original"</span> <span class="p">};</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Before: </span><span class="si">{p.Name}</span><span class="s2">"</span><span class="p">);</span>
+
+        <span class="n">ChangeName</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
+
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"After: </span><span class="si">{p.Name}</span><span class="s2">"</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>   |   |   
----+---+---
-   |   |   
----+---+---
-   |   |   
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=caa10411">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Und nun erweitert um 9 Variablen:</p>
+<p>Hier wird nur die Referenz (<code>person</code>) übergeben. Änderungen am Objekt ändern den Zustand des ursprünglichen Objekts.</p>
+<h4 id="2.--Wert%C3%A4nderung-mit--ref">2.  <strong>Wertänderung mit  <code>ref</code></strong><a class="anchor-link" href="#2.--Wert%C3%A4nderung-mit--ref">¶</a></h4>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e4417676">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-C#"><pre><span></span><span class="kt">string</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"X"</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"O"</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"X"</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"."</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"O"</span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"X"</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"X"</span><span class="p">,</span><span class="w"> </span><span class="n">h</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"X"</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"O"</span><span class="p">;</span>
+<div class="highlight hl-python"><pre><span></span><span class="n">using</span> <span class="n">System</span><span class="p">;</span>
 
-<span class="c1">// Malen des leeren Tic-Tac-Toe-Bretts</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$" {a} | {b} | {c} "</span><span class="p">);</span><span class="w">  </span><span class="c1">// Erste Reihe</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$"---+---+---"</span><span class="p">);</span><span class="w">  </span><span class="c1">// Trennlinie</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$" {d} | {e} | {f} "</span><span class="p">);</span><span class="w">  </span><span class="c1">// Zweite Reihe</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$"---+---+---"</span><span class="p">);</span><span class="w">  </span><span class="c1">// Trennlinie</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$" {g} | {h} | {i} "</span><span class="p">);</span><span class="w">  </span><span class="c1">// Dritte Reihe</span>
+<span class="k">class</span> <span class="nc">Program</span>
+<span class="p">{</span>
+    <span class="n">static</span> <span class="n">void</span> <span class="n">ChangeValue</span><span class="p">(</span><span class="n">ref</span> <span class="nb">int</span> <span class="n">x</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+    <span class="p">}</span>
 
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"Unentschieden... :-)"</span><span class="p">)</span>
+    <span class="n">static</span> <span class="n">void</span> <span class="n">Main</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nb">int</span> <span class="n">value</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Before: </span><span class="si">{value}</span><span class="s2">"</span><span class="p">);</span>
+
+        <span class="n">ChangeValue</span><span class="p">(</span><span class="n">ref</span> <span class="n">value</span><span class="p">);</span>
+
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"After: </span><span class="si">{value}</span><span class="s2">"</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre> X | O | X 
----+---+---
- . | O | X 
----+---+---
- X | X | O 
-Unentschieden... :-)
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=eab2400e">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>← <a href="Console_WriteLine_Samples.de.html"><code>WriteLine()</code> Samples</a></p>
+<p>Mit  <code>ref</code>  wird die tatsächliche Speicheradresse von  <code>value</code>  übergeben. Änderungen innerhalb der Methode ändern den ursprünglichen Wert.</p>
+<h4 id="3.--Referenz%C3%A4nderung-mit--ref">3.  <strong>Referenzänderung mit  <code>ref</code></strong><a class="anchor-link" href="#3.--Referenz%C3%A4nderung-mit--ref">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">using</span> <span class="n">System</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Program</span>
+<span class="p">{</span>
+    <span class="k">class</span> <span class="nc">Person</span>
+    <span class="p">{</span>
+        <span class="n">public</span> <span class="n">string</span> <span class="n">Name</span> <span class="p">{</span> <span class="n">get</span><span class="p">;</span> <span class="nb">set</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="n">static</span> <span class="n">void</span> <span class="n">ChangeReference</span><span class="p">(</span><span class="n">ref</span> <span class="n">Person</span> <span class="n">person</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">person</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Person</span> <span class="p">{</span> <span class="n">Name</span> <span class="o">=</span> <span class="s2">"New Person"</span> <span class="p">};</span>
+    <span class="p">}</span>
+
+    <span class="n">static</span> <span class="n">void</span> <span class="n">Main</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Person</span> <span class="n">p</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Person</span> <span class="p">{</span> <span class="n">Name</span> <span class="o">=</span> <span class="s2">"Original"</span> <span class="p">};</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Before: </span><span class="si">{p.Name}</span><span class="s2">"</span><span class="p">);</span>
+
+        <span class="n">ChangeReference</span><span class="p">(</span><span class="n">ref</span> <span class="n">p</span><span class="p">);</span>
+
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"After: </span><span class="si">{p.Name}</span><span class="s2">"</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Hier ändert  <code>ChangeReference</code>  den Verweis selbst. Das ursprüngliche Objekt (<code>p</code>) zeigt nach dem Methodenaufruf auf eine neue Instanz.</p>
+<h3 id="Fazit">Fazit<a class="anchor-link" href="#Fazit">¶</a></h3><ul>
+<li>Werttypen speichern die Daten direkt und sind isoliert bei der Übergabe.</li>
+<li>Referenztypen speichern Verweise, Änderungen am Objekt über einen Verweis wirken sich auf das Original aus.</li>
+<li><code>ref</code>  erlaubt die Übergabe der tatsächlichen Adresse, was Änderungen am Originalwert oder Referenz ermöglicht.</li>
+</ul>
 </div>
 </div>
 </div>
