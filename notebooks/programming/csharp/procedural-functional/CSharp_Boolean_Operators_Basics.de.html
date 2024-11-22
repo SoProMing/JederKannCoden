@@ -7736,18 +7736,34 @@ Der bitweise XOR-Operator (<code>^</code>) gibt true zurück, wenn die Operanden
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="nb">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span> <span class="o">//</span> <span class="p">(</span><span class="mi">0101</span><span class="p">)</span>
 <span class="nb">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span> <span class="o">//</span> <span class="p">(</span><span class="mi">0011</span><span class="p">)</span>
 <span class="nb">int</span> <span class="n">result</span> <span class="o">=</span> <span class="n">a</span> <span class="o">^</span> <span class="n">b</span><span class="p">;</span> <span class="o">//</span> <span class="n">result</span> <span class="n">ist</span> <span class="mi">6</span> <span class="p">(</span><span class="mi">0110</span><span class="p">)</span>
+
+<span class="nb">int</span> <span class="n">c</span> <span class="o">=</span> <span class="n">result</span>  <span class="o">^</span> <span class="n">b</span><span class="p">;</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">result</span> <span class="o">+</span> <span class="s2">" "</span> <span class="o">+</span> <span class="n">c</span><span class="p">);</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>6 5
+</pre>
 </div>
 </div>
 </div>
