@@ -7516,7 +7516,25 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Einf%C3%BChrung-in-C%23">Einführung in C#<a class="anchor-link" href="#Einf%C3%BChrung-in-C%23">¶</a></h1><img alt="No description has been provided for this image" src="Introduction_csharp.webp" style="width:280px; height:280px;"/>
+<p><a href="../abstract/Contents.de.html">Jeder kann coden</a> / <a href="../Programming_And_TicTacToe.de.html">Programmieren &amp; TicTacToe</a></p>
+<h1 id="Einf%C3%BChrung-in-C%23">Einführung in C#<a class="anchor-link" href="#Einf%C3%BChrung-in-C%23">¶</a></h1><table border="0">
+<tr>
+<td>
+<img alt="No description has been provided for this image" src="Introduction_csharp.webp"/>
+</td>
+<td rowspan="2">
+<a href="https://miro.com/app/board/uXjVPm0lbTo=/?moveToWidget=3458764607889708296&amp;cot=14"><img alt="No description has been provided for this image" src="../abstract/Radar.de.jpg"/></a>
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://learn.microsoft.com/de-de/dotnet/csharp/tour-of-csharp/">Link zur Microsoft Dokumentation zu c#</a><br/>
+<a href="https://www.w3schools.com/cs/index.php">Link zu Tutorial auf w3schools</a><br/>
+<a href="https://www.codewars.com">Link zu codewars</a><br/>
+<a href="https://www.hackerrank.com">Link zu hackerrank</a><br/>
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -7528,21 +7546,6 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>Dieses Notebook bietet eine umfassende Einführung in die Grundlagen von C# und behandelt verschiedene Konzepte und Syntaxelemente dieser Programmiersprache. C# ist eine der Hauptsprachen, die auf der .NET-Plattform verwendet werden, und eignet sich für eine Vielzahl von Anwendungen, von Desktop-Programmen bis hin zu Web-Anwendungen und Spielen.</p>
-<p>Folgende wichtige Grundkonzepte werden in diesem Notebook angesprochen:</p>
-<ul>
-<li><a href="#das-konzept-einer-variablen">Das Konzept einer Variablen</a></li>
-<li><a href="#datentypen--int--float-und--double">Datentypen: <code>int</code>, <code>float</code>, und <code>double</code></a></li>
-<li><a href="#mit-strings-arbeiten">Strings</a></li>
-<li><a href="#arrays-in-c">Arrays</a></li>
-<li><a href="#kommentare">Kommentare</a></li>
-<li><a href="#weitere-variablentypen">Datentypen: <code>var</code> und echte Literale</a></li>
-<li><a href="#typen-casting">Typen "casting"</a></li>
-<li><a href="#operatoren">Operatoren</a></li>
-<li><a href="#bedingte-anweisungen">Bedingte Anweisungen</a></li>
-<li><a href="#schleifen">Schleifen</a></li>
-<li><a href="#prozeduren-und-funktionen">Prozeduren und Funktionen</a></li>
-<li><a href="#komplexere-datenstrukturen">Komplexere Datenstrukturen</a></li>
-</ul>
 <h3 id="Der-Rote-Faden">Der Rote Faden<a class="anchor-link" href="#Der-Rote-Faden">¶</a></h3><p>Der rote Faden zeigt auf, wie einzelne Themen und Cluster von Themen aufeinander aufbauen, um Programmieren stukturiert zu erlernen.</p>
 <details>
 <summary>Inline miro frame vom "roten Faden"...</summary>
@@ -7666,25 +7669,50 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Das-Konzept-einer-Variablen">Das Konzept einer Variablen<a class="anchor-link" href="#Das-Konzept-einer-Variablen">¶</a></h2><p>← <a href="../Programming_And_TicTacToe.de.html#Datentypen-und-Variablen">Datentypen und Variablen am Beispiel von TicTacToe</a></p>
-<p>Eine Variable in C# ist ein benannter Speicherort im Arbeitsspeicher eines Programms, der dazu verwendet wird, Daten zu speichern und darauf zuzugreifen. Variablen ermöglichen es, Werte vorübergehend zu speichern, um sie im weiteren Verlauf des Programms zu verwenden. Sie sind ein fundamentales Konzept in der Programmierung, da sie es erlauben, mit Daten flexibel und dynamisch zu arbeiten.</p>
-<h3 id="Aufbau-einer-Variable">Aufbau einer Variable<a class="anchor-link" href="#Aufbau-einer-Variable">¶</a></h3><ol>
-<li><p><strong>Deklaration</strong>: Um eine Variable in C# zu verwenden, muss sie zuerst deklariert werden. Bei der Deklaration einer Variablen wird der Typ festgelegt, der angibt, welche Art von Daten die Variable speichern kann. Der Variablenname muss eindeutig sein und den Namenskonventionen von C# folgen.</p>
-<ul>
-<li>Beispiel:  <code>int age;</code>  Hier wird eine Variable namens  <code>age</code>  deklariert, die einen Ganzzahlwert speichern kann.</li>
-</ul>
-</li>
-<li><p><strong>Initialisierung</strong>: Nach der Deklaration kann der Variablen ein Wert zugewiesen werden. Dies kann entweder direkt bei der Deklaration oder zu einem späteren Zeitpunkt im Code geschehen.</p>
-<ul>
-<li>Beispiel:  <code>int age = 25;</code>  Hier wird der Variablen  <code>age</code>  direkt ein Wert zugewiesen.</li>
-</ul>
-</li>
-<li><p><strong>Zugriff und Modifikation</strong>: Nachdem eine Variable deklariert und initialisiert wurde, kann auf ihren Wert zugegriffen und dieser bei Bedarf geändert werden.</p>
-<ul>
-<li>Beispiel:  <code>age = 30;</code>  Hier wird der Wert von  <code>age</code>  auf 30 geändert.</li>
-</ul>
-</li>
-</ol>
+<h3 id="Grundlagen-von-C%23-anhand-der-Navigation-durch-den-Code">Grundlagen von C# anhand der Navigation durch den Code<a class="anchor-link" href="#Grundlagen-von-C%23-anhand-der-Navigation-durch-den-Code">¶</a></h3><p>In C# arbeiten wir mit Code, der in  <strong>Klassen</strong>  und  <strong>Methoden</strong>  strukturiert ist. Der Einstiegspunkt ist immer die  <code>Main</code>-Methode. Hier werden wir alle Grundlagen ansprechen und ein Beispiel implementieren, das einen Bezug zur Umweltinformatik hat.</p>
+<h3 id="Datentypen-und-Variablen">Datentypen und Variablen<a class="anchor-link" href="#Datentypen-und-Variablen">¶</a></h3><p>C# bietet primitive  <strong>Werttypen</strong>  (z. B.  <code>int</code>,  <code>double</code>) und  <strong>Referenztypen</strong>  (z. B.  <code>string</code>,  <code>arrays</code>). Variablen sind benannte Speicherplätze, die Werte speichern.</p>
+<p><strong>Beispiel:</strong></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="nb">int</span> <span class="n">alter</span> <span class="o">=</span> <span class="mi">25</span><span class="p">;</span>        <span class="o">//</span> <span class="n">Ganze</span> <span class="n">Zahl</span>
+<span class="n">double</span> <span class="n">temperatur</span> <span class="o">=</span> <span class="mf">23.5</span><span class="p">;</span> <span class="o">//</span> <span class="n">Dezimalzahl</span>
+<span class="n">string</span> <span class="n">ort</span> <span class="o">=</span> <span class="s2">"Berlin"</span><span class="p">;</span> <span class="o">//</span> <span class="n">Zeichenkette</span>
+<span class="nb">bool</span> <span class="n">istRegen</span> <span class="o">=</span> <span class="n">true</span><span class="p">;</span>  <span class="o">//</span> <span class="n">Wahrheitswert</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><a href="CSharp_Introduction/Variables.de.html">Weitere Grundlagen zu Variablen</a> →</p>
+<p><a href="CSharp_Introduction/Strings.de.html">Weitere Grundlagen zu Strings</a> →</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Kontrollstrukturen">Kontrollstrukturen<a class="anchor-link" href="#Kontrollstrukturen">¶</a></h3><h4 id="Bedingte-Anweisungen:">Bedingte Anweisungen:<a class="anchor-link" href="#Bedingte-Anweisungen:">¶</a></h4><p>Kontrollstrukturen wie  <code>if</code>,  <code>else</code>, und  <code>switch</code>  steuern den Ablauf je nach Bedingungen.</p>
+<p><strong>Beispiel:</strong></p>
 </div>
 </div>
 </div>
@@ -7696,10 +7724,14 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="nb">int</span> <span class="n">age</span><span class="p">;</span>
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">age</span><span class="p">);</span>
-<span class="n">string</span> <span class="n">name</span><span class="p">;</span>
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"&gt;</span><span class="si">{name}</span><span class="s2">&lt;"</span><span class="p">);</span>
+<div class="highlight hl-python"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">istRegen</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Es regnet. Bitte einen Regenschirm mitnehmen!"</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Es ist trocken. Genieße das Wetter!"</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -7712,8 +7744,7 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>0
-&gt;&lt;
+<pre>Es regnet. Bitte einen Regenschirm mitnehmen!
 </pre>
 </div>
 </div>
@@ -7726,11 +7757,19 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Typen-von-Variablen">Typen von Variablen<a class="anchor-link" href="#Typen-von-Variablen">¶</a></h3><p>In C# sind Variablen stark typisiert, was bedeutet, dass der Typ einer Variablen zur Zeit der Deklaration festgelegt wird und sich nicht mehr ändern kann. Die wichtigsten Typen von Variablen sind:</p>
-<ul>
-<li><strong>Primitive Datentypen</strong>: Diese umfassen einfache Datentypen wie Ganzzahlen (<code>int</code>), Gleitkommazahlen (<code>float</code>,  <code>double</code>), Zeichen (<code>char</code>) und Wahrheitswerte (<code>bool</code>).</li>
-<li><strong>Referenztypen</strong>: Zu den Referenztypen gehören komplexere Datentypen wie Klassen, Arrays, Strings und Objekte. Im Gegensatz zu primitiven Datentypen speichern Referenztypen einen Verweis (Referenz) auf den tatsächlichen Speicherort der Daten, nicht die Daten selbst.</li>
-</ul>
+<p><a href="CSharp_Introduction/Conditional_statements.de.html">Weitere Grundlagen zu bedingten Anweisungen</a> →</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Schleifen:">Schleifen:<a class="anchor-link" href="#Schleifen:">¶</a></h4><p>Wiederholungen werden mit  <code>for</code>,  <code>while</code>  oder  <code>foreach</code>  umgesetzt.</p>
+<p><strong>Beispiel:</strong></p>
 </div>
 </div>
 </div>
@@ -7742,8 +7781,10 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="nb">bool</span> <span class="n">test</span><span class="p">;</span>
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">test</span><span class="p">);</span>
+<div class="highlight hl-python"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">3</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Messung </span><span class="si">{i}</span><span class="s2">: Temperatur ist </span><span class="si">{temperatur}</span><span class="s2"> °C"</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -7756,7 +7797,9 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>False
+<pre>Messung 1: Temperatur ist 23,5 °C
+Messung 2: Temperatur ist 23,5 °C
+Messung 3: Temperatur ist 23,5 °C
 </pre>
 </div>
 </div>
@@ -7769,17 +7812,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Lebensdauer-und-Sichtbarkeit">Lebensdauer und Sichtbarkeit<a class="anchor-link" href="#Lebensdauer-und-Sichtbarkeit">¶</a></h3><p>Der Gültigkeitsbereich (Scope) einer Variablen bestimmt, wo im Code auf sie zugegriffen werden kann. Variablen können lokal (innerhalb einer Methode) oder global (z.B. als Klassenfelder) deklariert werden.</p>
-<ul>
-<li><strong>Lokale Variablen</strong>: Diese existieren nur innerhalb der Methode oder des Blocks, in dem sie deklariert wurden. Nach Verlassen des Blocks wird der Speicher, der der Variablen zugewiesen wurde, freigegeben.<ul>
-<li>Beispiel:  <code>void MyMethod() { int x = 5; }</code></li>
-</ul>
-</li>
-<li><strong>Globale bzw. Klassenvariablen</strong>: Diese werden in der Klasse selbst deklariert und sind für alle Methoden dieser Klasse zugänglich, solange sie im entsprechenden Gültigkeitsbereich liegen.<ul>
-<li>Beispiel:  <code>class MyClass { int y; }</code></li>
-</ul>
-</li>
-</ul>
+<p><a href="CSharp_Introduction/Loops.de.html">Weitere Grundlagen zu Schleifen</a> →</p>
 </div>
 </div>
 </div>
@@ -7790,145 +7823,66 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Wichtige-Konzepte-im-Zusammenhang-mit-Variablen">Wichtige Konzepte im Zusammenhang mit Variablen<a class="anchor-link" href="#Wichtige-Konzepte-im-Zusammenhang-mit-Variablen">¶</a></h3><ol>
-<li><p><strong>Konstanten</strong>: In C# gibt es auch die Möglichkeit, Variablen als konstant zu deklarieren. Diese Variablen können nach ihrer Initialisierung nicht mehr verändert werden. Das Schlüsselwort dafür ist  <code>const</code>.</p>
-<ul>
-<li>Beispiel:  <code>const int MAX_AGE = 100;</code></li>
-</ul>
-</li>
-<li><p><strong>Nullable-Typen</strong>: Normalerweise kann eine Variable eines Wertetyps (z.B.  <code>int</code>) keinen  <code>null</code>-Wert enthalten. C# bietet jedoch sogenannte Nullable-Typen, die es ermöglichen, dass Wertetypen  <code>null</code>  sein können.</p>
-<ul>
-<li>Beispiel:  <code>string? nullableString = null;</code></li>
-</ul>
-</li>
-<li><p><strong>Automatisch implementierte Eigenschaften</strong>: In modernen C#-Versionen gibt es zudem die Möglichkeit, Variablen mit dem Schlüsselwort  <code>var</code>  automatisch den Typ zuzuweisen, basierend auf dem initial zugewiesenen Wert. Dies nennt man Typinferenz.</p>
-<ul>
-<li>Beispiel:  <code>var name = "John";</code>  Der Compiler leitet automatisch ab, dass  <code>name</code>  vom Typ  <code>string</code>  ist.</li>
-</ul>
-</li>
-<li><p><strong>Speicherverwaltung</strong>: Für den Umgang mit Variablen ist es wichtig zu verstehen, dass C# über eine automatische Speicherverwaltung verfügt, die durch den Garbage Collector gesteuert wird. Dieser sorgt dafür, dass nicht mehr benötigter Speicher automatisch freigegeben wird.</p>
-</li>
-</ol>
-<h3 id="Beispiel:">Beispiel:<a class="anchor-link" href="#Beispiel:">¶</a></h3>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [38]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="nb">int</span> <span class="n">number</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
-<span class="n">string</span> <span class="n">name</span> <span class="o">=</span> <span class="s2">"John"</span><span class="p">;</span>
-<span class="n">double</span> <span class="n">price</span> <span class="o">=</span> <span class="mf">9.99</span><span class="p">;</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ul>
-<li><code>int</code>  ist ein Datentyp für ganze Zahlen.</li>
-<li><code>string</code>  speichert eine Zeichenkette.</li>
-<li><code>double</code>  ist ein Datentyp für Gleitkommazahlen.</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><a href="procedural-functional/CSharp_Numerical_Types.de.html">Numerische Typen von Variablen</a> →</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Datentypen:--int,--float,-und--double">Datentypen:  <code>int</code>,  <code>float</code>, und  <code>double</code><a class="anchor-link" href="#Datentypen:--int,--float,-und--double">¶</a></h2><h3 id="int"><code>int</code><a class="anchor-link" href="#int">¶</a></h3><p>Der  <code>int</code>-Typ speichert ganze Zahlen (ohne Dezimalstellen). Er ist 32 Bit breit und kann Werte im Bereich von -2.147.483.648 bis 2.147.483.647 speichern.</p>
-<h3 id="float"><code>float</code><a class="anchor-link" href="#float">¶</a></h3><p>Der  <code>float</code>-Typ speichert Gleitkommazahlen (Zahlen mit Dezimalstellen). Er ist 32 Bit breit und eignet sich für die Speicherung von Werten mit weniger Genauigkeit, aber größerem Bereich. Ein  <code>float</code>-Wert benötigt das Suffix  <code>f</code>:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [39]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="nb">float</span> <span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14</span><span class="n">f</span><span class="p">;</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="double"><code>double</code><a class="anchor-link" href="#double">¶</a></h3><p>Der  <code>double</code>-Typ ist ein 64-Bit-Gleitkommatyp und bietet eine höhere Genauigkeit und einen größeren Bereich als  <code>float</code>. Dies ist der am häufigsten verwendete Typ für Gleitkommazahlen:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [40]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">double</span> <span class="n">precisePi</span> <span class="o">=</span> <span class="mf">3.14159265358979</span><span class="p">;</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><a href="procedural-functional/CSharp_Numerical_Floating_Types.de.html">Numerische Gleitkomma-Typen von Variablen</a> →</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Mit-Strings-arbeiten">Mit Strings arbeiten<a class="anchor-link" href="#Mit-Strings-arbeiten">¶</a></h2><p>Strings sind Folgen von Zeichen. Sie können wie folgt deklariert und verwendet werden:</p>
+<h3 id="Arithmetik-und-Operatoren">Arithmetik und Operatoren<a class="anchor-link" href="#Arithmetik-und-Operatoren">¶</a></h3><p>Operatoren wie  <code>+</code>,  <code>-</code>,  <code>*</code>,  <code>/</code>  und  <code>%</code>  werden für Berechnungen genutzt.</p>
+<p><strong>Beispiel:</strong></p>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">double</span> <span class="n">kohlendioxidEmission</span> <span class="o">=</span> <span class="mf">10.5</span><span class="p">;</span> <span class="o">//</span> <span class="ow">in</span> <span class="n">kg</span>
+<span class="n">double</span> <span class="n">emissionsReduktion</span> <span class="o">=</span> <span class="mf">2.5</span><span class="p">;</span>   <span class="o">//</span> <span class="ow">in</span> <span class="n">kg</span>
+
+<span class="n">double</span> <span class="n">verbleibend</span> <span class="o">=</span> <span class="n">kohlendioxidEmission</span> <span class="o">-</span> <span class="n">emissionsReduktion</span><span class="p">;</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Verbleibende Emissionen: </span><span class="si">{verbleibend}</span><span class="s2"> kg"</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Verbleibende Emissionen: 8 kg
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><a href="CSharp_Introduction/Operators.de.html">Weitere Grundlagen zu Operatoren</a> →</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Casting-und-var">Casting und <code>var</code><a class="anchor-link" href="#Casting-und-var">¶</a></h3><h4 id="Casting:">Casting:<a class="anchor-link" href="#Casting:">¶</a></h4><p>Explizite und implizite Typumwandlungen.</p>
+<p><strong>Beispiel:</strong></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7936,27 +7890,13 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">string</span> <span class="n">greeting</span> <span class="o">=</span> <span class="s2">"Hello"</span><span class="p">;</span>
-<span class="n">string</span> <span class="n">verbatim</span> <span class="o">=</span> <span class="o">@</span><span class="s2">"This is a verbatim string</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">verbatim</span><span class="p">);</span>
+<div class="highlight hl-python"><pre><span></span><span class="nb">int</span> <span class="n">kleineZahl</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="n">double</span> <span class="n">grosseZahl</span> <span class="o">=</span> <span class="p">(</span><span class="n">double</span><span class="p">)</span><span class="n">kleineZahl</span><span class="p">;</span> <span class="o">//</span> <span class="n">Explizites</span> <span class="n">Casting</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>This is a verbatim string\n
-</pre>
-</div>
-</div>
-</div>
-</div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -7964,145 +7904,8 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Ein verbatim string (<code>@""</code>) ignoriert Escape-Zeichen wie  <code>\n</code>  und ermöglicht das Schreiben von Pfaden und Texten, die Sonderzeichen enthalten.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><a href="procedural-functional/Console_ReadLine_Basics.de.html">Grundlagen zu <code>ReadLine()</code></a> →</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Strings-vertiefen">Strings vertiefen<a class="anchor-link" href="#Strings-vertiefen">¶</a></h2><p>Strings bieten zahlreiche Methoden zur Manipulation, z.B. zur Änderung der Groß-/Kleinschreibung oder zur Extraktion von Teilstrings:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">string</span> <span class="n">hello</span> <span class="o">=</span> <span class="s2">"Hello, World!"</span><span class="p">;</span>
-<span class="nb">int</span> <span class="n">length</span> <span class="o">=</span> <span class="n">hello</span><span class="o">.</span><span class="n">Length</span><span class="p">;</span>       <span class="o">//</span> <span class="n">Länge</span> <span class="n">des</span> <span class="n">Strings</span>
-<span class="n">string</span> <span class="n">upper</span> <span class="o">=</span> <span class="n">hello</span><span class="o">.</span><span class="n">ToUpper</span><span class="p">();</span>  <span class="o">//</span> <span class="s2">"HELLO, WORLD!"</span>
-<span class="n">string</span> <span class="n">sub</span> <span class="o">=</span> <span class="n">hello</span><span class="o">.</span><span class="n">Substring</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span> <span class="o">//</span> <span class="s2">"World!"</span>
-<span class="n">char</span> <span class="n">buchstabe</span> <span class="o">=</span> <span class="s1">'b'</span><span class="p">;</span>
-<span class="nb">bool</span> <span class="n">gleich</span> <span class="o">=</span> <span class="n">buchstabe</span><span class="o">.</span><span class="n">Equals</span><span class="p">(</span><span class="n">buchstabe</span><span class="p">);</span>
-<span class="nb">bool</span> <span class="n">gleich2</span> <span class="o">=</span> <span class="n">buchstabe</span> <span class="o">==</span> <span class="s1">'b'</span><span class="p">;</span>
-
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">upper</span><span class="p">);</span>
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">sub</span><span class="p">);</span>
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">gleich</span><span class="p">);</span>
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">gleich2</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>HELLO, WORLD!
-World!
-True
-True
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Strings-durchsuchen">Strings durchsuchen<a class="anchor-link" href="#Strings-durchsuchen">¶</a></h2><p>Strings können durchsucht werden, um das Vorkommen bestimmter Zeichen oder Wörter zu finden:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">string</span> <span class="n">sentence</span> <span class="o">=</span> <span class="s2">"The quick brown fox jumps over the lazy dog."</span><span class="p">;</span>
-<span class="nb">bool</span> <span class="n">containsFox</span> <span class="o">=</span> <span class="n">sentence</span><span class="o">.</span><span class="n">Contains</span><span class="p">(</span><span class="s2">"fox"</span><span class="p">);</span>
-<span class="nb">int</span> <span class="n">indexOfDog</span> <span class="o">=</span> <span class="n">sentence</span><span class="o">.</span><span class="n">IndexOf</span><span class="p">(</span><span class="s2">"dog"</span><span class="p">);</span>
-
-<span class="nb">bool</span> <span class="n">containsBrown</span> <span class="o">=</span> <span class="n">sentence</span><span class="o">.</span><span class="n">IndexOf</span><span class="p">(</span><span class="s2">"brown"</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span>
-
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">indexOfDog</span><span class="p">);</span>
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">containsBrown</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>40
-True
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ul>
-<li><code>Contains()</code>  gibt  <code>true</code>  zurück, wenn der String das angegebene Wort enthält.</li>
-<li><code>IndexOf()</code>  gibt die Position des ersten Vorkommens des Wortes zurück.</li>
-</ul>
-<p><a href="procedural-functional/CSharp_String_Type.de.html">Mehr zu Strings</a> →</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Arrays-in-C%23">Arrays in C#<a class="anchor-link" href="#Arrays-in-C%23">¶</a></h2><ol>
-<li><strong>Einfaches Array (Single-Dimensional Array)</strong>:<br/>
-Speichert eine Liste von Elementen desselben Typs in einer einzigen Dimension.</li>
-</ol>
+<h4 id="var:"><code>var</code>:<a class="anchor-link" href="#var:">¶</a></h4><p>Automatische Typableitung.</p>
+<p><strong>Beispiel:</strong></p>
 </div>
 </div>
 </div>
@@ -8111,10 +7914,10 @@ Speichert eine Liste von Elementen desselben Typs in einer einzigen Dimension.</
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="nb">int</span><span class="p">[]</span> <span class="n">zahlen</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span> <span class="p">};</span>
+<div class="highlight hl-python"><pre><span></span><span class="n">var</span> <span class="n">durchschnitt</span> <span class="o">=</span> <span class="mf">12.34</span><span class="p">;</span> <span class="o">//</span> <span class="n">Compiler</span> <span class="n">erkennt</span> <span class="n">den</span> <span class="n">Typ</span> <span class="n">als</span> <span class="n">double</span>
 </pre></div>
 </div>
 </div>
@@ -8127,10 +7930,7 @@ Speichert eine Liste von Elementen desselben Typs in einer einzigen Dimension.</
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ol start="2">
-<li><strong>Mehrdimensionales Array (Multi-Dimensional Array)</strong>:<br/>
-Speichert Daten in mehreren Dimensionen, z.B. Tabellenform.</li>
-</ol>
+<h3 id="Kommentare">Kommentare<a class="anchor-link" href="#Kommentare">¶</a></h3><p>Kommentare werden für Dokumentationen genutzt:</p>
 </div>
 </div>
 </div>
@@ -8139,16 +7939,12 @@ Speichert Daten in mehreren Dimensionen, z.B. Tabellenform.</li>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="nb">int</span><span class="p">[,]</span> <span class="n">matrix</span> <span class="o">=</span> <span class="p">{</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span> <span class="p">},</span> <span class="p">{</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span> <span class="p">}</span> <span class="p">};</span>
-
-<span class="n">string</span><span class="p">[,]</span> <span class="n">ticTacToeBoard</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="p">{</span> <span class="s2">"X"</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span><span class="p">},</span>
-        <span class="p">{</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span><span class="p">},</span>
-        <span class="p">{</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span><span class="p">}</span>
-    <span class="p">};</span>
+<div class="highlight hl-python"><pre><span></span><span class="o">//</span> <span class="n">Das</span> <span class="n">ist</span> <span class="n">ein</span> <span class="n">einzeiliger</span> <span class="n">Kommentar</span>
+<span class="o">/*</span> <span class="n">Das</span> <span class="n">ist</span> <span class="n">ein</span> 
+   <span class="n">mehrzeiliger</span> <span class="n">Kommentar</span> <span class="o">*/</span>
 </pre></div>
 </div>
 </div>
@@ -8161,26 +7957,8 @@ Speichert Daten in mehreren Dimensionen, z.B. Tabellenform.</li>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="Array-im-Speicher">Array im Speicher<a class="anchor-link" href="#Array-im-Speicher">¶</a></h4><img alt="No description has been provided for this image" src="../theory/Array_logical_n_saved.de.jpg" style="width:100%;"/>
-<details>
-<summary>Inline miro frame...</summary>
-<iframe height="600px" src="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3074457367102695297&amp;cot=14" width="100%"></iframe>
-</details>
-<p><a href="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3074457367102695297&amp;cot=14">Link auf Miro Frame...</a></p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ol start="3">
-<li><strong>Verzweigtes Array (Jagged Array)</strong>:<br/>
-Ein Array von Arrays, bei dem die inneren Arrays unterschiedliche Längen haben können.</li>
-</ol>
+<h3 id="Funktionen">Funktionen<a class="anchor-link" href="#Funktionen">¶</a></h3><p>Funktionen und Prozeduren strukturieren den Code.</p>
+<p><strong>Beispiel:</strong></p>
 </div>
 </div>
 </div>
@@ -8189,280 +7967,144 @@ Ein Array von Arrays, bei dem die inneren Arrays unterschiedliche Längen haben 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="nb">int</span><span class="p">[][]</span> <span class="n">verzweigt</span> <span class="o">=</span> <span class="p">{</span> <span class="n">new</span> <span class="nb">int</span><span class="p">[]</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="p">},</span> <span class="n">new</span> <span class="nb">int</span><span class="p">[]</span> <span class="p">{</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span> <span class="p">}</span> <span class="p">};</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="Jagged-Array-im-Speicher">Jagged Array im Speicher<a class="anchor-link" href="#Jagged-Array-im-Speicher">¶</a></h4><img alt="No description has been provided for this image" src="../theory/Jagged_array.de.jpg" style="width:100%;"/>
-<details>
-<summary>Inline miro frame...</summary>
-<iframe height="600px" src="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3074457367071336904&amp;cot=14" width="100%"></iframe>
-</details>
-<p><a href="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3074457367071336904&amp;cot=14">Link auf Miro Frame...</a></p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Arrays sind leistungsstark und vielseitig einsetzbar, von einfachen Listen bis hin zu komplexeren Strukturen wie Tabellen und verschachtelten Arrays.</p>
-<p><a href="procedural-functional/CSharp_Arrays.de.html">Mehr zu Arrays</a> →</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Kommentare">Kommentare<a class="anchor-link" href="#Kommentare">¶</a></h2><p>Kommentare sind Anmerkungen im Code, die nicht ausgeführt werden. Sie dienen dazu, den Code zu dokumentieren und zu erklären:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [44]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="o">//</span> <span class="n">Dies</span> <span class="n">ist</span> <span class="n">ein</span> <span class="n">Einzelzeilenkommentar</span>
-<span class="o">/*</span> <span class="n">Dies</span> <span class="n">ist</span> <span class="n">ein</span>
-   <span class="n">Blockkommentar</span> <span class="o">*/</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Weitere-Variablentypen">Weitere Variablentypen<a class="anchor-link" href="#Weitere-Variablentypen">¶</a></h2><h3 id="Var-Schl%C3%BCsselwort">Var Schlüsselwort<a class="anchor-link" href="#Var-Schl%C3%BCsselwort">¶</a></h3><p>Das  <code>var</code>-Schlüsselwort ermöglicht es, Variablen ohne explizite Typangabe zu deklarieren. Der Typ wird vom Compiler zur Kompilierzeit bestimmt:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [45]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">var</span> <span class="n">number</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>  <span class="o">//</span> <span class="n">number</span> <span class="n">wird</span> <span class="n">als</span> <span class="nb">int</span> <span class="n">deklariert</span>
-<span class="n">var</span> <span class="n">text</span> <span class="o">=</span> <span class="s2">"Mein Text"</span><span class="p">;</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Echte-Literale">Echte Literale<a class="anchor-link" href="#Echte-Literale">¶</a></h3><p>C# unterstützt verschiedene Zahlensysteme wie Dezimal, Hexadezimal und Binär:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [46]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="nb">int</span> <span class="n">decimalNumber</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
-<span class="nb">int</span> <span class="n">hexNumber</span> <span class="o">=</span> <span class="mh">0x2A</span><span class="p">;</span>   <span class="o">//</span> <span class="mi">42</span> <span class="ow">in</span> <span class="n">Hexadezimal</span>
-<span class="nb">int</span> <span class="n">binaryNumber</span> <span class="o">=</span> <span class="mb">0b101010</span><span class="p">;</span> <span class="o">//</span> <span class="mi">42</span> <span class="ow">in</span> <span class="n">Binär</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Typen-casting">Typen casting<a class="anchor-link" href="#Typen-casting">¶</a></h2><p>Casting ermöglicht die Umwandlung eines Datentyps in einen anderen. Dies kann explizit oder implizit geschehen:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [23]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="nb">int</span> <span class="n">number</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
-<span class="n">double</span> <span class="n">castedNumber</span> <span class="o">=</span> <span class="p">(</span><span class="n">double</span><span class="p">)</span><span class="n">number</span><span class="p">;</span>  <span class="o">//</span> <span class="n">Explizites</span> <span class="n">Casting</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Operatoren">Operatoren<a class="anchor-link" href="#Operatoren">¶</a></h2><p>← <a href="../Programming_And_TicTacToe.de.html#Arithmetik">Arithmetik am Beispiel von TicTacToe</a></p>
-<p>C# bietet eine Vielzahl von Operatoren wie Zuweisungsoperatoren, Arithmetische Operatoren, Vergleichsoperatoren und Logische Operatoren:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [37]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="nb">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
-<span class="nb">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
-<span class="nb">int</span> <span class="nb">sum</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
-<span class="nb">bool</span> <span class="n">isEqual</span> <span class="o">=</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">;</span>
-
-<span class="nb">bool</span> <span class="ow">and</span> <span class="o">=</span> <span class="n">false</span> <span class="o">&amp;&amp;</span> <span class="n">true</span><span class="p">;</span>
-<span class="nb">bool</span> <span class="ow">or</span> <span class="o">=</span> <span class="n">false</span> <span class="o">||</span> <span class="n">true</span><span class="p">;</span>
-
-<span class="nb">int</span> <span class="n">alter</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
-<span class="k">if</span> <span class="p">(</span> <span class="p">(</span> <span class="n">alter</span> <span class="o">&gt;</span> <span class="mi">12</span> <span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span> <span class="n">alter</span> <span class="o">&lt;=</span> <span class="mi">19</span> <span class="p">)</span> <span class="p">)</span>
+<div class="highlight hl-python"><pre><span></span><span class="n">static</span> <span class="n">double</span> <span class="n">BerechneEmission</span><span class="p">(</span><span class="n">double</span> <span class="n">energieVerbrauch</span><span class="p">,</span> <span class="n">double</span> <span class="n">emissionsFaktor</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Teen!"</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">energieVerbrauch</span> <span class="o">*</span> <span class="n">emissionsFaktor</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="o">//</span> <span class="k">if</span> <span class="p">(</span> <span class="p">(</span> <span class="n">alter</span> <span class="o">&lt;</span> <span class="mi">12</span> <span class="p">)</span> <span class="o">||</span> <span class="p">(</span> <span class="n">alter</span> <span class="o">&gt;</span> <span class="mi">19</span> <span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><a href="CSharp_Introduction/Functions.de.html">Weitere Grundlagen zu Funktionen</a> →</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Komplexere-Datenstrukturen">Komplexere Datenstrukturen<a class="anchor-link" href="#Komplexere-Datenstrukturen">¶</a></h3><p>Arrays und komplexe Typen (z. B.  <code>Dictionary</code>).</p>
+<p><strong>Beispiel:</strong></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">double</span><span class="p">[]</span> <span class="n">temperaturen</span> <span class="o">=</span> <span class="p">{</span> <span class="mf">22.5</span><span class="p">,</span> <span class="mf">23.0</span><span class="p">,</span> <span class="mf">21.8</span> <span class="p">};</span>
+
+<span class="n">foreach</span> <span class="p">(</span><span class="n">double</span> <span class="n">temp</span> <span class="ow">in</span> <span class="n">temperaturen</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Gemessene Temperatur: </span><span class="si">{temp}</span><span class="s2"> °C"</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Gemessene Temperatur: 22,5 °C
+Gemessene Temperatur: 23 °C
+Gemessene Temperatur: 21,8 °C
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><a href="CSharp_Introduction/Arrays.de.html">Weitere Grundlagen zu Arrays</a> →</p>
+<p><a href="CSharp_Introduction/Complex_Datastructures.de.html">Weitere Grundlagen zu komplexeren Datenstrukturen</a> →</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Komplettes-Codebeispiel-zur-Umweltinformatik">Komplettes Codebeispiel zur Umweltinformatik<a class="anchor-link" href="#Komplettes-Codebeispiel-zur-Umweltinformatik">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="o">//</span> <span class="n">Variablen</span> <span class="n">und</span> <span class="n">Datentypen</span>
+<span class="n">string</span> <span class="n">projektName</span> <span class="o">=</span> <span class="s2">"CO2-Reduktion"</span><span class="p">;</span>
+<span class="n">double</span><span class="p">[]</span> <span class="n">emissionen</span> <span class="o">=</span> <span class="p">{</span> <span class="mf">10.5</span><span class="p">,</span> <span class="mf">12.3</span><span class="p">,</span> <span class="mf">9.8</span> <span class="p">};</span> <span class="o">//</span> <span class="ow">in</span> <span class="n">kg</span>
+<span class="n">double</span> <span class="n">emissionsFaktor</span> <span class="o">=</span> <span class="mf">0.25</span><span class="p">;</span>            <span class="o">//</span> <span class="n">Faktor</span> <span class="n">pro</span> <span class="n">kWh</span>
+
+<span class="o">//</span> <span class="n">Ausgabe</span> <span class="n">von</span> <span class="n">Informationen</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Projekt: </span><span class="si">{projektName}</span><span class="s2">"</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Berechnung der Emissionen:"</span><span class="p">);</span>
+
+<span class="o">//</span> <span class="n">Schleifen</span> <span class="n">und</span> <span class="n">Arithmetik</span>
+<span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">emissionen</span><span class="o">.</span><span class="n">Length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Messung {i + 1}: </span><span class="si">{emissionen[i]}</span><span class="s2"> kg"</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="o">//</span> <span class="n">Funktion</span> <span class="n">und</span> <span class="n">komplexe</span> <span class="n">Berechnung</span>
+<span class="n">double</span> <span class="n">gesamtEmission</span> <span class="o">=</span> <span class="n">BerechneEmission</span><span class="p">(</span><span class="n">emissionen</span><span class="p">,</span> <span class="n">emissionsFaktor</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Gesamte Emissionen nach Faktor: </span><span class="si">{gesamtEmission}</span><span class="s2"> kg"</span><span class="p">);</span>
+
+<span class="o">//</span> <span class="n">Bedingte</span> <span class="n">Anweisung</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">gesamtEmission</span> <span class="o">&gt;</span> <span class="mi">25</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Warnung: Emissionen zu hoch!"</span><span class="p">);</span>
+<span class="p">}</span>
 <span class="k">else</span>
 <span class="p">{</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Kein Teen!"</span><span class="p">);</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Emissionen im akzeptablen Bereich."</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="k">if</span> <span class="p">(</span> <span class="p">(</span> <span class="n">alter</span> <span class="o">&gt;=</span> <span class="mi">19</span> <span class="p">)</span> <span class="p">)</span>
+<span class="o">//</span> <span class="n">Funktion</span> <span class="n">zur</span> <span class="n">Berechnung</span> <span class="n">der</span> <span class="n">Gesamtemissionen</span>
+<span class="n">static</span> <span class="n">double</span> <span class="n">BerechneEmission</span><span class="p">(</span><span class="n">double</span><span class="p">[]</span> <span class="n">emissionen</span><span class="p">,</span> <span class="n">double</span> <span class="n">faktor</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Autofahren"</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="ow">and</span><span class="p">);</span>
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="ow">or</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Kein Teen!
-False
-True
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ul>
-<li>Arithmetische Operatoren:  <code>+</code>,  <code>-</code>,  <code>*</code>,  <code>/</code>,  <code>%</code></li>
-<li>Vergleichsoperatoren:  <code>==</code>,  <code>!=</code>,  <code>&gt;</code>,  <code>&lt;</code>,  <code>&gt;=</code>,  <code>&lt;=</code></li>
-<li>Logische Operatoren:  <code>&amp;&amp;</code>,  <code>||</code>,  <code>!</code></li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><a href="procedural-functional/CSharp_Boolean_Operators_Basics.de.html">Mehr zu Booleschen Operatoren</a> →</p>
-<p><a href="procedural-functional/CSharp_Other_Operators_Basics.de.html">Mehr zu weiteren Operatoren</a> →</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Bedingte-Anweisungen">Bedingte Anweisungen<a class="anchor-link" href="#Bedingte-Anweisungen">¶</a></h2><p>← <a href="../Programming_And_TicTacToe.de.html">Kontrollstrukturen am Beispiel von TicTacToe</a></p>
-<p>Bedingte Anweisungen wie  <code>if</code>,  <code>else</code>, und  <code>switch</code>  ermöglichen es, verschiedene Codepfade basierend auf bestimmten Bedingungen auszuführen.</p>
-<h3 id="Beispiel-mit--if:">Beispiel mit  <code>if</code>:<a class="anchor-link" href="#Beispiel-mit--if:">¶</a></h3>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [46]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="nb">int</span> <span class="n">age</span> <span class="o">=</span> <span class="mi">65</span><span class="p">;</span>
-
-<span class="k">if</span> <span class="p">(</span><span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"You are an adult."</span><span class="p">);</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">64</span><span class="p">)</span>
+    <span class="n">double</span> <span class="n">summe</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">foreach</span> <span class="p">(</span><span class="n">double</span> <span class="n">emission</span> <span class="ow">in</span> <span class="n">emissionen</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"With pension."</span><span class="p">);</span>
+        <span class="n">summe</span> <span class="o">+=</span> <span class="n">emission</span> <span class="o">*</span> <span class="n">faktor</span><span class="p">;</span>
     <span class="p">}</span>
-<span class="p">}</span>
-<span class="k">else</span> <span class="k">if</span> <span class="p">(</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="mi">4</span> <span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"You are a toddler."</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="k">else</span>
-<span class="p">{</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"You are not an adult."</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">summe</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -8476,8 +8118,13 @@ True
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>You are an adult.
-With pension.
+<pre>Projekt: CO2-Reduktion
+Berechnung der Emissionen:
+Messung 1: 10,5 kg
+Messung 2: 12,3 kg
+Messung 3: 9,8 kg
+Gesamte Emissionen nach Faktor: 8,15 kg
+Emissionen im akzeptablen Bereich.
 </pre>
 </div>
 </div>
@@ -8490,958 +8137,14 @@ With pension.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Switch-Anweisung">Switch Anweisung<a class="anchor-link" href="#Switch-Anweisung">¶</a></h3><p>Die  <code>switch</code>-Anweisung bietet eine strukturierte Möglichkeit, mehrere Bedingungen zu prüfen:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [39]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="nb">int</span> <span class="n">day</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
-<span class="n">switch</span> <span class="p">(</span><span class="n">day</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">case</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Monday"</span><span class="p">);</span>
-        <span class="k">break</span><span class="p">;</span>
-    <span class="k">case</span> <span class="mi">2</span><span class="p">:</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Tuesday"</span><span class="p">);</span>
-        <span class="k">break</span><span class="p">;</span>
-    <span class="n">default</span><span class="p">:</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Another day"</span><span class="p">);</span>
-        <span class="k">break</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Another day
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><a href="procedural-functional/CSharp_Conditional.de.html">Mehr zu bedingten Anweisungen in C#</a> →</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Schleifen">Schleifen<a class="anchor-link" href="#Schleifen">¶</a></h2><p>← <a href="../Programming_And_TicTacToe.de.html">Kontrollstrukturen am Beispiel von TicTacToe</a></p>
-<h3 id="for-Schleife">for Schleife<a class="anchor-link" href="#for-Schleife">¶</a></h3><p>Die  <code>for</code>-Schleife wird verwendet, um einen Block von Anweisungen eine bestimmte Anzahl von Malen auszuführen:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [50]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">6</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="nb">int</span> <span class="n">j</span><span class="p">;</span>
-<span class="k">for</span> <span class="p">(</span><span class="n">j</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span><span class="o">--</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">j</span><span class="p">);</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>0
-1
-2
-3
-4
-5
-6
-5
-4
-3
-2
-1
-0
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="break-und-continue-Schl%C3%BCsselworte">break und continue Schlüsselworte<a class="anchor-link" href="#break-und-continue-Schl%C3%BCsselworte">¶</a></h3><p><code>break</code>  beendet die Schleife, während  <code>continue</code>  den aktuellen Schleifendurchlauf überspringt und mit dem nächsten fortfährt:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [53]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">Write</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Zeile1: "</span> <span class="o">+</span> <span class="n">i</span> <span class="o">+</span> <span class="s2">"|"</span><span class="p">);</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="mi">5</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>      <span class="o">//</span> <span class="n">Schleife</span> <span class="n">wird</span> <span class="n">beendet</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">Write</span><span class="p">(</span><span class="s2">"Zeile2: "</span> <span class="o">+</span> <span class="n">i</span> <span class="o">+</span> <span class="s2">"|"</span><span class="p">);</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span> <span class="o">//</span> <span class="n">Springt</span> <span class="n">zur</span> <span class="n">nächsten</span> <span class="n">Iteration</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>
-Zeile1: 0|Zeile2: 0|
-Zeile1: 1|Zeile2: 1|1
-
-Zeile1: 2|Zeile2: 2|
-Zeile1: 3|Zeile2: 3|3
-
-Zeile1: 4|Zeile2: 4|
-Zeile1: 5|</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="foreach-Schleife">foreach Schleife<a class="anchor-link" href="#foreach-Schleife">¶</a></h3><p>Die  <code>foreach</code>-Schleife durchläuft alle Elemente einer Sammlung, z.B. ein Array oder eine Liste:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [55]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">string</span><span class="p">[]</span> <span class="n">fruits</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">"Apple"</span><span class="p">,</span> <span class="s2">"Banana"</span><span class="p">,</span> <span class="s2">"Cherry"</span> <span class="p">};</span>
-<span class="n">foreach</span> <span class="p">(</span><span class="n">string</span> <span class="n">fruit</span> <span class="ow">in</span> <span class="n">fruits</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">fruit</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="n">foreach</span><span class="p">(</span> <span class="n">char</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">fruits</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="p">{</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Apple
-Banana
-Cherry
-A
-p
-p
-l
-e
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="while-Schleife-und-do-Schleife">while Schleife und do Schleife<a class="anchor-link" href="#while-Schleife-und-do-Schleife">¶</a></h3><p><code>while</code>-Schleifen wiederholen eine Anweisung, solange eine Bedingung wahr ist, während  <code>do</code>-Schleifen die Anweisung mindestens einmal ausführen, bevor die Bedingung geprüft wird:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [60]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="nb">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
-<span class="k">while</span> <span class="p">(</span><span class="n">count</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">count</span><span class="o">++</span><span class="p">;</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">count</span><span class="p">);</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [61]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="nb">int</span> <span class="n">count2</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
-<span class="n">do</span>
-<span class="p">{</span>
-    <span class="n">count2</span><span class="o">++</span><span class="p">;</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">count2</span><span class="p">);</span>
-<span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="n">count2</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>6
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><a href="procedural-functional/CSharp_Loops.de.html">Mehr zu Schleifen in C#</a> →</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><a href="procedural-functional/CSharp_Loops_TicTacToe.de.html">Schleifen und TicTacToe</a> →</p>
-<hr/>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Prozeduren-und-Funktionen">Prozeduren und Funktionen<a class="anchor-link" href="#Prozeduren-und-Funktionen">¶</a></h2><p>← <a href="../Programming_And_TicTacToe.de.html#Funktionen">Funktionen am Beispiel von TicTacToe</a></p>
-<p>In C# sind <em>Prozeduren</em> und <em>Funktionen</em> wesentliche Bestandteile der Programmstruktur, die es ermöglichen, Code modular und wiederverwendbar zu gestalten. In der C#-Terminologie wird allerdings eher von <em>Methoden</em> gesprochen. Methoden können prozedural oder funktional aufgebaut sein. Hier ist eine kurze Übersicht:</p>
-<h3 id="1.-Methoden-(Prozeduren-und-Funktionen)">1. Methoden (Prozeduren und Funktionen)<a class="anchor-link" href="#1.-Methoden-(Prozeduren-und-Funktionen)">¶</a></h3><p>In C# können Methoden entweder als Prozeduren (ohne Rückgabewert) oder als Funktionen (mit Rückgabewert) gestaltet werden:</p>
-<ul>
-<li><strong>Prozeduren</strong>: Methoden, die keinen Wert zurückgeben, verwenden den <code>void</code>-Rückgabetyp. Sie führen nur eine Aktion aus, ohne ein Ergebnis zurückzugeben.</li>
-<li><strong>Funktionen</strong>: Methoden, die einen Wert zurückgeben, haben einen spezifischen Rückgabetyp (z. B. <code>int</code>, <code>string</code>). Der Rückgabewert wird mit dem <code>return</code>-Schlüsselwort festgelegt.</li>
+<h3 id="Erkl%C3%A4rung">Erklärung<a class="anchor-link" href="#Erkl%C3%A4rung">¶</a></h3><ul>
+<li><strong>Werttypen</strong>  (<code>double</code>,  <code>string</code>) werden genutzt.</li>
+<li><strong>Kontrollstrukturen</strong>  (<code>if</code>,  <code>for</code>,  <code>foreach</code>) bestimmen den Ablauf.</li>
+<li><strong>Arithmetik</strong>  (<code>*</code>,  <code>+</code>) wird für die Berechnung verwendet.</li>
+<li><strong>Funktionen</strong>  kapseln die Logik (<code>BerechneEmission</code>).</li>
+<li><strong>Arrays</strong>  speichern die Emissionswerte.</li>
 </ul>
-<h3 id="2.-Definition-einer-Methode">2. Definition einer Methode<a class="anchor-link" href="#2.-Definition-einer-Methode">¶</a></h3><p>Eine Methode wird durch eine Methodensignatur definiert, die den Rückgabewert, den Namen der Methode und optionale Parameter enthält.</p>
-<p>Syntax einer Methode:</p>
-<div class="highlight"><pre><span></span><span class="n">Rückgabetyp</span><span class="w"> </span><span class="nf">MethodeName</span><span class="p">(</span><span class="n">Datentyp</span><span class="w"> </span><span class="n">Parameter1</span><span class="p">,</span><span class="w"> </span><span class="n">Datentyp</span><span class="w"> </span><span class="n">Parameter2</span><span class="p">,</span><span class="w"> </span><span class="p">...)</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="c1">// Methodenkörper</span>
-<span class="w">    </span><span class="c1">// Optionale Berechnungen und Logik</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Wert</span><span class="p">;</span><span class="w"> </span><span class="c1">// (falls kein `void` verwendet wird)</span>
-<span class="p">}</span>
-</pre></div>
-<h3 id="3.-Beispiel-f%C3%BCr-eine-Prozedur-(ohne-R%C3%BCckgabewert)">3. Beispiel für eine Prozedur (ohne Rückgabewert)<a class="anchor-link" href="#3.-Beispiel-f%C3%BCr-eine-Prozedur-(ohne-R%C3%BCckgabewert)">¶</a></h3><p>Eine Prozedur (oder <code>void</code>-Methode) führt nur eine Aktion aus und gibt keinen Wert zurück:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [36]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">void</span> <span class="n">Begrüßen</span><span class="p">(</span><span class="n">string</span> <span class="n">name</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Hallo, "</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s2">"!"</span><span class="p">);</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Aufruf der Prozedur:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [37]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">Begrüßen</span><span class="p">(</span><span class="s2">"Max"</span><span class="p">);</span> <span class="o">//</span> <span class="n">Ausgabe</span><span class="p">:</span> <span class="n">Hallo</span><span class="p">,</span> <span class="n">Max</span><span class="err">!</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Hallo, Max!
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="4.-Beispiel-f%C3%BCr-eine-Funktion-(mit-R%C3%BCckgabewert)">4. Beispiel für eine Funktion (mit Rückgabewert)<a class="anchor-link" href="#4.-Beispiel-f%C3%BCr-eine-Funktion-(mit-R%C3%BCckgabewert)">¶</a></h3><p>Eine Funktion gibt einen Wert zurück, der für weitere Berechnungen oder Aktionen verwendet werden kann:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [38]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="nb">int</span> <span class="n">Addiere</span><span class="p">(</span><span class="nb">int</span> <span class="n">zahl1</span><span class="p">,</span> <span class="nb">int</span> <span class="n">zahl2</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">return</span> <span class="n">zahl1</span> <span class="o">+</span> <span class="n">zahl2</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Aufruf der Funktion:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [39]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="nb">int</span> <span class="n">ergebnis</span> <span class="o">=</span> <span class="n">Addiere</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="o">//</span> <span class="n">ergebnis</span> <span class="n">hat</span> <span class="n">den</span> <span class="n">Wert</span> <span class="mi">7</span>
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">ergebnis</span><span class="p">);</span> <span class="o">//</span> <span class="n">Ausgabe</span><span class="p">:</span> <span class="mi">7</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>7
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="5.-Parameter-und-%C3%9Cberladung">5. Parameter und Überladung<a class="anchor-link" href="#5.-Parameter-und-%C3%9Cberladung">¶</a></h3><ul>
-<li><strong>Parameter</strong>: Methoden können Parameter haben, die Eingabewerte akzeptieren. C# erlaubt auch <em>optionale</em> und <em>named parameters</em>.</li>
-<li><strong>Überladung</strong>: C# erlaubt die Definition mehrerer Methoden mit demselben Namen, solange sich die Parameterliste unterscheidet (Method Overloading).</li>
-</ul>
-<p>Beispiel:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [40]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="nb">int</span> <span class="n">Berechne</span><span class="p">(</span><span class="nb">int</span> <span class="n">x</span><span class="p">,</span> <span class="nb">int</span> <span class="n">y</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nb">int</span> <span class="n">Berechne</span><span class="p">(</span><span class="nb">int</span> <span class="n">x</span><span class="p">,</span> <span class="nb">int</span> <span class="n">y</span><span class="p">,</span> <span class="nb">int</span> <span class="n">z</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="n">z</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Aufruf:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [41]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="nb">int</span> <span class="n">summe1</span> <span class="o">=</span> <span class="n">Berechne</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>    <span class="o">//</span> <span class="n">Ausgabe</span><span class="p">:</span> <span class="mi">5</span>
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">summe1</span><span class="p">);</span>
-<span class="nb">int</span> <span class="n">summe2</span> <span class="o">=</span> <span class="n">Berechne</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="o">//</span> <span class="n">Ausgabe</span><span class="p">:</span> <span class="mi">9</span>
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">summe2</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>5
-9
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="6.-Rekursion">6. Rekursion<a class="anchor-link" href="#6.-Rekursion">¶</a></h3><p>Methoden können sich in C# auch rekursiv aufrufen, d. h., eine Methode kann sich selbst innerhalb ihres eigenen Körpers aufrufen.</p>
-<p>Beispiel einer rekursiven Methode zur Berechnung der Fakultät:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="nb">int</span> <span class="n">Fakultaet</span><span class="p">(</span><span class="nb">int</span> <span class="n">n</span><span class="p">)</span><span class="o">//</span> <span class="o">&lt;-------+</span>
-<span class="p">{</span>                   <span class="o">//</span>         <span class="o">|</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">)</span>     <span class="o">//</span>         <span class="o">|</span>
-        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>   <span class="o">//</span>         <span class="o">|</span>
-    <span class="k">else</span>            <span class="o">//</span>         <span class="o">|</span>
-        <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">Fakultaet</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Aufruf:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="nb">int</span> <span class="n">ergebnis</span> <span class="o">=</span> <span class="n">Fakultaet</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span> <span class="o">//</span> <span class="n">Ergebnis</span><span class="p">:</span> <span class="mi">120</span> <span class="p">(</span><span class="mi">5</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">ergebnis</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>120
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="Prozedurale-Programmierung-Cheatsheet">Prozedurale Programmierung Cheatsheet<a class="anchor-link" href="#Prozedurale-Programmierung-Cheatsheet">¶</a></h4><img alt="No description has been provided for this image" src="./procedural-functional/Cheatsheet_programming.jpg" style="width:100%;"/>
-<details>
-<summary>Inline miro frame...</summary>
-<iframe height="600px" src="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3074457366281003359&amp;cot=14" width="100%"></iframe>
-</details>
-<p><a href="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3074457366281003359&amp;cot=14">Link auf Miro Frame...</a></p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Komplexere-Datenstrukturen">Komplexere Datenstrukturen<a class="anchor-link" href="#Komplexere-Datenstrukturen">¶</a></h2><p>← <a href="../Programming_And_TicTacToe.de.html#komplexere-datenstrukturen">Komplexere Datenstrukturen am Beispiel von TicTacToe</a></p>
-<img alt="No description has been provided for this image" src="../theory/Complex_Datastructures.de.jpg" style="width:100%;"/>
-<details>
-<summary>Inline miro frame...</summary>
-<iframe height="600px" src="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3074457358216576641&amp;cot=14" width="100%"></iframe>
-</details>
-<p><a href="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3074457358216576641&amp;cot=14">Link auf Miro Frame...</a></p>
-<p>Komplexe Datenstrukturen in C# sind Datenstrukturen, die mehr als einfache Werte (wie int, string, etc.) enthalten und oft mehrere Ebenen oder eine Kombination verschiedener Typen und Strukturen bieten. Hier sind die grundlegenden Typen:</p>
-<h3 id="1.-Arrays-(Wiederholung)">1. Arrays (Wiederholung)<a class="anchor-link" href="#1.-Arrays-(Wiederholung)">¶</a></h3><ul>
-<li>Arrays sind eine Sammlung von Elementen desselben Datentyps, die über einen Index zugegriffen werden können. Sie sind fix in ihrer Größe und sehr effizient für den Zugriff auf die Daten.</li>
-<li>Einfache Arrays: <code>int[] numbers = new int[5];</code></li>
-<li>Mehrdimensionale Arrays: <code>int[,] matrix = new int[3, 3];</code></li>
-<li>Verzweigte Arrays (Zickzack-Arrays): <code>int[][] jaggedArray = new int[3][];</code></li>
-<li>Vorteile: Schneller Zugriff auf Elemente.</li>
-<li>Nachteile: Feste Größe, daher weniger flexibel.</li>
-</ul>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="nb">int</span><span class="p">[]</span> <span class="n">numbers</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span> <span class="p">};</span>
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">numbers</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>  <span class="o">//</span> <span class="n">Ausgabe</span><span class="p">:</span> <span class="mi">3</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="2.-Listen-(List%3CT%3E)">2. Listen (<code>List&lt;T&gt;</code>)<a class="anchor-link" href="#2.-Listen-(List%3CT%3E)">¶</a></h3><ul>
-<li>Listen sind dynamische Arrays und bieten die Möglichkeit, Elemente hinzuzufügen oder zu entfernen. Sie sind viel flexibler als Arrays, da ihre Größe dynamisch angepasst wird.</li>
-<li>Deklaration: <code>List&lt;int&gt; numbers = new List&lt;int&gt;();</code></li>
-<li>Methoden: <code>Add()</code>, <code>Remove()</code>, <code>Contains()</code>, <code>Count</code>.</li>
-<li>Vorteile: Flexibel und einfacher im Handling.</li>
-<li>Nachteile: Im Vergleich zu Arrays geringfügig langsamer beim direkten Zugriff auf große Datenmengen.</li>
-</ul>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">fruits</span> <span class="o">=</span> <span class="n">new</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="p">{</span> <span class="s2">"Apple"</span><span class="p">,</span> <span class="s2">"Banana"</span><span class="p">,</span> <span class="s2">"Cherry"</span> <span class="p">};</span>
-<span class="n">fruits</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span><span class="s2">"Orange"</span><span class="p">);</span>
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">fruits</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>  <span class="o">//</span> <span class="n">Ausgabe</span><span class="p">:</span> <span class="n">Cherry</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="3.-W%C3%B6rterbuch-(Dictionary%3CTKey,-TValue%3E)">3. Wörterbuch (<code>Dictionary&lt;TKey, TValue&gt;</code>)<a class="anchor-link" href="#3.-W%C3%B6rterbuch-(Dictionary%3CTKey,-TValue%3E)">¶</a></h3><ul>
-<li>Ein Wörterbuch ist eine Sammlung von Schlüssel-Wert-Paaren, bei denen jedes Element einen Schlüssel und einen Wert hat. Es wird verwendet, um Daten schnell anhand eines eindeutigen Schlüssels zu suchen.</li>
-<li>Deklaration: <code>Dictionary&lt;string, int&gt; ageMap = new Dictionary&lt;string, int&gt;();</code></li>
-<li>Vorteile: Sehr effizient für schnelle Nachschlageoperationen.</li>
-<li>Nachteile: Schlüssel müssen eindeutig sein und der Schlüssel wird zum Indexieren verwendet.</li>
-</ul>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">Dictionary</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="nb">int</span><span class="o">&gt;</span> <span class="n">ages</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Dictionary</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="nb">int</span><span class="o">&gt;</span><span class="p">();</span>
-<span class="n">ages</span><span class="p">[</span><span class="s2">"Alice"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">30</span><span class="p">;</span>
-<span class="n">ages</span><span class="p">[</span><span class="s2">"Bob"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">25</span><span class="p">;</span>
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">ages</span><span class="p">[</span><span class="s2">"Alice"</span><span class="p">]);</span>  <span class="o">//</span> <span class="n">Ausgabe</span><span class="p">:</span> <span class="mi">30</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="4.-Warteschlangen-(Queue%3CT%3E)">4. Warteschlangen (<code>Queue&lt;T&gt;</code>)<a class="anchor-link" href="#4.-Warteschlangen-(Queue%3CT%3E)">¶</a></h3><ul>
-<li>Warteschlangen sind FIFO (First In, First Out) Datenstrukturen, bei denen das erste hinzugefügte Element auch das erste ist, das entfernt wird.</li>
-<li>Deklaration: <code>Queue&lt;int&gt; queue = new Queue&lt;int&gt;();</code></li>
-<li>Methoden: <code>Enqueue()</code> fügt ein Element hinzu, <code>Dequeue()</code> entfernt ein Element.</li>
-<li>Vorteile: Ideal für Szenarien, in denen Elemente in einer bestimmten Reihenfolge verarbeitet werden müssen.</li>
-<li>Nachteile: Kein direkter Zugriff auf Elemente in der Mitte der Warteschlange.</li>
-</ul>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">Queue</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">queue</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Queue</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">();</span>
-<span class="n">queue</span><span class="o">.</span><span class="n">Enqueue</span><span class="p">(</span><span class="s2">"First"</span><span class="p">);</span>
-<span class="n">queue</span><span class="o">.</span><span class="n">Enqueue</span><span class="p">(</span><span class="s2">"Second"</span><span class="p">);</span>
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">queue</span><span class="o">.</span><span class="n">Dequeue</span><span class="p">());</span>  <span class="o">//</span> <span class="n">Ausgabe</span><span class="p">:</span> <span class="n">First</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="5.-Stapel-(Stack%3CT%3E)">5. Stapel (<code>Stack&lt;T&gt;</code>)<a class="anchor-link" href="#5.-Stapel-(Stack%3CT%3E)">¶</a></h3><ul>
-<li>Stacks sind LIFO (Last In, First Out) Datenstrukturen, bei denen das letzte hinzugefügte Element auch das erste ist, das entfernt wird.</li>
-<li>Deklaration: <code>Stack&lt;int&gt; stack = new Stack&lt;int&gt;();</code></li>
-<li>Methoden: <code>Push()</code> fügt ein Element hinzu, <code>Pop()</code> entfernt das oberste Element.</li>
-<li>Vorteile: Effizient für Szenarien, in denen der Zugriff auf das zuletzt hinzugefügte Element wichtig ist.</li>
-<li>Nachteile: Kein Zugriff auf Elemente außer auf das oberste.</li>
-</ul>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">Stack</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">stack</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Stack</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">();</span>
-<span class="n">stack</span><span class="o">.</span><span class="n">Push</span><span class="p">(</span><span class="s2">"Bottom"</span><span class="p">);</span>
-<span class="n">stack</span><span class="o">.</span><span class="n">Push</span><span class="p">(</span><span class="s2">"Top"</span><span class="p">);</span>
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">stack</span><span class="o">.</span><span class="n">Pop</span><span class="p">());</span>  <span class="o">//</span> <span class="n">Ausgabe</span><span class="p">:</span> <span class="n">Top</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="6.-Mengen-(HashSet%3CT%3E)">6. Mengen (<code>HashSet&lt;T&gt;</code>)<a class="anchor-link" href="#6.-Mengen-(HashSet%3CT%3E)">¶</a></h3><ul>
-<li>Ein HashSet speichert eine Sammlung von eindeutigen Elementen und wird häufig verwendet, um die Existenz eines bestimmten Wertes schnell zu überprüfen.</li>
-<li>Deklaration: <code>HashSet&lt;int&gt; uniqueNumbers = new HashSet&lt;int&gt;();</code></li>
-<li>Vorteile: Schnelle Überprüfung auf das Vorhandensein eines Elements.</li>
-<li>Nachteile: Keine Duplikate erlaubt, und die Elemente haben keine bestimmte Reihenfolge.</li>
-</ul>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">HashSet</span><span class="o">&lt;</span><span class="nb">int</span><span class="o">&gt;</span> <span class="n">uniqueNumbers</span> <span class="o">=</span> <span class="n">new</span> <span class="n">HashSet</span><span class="o">&lt;</span><span class="nb">int</span><span class="o">&gt;</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span> <span class="p">};</span>
-<span class="n">uniqueNumbers</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">uniqueNumbers</span><span class="o">.</span><span class="n">Contains</span><span class="p">(</span><span class="mi">3</span><span class="p">));</span>  <span class="o">//</span> <span class="n">Ausgabe</span><span class="p">:</span> <span class="kc">True</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="7.-Verbundene-Listen-(LinkedList%3CT%3E)">7. Verbundene Listen (<code>LinkedList&lt;T&gt;</code>)<a class="anchor-link" href="#7.-Verbundene-Listen-(LinkedList%3CT%3E)">¶</a></h3><ul>
-<li>LinkedLists bestehen aus Knoten, die Verweise auf das nächste und, bei doppelt verketteten Listen, das vorherige Element enthalten. Diese Struktur ermöglicht eine dynamische Größe und das Einfügen oder Entfernen von Elementen an beliebiger Stelle.</li>
-<li>Deklaration: <code>LinkedList&lt;int&gt; linkedList = new LinkedList&lt;int&gt;();</code></li>
-<li>Vorteile: Flexibler als Arrays und Listen für Einfüge-/Löschoperationen.</li>
-<li>Nachteile: Langsamer bei sequentiellem Zugriff im Vergleich zu Arrays oder Listen.</li>
-</ul>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">linkedList</span> <span class="o">=</span> <span class="n">new</span> <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">();</span>
-<span class="n">linkedList</span><span class="o">.</span><span class="n">AddLast</span><span class="p">(</span><span class="s2">"First"</span><span class="p">);</span>
-<span class="n">linkedList</span><span class="o">.</span><span class="n">AddLast</span><span class="p">(</span><span class="s2">"Second"</span><span class="p">);</span>
-<span class="n">linkedList</span><span class="o">.</span><span class="n">AddFirst</span><span class="p">(</span><span class="s2">"Zeroth"</span><span class="p">);</span>
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">linkedList</span><span class="o">.</span><span class="n">First</span><span class="o">.</span><span class="n">Value</span><span class="p">);</span>  <span class="o">//</span> <span class="n">Ausgabe</span><span class="p">:</span> <span class="n">Zeroth</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="8.-B%C3%A4ume">8. Bäume<a class="anchor-link" href="#8.-B%C3%A4ume">¶</a></h3><ul>
-<li>Bäume sind hierarchische Datenstrukturen, die eine Sammlung von Elementen in Eltern-Kind-Beziehungen organisieren.</li>
-<li>Typische Anwendungen sind binäre Bäume, AVL-Bäume, B-Bäume oder N-Bäume. In C# können diese als Klassen modelliert werden.</li>
-<li>Deklaration eines binären Baums erfolgt durch Erstellung von Knoten-Klassen mit <code>left</code> und <code>right</code> Verweisen.</li>
-<li>Vorteile: Effizient für hierarchische Daten und schnelle Suchen.</li>
-<li>Nachteile: Komplex in der Implementierung und Pflege.</li>
-</ul>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="k">class</span> <span class="nc">TreeNode</span> <span class="p">{</span>
-    <span class="n">public</span> <span class="nb">int</span> <span class="n">Value</span><span class="p">;</span>
-    <span class="n">public</span> <span class="n">TreeNode</span> <span class="n">Left</span><span class="p">;</span>
-    <span class="n">public</span> <span class="n">TreeNode</span> <span class="n">Right</span><span class="p">;</span>
-    <span class="n">public</span> <span class="n">TreeNode</span><span class="p">(</span><span class="nb">int</span> <span class="n">value</span><span class="p">)</span> <span class="p">{</span> <span class="n">Value</span> <span class="o">=</span> <span class="n">value</span><span class="p">;</span> <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="n">TreeNode</span> <span class="n">root</span> <span class="o">=</span> <span class="n">new</span> <span class="n">TreeNode</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-<span class="n">root</span><span class="o">.</span><span class="n">Left</span> <span class="o">=</span> <span class="n">new</span> <span class="n">TreeNode</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-<span class="n">root</span><span class="o">.</span><span class="n">Right</span> <span class="o">=</span> <span class="n">new</span> <span class="n">TreeNode</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">Left</span><span class="o">.</span><span class="n">Value</span><span class="p">);</span>  <span class="o">//</span> <span class="n">Ausgabe</span><span class="p">:</span> <span class="mi">2</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="9.-Graphen">9. Graphen<a class="anchor-link" href="#9.-Graphen">¶</a></h3><ul>
-<li>Graphen sind Netzwerke von Knoten, die durch Kanten verbunden sind. Sie werden verwendet, um Beziehungen darzustellen, wie z.B. soziale Netzwerke oder Routen.</li>
-<li>In C# werden Graphen typischerweise durch <code>Dictionary&lt;TKey, List&lt;TValue&gt;&gt;</code> oder benutzerdefinierte Klassen für Knoten und Kanten implementiert.</li>
-<li>Vorteile: Ideal für die Darstellung und Bearbeitung von Netzwerken und Beziehungen.</li>
-<li>Nachteile: Komplex in der Implementierung und erfordern spezielle Algorithmen zur effizienten Navigation.</li>
-</ul>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="k">class</span> <span class="nc">Graph</span> <span class="p">{</span>
-    <span class="n">public</span> <span class="n">Dictionary</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&gt;</span> <span class="n">AdjacencyList</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Dictionary</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&gt;</span><span class="p">();</span>
-    <span class="n">public</span> <span class="n">void</span> <span class="n">AddEdge</span><span class="p">(</span><span class="n">string</span> <span class="n">node</span><span class="p">,</span> <span class="n">string</span> <span class="n">neighbor</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="err">!</span><span class="n">AdjacencyList</span><span class="o">.</span><span class="n">ContainsKey</span><span class="p">(</span><span class="n">node</span><span class="p">))</span> <span class="p">{</span>
-            <span class="n">AdjacencyList</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="n">new</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">();</span>
-        <span class="p">}</span>
-        <span class="n">AdjacencyList</span><span class="p">[</span><span class="n">node</span><span class="p">]</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span><span class="n">neighbor</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="n">Graph</span> <span class="n">graph</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Graph</span><span class="p">();</span>
-<span class="n">graph</span><span class="o">.</span><span class="n">AddEdge</span><span class="p">(</span><span class="s2">"A"</span><span class="p">,</span> <span class="s2">"B"</span><span class="p">);</span>
-<span class="n">graph</span><span class="o">.</span><span class="n">AddEdge</span><span class="p">(</span><span class="s2">"A"</span><span class="p">,</span> <span class="s2">"C"</span><span class="p">);</span>
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">Join</span><span class="p">(</span><span class="s2">", "</span><span class="p">,</span> <span class="n">graph</span><span class="o">.</span><span class="n">AdjacencyList</span><span class="p">[</span><span class="s2">"A"</span><span class="p">]));</span>  <span class="o">//</span> <span class="n">Ausgabe</span><span class="p">:</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Jede dieser Strukturen kann je nach Anforderungen an Leistung, Speicherbedarf und die Art der Daten in einem bestimmten Szenario vorteilhaft sein.</p>
+<p>Dieses Programm zeigt grundlegende C#-Konzepte und berechnet, basierend auf Umweltinformatikdaten, die Gesamtemissionen eines Projekts.</p>
 </div>
 </div>
 </div>
