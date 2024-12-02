@@ -7703,10 +7703,10 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="nb">int</span> <span class="n">day</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<div class="highlight hl-python"><pre><span></span><span class="nb">int</span> <span class="n">day</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
 <span class="n">switch</span> <span class="p">(</span><span class="n">day</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="k">case</span> <span class="mi">1</span><span class="p">:</span>
@@ -7734,7 +7734,7 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Mittwoch
+<pre>Ungültiger Tag
 </pre>
 </div>
 </div>
@@ -7784,10 +7784,11 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="nb">object</span> <span class="n">obj</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<div class="highlight hl-python"><pre><span></span><span class="nb">object</span> <span class="n">obj</span> <span class="o">=</span> <span class="s2">"string"</span><span class="p">;</span>
+<span class="n">obj</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 <span class="n">switch</span> <span class="p">(</span><span class="n">obj</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="k">case</span> <span class="nb">int</span> <span class="n">i</span> <span class="n">when</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
@@ -7795,6 +7796,9 @@ a.anchor-link {
         <span class="k">break</span><span class="p">;</span>
     <span class="k">case</span> <span class="nb">int</span> <span class="n">i</span> <span class="n">when</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
         <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Negative ganze Zahl"</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="n">string</span> <span class="n">s</span> <span class="n">when</span> <span class="n">s</span> <span class="o">==</span> <span class="s2">"Hallo"</span><span class="p">:</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Hallo"</span><span class="p">);</span>
         <span class="k">break</span><span class="p">;</span>
     <span class="n">default</span><span class="p">:</span>
         <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Unbekannter Typ oder null"</span><span class="p">);</span>
@@ -7812,7 +7816,7 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Positive ganze Zahl
+<pre>Hallo
 </pre>
 </div>
 </div>
