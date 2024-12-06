@@ -7534,8 +7534,8 @@ a.anchor-link {
 </td>
 </tr>
 </table>
-<p>Die objektorientierte Programmierung (OOP) in C# ermöglicht es, komplexe Systeme durch das Erstellen und Verwalten von Objekten zu modellieren, was besonders in der Umweltinformatik hilfreich ist, um reale Entitäten wie Flüsse, Seen und andere Umweltkomponenten zu repräsentieren. C# verwendet dabei die Prinzipien Klassen und Objekte, Vererbung, Polymorphismus, Kapselung und Abstraktion. Im Folgenden wird jedes Prinzip ausführlich erklärt, und wir betrachten auch die Verwendung des Operators <code>new</code>, der eine Schlüsselrolle bei der Instanziierung von Objekten spielt.</p>
-<h3 id="1.-Klassen-und-Objekte">1. Klassen und Objekte<a class="anchor-link" href="#1.-Klassen-und-Objekte">¶</a></h3><p>In der OOP werden <strong>Klassen</strong> als Baupläne für Objekte verwendet. Eine Klasse definiert Eigenschaften (Daten) und Methoden (Verhalten) von Objekten. <strong>Objekte</strong> sind Instanzen dieser Klassen, die mit konkreten Daten versehen sind.</p>
+<p>Die objektorientierte Programmierung (OOP) in C# ermöglicht es, komplexe Systeme durch das Erstellen und Verwalten von Objekten zu modellieren, was auch in der Umweltinformatik hilfreich ist, um reale Entitäten wie Flüsse, Seen und andere Umweltkomponenten zu repräsentieren. C# verwendet dabei die Prinzipien Klassen und Objekte, Vererbung, Polymorphismus, Kapselung und Abstraktion. Im Folgenden wird jedes Prinzip ausführlich erklärt, und wir betrachten auch die Verwendung des Operators <code>new</code>, der eine Schlüsselrolle bei der Instanziierung von Objekten spielt.</p>
+<h3 id="Klassen-und-Objekte">Klassen und Objekte<a class="anchor-link" href="#Klassen-und-Objekte">¶</a></h3><p>In der OOP werden <strong>Klassen</strong> als Baupläne für Objekte verwendet. Eine Klasse definiert Eigenschaften (Daten) und Methoden (Verhalten) von Objekten. <strong>Objekte</strong> sind Instanzen dieser Klassen, die mit konkreten Daten versehen sind.</p>
 <h4 id="Beispiel:">Beispiel:<a class="anchor-link" href="#Beispiel:">¶</a></h4><p>Angenommen, wir möchten einen Fluss in der Umweltinformatik modellieren. Dafür erstellen wir eine <code>Fluss</code>-Klasse mit Eigenschaften wie <code>Name</code>, <code>Laenge</code> und <code>Durchfluss</code>.</p>
 </div>
 </div>
@@ -7618,7 +7618,140 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>Hier erzeugt <code>new Fluss(...)</code> ein neues <code>Fluss</code>-Objekt und weist es der Variablen <code>rhein</code> zu. Dieses <code>rhein</code>-Objekt repräsentiert einen spezifischen Fluss und kann über die Methoden und Eigenschaften der Klasse angesprochen werden.</p>
-<h3 id="2.-Vererbung">2. Vererbung<a class="anchor-link" href="#2.-Vererbung">¶</a></h3><p><strong>Vererbung</strong> ermöglicht es, von einer Basisklasse (Elternklasse) zu erben und eine abgeleitete Klasse (Kindklasse) zu erstellen, die zusätzliche oder spezialisierte Eigenschaften und Methoden hat. Das spart Wiederholungen im Code und hilft dabei, gemeinsame Eigenschaften in der Basisklasse zu definieren.</p>
+<h4 id="Objekte-anlegen-und-aufr%C3%A4umen">Objekte anlegen und aufräumen<a class="anchor-link" href="#Objekte-anlegen-und-aufr%C3%A4umen">¶</a></h4><p><a href="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3074457367127295133&amp;cot=14"><img alt="No description has been provided for this image" src="Create_n_cleanup_objects.jpg"/></a></p>
+<h3 id="static"><code>static</code><a class="anchor-link" href="#static">¶</a></h3><p>Der Schlüsselwort <code>static</code> in C# ist ein Modifier, der sich auf <strong>Klassen, Methoden, Felder oder Eigenschaften</strong> anwenden lässt. Es bedeutet, dass ein Mitglied oder eine Klasse zur <strong>Klasse selbst</strong> gehört und nicht zu einer <strong>Instanz</strong> der Klasse. Du hast bereits gelernt, dass du mit <code>new</code> Objekte erstellst. Objekte gehören zu einer Instanz der Klasse. <code>static</code> hingegen gehört direkt zur Klasse und benötigt keine Instanz.</p>
+<h4 id="Unterschied-zwischen-static-und-Instanzbasiert">Unterschied zwischen <code>static</code> und Instanzbasiert<a class="anchor-link" href="#Unterschied-zwischen-static-und-Instanzbasiert">¶</a></h4><ul>
+<li><strong>Instanzbasiert</strong>: Mit <code>new</code> erzeugst du eine Instanz, und die Instanz hat ihre eigenen Daten.</li>
+<li><strong>Static</strong>: Etwas, das <code>static</code> ist, gehört <strong>allen Instanzen gemeinsam</strong> oder nur der Klasse selbst.</li>
+</ul>
+<h4 id="Wann-verwendet-man-static?">Wann verwendet man <code>static</code>?<a class="anchor-link" href="#Wann-verwendet-man-static?">¶</a></h4><ul>
+<li>Wenn ein Wert oder eine Funktion <strong>unabhängig</strong> von einer bestimmten Instanz sein soll.</li>
+<li>Wenn du <strong>globale</strong> Funktionen oder Konstanten brauchst, die für das gesamte Programm gelten.</li>
+</ul>
+<h4 id="Beispiel-1:-static-Feld">Beispiel 1: <code>static</code> Feld<a class="anchor-link" href="#Beispiel-1:-static-Feld">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="k">class</span> <span class="nc">UmweltDaten</span>
+<span class="p">{</span>
+    <span class="n">public</span> <span class="n">static</span> <span class="nb">int</span> <span class="n">MaxTemperatur</span> <span class="o">=</span> <span class="mi">50</span><span class="p">;</span> <span class="o">//</span> <span class="n">Gilt</span> <span class="n">für</span> <span class="n">alle</span> <span class="n">Instanzen</span> <span class="n">gleichermaßen</span>
+    <span class="n">public</span> <span class="nb">int</span> <span class="n">AktuelleTemperatur</span><span class="p">;</span> <span class="o">//</span> <span class="n">Instanzspezifisch</span>
+
+    <span class="n">public</span> <span class="n">void</span> <span class="n">SetzeTemperatur</span><span class="p">(</span><span class="nb">int</span> <span class="n">temperatur</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">temperatur</span> <span class="o">&gt;</span> <span class="n">MaxTemperatur</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Temperatur überschreitet das Maximum!"</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">else</span>
+        <span class="p">{</span>
+            <span class="n">AktuelleTemperatur</span> <span class="o">=</span> <span class="n">temperatur</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">UmweltDaten</span><span class="o">.</span><span class="n">MaxTemperatur</span> <span class="o">=</span> <span class="mi">45</span><span class="p">;</span> <span class="o">//</span> <span class="n">Zugriff</span> <span class="n">direkt</span> <span class="n">über</span> <span class="n">die</span> <span class="n">Klasse</span>
+
+<span class="n">UmweltDaten</span> <span class="n">sensor1</span> <span class="o">=</span> <span class="n">new</span> <span class="n">UmweltDaten</span><span class="p">();</span>
+<span class="n">UmweltDaten</span> <span class="n">sensor2</span> <span class="o">=</span> <span class="n">new</span> <span class="n">UmweltDaten</span><span class="p">();</span>
+
+<span class="n">sensor1</span><span class="o">.</span><span class="n">SetzeTemperatur</span><span class="p">(</span><span class="mi">40</span><span class="p">);</span>
+<span class="n">sensor2</span><span class="o">.</span><span class="n">SetzeTemperatur</span><span class="p">(</span><span class="mi">50</span><span class="p">);</span> <span class="o">//</span> <span class="n">Gibt</span> <span class="n">eine</span> <span class="n">Warnung</span> <span class="n">aus</span><span class="p">,</span> <span class="n">da</span> <span class="n">MaxTemperatur</span> <span class="o">=</span> <span class="mi">45</span>
+
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"MaxTemperatur: </span><span class="si">{UmweltDaten.MaxTemperatur}</span><span class="s2">"</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Temperatur überschreitet das Maximum!
+MaxTemperatur: 45
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Erkl%C3%A4rung:">Erklärung:<a class="anchor-link" href="#Erkl%C3%A4rung:">¶</a></h4><ol>
+<li><code>MaxTemperatur</code> ist <code>static</code>. Alle Instanzen der Klasse teilen sich diesen Wert.</li>
+<li><code>AktuelleTemperatur</code> ist instanzspezifisch, jede Instanz hat einen eigenen Wert.</li>
+</ol>
+<h4 id="Beispiel-2:-static-Methode">Beispiel 2: <code>static</code> Methode<a class="anchor-link" href="#Beispiel-2:-static-Methode">¶</a></h4><p>Eine <code>static</code> Methode gehört direkt zur Klasse, nicht zur Instanz.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="k">class</span> <span class="nc">MatheHelfer</span>
+<span class="p">{</span>
+    <span class="n">public</span> <span class="n">static</span> <span class="nb">int</span> <span class="n">Addiere</span><span class="p">(</span><span class="nb">int</span> <span class="n">a</span><span class="p">,</span> <span class="nb">int</span> <span class="n">b</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nb">int</span> <span class="n">ergebnis</span> <span class="o">=</span> <span class="n">MatheHelfer</span><span class="o">.</span><span class="n">Addiere</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span> <span class="o">//</span> <span class="n">Direkt</span> <span class="n">über</span> <span class="n">die</span> <span class="n">Klasse</span> <span class="n">aufrufen</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Ergebnis: </span><span class="si">{ergebnis}</span><span class="s2">"</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Ergebnis: 15
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Erkl%C3%A4rung:">Erklärung:<a class="anchor-link" href="#Erkl%C3%A4rung:">¶</a></h4><ul>
+<li>Du kannst <code>Addiere</code> direkt über <code>MatheHelfer</code> verwenden, ohne ein Objekt der Klasse zu erstellen.</li>
+</ul>
+<h4 id="Einschr%C3%A4nkungen-von-static">Einschränkungen von <code>static</code><a class="anchor-link" href="#Einschr%C3%A4nkungen-von-static">¶</a></h4><ol>
+<li><code>static</code> Methoden und Felder können <strong>nicht auf Instanzmitglieder</strong> zugreifen, da sie nicht wissen, welche Instanz sie verwenden sollen.</li>
+<li>Sie gehören <strong>immer zur Klasse</strong> und sind daher für alle gleich.</li>
+</ol>
+<h4 id="static-und-nicht-static"><code>static</code> und nicht-<code>static</code><a class="anchor-link" href="#static-und-nicht-static">¶</a></h4><p><a href="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3458764516687486607&amp;cot=14"><img alt="No description has been provided for this image" src="Static_n_not_static.jpg"/></a></p>
+<h3 id="Vererbung">Vererbung<a class="anchor-link" href="#Vererbung">¶</a></h3><p><strong>Vererbung</strong> ermöglicht es, von einer Basisklasse (Elternklasse) zu erben und eine abgeleitete Klasse (Kindklasse) zu erstellen, die zusätzliche oder spezialisierte Eigenschaften und Methoden hat. Das spart Wiederholungen im Code und hilft dabei, gemeinsame Eigenschaften in der Basisklasse zu definieren.</p>
 <h4 id="Beispiel:">Beispiel:<a class="anchor-link" href="#Beispiel:">¶</a></h4><p>Erstellen einer abgeleiteten Klasse <code>VerschmutzterFluss</code>, die von der Basisklasse <code>Fluss</code> erbt und eine zusätzliche Eigenschaft zur Schadstoffkonzentration hat.</p>
 </div>
 </div>
@@ -7699,7 +7832,7 @@ Main hat eine Schadstoffkonzentration von 3,5 mg/L.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="3.-Polymorphismus">3. Polymorphismus<a class="anchor-link" href="#3.-Polymorphismus">¶</a></h3><p><strong>Polymorphismus</strong> ermöglicht es, Objekte der abgeleiteten Klasse auf die gleiche Weise wie Objekte der Basisklasse zu behandeln. Es vereinfacht das Arbeiten mit mehreren Objekten, die sich zwar in Details unterscheiden, aber eine gemeinsame Schnittstelle oder Basisklasse haben.</p>
+<h3 id="Polymorphismus">Polymorphismus<a class="anchor-link" href="#Polymorphismus">¶</a></h3><p><strong>Polymorphismus</strong> ermöglicht es, Objekte der abgeleiteten Klasse auf die gleiche Weise wie Objekte der Basisklasse zu behandeln. Es vereinfacht das Arbeiten mit mehreren Objekten, die sich zwar in Details unterscheiden, aber eine gemeinsame Schnittstelle oder Basisklasse haben.</p>
 <h4 id="Beispiel:">Beispiel:<a class="anchor-link" href="#Beispiel:">¶</a></h4><p>Eine Methode, die Informationen über verschiedene <code>Fluss</code>-Objekte (verschmutzt oder nicht) anzeigt, ohne die genaue Typzugehörigkeit zu kennen.</p>
 </div>
 </div>
@@ -7776,7 +7909,7 @@ Elbe hat eine Schadstoffkonzentration von 2,8 mg/L.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="4.-Kapselung">4. Kapselung<a class="anchor-link" href="#4.-Kapselung">¶</a></h3><p><strong>Kapselung</strong> bedeutet, dass Daten und Methoden einer Klasse geschützt werden und nur über bestimmte Schnittstellen darauf zugegriffen werden kann. Das hilft, die Datenintegrität zu bewahren.</p>
+<h3 id="Kapselung">Kapselung<a class="anchor-link" href="#Kapselung">¶</a></h3><p><strong>Kapselung</strong> bedeutet, dass Daten und Methoden einer Klasse geschützt werden und nur über bestimmte Schnittstellen darauf zugegriffen werden kann. Das hilft, die Datenintegrität zu bewahren.</p>
 <h4 id="Beispiel:">Beispiel:<a class="anchor-link" href="#Beispiel:">¶</a></h4><p>Wir verhindern, dass die Schadstoffkonzentration eines <code>VerschmutzterFluss</code>-Objekts negativ sein kann.</p>
 </div>
 </div>
@@ -7824,7 +7957,7 @@ Elbe hat eine Schadstoffkonzentration von 2,8 mg/L.
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>Die <code>Schadstoffkonzentration</code>-Eigenschaft wird über eine Zugriffsmethode geschützt, die sicherstellt, dass keine negativen Werte gesetzt werden können.</p>
-<h3 id="5.-Abstraktion">5. Abstraktion<a class="anchor-link" href="#5.-Abstraktion">¶</a></h3><p><strong>Abstraktion</strong> hilft dabei, nur die wichtigen Eigenschaften und Methoden einer Klasse freizugeben und unnötige Details auszublenden. Dadurch bleibt der Code übersichtlich und verständlich.</p>
+<h3 id="Abstraktion">Abstraktion<a class="anchor-link" href="#Abstraktion">¶</a></h3><p><strong>Abstraktion</strong> hilft dabei, nur die wichtigen Eigenschaften und Methoden einer Klasse freizugeben und unnötige Details auszublenden. Dadurch bleibt der Code übersichtlich und verständlich.</p>
 <h4 id="Beispiel:">Beispiel:<a class="anchor-link" href="#Beispiel:">¶</a></h4><p>Wir erstellen eine abstrakte Basisklasse <code>Gewaesser</code>, die die gemeinsamen Eigenschaften und Methoden aller Gewässer enthält.</p>
 </div>
 </div>
@@ -7895,7 +8028,7 @@ Elbe hat eine Schadstoffkonzentration von 2,8 mg/L.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Gewaesser</span><span class="o">&gt;</span> <span class="n">gewaesserListe</span> <span class="o">=</span> <span class="n">new</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Gewaesser</span><span class="o">&gt;</span>
@@ -7934,6 +8067,7 @@ Der Fluss Rhein hat eine Länge von 1233 km.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Cheatsheet-Klassen-in-C%23">Cheatsheet Klassen in C#<a class="anchor-link" href="#Cheatsheet-Klassen-in-C%23">¶</a></h3><p><a href="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3074457367103186951&amp;cot=14"><img alt="No description has been provided for this image" src="Classes.jpg"/></a></p>
 <h3 id="Zusammenfassung">Zusammenfassung<a class="anchor-link" href="#Zusammenfassung">¶</a></h3><p>In der OOP ermöglicht der <code>new</code>-Operator das Erstellen neuer Objekte und damit das Modellieren von Umweltkomponenten in der Softwareentwicklung. Klassen und Objekte, Vererbung, Polymorphismus, Kapselung und Abstraktion helfen, komplexe Systeme realistisch abzubilden und strukturierte, wartbare Software zu entwickeln.</p>
 </div>
 </div>
