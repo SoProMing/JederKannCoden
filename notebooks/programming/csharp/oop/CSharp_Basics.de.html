@@ -7545,14 +7545,14 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [36]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [39]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">Fluss</span>
 <span class="p">{</span>
-    <span class="n">private</span> <span class="n">string</span> <span class="n">Name</span> <span class="p">{</span> <span class="n">get</span><span class="p">;</span> <span class="nb">set</span><span class="p">;</span> <span class="p">}</span> <span class="o">//</span> <span class="n">Name</span> <span class="n">des</span> <span class="n">Flusses</span>
-    <span class="n">private</span> <span class="n">double</span> <span class="n">Laenge</span> <span class="p">{</span> <span class="n">get</span><span class="p">;</span> <span class="nb">set</span><span class="p">;</span> <span class="p">}</span> <span class="o">//</span> <span class="n">Länge</span> <span class="ow">in</span> <span class="n">Kilometern</span>
-    <span class="n">private</span> <span class="n">double</span> <span class="n">Durchfluss</span> <span class="p">{</span> <span class="n">get</span><span class="p">;</span> <span class="nb">set</span><span class="p">;</span> <span class="p">}</span> <span class="o">//</span> <span class="n">Durchfluss</span> <span class="ow">in</span> <span class="n">Kubikmeter</span> <span class="n">pro</span> <span class="n">Sekunde</span>
+    <span class="n">protected</span> <span class="n">string</span> <span class="n">Name</span> <span class="p">{</span> <span class="n">get</span><span class="p">;</span> <span class="nb">set</span><span class="p">;</span> <span class="p">}</span> <span class="o">//</span> <span class="n">Name</span> <span class="n">des</span> <span class="n">Flusses</span>
+    <span class="n">protected</span> <span class="n">double</span> <span class="n">Laenge</span> <span class="p">{</span> <span class="n">get</span><span class="p">;</span> <span class="nb">set</span><span class="p">;</span> <span class="p">}</span> <span class="o">//</span> <span class="n">Länge</span> <span class="ow">in</span> <span class="n">Kilometern</span>
+    <span class="n">protected</span> <span class="n">double</span> <span class="n">Durchfluss</span> <span class="p">{</span> <span class="n">get</span><span class="p">;</span> <span class="nb">set</span><span class="p">;</span> <span class="p">}</span> <span class="o">//</span> <span class="n">Durchfluss</span> <span class="ow">in</span> <span class="n">Kubikmeter</span> <span class="n">pro</span> <span class="n">Sekunde</span>
 
     <span class="n">public</span> <span class="n">Fluss</span><span class="p">(</span><span class="n">string</span> <span class="n">Name</span><span class="p">,</span> <span class="n">double</span> <span class="n">Laenge</span><span class="p">,</span> <span class="n">double</span> <span class="n">Durchfluss</span><span class="p">)</span>
     <span class="p">{</span>
@@ -7803,12 +7803,12 @@ Temperatur sensor2: 45
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [38]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [40]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">VerschmutzterFluss</span> <span class="p">:</span> <span class="n">Fluss</span>
@@ -7831,19 +7831,6 @@ Temperatur sensor2: 45
 </div>
 </div>
 </div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>
-(13,30): error CS0122: 'Der Zugriff auf "Fluss.Name" ist aufgrund des Schutzgrads nicht möglich.</pre>
-</div>
-</div>
-</div>
-</div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -7860,7 +7847,7 @@ Temperatur sensor2: 45
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [41]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="n">VerschmutzterFluss</span> <span class="n">main</span> <span class="o">=</span> <span class="n">new</span> <span class="n">VerschmutzterFluss</span><span class="p">(</span><span class="s2">"Main"</span><span class="p">,</span> <span class="mi">524</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">);</span>
@@ -7878,7 +7865,7 @@ Temperatur sensor2: 45
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Main hat eine Länge von 524 km und einen Durchfluss von 200 m³/s.
+<pre>Main hat eine Länge von 0,524 km und einen Durchfluss von 200 m³/s.
 Main hat eine Schadstoffkonzentration von 3,5 mg/L.
 </pre>
 </div>
@@ -7897,12 +7884,12 @@ Main hat eine Schadstoffkonzentration von 3,5 mg/L.
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [37]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [42]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="n">void</span> <span class="n">ZeigeFlussInfo</span><span class="p">(</span><span class="n">Fluss</span> <span class="n">fluss</span><span class="p">)</span>
@@ -7914,19 +7901,6 @@ Main hat eine Schadstoffkonzentration von 3,5 mg/L.
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>
-(4,18): error CS0246: Der Typ- oder Namespacename "VerschmutzterFluss" wurde nicht gefunden (möglicherweise fehlt eine using-Direktive oder ein Assemblyverweis).</pre>
 </div>
 </div>
 </div>
@@ -7947,7 +7921,7 @@ Main hat eine Schadstoffkonzentration von 3,5 mg/L.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [43]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="n">Fluss</span> <span class="n">donau</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Fluss</span><span class="p">(</span><span class="s2">"Donau"</span><span class="p">,</span> <span class="mi">2850</span><span class="p">,</span> <span class="mi">6500</span><span class="p">);</span>
@@ -7967,8 +7941,8 @@ Main hat eine Schadstoffkonzentration von 3,5 mg/L.
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Donau hat eine Länge von 2850 km und einen Durchfluss von 6500 m³/s.
-Elbe hat eine Länge von 1094 km und einen Durchfluss von 700 m³/s.
+<pre>Donau hat eine Länge von 2,85 km und einen Durchfluss von 6500 m³/s.
+Elbe hat eine Länge von 1,094 km und einen Durchfluss von 700 m³/s.
 Elbe hat eine Schadstoffkonzentration von 2,8 mg/L.
 </pre>
 </div>
@@ -8040,7 +8014,7 @@ Elbe hat eine Schadstoffkonzentration von 2,8 mg/L.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [44]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="n">abstract</span> <span class="k">class</span> <span class="nc">Gewaesser</span>
@@ -8101,7 +8075,7 @@ Elbe hat eine Schadstoffkonzentration von 2,8 mg/L.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [45]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Gewaesser</span><span class="o">&gt;</span> <span class="n">gewaesserListe</span> <span class="o">=</span> <span class="n">new</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Gewaesser</span><span class="o">&gt;</span>
