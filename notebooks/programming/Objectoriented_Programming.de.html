@@ -7516,6 +7516,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><a href="../../abstract/Contents.de.html">Jeder kann coden</a> / <a href="Number_Systems.de.html">Zahlensysteme</a> / <a href="Programming_And_TicTacToe.de.html">Prozedurale Programmierung</a></p>
 <h1 id="Objektorientierte-Programmierung">Objektorientierte Programmierung<a class="anchor-link" href="#Objektorientierte-Programmierung">¶</a></h1><img alt="No description has been provided for this image" src="OOP_Basics.webp" style="width:280px; height:280px;"/>
 <p>Wir können die Prinzipien der objektorientierten Programmierung anhand eines <strong>Ökosystems</strong> veranschaulichen. In einem Ökosystem gibt es viele verschiedene Elemente wie Pflanzen, Tiere und Gewässer. Diese Elemente interagieren miteinander, und jedes hat bestimmte Eigenschaften und Verhaltensweisen. Lass uns die OOP-Konzepte hier anwenden:</p>
 <h3 id="1.-Klassen-und-Objekte">1. Klassen und Objekte<a class="anchor-link" href="#1.-Klassen-und-Objekte">¶</a></h3><p><strong>Analogie</strong>: Stell dir vor, wir möchten verschiedene <strong>Lebewesen</strong> in einem Ökosystem darstellen. Die Klasse <strong>Lebewesen</strong> ist wie eine Vorlage für alle Lebewesen und beschreibt allgemeine Eigenschaften und Verhaltensweisen. Daraus können wir dann Objekte wie <strong>Bäume</strong> oder <strong>Tiere</strong> erstellen.</p>
@@ -7558,10 +7559,10 @@ classDiagram
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="k">class</span> <span class="nc">Lebewesen</span><span class="p">:</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Lebewesen</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">alter</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">alter</span> <span class="o">=</span> <span class="n">alter</span>
@@ -7584,15 +7585,15 @@ classDiagram
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">baum</span> <span class="o">=</span> <span class="n">Lebewesen</span><span class="p">(</span><span class="s2">"Eiche"</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">baum</span> <span class="o">=</span> <span class="n">Lebewesen</span><span class="p">(</span><span class="s2">"Eiche"</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
 <span class="n">tier</span> <span class="o">=</span> <span class="n">Lebewesen</span><span class="p">(</span><span class="s2">"Reh"</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 <span class="n">baum</span><span class="o">.</span><span class="n">wachsen</span><span class="p">()</span>
 <span class="n">tier</span><span class="o">.</span><span class="n">wachsen</span><span class="p">()</span>
@@ -7600,6 +7601,20 @@ classDiagram
 <span class="c1"># Eiche wächst.</span>
 <span class="c1"># Reh wächst.</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Eiche wächst.
+Reh wächst.
+</pre>
 </div>
 </div>
 </div>
@@ -7622,12 +7637,6 @@ classDiagram
         +wachsen()
         -__photosynthese_starten()
     }
-    
-    Baum : +wachsen()
-    Baum : -__photosynthese_starten()
-    Baum : +name
-    Baum : +alter
-    Baum : -__photosynthese_aktiv
 </pre></div><p><strong>Codebeispiel</strong>:</p>
 </div>
 </div>
@@ -7640,7 +7649,7 @@ classDiagram
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="k">class</span> <span class="nc">Baum</span><span class="p">:</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Baum</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">alter</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">alter</span> <span class="o">=</span> <span class="n">alter</span>
@@ -7677,7 +7686,7 @@ classDiagram
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">eiche</span> <span class="o">=</span> <span class="n">Baum</span><span class="p">(</span><span class="s2">"Eiche"</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">eiche</span> <span class="o">=</span> <span class="n">Baum</span><span class="p">(</span><span class="s2">"Eiche"</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
 <span class="n">eiche</span><span class="o">.</span><span class="n">wachsen</span><span class="p">()</span>
 <span class="c1"># Ausgabe:</span>
 <span class="c1"># Photosynthese gestartet.</span>
@@ -7731,7 +7740,7 @@ classDiagram
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="k">class</span> <span class="nc">Tier</span><span class="p">(</span><span class="n">Lebewesen</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Tier</span><span class="p">(</span><span class="n">Lebewesen</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">alter</span><span class="p">,</span> <span class="n">art</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">alter</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">art</span> <span class="o">=</span> <span class="n">art</span>
@@ -7769,7 +7778,7 @@ classDiagram
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">spatz</span> <span class="o">=</span> <span class="n">Vogel</span><span class="p">(</span><span class="s2">"Spatz"</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">spatz</span> <span class="o">=</span> <span class="n">Vogel</span><span class="p">(</span><span class="s2">"Spatz"</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">spatz</span><span class="o">.</span><span class="n">atmen</span><span class="p">()</span>    <span class="c1"># Ausgabe: Spatz atmet.</span>
 <span class="n">spatz</span><span class="o">.</span><span class="n">fliegen</span><span class="p">()</span>  <span class="c1"># Ausgabe: Spatz fliegt.</span>
 </pre></div>
@@ -7824,7 +7833,7 @@ classDiagram
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="k">class</span> <span class="nc">Pflanze</span><span class="p">(</span><span class="n">Lebewesen</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Pflanze</span><span class="p">(</span><span class="n">Lebewesen</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">leben</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> wächst durch Photosynthese."</span><span class="p">)</span>
 
@@ -7859,7 +7868,7 @@ classDiagram
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">pflanze</span> <span class="o">=</span> <span class="n">Pflanze</span><span class="p">(</span><span class="s2">"Eiche"</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">pflanze</span> <span class="o">=</span> <span class="n">Pflanze</span><span class="p">(</span><span class="s2">"Eiche"</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
 <span class="n">tier</span> <span class="o">=</span> <span class="n">Tier</span><span class="p">(</span><span class="s2">"Reh"</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 <span class="n">pilz</span> <span class="o">=</span> <span class="n">Pilz</span><span class="p">(</span><span class="s2">"Champignon"</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 

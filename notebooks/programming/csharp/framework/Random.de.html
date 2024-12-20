@@ -7516,22 +7516,37 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><a href="../../abstract/Contents.de.html">Jeder kann coden</a> / <a href="../../Programming_And_TicTacToe.de.html">Programmieren &amp; TicTacToe</a> / <a href="../CSharp_Introduction.de.html">C# Einführung</a></p>
 <h1 id=".NET-System.Random">.NET System.Random<a class="anchor-link" href="#.NET-System.Random">¶</a></h1><p><img alt="No description has been provided for this image" src="Random.webp" style="width:280px; height:280px;"/></p>
 <p>In C# ist die Klasse  <code>Random</code>  Teil des Namensraums  <code>System</code>  und wird verwendet, um Pseudozufallszahlen zu generieren. Die Zahlen sind deterministisch, wenn sie mit demselben Seed initialisiert werden, da die  <code>Random</code>-Klasse einen Algorithmus verwendet, der den Zufall simuliert.</p>
 <h3 id="Erstellung-eines-Random-Objekts">Erstellung eines Random-Objekts<a class="anchor-link" href="#Erstellung-eines-Random-Objekts">¶</a></h3>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [61]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="n">Random</span> <span class="n">random</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Random</span><span class="p">();</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">Next</span><span class="p">());</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>1939825708
+</pre>
 </div>
 </div>
 </div>
@@ -7547,16 +7562,36 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [57]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="n">Random</span> <span class="n">randomWithSeed</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Random</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span> <span class="o">//</span> <span class="n">Der</span> <span class="n">Seed</span> <span class="mi">42</span> <span class="n">führt</span> <span class="n">immer</span> <span class="n">zu</span> <span class="n">den</span> <span class="n">gleichen</span> <span class="s2">"zufälligen"</span> <span class="n">Ergebnissen</span><span class="o">.</span><span class="err">`</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">randomWithSeed</span><span class="o">.</span><span class="n">Next</span><span class="p">());</span> 
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">randomWithSeed</span><span class="o">.</span><span class="n">Next</span><span class="p">());</span> 
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">randomWithSeed</span><span class="o">.</span><span class="n">Next</span><span class="p">());</span> 
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">randomWithSeed</span><span class="o">.</span><span class="n">Next</span><span class="p">());</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>1434747710
+302596119
+269548474
+1122627734
+</pre>
 </div>
 </div>
 </div>
@@ -7768,7 +7803,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [31]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [64]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="n">byte</span><span class="p">[]</span> <span class="nb">bytes</span> <span class="o">=</span> <span class="n">new</span> <span class="n">byte</span><span class="p">[</span><span class="mi">5</span><span class="p">];</span>
@@ -7786,7 +7821,7 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>179, 87, 139, 214, 113
+<pre>232, 218, 88, 94, 92
 </pre>
 </div>
 </div>
@@ -7808,7 +7843,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [32]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [62]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="n">Random</span> <span class="n">random</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Random</span><span class="p">();</span>
@@ -7826,7 +7861,7 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Würfelergebnis: 5
+<pre>Würfelergebnis: 4
 </pre>
 </div>
 </div>
@@ -7848,7 +7883,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [34]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [63]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="n">Random</span> <span class="n">random</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Random</span><span class="p">();</span>
@@ -7866,7 +7901,7 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Zufälliger Bruchteil: 0,09891045745042426
+<pre>Zufälliger Bruchteil: 0,2897057851918725
 </pre>
 </div>
 </div>

@@ -7516,6 +7516,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><a href="../../abstract/Contents.de.html">Jeder kann coden</a> / <a href="../../Programming_And_TicTacToe.de.html">Programmieren &amp; TicTacToe</a> / <a href="../CSharp_Introduction.de.html">C# Einführung</a> / <a href="../CSharp_Introduction/Conditional_statements.de.html">Bedingte Anweisungen Grundlagen</a></p>
 <h1 id="Bedingte-Anweisungen-in-C%23">Bedingte Anweisungen in C#<a class="anchor-link" href="#Bedingte-Anweisungen-in-C%23">¶</a></h1><table border="0">
 <tr>
 <td>
@@ -7528,8 +7529,6 @@ a.anchor-link {
 <tr>
 <td>
 <a href="https://learn.microsoft.com/de-de/dotnet/csharp/language-reference/statements/selection-statements">Link zur Microsoft Dokumentation (Quelle)</a><br/>
-<a href="CSharp_Boolean_Operators_Basics.de.html">Link zu Booleschen Operatoren</a><br/>
-<a href="CSharp_Conditional_TicTacToe.de.html">Link zu bedingten Anweisungen &amp; TictTacToe</a><br/>
 <a href="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3458764554345659184&amp;cot=14">Link zum roten Faden auf Miro</a><br/>
 <a href="https://www.w3schools.com/cs/cs_conditions.php">Link zu Tutorial auf w3schools (if, else)</a><br/>
 <a href="https://www.w3schools.com/cs/cs_switch.php">Link zu Tutorial auf w3schools (switch, case)</a>
@@ -7704,10 +7703,10 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="nb">int</span> <span class="n">day</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<div class="highlight hl-python"><pre><span></span><span class="nb">int</span> <span class="n">day</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
 <span class="n">switch</span> <span class="p">(</span><span class="n">day</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="k">case</span> <span class="mi">1</span><span class="p">:</span>
@@ -7735,7 +7734,7 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Mittwoch
+<pre>Ungültiger Tag
 </pre>
 </div>
 </div>
@@ -7785,10 +7784,11 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="nb">object</span> <span class="n">obj</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<div class="highlight hl-python"><pre><span></span><span class="nb">object</span> <span class="n">obj</span> <span class="o">=</span> <span class="s2">"string"</span><span class="p">;</span>
+<span class="n">obj</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 <span class="n">switch</span> <span class="p">(</span><span class="n">obj</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="k">case</span> <span class="nb">int</span> <span class="n">i</span> <span class="n">when</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
@@ -7796,6 +7796,9 @@ a.anchor-link {
         <span class="k">break</span><span class="p">;</span>
     <span class="k">case</span> <span class="nb">int</span> <span class="n">i</span> <span class="n">when</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
         <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Negative ganze Zahl"</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="n">string</span> <span class="n">s</span> <span class="n">when</span> <span class="n">s</span> <span class="o">==</span> <span class="s2">"Hallo"</span><span class="p">:</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Hallo"</span><span class="p">);</span>
         <span class="k">break</span><span class="p">;</span>
     <span class="n">default</span><span class="p">:</span>
         <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Unbekannter Typ oder null"</span><span class="p">);</span>
@@ -7813,7 +7816,7 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Positive ganze Zahl
+<pre>Hallo
 </pre>
 </div>
 </div>
