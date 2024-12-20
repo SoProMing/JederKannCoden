@@ -7545,7 +7545,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [36]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">Fluss</span>
@@ -7554,16 +7554,21 @@ a.anchor-link {
     <span class="n">private</span> <span class="n">double</span> <span class="n">Laenge</span> <span class="p">{</span> <span class="n">get</span><span class="p">;</span> <span class="nb">set</span><span class="p">;</span> <span class="p">}</span> <span class="o">//</span> <span class="n">Länge</span> <span class="ow">in</span> <span class="n">Kilometern</span>
     <span class="n">private</span> <span class="n">double</span> <span class="n">Durchfluss</span> <span class="p">{</span> <span class="n">get</span><span class="p">;</span> <span class="nb">set</span><span class="p">;</span> <span class="p">}</span> <span class="o">//</span> <span class="n">Durchfluss</span> <span class="ow">in</span> <span class="n">Kubikmeter</span> <span class="n">pro</span> <span class="n">Sekunde</span>
 
-    <span class="n">public</span> <span class="n">Fluss</span><span class="p">(</span><span class="n">string</span> <span class="n">a</span><span class="p">,</span> <span class="n">double</span> <span class="n">b</span><span class="p">,</span> <span class="n">double</span> <span class="n">c</span><span class="p">)</span>
+    <span class="n">public</span> <span class="n">Fluss</span><span class="p">(</span><span class="n">string</span> <span class="n">Name</span><span class="p">,</span> <span class="n">double</span> <span class="n">Laenge</span><span class="p">,</span> <span class="n">double</span> <span class="n">Durchfluss</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="n">Name</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
-        <span class="n">Laenge</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>
-        <span class="n">Durchfluss</span> <span class="o">=</span> <span class="n">c</span><span class="p">;</span>
+        <span class="n">this</span><span class="o">.</span><span class="n">Name</span> <span class="o">=</span> <span class="n">Name</span><span class="p">;</span>
+        <span class="n">this</span><span class="o">.</span><span class="n">Laenge</span> <span class="o">=</span> <span class="n">Laenge</span><span class="p">;</span>
+        <span class="n">this</span><span class="o">.</span><span class="n">Durchfluss</span> <span class="o">=</span> <span class="n">Durchfluss</span><span class="p">;</span>
     <span class="p">}</span>
 
     <span class="n">public</span> <span class="n">void</span> <span class="n">FlussInformation</span><span class="p">()</span>
     <span class="p">{</span>
         <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"</span><span class="si">{Name}</span><span class="s2"> hat eine Länge von {Laenge / 1000} km und einen Durchfluss von </span><span class="si">{Durchfluss}</span><span class="s2"> m³/s."</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="n">public</span> <span class="n">Fluss</span> <span class="n">durchFlussÜberflutet</span><span class="p">(</span> <span class="n">double</span> <span class="n">zusätzlicherDurchfluss</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Durchfluss</span> <span class="o">+=</span> <span class="n">zusätzlicherDurchfluss</span><span class="p">;</span>
+        <span class="k">return</span> <span class="n">this</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -7587,10 +7592,12 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [23]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [35]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="n">Fluss</span> <span class="n">fluss1</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Fluss</span><span class="p">(</span><span class="s2">"Rhein"</span><span class="p">,</span> <span class="mi">1233000</span><span class="p">,</span> <span class="mi">2900</span><span class="p">);</span>
+<span class="n">fluss1</span><span class="o">.</span><span class="n">FlussInformation</span><span class="p">();</span>
+<span class="n">fluss1</span><span class="o">.</span><span class="n">durchFlussÜberflutet</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span><span class="o">.</span><span class="n">FlussInformation</span><span class="p">();</span>
 <span class="n">fluss1</span><span class="o">.</span><span class="n">FlussInformation</span><span class="p">();</span>
 </pre></div>
 </div>
@@ -7605,6 +7612,8 @@ a.anchor-link {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>Rhein hat eine Länge von 1233 km und einen Durchfluss von 2900 m³/s.
+Rhein hat eine Länge von 1233 km und einen Durchfluss von 3400 m³/s.
+Rhein hat eine Länge von 1233 km und einen Durchfluss von 3400 m³/s.
 </pre>
 </div>
 </div>
@@ -7619,6 +7628,38 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>Hier erzeugt <code>new Fluss(...)</code> ein neues <code>Fluss</code>-Objekt und weist es der Variablen <code>rhein</code> zu. Dieses <code>rhein</code>-Objekt repräsentiert einen spezifischen Fluss und kann über die Methoden und Eigenschaften der Klasse angesprochen werden.</p>
 <h4 id="Objekte-anlegen-und-aufr%C3%A4umen">Objekte anlegen und aufräumen<a class="anchor-link" href="#Objekte-anlegen-und-aufr%C3%A4umen">¶</a></h4><p><a href="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3074457367127295133&amp;cot=14"><img alt="No description has been provided for this image" src="Create_n_cleanup_objects.jpg"/></a></p>
+<h3 id="%E2%89%9D-Definitionen">≝ Definitionen<a class="anchor-link" href="#%E2%89%9D-Definitionen">¶</a></h3><h4 id="Klasse">Klasse<a class="anchor-link" href="#Klasse">¶</a></h4><p>Eine Klasse ist ein Bauplan oder eine Vorlage für Objekte. Sie definiert die Eigenschaften (Felder) und das Verhalten (Methoden), die ein Objekt haben soll.</p>
+<p><strong>Beispiel in C#:</strong></p>
+<div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Auto</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Marke</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Fahren</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"Das Auto fährt."</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<h4 id="Instanz">Instanz<a class="anchor-link" href="#Instanz">¶</a></h4><p>Eine Instanz ist ein konkretes Objekt, das auf Basis einer Klasse erstellt wurde. Sie ist eine "reale Umsetzung" der Klasse im Speicher.</p>
+<p><strong>Beispiel in C#:</strong></p>
+<div class="highlight"><pre><span></span><span class="n">Auto</span><span class="w"> </span><span class="n">meinAuto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Auto</span><span class="p">();</span>
+</pre></div>
+<h4 id="Instanziierung">Instanziierung<a class="anchor-link" href="#Instanziierung">¶</a></h4><p>Der Prozess des Erstellens einer Instanz aus einer Klasse. Dies geschieht mit dem <code>new</code>-Schlüsselwort in C#.</p>
+<p><strong>Beispiel in C#:</strong></p>
+<div class="highlight"><pre><span></span><span class="n">Auto</span><span class="w"> </span><span class="n">meinAuto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Auto</span><span class="p">();</span><span class="w"> </span><span class="c1">// Instanziierung</span>
+</pre></div>
+<h4 id="Objekt">Objekt<a class="anchor-link" href="#Objekt">¶</a></h4><p>Ein Objekt ist eine konkrete Ausprägung einer Klasse. Es besitzt spezifische Werte für seine Eigenschaften und kann Methoden ausführen. Ein Objekt wird durch Instanziierung erzeugt.</p>
+<p><strong>Beispiel in C#:</strong></p>
+<div class="highlight"><pre><span></span><span class="n">Auto</span><span class="w"> </span><span class="n">meinAuto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Auto</span><span class="p">();</span>
+<span class="n">meinAuto</span><span class="p">.</span><span class="n">Marke</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Tesla"</span><span class="p">;</span><span class="w">  </span><span class="c1">// Objekt mit spezifischen Werten</span>
+<span class="n">meinAuto</span><span class="p">.</span><span class="n">Fahren</span><span class="p">();</span>
+</pre></div>
+<p>Zusammengefasst:</p>
+<ul>
+<li>Eine <strong>Klasse</strong> ist die Vorlage.</li>
+<li>Eine <strong>Instanz</strong> ist eine konkrete Umsetzung der Klasse.</li>
+<li>Die <strong>Instanziierung</strong> ist der Vorgang, eine Instanz zu erzeugen.</li>
+<li>Ein <strong>Objekt</strong> ist das Ergebnis der Instanziierung, also die reale Umsetzung der Klasse.</li>
+</ul>
 <h3 id="static"><code>static</code><a class="anchor-link" href="#static">¶</a></h3><p>Das Schlüsselwort <code>static</code> in C# ist ein Modifier, der sich auf <strong>Klassen, Methoden, Felder oder Eigenschaften</strong> anwenden lässt. Es bedeutet, dass ein Mitglied oder eine Klasse zur <strong>Klasse selbst</strong> gehört und nicht zu einer <strong>Instanz</strong> der Klasse. Du hast bereits gelernt, dass du mit <code>new</code> Objekte erstellst. Objekte gehören zu einer Instanz der Klasse. <code>static</code> hingegen gehört direkt zur Klasse und benötigt keine Instanz.</p>
 <h4 id="Unterschied-zwischen-static-und-Instanzbasiert">Unterschied zwischen <code>static</code> und Instanzbasiert<a class="anchor-link" href="#Unterschied-zwischen-static-und-Instanzbasiert">¶</a></h4><ul>
 <li><strong>Instanzbasiert</strong>: Mit <code>new</code> erzeugst du eine Instanz, und die Instanz hat ihre eigenen Daten.</li>
@@ -7637,7 +7678,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [26]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="k">class</span> <span class="nc">UmweltDaten</span>
@@ -7669,6 +7710,7 @@ a.anchor-link {
 <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"MaxTemperatur: </span><span class="si">{UmweltDaten.MaxTemperatur}</span><span class="s2">"</span><span class="p">);</span>
 <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Temperatur sensor1: </span><span class="si">{sensor1.AktuelleTemperatur}</span><span class="s2">"</span><span class="p">);</span>
 <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Temperatur sensor2: </span><span class="si">{sensor2.AktuelleTemperatur}</span><span class="s2">"</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Temperatur sensor2: </span><span class="si">{sensor1.AktuelleTemperatur}</span><span class="s2">"</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -7761,12 +7803,12 @@ Temperatur sensor2: 45
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [38]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">VerschmutzterFluss</span> <span class="p">:</span> <span class="n">Fluss</span>
@@ -7785,6 +7827,19 @@ Temperatur sensor2: 45
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>
+(13,30): error CS0122: 'Der Zugriff auf "Fluss.Name" ist aufgrund des Schutzgrads nicht möglich.</pre>
 </div>
 </div>
 </div>
@@ -7842,12 +7897,12 @@ Main hat eine Schadstoffkonzentration von 3,5 mg/L.
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [37]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="n">void</span> <span class="n">ZeigeFlussInfo</span><span class="p">(</span><span class="n">Fluss</span> <span class="n">fluss</span><span class="p">)</span>
@@ -7859,6 +7914,19 @@ Main hat eine Schadstoffkonzentration von 3,5 mg/L.
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>
+(4,18): error CS0246: Der Typ- oder Namespacename "VerschmutzterFluss" wurde nicht gefunden (möglicherweise fehlt eine using-Direktive oder ein Assemblyverweis).</pre>
 </div>
 </div>
 </div>
