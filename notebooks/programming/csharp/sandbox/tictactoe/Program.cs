@@ -90,7 +90,7 @@ class Program
             // Sieg überprüfen -> öffne CSharp_Conditional_TicTacToe.de.html
             // Checke Zeilen
 
-            bool gewinner = prüfeGewinner2();
+            bool gewinner = prüfeGewinner();
             if (gewinner)
             {
                 Console.WriteLine("Spieler " + aktuellerSpieler + " hat gewonnen!");
