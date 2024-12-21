@@ -16,8 +16,8 @@ namespace OOPQuiz
 
     abstract class QuizBase
     {
-        protected string encryptedMessage = "\x11\x07\x13\x11\x14\x11\x5D\x3A\x50\x51\x1C\x41\x4F\x5D\x13\x0C\x57\x4F\x50\x4E\x14\x5B\x4E\x52\x57\x5A";
-        protected char xorKey = 'K';
+        protected string encryptedMessage = "Îúçàí¨ßíáàæéëàüíæ¨ýæì¨ïýüíæ¨Úýüûëà©";
+        protected char xorKey = '\x88';
 
         // Abstrakte Methode, die von den abgeleiteten Klassen implementiert werden muss
         public abstract void Start();
