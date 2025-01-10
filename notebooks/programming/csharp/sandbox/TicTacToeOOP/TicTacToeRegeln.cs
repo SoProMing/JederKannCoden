@@ -23,7 +23,7 @@ namespace TicTacToeOOP
         {
             const int maxRunden = 9;
 
-//            spielfeldZeichnen();
+            Feld.male();
 
             for (int runde = 0; runde < maxRunden; runde++) // Alternative: bool gameover = false; while (!gameover) {}
             {

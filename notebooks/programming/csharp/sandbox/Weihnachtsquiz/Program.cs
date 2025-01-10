@@ -16,7 +16,7 @@ namespace OOPQuiz
 
     abstract class QuizBase
     {
-        protected string encryptedMessage = "Îúçàí¨ßíáàæéëàüíæ¨ýæì¨ïýüíæ¨Úýüûëà©";
+        protected string encryptedMessage = "Îúçàíû¨æíýíû¨Âéàú©";// "Frohes neues Jahr!";//"Îúçàí¨ßíáàæéëàüíæ¨ýæì¨ïýüíæ¨Úýüûëà©";
         protected char xorKey = '\x88';
 
         // Abstrakte Methode, die von den abgeleiteten Klassen implementiert werden muss
@@ -84,14 +84,14 @@ namespace OOPQuiz
         public int AddNumbers(int a, int b)
         {
             // Implementieren Sie diese Methode
-            return 0; // Platzhalter
+            return a + b; // Platzhalter
         }
 
         // Methode 2: Leere Methode, die implementiert werden muss
         public string GetGreeting(string name)
         {
             // Implementieren Sie diese Methode
-            return string.Empty; // Platzhalter
+            return $"Hallo, {name}!"; // Platzhalter
         }
     }
 }
