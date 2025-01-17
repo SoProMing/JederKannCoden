@@ -7516,31 +7516,76 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Jeder-kann-coden">Jeder kann coden<a class="anchor-link" href="#Jeder-kann-coden">¶</a></h1><table border="0">
+<p><a href="../../abstract/Contents.de.html">Jeder kann coden</a> / <a href="../../Programming_And_TicTacToe.de.html">Programmieren &amp; TicTacToe</a> / <a href="../CSharp_Introduction.de.html">C# Einführung</a></p>
+<h1 id="Exceptions">Exceptions<a class="anchor-link" href="#Exceptions">¶</a></h1><table border="0">
 <tr>
 <td>
-<img alt="No description has been provided for this image" src="Everybody_can_code.webp"/>
+<img alt="No description has been provided for this image" src="Exceptions.webp"/>
 </td>
 <td rowspan="2">
-<a href="https://miro.com/app/board/uXjVPm0lbTo=/?moveToWidget=3458764607889708296&amp;cot=14"><img alt="No description has been provided for this image" src="Radar.de.jpg"/></a>
+<a href="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3458764554347680798&amp;cot=14"><img alt="No description has been provided for this image" src="Radar_Exceptions.jpg"/></a>
 </td>
 </tr>
 <tr>
 <td>
-<a href="https://www.codewars.com">Link zu codewars</a><br/>
-<a href="https://www.hackerrank.com">Link zu hackerrank</a><br/>
-<a href="https://www.w3schools.com/">W3Schools: Programmier-Tutorials für Anfänger</a> <br/>
-<a href="https://www.freecodecamp.org/">freeCodeCamp: Interaktives Lernen für Programmieren</a> <br/>
-<a href="https://cs50.harvard.edu/x/">CS50 von Harvard: Einführung in Informatik</a> <br/>
-<a href="https://visualgo.net/">Visualgo: Visualisierung von Algorithmen</a> <br/>
-<a href="https://teachyourselfcs.com/">Teach Yourself Computer Science</a> <br/>
-<a href="https://guides.github.com/introduction/git-handbook/">Git und GitHub Einführung</a> <br/>
-<a href="https://refactoring.guru/">Refactoring Guru: Clean Code Konzepte</a> <br/>
-<a href="https://www.codewars.com/">Codewars: Programmier-Challenges für alle Niveaus</a> <br/>
-<a href="https://www.hackerrank.com/">HackerRank: Coding-Challenges und Wettbewerbe</a>
+<a href="https://learn.microsoft.com/de-de/dotnet/csharp/fundamentals/exceptions/" target="_blank">Grundlagen zu Exceptions in C#</a><br/>
+<a href="https://learn.microsoft.com/de-de/dotnet/standard/exceptions/" target="_blank">Übersicht über die .NET-Exception-Hierarchie</a><br/>
+<a href="https://learn.microsoft.com/de-de/dotnet/api/system.exception" target="_blank">System.Exception Klasse (API-Referenz)</a><br/>
+<a href="https://learn.microsoft.com/de-de/dotnet/csharp/language-reference/keywords/try-catch" target="_blank">try-catch-Schlüsselwort in C#</a><br/>
+<a href="https://learn.microsoft.com/de-de/dotnet/csharp/language-reference/keywords/throw" target="_blank">throw-Schlüsselwort in C#</a><br/>
+<a href="https://learn.microsoft.com/de-de/dotnet/csharp/language-reference/keywords/finally" target="_blank">finally-Schlüsselwort in C#</a><br/>
+<a href="https://learn.microsoft.com/de-de/dotnet/csharp/programming-guide/exceptions/creating-and-throwing-exceptions" target="_blank">Benutzerdefinierte Exceptions erstellen und verwenden</a><br/>
+<a href="https://learn.microsoft.com/de-de/dotnet/standard/exceptions/how-to-implement-user-defined-exceptions" target="_blank">How-to: Benutzerdefinierte Exceptions implementieren</a><br/>
+<a href="https://learn.microsoft.com/de-de/dotnet/framework/debug-trace-profile/handling-and-throwing-exceptions" target="_blank">Fehlerbehandlung und Auslösen von Exceptions in .NET Framework</a><br/>
+<a href="https://learn.microsoft.com/de-de/dotnet/core/diagnostics/" target="_blank">Diagnose und Debugging von .NET-Anwendungen</a><br/>
+<a href="https://learn.microsoft.com/de-de/dotnet/core/extensions/logging" target="_blank">Logging in .NET-Anwendungen</a>
 </td>
 </tr>
 </table>
+<p>Die Seite behandelt die Grundlagen von <em>Exceptions</em> (Ausnahmen) in C# und erklärt, wie Fehler in Programmen behandelt werden können. Hier sind die wichtigsten Inhalte und Beispiele, kommentiert und erklärt:</p>
+<h3 id="1.-Einf%C3%BChrung-in-Exceptions">1. Einführung in Exceptions<a class="anchor-link" href="#1.-Einf%C3%BChrung-in-Exceptions">¶</a></h3><p>Exceptions sind Ereignisse, die während der Laufzeit auftreten und das normale Ausführen eines Programms unterbrechen. Sie werden verwendet, um Fehler zu erkennen und zu behandeln, ohne dass das Programm abstürzt.</p>
+<h3 id="2.-try,-catch,-finally-Bl%C3%B6cke">2. <code>try</code>, <code>catch</code>, <code>finally</code>-Blöcke<a class="anchor-link" href="#2.-try,-catch,-finally-Bl%C3%B6cke">¶</a></h3><p>Exceptions werden in C# oft mit <code>try</code>, <code>catch</code> und <code>finally</code> behandelt. Ein <code>try</code>-Block enthält den Code, der möglicherweise eine Ausnahme auslöst. <code>catch</code> fängt die Ausnahme ab und erlaubt es, den Fehler zu behandeln, und <code>finally</code> führt Code aus, der unabhängig davon läuft, ob eine Ausnahme auftrat oder nicht.</p>
+<h4 id="Beispiel-1:-Grundstruktur-mit-try,-catch,-und-finally">Beispiel 1: Grundstruktur mit <code>try</code>, <code>catch</code>, und <code>finally</code><a class="anchor-link" href="#Beispiel-1:-Grundstruktur-mit-try,-catch,-und-finally">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="k">try</span>
+<span class="p">{</span>
+    <span class="nb">int</span> <span class="n">divisor</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="nb">int</span> <span class="n">result</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">/</span> <span class="n">divisor</span><span class="p">;</span> <span class="o">//</span> <span class="n">Dies</span> <span class="n">löst</span> <span class="n">eine</span> <span class="n">Division</span> <span class="n">durch</span> <span class="n">Null</span> <span class="n">Ausnahme</span> <span class="n">aus</span>
+<span class="p">}</span>
+<span class="n">catch</span> <span class="p">(</span><span class="n">DivideByZeroException</span> <span class="n">ex</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Fehler: Division durch Null ist nicht erlaubt."</span><span class="p">);</span> <span class="o">//</span> <span class="n">Fehlerbehandlung</span>
+<span class="p">}</span>
+<span class="k">finally</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Dieser Block wird immer ausgeführt, egal ob eine Ausnahme auftritt oder nicht."</span><span class="p">);</span> <span class="o">//</span> <span class="n">Cleanup</span><span class="o">-</span><span class="n">Code</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Fehler: Division durch Null ist nicht erlaubt.
+Dieser Block wird immer ausgeführt, egal ob eine Ausnahme auftritt oder nicht.
+</pre>
+</div>
 </div>
 </div>
 </div>
@@ -7551,72 +7596,50 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Inhaltsverzeichnis">Inhaltsverzeichnis<a class="anchor-link" href="#Inhaltsverzeichnis">¶</a></h2><h3 id="Vorbereitung">Vorbereitung<a class="anchor-link" href="#Vorbereitung">¶</a></h3><ul>
-<li><a href="../csharp/CSharp_icebreaker.de.html">Eisbrecher</a></li>
-<li><a href="Number_Systems.de.html">Zahlensysteme und Zeichen</a></li>
-<li><a href="../csharp/tools/Toolchain.de.html">Werkzeuge zur Vorlesung</a></li>
+<ul>
+<li><strong>Kommentar</strong>: In diesem Beispiel wird versucht, durch Null zu teilen, was eine <code>DivideByZeroException</code> auslöst. Der <code>catch</code>-Block fängt die Ausnahme ab und gibt eine Fehlermeldung aus. Der <code>finally</code>-Block wird am Ende immer ausgeführt und kann zur Bereinigung genutzt werden.</li>
 </ul>
-<h3 id="Grundlagen">Grundlagen<a class="anchor-link" href="#Grundlagen">¶</a></h3><ul>
-<li><a href="Programming_And_TicTacToe.de.html">Programmieren &amp; TicTacToe:</a> Prozedurale Programmierung am Beispiel von Python &amp; TicTacToe</li>
-<li><a href="../csharp/CSharp_Introduction.de.html">Einführung in C#:</a> Prozedurale Programmierung in C# als Übersicht<ul>
-<li><a href="../csharp/CSharp_Introduction/Variables.de.html">Weitere Grundlagen zu Variablen</a></li>
-<li><a href="../csharp/CSharp_Introduction/Strings.de.html">Weitere Grundlagen zu String</a></li>
-<li><a href="../csharp/CSharp_Introduction/Conditional_statements.de.html">Weitere Grundlagen zu bedingten Anweisungen</a></li>
-<li><a href="../csharp/CSharp_Introduction/Loops.de.html">Weitere Grundlagen zu Schleifen</a></li>
-<li><a href="../csharp/CSharp_Introduction/Operators.de.html">Weitere Grundlagen zu Operatoren</a></li>
-<li><a href="../csharp/CSharp_Introduction/Functions.de.html">Weitere Grundlagen zu Funktionen</a></li>
-<li><a href="../csharp/CSharp_Introduction/Arrays.de.html">Weitere Grundlagen zu Arrays</a></li>
-<li><a href="../csharp/CSharp_Introduction/Complex_Datastructures.de.html">Weitere Grundlagen zu komplexen Datenstrukturen</a></li>
-</ul>
-</li>
-</ul>
-<h3 id="Vertiefung">Vertiefung<a class="anchor-link" href="#Vertiefung">¶</a></h3><h4 id="Textausgabe">Textausgabe<a class="anchor-link" href="#Textausgabe">¶</a></h4><ul>
-<li><a href="../csharp/procedural-functional/Console_WriteLine_Basics.de.html">WriteLine Basiswissen</a></li>
-<li><a href="../csharp/procedural-functional/CSharp_HelloWorld_Explanation.de.html">Hallo Welt!</a></li>
-<li><a href="../csharp/procedural-functional/Console_WriteLine_Samples.de.html">WriteLine Samples</a></li>
-<li><a href="../csharp/procedural-functional/Console_WriteLine_TicTacToe.de.html">WriteLine &amp; TicTacToe</a></li>
-</ul>
-<h4 id="Texteingabe">Texteingabe<a class="anchor-link" href="#Texteingabe">¶</a></h4><ul>
-<li><a href="../csharp/procedural-functional/Console_ReadLine_Basics.de.html">ReadLine &amp; TicTacToe</a></li>
-</ul>
-<h4 id="Operatoren">Operatoren<a class="anchor-link" href="#Operatoren">¶</a></h4><ul>
-<li><a href="../csharp/procedural-functional/CSharp_Boolean_Operators_Basics.de.html">Boolesche Operatoren</a></li>
-<li><a href="../csharp/procedural-functional/CSharp_Other_Operators_Basics.de.html">Weitere Operatoren</a></li>
-</ul>
-<h4 id="Datentypen">Datentypen<a class="anchor-link" href="#Datentypen">¶</a></h4><ul>
-<li><a href="../csharp/procedural-functional/CSharp_Numerical_Types.de.html">Numerische Typen</a></li>
-<li><a href="../csharp/procedural-functional/CSharp_Numerical_Floating_Types.de.html">Numerische Gleitkomma-Typen</a></li>
-<li><a href="../csharp/procedural-functional/CSharp_String_Type.de.html">String Typen</a></li>
-<li><a href="../csharp/procedural-functional/CSharp_Arrays.de.html">Arrays</a></li>
-</ul>
-<h4 id="Kontrollstrukturen">Kontrollstrukturen<a class="anchor-link" href="#Kontrollstrukturen">¶</a></h4><ul>
-<li><a href="../csharp/procedural-functional/CSharp_Conditional.de.html">Bedingte Anweisungen</a></li>
-<li><a href="../csharp/procedural-functional/CSharp_Loops.de.html">Schleifen</a></li>
-<li><a href="../csharp/procedural-functional/CSharp_Conditional_TicTacToe.de.html">Bedingte Anweisungen &amp; TicTacToe</a></li>
-</ul>
-<h4 id=".NET-framework">.NET framework<a class="anchor-link" href="#.NET-framework">¶</a></h4><ul>
-<li><a href="../csharp/framework/Random.de.html">System.Random</a></li>
-<li><a href="../csharp/framework/Regular_Expressions.de.html">Reguläre Ausdrücke</a></li>
-</ul>
-<h3 id="TicTacToe-in-einer-einzelnen-Prozedur"><a href="../csharp/procedural-functional/CSharp_Loops_TicTacToe.de.html">TicTacToe in einer einzelnen Prozedur</a><a class="anchor-link" href="#TicTacToe-in-einer-einzelnen-Prozedur">¶</a></h3><h3 id="Funktionale-Programmierung">Funktionale Programmierung<a class="anchor-link" href="#Funktionale-Programmierung">¶</a></h3><ul>
-<li><a href="../csharp/procedural-functional/CSharp_Methods_Functions.de.html">Funktionen &amp; Prozeduren</a></li>
-</ul>
-<h3 id="Debugging">Debugging<a class="anchor-link" href="#Debugging">¶</a></h3><ul>
-<li><a href="../csharp/tools/Debugger.de.html">Debugging &amp; Breakpoints</a></li>
-<li><a href="../csharp/procedural-functional/CSharp_Reference_Value.de.html">Referenz- &amp; Werttypen</a></li>
-</ul>
-<h3 id="Objektorientierte-Programmierung">Objektorientierte Programmierung<a class="anchor-link" href="#Objektorientierte-Programmierung">¶</a></h3><h4 id="Grundlagen">Grundlagen<a class="anchor-link" href="#Grundlagen">¶</a></h4><ul>
-<li><a href="../Objectoriented_Programming.de.html">Einleitung</a></li>
-<li><a href="../csharp/oop/CSharp_Basics.de.html">Objektorientierte Programmierung in C# Grundlagen</a></li>
-</ul>
-<h4 id="Vertiefung">Vertiefung<a class="anchor-link" href="#Vertiefung">¶</a></h4><ul>
-<li><a href="../csharp/oop/CSharp_Samples.de.html">Objektorientierte Programmierung in C# Samples</a><ul>
-<li><a href="../csharp/oop/CSharp_Access_Modifiers.de.html">Zugriffsmodifizierer</a></li>
-<li><a href="../csharp/oop/Constructors.de.html">Konstruktoren</a></li>
-<li><a href="../csharp/oop/Properties.de.html">Properties</a></li>
-</ul>
-</li>
-</ul>
+<h3 id="3.-Spezifische-Exceptions-behandeln">3. Spezifische Exceptions behandeln<a class="anchor-link" href="#3.-Spezifische-Exceptions-behandeln">¶</a></h3><p>In C# können verschiedene Exception-Typen auftreten, wie <code>ArgumentNullException</code>, <code>FileNotFoundException</code> und viele mehr. Man kann mehrere <code>catch</code>-Blöcke verwenden, um verschiedene Exception-Typen zu behandeln.</p>
+<h4 id="Beispiel-2:-Mehrere-catch-Bl%C3%B6cke">Beispiel 2: Mehrere <code>catch</code>-Blöcke<a class="anchor-link" href="#Beispiel-2:-Mehrere-catch-Bl%C3%B6cke">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="k">try</span>
+<span class="p">{</span>
+    <span class="n">string</span><span class="p">[]</span> <span class="n">names</span> <span class="o">=</span> <span class="n">null</span><span class="p">;</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">names</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span> <span class="o">//</span> <span class="n">Zugriff</span> <span class="n">auf</span> <span class="n">null</span><span class="o">-</span><span class="n">Array</span> <span class="n">löst</span> <span class="n">eine</span> <span class="n">NullReferenceException</span> <span class="n">aus</span>
+<span class="p">}</span>
+<span class="n">catch</span> <span class="p">(</span><span class="n">NullReferenceException</span> <span class="n">ex</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Fehler: Es wurde auf ein null-Array zugegriffen."</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="n">catch</span> <span class="p">(</span><span class="n">IndexOutOfRangeException</span> <span class="n">ex</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Fehler: Index außerhalb des Bereichs."</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Fehler: Es wurde auf ein null-Array zugegriffen.
+</pre>
+</div>
 </div>
 </div>
 </div>
@@ -7627,8 +7650,421 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Anhang">Anhang<a class="anchor-link" href="#Anhang">¶</a></h3><p><a href="../Create_pdf.en.html">Erzeugen von HTML-Seiten aus den notebooks</a></p>
-<p><a href="../cmdline/Shells.de.html">Kommandozeile</a></p>
+<ul>
+<li><strong>Kommentar</strong>: Hier versucht das Programm, auf ein null-Array zuzugreifen, was eine <code>NullReferenceException</code> auslöst. Der entsprechende <code>catch</code>-Block behandelt diesen Fehler. Würde der Fehler nicht übereinstimmen, könnte ein anderer <code>catch</code>-Block einspringen.</li>
+</ul>
+<h3 id="4.-Benutzerdefinierte-Exceptions">4. Benutzerdefinierte Exceptions<a class="anchor-link" href="#4.-Benutzerdefinierte-Exceptions">¶</a></h3><p>Man kann eigene Exception-Typen erstellen, um spezifische Fehlerfälle in eigenen Anwendungen zu kennzeichnen. Hierzu wird von der <code>Exception</code>-Klasse abgeleitet.</p>
+<h4 id="Beispiel-3:-Benutzerdefinierte-Exception">Beispiel 3: Benutzerdefinierte Exception<a class="anchor-link" href="#Beispiel-3:-Benutzerdefinierte-Exception">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">InvalidAgeException</span> <span class="p">:</span> <span class="ne">Exception</span>
+<span class="p">{</span>
+    <span class="n">public</span> <span class="n">InvalidAgeException</span><span class="p">(</span><span class="n">string</span> <span class="n">message</span><span class="p">)</span> <span class="p">:</span> <span class="n">base</span><span class="p">(</span><span class="n">message</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">try</span>
+<span class="p">{</span>
+    <span class="nb">int</span> <span class="n">age</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">age</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">throw</span> <span class="n">new</span> <span class="n">InvalidAgeException</span><span class="p">(</span><span class="s2">"Alter kann nicht negativ sein."</span><span class="p">);</span> <span class="o">//</span> <span class="n">Benutzerdefinierte</span> <span class="ne">Exception</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">catch</span> <span class="p">(</span><span class="n">InvalidAgeException</span> <span class="n">ex</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Benutzerdefinierte Exception abgefangen: </span><span class="si">{ex.Message}</span><span class="s2">"</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Benutzerdefinierte Exception abgefangen: Alter kann nicht negativ sein.
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ul>
+<li><strong>Kommentar</strong>: Die benutzerdefinierte Exception <code>InvalidAgeException</code> wird erstellt und genutzt, um ein negatives Alter abzufangen. Dies ermöglicht spezifische Fehlerbehandlungen.</li>
+</ul>
+<h3 id="5.-Die-throw-Anweisung">5. Die <code>throw</code>-Anweisung<a class="anchor-link" href="#5.-Die-throw-Anweisung">¶</a></h3><p>Mit <code>throw</code> kann eine Exception explizit ausgelöst werden. Dies ist nützlich, wenn bestimmte Bedingungen nicht erfüllt sind.</p>
+<h4 id="Beispiel-4:-Verwendung-von-throw">Beispiel 4: Verwendung von <code>throw</code><a class="anchor-link" href="#Beispiel-4:-Verwendung-von-throw">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">CheckPositive</span><span class="p">(</span><span class="nb">int</span> <span class="n">number</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">number</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">throw</span> <span class="n">new</span> <span class="n">ArgumentException</span><span class="p">(</span><span class="s2">"Die Zahl muss positiv sein."</span><span class="p">);</span> <span class="o">//</span> <span class="n">Ausnahme</span> <span class="n">wird</span> <span class="n">explizit</span> <span class="n">ausgelöst</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">try</span>
+<span class="p">{</span>
+    <span class="n">CheckPositive</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="n">catch</span> <span class="p">(</span><span class="n">ArgumentException</span> <span class="n">ex</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Fehler: </span><span class="si">{ex.Message}</span><span class="s2">"</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Fehler: Die Zahl muss positiv sein.
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ul>
+<li><strong>Kommentar</strong>: Die Methode <code>CheckPositive</code> prüft, ob eine Zahl positiv ist. Wenn die Zahl negativ oder null ist, wird eine <code>ArgumentException</code> mit einer Nachricht ausgelöst.</li>
+</ul>
+<h3 id="6.-Exception-Wiederverwendung">6. Exception-Wiederverwendung<a class="anchor-link" href="#6.-Exception-Wiederverwendung">¶</a></h3><p>In einem <code>catch</code>-Block kann <code>throw;</code> ohne Argument genutzt werden, um die aktuelle Exception erneut auszulösen, sodass sie von anderen Teilen des Programms weiterverarbeitet werden kann.</p>
+<h4 id="Beispiel-5:-Exception-Wiederverwendung">Beispiel 5: Exception-Wiederverwendung<a class="anchor-link" href="#Beispiel-5:-Exception-Wiederverwendung">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="k">try</span>
+<span class="p">{</span>
+    <span class="k">try</span>
+    <span class="p">{</span>
+        <span class="nb">int</span><span class="p">[]</span> <span class="n">numbers</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span> <span class="p">};</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">numbers</span><span class="p">[</span><span class="mi">5</span><span class="p">]);</span> <span class="o">//</span> <span class="n">Ausnahme</span> <span class="n">auslösen</span>
+    <span class="p">}</span>
+    <span class="n">catch</span> <span class="p">(</span><span class="n">IndexOutOfRangeException</span> <span class="n">ex</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Fehler in innerem Block."</span><span class="p">);</span>
+        <span class="n">throw</span><span class="p">;</span> <span class="o">//</span> <span class="n">Ausnahme</span> <span class="n">weitergeben</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">catch</span> <span class="p">(</span><span class="n">IndexOutOfRangeException</span> <span class="n">ex</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Fehler im äußeren Block."</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Fehler in innerem Block.
+Fehler im äußeren Block.
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ul>
+<li><strong>Kommentar</strong>: Im inneren <code>catch</code>-Block wird die Ausnahme weitergegeben, um sie im äußeren <code>catch</code>-Block erneut zu behandeln.</li>
+</ul>
+<h3 id="7.-Ausnahmeinformationen-anzeigen">7. Ausnahmeinformationen anzeigen<a class="anchor-link" href="#7.-Ausnahmeinformationen-anzeigen">¶</a></h3><p>Exceptions besitzen Eigenschaften wie <code>Message</code>, <code>StackTrace</code> und <code>InnerException</code>, um zusätzliche Informationen bereitzustellen.</p>
+<h4 id="Beispiel-6:-Eigenschaften-einer-Exception">Beispiel 6: Eigenschaften einer Exception<a class="anchor-link" href="#Beispiel-6:-Eigenschaften-einer-Exception">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="k">try</span>
+<span class="p">{</span>
+    <span class="nb">int</span> <span class="n">divisor</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="nb">int</span> <span class="n">result</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">/</span> <span class="n">divisor</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="n">catch</span> <span class="p">(</span><span class="n">DivideByZeroException</span> <span class="n">ex</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Fehler: </span><span class="si">{ex.Message}</span><span class="s2">"</span><span class="p">);</span> <span class="o">//</span> <span class="n">Fehlermeldung</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Stapelverfolgung: </span><span class="si">{ex.StackTrace}</span><span class="s2">"</span><span class="p">);</span> <span class="o">//</span> <span class="n">StackTrace</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Fehler: Attempted to divide by zero.
+Stapelverfolgung:    at Submission#7.&lt;&lt;Initialize&gt;&gt;d__0.MoveNext()
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ul>
+<li><strong>Kommentar</strong>: Dieses Beispiel zeigt, wie <code>Message</code> und <code>StackTrace</code> einer Exception genutzt werden können, um detaillierte Informationen zum Fehler zu erhalten.</li>
+</ul>
+<h3 id="8.-when-Filter-in-catch">8. <code>when</code>-Filter in <code>catch</code><a class="anchor-link" href="#8.-when-Filter-in-catch">¶</a></h3><p>Mit <code>when</code> kann man Bedingungen festlegen, die ein <code>catch</code>-Block erfüllen muss.</p>
+<h4 id="Beispiel-7:-Verwendung-von-catch-mit-when">Beispiel 7: Verwendung von <code>catch</code> mit <code>when</code><a class="anchor-link" href="#Beispiel-7:-Verwendung-von-catch-mit-when">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="k">try</span>
+<span class="p">{</span>
+    <span class="nb">int</span> <span class="n">value</span> <span class="o">=</span> <span class="o">-</span><span class="mi">10</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">value</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">throw</span> <span class="n">new</span> <span class="n">ArgumentOutOfRangeException</span><span class="p">(</span><span class="s2">"value"</span><span class="p">,</span> <span class="s2">"Wert darf nicht negativ sein."</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">catch</span> <span class="p">(</span><span class="n">ArgumentOutOfRangeException</span> <span class="n">ex</span><span class="p">)</span> <span class="n">when</span> <span class="p">(</span><span class="n">ex</span><span class="o">.</span><span class="n">ParamName</span> <span class="o">==</span> <span class="s2">"value"</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Der Wert-Parameter war negativ."</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Der Wert-Parameter war negativ.
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ul>
+<li><strong>Kommentar</strong>: Hier wird ein <code>catch</code>-Block nur ausgeführt, wenn die Bedingung <code>ex.ParamName == "value"</code> erfüllt ist. Das ermöglicht eine gezielte Behandlung.</li>
+</ul>
+<h3 id="Cheatsheet-Exceptions">Cheatsheet Exceptions<a class="anchor-link" href="#Cheatsheet-Exceptions">¶</a></h3><p><a href="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3458764514035549144&amp;cot=14"><img alt="No description has been provided for this image" src="Cheatsheet_Exceptions.jpg"/></a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Vertiefung">Vertiefung<a class="anchor-link" href="#Vertiefung">¶</a></h2><p>Das Thema Exceptions in C# ist umfassend und bietet viele weitere Aspekte, die ergänzend behandelt werden können, um ein vollständiges Verständnis zu entwickeln. Hier einige zusätzliche Punkte:</p>
+<h3 id="1.-Best-Practices-bei-der-Fehlerbehandlung">1. <strong>Best Practices bei der Fehlerbehandlung</strong><a class="anchor-link" href="#1.-Best-Practices-bei-der-Fehlerbehandlung">¶</a></h3><ul>
+<li><p><strong>Nur erwartete Ausnahmen abfangen:</strong> Fangen Sie nur solche Ausnahmen ab, die Sie sinnvoll behandeln können. Allgemeine <code>catch (Exception)</code>-Blöcke sollten vermieden werden, es sei denn, sie sind gut begründet.</p>
+</li>
+<li><p><strong>Spezifischere Ausnahmen zuerst behandeln:</strong> Wenn mehrere <code>catch</code>-Blöcke verwendet werden, sollten spezifischere Ausnahmen vor allgemeine gesetzt werden.</p>
+<div class="highlight"><pre><span></span><span class="k">try</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// Code</span>
+<span class="p">}</span>
+<span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">ArgumentOutOfRangeException</span><span class="w"> </span><span class="n">ex</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// Behandlung spezifischer Ausnahme</span>
+<span class="p">}</span>
+<span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">ex</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// Allgemeine Ausnahmebehandlung</span>
+<span class="p">}</span>
+</pre></div>
+</li>
+<li><p><strong>Vermeidung von <code>catch</code> ohne Aktion:</strong> Leere <code>catch</code>-Blöcke führen dazu, dass Fehler ignoriert werden, was Debugging und Wartung erschwert.</p>
+</li>
+</ul>
+<h3 id="2.-Performance-%C3%9Cberlegungen">2. <strong>Performance-Überlegungen</strong><a class="anchor-link" href="#2.-Performance-%C3%9Cberlegungen">¶</a></h3><ul>
+<li><p>Das Auslösen und Abfangen von Ausnahmen ist ressourcenintensiv. Verwenden Sie Ausnahmen daher nur für Fehlerfälle und nicht für Kontrollfluss.</p>
+<p><strong>Beispiel (schlecht):</strong></p>
+<div class="highlight"><pre><span></span><span class="k">try</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Array</span><span class="p">.</span><span class="n">FindIndex</span><span class="p">(</span><span class="n">array</span><span class="p">,</span><span class="w"> </span><span class="n">item</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">item</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">value</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">index</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="o">-</span><span class="m">1</span><span class="p">)</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Exception</span><span class="p">(</span><span class="s">"Wert nicht gefunden."</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">catch</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// Alternative Verarbeitung</span>
+<span class="p">}</span>
+</pre></div>
+<p><strong>Besser:</strong></p>
+<div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Array</span><span class="p">.</span><span class="n">FindIndex</span><span class="p">(</span><span class="n">array</span><span class="p">,</span><span class="w"> </span><span class="n">item</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">item</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">value</span><span class="p">);</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">index</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="o">-</span><span class="m">1</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"Wert nicht gefunden."</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</li>
+</ul>
+<h3 id="3.-Ressourcenverwaltung-mit-using">3. <strong>Ressourcenverwaltung mit <code>using</code></strong><a class="anchor-link" href="#3.-Ressourcenverwaltung-mit-using">¶</a></h3><p>Für Objekte, die Ressourcen belegen (z. B. Datei- oder Datenbankzugriffe), kann <code>using</code> verwendet werden. Es stellt sicher, dass die Ressourcen auch im Fehlerfall ordnungsgemäß freigegeben werden.</p>
+<div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="p">(</span><span class="n">StreamReader</span><span class="w"> </span><span class="n">reader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StreamReader</span><span class="p">(</span><span class="s">"file.txt"</span><span class="p">))</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">content</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">reader</span><span class="p">.</span><span class="n">ReadToEnd</span><span class="p">();</span>
+<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">content</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">// Ressourcen werden hier automatisch freigegeben</span>
+</pre></div>
+<ul>
+<li><strong>Alternative mit <code>try</code>-<code>finally</code>:</strong> Falls <code>using</code> nicht verwendet wird, kann ein <code>finally</code>-Block zur Freigabe genutzt werden.</li>
+</ul>
+<h3 id="4.-Unbehandelte-Ausnahmen">4. <strong>Unbehandelte Ausnahmen</strong><a class="anchor-link" href="#4.-Unbehandelte-Ausnahmen">¶</a></h3><ul>
+<li><p><strong>Globaler Exception-Handler:</strong> Für Anwendungen (insbesondere GUIs oder Server) kann ein globaler Exception-Handler definiert werden, um unbehandelte Ausnahmen abzufangen.</p>
+<p><strong>Beispiel (Konsolenanwendung):</strong></p>
+<div class="highlight"><pre><span></span><span class="n">AppDomain</span><span class="p">.</span><span class="n">CurrentDomain</span><span class="p">.</span><span class="n">UnhandledException</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="p">(</span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$"Unbehandelte Ausnahme: {args.ExceptionObject}"</span><span class="p">);</span>
+<span class="p">};</span>
+</pre></div>
+</li>
+</ul>
+<h3 id="5.-Asynchrone-Fehlerbehandlung">5. <strong>Asynchrone Fehlerbehandlung</strong><a class="anchor-link" href="#5.-Asynchrone-Fehlerbehandlung">¶</a></h3><p>Bei asynchronen Methoden (z. B. <code>async</code>/<code>await</code>) ist die Fehlerbehandlung ein wenig anders:</p>
+<ul>
+<li><p>Exceptions in asynchronen Methoden können mit <code>try</code>-<code>catch</code> abgefangen werden.</p>
+<div class="highlight"><pre><span></span><span class="k">try</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nf">SomeAsyncMethod</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">ex</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$"Fehler: {ex.Message}"</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</li>
+<li><p>Exceptions, die in <code>Task</code>-Objekten auftreten, können mit <code>Task.Wait</code> oder <code>Task.Result</code> abgefangen werden.</p>
+</li>
+</ul>
+<h3 id="6.-Dokumentation-von-Exceptions">6. <strong>Dokumentation von Exceptions</strong><a class="anchor-link" href="#6.-Dokumentation-von-Exceptions">¶</a></h3><ul>
+<li><p><strong>XML-Kommentare:</strong> Methoden, die Exceptions auslösen können, sollten dies in den XML-Kommentaren dokumentieren. Dies hilft Entwicklern, sich auf mögliche Fehler vorzubereiten.</p>
+<div class="highlight"><pre><span></span><span class="c1">/// &lt;summary&gt;</span>
+<span class="c1">/// Führt eine Berechnung aus.</span>
+<span class="c1">/// &lt;/summary&gt;</span>
+<span class="c1">/// &lt;param name="value"&gt;Ein Wert für die Berechnung.&lt;/param&gt;</span>
+<span class="c1">/// &lt;exception cref="ArgumentOutOfRangeException"&gt;Wenn der Wert negativ ist.&lt;/exception&gt;</span>
+<span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Calculate</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="k">value</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">value</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">0</span><span class="p">)</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArgumentOutOfRangeException</span><span class="p">(</span><span class="n">nameof</span><span class="p">(</span><span class="k">value</span><span class="p">));</span>
+<span class="p">}</span>
+</pre></div>
+</li>
+</ul>
+<h3 id="7.-Serialisierbare-Exceptions">7. <strong>Serialisierbare Exceptions</strong><a class="anchor-link" href="#7.-Serialisierbare-Exceptions">¶</a></h3><p>Benutzerdefinierte Exceptions sollten mit <code>[Serializable]</code> markiert und korrekt serialisierbar gemacht werden, um in verteilten Anwendungen genutzt werden zu können.</p>
+<div class="highlight"><pre><span></span><span class="na">[Serializable]</span>
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyCustomException</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Exception</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">MyCustomException</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">MyCustomException</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">message</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="k">base</span><span class="p">(</span><span class="n">message</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">MyCustomException</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">message</span><span class="p">,</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="n">inner</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="k">base</span><span class="p">(</span><span class="n">message</span><span class="p">,</span><span class="w"> </span><span class="n">inner</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="nf">MyCustomException</span><span class="p">(</span><span class="n">SerializationInfo</span><span class="w"> </span><span class="n">info</span><span class="p">,</span><span class="w"> </span><span class="n">StreamingContext</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="k">base</span><span class="p">(</span><span class="n">info</span><span class="p">,</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<h3 id="8.-Exception-Hierarchie">8. <strong>Exception-Hierarchie</strong><a class="anchor-link" href="#8.-Exception-Hierarchie">¶</a></h3><p>Die Klassenhierarchie für Exceptions in .NET hilft, spezifische Ausnahmen besser zu verstehen:</p>
+<ul>
+<li><code>System.Exception</code>: Basisklasse für alle Ausnahmen.</li>
+<li><code>System.SystemException</code>: Basisklasse für Ausnahmen, die vom Laufzeitsystem ausgelöst werden.</li>
+<li><code>System.ApplicationException</code>: Kann für benutzerdefinierte Ausnahmen verwendet werden, wird jedoch selten genutzt.</li>
+</ul>
+<h3 id="9.-Logging-von-Exceptions">9. <strong>Logging von Exceptions</strong><a class="anchor-link" href="#9.-Logging-von-Exceptions">¶</a></h3><p>Fehler sollten idealerweise protokolliert werden, um sie später analysieren zu können. Tools wie <code>Serilog</code>, <code>NLog</code> oder das .NET-Built-in Logging Framework können dafür verwendet werden.</p>
+<div class="highlight"><pre><span></span><span class="k">try</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="nf">InvalidOperationException</span><span class="p">(</span><span class="s">"Fehlerhafte Operation."</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">ex</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// Beispiel mit Serilog</span>
+<span class="w">    </span><span class="n">Log</span><span class="p">.</span><span class="n">Error</span><span class="p">(</span><span class="n">ex</span><span class="p">,</span><span class="w"> </span><span class="s">"Ein Fehler ist aufgetreten."</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
 </div>
 </div>
 </div>
