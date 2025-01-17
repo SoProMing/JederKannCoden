@@ -7516,31 +7516,208 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Jeder-kann-coden">Jeder kann coden<a class="anchor-link" href="#Jeder-kann-coden">¶</a></h1><table border="0">
+<p><a href="../../abstract/Contents.de.html">Jeder kann coden</a> / <a href="../../Programming_And_TicTacToe.de.html">Programmieren &amp; TicTacToe</a> / <a href="../CSharp_Introduction.de.html">C# Einführung</a></p>
+<h1 id="Regul%C3%A4re-Ausdr%C3%BCcke">Reguläre Ausdrücke<a class="anchor-link" href="#Regul%C3%A4re-Ausdr%C3%BCcke">¶</a></h1><table border="0">
 <tr>
 <td>
-<img alt="No description has been provided for this image" src="Everybody_can_code.webp"/>
+<img alt="No description has been provided for this image" src="Regular_Expressions.webp"/>
 </td>
 <td rowspan="2">
-<a href="https://miro.com/app/board/uXjVPm0lbTo=/?moveToWidget=3458764607889708296&amp;cot=14"><img alt="No description has been provided for this image" src="Radar.de.jpg"/></a>
+<a href="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3458764554347680798&amp;cot=14"><img alt="No description has been provided for this image" src="Radar_Regular_Expressions.jpg"/></a>
 </td>
 </tr>
 <tr>
 <td>
-<a href="https://www.codewars.com">Link zu codewars</a><br/>
-<a href="https://www.hackerrank.com">Link zu hackerrank</a><br/>
-<a href="https://www.w3schools.com/">W3Schools: Programmier-Tutorials für Anfänger</a> <br/>
-<a href="https://www.freecodecamp.org/">freeCodeCamp: Interaktives Lernen für Programmieren</a> <br/>
-<a href="https://cs50.harvard.edu/x/">CS50 von Harvard: Einführung in Informatik</a> <br/>
-<a href="https://visualgo.net/">Visualgo: Visualisierung von Algorithmen</a> <br/>
-<a href="https://teachyourselfcs.com/">Teach Yourself Computer Science</a> <br/>
-<a href="https://guides.github.com/introduction/git-handbook/">Git und GitHub Einführung</a> <br/>
-<a href="https://refactoring.guru/">Refactoring Guru: Clean Code Konzepte</a> <br/>
-<a href="https://www.codewars.com/">Codewars: Programmier-Challenges für alle Niveaus</a> <br/>
-<a href="https://www.hackerrank.com/">HackerRank: Coding-Challenges und Wettbewerbe</a>
+<a href="https://learn.microsoft.com/en-us/dotnet/standard/base-types/regular-expressions" target="_blank">Microsoft Docs: Regular Expressions in .NET</a><br/>
+<a href="https://regex101.com/" target="_blank">Regex101: Test und Debugging von regulären Ausdrücken</a><br/>
+<a href="https://regexstorm.net/" target="_blank">RegexStorm: Online Regex Tester für .NET</a><br/>
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex" target="_blank">Microsoft Docs: Regex-Klasse</a><br/>
+<a href="https://www.rexegg.com/" target="_blank">RexEgg: Fortgeschrittene Regex-Tutorials</a><br/>
+<a href="https://stackoverflow.com/questions/tagged/regex" target="_blank">StackOverflow: Regex-Tag (Fragen und Antworten)</a><br/>
+<a href="https://www.regular-expressions.info/" target="_blank">Regular-Expressions.info: Grundlagen und Tutorials</a><br/>
+<a href="https://learn.microsoft.com/en-us/dotnet/standard/base-types/quantifiers-in-regular-expressions" target="_blank">Microsoft Docs: Quantifizierer in .NET Regex</a><br/>
+<a href="https://learn.microsoft.com/en-us/dotnet/standard/base-types/grouping-constructs-in-regular-expressions" target="_blank">Microsoft Docs: Gruppierungen in Regex</a><br/>
+<a href="https://www.pluralsight.com/guides/regex-with-csharp" target="_blank">Pluralsight: Regular Expressions in C#</a>
 </td>
 </tr>
 </table>
+<h3 id="Regul%C3%A4re-Ausdr%C3%BCcke-(Regex):-Grundlagen"><strong>Reguläre Ausdrücke (Regex): Grundlagen</strong><a class="anchor-link" href="#Regul%C3%A4re-Ausdr%C3%BCcke-(Regex):-Grundlagen">¶</a></h3><p>Reguläre Ausdrücke (Regex) sind Muster, die zur Beschreibung von Text verwendet werden, um bestimmte Zeichenfolgen zu suchen, zu validieren, zu extrahieren oder zu manipulieren. Sie bestehen aus Literalen, Metazeichen und Operatoren.</p>
+<h4 id="Hauptbestandteile-von-Regex:"><strong>Hauptbestandteile von Regex:</strong><a class="anchor-link" href="#Hauptbestandteile-von-Regex:">¶</a></h4><ol>
+<li><p><strong>Literale:</strong></p>
+<ul>
+<li>Zeichen wie <code>a</code>, <code>b</code>, <code>1</code>, <code>.</code> repräsentieren sich selbst.</li>
+<li>Beispiel: <code>abc</code> entspricht genau "abc".</li>
+</ul>
+</li>
+<li><p><strong>Metazeichen:</strong></p>
+<ul>
+<li>Zeichen mit spezieller Bedeutung, z. B.:<ul>
+<li><code>.</code>: Beliebiges Zeichen (außer Zeilenumbruch)</li>
+<li><code>^</code>: Start einer Zeile</li>
+<li><code>$</code>: Ende einer Zeile</li>
+<li><code>*</code>: 0 oder mehr Wiederholungen</li>
+<li><code>+</code>: 1 oder mehr Wiederholungen</li>
+<li><code>?</code>: 0 oder 1 Vorkommen</li>
+<li><code>|</code>: Oder-Verknüpfung</li>
+<li><code>\</code>: Escape-Zeichen</li>
+<li><code>[ ]</code>: Zeichenklassen</li>
+<li><code>( )</code>: Gruppierung</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Quantifizierer:</strong></p>
+<ul>
+<li><code>{n}</code>: Genau n Wiederholungen</li>
+<li><code>{n,}</code>: Mindestens n Wiederholungen</li>
+<li><code>{n,m}</code>: Zwischen n und m Wiederholungen</li>
+</ul>
+</li>
+<li><p><strong>Zeichenklassen:</strong></p>
+<ul>
+<li><code>[abc]</code>: Entspricht <code>a</code>, <code>b</code> oder <code>c</code></li>
+<li><code>[^abc]</code>: Entspricht keinem <code>a</code>, <code>b</code> oder <code>c</code></li>
+<li><code>[a-z]</code>: Entspricht jedem Buchstaben von <code>a</code> bis <code>z</code></li>
+<li><code>\d</code>: Entspricht einer Ziffer (<code>0-9</code>)</li>
+<li><code>\w</code>: Entspricht einem alphanumerischen Zeichen (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, <code>_</code>)</li>
+<li><code>\s</code>: Entspricht einem Leerzeichen</li>
+</ul>
+</li>
+<li><p><strong>Gruppen und Rückverweise:</strong></p>
+<ul>
+<li><code>(abc)</code>: Gruppiert <code>abc</code></li>
+<li><code>\1</code>: Verweist auf die erste Gruppe</li>
+</ul>
+</li>
+</ol>
+<h3 id="Regex-Flavors"><strong>Regex-Flavors</strong><a class="anchor-link" href="#Regex-Flavors">¶</a></h3><p>Es gibt verschiedene Regex-Engines ("Flavors"), die sich in Syntax und Funktionalität leicht unterscheiden:</p>
+<ol>
+<li><p><strong>POSIX:</strong></p>
+<ul>
+<li>Einfacher und standardisiert, oft in Unix-Tools wie <code>grep</code> oder <code>sed</code> verwendet.</li>
+<li>Beispiel: <code>[[:digit:]]</code> für Ziffern.</li>
+</ul>
+</li>
+<li><p><strong>Perl Compatible Regular Expressions (PCRE):</strong></p>
+<ul>
+<li>Sehr mächtig, weit verbreitet in Programmiersprachen wie PHP, JavaScript und Python.</li>
+</ul>
+</li>
+<li><p><strong>ECMAScript:</strong></p>
+<ul>
+<li>Wird in JavaScript und Webbrowsern verwendet.</li>
+<li>Unterstützt weniger Features als PCRE.</li>
+</ul>
+</li>
+<li><p><strong>.NET Regex (C#):</strong></p>
+<ul>
+<li>Basierend auf PCRE, aber mit zusätzlichen Features wie <code>RegexOptions</code> und Named Groups.</li>
+</ul>
+</li>
+<li><p><strong>Oniguruma:</strong></p>
+<ul>
+<li>Wird in Ruby verwendet, bietet erweiterte Funktionalität.</li>
+</ul>
+</li>
+</ol>
+<h3 id="Verwendung-von-Regex-in-C%23"><strong>Verwendung von Regex in C#</strong><a class="anchor-link" href="#Verwendung-von-Regex-in-C%23">¶</a></h3><p>In C# bietet die Klasse <code>System.Text.RegularExpressions.Regex</code> eine leistungsstarke Implementierung von regulären Ausdrücken.</p>
+<h4 id="Grundlegende-Methoden-der-Regex-Klasse:"><strong>Grundlegende Methoden der Regex-Klasse:</strong><a class="anchor-link" href="#Grundlegende-Methoden-der-Regex-Klasse:">¶</a></h4><ol>
+<li><p><strong><code>IsMatch</code>:</strong></p>
+<ul>
+<li>Überprüft, ob ein Muster mit einer Zeichenkette übereinstimmt.</li>
+<li><div class="highlight"><pre><span></span><span class="kt">string</span><span class="w"> </span><span class="n">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">@"^\d+$"</span><span class="p">;</span><span class="w"> </span><span class="c1">// Nur Ziffern</span>
+<span class="kt">string</span><span class="w"> </span><span class="n">input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"12345"</span><span class="p">;</span>
+<span class="kt">bool</span><span class="w"> </span><span class="n">isMatch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Regex</span><span class="p">.</span><span class="n">IsMatch</span><span class="p">(</span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="n">pattern</span><span class="p">);</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">isMatch</span><span class="p">);</span><span class="w"> </span><span class="c1">// True</span>
+</pre></div>
+</li>
+</ul>
+</li>
+<li><p><strong><code>Match</code>:</strong></p>
+<ul>
+<li>Gibt das erste Vorkommen zurück, das mit dem Muster übereinstimmt.</li>
+<li><div class="highlight"><pre><span></span><span class="n">Match</span><span class="w"> </span><span class="n">match</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Regex</span><span class="p">.</span><span class="n">Match</span><span class="p">(</span><span class="s">"abc123"</span><span class="p">,</span><span class="w"> </span><span class="s">@"\d+"</span><span class="p">);</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">match</span><span class="p">.</span><span class="n">Value</span><span class="p">);</span><span class="w"> </span><span class="c1">// 123</span>
+</pre></div>
+</li>
+</ul>
+</li>
+<li><p><strong><code>Matches</code>:</strong></p>
+<ul>
+<li>Gibt alle Übereinstimmungen in einer Sammlung zurück.</li>
+<li><div class="highlight"><pre><span></span><span class="n">MatchCollection</span><span class="w"> </span><span class="n">matches</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Regex</span><span class="p">.</span><span class="n">Matches</span><span class="p">(</span><span class="s">"a1b2c3"</span><span class="p">,</span><span class="w"> </span><span class="s">@"\d"</span><span class="p">);</span>
+<span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="n">Match</span><span class="w"> </span><span class="n">match</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">matches</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">match</span><span class="p">.</span><span class="n">Value</span><span class="p">);</span><span class="w"> </span><span class="c1">// 1, 2, 3</span>
+<span class="p">}</span>
+</pre></div>
+</li>
+</ul>
+</li>
+<li><p><strong><code>Replace</code>:</strong></p>
+<ul>
+<li>Ersetzt Übereinstimmungen mit einem angegebenen Wert.</li>
+<li><div class="highlight"><pre><span></span><span class="kt">string</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Regex</span><span class="p">.</span><span class="n">Replace</span><span class="p">(</span><span class="s">"abc123"</span><span class="p">,</span><span class="w"> </span><span class="s">@"\d"</span><span class="p">,</span><span class="w"> </span><span class="s">"#"</span><span class="p">);</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">result</span><span class="p">);</span><span class="w"> </span><span class="c1">// abc###</span>
+</pre></div>
+</li>
+</ul>
+</li>
+<li><p><strong><code>Split</code>:</strong></p>
+<ul>
+<li>Teilt eine Zeichenkette anhand eines Regex-Musters.</li>
+<li><div class="highlight"><pre><span></span><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">parts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Regex</span><span class="p">.</span><span class="n">Split</span><span class="p">(</span><span class="s">"a1b2c3"</span><span class="p">,</span><span class="w"> </span><span class="s">@"\d"</span><span class="p">);</span>
+<span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">part</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">parts</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">part</span><span class="p">);</span><span class="w"> </span><span class="c1">// a, b, c</span>
+<span class="p">}</span>
+</pre></div>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="Regex-Optionen:"><strong>Regex-Optionen:</strong><a class="anchor-link" href="#Regex-Optionen:">¶</a></h4><p>Die <code>RegexOptions</code>-Enumeration in C# ermöglicht erweiterte Konfigurationen:</p>
+<ul>
+<li><code>RegexOptions.IgnoreCase</code>: Groß-/Kleinschreibung ignorieren.</li>
+<li><code>RegexOptions.Multiline</code>: <code>^</code> und <code>$</code> gelten für jede Zeile.</li>
+<li><code>RegexOptions.Singleline</code>: <code>.</code> schließt Zeilenumbrüche ein.</li>
+<li><code>RegexOptions.Compiled</code>: Kompiliert den Regex für bessere Leistung.</li>
+<li><code>RegexOptions.CultureInvariant</code>: Kulturunabhängige Vergleiche.</li>
+</ul>
+<p>Beispiel:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">using</span> <span class="n">System</span><span class="o">.</span><span class="n">Text</span><span class="o">.</span><span class="n">RegularExpressions</span><span class="p">;</span>
+
+<span class="n">string</span> <span class="n">pattern</span> <span class="o">=</span> <span class="o">@</span><span class="s2">"</span><span class="se">\b</span><span class="s2">word</span><span class="se">\b</span><span class="s2">"</span><span class="p">;</span>
+<span class="n">string</span> <span class="nb">input</span> <span class="o">=</span> <span class="s2">"Word, word, WORD!"</span><span class="p">;</span>
+<span class="n">Regex</span> <span class="n">regex</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Regex</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">RegexOptions</span><span class="o">.</span><span class="n">IgnoreCase</span><span class="p">);</span>
+<span class="nb">bool</span> <span class="n">isMatch</span> <span class="o">=</span> <span class="n">regex</span><span class="o">.</span><span class="n">IsMatch</span><span class="p">(</span><span class="nb">input</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">isMatch</span><span class="p">);</span> <span class="o">//</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>True
+</pre>
+</div>
 </div>
 </div>
 </div>
@@ -7551,72 +7728,32 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Inhaltsverzeichnis">Inhaltsverzeichnis<a class="anchor-link" href="#Inhaltsverzeichnis">¶</a></h2><h3 id="Vorbereitung">Vorbereitung<a class="anchor-link" href="#Vorbereitung">¶</a></h3><ul>
-<li><a href="../csharp/CSharp_icebreaker.de.html">Eisbrecher</a></li>
-<li><a href="Number_Systems.de.html">Zahlensysteme und Zeichen</a></li>
-<li><a href="../csharp/tools/Toolchain.de.html">Werkzeuge zur Vorlesung</a></li>
-</ul>
-<h3 id="Grundlagen">Grundlagen<a class="anchor-link" href="#Grundlagen">¶</a></h3><ul>
-<li><a href="Programming_And_TicTacToe.de.html">Programmieren &amp; TicTacToe:</a> Prozedurale Programmierung am Beispiel von Python &amp; TicTacToe</li>
-<li><a href="../csharp/CSharp_Introduction.de.html">Einführung in C#:</a> Prozedurale Programmierung in C# als Übersicht<ul>
-<li><a href="../csharp/CSharp_Introduction/Variables.de.html">Weitere Grundlagen zu Variablen</a></li>
-<li><a href="../csharp/CSharp_Introduction/Strings.de.html">Weitere Grundlagen zu String</a></li>
-<li><a href="../csharp/CSharp_Introduction/Conditional_statements.de.html">Weitere Grundlagen zu bedingten Anweisungen</a></li>
-<li><a href="../csharp/CSharp_Introduction/Loops.de.html">Weitere Grundlagen zu Schleifen</a></li>
-<li><a href="../csharp/CSharp_Introduction/Operators.de.html">Weitere Grundlagen zu Operatoren</a></li>
-<li><a href="../csharp/CSharp_Introduction/Functions.de.html">Weitere Grundlagen zu Funktionen</a></li>
-<li><a href="../csharp/CSharp_Introduction/Arrays.de.html">Weitere Grundlagen zu Arrays</a></li>
-<li><a href="../csharp/CSharp_Introduction/Complex_Datastructures.de.html">Weitere Grundlagen zu komplexen Datenstrukturen</a></li>
-</ul>
+<h4 id="Erkl%C3%A4rung">Erklärung<a class="anchor-link" href="#Erkl%C3%A4rung">¶</a></h4><p>In C# steht <code>\b</code> für eine <strong>Wortgrenze</strong>. Es markiert die Position zwischen einem Wortzeichen (<code>\w</code>) und einem Nicht-Wortzeichen. Es wird verwendet, um sicherzustellen, dass ein Muster nur an den Grenzen von Wörtern erkannt wird, ohne Teil eines längeren Wortes zu sein.</p>
+<h3 id="Beispiele-in-der-Praxis:"><strong>Beispiele in der Praxis:</strong><a class="anchor-link" href="#Beispiele-in-der-Praxis:">¶</a></h3><ol>
+<li><p><strong>Validierung einer E-Mail-Adresse:</strong></p>
+<div class="highlight"><pre><span></span><span class="kt">string</span><span class="w"> </span><span class="n">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">@"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"</span><span class="p">;</span>
+<span class="kt">string</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"test@example.com"</span><span class="p">;</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">Regex</span><span class="p">.</span><span class="n">IsMatch</span><span class="p">(</span><span class="n">email</span><span class="p">,</span><span class="w"> </span><span class="n">pattern</span><span class="p">));</span><span class="w"> </span><span class="c1">// True</span>
+</pre></div>
 </li>
-</ul>
-<h3 id="Vertiefung">Vertiefung<a class="anchor-link" href="#Vertiefung">¶</a></h3><h4 id="Textausgabe">Textausgabe<a class="anchor-link" href="#Textausgabe">¶</a></h4><ul>
-<li><a href="../csharp/procedural-functional/Console_WriteLine_Basics.de.html">WriteLine Basiswissen</a></li>
-<li><a href="../csharp/procedural-functional/CSharp_HelloWorld_Explanation.de.html">Hallo Welt!</a></li>
-<li><a href="../csharp/procedural-functional/Console_WriteLine_Samples.de.html">WriteLine Samples</a></li>
-<li><a href="../csharp/procedural-functional/Console_WriteLine_TicTacToe.de.html">WriteLine &amp; TicTacToe</a></li>
-</ul>
-<h4 id="Texteingabe">Texteingabe<a class="anchor-link" href="#Texteingabe">¶</a></h4><ul>
-<li><a href="../csharp/procedural-functional/Console_ReadLine_Basics.de.html">ReadLine &amp; TicTacToe</a></li>
-</ul>
-<h4 id="Operatoren">Operatoren<a class="anchor-link" href="#Operatoren">¶</a></h4><ul>
-<li><a href="../csharp/procedural-functional/CSharp_Boolean_Operators_Basics.de.html">Boolesche Operatoren</a></li>
-<li><a href="../csharp/procedural-functional/CSharp_Other_Operators_Basics.de.html">Weitere Operatoren</a></li>
-</ul>
-<h4 id="Datentypen">Datentypen<a class="anchor-link" href="#Datentypen">¶</a></h4><ul>
-<li><a href="../csharp/procedural-functional/CSharp_Numerical_Types.de.html">Numerische Typen</a></li>
-<li><a href="../csharp/procedural-functional/CSharp_Numerical_Floating_Types.de.html">Numerische Gleitkomma-Typen</a></li>
-<li><a href="../csharp/procedural-functional/CSharp_String_Type.de.html">String Typen</a></li>
-<li><a href="../csharp/procedural-functional/CSharp_Arrays.de.html">Arrays</a></li>
-</ul>
-<h4 id="Kontrollstrukturen">Kontrollstrukturen<a class="anchor-link" href="#Kontrollstrukturen">¶</a></h4><ul>
-<li><a href="../csharp/procedural-functional/CSharp_Conditional.de.html">Bedingte Anweisungen</a></li>
-<li><a href="../csharp/procedural-functional/CSharp_Loops.de.html">Schleifen</a></li>
-<li><a href="../csharp/procedural-functional/CSharp_Conditional_TicTacToe.de.html">Bedingte Anweisungen &amp; TicTacToe</a></li>
-</ul>
-<h4 id=".NET-framework">.NET framework<a class="anchor-link" href="#.NET-framework">¶</a></h4><ul>
-<li><a href="../csharp/framework/Random.de.html">System.Random</a></li>
-<li><a href="../csharp/framework/Regular_Expressions.de.html">Reguläre Ausdrücke</a></li>
-</ul>
-<h3 id="TicTacToe-in-einer-einzelnen-Prozedur"><a href="../csharp/procedural-functional/CSharp_Loops_TicTacToe.de.html">TicTacToe in einer einzelnen Prozedur</a><a class="anchor-link" href="#TicTacToe-in-einer-einzelnen-Prozedur">¶</a></h3><h3 id="Funktionale-Programmierung">Funktionale Programmierung<a class="anchor-link" href="#Funktionale-Programmierung">¶</a></h3><ul>
-<li><a href="../csharp/procedural-functional/CSharp_Methods_Functions.de.html">Funktionen &amp; Prozeduren</a></li>
-</ul>
-<h3 id="Debugging">Debugging<a class="anchor-link" href="#Debugging">¶</a></h3><ul>
-<li><a href="../csharp/tools/Debugger.de.html">Debugging &amp; Breakpoints</a></li>
-<li><a href="../csharp/procedural-functional/CSharp_Reference_Value.de.html">Referenz- &amp; Werttypen</a></li>
-</ul>
-<h3 id="Objektorientierte-Programmierung">Objektorientierte Programmierung<a class="anchor-link" href="#Objektorientierte-Programmierung">¶</a></h3><h4 id="Grundlagen">Grundlagen<a class="anchor-link" href="#Grundlagen">¶</a></h4><ul>
-<li><a href="../Objectoriented_Programming.de.html">Einleitung</a></li>
-<li><a href="../csharp/oop/CSharp_Basics.de.html">Objektorientierte Programmierung in C# Grundlagen</a></li>
-</ul>
-<h4 id="Vertiefung">Vertiefung<a class="anchor-link" href="#Vertiefung">¶</a></h4><ul>
-<li><a href="../csharp/oop/CSharp_Samples.de.html">Objektorientierte Programmierung in C# Samples</a><ul>
-<li><a href="../csharp/oop/CSharp_Access_Modifiers.de.html">Zugriffsmodifizierer</a></li>
-<li><a href="../csharp/oop/Constructors.de.html">Konstruktoren</a></li>
-<li><a href="../csharp/oop/Properties.de.html">Properties</a></li>
-</ul>
+<li><p><strong>Extrahieren von Zahlen:</strong></p>
+<div class="highlight"><pre><span></span><span class="kt">string</span><span class="w"> </span><span class="n">input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"abc123xyz"</span><span class="p">;</span>
+<span class="n">MatchCollection</span><span class="w"> </span><span class="n">matches</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Regex</span><span class="p">.</span><span class="n">Matches</span><span class="p">(</span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="s">@"\d+"</span><span class="p">);</span>
+<span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="n">Match</span><span class="w"> </span><span class="n">match</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">matches</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">match</span><span class="p">.</span><span class="n">Value</span><span class="p">);</span><span class="w"> </span><span class="c1">// 123</span>
+<span class="p">}</span>
+</pre></div>
 </li>
-</ul>
+<li><p><strong>Ersetzen von Leerzeichen:</strong></p>
+<div class="highlight"><pre><span></span><span class="kt">string</span><span class="w"> </span><span class="n">input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"a b  c   d"</span><span class="p">;</span>
+<span class="kt">string</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Regex</span><span class="p">.</span><span class="n">Replace</span><span class="p">(</span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="s">@"\s+"</span><span class="p">,</span><span class="w"> </span><span class="s">" "</span><span class="p">);</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">result</span><span class="p">);</span><span class="w"> </span><span class="c1">// a b c d</span>
+</pre></div>
+</li>
+</ol>
+<h3 id="Zusammenfassung:"><strong>Zusammenfassung:</strong><a class="anchor-link" href="#Zusammenfassung:">¶</a></h3><p>Reguläre Ausdrücke bieten in C# vielseitige Möglichkeiten, Text zu manipulieren und zu analysieren. Durch die Kombination von leistungsstarken Methoden und RegexOptions können Entwickler präzise und effiziente Muster anwenden. Das Verständnis der Syntax und Flavors hilft dabei, Regex korrekt und effektiv einzusetzen.</p>
+<h3 id="Cheatsheet-regul%C3%A4re-Ausdr%C3%BCcke-in-C%23">Cheatsheet reguläre Ausdrücke in C#<a class="anchor-link" href="#Cheatsheet-regul%C3%A4re-Ausdr%C3%BCcke-in-C%23">¶</a></h3><p><a href="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3458764517193163633&amp;cot=14"><img alt="No description has been provided for this image" src="Cheatsheet_Regular_Expressions.jpg"/></a></p>
 </div>
 </div>
 </div>
@@ -7627,8 +7764,137 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Anhang">Anhang<a class="anchor-link" href="#Anhang">¶</a></h3><p><a href="../Create_pdf.en.html">Erzeugen von HTML-Seiten aus den notebooks</a></p>
-<p><a href="../cmdline/Shells.de.html">Kommandozeile</a></p>
+<h2 id="Erweiterte-Funktionen-und-Tipps"><strong>Erweiterte Funktionen und Tipps</strong><a class="anchor-link" href="#Erweiterte-Funktionen-und-Tipps">¶</a></h2><h4 id="1.-Named-Groups-(Benannte-Gruppen):">1. <strong>Named Groups (Benannte Gruppen):</strong><a class="anchor-link" href="#1.-Named-Groups-(Benannte-Gruppen):">¶</a></h4><ul>
+<li>Benannte Gruppen erleichtern die Arbeit mit komplexen Regex, indem sie bestimmte Teile des Musters benennen.</li>
+<li>Beispiel:<div class="highlight"><pre><span></span><span class="kt">string</span><span class="w"> </span><span class="n">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">@"(?&lt;Protocol&gt;https?)://(?&lt;Domain&gt;[^/]+)"</span><span class="p">;</span>
+<span class="kt">string</span><span class="w"> </span><span class="n">input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"https://example.com"</span><span class="p">;</span>
+<span class="n">Match</span><span class="w"> </span><span class="n">match</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Regex</span><span class="p">.</span><span class="n">Match</span><span class="p">(</span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="n">pattern</span><span class="p">);</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">match</span><span class="p">.</span><span class="n">Success</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$"Protocol: {match.Groups["</span><span class="n">Protocol</span><span class="s">"].Value}"</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$"Domain: {match.Groups["</span><span class="n">Domain</span><span class="s">"].Value}"</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</li>
+</ul>
+<h4 id="2.-Lookahead-und-Lookbehind:">2. <strong>Lookahead und Lookbehind:</strong><a class="anchor-link" href="#2.-Lookahead-und-Lookbehind:">¶</a></h4><ul>
+<li><strong>Lookahead</strong>: Überprüft, ob ein bestimmtes Muster <em>nach</em> der aktuellen Position folgt, ohne es zu konsumieren.</li>
+<li><strong>Lookbehind</strong>: Überprüft, ob ein Muster <em>vor</em> der aktuellen Position liegt.</li>
+<li>Beispiel (Lookahead):<div class="highlight"><pre><span></span><span class="kt">string</span><span class="w"> </span><span class="n">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">@"\d+(?= dollars)"</span><span class="p">;</span>
+<span class="kt">string</span><span class="w"> </span><span class="n">input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"I have 100 dollars."</span><span class="p">;</span>
+<span class="n">Match</span><span class="w"> </span><span class="n">match</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Regex</span><span class="p">.</span><span class="n">Match</span><span class="p">(</span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="n">pattern</span><span class="p">);</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">match</span><span class="p">.</span><span class="n">Value</span><span class="p">);</span><span class="w"> </span><span class="c1">// 100</span>
+</pre></div>
+</li>
+<li>Beispiel (Lookbehind):<div class="highlight"><pre><span></span><span class="kt">string</span><span class="w"> </span><span class="n">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">@"(?&lt;=\$)\d+"</span><span class="p">;</span>
+<span class="kt">string</span><span class="w"> </span><span class="n">input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Price: $200."</span><span class="p">;</span>
+<span class="n">Match</span><span class="w"> </span><span class="n">match</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Regex</span><span class="p">.</span><span class="n">Match</span><span class="p">(</span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="n">pattern</span><span class="p">);</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">match</span><span class="p">.</span><span class="n">Value</span><span class="p">);</span><span class="w"> </span><span class="c1">// 200</span>
+</pre></div>
+</li>
+</ul>
+<h4 id="3.-Regex-Kommentar-Modus:">3. <strong>Regex-Kommentar-Modus:</strong><a class="anchor-link" href="#3.-Regex-Kommentar-Modus:">¶</a></h4><ul>
+<li>Mit <code>RegexOptions.IgnorePatternWhitespace</code> kannst du einen Regex besser lesbar machen, indem du Kommentare und Leerzeichen einfügst.</li>
+<li>Beispiel:<div class="highlight"><pre><span></span><span class="kt">string</span><span class="w"> </span><span class="n">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">@"</span>
+<span class="s">  ^              # Anfang der Zeichenkette</span>
+<span class="s">  (?&lt;Protocol&gt;https?)://   # Protokoll</span>
+<span class="s">  (?&lt;Domain&gt;[^/]+)         # Domain</span>
+<span class="s">  $              # Ende der Zeichenkette</span>
+<span class="s">"</span><span class="p">;</span>
+<span class="n">Regex</span><span class="w"> </span><span class="n">regex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Regex</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span><span class="w"> </span><span class="n">RegexOptions</span><span class="p">.</span><span class="n">IgnorePatternWhitespace</span><span class="p">);</span>
+</pre></div>
+</li>
+</ul>
+<h4 id="4.-Performance-Optimierung:">4. <strong>Performance-Optimierung:</strong><a class="anchor-link" href="#4.-Performance-Optimierung:">¶</a></h4><ul>
+<li><strong>Regex-Kompilierung:</strong><ul>
+<li><code>RegexOptions.Compiled</code> kompiliert den regulären Ausdruck in MSIL (Intermediate Language), was die Performance bei wiederholter Verwendung verbessert.</li>
+<li>Beispiel:<div class="highlight"><pre><span></span><span class="n">Regex</span><span class="w"> </span><span class="n">regex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Regex</span><span class="p">(</span><span class="s">@"^\d+$"</span><span class="p">,</span><span class="w"> </span><span class="n">RegexOptions</span><span class="p">.</span><span class="n">Compiled</span><span class="p">);</span>
+</pre></div>
+</li>
+</ul>
+</li>
+<li><strong>Caching:</strong><ul>
+<li>Die <code>Regex</code>-Klasse cached automatisch die letzten regulären Ausdrücke. Man sollte also unnötiges Neuerstellen von Regex-Objekten vermeiden.</li>
+</ul>
+</li>
+</ul>
+<h4 id="5.-Escape-Sequenzen-und-Raw-Strings:">5. <strong>Escape-Sequenzen und Raw Strings:</strong><a class="anchor-link" href="#5.-Escape-Sequenzen-und-Raw-Strings:">¶</a></h4><ul>
+<li>Da Backslashes (<code>\</code>) in C# als Escape-Zeichen verwendet werden, ist es oft nützlich, <code>@</code> vor der Zeichenfolge zu verwenden, um rohe Strings zu erstellen.</li>
+<li>Beispiel:<div class="highlight"><pre><span></span><span class="kt">string</span><span class="w"> </span><span class="n">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">@"\d+"</span><span class="p">;</span>
+</pre></div>
+</li>
+<li>Ohne <code>@</code> müsste der Backslash verdoppelt werden:<div class="highlight"><pre><span></span><span class="kt">string</span><span class="w"> </span><span class="n">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"\\d+"</span><span class="p">;</span>
+</pre></div>
+</li>
+</ul>
+<h4 id="6.-Debugging-von-Regex:">6. <strong>Debugging von Regex:</strong><a class="anchor-link" href="#6.-Debugging-von-Regex:">¶</a></h4><ul>
+<li><strong>Online-Tools:</strong><ul>
+<li>Tools wie <a href="https://regex101.com/">regex101</a> oder <a href="https://regexstorm.net/">RegexStorm</a> helfen beim Testen und Erklären von regulären Ausdrücken.</li>
+</ul>
+</li>
+<li><strong>Regex-Evaluierung in C#:</strong><ul>
+<li>Mit Breakpoints und <code>Regex.Match()</code> kannst du während des Debuggens prüfen, welche Teile des Regex zutreffen.</li>
+</ul>
+</li>
+</ul>
+<h4 id="7.-Regex-Einschr%C3%A4nkungen-und-Fehlerquellen:">7. <strong>Regex-Einschränkungen und Fehlerquellen:</strong><a class="anchor-link" href="#7.-Regex-Einschr%C3%A4nkungen-und-Fehlerquellen:">¶</a></h4><ul>
+<li><strong>Lesbarkeit:</strong><ul>
+<li>Lange und komplexe Regex können schwer wartbar sein. Verwende Kommentare, benannte Gruppen und teile komplexe Muster in kleinere Abschnitte.</li>
+</ul>
+</li>
+<li><strong>Overfitting:</strong><ul>
+<li>Ein Regex sollte nicht zu spezifisch sein, da kleine Änderungen im Text (z. B. ein zusätzliches Leerzeichen) sonst zu unerwartetem Verhalten führen können.</li>
+</ul>
+</li>
+<li><strong>Backtracking:</strong><ul>
+<li>Exzessives Backtracking (bei z. B. übermäßig allgemeinen oder verschachtelten Mustern) kann die Performance stark beeinträchtigen. Verwende präzise Quantifizierer.</li>
+</ul>
+</li>
+</ul>
+<h3 id="Praktische-Szenarien-f%C3%BCr-Regex:"><strong>Praktische Szenarien für Regex:</strong><a class="anchor-link" href="#Praktische-Szenarien-f%C3%BCr-Regex:">¶</a></h3><ol>
+<li><p><strong>Passwortvalidierung:</strong></p>
+<ul>
+<li>Sicherstellen, dass ein Passwort mindestens 8 Zeichen, eine Zahl und ein Sonderzeichen enthält:<div class="highlight"><pre><span></span><span class="kt">string</span><span class="w"> </span><span class="n">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">@"^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&amp;])[A-Za-z\d@$!%*?&amp;]{8,}$"</span><span class="p">;</span>
+<span class="kt">string</span><span class="w"> </span><span class="n">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Test@123"</span><span class="p">;</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">Regex</span><span class="p">.</span><span class="n">IsMatch</span><span class="p">(</span><span class="n">password</span><span class="p">,</span><span class="w"> </span><span class="n">pattern</span><span class="p">));</span><span class="w"> </span><span class="c1">// True</span>
+</pre></div>
+</li>
+</ul>
+</li>
+<li><p><strong>Log-Analyse:</strong></p>
+<ul>
+<li>Extrahieren von IP-Adressen aus Log-Dateien:<div class="highlight"><pre><span></span><span class="kt">string</span><span class="w"> </span><span class="n">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">@"\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b"</span><span class="p">;</span>
+<span class="kt">string</span><span class="w"> </span><span class="n">logs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"User connected from 192.168.1.1"</span><span class="p">;</span>
+<span class="n">MatchCollection</span><span class="w"> </span><span class="n">matches</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Regex</span><span class="p">.</span><span class="n">Matches</span><span class="p">(</span><span class="n">logs</span><span class="p">,</span><span class="w"> </span><span class="n">pattern</span><span class="p">);</span>
+<span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="n">Match</span><span class="w"> </span><span class="n">match</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">matches</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">match</span><span class="p">.</span><span class="n">Value</span><span class="p">);</span><span class="w"> </span><span class="c1">// 192.168.1.1</span>
+<span class="p">}</span>
+</pre></div>
+</li>
+</ul>
+</li>
+<li><p><strong>Datenextraktion:</strong></p>
+<ul>
+<li>Herausziehen von Telefonnummern:<div class="highlight"><pre><span></span><span class="kt">string</span><span class="w"> </span><span class="n">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">@"\+?\d{1,3}[-.\s]?\(?\d+\)?[-.\s]?\d+[-.\s]?\d+"</span><span class="p">;</span>
+<span class="kt">string</span><span class="w"> </span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Contact me at +1 (555) 123-4567 or 555-987-6543."</span><span class="p">;</span>
+<span class="n">MatchCollection</span><span class="w"> </span><span class="n">matches</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Regex</span><span class="p">.</span><span class="n">Matches</span><span class="p">(</span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="n">pattern</span><span class="p">);</span>
+<span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="n">Match</span><span class="w"> </span><span class="n">match</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">matches</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">match</span><span class="p">.</span><span class="n">Value</span><span class="p">);</span><span class="w"> </span><span class="c1">// +1 (555) 123-4567, 555-987-6543</span>
+<span class="p">}</span>
+</pre></div>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="Zusammenfassung:"><strong>Zusammenfassung:</strong><a class="anchor-link" href="#Zusammenfassung:">¶</a></h4><ul>
+<li>Reguläre Ausdrücke sind mächtig, aber komplex. Es lohnt sich, ein gutes Verständnis der grundlegenden Syntax und der erweiterten Features zu entwickeln.</li>
+<li>In C# erleichtert die <code>Regex</code>-Klasse durch benannte Gruppen, Regex-Optionen und Methoden wie <code>Match</code>, <code>Replace</code> oder <code>Split</code> die Arbeit mit Text.</li>
+<li>Beachte Performance-Aspekte, besonders bei großen Datenmengen oder komplexen Mustern.</li>
+<li>Verwende Debugging-Tools, um Regex besser zu verstehen und zu optimieren.</li>
+</ul>
 </div>
 </div>
 </div>

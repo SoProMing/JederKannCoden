@@ -7593,6 +7593,7 @@ George Boole, ein englischer Mathematiker, entwickelte im 19. Jahrhundert die Gr
 
 <h3 id="2.-Boolesche-Operatoren-in-C%23">2. Boolesche Operatoren in C#<a class="anchor-link" href="#2.-Boolesche-Operatoren-in-C%23">¶</a></h3><h4 id="2.1-AND-Operator-(&amp;&amp;)">2.1 AND-Operator (<code>&amp;&amp;</code>)<a class="anchor-link" href="#2.1-AND-Operator-(&amp;&amp;)">¶</a></h4><p><strong>Erklärung:</strong>
 Der AND-Operator (<code>&amp;&amp;</code>) gibt true zurück, wenn beide Operanden true sind. Dies ist besonders nützlich, um komplexe Bedingungen zu formulieren.</p>
+<p>💡 Dieser Operator hat Laufzeitvorteile, da er den zweiten Operanden nur auswertet, wenn der erste <code>true</code> ist. Er wird daher auch bedingter Operator genannt.</p>
 </div>
 </div>
 </div>
@@ -7621,6 +7622,7 @@ Der AND-Operator (<code>&amp;&amp;</code>) gibt true zurück, wenn beide Operand
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h4 id="2.2-OR-Operator-(%7C%7C)">2.2 OR-Operator (<code>||</code>)<a class="anchor-link" href="#2.2-OR-Operator-(%7C%7C)">¶</a></h4><p><strong>Erklärung:</strong>
 Der OR-Operator (<code>||</code>) gibt true zurück, wenn mindestens einer der Operanden true ist. Dies ermöglicht die Definition von Alternativen in logischen Ausdrücken.</p>
+<p>💡 Dieser Operator hat Laufzeitvorteile, da er den zweiten Operanden nur auswertet, wenn der erste <code>false</code> ist. Er wird daher ebenfalls bedingter Operator genannt.</p>
 </div>
 </div>
 </div>
@@ -7947,9 +7949,8 @@ Komplexe boolesche Ausdrücke können durch die Kombination mehrerer Operatoren 
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="5.-Anwendungen-der-booleschen-Algebra">5. Anwendungen der booleschen Algebra<a class="anchor-link" href="#5.-Anwendungen-der-booleschen-Algebra">¶</a></h3><ul>
-<li><strong>Verzweigungen</strong> todo link</li>
-<li><strong>Schleifen</strong> todo link</li>
-<li><strong>Logik in Algorithmen</strong> todo link</li>
+<li><a href="CSharp_Conditional.de.html"><strong>Verzweigungen</strong></a></li>
+<li><a href="CSharp_Loops.de.html"><strong>Schleifen</strong></a></li>
 </ul>
 <p><strong>Erklärung:</strong>
 Boolesche Ausdrücke sind grundlegend für Kontrollstrukturen in der Programmierung, wie if-Anweisungen und Schleifen. Sie steuern den Fluss von Programmen und ermöglichen die Ausführung bestimmter Codeabschnitte unter bestimmten Bedingungen.</p>

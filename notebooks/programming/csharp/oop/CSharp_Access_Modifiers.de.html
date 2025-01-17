@@ -7748,58 +7748,70 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="%C3%9Cbung">Übung<a class="anchor-link" href="#%C3%9Cbung">¶</a></h2><p>Hier ist ein kleines Übungsprogramm, bei dem der Benutzer entscheiden muss, welche Zugriffsmodifizierer (<code>public</code>, <code>private</code>, <code>protected</code>, <code>internal</code>, <code>protected internal</code>) in den entsprechenden Zeilen ergänzt werden sollen:</p>
 <h3 id="Beschreibung:">Beschreibung:<a class="anchor-link" href="#Beschreibung:">¶</a></h3><p>Das Programm simuliert eine Umweltstation, die verschiedene Sensoren (z. B. Temperatur- und Feuchtigkeitssensoren) verwaltet. Der Benutzer muss die Zugriffsmodifizierer hinzufügen, um das Programm funktionsfähig zu machen und sicherzustellen, dass es den gewünschten Zugriffseinschränkungen entspricht.</p>
-<h3 id="%C3%9Cbungsprogramm:">Übungsprogramm:<a class="anchor-link" href="#%C3%9Cbungsprogramm:">¶</a></h3><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
-
-<span class="k">namespace</span><span class="w"> </span><span class="nn">Umweltinformatik</span>
+<h3 id="%C3%9Cbungsprogramm:">Übungsprogramm:<a class="anchor-link" href="#%C3%9Cbungsprogramm:">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="o">//</span> <span class="n">Ergänze</span> <span class="n">den</span> <span class="n">Zugriffsmodifizierer</span><span class="p">:</span> <span class="n">Soll</span> <span class="n">diese</span> <span class="n">Klasse</span> <span class="n">nur</span> <span class="n">innerhalb</span> <span class="n">der</span> <span class="n">Assembly</span> <span class="n">zugänglich</span> <span class="n">sein</span><span class="err">?</span>
+<span class="k">class</span> <span class="nc">UmweltStation</span>
 <span class="p">{</span>
-<span class="w">    </span><span class="c1">// Ergänze den Zugriffsmodifizierer: Soll diese Klasse nur innerhalb der Assembly zugänglich sein?</span>
-<span class="w">    </span><span class="k">class</span><span class="w"> </span><span class="nc">UmweltStation</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="c1">// Ergänze den Zugriffsmodifizierer: Soll der Name der Station von außen änderbar sein?</span>
-<span class="w">        </span><span class="kt">string</span><span class="w"> </span><span class="n">StationName</span><span class="p">;</span>
+    <span class="o">//</span> <span class="n">Ergänze</span> <span class="n">den</span> <span class="n">Zugriffsmodifizierer</span><span class="p">:</span> <span class="n">Soll</span> <span class="n">der</span> <span class="n">Name</span> <span class="n">der</span> <span class="n">Station</span> <span class="n">von</span> <span class="n">außen</span> <span class="n">änderbar</span> <span class="n">sein</span><span class="err">?</span>
+    <span class="n">string</span> <span class="n">StationName</span><span class="p">;</span>
 
-<span class="w">        </span><span class="c1">// Ergänze den Zugriffsmodifizierer: Soll diese Methode nur innerhalb der Klasse oder auch von außen aufgerufen werden können?</span>
-<span class="w">        </span><span class="k">void</span><span class="w"> </span><span class="nf">SetStationName</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">name</span><span class="p">)</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="n">StationName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
-<span class="w">        </span><span class="p">}</span>
+    <span class="o">//</span> <span class="n">Ergänze</span> <span class="n">den</span> <span class="n">Zugriffsmodifizierer</span><span class="p">:</span> <span class="n">Soll</span> <span class="n">diese</span> <span class="n">Methode</span> <span class="n">nur</span> <span class="n">innerhalb</span> <span class="n">der</span> <span class="n">Klasse</span> <span class="n">oder</span> <span class="n">auch</span> <span class="n">von</span> <span class="n">außen</span> <span class="n">aufgerufen</span> <span class="n">werden</span> <span class="n">können</span><span class="err">?</span>
+    <span class="n">void</span> <span class="n">SetStationName</span><span class="p">(</span><span class="n">string</span> <span class="n">name</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">StationName</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span>
+    <span class="p">}</span>
 
-<span class="w">        </span><span class="c1">// Ergänze den Zugriffsmodifizierer: Soll diese Methode auch in abgeleiteten Klassen verfügbar sein?</span>
-<span class="w">        </span><span class="kt">string</span><span class="w"> </span><span class="nf">GetStationName</span><span class="p">()</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">StationName</span><span class="p">;</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="c1">// Ergänze den Zugriffsmodifizierer: Soll diese Klasse von überall zugänglich sein?</span>
-<span class="w">    </span><span class="k">class</span><span class="w"> </span><span class="nc">Sensor</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="c1">// Ergänze den Zugriffsmodifizierer: Soll dieser Wert nur von abgeleiteten Klassen geändert werden können?</span>
-<span class="w">        </span><span class="kt">string</span><span class="w"> </span><span class="n">SensorTyp</span><span class="p">;</span>
-
-<span class="w">        </span><span class="c1">// Ergänze den Zugriffsmodifizierer: Soll diese Methode öffentlich verfügbar sein?</span>
-<span class="w">        </span><span class="k">void</span><span class="w"> </span><span class="nf">ErfasseDaten</span><span class="p">()</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$"Erfasse Daten vom Typ: {SensorTyp}"</span><span class="p">);</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="k">class</span><span class="w"> </span><span class="nc">Program</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="c1">// Ergänze die Zugriffsmodifizierer, sodass diese Instanz korrekt erstellt und verwendet werden kann.</span>
-<span class="w">            </span><span class="n">UmweltStation</span><span class="w"> </span><span class="n">station</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">UmweltStation</span><span class="p">();</span>
-<span class="w">            </span><span class="n">Sensor</span><span class="w"> </span><span class="n">sensor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Sensor</span><span class="p">();</span>
-
-<span class="w">            </span><span class="c1">// Ergänze die Zugriffsmodifizierer so, dass diese Methodenaufrufe möglich sind:</span>
-<span class="w">            </span><span class="c1">// station.SetStationName("Station Berlin");</span>
-<span class="w">            </span><span class="c1">// Console.WriteLine($"Station Name: {station.GetStationName()}");</span>
-<span class="w">            </span><span class="c1">// sensor.ErfasseDaten();</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">    </span><span class="p">}</span>
+    <span class="o">//</span> <span class="n">Ergänze</span> <span class="n">den</span> <span class="n">Zugriffsmodifizierer</span><span class="p">:</span> <span class="n">Soll</span> <span class="n">diese</span> <span class="n">Methode</span> <span class="n">auch</span> <span class="ow">in</span> <span class="n">abgeleiteten</span> <span class="n">Klassen</span> <span class="n">verfügbar</span> <span class="n">sein</span><span class="err">?</span>
+    <span class="n">string</span> <span class="n">GetStationName</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">StationName</span><span class="p">;</span>
+    <span class="p">}</span>
 <span class="p">}</span>
+
+<span class="o">//</span> <span class="n">Ergänze</span> <span class="n">den</span> <span class="n">Zugriffsmodifizierer</span><span class="p">:</span> <span class="n">Soll</span> <span class="n">diese</span> <span class="n">Klasse</span> <span class="n">von</span> <span class="n">überall</span> <span class="n">zugänglich</span> <span class="n">sein</span><span class="err">?</span>
+<span class="k">class</span> <span class="nc">Sensor</span>
+<span class="p">{</span>
+    <span class="o">//</span> <span class="n">Ergänze</span> <span class="n">den</span> <span class="n">Zugriffsmodifizierer</span><span class="p">:</span> <span class="n">Soll</span> <span class="n">dieser</span> <span class="n">Wert</span> <span class="n">nur</span> <span class="n">von</span> <span class="n">abgeleiteten</span> <span class="n">Klassen</span> <span class="n">geändert</span> <span class="n">werden</span> <span class="n">können</span><span class="err">?</span>
+    <span class="n">string</span> <span class="n">SensorTyp</span><span class="p">;</span>
+
+    <span class="o">//</span> <span class="n">Ergänze</span> <span class="n">den</span> <span class="n">Zugriffsmodifizierer</span><span class="p">:</span> <span class="n">Soll</span> <span class="n">diese</span> <span class="n">Methode</span> <span class="n">öffentlich</span> <span class="n">verfügbar</span> <span class="n">sein</span><span class="err">?</span>
+    <span class="n">void</span> <span class="n">ErfasseDaten</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Erfasse Daten vom Typ: </span><span class="si">{SensorTyp}</span><span class="s2">"</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="o">//</span> <span class="n">Ergänze</span> <span class="n">die</span> <span class="n">Zugriffsmodifizierer</span><span class="p">,</span> <span class="n">sodass</span> <span class="n">diese</span> <span class="n">Instanz</span> <span class="n">korrekt</span> <span class="n">erstellt</span> <span class="n">und</span> <span class="n">verwendet</span> <span class="n">werden</span> <span class="n">kann</span><span class="o">.</span>
+<span class="n">UmweltStation</span> <span class="n">station</span> <span class="o">=</span> <span class="n">new</span> <span class="n">UmweltStation</span><span class="p">();</span>
+<span class="n">Sensor</span> <span class="n">sensor</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Sensor</span><span class="p">();</span>
+
+<span class="o">//</span> <span class="n">Ergänze</span> <span class="n">die</span> <span class="n">Zugriffsmodifizierer</span> <span class="n">so</span><span class="p">,</span> <span class="n">dass</span> <span class="n">diese</span> <span class="n">Methodenaufrufe</span> <span class="n">möglich</span> <span class="n">sind</span><span class="p">:</span>
+<span class="o">//</span> <span class="n">station</span><span class="o">.</span><span class="n">SetStationName</span><span class="p">(</span><span class="s2">"Station Berlin"</span><span class="p">);</span>
+<span class="o">//</span> <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Station Name: {station.GetStationName()}"</span><span class="p">);</span>
+<span class="o">//</span> <span class="n">sensor</span><span class="o">.</span><span class="n">ErfasseDaten</span><span class="p">();</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="L%C3%B6sungshinweise:">Lösungshinweise:<a class="anchor-link" href="#L%C3%B6sungshinweise:">¶</a></h3><ul>
 <li>Überlege, ob Variablen oder Methoden von außen zugänglich sein sollen (<code>public</code>), nur innerhalb der Klasse (<code>private</code>), oder in abgeleiteten Klassen (<code>protected</code>).</li>
 <li><code>internal</code> kann verwendet werden, wenn der Zugriff nur innerhalb des Projekts erlaubt sein soll.</li>
