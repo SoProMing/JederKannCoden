@@ -4,10 +4,10 @@
     {
         static void Main(string[] args)
         {
-            Spieler spieler1 = new Spieler("Name1", "X");
-            Spieler spieler2 = new Spieler("Name2", "O");
+            Spieler spieler1 = new Spieler("Alice", "X");
+            Spieler spieler2 = new Spieler("Bob", "O");
 
-            Spielfeld feld = new Spielfeld();
+            TTTSpielfeld feld = new TTTSpielfeld();
 
             TicTacToeRegeln spiel = new TicTacToeRegeln(spieler1, spieler2, feld);
             spiel.start();
