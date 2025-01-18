@@ -7516,7 +7516,9 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Erstes-Skript-&amp;-sandbox">Erstes Skript &amp; sandbox<a class="anchor-link" href="#Erstes-Skript-&amp;-sandbox">¶</a></h1><p>Hier ist ein Beispiel für eine <strong>Sandbox</strong>, in der du gefahrlos mit <code>shebang</code>, <code>chmod</code>, <code>ls</code> und <code>grep</code> und dem Umgang mit Skripten experimentieren kannst, sofern du in dem Verzeichnis der sandbox bleibst:</p>
+<div style="border:2px solid #008CBA; padding:10px; background-color:#E0F7FA;">
+<h1 id="%F0%9F%92%A1-Erstes-Skript-&amp;-sandbox">💡 Erstes Skript &amp; sandbox<a class="anchor-link" href="#%F0%9F%92%A1-Erstes-Skript-&amp;-sandbox">¶</a></h1></div>
+<p>Hier ist ein Beispiel für eine <strong>Sandbox</strong>, in der du gefahrlos mit <code>shebang</code>, <code>chmod</code>, <code>ls</code> und <code>grep</code> und dem Umgang mit Skripten experimentieren kannst, sofern du in dem Verzeichnis der sandbox bleibst:</p>
 <h3 id="Schritt-1:-Sandbox-erstellen">Schritt 1: Sandbox erstellen<a class="anchor-link" href="#Schritt-1:-Sandbox-erstellen">¶</a></h3><p>Erstelle einen Ordner, der als Sandbox dient, um deine Tests zu isolieren.</p>
 <div class="highlight"><pre><span></span><span class="c1"># Ordner erstellen</span>
 mkdir<span class="w"> </span>~/sandbox
@@ -7528,6 +7530,16 @@ chmod<span class="w"> </span>-w<span class="w"> </span>~/sandbox
 <p>Wenn du Änderungen am Sandbox-Verzeichnis machen möchtest, setze die Berechtigungen zurück:</p>
 <div class="highlight"><pre><span></span>chmod<span class="w"> </span>+w<span class="w"> </span>~/sandbox
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="Schritt-2:-Skript-mit-Shebang-erstellen">Schritt 2: Skript mit Shebang erstellen<a class="anchor-link" href="#Schritt-2:-Skript-mit-Shebang-erstellen">¶</a></h3><p>Erstelle ein einfaches Skript, das du mit einem Shebang und ausführbaren Berechtigungen versiehst.</p>
 <div class="highlight"><pre><span></span><span class="c1"># Neues Skript erstellen</span>
 cat<span class="w"> </span><span class="s">&lt;&lt; 'EOF' &gt; hello.sh</span>
