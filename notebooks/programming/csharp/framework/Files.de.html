@@ -7516,31 +7516,66 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Jeder-kann-coden">Jeder kann coden<a class="anchor-link" href="#Jeder-kann-coden">¶</a></h1><table border="0">
+<p><a href="../../abstract/Contents.de.html">Jeder kann coden</a> / <a href="../../Programming_And_TicTacToe.de.html">Programmieren &amp; TicTacToe</a> / <a href="../CSharp_Introduction.de.html">C# Einführung</a></p>
+<h1 id="Dateioperationen-in-C%23">Dateioperationen in C#<a class="anchor-link" href="#Dateioperationen-in-C%23">¶</a></h1><table border="0">
 <tr>
 <td>
-<img alt="No description has been provided for this image" src="Everybody_can_code.webp"/>
+<img alt="No description has been provided for this image" src="Files.webp"/>
 </td>
 <td rowspan="2">
-<a href="https://miro.com/app/board/uXjVPm0lbTo=/?moveToWidget=3458764607889708296&amp;cot=14"><img alt="No description has been provided for this image" src="Radar.de.jpg"/></a>
+<a href="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3458764554347680798&amp;cot=14"><img alt="No description has been provided for this image" src="Radar_Files.jpg"/></a>
 </td>
 </tr>
 <tr>
 <td>
-<a href="https://www.codewars.com">Link zu codewars</a><br/>
-<a href="https://www.hackerrank.com">Link zu hackerrank</a><br/>
-<a href="https://www.w3schools.com/">W3Schools: Programmier-Tutorials für Anfänger</a> <br/>
-<a href="https://www.freecodecamp.org/">freeCodeCamp: Interaktives Lernen für Programmieren</a> <br/>
-<a href="https://cs50.harvard.edu/x/">CS50 von Harvard: Einführung in Informatik</a> <br/>
-<a href="https://visualgo.net/">Visualgo: Visualisierung von Algorithmen</a> <br/>
-<a href="https://teachyourselfcs.com/">Teach Yourself Computer Science</a> <br/>
-<a href="https://guides.github.com/introduction/git-handbook/">Git und GitHub Einführung</a> <br/>
-<a href="https://refactoring.guru/">Refactoring Guru: Clean Code Konzepte</a> <br/>
-<a href="https://www.codewars.com/">Codewars: Programmier-Challenges für alle Niveaus</a> <br/>
-<a href="https://www.hackerrank.com/">HackerRank: Coding-Challenges und Wettbewerbe</a>
+<a href="https://learn.microsoft.com/de-de/dotnet/api/system.io.file?view=net-8.0" target="_blank">System.IO.File Dokumentation</a><br/>
+<a href="https://learn.microsoft.com/de-de/dotnet/standard/io/how-to-read-and-write-to-a-text-file" target="_blank">Textdateien lesen und schreiben</a><br/>
+<a href="https://learn.microsoft.com/de-de/dotnet/standard/io/file-streams" target="_blank">Arbeiten mit Streams</a><br/>
+<a href="https://learn.microsoft.com/de-de/dotnet/standard/io/how-to-enumerate-directories-and-files" target="_blank">Verzeichnisse und Dateien auflisten</a><br/>
+<a href="https://learn.microsoft.com/de-de/dotnet/api/system.io.path?view=net-8.0" target="_blank">System.IO.Path Dokumentation</a><br/>
+<a href="https://learn.microsoft.com/de-de/dotnet/api/system.io.filestream?view=net-8.0" target="_blank">FileStream Dokumentation</a><br/>
+<a href="https://learn.microsoft.com/de-de/dotnet/api/system.io.streamwriter?view=net-8.0" target="_blank">StreamWriter Dokumentation</a><br/>
+<a href="https://learn.microsoft.com/de-de/dotnet/api/system.io.streamreader?view=net-8.0" target="_blank">StreamReader Dokumentation</a><br/>
+<a href="https://learn.microsoft.com/de-de/dotnet/api/system.io.filesecurity?view=net-8.0" target="_blank">System.IO.FileSecurity Dokumentation</a><br/>
+<a href="https://learn.microsoft.com/de-de/dotnet/csharp/programming-guide/file-system/how-to-use-the-system-io-namespace" target="_blank">Verwendung des System.IO-Namespace</a>
 </td>
 </tr>
 </table>
+<p>Die Klasse <code>System.IO.File</code> in C# bietet Methoden für das Arbeiten mit Dateien, wie das Erstellen, Lesen, Schreiben, Kopieren, Verschieben, Löschen und Prüfen von Dateien. Diese Methoden sind statisch und befinden sich im Namespace <code>System.IO</code>.</p>
+<h3 id="Wichtige-Methoden-der-File-Klasse">Wichtige Methoden der <code>File</code>-Klasse<a class="anchor-link" href="#Wichtige-Methoden-der-File-Klasse">¶</a></h3><ol>
+<li><strong>Datei erstellen</strong></li>
+</ol>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">using</span> <span class="n">System</span><span class="o">.</span><span class="n">IO</span><span class="p">;</span>
+
+<span class="n">string</span> <span class="n">filePath</span> <span class="o">=</span> <span class="s2">"example.txt"</span><span class="p">;</span>
+<span class="n">File</span><span class="o">.</span><span class="n">Create</span><span class="p">(</span><span class="n">filePath</span><span class="p">)</span><span class="o">.</span><span class="n">Dispose</span><span class="p">();</span> <span class="o">//</span> <span class="n">Erstellt</span> <span class="n">eine</span> <span class="n">Datei</span> <span class="n">und</span> <span class="n">schließt</span> <span class="n">den</span> <span class="n">Stream</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Datei erstellt: "</span> <span class="o">+</span> <span class="n">filePath</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Datei erstellt: example.txt
+</pre>
+</div>
 </div>
 </div>
 </div>
@@ -7551,80 +7586,38 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Inhaltsverzeichnis">Inhaltsverzeichnis<a class="anchor-link" href="#Inhaltsverzeichnis">¶</a></h2><h3 id="Vorbereitung">Vorbereitung<a class="anchor-link" href="#Vorbereitung">¶</a></h3><ul>
-<li><a href="../csharp/CSharp_icebreaker.de.html">Eisbrecher</a></li>
-<li><a href="Number_Systems.de.html">Zahlensysteme und Zeichen</a></li>
-<li><a href="../csharp/tools/Toolchain.de.html">Werkzeuge zur Vorlesung</a></li>
-</ul>
-<h3 id="Grundlagen">Grundlagen<a class="anchor-link" href="#Grundlagen">¶</a></h3><ul>
-<li><a href="Programming_And_TicTacToe.de.html">Programmieren &amp; TicTacToe:</a> Prozedurale Programmierung am Beispiel von Python &amp; TicTacToe</li>
-<li><a href="../csharp/CSharp_Introduction.de.html">Einführung in C#:</a> Prozedurale Programmierung in C# als Übersicht<ul>
-<li><a href="../csharp/CSharp_Introduction/Variables.de.html">Weitere Grundlagen zu Variablen</a></li>
-<li><a href="../csharp/CSharp_Introduction/Strings.de.html">Weitere Grundlagen zu String</a></li>
-<li><a href="../csharp/CSharp_Introduction/Conditional_statements.de.html">Weitere Grundlagen zu bedingten Anweisungen</a></li>
-<li><a href="../csharp/CSharp_Introduction/Loops.de.html">Weitere Grundlagen zu Schleifen</a></li>
-<li><a href="../csharp/CSharp_Introduction/Operators.de.html">Weitere Grundlagen zu Operatoren</a></li>
-<li><a href="../csharp/CSharp_Introduction/Functions.de.html">Weitere Grundlagen zu Funktionen</a></li>
-<li><a href="../csharp/CSharp_Introduction/Arrays.de.html">Weitere Grundlagen zu Arrays</a></li>
-<li><a href="../csharp/CSharp_Introduction/Complex_Datastructures.de.html">Weitere Grundlagen zu komplexen Datenstrukturen</a></li>
-</ul>
-</li>
-</ul>
-<h3 id="Vertiefung">Vertiefung<a class="anchor-link" href="#Vertiefung">¶</a></h3><h4 id="Textausgabe">Textausgabe<a class="anchor-link" href="#Textausgabe">¶</a></h4><ul>
-<li><a href="../csharp/procedural-functional/Console_WriteLine_Basics.de.html">WriteLine Basiswissen</a></li>
-<li><a href="../csharp/procedural-functional/CSharp_HelloWorld_Explanation.de.html">Hallo Welt!</a></li>
-<li><a href="../csharp/procedural-functional/Console_WriteLine_Samples.de.html">WriteLine Samples</a></li>
-<li><a href="../csharp/procedural-functional/Console_WriteLine_TicTacToe.de.html">WriteLine &amp; TicTacToe</a></li>
-</ul>
-<h4 id="Texteingabe">Texteingabe<a class="anchor-link" href="#Texteingabe">¶</a></h4><ul>
-<li><a href="../csharp/procedural-functional/Console_ReadLine_Basics.de.html">ReadLine &amp; TicTacToe</a></li>
-</ul>
-<h4 id="Operatoren">Operatoren<a class="anchor-link" href="#Operatoren">¶</a></h4><ul>
-<li><a href="../csharp/procedural-functional/CSharp_Boolean_Operators_Basics.de.html">Boolesche Operatoren</a></li>
-<li><a href="../csharp/procedural-functional/CSharp_Other_Operators_Basics.de.html">Weitere Operatoren</a></li>
-</ul>
-<h4 id="Datentypen">Datentypen<a class="anchor-link" href="#Datentypen">¶</a></h4><ul>
-<li><a href="../csharp/procedural-functional/CSharp_Numerical_Types.de.html">Numerische Typen</a></li>
-<li><a href="../csharp/procedural-functional/CSharp_Numerical_Floating_Types.de.html">Numerische Gleitkomma-Typen</a></li>
-<li><a href="../csharp/procedural-functional/CSharp_String_Type.de.html">String Typen</a></li>
-<li><a href="../csharp/procedural-functional/CSharp_Arrays.de.html">Arrays</a></li>
-<li><a href="../csharp/procedural-functional/CSharp_Structs.de.html">Structs</a></li>
-<li><a href="../csharp/procedural-functional/CSharp_Enums.de.html">Enums</a></li>
-</ul>
-<h4 id="Kontrollstrukturen">Kontrollstrukturen<a class="anchor-link" href="#Kontrollstrukturen">¶</a></h4><ul>
-<li><a href="../csharp/procedural-functional/CSharp_Conditional.de.html">Bedingte Anweisungen</a></li>
-<li><a href="../csharp/procedural-functional/CSharp_Loops.de.html">Schleifen</a></li>
-<li><a href="../csharp/procedural-functional/CSharp_Conditional_TicTacToe.de.html">Bedingte Anweisungen &amp; TicTacToe</a></li>
-</ul>
-<h4 id=".NET-framework">.NET framework<a class="anchor-link" href="#.NET-framework">¶</a></h4><ul>
-<li><a href="../csharp/framework/Random.de.html">System.Random</a></li>
-<li><a href="../csharp/framework/Regular_Expressions.de.html">Reguläre Ausdrücke</a></li>
-<li><a href="../csharp/framework/Exceptions.html">Exceptions</a></li>
-<li><a href="../csharp/framework/Files.de.html">Dateioperationen</a></li>
-</ul>
-<h3 id="TicTacToe-in-einer-einzelnen-Prozedur"><a href="../csharp/procedural-functional/CSharp_Loops_TicTacToe.de.html">TicTacToe in einer einzelnen Prozedur</a><a class="anchor-link" href="#TicTacToe-in-einer-einzelnen-Prozedur">¶</a></h3><h3 id="Funktionale-Programmierung">Funktionale Programmierung<a class="anchor-link" href="#Funktionale-Programmierung">¶</a></h3><ul>
-<li><a href="../csharp/procedural-functional/CSharp_Methods_Functions.de.html">Funktionen &amp; Prozeduren</a></li>
-</ul>
-<h3 id="Debugging">Debugging<a class="anchor-link" href="#Debugging">¶</a></h3><ul>
-<li><a href="../csharp/tools/Debugger.de.html">Debugging &amp; Breakpoints</a></li>
-<li><a href="../csharp/procedural-functional/CSharp_Reference_Value.de.html">Referenz- &amp; Werttypen</a></li>
-</ul>
-<h3 id="Objektorientierte-Programmierung">Objektorientierte Programmierung<a class="anchor-link" href="#Objektorientierte-Programmierung">¶</a></h3><h4 id="Grundlagen">Grundlagen<a class="anchor-link" href="#Grundlagen">¶</a></h4><ul>
-<li><a href="../Objectoriented_Programming.de.html">Einleitung</a></li>
-<li><a href="../csharp/oop/CSharp_Basics.de.html">Objektorientierte Programmierung in C# Grundlagen</a></li>
-</ul>
-<h4 id="Vertiefung">Vertiefung<a class="anchor-link" href="#Vertiefung">¶</a></h4><ul>
-<li><a href="../csharp/oop/CSharp_Samples.de.html">Objektorientierte Programmierung in C# Samples</a><ul>
-<li><a href="../csharp/oop/CSharp_Access_Modifiers.de.html">Zugriffsmodifizierer</a></li>
-<li><a href="../csharp/oop/Constructors.de.html">Konstruktoren</a></li>
-<li><a href="../csharp/oop/Properties.de.html">Properties</a></li>
-</ul>
-</li>
-<li><a href="../csharp/oop/Compare_Objects.de.html">💡 Vergleich von Objekten</a></li>
-</ul>
-<h4 id="Anwendung">Anwendung<a class="anchor-link" href="#Anwendung">¶</a></h4><ul>
-<li><a href="../csharp/oop/Gameboard_store.de.html">Beispiel: ein Spielstandmanagement in C#</a></li>
-</ul>
+<ol start="2">
+<li><strong>Text in eine Datei schreiben</strong></li>
+</ol>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">string</span> <span class="n">content</span> <span class="o">=</span> <span class="s2">"Das ist ein Beispieltext."</span><span class="p">;</span>
+<span class="n">File</span><span class="o">.</span><span class="n">WriteAllText</span><span class="p">(</span><span class="n">filePath</span><span class="p">,</span> <span class="n">content</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Inhalt in die Datei geschrieben."</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Inhalt in die Datei geschrieben.
+</pre>
+</div>
 </div>
 </div>
 </div>
@@ -7635,8 +7628,538 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Anhang">Anhang<a class="anchor-link" href="#Anhang">¶</a></h3><p><a href="../Create_pdf.en.html">Erzeugen von HTML-Seiten aus den notebooks</a></p>
-<p><a href="../cmdline/Shells.de.html">Kommandozeile</a></p>
+<ol start="3">
+<li><strong>Text aus einer Datei lesen</strong></li>
+</ol>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">string</span> <span class="n">readContent</span> <span class="o">=</span> <span class="n">File</span><span class="o">.</span><span class="n">ReadAllText</span><span class="p">(</span><span class="n">filePath</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Gelesener Inhalt: "</span> <span class="o">+</span> <span class="n">readContent</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Gelesener Inhalt: Das ist ein Beispieltext.
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ol start="4">
+<li><strong>Datei kopieren</strong></li>
+</ol>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">string</span> <span class="n">copyPath</span> <span class="o">=</span> <span class="s2">"example_copy.txt"</span><span class="p">;</span>
+<span class="n">File</span><span class="o">.</span><span class="n">Copy</span><span class="p">(</span><span class="n">filePath</span><span class="p">,</span> <span class="n">copyPath</span><span class="p">,</span> <span class="n">true</span><span class="p">);</span> <span class="o">//</span> <span class="n">true</span> <span class="n">überschreibt</span> <span class="n">die</span> <span class="n">Datei</span><span class="p">,</span> <span class="n">falls</span> <span class="n">sie</span> <span class="n">existiert</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Datei kopiert nach: "</span> <span class="o">+</span> <span class="n">copyPath</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Datei kopiert nach: example_copy.txt
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ol start="5">
+<li><strong>Datei verschieben</strong></li>
+</ol>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">string</span> <span class="n">newPath</span> <span class="o">=</span> <span class="s2">"example_moved.txt"</span><span class="p">;</span>
+<span class="n">File</span><span class="o">.</span><span class="n">Move</span><span class="p">(</span><span class="n">copyPath</span><span class="p">,</span> <span class="n">newPath</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Datei verschoben nach: "</span> <span class="o">+</span> <span class="n">newPath</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Datei verschoben nach: example_moved.txt
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ol start="6">
+<li><strong>Datei löschen</strong></li>
+</ol>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">File</span><span class="o">.</span><span class="n">Delete</span><span class="p">(</span><span class="n">newPath</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Datei gelöscht: "</span> <span class="o">+</span> <span class="n">newPath</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Datei gelöscht: example_moved.txt
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ol start="7">
+<li><strong>Prüfen, ob eine Datei existiert</strong></li>
+</ol>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">File</span><span class="o">.</span><span class="n">Exists</span><span class="p">(</span><span class="n">filePath</span><span class="p">))</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Die Datei existiert."</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Die Datei existiert nicht."</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Die Datei existiert.
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Arbeiten-mit-Streams">Arbeiten mit Streams<a class="anchor-link" href="#Arbeiten-mit-Streams">¶</a></h3><p>Die <code>File</code>-Klasse unterstützt auch das Arbeiten mit Streams, um effizientere Dateioperationen durchzuführen.</p>
+<h4 id="Schreiben-mit-StreamWriter">Schreiben mit <code>StreamWriter</code><a class="anchor-link" href="#Schreiben-mit-StreamWriter">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">using</span> <span class="p">(</span><span class="n">StreamWriter</span> <span class="n">writer</span> <span class="o">=</span> <span class="n">File</span><span class="o">.</span><span class="n">AppendText</span><span class="p">(</span><span class="n">filePath</span><span class="p">))</span>
+<span class="p">{</span>
+    <span class="n">writer</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Zusätzlicher Text."</span><span class="p">);</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Zusätzlicher Text geschrieben."</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Zusätzlicher Text geschrieben.
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Lesen-mit-StreamReader">Lesen mit <code>StreamReader</code><a class="anchor-link" href="#Lesen-mit-StreamReader">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">using</span> <span class="p">(</span><span class="n">StreamReader</span> <span class="n">reader</span> <span class="o">=</span> <span class="n">File</span><span class="o">.</span><span class="n">OpenText</span><span class="p">(</span><span class="n">filePath</span><span class="p">))</span>
+<span class="p">{</span>
+    <span class="n">string</span> <span class="n">line</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">((</span><span class="n">line</span> <span class="o">=</span> <span class="n">reader</span><span class="o">.</span><span class="n">ReadLine</span><span class="p">())</span> <span class="o">!=</span> <span class="n">null</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">line</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Das ist ein Beispieltext.Zusätzlicher Text.
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Umgang-mit-Ausnahmen">Umgang mit Ausnahmen<a class="anchor-link" href="#Umgang-mit-Ausnahmen">¶</a></h3><p>Da Dateioperationen fehlschlagen können (z. B. wegen fehlender Berechtigungen oder nicht vorhandener Dateien), sollte man Ausnahmen behandeln:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="k">try</span>
+<span class="p">{</span>
+    <span class="n">File</span><span class="o">.</span><span class="n">Move</span><span class="p">(</span><span class="s2">"nonexistent.txt"</span><span class="p">,</span> <span class="n">newPath</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="n">catch</span> <span class="p">(</span><span class="n">IOException</span> <span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Fehler: "</span> <span class="o">+</span> <span class="n">e</span><span class="o">.</span><span class="n">Message</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Fehler: Could not find file '/Users/starkj/Documents/2hands/Soproming/Repo/JederKannCoden/notebooks/programming/csharp/framework/nonexistent.txt'.
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Beispiel:-Dateioperationen-in-einem-Arbeitskontext">Beispiel: Dateioperationen in einem Arbeitskontext<a class="anchor-link" href="#Beispiel:-Dateioperationen-in-einem-Arbeitskontext">¶</a></h3><p>Angenommen, wir möchten ein Protokoll erstellen, das Sensordaten in einer Datei speichert und bei Bedarf ausliest:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">string</span> <span class="n">logFile</span> <span class="o">=</span> <span class="s2">"sensor_log.txt"</span><span class="p">;</span>
+
+<span class="o">//</span> <span class="n">Sensordaten</span> <span class="n">schreiben</span>
+<span class="n">string</span> <span class="n">sensorData</span> <span class="o">=</span> <span class="err">$</span><span class="s2">"Timestamp: </span><span class="si">{DateTime.Now}</span><span class="s2">, Value: 23.7°C"</span><span class="p">;</span>
+<span class="n">File</span><span class="o">.</span><span class="n">AppendAllText</span><span class="p">(</span><span class="n">logFile</span><span class="p">,</span> <span class="n">sensorData</span> <span class="o">+</span> <span class="n">Environment</span><span class="o">.</span><span class="n">NewLine</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Sensordaten gespeichert."</span><span class="p">);</span>
+
+<span class="o">//</span> <span class="n">Sensordaten</span> <span class="n">auslesen</span>
+<span class="n">string</span><span class="p">[]</span> <span class="n">logEntries</span> <span class="o">=</span> <span class="n">File</span><span class="o">.</span><span class="n">ReadAllLines</span><span class="p">(</span><span class="n">logFile</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Gespeicherte Einträge:"</span><span class="p">);</span>
+<span class="n">foreach</span> <span class="p">(</span><span class="n">string</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">logEntries</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">entry</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Sensordaten gespeichert.
+Gespeicherte Einträge:
+Timestamp: 17.01.2025 10:59:17, Value: 23.7°C
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Fazit">Fazit<a class="anchor-link" href="#Fazit">¶</a></h3><p>Die <code>File</code>-Klasse bietet eine einfache Möglichkeit, häufige Dateioperationen durchzuführen. Für komplexere Szenarien wie parallelen Zugriff oder große Datenmengen können Streams oder andere Klassen wie <code>FileStream</code> verwendet werden.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Vertiefung">Vertiefung<a class="anchor-link" href="#Vertiefung">¶</a></h2><p>Zu Dateioperationen in C# gibt es weitere wichtige Aspekte, die je nach Anwendungsszenario relevant sein können:</p>
+<h3 id="1.-Weitere-Methoden-der-File-Klasse">1. <strong>Weitere Methoden der <code>File</code>-Klasse</strong><a class="anchor-link" href="#1.-Weitere-Methoden-der-File-Klasse">¶</a></h3><p>Die <code>File</code>-Klasse bietet viele zusätzliche Funktionen, die über die grundlegenden Dateioperationen hinausgehen:</p>
+<ul>
+<li><p><strong><code>File.AppendText</code></strong><br>
+Fügt Text an eine vorhandene Datei an.</br></p>
+<div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="p">(</span><span class="n">StreamWriter</span><span class="w"> </span><span class="n">writer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">File</span><span class="p">.</span><span class="n">AppendText</span><span class="p">(</span><span class="s">"example.txt"</span><span class="p">))</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">writer</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"Weitere Zeile."</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</li>
+<li><p><strong><code>File.ReadAllLines</code></strong><br>
+Liest alle Zeilen einer Datei in ein Array von Zeichenfolgen.</br></p>
+<div class="highlight"><pre><span></span><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">lines</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">File</span><span class="p">.</span><span class="n">ReadAllLines</span><span class="p">(</span><span class="s">"example.txt"</span><span class="p">);</span>
+<span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">line</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">lines</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">line</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</li>
+<li><p><strong><code>File.ReadAllBytes</code> und <code>File.WriteAllBytes</code></strong><br>
+Ermöglicht das Arbeiten mit Binärdaten. Diese Methoden eignen sich für Dateien wie Bilder oder Dokumente.</br></p>
+<div class="highlight"><pre><span></span><span class="kt">byte</span><span class="p">[]</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">File</span><span class="p">.</span><span class="n">ReadAllBytes</span><span class="p">(</span><span class="s">"image.png"</span><span class="p">);</span>
+<span class="n">File</span><span class="p">.</span><span class="n">WriteAllBytes</span><span class="p">(</span><span class="s">"copy_image.png"</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="p">);</span>
+</pre></div>
+</li>
+<li><p><strong><code>File.GetAttributes</code> und <code>File.SetAttributes</code></strong><br>
+Zum Abrufen und Festlegen von Dateiattributen wie "Schreibgeschützt" oder "Versteckt".</br></p>
+<div class="highlight"><pre><span></span><span class="n">File</span><span class="p">.</span><span class="n">SetAttributes</span><span class="p">(</span><span class="s">"example.txt"</span><span class="p">,</span><span class="w"> </span><span class="n">FileAttributes</span><span class="p">.</span><span class="n">ReadOnly</span><span class="p">);</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">File</span><span class="p">.</span><span class="n">GetAttributes</span><span class="p">(</span><span class="s">"example.txt"</span><span class="p">));</span>
+</pre></div>
+</li>
+<li><p><strong><code>File.GetLastWriteTime</code></strong><br>
+Liefert das Datum und die Uhrzeit der letzten Änderung.</br></p>
+<div class="highlight"><pre><span></span><span class="n">DateTime</span><span class="w"> </span><span class="n">lastWrite</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">File</span><span class="p">.</span><span class="n">GetLastWriteTime</span><span class="p">(</span><span class="s">"example.txt"</span><span class="p">);</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"Letzte Änderung: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">lastWrite</span><span class="p">);</span>
+</pre></div>
+</li>
+</ul>
+<h3 id="2.-Arbeiten-mit-gro%C3%9Fen-Dateien">2. <strong>Arbeiten mit großen Dateien</strong><a class="anchor-link" href="#2.-Arbeiten-mit-gro%C3%9Fen-Dateien">¶</a></h3><p>Für große Dateien, bei denen das Laden in den Speicher ineffizient wäre, sollte man Streams verwenden, um Daten stückweise zu lesen oder zu schreiben:</p>
+<ul>
+<li><p><strong>Lesen großer Dateien mit Streams</strong></p>
+<div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="p">(</span><span class="n">FileStream</span><span class="w"> </span><span class="n">fs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">File</span><span class="p">.</span><span class="n">OpenRead</span><span class="p">(</span><span class="s">"largefile.txt"</span><span class="p">))</span>
+<span class="k">using</span><span class="w"> </span><span class="p">(</span><span class="n">StreamReader</span><span class="w"> </span><span class="n">reader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StreamReader</span><span class="p">(</span><span class="n">fs</span><span class="p">))</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">line</span><span class="p">;</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">((</span><span class="n">line</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">reader</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">())</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">line</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</li>
+<li><p><strong>Schreiben großer Dateien mit Streams</strong></p>
+<div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="p">(</span><span class="n">FileStream</span><span class="w"> </span><span class="n">fs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">File</span><span class="p">.</span><span class="n">Create</span><span class="p">(</span><span class="s">"largefile_output.txt"</span><span class="p">))</span>
+<span class="k">using</span><span class="w"> </span><span class="p">(</span><span class="n">StreamWriter</span><span class="w"> </span><span class="n">writer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StreamWriter</span><span class="p">(</span><span class="n">fs</span><span class="p">))</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">100000</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">writer</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$"Zeile {i + 1}"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</li>
+</ul>
+<h3 id="3.-Plattform%C3%BCbergreifende-Pfadverwaltung">3. <strong>Plattformübergreifende Pfadverwaltung</strong><a class="anchor-link" href="#3.-Plattform%C3%BCbergreifende-Pfadverwaltung">¶</a></h3><p>Dateipfade unterscheiden sich zwischen Windows und Unix/Linux-Systemen. Die <code>Path</code>-Klasse hilft bei der plattformunabhängigen Erstellung und Verwaltung von Pfaden.</p>
+<ul>
+<li><strong>Beispiel: Arbeiten mit der <code>Path</code>-Klasse</strong><div class="highlight"><pre><span></span><span class="kt">string</span><span class="w"> </span><span class="n">folder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Path</span><span class="p">.</span><span class="n">Combine</span><span class="p">(</span><span class="s">"C:"</span><span class="p">,</span><span class="w"> </span><span class="s">"Logs"</span><span class="p">);</span>
+<span class="kt">string</span><span class="w"> </span><span class="n">fileName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"log.txt"</span><span class="p">;</span>
+<span class="kt">string</span><span class="w"> </span><span class="n">fullPath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Path</span><span class="p">.</span><span class="n">Combine</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span><span class="w"> </span><span class="n">fileName</span><span class="p">);</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"Vollständiger Pfad: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">fullPath</span><span class="p">);</span>
+</pre></div>
+</li>
+</ul>
+<h3 id="4.-Asynchrone-Dateioperationen">4. <strong>Asynchrone Dateioperationen</strong><a class="anchor-link" href="#4.-Asynchrone-Dateioperationen">¶</a></h3><p>Asynchrone Methoden wie <code>File.ReadAllTextAsync</code> oder <code>File.WriteAllTextAsync</code> sind nützlich, um die Benutzeroberfläche nicht zu blockieren oder serverseitige Ressourcen effizienter zu nutzen.</p>
+<ul>
+<li><strong>Beispiel: Asynchrone Dateioperation</strong><div class="highlight"><pre><span></span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">ReadFileAsync</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">content</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">File</span><span class="p">.</span><span class="n">ReadAllTextAsync</span><span class="p">(</span><span class="s">"example.txt"</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"Gelesener Inhalt: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">content</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</li>
+</ul>
+<h3 id="5.-Zugriffsrechte-und-Berechtigungen">5. <strong>Zugriffsrechte und Berechtigungen</strong><a class="anchor-link" href="#5.-Zugriffsrechte-und-Berechtigungen">¶</a></h3><p>Manchmal ist es wichtig, Zugriffsrechte auf Dateien zu prüfen oder festzulegen. Dies wird in der Regel durch die <code>FileSecurity</code>-Klasse ermöglicht.</p>
+<ul>
+<li><strong>Beispiel: Zugriffsrechte anzeigen</strong><div class="highlight"><pre><span></span><span class="kt">var</span><span class="w"> </span><span class="n">fileInfo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FileInfo</span><span class="p">(</span><span class="s">"example.txt"</span><span class="p">);</span>
+<span class="kt">var</span><span class="w"> </span><span class="n">security</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fileInfo</span><span class="p">.</span><span class="n">GetAccessControl</span><span class="p">();</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">security</span><span class="p">.</span><span class="n">GetOwner</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="n">Security</span><span class="p">.</span><span class="n">Principal</span><span class="p">.</span><span class="n">NTAccount</span><span class="p">)));</span>
+</pre></div>
+</li>
+</ul>
+<h3 id="6.-Fehlerbehandlung-und-Robustheit">6. <strong>Fehlerbehandlung und Robustheit</strong><a class="anchor-link" href="#6.-Fehlerbehandlung-und-Robustheit">¶</a></h3><p>Dateioperationen können häufig fehlschlagen. Typische Fehlerquellen sind:</p>
+<ul>
+<li>Die Datei existiert nicht (<code>FileNotFoundException</code>).</li>
+<li>Keine Zugriffsrechte (<code>UnauthorizedAccessException</code>).</li>
+<li>Eine Datei ist in Gebrauch (<code>IOException</code>).</li>
+</ul>
+<p>Es ist daher ratsam, <code>try-catch</code>-Blöcke zu verwenden, um Fehler robust zu behandeln und dem Nutzer ggf. Alternativen anzubieten.</p>
+<h3 id="7.-Best-Practices">7. <strong>Best Practices</strong><a class="anchor-link" href="#7.-Best-Practices">¶</a></h3><ul>
+<li><strong>Relative vs. absolute Pfade</strong>: Nach Möglichkeit relative Pfade verwenden, um die Portabilität zu erhöhen.</li>
+<li><strong>Pfadvalidierung</strong>: Vor dem Zugriff sicherstellen, dass Pfade gültig und sicher sind.</li>
+<li><strong>Ressourcenmanagement</strong>: Streams oder Writer immer mit <code>using</code>-Blöcken verwenden, um Ressourcen ordnungsgemäß freizugeben.</li>
+<li><strong>Asynchrone Verarbeitung</strong>: Für zeitkritische Anwendungen asynchrone Methoden nutzen, um Blockaden zu vermeiden.</li>
+</ul>
+<h3 id="8.-Praxisbeispiel:-Sicherungskopie-erstellen">8. <strong>Praxisbeispiel: Sicherungskopie erstellen</strong><a class="anchor-link" href="#8.-Praxisbeispiel:-Sicherungskopie-erstellen">¶</a></h3><p>Das folgende Beispiel erstellt eine Sicherungskopie einer Datei und fügt dabei ein Zeitstempel an den Dateinamen an:</p>
+<div class="highlight"><pre><span></span><span class="kt">string</span><span class="w"> </span><span class="n">originalFile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"data.txt"</span><span class="p">;</span>
+<span class="kt">string</span><span class="w"> </span><span class="n">backupFile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">$"data_backup_{DateTime.Now:yyyyMMdd_HHmmss}.txt"</span><span class="p">;</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">File</span><span class="p">.</span><span class="n">Exists</span><span class="p">(</span><span class="n">originalFile</span><span class="p">))</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">File</span><span class="p">.</span><span class="n">Copy</span><span class="p">(</span><span class="n">originalFile</span><span class="p">,</span><span class="w"> </span><span class="n">backupFile</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$"Sicherungskopie erstellt: {backupFile}"</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"Originaldatei nicht gefunden."</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+<p>Wenn du ein spezifisches Szenario oder weitere Themen wie das Arbeiten mit temporären Dateien, <code>FileStream</code> oder Netzwerkpfaden betrachten möchtest, lass es mich wissen!</p>
 </div>
 </div>
 </div>
