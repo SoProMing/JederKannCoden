@@ -7554,7 +7554,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="k">try</span>
@@ -7609,7 +7609,7 @@ Dieser Block wird immer ausgeführt, egal ob eine Ausnahme auftritt oder nicht.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="k">try</span>
@@ -7663,7 +7663,7 @@ Dieser Block wird immer ausgeführt, egal ob eine Ausnahme auftritt oder nicht.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">InvalidAgeException</span> <span class="p">:</span> <span class="ne">Exception</span>
@@ -7837,19 +7837,24 @@ Fehler im äußeren Block.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="k">try</span>
+<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="n">void</span> <span class="n">methodeMitException</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="nb">int</span> <span class="n">divisor</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="nb">int</span> <span class="n">result</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">/</span> <span class="n">divisor</span><span class="p">;</span>
+    <span class="k">try</span>
+    <span class="p">{</span>
+        <span class="nb">int</span> <span class="n">divisor</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="nb">int</span> <span class="n">result</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">/</span> <span class="n">divisor</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">catch</span> <span class="p">(</span><span class="n">DivideByZeroException</span> <span class="n">ex</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Fehler: </span><span class="si">{ex.Message}</span><span class="s2">"</span><span class="p">);</span> <span class="o">//</span> <span class="n">Fehlermeldung</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Stapelverfolgung: </span><span class="si">{ex.StackTrace}</span><span class="s2">"</span><span class="p">);</span> <span class="o">//</span> <span class="n">StackTrace</span>
+    <span class="p">}</span>
 <span class="p">}</span>
-<span class="n">catch</span> <span class="p">(</span><span class="n">DivideByZeroException</span> <span class="n">ex</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Fehler: </span><span class="si">{ex.Message}</span><span class="s2">"</span><span class="p">);</span> <span class="o">//</span> <span class="n">Fehlermeldung</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Stapelverfolgung: </span><span class="si">{ex.StackTrace}</span><span class="s2">"</span><span class="p">);</span> <span class="o">//</span> <span class="n">StackTrace</span>
-<span class="p">}</span>
+
+<span class="n">methodeMitException</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
@@ -7863,7 +7868,7 @@ Fehler im äußeren Block.
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>Fehler: Attempted to divide by zero.
-Stapelverfolgung:    at Submission#7.&lt;&lt;Initialize&gt;&gt;d__0.MoveNext()
+Stapelverfolgung:    at Submission#22.methodeMitException()
 </pre>
 </div>
 </div>

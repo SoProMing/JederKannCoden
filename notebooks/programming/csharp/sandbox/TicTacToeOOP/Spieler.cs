@@ -8,14 +8,14 @@ namespace TicTacToeOOP
 {
     internal class Spieler
     {
-        public string Stein { get; init; }
+        public string Kennzeichner { get; init; }
 
         public string Name { get; init; }
 
-        public Spieler( string Name, string Stein)
+        public Spieler( string Name, string Kennzeichner)
         {
             this.Name = Name;
-            this.Stein = Stein;
+            this.Kennzeichner = Kennzeichner;
         }
     }
 }
