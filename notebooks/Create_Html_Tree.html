@@ -7516,128 +7516,9 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><a href="abstract/Contents.de.html">Jeder kann coden</a> / <a href="Number_Systems.de.html">Zahlensysteme</a> / <a href="Programming_And_TicTacToe.de.html">Prozedurale Programmierung</a></p>
-<h1 id="Objektorientierte-Programmierung">Objektorientierte Programmierung<a class="anchor-link" href="#Objektorientierte-Programmierung">¶</a></h1><img alt="No description has been provided for this image" src="OOP_Basics.webp" style="width:280px; height:280px;"/>
-<p>Wir können die Prinzipien der objektorientierten Programmierung anhand eines <strong>Ökosystems</strong> veranschaulichen. In einem Ökosystem gibt es viele verschiedene Elemente wie Pflanzen, Tiere und Gewässer. Diese Elemente interagieren miteinander, und jedes hat bestimmte Eigenschaften und Verhaltensweisen. Lass uns die OOP-Konzepte hier anwenden:</p>
-<h3 id="1.-Klassen-und-Objekte">1. Klassen und Objekte<a class="anchor-link" href="#1.-Klassen-und-Objekte">¶</a></h3><p><strong>Analogie</strong>: Stell dir vor, wir möchten verschiedene <strong>Lebewesen</strong> in einem Ökosystem darstellen. Die Klasse <strong>Lebewesen</strong> ist wie eine Vorlage für alle Lebewesen und beschreibt allgemeine Eigenschaften und Verhaltensweisen. Daraus können wir dann Objekte wie <strong>Bäume</strong> oder <strong>Tiere</strong> erstellen.</p>
-<p><strong>Diagramm</strong>:</p>
-<div class="jp-Mermaid"><pre class="mermaid">
-classDiagram
-    class Lebewesen {
-        +name : String
-        +alter : int
-        +wachsen() : void
-    }
-
-    class Pflanze {
-        +leben() : void
-    }
-    
-    class Tier {
-        +leben() : void
-    }
-
-    Lebewesen &lt;|-- Pflanze
-    Lebewesen &lt;|-- Tier
-
-    class Eiche {
-        +Photosynthese() : void
-    }
-
-    class Reh {
-        +atmen() : void
-    }
-
-    Pflanze &lt;|-- Eiche
-    Tier &lt;|-- Reh
-</pre></div><p><strong>Codebeispiel</strong>:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Lebewesen</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">alter</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">alter</span> <span class="o">=</span> <span class="n">alter</span>
-    
-    <span class="k">def</span> <span class="nf">wachsen</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> wächst."</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Bäume</strong> und <strong>Tiere</strong> sind beides Lebewesen, also können wir Instanzen der Klasse <code>Lebewesen</code> erstellen:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">baum</span> <span class="o">=</span> <span class="n">Lebewesen</span><span class="p">(</span><span class="s2">"Eiche"</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
-<span class="n">tier</span> <span class="o">=</span> <span class="n">Lebewesen</span><span class="p">(</span><span class="s2">"Reh"</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-<span class="n">baum</span><span class="o">.</span><span class="n">wachsen</span><span class="p">()</span>
-<span class="n">tier</span><span class="o">.</span><span class="n">wachsen</span><span class="p">()</span>
-<span class="c1"># Ausgabe:</span>
-<span class="c1"># Eiche wächst.</span>
-<span class="c1"># Reh wächst.</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Eiche wächst.
-Reh wächst.
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="2.-Kapselung">2. Kapselung<a class="anchor-link" href="#2.-Kapselung">¶</a></h3><p><strong>Analogie</strong>: Angenommen, ein Baum hat seine eigenen Prozesse wie <strong>Photosynthese</strong>. Das ist ein interner Prozess, der nicht direkt sichtbar ist. Andere Lebewesen müssen nicht wissen, wie Photosynthese genau funktioniert – sie sehen nur das Ergebnis, dass der Baum wächst.</p>
-<p><strong>Diagramm:</strong></p>
-<div class="jp-Mermaid"><pre class="mermaid">
-classDiagram
-    class Baum {
-        +String name
-        +int alter
-        -bool __photosynthese_aktiv
-        +wachsen()
-        -__photosynthese_starten()
-    }
-</pre></div><p><strong>Codebeispiel</strong>:</p>
+<h1 id="Create-as-webpage">Create as webpage<a class="anchor-link" href="#Create-as-webpage">¶</a></h1><img alt="No description has been provided for this image" src="Create_Webpage.webp" style="width:280px; height:280px;"/>
+<p>This page describes and actually impliments, how to make the jupyter notebooks of the whole project a working web page. Please note the prerequisite of having generated all needed html files, by executing the according scripts in <a href="Create_pdf.en.html">Create PDF</a>.</p>
+<h2 id="Copy-all-resources">Copy all resources<a class="anchor-link" href="#Copy-all-resources">¶</a></h2><p>In this step all html files and all needed assets are copied to a temporary folder.</p>
 </div>
 </div>
 </div>
@@ -7649,19 +7530,92 @@ classDiagram
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Baum</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">alter</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">alter</span> <span class="o">=</span> <span class="n">alter</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">__photosynthese_aktiv</span> <span class="o">=</span> <span class="kc">False</span>  <span class="c1"># Diese Information ist privat</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">shutil</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
 
-    <span class="k">def</span> <span class="nf">wachsen</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">__photosynthese_starten</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> wächst."</span><span class="p">)</span>
+<span class="c1"># Exclusion lists</span>
+<span class="n">EXCLUDE_FILES</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Everybody_Can_Code.html"</span><span class="p">]</span>  <span class="c1"># Add filenames to exclude</span>
+<span class="n">EXCLUDE_DIRS</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"website"</span><span class="p">,</span> <span class="s2">"drafts"</span><span class="p">]</span>            <span class="c1"># Add directory names to exclude</span>
 
-    <span class="k">def</span> <span class="nf">__photosynthese_starten</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">__photosynthese_aktiv</span> <span class="o">=</span> <span class="kc">True</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">"Photosynthese gestartet."</span><span class="p">)</span>
+<span class="c1"># Function to ensure a directory exists</span>
+<span class="k">def</span> <span class="nf">ensure_dir</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+
+<span class="c1"># Function to create an index.html with a redirect</span>
+<span class="k">def</span> <span class="nf">create_redirect_index_html</span><span class="p">(</span><span class="n">target_file</span><span class="p">,</span> <span class="n">dst_dir</span><span class="p">):</span>
+    <span class="n">index_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dst_dir</span><span class="p">,</span> <span class="s2">"index.html"</span><span class="p">)</span>
+
+    <span class="n">redirect_content</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"""</span>
+<span class="s2">    &lt;!DOCTYPE html&gt;</span>
+<span class="s2">    &lt;html lang="en"&gt;</span>
+<span class="s2">    &lt;head&gt;</span>
+<span class="s2">        &lt;meta charset="UTF-8"&gt;</span>
+<span class="s2">        &lt;meta http-equiv="refresh" content="0; url=</span><span class="si">{</span><span class="n">target_file</span><span class="si">}</span><span class="s2">"&gt;</span>
+<span class="s2">        &lt;title&gt;Redirecting...&lt;/title&gt;</span>
+<span class="s2">    &lt;/head&gt;</span>
+<span class="s2">    &lt;body&gt;</span>
+<span class="s2">        &lt;p&gt;Redirecting to &lt;a href="</span><span class="si">{</span><span class="n">target_file</span><span class="si">}</span><span class="s2">"&gt;</span><span class="si">{</span><span class="n">target_file</span><span class="si">}</span><span class="s2">&lt;/a&gt;...&lt;/p&gt;</span>
+<span class="s2">    &lt;/body&gt;</span>
+<span class="s2">    &lt;/html&gt;</span>
+<span class="s2">    """</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">index_path</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">)</span> <span class="k">as</span> <span class="n">index_file</span><span class="p">:</span>
+        <span class="n">index_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">redirect_content</span><span class="p">)</span>
+
+<span class="c1"># Function to copy all HTML files and their resources, excluding specific files and directories</span>
+<span class="k">def</span> <span class="nf">copy_all_html_and_resources</span><span class="p">(</span><span class="n">src_dir</span><span class="p">,</span> <span class="n">dst_dir</span><span class="p">):</span>
+    <span class="n">ensure_dir</span><span class="p">(</span><span class="n">dst_dir</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">src_dir</span><span class="p">):</span>
+        <span class="c1"># Exclude directories</span>
+        <span class="n">dirs</span><span class="p">[:]</span> <span class="o">=</span> <span class="p">[</span><span class="n">d</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dirs</span> <span class="k">if</span> <span class="n">d</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">EXCLUDE_DIRS</span><span class="p">]</span>
+
+        <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+            <span class="c1"># Skip excluded files</span>
+            <span class="k">if</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">EXCLUDE_FILES</span><span class="p">:</span>
+                <span class="k">continue</span>
+
+            <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">".html"</span><span class="p">):</span>
+                <span class="n">src_html_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
+
+                <span class="c1"># Copy HTML file</span>
+                <span class="n">relative_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">src_dir</span><span class="p">)</span>
+                <span class="n">target_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dst_dir</span><span class="p">,</span> <span class="n">relative_path</span><span class="p">)</span>
+                <span class="n">ensure_dir</span><span class="p">(</span><span class="n">target_dir</span><span class="p">)</span>
+
+                <span class="n">dst_html_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">target_dir</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
+                <span class="n">shutil</span><span class="o">.</span><span class="n">copy2</span><span class="p">(</span><span class="n">src_html_path</span><span class="p">,</span> <span class="n">dst_html_path</span><span class="p">)</span>
+
+                <span class="c1"># Analyze and copy resources</span>
+                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">src_html_path</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">)</span> <span class="k">as</span> <span class="n">html_file</span><span class="p">:</span>
+                    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html_file</span><span class="p">,</span> <span class="s2">"html.parser"</span><span class="p">)</span>
+                    <span class="k">for</span> <span class="n">img</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">"img"</span><span class="p">):</span>
+                        <span class="k">if</span> <span class="n">img</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"src"</span><span class="p">):</span>
+                            <span class="n">original_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">normpath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">img</span><span class="p">[</span><span class="s2">"src"</span><span class="p">]))</span>
+                            <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">original_path</span><span class="p">):</span>
+                                <span class="n">resource_target_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">target_dir</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">img</span><span class="p">[</span><span class="s2">"src"</span><span class="p">]))</span>
+                                <span class="n">ensure_dir</span><span class="p">(</span><span class="n">resource_target_dir</span><span class="p">)</span>
+                                <span class="n">shutil</span><span class="o">.</span><span class="n">copy2</span><span class="p">(</span><span class="n">original_path</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">resource_target_dir</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">img</span><span class="p">[</span><span class="s2">"src"</span><span class="p">])))</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+    <span class="c1"># Variables for source directory, destination directory, and HTML file</span>
+    <span class="n">source_directory</span> <span class="o">=</span> <span class="s2">"."</span>
+    <span class="n">destination_directory</span> <span class="o">=</span> <span class="s2">"./website"</span>
+    <span class="n">source_html_file</span> <span class="o">=</span> <span class="s2">"./programming/abstract/Intro.de.html"</span>
+
+    <span class="n">source_html_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">source_directory</span><span class="p">,</span> <span class="n">source_html_file</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">source_directory</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Das Quellverzeichnis existiert nicht."</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">source_html_path</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Die angegebene Quelldatei existiert nicht."</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">destination_directory</span><span class="p">)</span>
+        <span class="n">copy_all_html_and_resources</span><span class="p">(</span><span class="n">source_directory</span><span class="p">,</span> <span class="n">destination_directory</span><span class="p">)</span>
+        <span class="n">create_redirect_index_html</span><span class="p">(</span><span class="n">source_html_file</span><span class="p">,</span> <span class="n">destination_directory</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Kopieren und Redirect abgeschlossen."</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7674,7 +7628,7 @@ classDiagram
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Hier ist <code>__photosynthese_aktiv</code> ein privates Attribut, und <code>__photosynthese_starten</code> ist eine Methode, die nur intern verwendet wird. Der Baum führt die Photosynthese nur für sich selbst aus, ohne dass andere Lebewesen eingreifen können.</p>
+<h2 id="Create-menu-and-search">Create menu and search<a class="anchor-link" href="#Create-menu-and-search">¶</a></h2><p>In this step a menu is created from the titles of the html pages and the folder structure they are in.</p>
 </div>
 </div>
 </div>
@@ -7686,11 +7640,285 @@ classDiagram
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">eiche</span> <span class="o">=</span> <span class="n">Baum</span><span class="p">(</span><span class="s2">"Eiche"</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
-<span class="n">eiche</span><span class="o">.</span><span class="n">wachsen</span><span class="p">()</span>
-<span class="c1"># Ausgabe:</span>
-<span class="c1"># Photosynthese gestartet.</span>
-<span class="c1"># Eiche wächst.</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+
+<span class="c1"># Configuration</span>
+<span class="n">BASE_DIR</span> <span class="o">=</span> <span class="s2">"./website"</span>  <span class="c1"># Base directory containing the HTML files</span>
+<span class="n">SEARCH_INDEX_FILE</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="s2">"search-index.json"</span><span class="p">)</span>
+<span class="n">STYLE_FILE</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="s2">"style.css"</span><span class="p">)</span>
+<span class="n">URL_PREFIX</span> <span class="o">=</span> <span class="s2">"/SoProMing/JederKannCoden/"</span>  <span class="c1"># Set the static prefix for URLs (e.g., "/subdir/")</span>
+
+
+<span class="k">def</span> <span class="nf">normalize_url</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Normalize URLs by removing ../ and resolving redundant parts."""</span>
+    <span class="c1"># Remove "../" and normalize the path</span>
+    <span class="n">clean_url</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">normpath</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"</span><span class="se">\\</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"/"</span><span class="p">)</span>
+    <span class="n">clean_url</span> <span class="o">=</span> <span class="n">clean_url</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"../"</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span>
+    <span class="c1"># Ensure the URL starts with the configured prefix</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">clean_url</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">URL_PREFIX</span><span class="p">):</span>
+        <span class="n">clean_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">URL_PREFIX</span><span class="si">}{</span><span class="n">clean_url</span><span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
+    <span class="k">return</span> <span class="n">clean_url</span>
+
+
+<span class="c1"># Exclusion lists</span>
+<span class="n">EXCLUDE_FILES</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"index.html"</span><span class="p">,</span> <span class="s2">"exclude.html"</span><span class="p">]</span>  <span class="c1"># Add filenames you want to exclude</span>
+<span class="n">EXCLUDE_DIRS</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"website"</span><span class="p">]</span>                      <span class="c1"># Add directory names you want to exclude</span>
+
+
+<span class="k">def</span> <span class="nf">sanitize_title</span><span class="p">(</span><span class="n">title</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Remove unwanted symbols like ¶ from the title."""</span>
+    <span class="k">if</span> <span class="n">title</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">title</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"¶"</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">title</span>
+
+
+<span class="k">def</span> <span class="nf">get_title_from_h1</span><span class="p">(</span><span class="n">file_path</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Extract the text of the first &lt;h1&gt; tag in the HTML file and sanitize it."""</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+            <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s2">"html.parser"</span><span class="p">)</span>
+            <span class="n">h1</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">"h1"</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">sanitize_title</span><span class="p">(</span><span class="n">h1</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="n">strip</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span> <span class="k">if</span> <span class="n">h1</span> <span class="k">else</span> <span class="kc">None</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Error reading </span><span class="si">{</span><span class="n">file_path</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+
+<span class="k">def</span> <span class="nf">extract_readable_text</span><span class="p">(</span><span class="n">file_path</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Extract readable text from an HTML file, ignoring non-visible elements."""</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+            <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s2">"html.parser"</span><span class="p">)</span>
+            <span class="c1"># Remove script and style elements</span>
+            <span class="k">for</span> <span class="n">script_or_style</span> <span class="ow">in</span> <span class="n">soup</span><span class="p">([</span><span class="s2">"script"</span><span class="p">,</span> <span class="s2">"style"</span><span class="p">]):</span>
+                <span class="n">script_or_style</span><span class="o">.</span><span class="n">decompose</span><span class="p">()</span>
+
+            <span class="c1"># Extract visible text</span>
+            <span class="k">return</span> <span class="n">soup</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="n">separator</span><span class="o">=</span><span class="s2">" "</span><span class="p">,</span> <span class="n">strip</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Error extracting text from </span><span class="si">{</span><span class="n">file_path</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s2">""</span>
+
+
+<span class="k">def</span> <span class="nf">build_menu_tree</span><span class="p">(</span><span class="n">base_dir</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Build a nested dictionary representing the menu structure."""</span>
+    <span class="n">menu_tree</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">base_dir</span><span class="p">):</span>
+        <span class="c1"># Remove excluded directories from traversal</span>
+        <span class="n">dirs</span><span class="p">[:]</span> <span class="o">=</span> <span class="p">[</span><span class="n">d</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dirs</span> <span class="k">if</span> <span class="n">d</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">EXCLUDE_DIRS</span><span class="p">]</span>
+
+        <span class="n">rel_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">base_dir</span><span class="p">)</span>
+        <span class="n">current_level</span> <span class="o">=</span> <span class="n">menu_tree</span>
+
+        <span class="c1"># Navigate to the current directory level in the tree</span>
+        <span class="k">if</span> <span class="n">rel_dir</span> <span class="o">!=</span> <span class="s2">"."</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">part</span> <span class="ow">in</span> <span class="n">rel_dir</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">):</span>
+                <span class="n">current_level</span> <span class="o">=</span> <span class="n">current_level</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">part</span><span class="p">,</span> <span class="p">{})</span>
+
+        <span class="c1"># Add files to the current level</span>
+        <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">files</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">".html"</span><span class="p">)</span> <span class="ow">and</span> <span class="n">file</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">EXCLUDE_FILES</span><span class="p">:</span>
+                <span class="n">file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
+                <span class="n">title</span> <span class="o">=</span> <span class="n">get_title_from_h1</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">title</span><span class="p">:</span>  <span class="c1"># Only include files with a valid &lt;h1&gt; title</span>
+                    <span class="n">current_level</span><span class="p">[</span><span class="n">file</span><span class="p">]</span> <span class="o">=</span> <span class="n">title</span>
+
+    <span class="k">return</span> <span class="n">menu_tree</span>
+
+
+<span class="k">def</span> <span class="nf">generate_menu_html</span><span class="p">(</span><span class="n">menu_tree</span><span class="p">,</span> <span class="n">current_path</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span> <span class="n">relative_to</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Generate HTML for the menu structure recursively with relative links."""</span>
+    <span class="n">indent</span> <span class="o">=</span> <span class="n">level</span> <span class="o">*</span> <span class="mi">20</span>  <span class="c1"># Indent for CSS</span>
+    <span class="n">html</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'&lt;ul class="menu" style="padding-left: </span><span class="si">{</span><span class="n">indent</span><span class="si">}</span><span class="s1">px;"&gt;</span><span class="se">\n</span><span class="s1">'</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">menu_tree</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>  <span class="c1"># File</span>
+            <span class="n">rel_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">current_path</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+            <span class="n">relative_link</span> <span class="o">=</span> <span class="n">normalize_url</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span><span class="n">rel_path</span><span class="p">,</span> <span class="n">relative_to</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"</span><span class="se">\\</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"/"</span><span class="p">))</span>
+            <span class="n">html</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">'  &lt;li&gt;&lt;a href="</span><span class="si">{</span><span class="n">relative_link</span><span class="si">}</span><span class="s1">"&gt;</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s1">&lt;/a&gt;&lt;/li&gt;</span><span class="se">\n</span><span class="s1">'</span>
+        <span class="k">else</span><span class="p">:</span>  <span class="c1"># Directory</span>
+            <span class="n">title</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
+            <span class="n">html</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">'  &lt;li&gt;</span><span class="se">\n</span><span class="s1">    &lt;details&gt;</span><span class="se">\n</span><span class="s1">      &lt;summary&gt;</span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s1">&lt;/summary&gt;</span><span class="se">\n</span><span class="s1">'</span>
+            <span class="n">html</span> <span class="o">+=</span> <span class="n">generate_menu_html</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">current_path</span><span class="p">,</span> <span class="n">key</span><span class="p">),</span> <span class="n">relative_to</span><span class="p">,</span> <span class="n">level</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">html</span> <span class="o">+=</span> <span class="s2">"    &lt;/details&gt;</span><span class="se">\n</span><span class="s2">  &lt;/li&gt;</span><span class="se">\n</span><span class="s2">"</span>
+    <span class="n">html</span> <span class="o">+=</span> <span class="s2">"&lt;/ul&gt;</span><span class="se">\n</span><span class="s2">"</span>
+    <span class="k">return</span> <span class="n">html</span>
+
+
+<span class="k">def</span> <span class="nf">generate_search_index</span><span class="p">(</span><span class="n">base_dir</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Generate a JSON file for the search index."""</span>
+    <span class="n">search_index</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">base_dir</span><span class="p">):</span>
+        <span class="c1"># Remove excluded directories from traversal</span>
+        <span class="n">dirs</span><span class="p">[:]</span> <span class="o">=</span> <span class="p">[</span><span class="n">d</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dirs</span> <span class="k">if</span> <span class="n">d</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">EXCLUDE_DIRS</span><span class="p">]</span>
+
+        <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">".html"</span><span class="p">)</span> <span class="ow">and</span> <span class="n">file</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">EXCLUDE_FILES</span><span class="p">:</span>
+                <span class="n">absolute_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">file</span><span class="p">),</span> <span class="n">base_dir</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"</span><span class="se">\\</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"/"</span><span class="p">)</span>
+                <span class="n">file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
+                <span class="n">title</span> <span class="o">=</span> <span class="n">get_title_from_h1</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">title</span><span class="p">:</span>  <span class="c1"># Only include files with a valid &lt;h1&gt; title</span>
+                    <span class="n">readable_text</span> <span class="o">=</span> <span class="n">extract_readable_text</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+                    <span class="n">search_index</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                        <span class="s2">"url"</span><span class="p">:</span> <span class="n">normalize_url</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">absolute_path</span><span class="si">}</span><span class="s2">"</span><span class="p">),</span>  <span class="c1"># Normalize the URL</span>
+                        <span class="s2">"title"</span><span class="p">:</span> <span class="n">title</span><span class="p">,</span>
+                        <span class="s2">"content"</span><span class="p">:</span> <span class="n">readable_text</span>  <span class="c1"># Use readable text only</span>
+                    <span class="p">})</span>
+
+    <span class="c1"># Save the search index</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">SEARCH_INDEX_FILE</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">search_index</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">ensure_ascii</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Search index created: </span><span class="si">{</span><span class="n">SEARCH_INDEX_FILE</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">generate_style</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">"""Generate a CSS file for styling."""</span>
+    <span class="n">style_content</span> <span class="o">=</span> <span class="s2">"""</span>
+<span class="s2">    body {</span>
+<span class="s2">        font-family: Arial, sans-serif;</span>
+<span class="s2">        margin: 0;</span>
+<span class="s2">        display: flex;</span>
+<span class="s2">    }</span>
+<span class="s2">    nav {</span>
+<span class="s2">        background-color: #333;</span>
+<span class="s2">        color: #fff;</span>
+<span class="s2">        width: 250px;</span>
+<span class="s2">        height: 100vh;</span>
+<span class="s2">        padding: 10px;</span>
+<span class="s2">        box-sizing: border-box;</span>
+<span class="s2">        overflow-y: auto;</span>
+<span class="s2">    }</span>
+<span class="s2">    nav h1 {</span>
+<span class="s2">        margin: 0;</span>
+<span class="s2">        font-size: 18px;</span>
+<span class="s2">        text-align: center;</span>
+<span class="s2">        margin-bottom: 20px;</span>
+<span class="s2">        padding: 10px 0;</span>
+<span class="s2">        border-bottom: 1px solid #555;</span>
+<span class="s2">    }</span>
+<span class="s2">    .menu {</span>
+<span class="s2">        list-style: none;</span>
+<span class="s2">        padding: 0;</span>
+<span class="s2">        margin: 0;</span>
+<span class="s2">    }</span>
+<span class="s2">    .menu li {</span>
+<span class="s2">        margin: 5px 0;</span>
+<span class="s2">    }</span>
+<span class="s2">    .menu a {</span>
+<span class="s2">        text-decoration: none;</span>
+<span class="s2">        color: #fff;</span>
+<span class="s2">    }</span>
+<span class="s2">    .content {</span>
+<span class="s2">        flex: 1;</span>
+<span class="s2">        padding: 20px;</span>
+<span class="s2">    }</span>
+<span class="s2">    #search-container {</span>
+<span class="s2">        margin-top: 20px;</span>
+<span class="s2">    }</span>
+<span class="s2">    input[type="text"] {</span>
+<span class="s2">        width: 100%;</span>
+<span class="s2">        padding: 5px;</span>
+<span class="s2">        font-size: 16px;</span>
+<span class="s2">        margin-bottom: 10px;</span>
+<span class="s2">    }</span>
+<span class="s2">    #searchResults div {</span>
+<span class="s2">        margin: 5px 0;</span>
+<span class="s2">    }</span>
+<span class="s2">    """</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">STYLE_FILE</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">style_content</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"CSS created: </span><span class="si">{</span><span class="n">STYLE_FILE</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">inject_menu_and_search</span><span class="p">(</span><span class="n">base_dir</span><span class="p">,</span> <span class="n">menu_tree</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Inject the menu and search functionality into each HTML file."""</span>
+    <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">base_dir</span><span class="p">):</span>
+        <span class="c1"># Remove excluded directories from traversal</span>
+        <span class="n">dirs</span><span class="p">[:]</span> <span class="o">=</span> <span class="p">[</span><span class="n">d</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dirs</span> <span class="k">if</span> <span class="n">d</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">EXCLUDE_DIRS</span><span class="p">]</span>
+
+        <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">".html"</span><span class="p">)</span> <span class="ow">and</span> <span class="n">file</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">EXCLUDE_FILES</span><span class="p">:</span>
+                <span class="n">file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
+                <span class="n">relative_to</span> <span class="o">=</span> <span class="n">root</span>
+
+                <span class="c1"># Generate menu HTML specific to the current file</span>
+                <span class="n">menu_html</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"""</span>
+<span class="s2">                &lt;h1&gt;Jeder kann coden&lt;/h1&gt;</span>
+<span class="s2">                </span><span class="si">{</span><span class="n">generate_menu_html</span><span class="p">(</span><span class="n">menu_tree</span><span class="p">,</span><span class="w"> </span><span class="n">current_path</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="n">relative_to</span><span class="o">=</span><span class="n">relative_to</span><span class="p">)</span><span class="si">}</span>
+<span class="s2">                """</span>
+
+                <span class="c1"># Adjust paths for style and search index</span>
+                <span class="n">relative_path_to_base</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="n">root</span><span class="p">)</span>
+                <span class="n">style_path</span> <span class="o">=</span> <span class="n">normalize_url</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">relative_path_to_base</span><span class="p">,</span> <span class="s2">"style.css"</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"</span><span class="se">\\</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"/"</span><span class="p">))</span>
+                <span class="n">search_index_path</span> <span class="o">=</span> <span class="n">normalize_url</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">relative_path_to_base</span><span class="p">,</span> <span class="s2">"search-index.json"</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"</span><span class="se">\\</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"/"</span><span class="p">))</span>
+
+                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                    <span class="n">content</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+                <span class="c1"># Add the menu and search functionality to the HTML file</span>
+                <span class="n">new_content</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"""</span>
+<span class="s2">                &lt;!DOCTYPE html&gt;</span>
+<span class="s2">                &lt;html lang="en"&gt;</span>
+<span class="s2">                &lt;head&gt;</span>
+<span class="s2">                    &lt;meta charset="UTF-8"&gt;</span>
+<span class="s2">                    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span>
+<span class="s2">                    &lt;link rel="stylesheet" href="</span><span class="si">{</span><span class="n">style_path</span><span class="si">}</span><span class="s2">"&gt;</span>
+<span class="s2">                    &lt;title&gt;</span><span class="si">{</span><span class="n">get_title_from_h1</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="s2">"Untitled"</span><span class="si">}</span><span class="s2">&lt;/title&gt;</span>
+<span class="s2">                &lt;/head&gt;</span>
+<span class="s2">                &lt;body&gt;</span>
+<span class="s2">                    &lt;nav&gt;</span>
+<span class="s2">                        </span><span class="si">{</span><span class="n">menu_html</span><span class="si">}</span>
+<span class="s2">                        &lt;div id="search-container"&gt;</span>
+<span class="s2">                            &lt;input type="text" id="searchInput" placeholder="Search..."&gt;</span>
+<span class="s2">                            &lt;div id="searchResults"&gt;&lt;/div&gt;</span>
+<span class="s2">                        &lt;/div&gt;</span>
+<span class="s2">                    &lt;/nav&gt;</span>
+<span class="s2">                    &lt;div class="content"&gt;</span>
+<span class="s2">                        </span><span class="si">{</span><span class="n">content</span><span class="si">}</span>
+<span class="s2">                    &lt;/div&gt;</span>
+<span class="s2">                    &lt;script&gt;</span>
+<span class="s2">                        document.getElementById("searchInput").addEventListener("input", async function () </span><span class="se">{{</span>
+<span class="s2">                            try </span><span class="se">{{</span>
+<span class="s2">                                const query = this.value.toLowerCase();</span>
+<span class="s2">                                const response = await fetch("</span><span class="si">{</span><span class="n">search_index_path</span><span class="si">}</span><span class="s2">");</span>
+<span class="s2">                                const pages = await response.json();</span>
+<span class="s2">                                const resultsContainer = document.getElementById("searchResults");</span>
+<span class="s2">                                resultsContainer.innerHTML = "";</span>
+
+<span class="s2">                                const results = pages.filter(page =&gt;</span>
+<span class="s2">                                    page.title.toLowerCase().includes(query) || page.content.toLowerCase().includes(query)</span>
+<span class="s2">                                );</span>
+
+<span class="s2">                                results.forEach(result =&gt; </span><span class="se">{{</span>
+<span class="s2">                                    const resultElement = document.createElement("div");</span>
+<span class="s2">                                    resultElement.innerHTML = `&lt;a href="$</span><span class="se">{{</span><span class="s2">result.url</span><span class="se">}}</span><span class="s2">"&gt;$</span><span class="se">{{</span><span class="s2">result.title</span><span class="se">}}</span><span class="s2">&lt;/a&gt;`;</span>
+<span class="s2">                                    resultsContainer.appendChild(resultElement);</span>
+<span class="s2">                                </span><span class="se">}}</span><span class="s2">);</span>
+<span class="s2">                            </span><span class="se">}}</span><span class="s2"> catch (error) </span><span class="se">{{</span>
+<span class="s2">                                console.error("Search error:", error);</span>
+<span class="s2">                            </span><span class="se">}}</span>
+<span class="s2">                        </span><span class="se">}}</span><span class="s2">);</span>
+<span class="s2">                    &lt;/script&gt;</span>
+<span class="s2">                &lt;/body&gt;</span>
+<span class="s2">                &lt;/html&gt;</span>
+<span class="s2">                """</span>
+
+                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">new_content</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Menu and search added: </span><span class="si">{</span><span class="n">file_path</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"The directory </span><span class="si">{</span><span class="n">BASE_DIR</span><span class="si">}</span><span class="s2"> does not exist. Please create or adjust it."</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">generate_style</span><span class="p">()</span>
+        <span class="n">menu_tree</span> <span class="o">=</span> <span class="n">build_menu_tree</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">)</span>
+        <span class="n">generate_search_index</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">)</span>
+        <span class="n">inject_menu_and_search</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="n">menu_tree</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7703,32 +7931,7 @@ classDiagram
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="3.-Vererbung">3. Vererbung<a class="anchor-link" href="#3.-Vererbung">¶</a></h3><p><strong>Analogie</strong>: Innerhalb eines Ökosystems gibt es verschiedene Arten von Lebewesen. Zum Beispiel könnten wir eine allgemeine Klasse <strong>Tier</strong> haben, und davon abgeleitet spezielle Klassen wie <strong>Vogel</strong> oder <strong>Säugetier</strong>. Diese Spezies haben gemeinsame Eigenschaften (wie "Atmung"), aber auch individuelle Unterschiede.</p>
-<p><strong>Diagramm:</strong></p>
-<div class="jp-Mermaid"><pre class="mermaid">
-classDiagram
-    class Lebewesen {
-        -name: String
-        -alter: int
-        +wachsen(): void
-    }
-
-    class Tier {
-        +atmen(): void
-    }
-    
-    class Vogel {
-        +fliegen(): void
-    }
-
-    class Säugetier {
-        +laufen(): void
-    }
-
-    Lebewesen &lt;|-- Tier
-    Tier &lt;|-- Vogel
-    Tier &lt;|-- Säugetier
-</pre></div><p><strong>Codebeispiel</strong>:</p>
+<h2 id="Upload-to-website">Upload to website<a class="anchor-link" href="#Upload-to-website">¶</a></h2><p>In this final step all data is transfered according to settings in a <code>.env</code> file.</p>
 </div>
 </div>
 </div>
@@ -7740,165 +7943,89 @@ classDiagram
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Tier</span><span class="p">(</span><span class="n">Lebewesen</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">alter</span><span class="p">,</span> <span class="n">art</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">alter</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">art</span> <span class="o">=</span> <span class="n">art</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">paramiko</span>
+<span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
 
-    <span class="k">def</span> <span class="nf">atmen</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> atmet."</span><span class="p">)</span>
+<span class="c1"># Load environment variables</span>
+<span class="n">load_dotenv</span><span class="p">()</span>
 
-<span class="k">class</span> <span class="nc">Vogel</span><span class="p">(</span><span class="n">Tier</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">alter</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">alter</span><span class="p">,</span> <span class="s2">"Vogel"</span><span class="p">)</span>
-    
-    <span class="k">def</span> <span class="nf">fliegen</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> fliegt."</span><span class="p">)</span>
+<span class="c1"># Configuration</span>
+<span class="n">SFTP_HOST</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">"SFTP_HOST"</span><span class="p">)</span>
+<span class="n">SFTP_PORT</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">"SFTP_PORT"</span><span class="p">,</span> <span class="mi">22</span><span class="p">))</span>  <span class="c1"># Default port 22</span>
+<span class="n">SFTP_USERNAME</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">"SFTP_USERNAME"</span><span class="p">)</span>
+<span class="n">SFTP_PASSWORD</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">"SFTP_PASSWORD"</span><span class="p">)</span>
+<span class="n">REMOTE_DIR</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">"REMOTE_DIR"</span><span class="p">)</span>
+<span class="n">LOCAL_DIR</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">"LOCAL_DIR"</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">ensure_remote_dir</span><span class="p">(</span><span class="n">sftp</span><span class="p">,</span> <span class="n">remote_path</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Ensure that the remote directory exists, creating it if necessary.</span>
+<span class="sd">    """</span>
+    <span class="n">directories</span> <span class="o">=</span> <span class="n">remote_path</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">"/"</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"/"</span><span class="p">)</span>
+    <span class="n">current_dir</span> <span class="o">=</span> <span class="s2">""</span>
+    <span class="k">for</span> <span class="n">directory</span> <span class="ow">in</span> <span class="n">directories</span><span class="p">:</span>
+        <span class="n">current_dir</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">"/</span><span class="si">{</span><span class="n">directory</span><span class="si">}</span><span class="s2">"</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">sftp</span><span class="o">.</span><span class="n">stat</span><span class="p">(</span><span class="n">current_dir</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+            <span class="n">sftp</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">current_dir</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">upload_directory</span><span class="p">(</span><span class="n">sftp</span><span class="p">,</span> <span class="n">local_dir</span><span class="p">,</span> <span class="n">remote_dir</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Upload the contents of a local directory to a remote SFTP directory.</span>
+<span class="sd">    """</span>
+    <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">local_dir</span><span class="p">):</span>
+        <span class="c1"># Calculate the relative path and corresponding remote path</span>
+        <span class="n">relative_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">local_dir</span><span class="p">)</span>
+        <span class="n">remote_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">remote_dir</span><span class="p">,</span> <span class="n">relative_path</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"</span><span class="se">\\</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"/"</span><span class="p">)</span>
+
+        <span class="c1"># Ensure the remote directory exists</span>
+        <span class="n">ensure_remote_dir</span><span class="p">(</span><span class="n">sftp</span><span class="p">,</span> <span class="n">remote_path</span><span class="p">)</span>
+
+        <span class="c1"># Upload files</span>
+        <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+            <span class="n">local_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
+            <span class="n">remote_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">remote_path</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"</span><span class="se">\\</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"/"</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Uploading </span><span class="si">{</span><span class="n">local_file</span><span class="si">}</span><span class="s2"> to </span><span class="si">{</span><span class="n">remote_file</span><span class="si">}</span><span class="s2">..."</span><span class="p">)</span>
+            <span class="n">sftp</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">local_file</span><span class="p">,</span> <span class="n">remote_file</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Main function to handle the SFTP upload process.</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">([</span><span class="n">SFTP_HOST</span><span class="p">,</span> <span class="n">SFTP_USERNAME</span><span class="p">,</span> <span class="n">SFTP_PASSWORD</span><span class="p">,</span> <span class="n">REMOTE_DIR</span><span class="p">,</span> <span class="n">LOCAL_DIR</span><span class="p">]):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Error: Missing required environment variables in .env file."</span><span class="p">)</span>
+        <span class="k">return</span>
+
+    <span class="c1"># Establish SFTP connection</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Connecting to SFTP server..."</span><span class="p">)</span>
+        <span class="n">transport</span> <span class="o">=</span> <span class="n">paramiko</span><span class="o">.</span><span class="n">Transport</span><span class="p">((</span><span class="n">SFTP_HOST</span><span class="p">,</span> <span class="n">SFTP_PORT</span><span class="p">))</span>
+        <span class="n">transport</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="n">SFTP_USERNAME</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="n">SFTP_PASSWORD</span><span class="p">)</span>
+
+        <span class="n">sftp</span> <span class="o">=</span> <span class="n">paramiko</span><span class="o">.</span><span class="n">SFTPClient</span><span class="o">.</span><span class="n">from_transport</span><span class="p">(</span><span class="n">transport</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Connection established."</span><span class="p">)</span>
+
+        <span class="c1"># Upload the directory</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Uploading contents of </span><span class="si">{</span><span class="n">LOCAL_DIR</span><span class="si">}</span><span class="s2"> to </span><span class="si">{</span><span class="n">REMOTE_DIR</span><span class="si">}</span><span class="s2">..."</span><span class="p">)</span>
+        <span class="n">upload_directory</span><span class="p">(</span><span class="n">sftp</span><span class="p">,</span> <span class="n">LOCAL_DIR</span><span class="p">,</span> <span class="n">REMOTE_DIR</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Upload complete."</span><span class="p">)</span>
+
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"An error occurred: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="k">finally</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s1">'sftp'</span> <span class="ow">in</span> <span class="nb">locals</span><span class="p">():</span>
+            <span class="n">sftp</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+        <span class="k">if</span> <span class="s1">'transport'</span> <span class="ow">in</span> <span class="nb">locals</span><span class="p">():</span>
+            <span class="n">transport</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Connection closed."</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><code>Vogel</code> erbt die <code>atmen</code>-Methode von <code>Tier</code>, aber es hat auch eine eigene Methode, <code>fliegen</code>.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">spatz</span> <span class="o">=</span> <span class="n">Vogel</span><span class="p">(</span><span class="s2">"Spatz"</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">spatz</span><span class="o">.</span><span class="n">atmen</span><span class="p">()</span>    <span class="c1"># Ausgabe: Spatz atmet.</span>
-<span class="n">spatz</span><span class="o">.</span><span class="n">fliegen</span><span class="p">()</span>  <span class="c1"># Ausgabe: Spatz fliegt.</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="4.-Polymorphismus">4. Polymorphismus<a class="anchor-link" href="#4.-Polymorphismus">¶</a></h3><p><strong>Analogie</strong>: In einem Ökosystem sind Pflanzen, Tiere und Pilze unterschiedliche Lebewesen. Alle "leben" auf ihre Weise, aber Pflanzen betreiben Photosynthese, Tiere atmen, und Pilze zersetzen organisches Material. Polymorphismus bedeutet, dass sie alle eine Methode <code>leben</code> haben können, die jeweils unterschiedlich funktioniert.</p>
-<p><strong>Diagramm</strong>:</p>
-<div class="jp-Mermaid"><pre class="mermaid">
-classDiagram
-    class Lebewesen {
-        +name: str
-        +alter: int
-        +leben()
-    }
-
-    class Pflanze {
-        +leben()
-        "Photosyntehese"
-    }
-
-    class Tier {
-        +leben()
-        "Atmung"
-    }
-
-    class Pilz {
-        +leben()
-        "Zersetzung"
-    }
-
-    Lebewesen &lt;|-- Pflanze
-    Lebewesen &lt;|-- Tier
-    Lebewesen &lt;|-- Pilz
-</pre></div><p><strong>Codebeispiel</strong>:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Pflanze</span><span class="p">(</span><span class="n">Lebewesen</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">leben</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> wächst durch Photosynthese."</span><span class="p">)</span>
-
-<span class="k">class</span> <span class="nc">Tier</span><span class="p">(</span><span class="n">Lebewesen</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">leben</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> atmet."</span><span class="p">)</span>
-
-<span class="k">class</span> <span class="nc">Pilz</span><span class="p">(</span><span class="n">Lebewesen</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">leben</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> zersetzt organisches Material."</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Jetzt können wir jedes Lebewesen-Objekt durch <code>leben</code> beschreiben, ohne genau zu wissen, wie es funktioniert. So funktioniert Polymorphismus – wir rufen die Methode <code>leben</code> auf, und jedes Objekt führt es auf seine Weise aus.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">pflanze</span> <span class="o">=</span> <span class="n">Pflanze</span><span class="p">(</span><span class="s2">"Eiche"</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
-<span class="n">tier</span> <span class="o">=</span> <span class="n">Tier</span><span class="p">(</span><span class="s2">"Reh"</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-<span class="n">pilz</span> <span class="o">=</span> <span class="n">Pilz</span><span class="p">(</span><span class="s2">"Champignon"</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-
-<span class="n">lebewesen</span> <span class="o">=</span> <span class="p">[</span><span class="n">pflanze</span><span class="p">,</span> <span class="n">tier</span><span class="p">,</span> <span class="n">pilz</span><span class="p">]</span>
-<span class="k">for</span> <span class="n">leb</span> <span class="ow">in</span> <span class="n">lebewesen</span><span class="p">:</span>
-    <span class="n">leb</span><span class="o">.</span><span class="n">leben</span><span class="p">()</span>
-
-<span class="c1"># Ausgabe:</span>
-<span class="c1"># Eiche wächst durch Photosynthese.</span>
-<span class="c1"># Reh atmet.</span>
-<span class="c1"># Champignon zersetzt organisches Material.</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Zusammenfassung-mit-dem-%C3%96kosystem-Beispiel:">Zusammenfassung mit dem Ökosystem-Beispiel:<a class="anchor-link" href="#Zusammenfassung-mit-dem-%C3%96kosystem-Beispiel:">¶</a></h3><ol>
-<li><strong>Klassen und Objekte</strong>: Eine Klasse ist wie ein Entwurf für Lebewesen, und Objekte sind konkrete Pflanzen, Tiere, usw.</li>
-<li><strong>Kapselung</strong>: Interne Prozesse wie Photosynthese sind privat und nur für das jeweilige Lebewesen sichtbar.</li>
-<li><strong>Vererbung</strong>: Lebewesen wie Tiere und Pflanzen haben gemeinsame Eigenschaften, aber auch eigene Besonderheiten.</li>
-<li><strong>Polymorphismus</strong>: Verschiedene Lebewesen "leben" auf ihre Weise, und der gleiche Aufruf (<code>leben</code>) kann unterschiedliche Ergebnisse haben.</li>
-</ol>
-<p>Dieses Modell hilft, verschiedene Lebewesen in einem Ökosystem strukturiert und flexibel darzustellen und ihr Verhalten klar zu definieren, was für die Modellierung und Simulation in der Umweltinformatik nützlich ist.</p>
 </div>
 </div>
 </div>

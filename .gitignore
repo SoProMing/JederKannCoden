@@ -396,7 +396,12 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+# Projectexcludes
 notebooks/Everybody_Can_Code.html
 notebooks/Everybody_Can_Code.ipynb
+notebooks/website
 *.pdf
 *.txt
+
+*.env
