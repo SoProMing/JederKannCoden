@@ -399,3 +399,4 @@ FodyWeavers.xsd
 notebooks/Everybody_Can_Code.html
 notebooks/Everybody_Can_Code.ipynb
 *.pdf
+*.txt
