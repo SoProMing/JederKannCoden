@@ -7510,936 +7510,851 @@ a.anchor-link {
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=831bfee7">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Create-portable-version">Create portable version<a class="anchor-link" href="#Create-portable-version">¶</a></h1><img alt="No description has been provided for this image" src="Export_jupiter.webp" style="width:280px; height:280px;"/>
-<p>This page describes and actually impliments, how to make the jupyter notebooks of the whole project portable.</p>
+<p><a href="abstract/Contents.de.html">Jeder kann coden</a> / <a href="Programming_And_TicTacToe.de.html">Programmieren &amp; TicTacToe</a> / <a href="Objectoriented_Programming.de.html">Objektorientierte Programmierung</a></p>
+<h1 id="Was-sind-Web-APIs?">Was sind Web APIs?<a class="anchor-link" href="#Was-sind-Web-APIs?">¶</a></h1><table border="0">
+<tr>
+<td>
+<img alt="No description has been provided for this image" src="WebAPIs.png"/>
+</td>
+<td rowspan="2">
+<a href="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3458764554347680798&amp;cot=14"><img alt="No description has been provided for this image" src="Radar_WebAPIs.jpg"/></a>
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://jsonplaceholder.typicode.com/" target="_blank">JSONPlaceholder – Fake REST API zum Testen</a><br/>
+<a href="https://developer.mozilla.org/de/docs/Web/HTTP" target="_blank">MDN Web Docs: HTTP-Grundlagen</a><br/>
+<a href="https://restfulapi.net/" target="_blank">restfulapi.net – Einführung in REST</a><br/>
+<a href="https://www.soapui.org/learn/api/soap-vs-rest/" target="_blank">SoapUI – Vergleich von SOAP und REST</a><br/>
+<a href="https://learn.microsoft.com/de-de/dotnet/csharp/tutorials/console-webapiclient" target="_blank">Microsoft C#-Tutorial: Web-API mit HttpClient</a><br/>
+<a href="https://www.json.org/json-de.html" target="_blank">Was ist JSON? (offizielle Spezifikation)</a><br/>
+<a href="https://json2csharp.com/" target="_blank">JSON zu C# Klassen konvertieren (json2csharp.com)</a><br/>
+<a href="https://learn.microsoft.com/de-de/dotnet/api/system.net.http.httpclient" target="_blank">Microsoft-Dokumentation zu HttpClient</a><br/>
+<a href="https://www.postman.com/" target="_blank">Postman – Tool zum Testen von REST APIs</a><br/>
+<a href="https://swagger.io/specification/" target="_blank">OpenAPI (Swagger) Spezifikation für REST APIs</a><br/>
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bde209c7">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Recursive-HTML-exporting-and-link-replacement">Recursive HTML exporting and link replacement<a class="anchor-link" href="#Recursive-HTML-exporting-and-link-replacement">¶</a></h1><p>This one is in use right now to create linked and working html pages.</p>
-<p>To achieve this, you can write a Python script that:</p>
+<h2 id="Einleitung">Einleitung<a class="anchor-link" href="#Einleitung">¶</a></h2><p>Web APIs (Application Programming Interfaces) ermöglichen es Softwareanwendungen, über das Internet miteinander zu kommunizieren. Sie definieren <strong>Schnittstellen</strong>, über die Programme <strong>Daten austauschen oder Funktionen auf entfernten Systemen aufrufen</strong> können – oft unabhängig von Programmiersprache oder Plattform.</p>
+<p>Stell dir eine Web API wie ein <strong>digitales Service-Terminal</strong> vor: Du sendest eine Anfrage (z. B. „Gib mir alle Nutzer“) und bekommst eine strukturierte Antwort zurück (z. B. als JSON oder XML). Dabei läuft die Kommunikation meist über das <strong>HTTP-Protokoll</strong>, so wie bei Webseiten – nur für Maschinen statt für Menschen.</p>
+<p>Zwei der bekanntesten Arten, wie Web APIs gestaltet sein können, sind:</p>
+<ul>
+<li><strong>REST</strong> (leichtgewichtig, URL-basiert, oft mit JSON)</li>
+<li><strong>SOAP</strong> (standardisiert, XML-basiert, für komplexe Anforderungen)</li>
+</ul>
+<p>Beide verfolgen unterschiedliche Ansätze und haben jeweils ihre typischen Einsatzbereiche – und genau darum geht’s im Folgenden.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=079f1591">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="REST-(Representational-State-Transfer)">REST (Representational State Transfer)<a class="anchor-link" href="#REST-(Representational-State-Transfer)">¶</a></h2><h3 id="Was-ist-REST?">Was ist REST?<a class="anchor-link" href="#Was-ist-REST?">¶</a></h3><p>REST ist ein Architekturstil für Webservices, der auf den Standards und Protokollen des Internets basiert, insbesondere auf <strong>HTTP</strong>. Er wurde 2000 von Roy Fielding in seiner Dissertation beschrieben.</p>
+<h3 id="Grundprinzipien-von-REST">Grundprinzipien von REST<a class="anchor-link" href="#Grundprinzipien-von-REST">¶</a></h3><p>REST ist kein Protokoll, sondern ein Architekturstil mit folgenden Prinzipien:</p>
 <ol>
-<li>Recursively searches for <code>.ipynb</code> files in a directory.</li>
-<li>Exports each <code>.ipynb</code> file to an HTML file.</li>
-<li>Replaces links within the HTML files that point to <code>.ipynb</code> files with <code>.html</code> links (so that the links work correctly in a browser).</li>
-</ol>
-<p>You can use the following libraries:</p>
-<ul>
-<li><code>os</code> or <code>pathlib</code> for file traversal.</li>
-<li><code>nbconvert</code> for converting <code>.ipynb</code> to <code>.html</code>.</li>
-<li><code>re</code> for regular expressions to replace links in HTML content.</li>
-</ul>
-<h2 id="Prerequesits">Prerequesits<a class="anchor-link" href="#Prerequesits">¶</a></h2><h3 id="Install-the-Required-Modules">Install the Required Modules<a class="anchor-link" href="#Install-the-Required-Modules">¶</a></h3><p>You can install the necessary modules using the following commands in your terminal or command prompt.</p>
-<ol>
-<li><strong>Install  <code>nbconvert</code></strong>: This module is used to convert Jupyter notebooks to HTML.</li>
-</ol>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">nbconvert</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">null</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ol start="2">
-<li><strong>Install  <code>nbformat</code></strong>: This module is used to read and write Jupyter notebook files.</li>
-</ol>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">nbformat</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">null</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Here's an outline of the script:</p>
-<h3 id="Script:-Convert-and-Modify-Links-in-HTML">Script: Convert and Modify Links in HTML<a class="anchor-link" href="#Script:-Convert-and-Modify-Links-in-HTML">¶</a></h3>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">nbformat</span>
-<span class="kn">from</span> <span class="nn">nbconvert</span> <span class="kn">import</span> <span class="n">HTMLExporter</span>
-<span class="kn">import</span> <span class="nn">re</span>
-
-<span class="k">def</span> <span class="nf">convert_ipynb_to_html</span><span class="p">(</span><span class="n">ipynb_file</span><span class="p">):</span>
-    <span class="c1"># Load the notebook</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">ipynb_file</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">notebook</span> <span class="o">=</span> <span class="n">nbformat</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">as_version</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-    
-    <span class="c1"># Convert to HTML</span>
-    <span class="n">html_exporter</span> <span class="o">=</span> <span class="n">HTMLExporter</span><span class="p">()</span>
-    <span class="p">(</span><span class="n">body</span><span class="p">,</span> <span class="n">resources</span><span class="p">)</span> <span class="o">=</span> <span class="n">html_exporter</span><span class="o">.</span><span class="n">from_notebook_node</span><span class="p">(</span><span class="n">notebook</span><span class="p">)</span>
-    
-    <span class="c1"># Define the HTML filename</span>
-    <span class="n">html_filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">ipynb_file</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">'.html'</span>
-
-    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">html_filename</span><span class="p">):</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">html_filename</span><span class="p">)</span>
-    
-    <span class="c1"># Write the HTML file in the same directory as the ipynb file</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">html_filename</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">body</span><span class="p">)</span>
-    
-    <span class="k">return</span> <span class="n">html_filename</span>
-
-<span class="k">def</span> <span class="nf">replace_ipynb_links_in_html</span><span class="p">(</span><span class="n">html_file</span><span class="p">,</span> <span class="n">root_dir</span><span class="p">):</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">html_file</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">content</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-    
-    <span class="c1"># Replace .ipynb links with relative .html links</span>
-    <span class="n">updated_content</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span>
-        <span class="sa">r</span><span class="s1">'(?&lt;=href=["</span><span class="se">\'</span><span class="s1">])(.*?\.ipynb)(#.*)?(?=["</span><span class="se">\'</span><span class="s1">])'</span><span class="p">,</span> 
-        <span class="k">lambda</span> <span class="n">match</span><span class="p">:</span> <span class="n">make_relative_html_link</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">root_dir</span><span class="p">),</span> 
-        <span class="n">content</span>
-    <span class="p">)</span>
-    
-    <span class="c1"># Remove &lt;details&gt; and &lt;/details&gt; lines</span>
-    <span class="k">if</span> <span class="s2">"Everybody_Can_Code"</span> <span class="ow">in</span> <span class="n">html_file</span><span class="p">:</span>
-        <span class="n">updated_content</span> <span class="o">=</span> <span class="n">remove_details_tags</span><span class="p">(</span><span class="n">updated_content</span><span class="p">)</span>
-    
-    <span class="c1"># Write the updated content back to the file</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">html_file</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">updated_content</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">remove_details_tags</span><span class="p">(</span><span class="n">html_content</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""Remove all lines containing &lt;details&gt; or &lt;/details&gt; tags."""</span>
-    <span class="n">lines</span> <span class="o">=</span> <span class="n">html_content</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
-    <span class="n">filtered_lines</span> <span class="o">=</span> <span class="p">[</span><span class="n">line</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span> <span class="k">if</span> <span class="s1">'&lt;details&gt;'</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">line</span> <span class="ow">and</span> <span class="s1">'&lt;/details&gt;'</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">line</span><span class="p">]</span>
-    <span class="k">return</span> <span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">filtered_lines</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">make_relative_html_link</span><span class="p">(</span><span class="n">ipynb_link</span><span class="p">,</span> <span class="n">anchor</span><span class="p">,</span> <span class="n">root_dir</span><span class="p">):</span>
-    <span class="c1"># Convert .ipynb link to corresponding .html link</span>
-    <span class="n">html_link</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">ipynb_link</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">'.html'</span>
-    
-    <span class="c1"># Get the absolute path of the html link</span>
-    <span class="n">absolute_html_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">html_link</span><span class="p">)</span>
-    
-    <span class="c1"># Remove the root directory (CWD) from the absolute path to make it relative</span>
-    <span class="n">relative_html_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span><span class="n">absolute_html_path</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="n">root_dir</span><span class="p">)</span>
-
-    <span class="k">if</span> <span class="n">anchor</span><span class="p">:</span>
-        <span class="n">relative_html_path</span> <span class="o">+=</span> <span class="n">anchor</span>
-    
-    <span class="k">return</span> <span class="n">relative_html_path</span>
-
-<span class="k">def</span> <span class="nf">recursive_convert_and_replace_links</span><span class="p">(</span><span class="n">root_dir</span><span class="p">):</span>
-    <span class="c1"># Recursively find .ipynb files</span>
-    <span class="k">for</span> <span class="n">subdir</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">root_dir</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">'.ipynb'</span><span class="p">):</span>
-                <span class="n">ipynb_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">subdir</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
-                
-                <span class="c1"># Convert to HTML and save it in the same directory</span>
-                <span class="n">html_file</span> <span class="o">=</span> <span class="n">convert_ipynb_to_html</span><span class="p">(</span><span class="n">ipynb_path</span><span class="p">)</span>
-                
-                <span class="c1"># Replace .ipynb links with relative .html links, removing the cwd from the path</span>
-                <span class="n">replace_ipynb_links_in_html</span><span class="p">(</span><span class="n">html_file</span><span class="p">,</span> <span class="n">root_dir</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">convert_to_linked_html</span><span class="p">():</span>
-    <span class="c1"># Use the current working directory as the root directory</span>
-    <span class="n">root_directory</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
-    
-    <span class="n">recursive_convert_and_replace_links</span><span class="p">(</span><span class="n">root_directory</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
-    <span class="n">convert_to_linked_html</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="How-the-Script-Works:">How the Script Works:<a class="anchor-link" href="#How-the-Script-Works:">¶</a></h3><ol>
-<li><p><strong>Convert <code>.ipynb</code> to <code>.html</code></strong>:</p>
-<ul>
-<li>The <code>convert_ipynb_to_html</code> function uses <code>nbconvert</code> to convert a Jupyter Notebook (<code>.ipynb</code>) to an HTML file and saves it in the <code>output_dir</code>.</li>
+<li><strong>Client-Server-Modell</strong>: Trennung von Benutzeroberfläche (Client) und Datenverarbeitung (Server).</li>
+<li><strong>Zustandslosigkeit (Statelessness)</strong>: Jeder Request vom Client muss alle Informationen enthalten, die der Server braucht. Der Server speichert keinen Zustand des Clients zwischen zwei Aufrufen.</li>
+<li><strong>Cachebarkeit</strong>: Antworten können als cachebar oder nicht cachebar markiert werden.</li>
+<li><strong>Einheitliche Schnittstelle (Uniform Interface)</strong>:<ul>
+<li>Ressourcen werden durch URIs identifiziert.</li>
+<li>Die Manipulation von Ressourcen erfolgt über standardisierte HTTP-Methoden (GET, POST, PUT, DELETE, PATCH).</li>
 </ul>
 </li>
-<li><p><strong>Replace <code>.ipynb</code> Links with <code>.html</code> Links</strong>:</p>
-<ul>
-<li>The <code>replace_ipynb_links_in_html</code> function reads the generated HTML file, finds any links to <code>.ipynb</code> files, and replaces them with <code>.html</code> links.</li>
-<li>This is done using a regular expression that matches the links in the HTML content.</li>
-</ul>
-</li>
-<li><p><strong>Recursively Process Files</strong>:</p>
-<ul>
-<li>The <code>recursive_convert_and_replace_links</code> function walks through the directory tree (<code>os.walk</code>) and processes all <code>.ipynb</code> files. It calls the conversion and replacement functions for each file found.</li>
-</ul>
-</li>
+<li><strong>Repräsentationen</strong>: Ressourcen werden über Repräsentationen (z. B. JSON, XML) übertragen.</li>
+<li><strong>Schichtenarchitektur</strong>: System kann aus mehreren Schichten bestehen (z. B. Load Balancer, Caches, Gateways).</li>
 </ol>
-<h3 id="Notes:">Notes:<a class="anchor-link" href="#Notes:">¶</a></h3><ul>
-<li><strong>File Paths</strong>: Make sure to update the <code>root_directory</code> and <code>output_directory</code> variables to match your desired input and output paths.</li>
-<li><strong>Dependencies</strong>: You may need to install <code>nbconvert</code> and <code>nbformat</code> via <code>pip install nbconvert nbformat</code>.</li>
+<p><a href="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3074457357698719659&amp;cot=14"><img alt="No description has been provided for this image" src="REST.jpg"/></a></p>
+<h3 id="Beispiel-f%C3%BCr-REST-API">Beispiel für REST-API<a class="anchor-link" href="#Beispiel-f%C3%BCr-REST-API">¶</a></h3><pre><code>GET /api/users → Liste aller Nutzer
+GET /api/users/42 → Details von Nutzer mit ID 42
+POST /api/users → Neuen Nutzer anlegen
+PUT /api/users/42 → Nutzer 42 aktualisieren
+DELETE /api/users/42 → Nutzer 42 löschen
+</code></pre>
+<h3 id="Vorteile-von-REST">Vorteile von REST<a class="anchor-link" href="#Vorteile-von-REST">¶</a></h3><ul>
+<li>Leichtgewichtig (insbesondere mit JSON)</li>
+<li>Einfach verständlich</li>
+<li>Gut test- und debugbar</li>
+<li>Skalierbar</li>
+<li>Breite Unterstützung in Webtechnologien</li>
 </ul>
-<p>This script will help you convert all <code>.ipynb</code> files to HTML and ensure that the links between notebooks are correctly pointing to the corresponding <code>.html</code> files.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Combine-all-notebooks-to-one">Combine all notebooks to one<a class="anchor-link" href="#Combine-all-notebooks-to-one">¶</a></h1><h3 id="Depth-first-approach">Depth-first approach<a class="anchor-link" href="#Depth-first-approach">¶</a></h3>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">nbformat</span>
-<span class="kn">from</span> <span class="nn">nbformat.v4</span> <span class="kn">import</span> <span class="n">new_markdown_cell</span>
-<span class="kn">import</span> <span class="nn">re</span>
-
-<span class="k">def</span> <span class="nf">load_notebook</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""Load a Jupyter Notebook file."""</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">nbformat</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">as_version</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">extract_links</span><span class="p">(</span><span class="n">notebook</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""Extract links to other .ipynb files from Markdown cells."""</span>
-    <span class="n">links</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">link_pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">'\[.*?\]\((.*?)\)'</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">notebook</span><span class="o">.</span><span class="n">cells</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">cell</span><span class="o">.</span><span class="n">cell_type</span> <span class="o">==</span> <span class="s1">'markdown'</span><span class="p">:</span>
-            <span class="n">matches</span> <span class="o">=</span> <span class="n">link_pattern</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">cell</span><span class="o">.</span><span class="n">source</span><span class="p">)</span>
-            <span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">matches</span><span class="p">:</span>
-                <span class="c1"># Remove URL fragments and query parameters</span>
-                <span class="n">link</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'#'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'?'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-                <span class="n">link</span> <span class="o">=</span> <span class="n">link</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-                <span class="k">if</span> <span class="n">link</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">'.ipynb'</span><span class="p">):</span>
-                    <span class="n">links</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">link</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">links</span>
-
-<span class="k">def</span> <span class="nf">find_file</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="n">relative_path</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    Try to find a file in the given base path or its subdirectories.</span>
-<span class="sd">    Args:</span>
-<span class="sd">        base_path: The root directory to search from.</span>
-<span class="sd">        relative_path: The relative path extracted from a link.</span>
-<span class="sd">    Returns:</span>
-<span class="sd">        The resolved absolute path if the file exists, or None.</span>
-<span class="sd">    """</span>
-    <span class="n">potential_paths</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="n">relative_path</span><span class="p">),</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="n">relative_path</span><span class="p">)</span>
-    <span class="p">]</span>
-
-    <span class="c1"># Also check all subdirectories of base_path</span>
-    <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">base_path</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">file</span><span class="p">)</span> <span class="o">==</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">relative_path</span><span class="p">):</span>
-                <span class="n">potential_paths</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">file</span><span class="p">))</span>
-
-    <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">potential_paths</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
-            <span class="k">return</span> <span class="n">path</span>
-    <span class="k">return</span> <span class="kc">None</span>
-
-<span class="k">def</span> <span class="nf">adjust_links</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">notebook_dir</span><span class="p">,</span> <span class="n">combined_dir</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""Adjust links in Markdown cells and &lt;img&gt; tags to point to the correct locations."""</span>
-    <span class="c1"># Adjust Markdown links</span>
-    <span class="k">def</span> <span class="nf">replace_markdown_link</span><span class="p">(</span><span class="n">match</span><span class="p">):</span>
-        <span class="n">text</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-        <span class="n">link</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-        <span class="n">link_clean</span> <span class="o">=</span> <span class="n">link</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'#'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'?'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="k">if</span> <span class="n">link_clean</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">'.ipynb'</span><span class="p">):</span>
-            <span class="n">section_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">link_clean</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
-            <span class="n">adjusted_link</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"#</span><span class="si">{</span><span class="n">section_name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">' '</span><span class="p">,</span><span class="w"> </span><span class="s1">'-'</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
-            <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s2">(</span><span class="si">{</span><span class="n">adjusted_link</span><span class="si">}</span><span class="s2">)"</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">adjusted_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span>
-                <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">notebook_dir</span><span class="p">,</span> <span class="n">link_clean</span><span class="p">),</span>
-                <span class="n">combined_dir</span>
-            <span class="p">)</span>
-            <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s2">(</span><span class="si">{</span><span class="n">adjusted_path</span><span class="si">}</span><span class="s2">)"</span>
-
-    <span class="c1"># Adjust &lt;img&gt; tags</span>
-    <span class="k">def</span> <span class="nf">replace_img_tag</span><span class="p">(</span><span class="n">match</span><span class="p">):</span>
-        <span class="n">src</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-        <span class="n">src_clean</span> <span class="o">=</span> <span class="n">src</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'#'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'?'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="n">adjusted_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span>
-            <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">notebook_dir</span><span class="p">,</span> <span class="n">src_clean</span><span class="p">),</span>
-            <span class="n">combined_dir</span>
-        <span class="p">)</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="s1">'&lt;img src="</span><span class="si">{</span><span class="n">adjusted_path</span><span class="si">}</span><span class="s1">"'</span>
-
-    <span class="c1"># Apply adjustments</span>
-    <span class="n">markdown_pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">'(\[.*?\])\((.*?)\)'</span><span class="p">)</span>
-    <span class="n">img_pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">'&lt;img\s+src=["</span><span class="se">\'</span><span class="s1">](.*?)["</span><span class="se">\'</span><span class="s1">]'</span><span class="p">)</span>
-
-    <span class="n">adjusted_source</span> <span class="o">=</span> <span class="n">markdown_pattern</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">replace_markdown_link</span><span class="p">,</span> <span class="n">source</span><span class="p">)</span>
-    <span class="n">adjusted_source</span> <span class="o">=</span> <span class="n">img_pattern</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">replace_img_tag</span><span class="p">,</span> <span class="n">adjusted_source</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">adjusted_source</span>
-
-<span class="k">def</span> <span class="nf">combine_notebooks</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="n">notebook_path</span><span class="p">,</span> <span class="n">visited</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">combined</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">combined_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    Combine notebooks into one, following links recursively.</span>
-
-<span class="sd">    Args:</span>
-<span class="sd">        base_path: The base directory containing all notebooks.</span>
-<span class="sd">        notebook_path: Path to the current notebook relative to base_path.</span>
-<span class="sd">        visited: Set of already visited notebooks to avoid duplication.</span>
-<span class="sd">        combined: Combined notebook object.</span>
-<span class="sd">        combined_dir: Directory where the combined notebook will be saved.</span>
-<span class="sd">    """</span>
-    <span class="k">if</span> <span class="n">visited</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">visited</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
-    <span class="k">if</span> <span class="n">combined</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">combined</span> <span class="o">=</span> <span class="n">nbformat</span><span class="o">.</span><span class="n">v4</span><span class="o">.</span><span class="n">new_notebook</span><span class="p">()</span>
-
-    <span class="k">if</span> <span class="n">combined_dir</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">combined_dir</span> <span class="o">=</span> <span class="n">base_path</span>
-
-    <span class="n">resolved_path</span> <span class="o">=</span> <span class="n">find_file</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="n">notebook_path</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">resolved_path</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Warning: File </span><span class="si">{</span><span class="n">notebook_path</span><span class="si">}</span><span class="s2"> not found. Skipping."</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">combined</span>
-
-    <span class="n">notebook_key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span><span class="n">resolved_path</span><span class="p">,</span> <span class="n">base_path</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">notebook_key</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">combined</span>  <span class="c1"># Avoid processing the same notebook twice</span>
-
-    <span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">notebook_key</span><span class="p">)</span>
-
-    <span class="c1"># Load the notebook</span>
-    <span class="n">notebook</span> <span class="o">=</span> <span class="n">load_notebook</span><span class="p">(</span><span class="n">resolved_path</span><span class="p">)</span>
-    <span class="n">notebook_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">resolved_path</span><span class="p">)</span>
-
-    <span class="c1"># Add a heading to separate notebooks in the combined file</span>
-    <span class="n">section_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">notebook_path</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">page_break</span> <span class="o">=</span> <span class="s2">"""&lt;style&gt;</span>
-<span class="s2">@media print {</span>
-<span class="s2">/* Erzwingt einen Seitenumbruch vor diesem Abschnitt */</span>
-<span class="s2">.page-break-before {</span>
-<span class="s2">    page-break-before: always; /* Alternative: break-before: page; */</span>
-<span class="s2">}</span>
-<span class="s2">}</span>
-<span class="s2">&lt;/style&gt;</span>
-
-<span class="s2">&lt;div class="page-break-before"&gt;</span>
-<span class="s2">                                    </span>
-<span class="s2">"""</span>
-
-    <span class="n">combined</span><span class="o">.</span><span class="n">cells</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_markdown_cell</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="si">{</span><span class="n">page_break</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">##### </span><span class="si">{</span><span class="n">section_name</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">---</span><span class="se">\n</span><span class="s2">&lt;/div&gt;</span><span class="se">\n</span><span class="s2">"</span><span class="p">))</span>
-
-    <span class="c1"># Add cells from the current notebook</span>
-    <span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">notebook</span><span class="o">.</span><span class="n">cells</span><span class="p">:</span>
-        <span class="n">cell_copy</span> <span class="o">=</span> <span class="n">nbformat</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">cell</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">cell</span><span class="o">.</span><span class="n">cell_type</span> <span class="o">==</span> <span class="s1">'markdown'</span><span class="p">:</span>
-            <span class="c1"># Adjust links in Markdown cells and &lt;img&gt; tags</span>
-            <span class="n">cell_copy</span><span class="o">.</span><span class="n">source</span> <span class="o">=</span> <span class="n">adjust_links</span><span class="p">(</span><span class="n">cell_copy</span><span class="o">.</span><span class="n">source</span><span class="p">,</span> <span class="n">notebook_dir</span><span class="p">,</span> <span class="n">combined_dir</span><span class="p">)</span>
-        <span class="n">combined</span><span class="o">.</span><span class="n">cells</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cell_copy</span><span class="p">)</span>
-
-    <span class="c1"># Find and process links to other notebooks</span>
-    <span class="n">links</span> <span class="o">=</span> <span class="n">extract_links</span><span class="p">(</span><span class="n">notebook</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">links</span><span class="p">:</span>
-        <span class="n">combine_notebooks</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="n">link</span><span class="p">,</span> <span class="n">visited</span><span class="p">,</span> <span class="n">combined</span><span class="p">,</span> <span class="n">combined_dir</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">combined</span>
-
-<span class="k">def</span> <span class="nf">depth_first_combining</span><span class="p">():</span>
-    <span class="c1"># Use the script's current working directory as the base path</span>
-    <span class="n">base_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>  <span class="c1"># Current working directory where the script is executed</span>
-    <span class="n">initial_notebook</span> <span class="o">=</span> <span class="s2">"abstract/Contents.de.ipynb"</span>  <span class="c1"># Replace with the initial notebook's path relative to base_path</span>
-
-    <span class="n">combined_notebook</span> <span class="o">=</span> <span class="n">combine_notebooks</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="n">initial_notebook</span><span class="p">)</span>
-
-    <span class="c1"># Save the combined notebook</span>
-    <span class="n">output_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="s2">"Everybody_Can_Code.ipynb"</span><span class="p">)</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">output_path</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">nbformat</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">combined_notebook</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Combined notebook saved to </span><span class="si">{</span><span class="n">output_path</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
-    <span class="n">depth_first_combining</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Same-functionality-but-going-breadth-first">Same functionality but going breadth-first<a class="anchor-link" href="#Same-functionality-but-going-breadth-first">¶</a></h3>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">nbformat</span>
-<span class="kn">from</span> <span class="nn">nbformat.v4</span> <span class="kn">import</span> <span class="n">new_markdown_cell</span>
-<span class="kn">import</span> <span class="nn">re</span>
-
-<span class="k">def</span> <span class="nf">load_notebook</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""Load a Jupyter Notebook file."""</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">nbformat</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">as_version</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">extract_links</span><span class="p">(</span><span class="n">notebook</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""Extract links to other .ipynb files from Markdown cells."""</span>
-    <span class="n">links</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">link_pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">'\[.*?\]\((.*?)\)'</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">notebook</span><span class="o">.</span><span class="n">cells</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">cell</span><span class="o">.</span><span class="n">cell_type</span> <span class="o">==</span> <span class="s1">'markdown'</span><span class="p">:</span>
-            <span class="n">matches</span> <span class="o">=</span> <span class="n">link_pattern</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">cell</span><span class="o">.</span><span class="n">source</span><span class="p">)</span>
-            <span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">matches</span><span class="p">:</span>
-                <span class="n">link</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'#'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'?'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-                <span class="k">if</span> <span class="n">link</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">'.ipynb'</span><span class="p">):</span>
-                    <span class="n">links</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">link</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">links</span>
-
-<span class="k">def</span> <span class="nf">find_file</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="n">relative_path</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    Try to find a file in the given base path or its subdirectories.</span>
-<span class="sd">    """</span>
-    <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">base_path</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">file</span> <span class="o">==</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">relative_path</span><span class="p">):</span>
-                <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
-    <span class="k">return</span> <span class="kc">None</span>
-
-<span class="k">def</span> <span class="nf">adjust_links</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">notebook_dir</span><span class="p">,</span> <span class="n">combined_dir</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""Adjust links in Markdown cells and &lt;img&gt; tags to point to the correct locations."""</span>
-    <span class="k">def</span> <span class="nf">replace_markdown_link</span><span class="p">(</span><span class="n">match</span><span class="p">):</span>
-        <span class="n">text</span><span class="p">,</span> <span class="n">link</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">groups</span><span class="p">()</span>
-        <span class="n">link_clean</span> <span class="o">=</span> <span class="n">link</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'#'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'?'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="k">if</span> <span class="n">link_clean</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">'.ipynb'</span><span class="p">):</span>
-            <span class="n">section_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">link_clean</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
-            <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s2">(#</span><span class="si">{</span><span class="n">section_name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">' '</span><span class="p">,</span><span class="w"> </span><span class="s1">'-'</span><span class="p">)</span><span class="si">}</span><span class="s2">)"</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">adjusted_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">notebook_dir</span><span class="p">,</span> <span class="n">link_clean</span><span class="p">),</span> <span class="n">combined_dir</span><span class="p">)</span>
-            <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s2">(</span><span class="si">{</span><span class="n">adjusted_path</span><span class="si">}</span><span class="s2">)"</span>
-
-    <span class="k">def</span> <span class="nf">replace_img_tag</span><span class="p">(</span><span class="n">match</span><span class="p">):</span>
-        <span class="n">src</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-        <span class="n">adjusted_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">notebook_dir</span><span class="p">,</span> <span class="n">src</span><span class="p">),</span> <span class="n">combined_dir</span><span class="p">)</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="s1">'&lt;img src="</span><span class="si">{</span><span class="n">adjusted_path</span><span class="si">}</span><span class="s1">"'</span>
-
-    <span class="n">markdown_pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">'(\[.*?\])\((.*?)\)'</span><span class="p">)</span>
-    <span class="n">img_pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">'&lt;img\s+src=["</span><span class="se">\'</span><span class="s1">](.*?)["</span><span class="se">\'</span><span class="s1">]'</span><span class="p">)</span>
-
-    <span class="n">adjusted_source</span> <span class="o">=</span> <span class="n">markdown_pattern</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">replace_markdown_link</span><span class="p">,</span> <span class="n">source</span><span class="p">)</span>
-    <span class="n">adjusted_source</span> <span class="o">=</span> <span class="n">img_pattern</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">replace_img_tag</span><span class="p">,</span> <span class="n">adjusted_source</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">adjusted_source</span>
-
-<span class="k">def</span> <span class="nf">get_link_data</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="n">notebook_path</span><span class="p">):</span>
-    <span class="n">resolved_path</span> <span class="o">=</span> <span class="n">find_file</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="n">notebook_path</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">resolved_path</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Warning: File </span><span class="si">{</span><span class="n">notebook_path</span><span class="si">}</span><span class="s2"> not found. Skipping."</span><span class="p">)</span>
-        <span class="k">return</span> <span class="s2">""</span><span class="p">,</span> <span class="s2">""</span>
-
-    <span class="n">notebook_key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span><span class="n">resolved_path</span><span class="p">,</span> <span class="n">base_path</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="p">(</span><span class="n">notebook_key</span><span class="p">,</span> <span class="n">resolved_path</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">collect_links</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="n">notebook_path</span><span class="p">,</span> <span class="n">visited</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">added</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    Collect all links to notebooks in the order they appear.</span>
-<span class="sd">    """</span>
-    <span class="k">if</span> <span class="n">visited</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">visited</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
-    <span class="k">if</span> <span class="n">added</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">added</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
-    
-    <span class="n">notebook_key</span><span class="p">,</span> <span class="n">resolved_path</span> <span class="o">=</span> <span class="n">get_link_data</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="n">notebook_path</span><span class="p">)</span>
-
-    <span class="k">if</span> <span class="n">notebook_key</span> <span class="o">==</span> <span class="s2">""</span><span class="p">:</span>
-        <span class="k">return</span> <span class="p">[]</span>
-    
-    <span class="k">if</span> <span class="n">notebook_key</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
-        <span class="k">return</span> <span class="p">[]</span>
-
-    <span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">notebook_key</span><span class="p">)</span>
-    
-    <span class="n">notebook</span> <span class="o">=</span> <span class="n">load_notebook</span><span class="p">(</span><span class="n">resolved_path</span><span class="p">)</span>
-    <span class="n">links</span> <span class="o">=</span> <span class="n">extract_links</span><span class="p">(</span><span class="n">notebook</span><span class="p">)</span>
-
-    <span class="n">all_links</span><span class="o">=</span><span class="p">[]</span>
-
-    <span class="k">if</span> <span class="n">notebook_key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">added</span><span class="p">:</span>
-        <span class="n">all_links</span> <span class="o">=</span> <span class="p">[(</span><span class="n">notebook_key</span><span class="p">,</span> <span class="n">resolved_path</span><span class="p">)]</span>
-        <span class="n">added</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">notebook_key</span><span class="p">)</span>
-
-    <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">links</span><span class="p">:</span>
-        <span class="n">notebook_key</span><span class="p">,</span> <span class="n">resolved_path</span> <span class="o">=</span> <span class="n">get_link_data</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="n">link</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">notebook_key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">added</span><span class="p">:</span>
-            <span class="n">all_links</span><span class="o">.</span><span class="n">extend</span><span class="p">([(</span><span class="n">notebook_key</span><span class="p">,</span> <span class="n">resolved_path</span><span class="p">)])</span>
-            <span class="n">added</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">notebook_key</span><span class="p">)</span>
-            
-    <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">links</span><span class="p">:</span>
-        <span class="n">all_links</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">collect_links</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="n">link</span><span class="p">,</span> <span class="n">visited</span><span class="p">,</span> <span class="n">added</span><span class="p">))</span>
-    
-    <span class="k">return</span> <span class="n">all_links</span>
-
-<span class="k">def</span> <span class="nf">combine_notebooks</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="n">links</span><span class="p">,</span> <span class="n">combined_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    Combine all notebooks into one in the order of provided links.</span>
-<span class="sd">    """</span>
-    <span class="n">combined</span> <span class="o">=</span> <span class="n">nbformat</span><span class="o">.</span><span class="n">v4</span><span class="o">.</span><span class="n">new_notebook</span><span class="p">()</span>
-
-    <span class="k">if</span> <span class="n">combined_dir</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">combined_dir</span> <span class="o">=</span> <span class="n">base_path</span>
-
-    <span class="k">for</span> <span class="n">notebook_key</span><span class="p">,</span> <span class="n">resolved_path</span> <span class="ow">in</span> <span class="n">links</span><span class="p">:</span>
-        <span class="n">notebook</span> <span class="o">=</span> <span class="n">load_notebook</span><span class="p">(</span><span class="n">resolved_path</span><span class="p">)</span>
-        <span class="n">notebook_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">resolved_path</span><span class="p">)</span>
-
-        <span class="n">section_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">notebook_key</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="n">page_break</span> <span class="o">=</span> <span class="s2">"""&lt;style&gt;</span>
-<span class="s2">@media print {</span>
-<span class="s2">/* Erzwingt einen Seitenumbruch vor diesem Abschnitt */</span>
-<span class="s2">.page-break-before {</span>
-<span class="s2">    page-break-before: always; /* Alternative: break-before: page; */</span>
-<span class="s2">}</span>
-<span class="s2">}</span>
-<span class="s2">&lt;/style&gt;</span>
-
-<span class="s2">&lt;div class="page-break-before"&gt;</span>
-<span class="s2">                                    </span>
-<span class="s2">"""</span>
-
-        <span class="n">combined</span><span class="o">.</span><span class="n">cells</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_markdown_cell</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="si">{</span><span class="n">page_break</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">##### </span><span class="si">{</span><span class="n">section_name</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">---</span><span class="se">\n</span><span class="s2">&lt;/div&gt;</span><span class="se">\n</span><span class="s2">"</span><span class="p">))</span>
-<span class="c1">#        combined.cells.append(new_markdown_cell(f"### {section_name}\n\n---\n"))</span>
-
-        <span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">notebook</span><span class="o">.</span><span class="n">cells</span><span class="p">:</span>
-            <span class="n">cell_copy</span> <span class="o">=</span> <span class="n">nbformat</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">cell</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">cell</span><span class="o">.</span><span class="n">cell_type</span> <span class="o">==</span> <span class="s1">'markdown'</span><span class="p">:</span>
-                <span class="n">cell_copy</span><span class="o">.</span><span class="n">source</span> <span class="o">=</span> <span class="n">adjust_links</span><span class="p">(</span><span class="n">cell_copy</span><span class="o">.</span><span class="n">source</span><span class="p">,</span> <span class="n">notebook_dir</span><span class="p">,</span> <span class="n">combined_dir</span><span class="p">)</span>
-            <span class="n">combined</span><span class="o">.</span><span class="n">cells</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cell_copy</span><span class="p">)</span>
-    
-    <span class="k">return</span> <span class="n">combined</span>
-
-<span class="k">def</span> <span class="nf">breadth_first_combining</span><span class="p">():</span>
-    <span class="n">base_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>  <span class="c1"># Current working directory</span>
-    <span class="n">initial_notebook</span> <span class="o">=</span> <span class="s2">"abstract/Intro.de.ipynb"</span>  <span class="c1"># Replace with the initial notebook's path relative to base_path</span>
-
-    <span class="n">links</span> <span class="o">=</span> <span class="n">collect_links</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="n">initial_notebook</span><span class="p">)</span>
-    <span class="n">combined_notebook</span> <span class="o">=</span> <span class="n">combine_notebooks</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="n">links</span><span class="p">)</span>
-
-    <span class="n">output_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="s2">"Everybody_Can_Code.ipynb"</span><span class="p">)</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">output_path</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">nbformat</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">combined_notebook</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Combined notebook saved to </span><span class="si">{</span><span class="n">output_path</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
-    <span class="n">breadth_first_combining</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Create-pdf-with-chrome-headless">Create pdf with chrome headless<a class="anchor-link" href="#Create-pdf-with-chrome-headless">¶</a></h2><p>WiP</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>/Applications/Google<span class="se">\ </span>Chrome.app/Contents/MacOS/Google<span class="se">\ </span>Chrome<span class="w"> </span>--headless<span class="w"> </span>--print-to-pdf-no-header<span class="w"> </span>--no-margins<span class="w"> </span>--window-size<span class="o">=</span><span class="m">1280</span>,1024<span class="w"> </span>--print-to-pdf<span class="o">=</span><span class="s2">"output.pdf"</span><span class="w"> </span>programming/Programmieren1.de.html
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Create-pdf-with-wkhtmltopdf">Create pdf with wkhtmltopdf<a class="anchor-link" href="#Create-pdf-with-wkhtmltopdf">¶</a></h2><p>WiP</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>brew<span class="w"> </span>install<span class="w"> </span>wkhtmltopdf
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>wkhtmltopdf<span class="w"> </span>--enable-local-file-access<span class="w"> </span>--no-stop-slow-scripts<span class="w"> </span>--print-media-type<span class="w"> </span>programming/Programmieren1.de.html<span class="w"> </span>output.pdf
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Create-with-pdfkit">Create with pdfkit<a class="anchor-link" href="#Create-with-pdfkit">¶</a></h1><p>WiP</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">pdfkit</span> <span class="n">bs4</span> <span class="n">requests</span> <span class="n">pypdf2</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
-<span class="kn">import</span> <span class="nn">pdfkit</span>
-<span class="kn">from</span> <span class="nn">PyPDF2</span> <span class="kn">import</span> <span class="n">PdfMerger</span>
-
-<span class="k">def</span> <span class="nf">get_all_local_links</span><span class="p">(</span><span class="n">html_file</span><span class="p">,</span> <span class="n">base_folder</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    Extracts all local links to other HTML files within the same folder.</span>
-<span class="sd">    """</span>
-    <span class="n">links</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">html_file</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-        <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s1">'html.parser'</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">a_tag</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">'a'</span><span class="p">,</span> <span class="n">href</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-            <span class="n">href</span> <span class="o">=</span> <span class="n">a_tag</span><span class="p">[</span><span class="s1">'href'</span><span class="p">]</span>
-            <span class="k">if</span> <span class="n">href</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">'.html'</span><span class="p">)</span> <span class="ow">and</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">base_folder</span><span class="p">,</span> <span class="n">href</span><span class="p">)):</span>
-                <span class="n">links</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">base_folder</span><span class="p">,</span> <span class="n">href</span><span class="p">))</span>
-    <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">links</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">save_as_pdf</span><span class="p">(</span><span class="n">input_html</span><span class="p">,</span> <span class="n">output_pdf</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    Converts a local HTML file to a PDF.</span>
-<span class="sd">    """</span>
-    <span class="n">options</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s1">'enable-local-file-access'</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
-        <span class="s1">'quiet'</span><span class="p">:</span> <span class="s1">''</span>
-    <span class="p">}</span>
-    <span class="n">pdfkit</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="n">input_html</span><span class="p">,</span> <span class="n">output_pdf</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="n">options</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">create_pdf_with_toc</span><span class="p">(</span><span class="n">main_html</span><span class="p">,</span> <span class="n">base_folder</span><span class="p">,</span> <span class="n">output_pdf</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    Main function to create a merged PDF with a table of contents.</span>
-<span class="sd">    """</span>
-    <span class="n">visited</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>  <span class="c1"># Track visited HTML files to avoid duplicates</span>
-    <span class="n">links_to_visit</span> <span class="o">=</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">base_folder</span><span class="p">,</span> <span class="n">main_html</span><span class="p">)]</span>
-    <span class="n">merger</span> <span class="o">=</span> <span class="n">PdfMerger</span><span class="p">()</span>  <span class="c1"># PdfMerger to combine PDFs</span>
-
-    <span class="n">page_number</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="k">while</span> <span class="n">links_to_visit</span><span class="p">:</span>
-        <span class="n">html_file</span> <span class="o">=</span> <span class="n">links_to_visit</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">html_file</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
-            <span class="k">continue</span>
-        <span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">html_file</span><span class="p">)</span>
-        
-        <span class="n">pdf_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"page_</span><span class="si">{</span><span class="n">page_number</span><span class="si">}</span><span class="s2">.pdf"</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Converting: </span><span class="si">{</span><span class="n">html_file</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-        <span class="n">save_as_pdf</span><span class="p">(</span><span class="n">html_file</span><span class="p">,</span> <span class="n">pdf_path</span><span class="p">)</span>  <span class="c1"># Convert each HTML to a PDF</span>
-        <span class="n">merger</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pdf_path</span><span class="p">)</span>  <span class="c1"># Append PDF to the merger</span>
-        <span class="n">merger</span><span class="o">.</span><span class="n">addBookmark</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Page </span><span class="si">{</span><span class="n">page_number</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">html_file</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="n">page_number</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># Add bookmark</span>
-        
-        <span class="c1"># Find additional links within the current HTML file</span>
-        <span class="n">new_links</span> <span class="o">=</span> <span class="n">get_all_local_links</span><span class="p">(</span><span class="n">html_file</span><span class="p">,</span> <span class="n">base_folder</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">new_links</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">link</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
-                <span class="n">links_to_visit</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">link</span><span class="p">)</span>
-
-        <span class="n">page_number</span> <span class="o">+=</span> <span class="mi">1</span>
-
-    <span class="n">merger</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">output_pdf</span><span class="p">)</span>
-    <span class="n">merger</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Merged PDF successfully created as '</span><span class="si">{</span><span class="n">output_pdf</span><span class="si">}</span><span class="s2">'"</span><span class="p">)</span>
-
-<span class="c1"># Example usage:</span>
-<span class="c1"># Assume `base_folder` contains the main HTML file and all linked HTML files</span>
-<span class="n">base_folder</span> <span class="o">=</span> <span class="s2">"./programming"</span>
-<span class="n">main_html</span> <span class="o">=</span> <span class="s2">"Programmieren1.de.html"</span>  <span class="c1"># Main HTML file to start with</span>
-<span class="n">output_pdf</span> <span class="o">=</span> <span class="s2">"merged_document.pdf"</span>
-<span class="n">create_pdf_with_toc</span><span class="p">(</span><span class="n">main_html</span><span class="p">,</span> <span class="n">base_folder</span><span class="p">,</span> <span class="n">output_pdf</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Create-PDF-with-pandoc">Create PDF with pandoc<a class="anchor-link" href="#Create-PDF-with-pandoc">¶</a></h2><p>WiP</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>pandoc<span class="w"> </span>-s<span class="w"> </span>programming/Programmieren1.de.html<span class="w"> </span>-o<span class="w"> </span>output.pdf<span class="w"> </span>--toc
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Create-PDF-with-beautiful-soup-and-pdfkit">Create PDF with beautiful soup and pdfkit<a class="anchor-link" href="#Create-PDF-with-beautiful-soup-and-pdfkit">¶</a></h1><p>Does not work so well.</p>
-<h3 id="1.--Extract-Headlines-from-HTML-Files:">1.  <strong>Extract Headlines from HTML Files:</strong><a class="anchor-link" href="#1.--Extract-Headlines-from-HTML-Files:">¶</a></h3><ul>
-<li>You'll need to parse the HTML files to extract the headline tags (<code>&lt;h1&gt;</code>,  <code>&lt;h2&gt;</code>, etc.) and use them to generate the table of contents.</li>
-<li>The  <code>BeautifulSoup</code>  library from  <code>bs4</code>  is perfect for parsing HTML.</li>
+<h3 id="Nachteile-von-REST">Nachteile von REST<a class="anchor-link" href="#Nachteile-von-REST">¶</a></h3><ul>
+<li>Keine standardisierte Beschreibung wie bei SOAP (es gibt jedoch OpenAPI/Swagger)</li>
+<li>Sicherheits- und Transaktionsanforderungen müssen manuell definiert werden</li>
+<li>Weniger geeignet für komplexe Operationen und Standardisierung</li>
 </ul>
-<h3 id="2.--Create-the-Table-of-Contents:">2.  <strong>Create the Table of Contents:</strong><a class="anchor-link" href="#2.--Create-the-Table-of-Contents:">¶</a></h3><ul>
-<li>Use the extracted headlines to create a TOC in HTML format, with links to the corresponding sections.</li>
-</ul>
-<h3 id="3.--Insert-the-TOC-at-the-Beginning-of-the-Combined-HTML-File:">3.  <strong>Insert the TOC at the Beginning of the Combined HTML File:</strong><a class="anchor-link" href="#3.--Insert-the-TOC-at-the-Beginning-of-the-Combined-HTML-File:">¶</a></h3><ul>
-<li>Add the generated TOC to the beginning of your combined HTML file before converting it to PDF.</li>
-</ul>
-<h3 id="4.--Convert-to-PDF:">4.  <strong>Convert to PDF:</strong><a class="anchor-link" href="#4.--Convert-to-PDF:">¶</a></h3><ul>
-<li>Once you have the HTML with the TOC, convert it to PDF as before.</li>
-</ul>
-<p>Here’s a Python script that implements these steps:</p>
-<h4 id="Step-1:-Install-Necessary-Libraries"><strong>Step 1: Install Necessary Libraries</strong><a class="anchor-link" href="#Step-1:-Install-Necessary-Libraries">¶</a></h4><p>You’ll need to install the required libraries:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">beautifulsoup4</span> <span class="n">pdfkit</span>
-</pre></div>
 </div>
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=74ff1bdb">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="Step-2:-Python-Script-to-Generate-TOC-and-Convert-HTML-to-PDF">Step 2: Python Script to Generate TOC and Convert HTML to PDF<a class="anchor-link" href="#Step-2:-Python-Script-to-Generate-TOC-and-Convert-HTML-to-PDF">¶</a></h4>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
-<span class="kn">import</span> <span class="nn">pdfkit</span>
-
-<span class="c1"># Function to extract headlines from HTML</span>
-<span class="k">def</span> <span class="nf">extract_headlines</span><span class="p">(</span><span class="n">html_content</span><span class="p">,</span> <span class="n">file_index</span><span class="p">):</span>
-    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html_content</span><span class="p">,</span> <span class="s1">'html.parser'</span><span class="p">)</span>
-    <span class="n">headlines</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">'h1'</span><span class="p">,</span> <span class="s1">'h2'</span><span class="p">,</span> <span class="s1">'h3'</span><span class="p">,</span> <span class="s1">'h4'</span><span class="p">,</span> <span class="s1">'h5'</span><span class="p">,</span> <span class="s1">'h6'</span><span class="p">]:</span>
-        <span class="k">for</span> <span class="n">header</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="n">tag</span><span class="p">):</span>
-            <span class="c1"># Create an anchor link for each headline</span>
-            <span class="n">anchor</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"section_</span><span class="si">{</span><span class="n">file_index</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">headlines</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
-            <span class="n">header</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]</span> <span class="o">=</span> <span class="n">anchor</span>
-            <span class="n">headlines</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">header</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">(),</span> <span class="n">tag</span><span class="p">,</span> <span class="n">anchor</span><span class="p">))</span>
-    <span class="k">return</span> <span class="n">headlines</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">soup</span><span class="p">)</span>
-
-<span class="c1"># Function to gather all HTML files recursively</span>
-<span class="k">def</span> <span class="nf">gather_html_files</span><span class="p">(</span><span class="n">directory</span><span class="p">):</span>
-    <span class="n">html_files</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">directory</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">'.ipynb.html'</span><span class="p">):</span>
-                <span class="n">html_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">file</span><span class="p">))</span>
-    <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">html_files</span><span class="p">)</span>  <span class="c1"># Sorting ensures the order is preserved</span>
-
-<span class="c1"># Specify the top-level folder containing the HTML files</span>
-<span class="n">top_level_folder</span> <span class="o">=</span> <span class="s1">'csharp'</span>
-<span class="n">output_html</span> <span class="o">=</span> <span class="s1">'combined_with_toc.html'</span>
-
-<span class="c1"># Gather all HTML files recursively</span>
-<span class="n">html_files</span> <span class="o">=</span> <span class="n">gather_html_files</span><span class="p">(</span><span class="n">top_level_folder</span><span class="p">)</span>
-
-<span class="n">toc_entries</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">full_html_content</span> <span class="o">=</span> <span class="s2">"&lt;html&gt;&lt;head&gt;&lt;title&gt;Document with TOC&lt;/title&gt;&lt;/head&gt;&lt;body&gt;"</span>
-
-<span class="c1"># Generate the TOC and combine HTML files</span>
-<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">filepath</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">html_files</span><span class="p">):</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
-        <span class="n">content</span> <span class="o">=</span> <span class="n">infile</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-        <span class="n">headlines</span><span class="p">,</span> <span class="n">updated_html</span> <span class="o">=</span> <span class="n">extract_headlines</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
-        <span class="n">toc_entries</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">headlines</span><span class="p">)</span>
-        <span class="n">full_html_content</span> <span class="o">+=</span> <span class="n">updated_html</span>
-        <span class="n">full_html_content</span> <span class="o">+=</span> <span class="s1">'&lt;div style="page-break-after: always;"&gt;&lt;/div&gt;'</span>
-
-<span class="c1"># Create the TOC HTML structure</span>
-<span class="n">toc_html</span> <span class="o">=</span> <span class="s1">'&lt;h1&gt;Table of Contents&lt;/h1&gt;&lt;ul&gt;'</span>
-<span class="k">for</span> <span class="n">text</span><span class="p">,</span> <span class="n">tag</span><span class="p">,</span> <span class="n">anchor</span> <span class="ow">in</span> <span class="n">toc_entries</span><span class="p">:</span>
-    <span class="n">toc_html</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">'&lt;li&gt;&lt;a href="#</span><span class="si">{</span><span class="n">anchor</span><span class="si">}</span><span class="s1">"&gt;</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s1">&lt;/a&gt;&lt;/li&gt;'</span>
-<span class="n">toc_html</span> <span class="o">+=</span> <span class="s1">'&lt;/ul&gt;&lt;div style="page-break-after: always;"&gt;&lt;/div&gt;'</span>
-
-<span class="c1"># Add the TOC to the beginning of the document</span>
-<span class="n">full_html_content</span> <span class="o">=</span> <span class="n">toc_html</span> <span class="o">+</span> <span class="n">full_html_content</span> <span class="o">+</span> <span class="s2">"&lt;/body&gt;&lt;/html&gt;"</span>
-
-<span class="c1"># Write the combined HTML with TOC to a file</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">output_html</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
-    <span class="n">outfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">full_html_content</span><span class="p">)</span>
-
-<span class="c1"># Convert the combined HTML file with TOC to PDF</span>
-<span class="n">pdfkit</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="n">output_html</span><span class="p">,</span> <span class="s1">'output_with_toc.pdf'</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">"PDF with Table of Contents has been generated as 'output_with_toc.pdf'."</span><span class="p">)</span>
+<h2 id="Was-ist-JSON?">Was ist JSON?<a class="anchor-link" href="#Was-ist-JSON?">¶</a></h2><p><strong>JSON</strong> steht für <strong>JavaScript Object Notation</strong> und ist ein <strong>leichtgewichtiges Datenformat</strong>, das Menschen gut lesen und Maschinen leicht verarbeiten können. Es wird oft für den <strong>Datenaustausch zwischen Server und Client</strong> verwendet – zum Beispiel bei Web APIs.</p>
+<h3 id="Aufbau">Aufbau<a class="anchor-link" href="#Aufbau">¶</a></h3><p>JSON stellt Daten in <strong>Schlüssel-Wert-Paaren</strong> dar und ähnelt dabei den Objekten in JavaScript. Es unterstützt:</p>
+<ul>
+<li>Zeichenketten (<code>string</code>)</li>
+<li>Zahlen</li>
+<li>Wahrheitswerte (<code>true</code>/<code>false</code>)</li>
+<li>Arrays (Listen)</li>
+<li>Objekte (geschachtelte Strukturen)</li>
+<li><code>null</code>-Werte</li>
+</ul>
+<p><a href="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3074457357701041103&amp;cot=14"><img alt="No description has been provided for this image" src="JSON.jpg"/></a></p>
+<h3 id="Beispiel:">Beispiel:<a class="anchor-link" href="#Beispiel:">¶</a></h3><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hello World"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"completed"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"json"</span><span class="p">,</span><span class="w"> </span><span class="s2">"api"</span><span class="p">,</span><span class="w"> </span><span class="s2">"example"</span><span class="p">]</span>
+<span class="p">}</span>
 </pre></div>
+<h3 id="Typische-Einsatzgebiete">Typische Einsatzgebiete<a class="anchor-link" href="#Typische-Einsatzgebiete">¶</a></h3><ul>
+<li>Web APIs (z. B. REST)</li>
+<li>Konfigurationsdateien</li>
+<li>Datenübertragung in Webanwendungen und mobilen Apps</li>
+</ul>
+<p>JSON ist heute eines der am weitesten verbreiteten Formate für Daten im Web – weil es <strong>einfach</strong>, <strong>klar strukturiert</strong> und <strong>in nahezu jeder Programmiersprache nutzbar</strong> ist.</p>
 </div>
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4725ecb3">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Requirements:"><strong>Requirements:</strong><a class="anchor-link" href="#Requirements:">¶</a></h3><ol>
-<li><strong>wkhtmltopdf:</strong>  Make sure  <code>wkhtmltopdf</code>  is installed on your system for  <code>pdfkit</code>  to work. You can download it from  wkhtmltopdf.org.</li>
-<li><strong>HTML Structure:</strong>  Ensure that your HTML files are well-formed, with proper heading tags for the TOC to be generated accurately.</li>
+<h2 id="SOAP-(Simple-Object-Access-Protocol)">SOAP (Simple Object Access Protocol)<a class="anchor-link" href="#SOAP-(Simple-Object-Access-Protocol)">¶</a></h2><h3 id="Was-ist-SOAP?">Was ist SOAP?<a class="anchor-link" href="#Was-ist-SOAP?">¶</a></h3><p>SOAP ist ein standardisiertes Protokoll für den Nachrichtenaustausch, das auf <strong>XML</strong> basiert und für komplexere Enterprise-Anwendungen entwickelt wurde. Es war lange der De-facto-Standard für Webservices, vor allem in Unternehmensumgebungen.</p>
+<h3 id="Eigenschaften-von-SOAP">Eigenschaften von SOAP<a class="anchor-link" href="#Eigenschaften-von-SOAP">¶</a></h3><ol>
+<li><strong>XML-basiert</strong>: Alle Nachrichten werden als XML-Dokumente übertragen.</li>
+<li><strong>Streng standardisiert</strong>: SOAP ist eng definiert durch WSDL (Web Services Description Language) und verwendet standardisierte Protokolle für Sicherheit, Transaktionen und Routing.</li>
+<li><strong>Transportprotokoll-unabhängig</strong>: Kann über HTTP, SMTP, JMS, etc. kommunizieren (häufig jedoch HTTP).</li>
+<li><strong>Envelope-Struktur</strong>: Jede Nachricht besteht aus einem Envelope, Header und Body.</li>
 </ol>
-<p>This script will produce a PDF with a generated Table of Contents at the beginning, linking to all the headlines within your HTML files.</p>
+<h3 id="Beispiel-SOAP-Request-(verk%C3%BCrzt)">Beispiel SOAP-Request (verkürzt)<a class="anchor-link" href="#Beispiel-SOAP-Request-(verk%C3%BCrzt)">¶</a></h3><div class="highlight"><pre><span></span><span class="nt">&lt;soapenv:Envelope</span><span class="w"> </span><span class="na">xmlns:soapenv=</span><span class="s">"http://schemas.xmlsoap.org/soap/envelope/"</span>
+<span class="w">                  </span><span class="na">xmlns:ex=</span><span class="s">"http://example.com/"</span><span class="nt">&gt;</span>
+<span class="w">   </span><span class="nt">&lt;soapenv:Header/&gt;</span>
+<span class="w">   </span><span class="nt">&lt;soapenv:Body&gt;</span>
+<span class="w">      </span><span class="nt">&lt;ex:GetUser&gt;</span>
+<span class="w">         </span><span class="nt">&lt;ex:UserId&gt;</span>42<span class="nt">&lt;/ex:UserId&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/ex:GetUser&gt;</span>
+<span class="w">   </span><span class="nt">&lt;/soapenv:Body&gt;</span>
+<span class="nt">&lt;/soapenv:Envelope&gt;</span>
+</pre></div>
+<h3 id="Vorteile-von-SOAP">Vorteile von SOAP<a class="anchor-link" href="#Vorteile-von-SOAP">¶</a></h3><ul>
+<li>Sehr <strong>formell</strong> und <strong>standardisiert</strong></li>
+<li>Unterstützt komplexe Sicherheit (WS-Security), Transaktionen, Routing, etc.</li>
+<li>Gute Integration mit Unternehmenssystemen (z. B. .NET, Java EE)</li>
+<li>Beschreibung durch <strong>WSDL</strong> für automatische Generierung von Clients/Servern</li>
+</ul>
+<h3 id="Nachteile-von-SOAP">Nachteile von SOAP<a class="anchor-link" href="#Nachteile-von-SOAP">¶</a></h3><ul>
+<li>Komplexität und Overhead durch XML</li>
+<li>Weniger geeignet für einfache Web-APIs</li>
+<li>Schwerer zu debuggen (wegen verschachtelter XML-Strukturen)</li>
+<li>Geringere Performance (langsamer als REST)</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ce9abb29">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="REST-vs.-SOAP-%E2%80%93-Vergleichstabelle">REST vs. SOAP – Vergleichstabelle<a class="anchor-link" href="#REST-vs.-SOAP-%E2%80%93-Vergleichstabelle">¶</a></h2><table>
+<thead>
+<tr>
+<th>Merkmal</th>
+<th>REST</th>
+<th>SOAP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Stil</td>
+<td>Architekturstil</td>
+<td>Protokoll</td>
+</tr>
+<tr>
+<td>Datenformat</td>
+<td>Beliebig (meist JSON oder XML)</td>
+<td>XML</td>
+</tr>
+<tr>
+<td>Standardisierung</td>
+<td>Locker (z. B. mit OpenAPI)</td>
+<td>Stark (WSDL, WS-*)</td>
+</tr>
+<tr>
+<td>Sicherheit</td>
+<td>HTTPS, OAuth, JWT</td>
+<td>WS-Security</td>
+</tr>
+<tr>
+<td>Transaktionen</td>
+<td>Nicht nativ</td>
+<td>Ja, z. B. ACID möglich</td>
+</tr>
+<tr>
+<td>Performance</td>
+<td>Leichtgewichtig, schneller</td>
+<td>Schwergewichtiger, langsamer</td>
+</tr>
+<tr>
+<td>Komplexe Workflows</td>
+<td>Nicht direkt unterstützt</td>
+<td>Besser geeignet</td>
+</tr>
+<tr>
+<td>Verbreitung</td>
+<td>Modernes Web, Mobile, Microservices</td>
+<td>Enterprise-Anwendungen, B2B</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Wann-solltest-du-REST-oder-SOAP-verwenden?">Wann solltest du REST oder SOAP verwenden?<a class="anchor-link" href="#Wann-solltest-du-REST-oder-SOAP-verwenden?">¶</a></h2><table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>Empfehlung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mobile App oder Web App</td>
+<td>REST</td>
+</tr>
+<tr>
+<td>Einfache CRUD-APIs</td>
+<td>REST</td>
+</tr>
+<tr>
+<td>Integration mit alten Unternehmenssystemen</td>
+<td>SOAP</td>
+</tr>
+<tr>
+<td>Sicherheit auf Nachrichtenniveau notwendig</td>
+<td>SOAP</td>
+</tr>
+<tr>
+<td>Du brauchst Transaktionen oder Messaging</td>
+<td>SOAP</td>
+</tr>
+<tr>
+<td>Du willst eine leichtgewichtige API</td>
+<td>REST</td>
+</tr>
+<tr>
+<td>Du willst eine stark beschriebene API (WSDL)</td>
+<td>SOAP</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6ea335f9">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Begriffe-und-Abk%C3%BCrzungen">Begriffe und Abkürzungen<a class="anchor-link" href="#Begriffe-und-Abk%C3%BCrzungen">¶</a></h2><h3 id="HTTP-bezogene-Begriffe">HTTP-bezogene Begriffe<a class="anchor-link" href="#HTTP-bezogene-Begriffe">¶</a></h3><table>
+<thead>
+<tr>
+<th>Abkürzung</th>
+<th>Bedeutung</th>
+<th>Erklärung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>HTTP</strong></td>
+<td>HyperText Transfer Protocol</td>
+<td>Protokoll für die Kommunikation im Web, z. B. für Webseiten oder APIs.</td>
+</tr>
+<tr>
+<td><strong>URI</strong></td>
+<td>Uniform Resource Identifier</td>
+<td>Eine eindeutige Adresse für eine Ressource (z. B. <code>https://example.com/api/users/42</code>).</td>
+</tr>
+<tr>
+<td><strong>URL</strong></td>
+<td>Uniform Resource Locator</td>
+<td>Spezielle Form eines URI, die auch das Protokoll und den Pfad enthält.</td>
+</tr>
+<tr>
+<td><strong>GET</strong></td>
+<td>-</td>
+<td>HTTP-Methode, um Daten abzurufen.</td>
+</tr>
+<tr>
+<td><strong>POST</strong></td>
+<td>-</td>
+<td>HTTP-Methode, um neue Daten zu senden/erstellen.</td>
+</tr>
+<tr>
+<td><strong>PUT</strong></td>
+<td>-</td>
+<td>HTTP-Methode, um Daten vollständig zu aktualisieren.</td>
+</tr>
+<tr>
+<td><strong>DELETE</strong></td>
+<td>-</td>
+<td>HTTP-Methode, um Daten zu löschen.</td>
+</tr>
+<tr>
+<td><strong>PATCH</strong></td>
+<td>-</td>
+<td>HTTP-Methode, um Daten teilweise zu aktualisieren.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="REST/SOAP/Architektur">REST/SOAP/Architektur<a class="anchor-link" href="#REST/SOAP/Architektur">¶</a></h3><table>
+<thead>
+<tr>
+<th>Abkürzung</th>
+<th>Bedeutung</th>
+<th>Erklärung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>REST</strong></td>
+<td>Representational State Transfer</td>
+<td>Architekturstil für APIs auf Basis von HTTP.</td>
+</tr>
+<tr>
+<td><strong>SOAP</strong></td>
+<td>Simple Object Access Protocol</td>
+<td>XML-basiertes Protokoll für Webservices.</td>
+</tr>
+<tr>
+<td><strong>API</strong></td>
+<td>Application Programming Interface</td>
+<td>Schnittstelle, über die Software miteinander kommuniziert.</td>
+</tr>
+<tr>
+<td><strong>WSDL</strong></td>
+<td>Web Services Description Language</td>
+<td>XML-basierte Beschreibung von SOAP-Webservices.</td>
+</tr>
+<tr>
+<td><strong>JSON</strong></td>
+<td>JavaScript Object Notation</td>
+<td>Leichtgewichtiges, lesbares Format zur Darstellung von Daten.</td>
+</tr>
+<tr>
+<td><strong>XML</strong></td>
+<td>eXtensible Markup Language</td>
+<td>Format zur Darstellung hierarchischer Daten, maschinenlesbar.</td>
+</tr>
+<tr>
+<td><strong>CRUD</strong></td>
+<td>Create, Read, Update, Delete</td>
+<td>Grundoperationen bei Datenzugriffen über APIs.</td>
+</tr>
+<tr>
+<td><strong>ACID</strong></td>
+<td>Atomicity, Consistency, Isolation, Durability</td>
+<td>Eigenschaften von sicheren Transaktionen in Datenbanken.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Sicherheit-&amp;-Standards">Sicherheit &amp; Standards<a class="anchor-link" href="#Sicherheit-&amp;-Standards">¶</a></h3><table>
+<thead>
+<tr>
+<th>Abkürzung</th>
+<th>Bedeutung</th>
+<th>Erklärung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>HTTPS</strong></td>
+<td>HyperText Transfer Protocol Secure</td>
+<td>Verschlüsseltes HTTP-Protokoll.</td>
+</tr>
+<tr>
+<td><strong>OAuth</strong></td>
+<td>Open Authorization</td>
+<td>Standard zur sicheren API-Autorisierung (z. B. via Google Login).</td>
+</tr>
+<tr>
+<td><strong>JWT</strong></td>
+<td>JSON Web Token</td>
+<td>Token-Format zur sicheren Authentifizierung und Autorisierung.</td>
+</tr>
+<tr>
+<td><strong>WS-Security</strong></td>
+<td>Web Services Security</td>
+<td>Standard für Sicherheit bei SOAP-Webservices.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Technik-&amp;-Tools">Technik &amp; Tools<a class="anchor-link" href="#Technik-&amp;-Tools">¶</a></h2><table>
+<thead>
+<tr>
+<th>Abkürzung</th>
+<th>Bedeutung</th>
+<th>Erklärung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>JMS</strong></td>
+<td>Java Message Service</td>
+<td>API für Messaging zwischen Java-Anwendungen.</td>
+</tr>
+<tr>
+<td><strong>SMTP</strong></td>
+<td>Simple Mail Transfer Protocol</td>
+<td>Protokoll zum Versand von E-Mails.</td>
+</tr>
+<tr>
+<td><strong>WAF</strong></td>
+<td>Web Application Firewall</td>
+<td>Schutzmechanismus für Webanwendungen gegen Angriffe.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f9fb59a9">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Beispiel-mit-JSONPlaceholder">Beispiel mit JSONPlaceholder<a class="anchor-link" href="#Beispiel-mit-JSONPlaceholder">¶</a></h2><h3 id="JSONPlaceholder?">JSONPlaceholder?<a class="anchor-link" href="#JSONPlaceholder?">¶</a></h3><p><strong><a href="https://jsonplaceholder.typicode.com">https://jsonplaceholder.typicode.com</a></strong> ist eine kostenlose Fake-Online-API zum Testen und Prototypen. Sie simuliert typische REST-Endpunkte wie:</p>
+<table>
+<thead>
+<tr>
+<th>Ressource</th>
+<th>Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/posts</code></td>
+<td>Blogbeiträge</td>
+</tr>
+<tr>
+<td><code>/comments</code></td>
+<td>Kommentare</td>
+</tr>
+<tr>
+<td><code>/users</code></td>
+<td>Benutzer</td>
+</tr>
+</tbody>
+</table>
+<p>Beispiel:<br>
+<code>GET https://jsonplaceholder.typicode.com/posts/1</code> liefert einen Blogbeitrag im JSON-Format.</br></p>
+<h3 id="Was-ist-curl?">Was ist <code>curl</code>?<a class="anchor-link" href="#Was-ist-curl?">¶</a></h3><p><code>curl</code> ist ein <strong>Kommandozeilenwerkzeug</strong>, mit dem du <strong>HTTP-Anfragen</strong> (und viele andere Protokolle) direkt im Terminal senden kannst. Es ist ideal zum Testen von APIs, Debugging oder zum Automatisieren von Datenabfragen.</p>
+<h4 id="%F0%9F%93%A6-Beispiel:-JSONPlaceholder-mit-curl-verwenden">📦 Beispiel: JSONPlaceholder mit <code>curl</code> verwenden<a class="anchor-link" href="#%F0%9F%93%A6-Beispiel:-JSONPlaceholder-mit-curl-verwenden">¶</a></h4><h4 id="%F0%9F%94%8D-Ziel:-Den-ersten-Blogpost-abrufen">🔍 Ziel: Den ersten Blogpost abrufen<a class="anchor-link" href="#%F0%9F%94%8D-Ziel:-Den-ersten-Blogpost-abrufen">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=55967105">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="ch">#!pwsh</span>
+<span class="n">curl</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">jsonplaceholder</span><span class="o">.</span><span class="n">typicode</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">posts</span><span class="o">/</span><span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre><span class="ansi-red-intense-fg ansi-bold">  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current</span>
+<span class="ansi-red-intense-fg ansi-bold">                                 Dload  Upload   Total   Spent    Left  Speed</span>
+
+<span class="ansi-red-intense-fg ansi-bold">  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0</span>
+<span class="ansi-red-intense-fg ansi-bold">100   292  100   292    0     0    623      0 --:--:-- --:--:-- --:--:--   623</span>
+{
+  "userId": 1,
+  "id": 1,
+  "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+  "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=790b3bf7">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="%F0%9F%93%9D-Beispiel:-Einen-neuen-Blogpost-erstellen-(POST)">📝 Beispiel: Einen neuen Blogpost erstellen (POST)<a class="anchor-link" href="#%F0%9F%93%9D-Beispiel:-Einen-neuen-Blogpost-erstellen-(POST)">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=882c13c8">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="ch">#!pwsh</span>
+<span class="n">curl</span> <span class="o">-</span><span class="n">X</span> <span class="n">POST</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">jsonplaceholder</span><span class="o">.</span><span class="n">typicode</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">posts</span> <span class="err">`</span>
+  <span class="o">-</span><span class="n">H</span> <span class="s2">"Content-Type: application/json"</span> <span class="err">`</span>
+  <span class="o">-</span><span class="n">d</span> <span class="s1">'{"title": "Hallo Welt", "body": "Dies ist ein Test.", "userId": 1}'</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre><span class="ansi-red-intense-fg ansi-bold">  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current</span>
+<span class="ansi-red-intense-fg ansi-bold">                                 Dload  Upload   Total   Spent    Left  Speed</span>
+
+<span class="ansi-red-intense-fg ansi-bold">  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0</span>
+<span class="ansi-red-intense-fg ansi-bold">  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0</span>
+<span class="ansi-red-intense-fg ansi-bold">100   153  100    87  100    66    140    106 --:--:-- --:--:-- --:--:--   246</span>
+{
+  "title": "Hallo Welt",
+  "body": "Dies ist ein Test.",
+  "userId": 1,
+  "id": 101
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7224d678">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="%F0%9F%94%84-Erkl%C3%A4rung:">🔄 Erklärung:<a class="anchor-link" href="#%F0%9F%94%84-Erkl%C3%A4rung:">¶</a></h4><ul>
+<li><code>-X POST</code>: Methode <code>POST</code> verwenden</li>
+<li><code>-H</code>: Header mitgeben (hier: <code>Content-Type: application/json</code>)</li>
+<li><code>-d</code>: Daten (JSON-String) im Request-Body</li>
+</ul>
+<p>JSONPlaceholder speichert die Daten <strong>nicht dauerhaft</strong>, gibt aber eine <strong>simulierte Antwort</strong> zurück.</p>
+<h3 id="JSONPlaceholder-API-mit-C%23">JSONPlaceholder API mit C#<a class="anchor-link" href="#JSONPlaceholder-API-mit-C%23">¶</a></h3><h4 id="%F0%9F%92%A1-Tipp:-JSON-automatisch-in-Klassen-umwandeln">💡 Tipp: JSON automatisch in Klassen umwandeln<a class="anchor-link" href="#%F0%9F%92%A1-Tipp:-JSON-automatisch-in-Klassen-umwandeln">¶</a></h4><p>Nutze z. B. <a href="https://json2csharp.com">https://json2csharp.com</a> – dort kannst du JSON einfügen und erhältst passende C#-Klassen. Hiermit kann man aus der <a href="https://jsonplaceholder.typicode.com/guide/">Dokumentation von JSONPlaceholder</a> die Klassen generieren.</p>
+<h4 id="Die-Datenklasse-Post">Die Datenklasse <code>Post</code><a class="anchor-link" href="#Die-Datenklasse-Post">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=b0cd50a3">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">Post</span>
+<span class="p">{</span>
+    <span class="n">public</span> <span class="nb">int</span> <span class="n">userId</span> <span class="p">{</span> <span class="n">get</span><span class="p">;</span> <span class="nb">set</span><span class="p">;</span> <span class="p">}</span>
+    <span class="n">public</span> <span class="nb">int</span> <span class="nb">id</span> <span class="p">{</span> <span class="n">get</span><span class="p">;</span> <span class="nb">set</span><span class="p">;</span> <span class="p">}</span>
+    <span class="n">public</span> <span class="n">string</span> <span class="n">title</span> <span class="p">{</span> <span class="n">get</span><span class="p">;</span> <span class="nb">set</span><span class="p">;</span> <span class="p">}</span>
+    <span class="n">public</span> <span class="n">string</span> <span class="n">body</span> <span class="p">{</span> <span class="n">get</span><span class="p">;</span> <span class="nb">set</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6ec107e3">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Beispiel:-Auslesen-des-ersten-Blogposts">Beispiel: Auslesen des ersten Blogposts<a class="anchor-link" href="#Beispiel:-Auslesen-des-ersten-Blogposts">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=0f561fb7">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">using</span> <span class="n">System</span><span class="p">;</span>
+<span class="n">using</span> <span class="n">System</span><span class="o">.</span><span class="n">Net</span><span class="o">.</span><span class="n">Http</span><span class="p">;</span>
+<span class="n">using</span> <span class="n">System</span><span class="o">.</span><span class="n">Threading</span><span class="o">.</span><span class="n">Tasks</span><span class="p">;</span>
+<span class="n">using</span> <span class="n">System</span><span class="o">.</span><span class="n">Text</span><span class="o">.</span><span class="n">Json</span><span class="p">;</span>
+
+<span class="o">//</span> <span class="mf">1.</span> <span class="n">HttpClient</span> <span class="n">erzeugen</span>
+<span class="n">HttpClient</span> <span class="n">client</span> <span class="o">=</span> <span class="n">new</span> <span class="n">HttpClient</span><span class="p">();</span>
+
+<span class="o">//</span> <span class="mf">2.</span> <span class="n">URL</span> <span class="n">zur</span> <span class="n">JSONPlaceholder</span> <span class="n">API</span>
+<span class="n">string</span> <span class="n">url</span> <span class="o">=</span> <span class="s2">"https://jsonplaceholder.typicode.com/posts/1"</span><span class="p">;</span>
+
+<span class="o">//</span> <span class="mf">3.</span> <span class="n">GET</span><span class="o">-</span><span class="n">Request</span> <span class="n">senden</span>
+<span class="n">HttpResponseMessage</span> <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">GetAsync</span><span class="p">(</span><span class="n">url</span><span class="p">);</span>
+
+<span class="o">//</span> <span class="mf">4.</span> <span class="n">Statuscode</span> <span class="n">prüfen</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">IsSuccessStatusCode</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="o">//</span> <span class="mf">5.</span> <span class="n">JSON</span><span class="o">-</span><span class="n">Inhalt</span> <span class="n">als</span> <span class="n">String</span> <span class="n">lesen</span>
+    <span class="n">string</span> <span class="n">json</span> <span class="o">=</span> <span class="k">await</span> <span class="n">response</span><span class="o">.</span><span class="n">Content</span><span class="o">.</span><span class="n">ReadAsStringAsync</span><span class="p">();</span>
+
+    <span class="o">//</span> <span class="mf">6.</span> <span class="n">JSON</span> <span class="ow">in</span> <span class="n">ein</span> <span class="n">Objekt</span> <span class="n">deserialisieren</span>
+    <span class="n">Post</span> <span class="n">post</span> <span class="o">=</span> <span class="n">JsonSerializer</span><span class="o">.</span><span class="n">Deserialize</span><span class="o">&lt;</span><span class="n">Post</span><span class="o">&gt;</span><span class="p">(</span><span class="n">json</span><span class="p">);</span>
+
+    <span class="o">//</span> <span class="mf">7.</span> <span class="n">Ausgabe</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Titel: </span><span class="si">{post.title}</span><span class="s2">"</span><span class="p">);</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Inhalt: </span><span class="si">{post.body}</span><span class="s2">"</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Fehler: </span><span class="si">{response.StatusCode}</span><span class="s2">"</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Titel: sunt aut facere repellat provident occaecati excepturi optio reprehenderit
+Inhalt: quia et suscipit
+suscipit recusandae consequuntur expedita et cum
+reprehenderit molestiae ut ut quas totam
+nostrum rerum est autem sunt rem eveniet architecto
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=86350ae8">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Was-passiert-hier-genau?">Was passiert hier genau?<a class="anchor-link" href="#Was-passiert-hier-genau?">¶</a></h3><h4 id="%F0%9F%94%A2-1.-HttpClient">🔢 1. <code>HttpClient</code><a class="anchor-link" href="#%F0%9F%94%A2-1.-HttpClient">¶</a></h4><p>Ein Objekt, mit dem du HTTP-Requests senden kannst – z. B. GET, POST.</p>
+<h4 id="%F0%9F%8C%90-2.-URL">🌐 2. URL<a class="anchor-link" href="#%F0%9F%8C%90-2.-URL">¶</a></h4><p>Wir rufen <code>https://jsonplaceholder.typicode.com/posts/1</code> auf – das ist der erste Blogpost.</p>
+<h4 id="%F0%9F%93%A9-3.-GetAsync()">📩 3. <code>GetAsync()</code><a class="anchor-link" href="#%F0%9F%93%A9-3.-GetAsync()">¶</a></h4><p>Sendet asynchron eine GET-Anfrage.</p>
+<h4 id="%F0%9F%93%A6-4.-Statuscode-pr%C3%BCfen">📦 4. Statuscode prüfen<a class="anchor-link" href="#%F0%9F%93%A6-4.-Statuscode-pr%C3%BCfen">¶</a></h4><p>Nur wenn <code>IsSuccessStatusCode == true</code>, geht es weiter.</p>
+<h4 id="%F0%9F%93%9C-5.-JSON-als-String-lesen">📜 5. JSON als String lesen<a class="anchor-link" href="#%F0%9F%93%9C-5.-JSON-als-String-lesen">¶</a></h4><p>Die Antwort wird als String eingelesen.</p>
+<h4 id="%F0%9F%A7%B0-6.-JSON-%E2%86%92-C%23-Objekt">🧰 6. JSON → C#-Objekt<a class="anchor-link" href="#%F0%9F%A7%B0-6.-JSON-%E2%86%92-C%23-Objekt">¶</a></h4><p><code>JsonSerializer.Deserialize&lt;Post&gt;(json)</code> macht aus dem JSON-Text ein <code>Post</code>-Objekt.</p>
+<h4 id="%F0%9F%96%A8-7.-Ausgabe">🖨 7. Ausgabe<a class="anchor-link" href="#%F0%9F%96%A8-7.-Ausgabe">¶</a></h4><p>Wir geben <code>Title</code> und <code>Body</code> aus.</p>
+<h3 id="N%C3%A4chster-Schritt:-Alle-Posts-laden">Nächster Schritt: Alle Posts laden<a class="anchor-link" href="#N%C3%A4chster-Schritt:-Alle-Posts-laden">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=84f42345">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">string</span> <span class="n">url</span> <span class="o">=</span> <span class="s2">"https://jsonplaceholder.typicode.com/posts"</span><span class="p">;</span>
+<span class="n">HttpResponseMessage</span> <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">GetAsync</span><span class="p">(</span><span class="n">url</span><span class="p">);</span>
+<span class="n">string</span> <span class="n">json</span> <span class="o">=</span> <span class="k">await</span> <span class="n">response</span><span class="o">.</span><span class="n">Content</span><span class="o">.</span><span class="n">ReadAsStringAsync</span><span class="p">();</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">Post</span><span class="o">&gt;</span> <span class="n">posts</span> <span class="o">=</span> <span class="n">JsonSerializer</span><span class="o">.</span><span class="n">Deserialize</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Post</span><span class="o">&gt;&gt;</span><span class="p">(</span><span class="n">json</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a1cdac97">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Dann kannst du z. B. alle Titel ausgeben:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=473513ac">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">foreach</span> <span class="p">(</span><span class="n">var</span> <span class="n">post</span> <span class="ow">in</span> <span class="n">posts</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"</span><span class="si">{post.id}</span><span class="s2">: </span><span class="si">{post.title}</span><span class="s2">"</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>1: sunt aut facere repellat provident occaecati excepturi optio reprehenderit
+2: qui est esse
+3: ea molestias quasi exercitationem repellat qui ipsa sit aut
+4: eum et est occaecati
+5: nesciunt quas odio
+6: dolorem eum magni eos aperiam quia
+7: magnam facilis autem
+8: dolorem dolore est ipsam
+9: nesciunt iure omnis dolorem tempora et accusantium
+10: optio molestias id quia eum
+11: et ea vero quia laudantium autem
+12: in quibusdam tempore odit est dolorem
+13: dolorum ut in voluptas mollitia et saepe quo animi
+14: voluptatem eligendi optio
+15: eveniet quod temporibus
+16: sint suscipit perspiciatis velit dolorum rerum ipsa laboriosam odio
+17: fugit voluptas sed molestias voluptatem provident
+18: voluptate et itaque vero tempora molestiae
+19: adipisci placeat illum aut reiciendis qui
+20: doloribus ad provident suscipit at
+21: asperiores ea ipsam voluptatibus modi minima quia sint
+22: dolor sint quo a velit explicabo quia nam
+23: maxime id vitae nihil numquam
+24: autem hic labore sunt dolores incidunt
+25: rem alias distinctio quo quis
+26: est et quae odit qui non
+27: quasi id et eos tenetur aut quo autem
+28: delectus ullam et corporis nulla voluptas sequi
+29: iusto eius quod necessitatibus culpa ea
+30: a quo magni similique perferendis
+31: ullam ut quidem id aut vel consequuntur
+32: doloremque illum aliquid sunt
+33: qui explicabo molestiae dolorem
+34: magnam ut rerum iure
+35: id nihil consequatur molestias animi provident
+36: fuga nam accusamus voluptas reiciendis itaque
+37: provident vel ut sit ratione est
+38: explicabo et eos deleniti nostrum ab id repellendus
+39: eos dolorem iste accusantium est eaque quam
+40: enim quo cumque
+41: non est facere
+42: commodi ullam sint et excepturi error explicabo praesentium voluptas
+43: eligendi iste nostrum consequuntur adipisci praesentium sit beatae perferendis
+44: optio dolor molestias sit
+45: ut numquam possimus omnis eius suscipit laudantium iure
+46: aut quo modi neque nostrum ducimus
+47: quibusdam cumque rem aut deserunt
+48: ut voluptatem illum ea doloribus itaque eos
+49: laborum non sunt aut ut assumenda perspiciatis voluptas
+50: repellendus qui recusandae incidunt voluptates tenetur qui omnis exercitationem
+51: soluta aliquam aperiam consequatur illo quis voluptas
+52: qui enim et consequuntur quia animi quis voluptate quibusdam
+53: ut quo aut ducimus alias
+54: sit asperiores ipsam eveniet odio non quia
+55: sit vel voluptatem et non libero
+56: qui et at rerum necessitatibus
+57: sed ab est est
+58: voluptatum itaque dolores nisi et quasi
+59: qui commodi dolor at maiores et quis id accusantium
+60: consequatur placeat omnis quisquam quia reprehenderit fugit veritatis facere
+61: voluptatem doloribus consectetur est ut ducimus
+62: beatae enim quia vel
+63: voluptas blanditiis repellendus animi ducimus error sapiente et suscipit
+64: et fugit quas eum in in aperiam quod
+65: consequatur id enim sunt et et
+66: repudiandae ea animi iusto
+67: aliquid eos sed fuga est maxime repellendus
+68: odio quis facere architecto reiciendis optio
+69: fugiat quod pariatur odit minima
+70: voluptatem laborum magni
+71: et iusto veniam et illum aut fuga
+72: sint hic doloribus consequatur eos non id
+73: consequuntur deleniti eos quia temporibus ab aliquid at
+74: enim unde ratione doloribus quas enim ut sit sapiente
+75: dignissimos eum dolor ut enim et delectus in
+76: doloremque officiis ad et non perferendis
+77: necessitatibus quasi exercitationem odio
+78: quam voluptatibus rerum veritatis
+79: pariatur consequatur quia magnam autem omnis non amet
+80: labore in ex et explicabo corporis aut quas
+81: tempora rem veritatis voluptas quo dolores vero
+82: laudantium voluptate suscipit sunt enim enim
+83: odit et voluptates doloribus alias odio et
+84: optio ipsam molestias necessitatibus occaecati facilis veritatis dolores aut
+85: dolore veritatis porro provident adipisci blanditiis et sunt
+86: placeat quia et porro iste
+87: nostrum quis quasi placeat
+88: sapiente omnis fugit eos
+89: sint soluta et vel magnam aut ut sed qui
+90: ad iusto omnis odit dolor voluptatibus
+91: aut amet sed
+92: ratione ex tenetur perferendis
+93: beatae soluta recusandae
+94: qui qui voluptates illo iste minima
+95: id minus libero illum nam ad officiis
+96: quaerat velit veniam amet cupiditate aut numquam ut sequi
+97: quas fugiat ut perspiciatis vero provident
+98: laboriosam dolor voluptates
+99: temporibus sit alias delectus eligendi possimus magni
+100: at nam consequatur ea labore ea harum
+</pre>
+</div>
 </div>
 </div>
 </div>
