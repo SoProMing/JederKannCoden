@@ -14,13 +14,45 @@ namespace WasMachenWirDenn
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    /// 
+
     public partial class MainWindow : Window
     {
+        private const int BoardSize = 6;
+        private string currentPlayer = "🔴";
+
         int counter;
         public MainWindow()
         {
             InitializeComponent();
             counter = 0;
+            CreateGameBoard();
+        }
+
+        private void CreateGameBoard()
+        {
+            GameBoard.Rows = BoardSize;
+            GameBoard.Columns = BoardSize;
+
+            for (int i = 0; i < BoardSize * BoardSize; i++)
+            {
+                var button = new Button
+                {
+                    FontSize = 32,
+                    Margin = new Thickness(5)
+                };
+                button.Click += GameBoard_Button_Click;
+                GameBoard.Children.Add(button);
+            }
+        }
+
+        void GameBoard_Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (sender is Button button && string.IsNullOrEmpty(button.Content as string))
+            {
+                button.Content = currentPlayer;
+                currentPlayer = currentPlayer == "🟡" ? "🔴" : "🟡";
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
