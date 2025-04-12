@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="description" content="Error on UUP dump. UUP dump lets you download Unified Update Platform files, like Windows Insider updates, directly from Windows Update.">
+
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="og:site_name" content="UUP dump">
+        <meta property="og:title" content="Error">
+        <meta property="og:type" content="website">
+        <meta property="og:description" content="Error on UUP dump. UUP dump lets you download Unified Update Platform files, like Windows Insider updates, directly from Windows Update.">
+        <meta property="og:image" content="https://uupdump.net/static/images/cover.png">
+        <meta property="og:url" content="https://uupdump.net/download.php?id=6b5f3fe1-20b3-4c9b-a9e7-9e1ea27fd2d0&amp;pack=&amp;edition=&amp;arch=&amp;build=&amp;autodl=2">
+
+        <link rel="stylesheet" href="static/semantic-ui/semantic.min.css">
+        <link rel="stylesheet" href="static/fontawesome/css/all.min.css">
+        <link rel="stylesheet" href="static/css/flags.css">
+        <link rel="stylesheet" href="static/css/light.css">
+        <style>@import url('static/css/dark.css') (prefers-color-scheme: dark);</style>
+        <script src="static/js/jquery.min.js"></script>
+        <script src="static/semantic-ui/semantic.min.js"></script>
+        <script src="static/js/common.js" defer></script>
+
+        <title>Error - UUP dump</title>
+    </head>
+    <body>
+        <div class="ui sidebar inverted vertical menu">
+            <div class="ui container">
+                <a class="item" href="./"><i class="fa-solid fa-house icon"></i>Home</a><a class="active item" href="known.php"><i class="fa-solid fa-download icon"></i>Downloads</a><a class="item" target=_blank href="https://git.uupdump.net/uup-dump/misc/src/branch/master/FAQ.md"><i class="fa-solid fa-question icon"></i>FAQ</a><a class="item theme-selector-btn"><i class="fa-solid fa-brush icon"></i>Theme</a><a class="item" href="https://git.uupdump.net/uup-dump"><i class="fa-solid fa-code icon"></i>Source code</a><a class="item" href="https://discord.gg/yVRbtb2"><i class="fa-brands fa-discord icon"></i>Discord</a><a class="item language-selector-btn"><i class="fa-solid fa-globe icon"></i>English (United States)</a>            </div>
+        </div>
+
+        <div class="pusher">
+            <div class="page-header regular">
+                <div class="ui title container">
+                    <h1><img src="static/images/logo.svg" class="logo" alt="UUP dump">UUP dump</h1>
+                </div>
+
+                <div class="ui one column grid page-header-menu">
+                    <div class="ui attached secondary menu computer only column">
+                        <div class="ui container">
+                            <a class="item" href="./"><i class="fa-solid fa-house icon"></i>Home</a><a class="active item" href="known.php"><i class="fa-solid fa-download icon"></i>Downloads</a><a class="item" target=_blank href="https://git.uupdump.net/uup-dump/misc/src/branch/master/FAQ.md"><i class="fa-solid fa-question icon"></i>FAQ</a>                            <div class="right menu">
+                                <a class="item language-selector-btn"><i class="fa-solid fa-globe icon"></i>English (United States)</a><a class="item theme-selector-btn"><i class="fa-solid fa-brush icon"></i>Theme</a><a class="item" href="https://git.uupdump.net/uup-dump"><i class="fa-solid fa-code icon"></i>Source code</a><a class="item" href="https://discord.gg/yVRbtb2"><i class="fa-brands fa-discord icon"></i>Discord</a>                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ui attached secondary menu mobile tablet only column">
+                        <div class="ui container">
+                            <a class="item sidebar-open-btn">
+                                <i class="fa-solid fa-bars icon"></i>
+                                Menu                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ui container">
+                <h1 class="ui red center aligned icon header error-page-message">
+    <i class="fa-solid fa-circle-xmark icon"></i>
+    <div class="content">
+        Error        <div class="sub header">
+            <p>The language and edition combination is not correct.</p>
+        </div>
+    </div>
+</h1>
+                <div class="ui center aligned container footer">
+                    <div class="ui divider"></div>
+                    <p>
+                        
+                        
+                        <b>UUP dump</b> 33e6c7b /
+                        <b>API</b> <a href="https://git.uupdump.net/uup-dump/api/commit/37cefa11c65dea250e1dcc03facc28b9834d1fdc">37cefa1</a> /
+                        <b>contrib</b> <a href="https://git.uupdump.net/uup-dump/contrib/commit/060027d8005bb0a5201e063eeefb2421c7570a8b">060027d</a> /
+                        <b>misc</b> <a href="https://git.uupdump.net/uup-dump/misc/commit/529afe51cb98983178f67e79902217828b3339c6">529afe5</a><br/>
+
+                        © 2025 UUP dump authors and contributors.                        <span class="info">
+                            This project is not affiliated with Microsoft Corporation. Windows is a registered trademark of Microsoft Corporation.                        </span>
+                                            </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="ui normal mini modal select-language">
+            <div class="header">
+                Please select your language            </div>
+
+            <div class="content">
+                <p><a class="change-language" lang-select="de-de" href><span class="de flag"></span>Deutsch</a></p><p><a class="change-language" lang-select="en-us" href><span class="us flag"></span>English (United States)</a></p><p><a class="change-language" lang-select="es-ar" href><span class="ar flag"></span>Español (Argentina)</a></p><p><a class="change-language" lang-select="fr-fr" href><span class="fr flag"></span>Français (France)</a></p><p><a class="change-language" lang-select="it-it" href><span class="it flag"></span>Italiano</a></p><p><a class="change-language" lang-select="hu-hu" href><span class="hu flag"></span>Magyar</a></p><p><a class="change-language" lang-select="nl-nl" href><span class="nl flag"></span>Nederlands</a></p><p><a class="change-language" lang-select="pl-pl" href><span class="pl flag"></span>polski</a></p><p><a class="change-language" lang-select="pt-br" href><span class="br flag"></span>Português (Brasil)</a></p><p><a class="change-language" lang-select="pt-pt" href><span class="pt flag"></span>Português (Portugal)</a></p><p><a class="change-language" lang-select="ru-ru" href><span class="ru flag"></span>Русский</a></p><p><a class="change-language" lang-select="ro-ro" href><span class="ro flag"></span>Română (România)</a></p><p><a class="change-language" lang-select="tr-tr" href><span class="tr flag"></span>Türkçe</a></p><p><a class="change-language" lang-select="ar-sa" href><span class="sa flag"></span>العربية</a></p><p><a class="change-language" lang-select="ko-kr" href><span class="kr flag"></span>한국어</a></p><p><a class="change-language" lang-select="zh-cn" href><span class="cn flag"></span>中文（简体）</a></p><p><a class="change-language" lang-select="zh-tw" href><span class="tw flag"></span>中文（繁體）</a></p><p><a class="change-language" lang-select="ja-jp" href><span class="jp flag"></span>日本語</a></p>            </div>
+
+            <div class="actions">
+                <div class="ui ok button">
+                    <i class="fa-solid fa-xmark icon"></i>
+                    Cancel                </div>
+            </div>
+        </div>
+
+        <div class="ui normal mini modal select-theme">
+            <div class="header">
+                Select theme            </div>
+
+            <div class="content">
+                <p><a class="ui primary fluid labeled icon button change-theme" theme-select="auto" href>
+                    <i class="fa-solid fa-wand-magic-sparkles icon"></i>
+                    Automatic                </a></p>
+
+                <div class="ui divider"></div>
+
+                <p><a class="ui fluid labeled icon button change-theme" theme-select="light" href>
+                    <i class="fa-solid fa-sun icon"></i>
+                    Light                </a></p>
+
+                <p><a class="ui fluid labeled icon button change-theme" theme-select="dark" href>
+                    <i class="fa-solid fa-moon icon"></i>
+                    Dark                </a></p>
+
+                <p><a class="ui fluid labeled icon button change-theme" theme-select="legacy" href>
+                    <i class="fa-solid fa-rotate-left icon"></i>
+                    Legacy                </a></p>
+            </div>
+
+            <div class="actions">
+                <div class="ui ok button">
+                    <i class="fa-solid fa-xmark icon"></i>
+                    Cancel                </div>
+            </div>
+        </div>
+    </body>
+</html>
