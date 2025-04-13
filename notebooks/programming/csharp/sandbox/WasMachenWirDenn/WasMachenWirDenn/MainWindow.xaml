@@ -9,6 +9,9 @@
     <Grid>
         <Button Name="myButton" Content="Ich bin ein Osterei. Klick mich." HorizontalAlignment="Center" Margin="0,93,0,0" VerticalAlignment="Top" Click="Button_Click"/>
         <TextBox HorizontalAlignment="Center" Margin="0,135,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-
+        <TextBlock HorizontalAlignment="Left" Margin="279,0,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Center"/>
+        <ScrollViewer>
+            <UniformGrid Name="GameBoard" Rows="6" Columns="6" Margin="10"/>
+        </ScrollViewer>
     </Grid>
 </Window>
