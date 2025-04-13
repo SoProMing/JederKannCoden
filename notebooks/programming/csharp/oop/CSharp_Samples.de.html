@@ -7312,6 +7312,7 @@ a.anchor-link {
                     processEnvironments: true
                 },
                 displayAlign: 'center',
+                messageStyle: 'none',
                 CommonHTML: {
                     linebreaks: {
                     automatic: true
@@ -7550,7 +7551,7 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="o">//</span> <span class="n">Definiert</span> <span class="n">eine</span> <span class="n">Klasse</span> <span class="n">namens</span> <span class="s1">'Person'</span> <span class="n">mit</span> <span class="n">den</span> <span class="n">Eigenschaften</span> <span class="s1">'FirstName'</span> <span class="n">und</span> <span class="s1">'LastName'</span> <span class="n">und</span> <span class="n">einer</span> <span class="n">Methode</span> <span class="s1">'Introduce'</span><span class="o">.</span>
-<span class="n">public</span> <span class="k">class</span> <span class="nc">Person</span>
+<span class="n">public</span> <span class="k">class</span><span class="w"> </span><span class="nc">Person</span>
 <span class="p">{</span>
     <span class="n">public</span> <span class="n">string</span> <span class="n">FirstName</span><span class="p">;</span>  <span class="o">//</span> <span class="n">Vorname</span> <span class="n">der</span> <span class="n">Person</span>
     <span class="n">public</span> <span class="n">string</span> <span class="n">LastName</span><span class="p">;</span>   <span class="o">//</span> <span class="n">Nachname</span> <span class="n">der</span> <span class="n">Person</span>
@@ -7608,7 +7609,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">Person</span>
+<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="k">class</span><span class="w"> </span><span class="nc">Person</span>
 <span class="p">{</span>
     <span class="n">private</span> <span class="n">string</span> <span class="n">_lastName</span><span class="p">;</span>  <span class="o">//</span> <span class="n">Privates</span> <span class="n">Feld</span><span class="p">,</span> <span class="n">das</span> <span class="n">nur</span> <span class="n">über</span> <span class="n">eine</span> <span class="n">Eigenschaft</span> <span class="n">zugänglich</span> <span class="n">ist</span>
     
@@ -7668,7 +7669,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">Person</span>
+<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="k">class</span><span class="w"> </span><span class="nc">Person</span>
 <span class="p">{</span>
     <span class="n">public</span> <span class="n">string</span> <span class="n">FirstName</span> <span class="p">{</span> <span class="n">get</span><span class="p">;</span> <span class="p">}</span>  <span class="o">//</span> <span class="n">Nur</span><span class="o">-</span><span class="n">Lese</span><span class="o">-</span><span class="n">Eigenschaft</span> <span class="n">für</span> <span class="n">Vorname</span>
     <span class="n">public</span> <span class="n">string</span> <span class="n">LastName</span> <span class="p">{</span> <span class="n">get</span><span class="p">;</span> <span class="p">}</span>   <span class="o">//</span> <span class="n">Nur</span><span class="o">-</span><span class="n">Lese</span><span class="o">-</span><span class="n">Eigenschaft</span> <span class="n">für</span> <span class="n">Nachname</span>
@@ -7718,7 +7719,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">Person</span>
+<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="k">class</span><span class="w"> </span><span class="nc">Person</span>
 <span class="p">{</span>
     <span class="n">public</span> <span class="n">string</span> <span class="n">FirstName</span> <span class="p">{</span> <span class="n">get</span><span class="p">;</span> <span class="p">}</span>
     <span class="n">public</span> <span class="n">string</span> <span class="n">LastName</span> <span class="p">{</span> <span class="n">get</span><span class="p">;</span> <span class="p">}</span>
@@ -7736,7 +7737,7 @@ a.anchor-link {
 <span class="p">}</span>
 
 <span class="o">//</span> <span class="n">Klasse</span> <span class="s1">'Employee'</span><span class="p">,</span> <span class="n">die</span> <span class="n">von</span> <span class="s1">'Person'</span> <span class="n">erbt</span> <span class="n">und</span> <span class="n">eine</span> <span class="n">zusätzliche</span> <span class="n">Eigenschaft</span> <span class="s1">'EmployeeId'</span> <span class="n">besitzt</span>
-<span class="n">public</span> <span class="k">class</span> <span class="nc">Employee</span> <span class="p">:</span> <span class="n">Person</span>
+<span class="n">public</span> <span class="k">class</span><span class="w"> </span><span class="nc">Employee</span> <span class="p">:</span> <span class="n">Person</span>
 <span class="p">{</span>
     <span class="n">public</span> <span class="nb">int</span> <span class="n">EmployeeId</span> <span class="p">{</span> <span class="n">get</span><span class="p">;</span> <span class="nb">set</span><span class="p">;</span> <span class="p">}</span>
 
@@ -7780,13 +7781,13 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="n">abstract</span> <span class="k">class</span> <span class="nc">Shape</span>
+<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="n">abstract</span> <span class="k">class</span><span class="w"> </span><span class="nc">Shape</span>
 <span class="p">{</span>
     <span class="n">public</span> <span class="n">abstract</span> <span class="n">double</span> <span class="n">GetArea</span><span class="p">();</span>  <span class="o">//</span> <span class="n">Abstrakte</span> <span class="n">Methode</span> <span class="n">zur</span> <span class="n">Berechnung</span> <span class="n">der</span> <span class="n">Fläche</span>
 <span class="p">}</span>
 
 <span class="o">//</span> <span class="s1">'Circle'</span> <span class="n">erbt</span> <span class="n">von</span> <span class="s1">'Shape'</span> <span class="n">und</span> <span class="n">implementiert</span> <span class="n">die</span> <span class="n">Methode</span> <span class="s1">'GetArea'</span>
-<span class="n">public</span> <span class="k">class</span> <span class="nc">Circle</span> <span class="p">:</span> <span class="n">Shape</span>
+<span class="n">public</span> <span class="k">class</span><span class="w"> </span><span class="nc">Circle</span> <span class="p">:</span> <span class="n">Shape</span>
 <span class="p">{</span>
     <span class="n">public</span> <span class="n">double</span> <span class="n">Radius</span> <span class="p">{</span> <span class="n">get</span><span class="p">;</span> <span class="nb">set</span><span class="p">;</span> <span class="p">}</span>
     
@@ -7828,7 +7829,7 @@ a.anchor-link {
     <span class="n">void</span> <span class="n">Move</span><span class="p">();</span>  <span class="o">//</span> <span class="n">Methode</span><span class="p">,</span> <span class="n">die</span> <span class="n">implementierende</span> <span class="n">Klassen</span> <span class="n">definieren</span> <span class="n">müssen</span>
 <span class="p">}</span>
 
-<span class="n">public</span> <span class="k">class</span> <span class="nc">Car</span> <span class="p">:</span> <span class="n">IMovable</span>
+<span class="n">public</span> <span class="k">class</span><span class="w"> </span><span class="nc">Car</span> <span class="p">:</span> <span class="n">IMovable</span>
 <span class="p">{</span>
     <span class="n">public</span> <span class="n">void</span> <span class="n">Move</span><span class="p">()</span>
     <span class="p">{</span>
@@ -7863,7 +7864,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">BankAccount</span>
+<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="k">class</span><span class="w"> </span><span class="nc">BankAccount</span>
 <span class="p">{</span>
     <span class="n">private</span> <span class="n">decimal</span> <span class="n">balance</span><span class="p">;</span>  <span class="o">//</span> <span class="n">Privates</span> <span class="n">Feld</span> <span class="n">für</span> <span class="n">den</span> <span class="n">Kontostand</span>
     

@@ -7312,6 +7312,7 @@ a.anchor-link {
                     processEnvironments: true
                 },
                 displayAlign: 'center',
+                messageStyle: 'none',
                 CommonHTML: {
                     linebreaks: {
                     automatic: true
@@ -8004,7 +8005,7 @@ zu ermöglichen.</li>
 <span class="p">{</span>
 <span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">partial</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MainWindow</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Window</span>
 <span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">BoardSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="p">;</span>
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">BoardSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
 <span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">currentPlayer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"🔵"</span><span class="p">;</span>
 
 <span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="nf">MainWindow</span><span class="p">()</span>
@@ -8018,12 +8019,12 @@ zu ermöglichen.</li>
 <span class="w">            </span><span class="n">GameBoard</span><span class="p">.</span><span class="n">Rows</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BoardSize</span><span class="p">;</span>
 <span class="w">            </span><span class="n">GameBoard</span><span class="p">.</span><span class="n">Columns</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BoardSize</span><span class="p">;</span>
 
-<span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">BoardSize</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">BoardSize</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">BoardSize</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">BoardSize</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
 <span class="w">            </span><span class="p">{</span>
 <span class="w">                </span><span class="kt">var</span><span class="w"> </span><span class="n">button</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Button</span>
 <span class="w">                </span><span class="p">{</span>
-<span class="w">                    </span><span class="n">FontSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">32</span><span class="p">,</span>
-<span class="w">                    </span><span class="n">Margin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Thickness</span><span class="p">(</span><span class="m">5</span><span class="p">)</span>
+<span class="w">                    </span><span class="n">FontSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span>
+<span class="w">                    </span><span class="n">Margin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Thickness</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="w">                </span><span class="p">};</span>
 <span class="w">                </span><span class="n">button</span><span class="p">.</span><span class="n">Click</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">Button_Click</span><span class="p">;</span>
 <span class="w">                </span><span class="n">GameBoard</span><span class="p">.</span><span class="n">Children</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">button</span><span class="p">);</span>

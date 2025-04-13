@@ -7312,6 +7312,7 @@ a.anchor-link {
                     processEnvironments: true
                 },
                 displayAlign: 'center',
+                messageStyle: 'none',
                 CommonHTML: {
                     linebreaks: {
                     automatic: true
@@ -7556,11 +7557,11 @@ a.anchor-link {
 </ol>
 <hr/>
 <h3 id="Python-Skript-f%C3%BCr-den-gesamten-Prozess">Python-Skript für den gesamten Prozess<a class="anchor-link" href="#Python-Skript-f%C3%BCr-den-gesamten-Prozess">¶</a></h3><p>Hier ist ein Python-Skript, das alle Schritte ausführt:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">nbformat</span>
-<span class="kn">from</span> <span class="nn">nbclient</span> <span class="kn">import</span> <span class="n">NotebookClient</span>
-<span class="kn">from</span> <span class="nn">ftplib</span> <span class="kn">import</span> <span class="n">FTP</span>
-<span class="kn">import</span> <span class="nn">subprocess</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">nbformat</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">nbclient</span><span class="w"> </span><span class="kn">import</span> <span class="n">NotebookClient</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ftplib</span><span class="w"> </span><span class="kn">import</span> <span class="n">FTP</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span>
 
 <span class="c1"># Voraussetzungen</span>
 <span class="n">FTP_SERVER</span> <span class="o">=</span> <span class="s2">"ftp.example.com"</span>
@@ -7568,7 +7569,7 @@ a.anchor-link {
 <span class="n">FTP_PASS</span> <span class="o">=</span> <span class="s2">"password"</span>
 <span class="n">BASE_DIR</span> <span class="o">=</span> <span class="s2">"/path/to/files"</span>  <span class="c1"># Verzeichnis mit Dateien</span>
 
-<span class="k">def</span> <span class="nf">run_notebook</span><span class="p">(</span><span class="n">notebook_path</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">run_notebook</span><span class="p">(</span><span class="n">notebook_path</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""Führt ein Jupyter Notebook aus."""</span>
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">notebook_path</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
         <span class="n">nb</span> <span class="o">=</span> <span class="n">nbformat</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">as_version</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
@@ -7576,7 +7577,7 @@ a.anchor-link {
     <span class="n">client</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Notebook </span><span class="si">{</span><span class="n">notebook_path</span><span class="si">}</span><span class="s2"> ausgeführt."</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">print_to_pdf</span><span class="p">(</span><span class="n">input_html</span><span class="p">,</span> <span class="n">output_pdf</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">print_to_pdf</span><span class="p">(</span><span class="n">input_html</span><span class="p">,</span> <span class="n">output_pdf</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""Druckt ein HTML-Dokument mit Chrome Headless als PDF."""</span>
     <span class="n">chrome_command</span> <span class="o">=</span> <span class="p">[</span>
         <span class="s2">"google-chrome"</span><span class="p">,</span>
@@ -7588,7 +7589,7 @@ a.anchor-link {
     <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">chrome_command</span><span class="p">,</span> <span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">input_html</span><span class="si">}</span><span class="s2"> als PDF gedruckt: </span><span class="si">{</span><span class="n">output_pdf</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">upload_to_ftp</span><span class="p">(</span><span class="n">local_base_dir</span><span class="p">,</span> <span class="n">remote_base_dir</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">upload_to_ftp</span><span class="p">(</span><span class="n">local_base_dir</span><span class="p">,</span> <span class="n">remote_base_dir</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""Lädt HTML-, WEBP- und JPG-Dateien auf einen FTP-Server hoch."""</span>
     <span class="n">ftp</span> <span class="o">=</span> <span class="n">FTP</span><span class="p">(</span><span class="n">FTP_SERVER</span><span class="p">)</span>
     <span class="n">ftp</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="n">FTP_USER</span><span class="p">,</span> <span class="n">FTP_PASS</span><span class="p">)</span>
@@ -7617,7 +7618,7 @@ a.anchor-link {
     
     <span class="c1"># 2. Ausführen des zweiten Notebooks und Methodenaufrufe</span>
     <span class="n">run_notebook</span><span class="p">(</span><span class="s2">"Create_pdf.en.ipynb"</span><span class="p">)</span>
-    <span class="kn">from</span> <span class="nn">Create_pdf</span> <span class="kn">import</span> <span class="n">breadth_first_combining</span><span class="p">,</span> <span class="n">convert_to_linked_html</span>  <span class="c1"># Funktionen importieren</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">Create_pdf</span><span class="w"> </span><span class="kn">import</span> <span class="n">breadth_first_combining</span><span class="p">,</span> <span class="n">convert_to_linked_html</span>  <span class="c1"># Funktionen importieren</span>
     <span class="n">breadth_first_combining</span><span class="p">()</span>
     <span class="n">convert_to_linked_html</span><span class="p">()</span>
     

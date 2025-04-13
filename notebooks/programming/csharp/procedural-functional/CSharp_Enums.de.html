@@ -7312,6 +7312,7 @@ a.anchor-link {
                     processEnvironments: true
                 },
                 displayAlign: 'center',
+                messageStyle: 'none',
                 CommonHTML: {
                     linebreaks: {
                     automatic: true
@@ -7792,7 +7793,7 @@ Enum-Werte können auch explizit numerische Werte zugewiesen bekommen. Dies ist 
 <div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">enum</span> <span class="n">PollutionLevel</span>
+<div class="highlight hl-python"><pre><span></span>   <span class="n">enum</span> <span class="n">PollutionLevel</span>
    <span class="p">{</span>
        <span class="n">Low</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>
        <span class="n">Medium</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span>
@@ -7827,7 +7828,7 @@ Mit dem <code>[Flags]</code>-Attribut kann ein Enum als Bitfeld verwendet werden
 <div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="p">[</span><span class="n">Flags</span><span class="p">]</span>
+<div class="highlight hl-python"><pre><span></span>    <span class="p">[</span><span class="n">Flags</span><span class="p">]</span>
     <span class="n">enum</span> <span class="n">PollutionSources</span>
     <span class="p">{</span>
         <span class="kc">None</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
@@ -7891,7 +7892,7 @@ Enum-Werte können in Zeichenfolgen umgewandelt werden, um sie benutzerfreundlic
 <div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">string</span> <span class="n">levelName</span> <span class="o">=</span> <span class="n">PollutionLevel</span><span class="o">.</span><span class="n">High</span><span class="o">.</span><span class="n">ToString</span><span class="p">();</span>
+<div class="highlight hl-python"><pre><span></span>   <span class="n">string</span> <span class="n">levelName</span> <span class="o">=</span> <span class="n">PollutionLevel</span><span class="o">.</span><span class="n">High</span><span class="o">.</span><span class="n">ToString</span><span class="p">();</span>
    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Verschmutzungslevel als String: "</span> <span class="o">+</span> <span class="n">levelName</span><span class="p">);</span>
 
    <span class="n">PollutionLevel</span> <span class="n">parsedLevel</span><span class="p">;</span>
@@ -7940,7 +7941,7 @@ Es ist möglich, alle Werte eines Enums zu durchlaufen, um sie beispielsweise in
 <div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">foreach</span> <span class="p">(</span><span class="n">var</span> <span class="n">level</span> <span class="ow">in</span> <span class="n">Enum</span><span class="o">.</span><span class="n">GetValues</span><span class="p">(</span><span class="n">typeof</span><span class="p">(</span><span class="n">PollutionLevel</span><span class="p">)))</span>
+<div class="highlight hl-python"><pre><span></span>   <span class="n">foreach</span> <span class="p">(</span><span class="n">var</span> <span class="n">level</span> <span class="ow">in</span> <span class="n">Enum</span><span class="o">.</span><span class="n">GetValues</span><span class="p">(</span><span class="n">typeof</span><span class="p">(</span><span class="n">PollutionLevel</span><span class="p">)))</span>
    <span class="p">{</span>
        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Verschmutzungslevel: "</span> <span class="o">+</span> <span class="n">level</span><span class="p">);</span>
    <span class="p">}</span>
@@ -7987,7 +7988,7 @@ Enums können mit Attributen erweitert werden, um benutzerfreundliche Beschriftu
 <div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">using</span> <span class="n">System</span><span class="o">.</span><span class="n">ComponentModel</span><span class="p">;</span>
+<div class="highlight hl-python"><pre><span></span>    <span class="n">using</span> <span class="n">System</span><span class="o">.</span><span class="n">ComponentModel</span><span class="p">;</span>
 
     <span class="n">enum</span> <span class="n">PollutionLevel</span>
     <span class="p">{</span>

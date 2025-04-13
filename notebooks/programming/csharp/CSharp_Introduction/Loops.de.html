@@ -7312,6 +7312,7 @@ a.anchor-link {
                     processEnvironments: true
                 },
                 displayAlign: 'center',
+                messageStyle: 'none',
                 CommonHTML: {
                     linebreaks: {
                     automatic: true
@@ -7762,8 +7763,8 @@ e
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="%E2%89%9D-Definitionen">≝ Definitionen<a class="anchor-link" href="#%E2%89%9D-Definitionen">¶</a></h3><h4 id="Kopfgesteuerte-Schleifen">Kopfgesteuerte Schleifen<a class="anchor-link" href="#Kopfgesteuerte-Schleifen">¶</a></h4><ul>
 <li><strong>Definition</strong>: Eine Schleife, bei der die Bedingung <strong>vor</strong> dem Schleifenkörper geprüft wird. Wenn die Bedingung <strong>wahr</strong> ist, wird der Schleifenkörper ausgeführt, sonst wird die Schleife beendet.</li>
-<li><strong>Beispiel</strong>: <code>while</code>-Schleife in C#.<div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span>
-<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<li><strong>Beispiel</strong>: <code>while</code>-Schleife in C#.<div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
 <span class="w">    </span><span class="n">i</span><span class="o">++</span><span class="p">;</span>
 <span class="p">}</span>
@@ -7772,17 +7773,17 @@ e
 </ul>
 <h4 id="Fu%C3%9Fgesteuerte-Schleifen">Fußgesteuerte Schleifen<a class="anchor-link" href="#Fu%C3%9Fgesteuerte-Schleifen">¶</a></h4><ul>
 <li><strong>Definition</strong>: Eine Schleife, bei der die Bedingung <strong>nach</strong> dem Schleifenkörper geprüft wird. Der Schleifenkörper wird <strong>mindestens einmal</strong> ausgeführt.</li>
-<li><strong>Beispiel</strong>: <code>do-while</code>-Schleife in C#.<div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span>
+<li><strong>Beispiel</strong>: <code>do-while</code>-Schleife in C#.<div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <span class="k">do</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
 <span class="w">    </span><span class="n">i</span><span class="o">++</span><span class="p">;</span>
-<span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">5</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span>
 </pre></div>
 </li>
 </ul>
 <h4 id="Z%C3%A4hlschleifen-(Z%C3%A4hlergesteuerte-Schleifen)">Zählschleifen (Zählergesteuerte Schleifen)<a class="anchor-link" href="#Z%C3%A4hlschleifen-(Z%C3%A4hlergesteuerte-Schleifen)">¶</a></h4><ul>
 <li><strong>Definition</strong>: Eine Schleife, die von einem <strong>festgelegten Startwert</strong> bis zu einem <strong>Endwert</strong> läuft, wobei ein <strong>Schrittwert</strong> definiert wird. Es wird ein <strong>Zähler</strong> verwendet, um die Iterationen zu kontrollieren.</li>
-<li><strong>Beispiel</strong>: <code>for</code>-Schleife in C#.<div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">5</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<li><strong>Beispiel</strong>: <code>for</code>-Schleife in C#.<div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
