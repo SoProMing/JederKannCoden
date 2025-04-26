@@ -7,10 +7,10 @@
         mc:Ignorable="d"
         Title="Einen Button?" Height="500" Width="600">
     <Grid>
-        <Button Name="myButton" Content="Ich bin ein Osterei. Klick mich." HorizontalAlignment="Center" Margin="0,93,0,0" VerticalAlignment="Top" Click="Button_Click"/>
-        <TextBox HorizontalAlignment="Center" Margin="0,135,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBlock HorizontalAlignment="Left" Margin="279,0,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Center"/>
-        <ScrollViewer>
+        <Button Name="myButton" Content="Ich bin ein Osterei. Klick mich." HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <TextBox HorizontalAlignment="Left" Margin="197,12,0,0" TextWrapping="Wrap" Text="{Binding ErsterBindingText}" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="347,13,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <ScrollViewer Margin="0,47,0,0">
             <UniformGrid Name="GameBoard" Rows="6" Columns="6" Margin="10"/>
         </ScrollViewer>
     </Grid>
