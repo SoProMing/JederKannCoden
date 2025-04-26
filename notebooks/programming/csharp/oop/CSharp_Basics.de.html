@@ -7312,6 +7312,7 @@ a.anchor-link {
                     processEnvironments: true
                 },
                 displayAlign: 'center',
+                messageStyle: 'none',
                 CommonHTML: {
                     linebreaks: {
                     automatic: true
@@ -7549,7 +7550,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">Fluss</span>
+<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="k">class</span><span class="w"> </span><span class="nc">Fluss</span>
 <span class="p">{</span>
     <span class="n">protected</span> <span class="n">string</span> <span class="n">Name</span> <span class="p">{</span> <span class="n">get</span><span class="p">;</span> <span class="nb">set</span><span class="p">;</span> <span class="p">}</span> <span class="o">//</span> <span class="n">Name</span> <span class="n">des</span> <span class="n">Flusses</span>
     <span class="n">protected</span> <span class="n">double</span> <span class="n">Laenge</span> <span class="p">{</span> <span class="n">get</span><span class="p">;</span> <span class="nb">set</span><span class="p">;</span> <span class="p">}</span> <span class="o">//</span> <span class="n">Länge</span> <span class="ow">in</span> <span class="n">Kilometern</span>
@@ -7682,7 +7683,7 @@ Rhein hat eine Länge von 1233 km und einen Durchfluss von 3400 m³/s.
 <div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="k">class</span> <span class="nc">UmweltDaten</span>
+<div class="highlight hl-python"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">UmweltDaten</span>
 <span class="p">{</span>
     <span class="n">public</span> <span class="n">static</span> <span class="nb">int</span> <span class="n">MaxTemperatur</span> <span class="o">=</span> <span class="mi">50</span><span class="p">;</span> <span class="o">//</span> <span class="n">Gilt</span> <span class="n">für</span> <span class="n">alle</span> <span class="n">Instanzen</span> <span class="n">gleichermaßen</span>
     <span class="n">public</span> <span class="nb">int</span> <span class="n">AktuelleTemperatur</span><span class="p">;</span> <span class="o">//</span> <span class="n">Instanzspezifisch</span>
@@ -7757,7 +7758,7 @@ Temperatur sensor2: 40
 <div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="k">class</span> <span class="nc">MatheHelfer</span>
+<div class="highlight hl-python"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">MatheHelfer</span>
 <span class="p">{</span>
     <span class="n">public</span> <span class="n">static</span> <span class="nb">int</span> <span class="n">Addiere</span><span class="p">(</span><span class="nb">int</span> <span class="n">a</span><span class="p">,</span> <span class="nb">int</span> <span class="n">b</span><span class="p">)</span>
     <span class="p">{</span>
@@ -7814,7 +7815,7 @@ Temperatur sensor2: 40
 <div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">VerschmutzterFluss</span> <span class="p">:</span> <span class="n">Fluss</span>
+<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="k">class</span><span class="w"> </span><span class="nc">VerschmutzterFluss</span> <span class="p">:</span> <span class="n">Fluss</span>
 <span class="p">{</span>
     <span class="n">public</span> <span class="n">double</span> <span class="n">Schadstoffkonzentration</span> <span class="p">{</span> <span class="n">get</span><span class="p">;</span> <span class="nb">set</span><span class="p">;</span> <span class="p">}</span> <span class="o">//</span> <span class="n">Schadstoffkonzentration</span> <span class="ow">in</span> <span class="n">mg</span><span class="o">/</span><span class="n">L</span>
 
@@ -7895,7 +7896,7 @@ Main hat eine Schadstoffkonzentration von 3,5 mg/L.
 <div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">VerschmutzterFluss</span> <span class="p">:</span> <span class="n">Fluss</span>
+<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="k">class</span><span class="w"> </span><span class="nc">VerschmutzterFluss</span> <span class="p">:</span> <span class="n">Fluss</span>
 <span class="p">{</span>
     <span class="n">private</span> <span class="n">double</span> <span class="n">schadstoffkonzentration</span><span class="p">;</span>
 
@@ -8035,13 +8036,13 @@ Main hat eine Schadstoffkonzentration von 3,5 mg/L.
 <div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="n">abstract</span> <span class="k">class</span> <span class="nc">Gewaesser</span>
+<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="n">abstract</span> <span class="k">class</span><span class="w"> </span><span class="nc">Gewaesser</span>
 <span class="p">{</span>
     <span class="n">public</span> <span class="n">string</span> <span class="n">Name</span> <span class="p">{</span> <span class="n">get</span><span class="p">;</span> <span class="nb">set</span><span class="p">;</span> <span class="p">}</span>
     <span class="n">public</span> <span class="n">abstract</span> <span class="n">void</span> <span class="n">ZeigeGewaesserInfo</span><span class="p">();</span>
 <span class="p">}</span>
 
-<span class="n">public</span> <span class="k">class</span> <span class="nc">See</span> <span class="p">:</span> <span class="n">Gewaesser</span>
+<span class="n">public</span> <span class="k">class</span><span class="w"> </span><span class="nc">See</span> <span class="p">:</span> <span class="n">Gewaesser</span>
 <span class="p">{</span>
     <span class="n">public</span> <span class="n">double</span> <span class="n">Flaeche</span> <span class="p">{</span> <span class="n">get</span><span class="p">;</span> <span class="nb">set</span><span class="p">;</span> <span class="p">}</span> <span class="o">//</span> <span class="n">Fläche</span> <span class="ow">in</span> <span class="n">Quadratkilometern</span>
 
@@ -8057,7 +8058,7 @@ Main hat eine Schadstoffkonzentration von 3,5 mg/L.
     <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="n">public</span> <span class="k">class</span> <span class="nc">Fluss</span> <span class="p">:</span> <span class="n">Gewaesser</span>
+<span class="n">public</span> <span class="k">class</span><span class="w"> </span><span class="nc">Fluss</span> <span class="p">:</span> <span class="n">Gewaesser</span>
 <span class="p">{</span>
     <span class="n">public</span> <span class="n">double</span> <span class="n">Laenge</span> <span class="p">{</span> <span class="n">get</span><span class="p">;</span> <span class="nb">set</span><span class="p">;</span> <span class="p">}</span>
 

@@ -7312,6 +7312,7 @@ a.anchor-link {
                     processEnvironments: true
                 },
                 displayAlign: 'center',
+                messageStyle: 'none',
                 CommonHTML: {
                     linebreaks: {
                     automatic: true
@@ -7666,7 +7667,7 @@ Dieser Block wird immer ausgeführt, egal ob eine Ausnahme auftritt oder nicht.
 <div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">InvalidAgeException</span> <span class="p">:</span> <span class="ne">Exception</span>
+<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="k">class</span><span class="w"> </span><span class="nc">InvalidAgeException</span> <span class="p">:</span> <span class="ne">Exception</span>
 <span class="p">{</span>
     <span class="n">public</span> <span class="n">InvalidAgeException</span><span class="p">(</span><span class="n">string</span> <span class="n">message</span><span class="p">)</span> <span class="p">:</span> <span class="n">base</span><span class="p">(</span><span class="n">message</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
 <span class="p">}</span>
@@ -7976,7 +7977,7 @@ Stapelverfolgung:    at Submission#22.methodeMitException()
 <div class="highlight"><pre><span></span><span class="k">try</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Array</span><span class="p">.</span><span class="n">FindIndex</span><span class="p">(</span><span class="n">array</span><span class="p">,</span><span class="w"> </span><span class="n">item</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">item</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">value</span><span class="p">);</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">index</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="o">-</span><span class="m">1</span><span class="p">)</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Exception</span><span class="p">(</span><span class="s">"Wert nicht gefunden."</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">index</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Exception</span><span class="p">(</span><span class="s">"Wert nicht gefunden."</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="k">catch</span>
 <span class="p">{</span>
@@ -7985,7 +7986,7 @@ Stapelverfolgung:    at Submission#22.methodeMitException()
 </pre></div>
 <p><strong>Besser:</strong></p>
 <div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Array</span><span class="p">.</span><span class="n">FindIndex</span><span class="p">(</span><span class="n">array</span><span class="p">,</span><span class="w"> </span><span class="n">item</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">item</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">value</span><span class="p">);</span>
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">index</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="o">-</span><span class="m">1</span><span class="p">)</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">index</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"Wert nicht gefunden."</span><span class="p">);</span>
 <span class="p">}</span>
@@ -8038,7 +8039,7 @@ Stapelverfolgung:    at Submission#22.methodeMitException()
 <span class="c1">/// &lt;exception cref="ArgumentOutOfRangeException"&gt;Wenn der Wert negativ ist.&lt;/exception&gt;</span>
 <span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Calculate</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="k">value</span><span class="p">)</span>
 <span class="p">{</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">value</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">0</span><span class="p">)</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArgumentOutOfRangeException</span><span class="p">(</span><span class="n">nameof</span><span class="p">(</span><span class="k">value</span><span class="p">));</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">value</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArgumentOutOfRangeException</span><span class="p">(</span><span class="k">nameof</span><span class="p">(</span><span class="k">value</span><span class="p">));</span>
 <span class="p">}</span>
 </pre></div>
 </li>

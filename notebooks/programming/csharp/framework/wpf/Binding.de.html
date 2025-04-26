@@ -7312,6 +7312,7 @@ a.anchor-link {
                     processEnvironments: true
                 },
                 displayAlign: 'center',
+                messageStyle: 'none',
                 CommonHTML: {
                     linebreaks: {
                     automatic: true
@@ -7634,7 +7635,7 @@ Tippfehler im Binding-Pfad, z. B. <code>Nam</code> statt <code>Name</code>, f�
 <span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">value</span><span class="p">)</span>
 <span class="w">            </span><span class="p">{</span>
 <span class="w">                </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">value</span><span class="p">;</span>
-<span class="w">                </span><span class="n">OnPropertyChanged</span><span class="p">(</span><span class="n">nameof</span><span class="p">(</span><span class="n">Name</span><span class="p">));</span>
+<span class="w">                </span><span class="n">OnPropertyChanged</span><span class="p">(</span><span class="k">nameof</span><span class="p">(</span><span class="n">Name</span><span class="p">));</span>
 <span class="w">            </span><span class="p">}</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>
@@ -7813,7 +7814,13 @@ Tippfehler im Binding-Pfad, z. B. <code>Nam</code> statt <code>Name</code>, f�
 <li>Eine <strong>ObservableCollection</strong>, um das Spielfeld zu rendern.</li>
 <li>Bidirektionales <strong>Binding</strong> zwischen View und ViewModel.</li>
 </ul>
-<h3 id="Schritt-f%C3%BCr-Schritt:-TicTacToe-mit-MVVM-und-DataBinding">Schritt-für-Schritt: TicTacToe mit MVVM und DataBinding<a class="anchor-link" href="#Schritt-f%C3%BCr-Schritt:-TicTacToe-mit-MVVM-und-DataBinding">¶</a></h3><h4 id="1.-Model:-Zelle-des-Spielfelds">1. <strong>Model</strong>: Zelle des Spielfelds<a class="anchor-link" href="#1.-Model:-Zelle-des-Spielfelds">¶</a></h4><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Cell</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">INotifyPropertyChanged</span>
+<h3 id="Schritt-f%C3%BCr-Schritt:-TicTacToe-mit-MVVM-und-DataBinding">Schritt-für-Schritt: TicTacToe mit MVVM und DataBinding<a class="anchor-link" href="#Schritt-f%C3%BCr-Schritt:-TicTacToe-mit-MVVM-und-DataBinding">¶</a></h3><p>Ja, super! Wir können dein Beispiel so erweitern, dass es <strong>MVVM und DataBinding</strong> verwendet – also Model-View-ViewModel. Dabei bauen wir:</p>
+<ul>
+<li>Ein <strong>ViewModel</strong>, das den Zustand des Spielfelds hält.</li>
+<li>Eine <strong>ObservableCollection</strong>, um das Spielfeld zu rendern.</li>
+<li>Bidirektionales <strong>Binding</strong> zwischen View und ViewModel.</li>
+</ul>
+<h3 id="Schritt-f%C3%BCr-Schritt:-TicTacToe-mit-MVVM-und-DataBinding">Schritt-für-Schritt: TicTacToe mit MVVM und DataBinding<a class="anchor-link" href="#Schritt-f%C3%BCr-Schritt:-TicTacToe-mit-MVVM-und-DataBinding">¶</a></h3><h3 id="1.-Model:-Zelle-des-Spielfelds">1. <strong>Model</strong>: Zelle des Spielfelds<a class="anchor-link" href="#1.-Model:-Zelle-des-Spielfelds">¶</a></h3><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Cell</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">INotifyPropertyChanged</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">content</span><span class="p">;</span>
 
@@ -7825,7 +7832,7 @@ Tippfehler im Binding-Pfad, z. B. <code>Nam</code> statt <code>Name</code>, f�
 <span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">content</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">value</span><span class="p">)</span>
 <span class="w">            </span><span class="p">{</span>
 <span class="w">                </span><span class="n">content</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">value</span><span class="p">;</span>
-<span class="w">                </span><span class="n">OnPropertyChanged</span><span class="p">(</span><span class="n">nameof</span><span class="p">(</span><span class="n">Content</span><span class="p">));</span>
+<span class="w">                </span><span class="n">OnPropertyChanged</span><span class="p">(</span><span class="k">nameof</span><span class="p">(</span><span class="n">Content</span><span class="p">));</span>
 <span class="w">            </span><span class="p">}</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>
@@ -7835,7 +7842,7 @@ Tippfehler im Binding-Pfad, z. B. <code>Nam</code> statt <code>Name</code>, f�
 <span class="w">        </span><span class="n">PropertyChanged</span><span class="o">?.</span><span class="n">Invoke</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PropertyChangedEventArgs</span><span class="p">(</span><span class="n">propertyName</span><span class="p">));</span>
 <span class="p">}</span>
 </pre></div>
-<h4 id="2.-ViewModel">2. <strong>ViewModel</strong><a class="anchor-link" href="#2.-ViewModel">¶</a></h4><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">GameViewModel</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">INotifyPropertyChanged</span>
+<h3 id="2.-ViewModel">2. <strong>ViewModel</strong><a class="anchor-link" href="#2.-ViewModel">¶</a></h3><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">GameViewModel</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">INotifyPropertyChanged</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">ObservableCollection</span><span class="o">&lt;</span><span class="n">Cell</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Board</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
 <span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">currentPlayer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"X"</span><span class="p">;</span>
@@ -7843,7 +7850,7 @@ Tippfehler im Binding-Pfad, z. B. <code>Nam</code> statt <code>Name</code>, f�
 <span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">GameViewModel</span><span class="p">()</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">        </span><span class="n">Board</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ObservableCollection</span><span class="o">&lt;</span><span class="n">Cell</span><span class="o">&gt;</span><span class="p">();</span>
-<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">9</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">9</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
 <span class="w">            </span><span class="n">Board</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Cell</span><span class="p">());</span>
 <span class="w">    </span><span class="p">}</span>
 
@@ -7861,7 +7868,7 @@ Tippfehler im Binding-Pfad, z. B. <code>Nam</code> statt <code>Name</code>, f�
 <span class="w">        </span><span class="n">PropertyChanged</span><span class="o">?.</span><span class="n">Invoke</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PropertyChangedEventArgs</span><span class="p">(</span><span class="n">propertyName</span><span class="p">));</span>
 <span class="p">}</span>
 </pre></div>
-<h4 id="3.-MainWindow.xaml.cs-(Codebehind-mit-DataContext)">3. <strong>MainWindow.xaml.cs</strong> (Codebehind mit DataContext)<a class="anchor-link" href="#3.-MainWindow.xaml.cs-(Codebehind-mit-DataContext)">¶</a></h4><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">partial</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MainWindow</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Window</span>
+<h3 id="3.-MainWindow.xaml.cs-(Codebehind-mit-DataContext)">3. <strong>MainWindow.xaml.cs</strong> (Codebehind mit DataContext)<a class="anchor-link" href="#3.-MainWindow.xaml.cs-(Codebehind-mit-DataContext)">¶</a></h3><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">partial</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MainWindow</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Window</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">GameViewModel</span><span class="w"> </span><span class="n">ViewModel</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
 
@@ -7873,7 +7880,7 @@ Tippfehler im Binding-Pfad, z. B. <code>Nam</code> statt <code>Name</code>, f�
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
-<h4 id="4.-MainWindow.xaml-(UI-mit-DataBinding)">4. <strong>MainWindow.xaml</strong> (UI mit DataBinding)<a class="anchor-link" href="#4.-MainWindow.xaml-(UI-mit-DataBinding)">¶</a></h4><div class="highlight"><pre><span></span><span class="nt">&lt;Window</span><span class="w"> </span><span class="na">x:Class=</span><span class="s">"TicTacToeDemo.MainWindow"</span>
+<h3 id="4.-MainWindow.xaml-(UI-mit-DataBinding)">4. <strong>MainWindow.xaml</strong> (UI mit DataBinding)<a class="anchor-link" href="#4.-MainWindow.xaml-(UI-mit-DataBinding)">¶</a></h3><div class="highlight"><pre><span></span><span class="nt">&lt;Window</span><span class="w"> </span><span class="na">x:Class=</span><span class="s">"TicTacToeDemo.MainWindow"</span>
 <span class="w">        </span><span class="na">xmlns=</span><span class="s">"http://schemas.microsoft.com/winfx/2006/xaml/presentation"</span>
 <span class="w">        </span><span class="na">xmlns:x=</span><span class="s">"http://schemas.microsoft.com/winfx/2006/xaml"</span>
 <span class="w">        </span><span class="na">xmlns:local=</span><span class="s">"clr-namespace:TicTacToeDemo"</span>
@@ -7892,7 +7899,7 @@ Tippfehler im Binding-Pfad, z. B. <code>Nam</code> statt <code>Name</code>, f�
 <blockquote>
 <p><code>UniformGrid</code> braucht kein explizites <code>ItemsControl</code>. Wenn du das machen willst, könntest du <code>ItemsControl</code> + <code>UniformGrid</code> als <code>ItemsPanel</code> verwenden.</p>
 </blockquote>
-<h4 id="5.-EventHandler-im-Code-Behind">5. <strong>EventHandler im Code-Behind</strong><a class="anchor-link" href="#5.-EventHandler-im-Code-Behind">¶</a></h4><div class="highlight"><pre><span></span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">CellButton_Click</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">RoutedEventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<h3 id="5.-EventHandler-im-Code-Behind">5. <strong>EventHandler im Code-Behind</strong><a class="anchor-link" href="#5.-EventHandler-im-Code-Behind">¶</a></h3><div class="highlight"><pre><span></span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">CellButton_Click</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">RoutedEventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">sender</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">Button</span><span class="w"> </span><span class="n">button</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">button</span><span class="p">.</span><span class="n">DataContext</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">Cell</span><span class="w"> </span><span class="n">cell</span><span class="p">)</span>
 <span class="w">    </span><span class="p">{</span>
@@ -7900,7 +7907,7 @@ Tippfehler im Binding-Pfad, z. B. <code>Nam</code> statt <code>Name</code>, f�
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
-<h2 id="%E2%9C%85-Vorteile-des-DataBindings-in-diesem-Setup:">✅ Vorteile des DataBindings in diesem Setup:<a class="anchor-link" href="#%E2%9C%85-Vorteile-des-DataBindings-in-diesem-Setup:">¶</a></h2><ul>
+<h2 id="Vorteile-des-DataBindings-in-diesem-Setup:">Vorteile des DataBindings in diesem Setup:<a class="anchor-link" href="#Vorteile-des-DataBindings-in-diesem-Setup:">¶</a></h2><ul>
 <li>Trennung von UI und Logik (MVVM-Prinzip).</li>
 <li>Einfache Wiederverwendbarkeit und Testbarkeit.</li>
 <li>UI aktualisiert sich automatisch bei Änderungen am Datenmodell.</li>

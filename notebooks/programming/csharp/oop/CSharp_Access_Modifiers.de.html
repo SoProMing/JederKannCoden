@@ -7312,6 +7312,7 @@ a.anchor-link {
                     processEnvironments: true
                 },
                 displayAlign: 'center',
+                messageStyle: 'none',
                 CommonHTML: {
                     linebreaks: {
                     automatic: true
@@ -7548,7 +7549,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">Sensor</span>
+<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="k">class</span><span class="w"> </span><span class="nc">Sensor</span>
 <span class="p">{</span>
     <span class="n">public</span> <span class="n">string</span> <span class="n">Name</span> <span class="p">{</span> <span class="n">get</span><span class="p">;</span> <span class="nb">set</span><span class="p">;</span> <span class="p">}</span>
 
@@ -7585,7 +7586,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">Datenlogger</span>
+<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="k">class</span><span class="w"> </span><span class="nc">Datenlogger</span>
 <span class="p">{</span>
     <span class="n">private</span> <span class="n">string</span> <span class="n">datenFormat</span> <span class="o">=</span> <span class="s2">"JSON"</span><span class="p">;</span>
 
@@ -7623,7 +7624,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">Sensor</span>
+<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="k">class</span><span class="w"> </span><span class="nc">Sensor</span>
 <span class="p">{</span>
     <span class="n">protected</span> <span class="n">string</span> <span class="n">Einheit</span> <span class="o">=</span> <span class="s2">"ppm"</span><span class="p">;</span>
 
@@ -7633,7 +7634,7 @@ a.anchor-link {
     <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="n">public</span> <span class="k">class</span> <span class="nc">CO2Sensor</span> <span class="p">:</span> <span class="n">Sensor</span>
+<span class="n">public</span> <span class="k">class</span><span class="w"> </span><span class="nc">CO2Sensor</span> <span class="p">:</span> <span class="n">Sensor</span>
 <span class="p">{</span>
     <span class="n">public</span> <span class="n">void</span> <span class="n">Messen</span><span class="p">()</span>
     <span class="p">{</span>
@@ -7668,7 +7669,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">internal</span> <span class="k">class</span> <span class="nc">DatenVerarbeiter</span>
+<div class="highlight hl-python"><pre><span></span><span class="n">internal</span> <span class="k">class</span><span class="w"> </span><span class="nc">DatenVerarbeiter</span>
 <span class="p">{</span>
     <span class="n">public</span> <span class="n">void</span> <span class="n">Verarbeiten</span><span class="p">()</span>
     <span class="p">{</span>
@@ -7703,7 +7704,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">Sensor</span>
+<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="k">class</span><span class="w"> </span><span class="nc">Sensor</span>
 <span class="p">{</span>
     <span class="n">protected</span> <span class="n">internal</span> <span class="n">string</span> <span class="n">SensorTyp</span> <span class="o">=</span> <span class="s2">"Luftqualitätssensor"</span><span class="p">;</span>
 
@@ -7713,7 +7714,7 @@ a.anchor-link {
     <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="n">public</span> <span class="k">class</span> <span class="nc">FeinstaubSensor</span> <span class="p">:</span> <span class="n">Sensor</span>
+<span class="n">public</span> <span class="k">class</span><span class="w"> </span><span class="nc">FeinstaubSensor</span> <span class="p">:</span> <span class="n">Sensor</span>
 <span class="p">{</span>
     <span class="n">public</span> <span class="n">void</span> <span class="n">Messen</span><span class="p">()</span>
     <span class="p">{</span>
@@ -7761,7 +7762,7 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="o">//</span> <span class="n">Ergänze</span> <span class="n">den</span> <span class="n">Zugriffsmodifizierer</span><span class="p">:</span> <span class="n">Soll</span> <span class="n">diese</span> <span class="n">Klasse</span> <span class="n">nur</span> <span class="n">innerhalb</span> <span class="n">der</span> <span class="n">Assembly</span> <span class="n">zugänglich</span> <span class="n">sein</span><span class="err">?</span>
-<span class="k">class</span> <span class="nc">UmweltStation</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">UmweltStation</span>
 <span class="p">{</span>
     <span class="o">//</span> <span class="n">Ergänze</span> <span class="n">den</span> <span class="n">Zugriffsmodifizierer</span><span class="p">:</span> <span class="n">Soll</span> <span class="n">der</span> <span class="n">Name</span> <span class="n">der</span> <span class="n">Station</span> <span class="n">von</span> <span class="n">außen</span> <span class="n">änderbar</span> <span class="n">sein</span><span class="err">?</span>
     <span class="n">string</span> <span class="n">StationName</span><span class="p">;</span>
@@ -7780,7 +7781,7 @@ a.anchor-link {
 <span class="p">}</span>
 
 <span class="o">//</span> <span class="n">Ergänze</span> <span class="n">den</span> <span class="n">Zugriffsmodifizierer</span><span class="p">:</span> <span class="n">Soll</span> <span class="n">diese</span> <span class="n">Klasse</span> <span class="n">von</span> <span class="n">überall</span> <span class="n">zugänglich</span> <span class="n">sein</span><span class="err">?</span>
-<span class="k">class</span> <span class="nc">Sensor</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Sensor</span>
 <span class="p">{</span>
     <span class="o">//</span> <span class="n">Ergänze</span> <span class="n">den</span> <span class="n">Zugriffsmodifizierer</span><span class="p">:</span> <span class="n">Soll</span> <span class="n">dieser</span> <span class="n">Wert</span> <span class="n">nur</span> <span class="n">von</span> <span class="n">abgeleiteten</span> <span class="n">Klassen</span> <span class="n">geändert</span> <span class="n">werden</span> <span class="n">können</span><span class="err">?</span>
     <span class="n">string</span> <span class="n">SensorTyp</span><span class="p">;</span>

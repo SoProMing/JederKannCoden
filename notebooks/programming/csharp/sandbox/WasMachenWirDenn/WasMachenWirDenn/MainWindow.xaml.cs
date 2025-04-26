@@ -21,12 +21,15 @@ namespace WasMachenWirDenn
         private const int BoardSize = 6;
         private string currentPlayer = "🔴";
 
+        public string ErsterBindingText { get; set; } = "Text1";
+
         int counter;
         public MainWindow()
         {
             InitializeComponent();
             counter = 0;
             CreateGameBoard();
+            DataContext = new MainDataContext();
         }
 
         private void CreateGameBoard()
@@ -51,7 +54,7 @@ namespace WasMachenWirDenn
             if (sender is Button button && string.IsNullOrEmpty(button.Content as string))
             {
                 button.Content = currentPlayer;
-                currentPlayer = currentPlayer == "🟡" ? "🔴" : "🟡";
+                currentPlayer = currentPlayer == "O" ? "🔴" : "O";
             }
         }
 
