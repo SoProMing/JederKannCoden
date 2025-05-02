@@ -7842,7 +7842,7 @@ Tippfehler im Binding-Pfad, z. B. <code>Nam</code> statt <code>Name</code>, f�
 <span class="w">        </span><span class="n">PropertyChanged</span><span class="o">?.</span><span class="n">Invoke</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PropertyChangedEventArgs</span><span class="p">(</span><span class="n">propertyName</span><span class="p">));</span>
 <span class="p">}</span>
 </pre></div>
-<h3 id="2.-ViewModel">2. <strong>ViewModel</strong><a class="anchor-link" href="#2.-ViewModel">¶</a></h3><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">GameViewModel</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">INotifyPropertyChanged</span>
+<h3 id="2.-ViewModel">2. <strong>ViewModel</strong><a class="anchor-link" href="#2.-ViewModel">¶</a></h3><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">GameViewModel</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">ObservableCollection</span><span class="o">&lt;</span><span class="n">Cell</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Board</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
 <span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">currentPlayer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"X"</span><span class="p">;</span>
@@ -7862,10 +7862,6 @@ Tippfehler im Binding-Pfad, z. B. <code>Nam</code> statt <code>Name</code>, f�
 <span class="w">            </span><span class="n">currentPlayer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">currentPlayer</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">"X"</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">"O"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s">"X"</span><span class="p">;</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">event</span><span class="w"> </span><span class="n">PropertyChangedEventHandler</span><span class="w"> </span><span class="n">PropertyChanged</span><span class="p">;</span>
-<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnPropertyChanged</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">propertyName</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span>
-<span class="w">        </span><span class="n">PropertyChanged</span><span class="o">?.</span><span class="n">Invoke</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PropertyChangedEventArgs</span><span class="p">(</span><span class="n">propertyName</span><span class="p">));</span>
 <span class="p">}</span>
 </pre></div>
 <h3 id="3.-MainWindow.xaml.cs-(Codebehind-mit-DataContext)">3. <strong>MainWindow.xaml.cs</strong> (Codebehind mit DataContext)<a class="anchor-link" href="#3.-MainWindow.xaml.cs-(Codebehind-mit-DataContext)">¶</a></h3><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">partial</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MainWindow</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Window</span>
@@ -7893,7 +7889,13 @@ Tippfehler im Binding-Pfad, z. B. <code>Nam</code> statt <code>Name</code>, f�
 <span class="w">        </span><span class="nt">&lt;/DataTemplate&gt;</span>
 <span class="w">    </span><span class="nt">&lt;/Window.Resources&gt;</span>
 <span class="w">    </span>
-<span class="w">    </span><span class="nt">&lt;UniformGrid</span><span class="w"> </span><span class="na">x:Name=</span><span class="s">"GameBoard"</span><span class="w"> </span><span class="na">Rows=</span><span class="s">"3"</span><span class="w"> </span><span class="na">Columns=</span><span class="s">"3"</span><span class="w"> </span><span class="na">ItemsSource=</span><span class="s">"{Binding Board}"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;ItemsControl</span><span class="w"> </span><span class="na">ItemsSource=</span><span class="s">"{Binding Board}"</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;ItemsControl.ItemsPanel&gt;</span>
+<span class="w">            </span><span class="nt">&lt;ItemsPanelTemplate&gt;</span>
+<span class="w">                </span><span class="nt">&lt;UniformGrid/&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/ItemsPanelTemplate&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/ItemsControl.ItemsPanel&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/ItemsControl&gt;</span>
 <span class="nt">&lt;/Window&gt;</span>
 </pre></div>
 <blockquote>
