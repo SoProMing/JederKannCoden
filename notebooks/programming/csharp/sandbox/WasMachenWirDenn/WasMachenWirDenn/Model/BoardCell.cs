@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WasMachenWirDenn.Model
 {
-    public class Cell : INotifyPropertyChanged
+    public class BoardCell : INotifyPropertyChanged
     {
         private string content;
 

@@ -5,23 +5,22 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WasMachenWirDenn.Model;
 
-namespace WasMachenWirDenn.ViewModel
+namespace WasMachenWirDenn
 {
     public class GameViewModel : INotifyPropertyChanged
     {
-        public ObservableCollection<Cell> Board { get; }
+        public ObservableCollection<BoardCell> Board { get; }
         private string currentPlayer = "X";
 
         public GameViewModel()
         {
-            Board = new ObservableCollection<Cell>();
+            Board = new ObservableCollection<BoardCell>();
             for (int i = 0; i < 9; i++)
-                Board.Add(new Cell());
+                Board.Add(new BoardCell());
         }
 
-        public void CellClicked(Cell cell)
+        public void CellClicked(BoardCell cell)
         {
             if (string.IsNullOrEmpty(cell.Content))
             {

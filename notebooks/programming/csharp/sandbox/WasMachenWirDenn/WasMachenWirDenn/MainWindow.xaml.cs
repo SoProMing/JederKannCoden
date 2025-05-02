@@ -8,7 +8,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using WasMachenWirDenn.ViewModel;
 
 namespace WasMachenWirDenn
 {
@@ -37,7 +36,7 @@ namespace WasMachenWirDenn
             DataContext = ViewModel;
         }
 
-        private void CreateGameBoard()
+/*        private void CreateGameBoard()
         {
             GameBoard.Rows = BoardSize;
             GameBoard.Columns = BoardSize;
@@ -62,13 +61,21 @@ namespace WasMachenWirDenn
                 currentPlayer = currentPlayer == "O" ? "🔴" : "O";
             }
         }
-
+*/
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Ich bin ein Küken mit Eischale!");
             //myTextBox.Text = "Geklickt";
             counter++;
             myButton.Content = $"Ich bin ein Osterei. Du hast mit {counter} Mal geklickt!";
+        }
+
+        private void CellButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (sender is Button button && button.DataContext is BoardCell cell)
+            {
+                ViewModel.CellClicked(cell);
+            }
         }
     }
 }
