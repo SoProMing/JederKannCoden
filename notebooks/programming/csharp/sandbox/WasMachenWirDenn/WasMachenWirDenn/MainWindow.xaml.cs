@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WasMachenWirDenn.ViewModel;
 
 namespace WasMachenWirDenn
 {
@@ -23,13 +24,17 @@ namespace WasMachenWirDenn
 
         public string ErsterBindingText { get; set; } = "Text1";
 
+        public GameViewModel ViewModel { get; }
+
         int counter;
         public MainWindow()
         {
             InitializeComponent();
             counter = 0;
-            CreateGameBoard();
-            DataContext = new MainDataContext();
+            //            CreateGameBoard();
+            //            DataContext = new MainDataContext();
+            ViewModel = new GameViewModel();
+            DataContext = ViewModel;
         }
 
         private void CreateGameBoard()
