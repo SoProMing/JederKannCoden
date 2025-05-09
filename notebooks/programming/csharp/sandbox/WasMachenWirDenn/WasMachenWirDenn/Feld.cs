@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WasMachenWirDenn
 {
-    class Feld : INotifyPropertyChanged
+    public class Feld : INotifyPropertyChanged
     {
         string inhalt;
         public string Inhalt

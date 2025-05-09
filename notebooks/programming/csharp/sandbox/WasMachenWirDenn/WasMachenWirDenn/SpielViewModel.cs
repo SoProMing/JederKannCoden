@@ -8,9 +8,10 @@ using System.Threading.Tasks;
 
 namespace WasMachenWirDenn
 {
-    class SpielViewModel : INotifyPropertyChanged // todo: try without notification
+    public class SpielViewModel
     {
-        ObservableCollection<Feld> Spielfeld { get;  }
+        public ObservableCollection<Feld> Spielfeld { get;  }
+        string currentPlayer = "X";
 
         public SpielViewModel()
         {
@@ -21,8 +22,13 @@ namespace WasMachenWirDenn
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected void OnPropertyChanged(string propertyName) =>
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        public void FeldClicked(Feld feld)
+        {
+            if (string.IsNullOrEmpty(feld.Inhalt))
+            {
+                feld.Inhalt = currentPlayer;
+                currentPlayer = currentPlayer == "X" ? "O" : "X";
+            }
+        }
     }
 }
