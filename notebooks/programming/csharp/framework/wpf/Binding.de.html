@@ -7898,9 +7898,48 @@ Tippfehler im Binding-Pfad, z. B. <code>Nam</code> statt <code>Name</code>, f�
 <span class="w">    </span><span class="nt">&lt;/ItemsControl&gt;</span>
 <span class="nt">&lt;/Window&gt;</span>
 </pre></div>
-<blockquote>
-<p><code>UniformGrid</code> braucht kein explizites <code>ItemsControl</code>. Wenn du das machen willst, könntest du <code>ItemsControl</code> + <code>UniformGrid</code> als <code>ItemsPanel</code> verwenden.</p>
-</blockquote>
+<p>Wenn du bereits die Grundlagen von <strong>XAML</strong> und <strong>Binding</strong> beherrschst, sind die folgenden Punkte in dem oben stehenden Code wichtig zu verstehen:</p>
+<h4 id="DataTemplate-f%C3%BCr-Cell">DataTemplate für <code>Cell</code><a class="anchor-link" href="#DataTemplate-f%C3%BCr-Cell">¶</a></h4><div class="highlight"><pre><span></span><span class="nt">&lt;Window.Resources&gt;</span>
+<span class="w">    </span><span class="nt">&lt;DataTemplate</span><span class="w"> </span><span class="na">DataType=</span><span class="s">"{x:Type local:Cell}"</span><span class="nt">&gt;</span>
+<span class="w">        </span>...
+<span class="w">    </span><span class="nt">&lt;/DataTemplate&gt;</span>
+<span class="nt">&lt;/Window.Resources&gt;</span>
+</pre></div>
+<ul>
+<li>Dieses Template wird <strong>automatisch verwendet</strong>, wenn ein Objekt vom Typ <code>Cell</code> dargestellt werden soll.</li>
+<li>Es definiert <strong>einheitlich</strong>, wie jede <code>Cell</code>-Instanz in der UI aussieht – hier: als <code>Button</code>.</li>
+</ul>
+<h4 id="Button-als-UI-Repr%C3%A4sentation-einer-Cell">Button als UI-Repräsentation einer <code>Cell</code><a class="anchor-link" href="#Button-als-UI-Repr%C3%A4sentation-einer-Cell">¶</a></h4><div class="highlight"><pre><span></span><span class="nt">&lt;Button</span><span class="w"> </span><span class="na">FontSize=</span><span class="s">"32"</span><span class="w"> </span><span class="na">Margin=</span><span class="s">"5"</span><span class="w"> </span>
+<span class="w">        </span><span class="na">Content=</span><span class="s">"{Binding Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"</span>
+<span class="w">        </span><span class="na">Click=</span><span class="s">"CellButton_Click"</span><span class="nt">/&gt;</span>
+</pre></div>
+<ul>
+<li>Jede <code>Cell</code> wird durch einen Button visualisiert.</li>
+<li><code>Content="{Binding Content}"</code>: Zeigt das <code>Content</code>-Property des <code>Cell</code>-Objekts an.</li>
+<li><code>Mode=TwoWay</code>: Änderungen am Button-Content würden zurück in das <code>Cell.Content</code>-Property geschrieben.</li>
+<li><code>Click="CellButton_Click"</code>: Leitet alle Button-Klicks an ein gemeinsames Event-Handler im Code-behind weiter – vermutlich zur Spiellogik.</li>
+</ul>
+<h4 id="ItemsControl-mit-Binding-auf-Board">ItemsControl mit Binding auf <code>Board</code><a class="anchor-link" href="#ItemsControl-mit-Binding-auf-Board">¶</a></h4><div class="highlight"><pre><span></span><span class="nt">&lt;ItemsControl</span><span class="w"> </span><span class="na">ItemsSource=</span><span class="s">"{Binding Board}"</span><span class="nt">&gt;</span>
+</pre></div>
+<ul>
+<li><code>Board</code> ist eine <code>ObservableCollection&lt;Cell&gt;</code> im ViewModel.</li>
+<li>Das <code>ItemsControl</code> erzeugt für jedes Element darin ein UI-Element – in diesem Fall einen Button gemäß dem <code>DataTemplate</code>.</li>
+</ul>
+<h4 id="UniformGrid-als-Layout">UniformGrid als Layout<a class="anchor-link" href="#UniformGrid-als-Layout">¶</a></h4><div class="highlight"><pre><span></span><span class="nt">&lt;ItemsControl.ItemsPanel&gt;</span>
+<span class="w">    </span><span class="nt">&lt;ItemsPanelTemplate&gt;</span>
+<span class="w">        </span><span class="nt">&lt;UniformGrid/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/ItemsPanelTemplate&gt;</span>
+<span class="nt">&lt;/ItemsControl.ItemsPanel&gt;</span>
+</pre></div>
+<ul>
+<li>Anstelle des Standard-<code>StackPanel</code> verwendet das <code>ItemsControl</code> hier ein <code>UniformGrid</code>.</li>
+<li>Alle Buttons werden gleichmäßig (rechteckig) angeordnet – sehr geeignet für z. B. TicTacToe oder Minesweeper.</li>
+</ul>
+<h4 id="%F0%9F%92%A1-Fazit-f%C3%BCr-Fortgeschrittene">💡 Fazit für Fortgeschrittene<a class="anchor-link" href="#%F0%9F%92%A1-Fazit-f%C3%BCr-Fortgeschrittene">¶</a></h4><ul>
+<li>Das UI passt sich dynamisch dem <code>Board</code> an.</li>
+<li>Die Logik bleibt vollständig im ViewModel (wenn MVVM verwendet wird).</li>
+<li><code>DataTemplate</code> + <code>ItemsControl</code> + <code>UniformGrid</code> ergeben eine <strong>deklarative, flexible Darstellung von Spielfeldern</strong>.</li>
+</ul>
 <h3 id="5.-EventHandler-im-Code-Behind">5. <strong>EventHandler im Code-Behind</strong><a class="anchor-link" href="#5.-EventHandler-im-Code-Behind">¶</a></h3><div class="highlight"><pre><span></span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">CellButton_Click</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">RoutedEventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">sender</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">Button</span><span class="w"> </span><span class="n">button</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">button</span><span class="p">.</span><span class="n">DataContext</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">Cell</span><span class="w"> </span><span class="n">cell</span><span class="p">)</span>

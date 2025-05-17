@@ -7511,909 +7511,165 @@ a.anchor-link {
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=831bfee7">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Create-as-webpage">Create as webpage<a class="anchor-link" href="#Create-as-webpage">¶</a></h1><img alt="No description has been provided for this image" src="Create_Webpage.webp" style="width:280px; height:280px;"/>
-<p>This page describes and actually impliments, how to make the jupyter notebooks of the whole project a working web page. Please note the prerequisite of having generated all needed html files, by executing the according scripts in <a href="Create_pdf.en.html">Create PDF</a>.</p>
-<h2 id="Copy-all-resources">Copy all resources<a class="anchor-link" href="#Copy-all-resources">¶</a></h2><p>In this step all html files and all needed assets are copied to a temporary folder.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">shutil</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">bs4</span><span class="w"> </span><span class="kn">import</span> <span class="n">BeautifulSoup</span>
-
-<span class="c1"># Exclusion lists</span>
-<span class="n">EXCLUDE_FILES</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Everybody_Can_Code.html"</span><span class="p">]</span>  <span class="c1"># Add filenames to exclude</span>
-<span class="n">EXCLUDE_DIRS</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"website"</span><span class="p">,</span> <span class="s2">"drafts"</span><span class="p">]</span>            <span class="c1"># Add directory names to exclude</span>
-
-<span class="c1"># Function to ensure a directory exists</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">ensure_dir</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-
-<span class="c1"># Function to create an index.html with a redirect</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">create_redirect_index_html</span><span class="p">(</span><span class="n">target_file</span><span class="p">,</span> <span class="n">dst_dir</span><span class="p">):</span>
-    <span class="n">index_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dst_dir</span><span class="p">,</span> <span class="s2">"index.html"</span><span class="p">)</span>
-
-    <span class="n">redirect_content</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"""</span>
-<span class="s2">    &lt;!DOCTYPE html&gt;</span>
-<span class="s2">    &lt;html lang="en"&gt;</span>
-<span class="s2">    &lt;head&gt;</span>
-<span class="s2">        &lt;meta charset="UTF-8"&gt;</span>
-<span class="s2">        &lt;meta http-equiv="refresh" content="0; url=</span><span class="si">{</span><span class="n">target_file</span><span class="si">}</span><span class="s2">"&gt;</span>
-<span class="s2">        &lt;title&gt;Redirecting...&lt;/title&gt;</span>
-<span class="s2">    &lt;/head&gt;</span>
-<span class="s2">    &lt;body&gt;</span>
-<span class="s2">        &lt;p&gt;Redirecting to &lt;a href="</span><span class="si">{</span><span class="n">target_file</span><span class="si">}</span><span class="s2">"&gt;</span><span class="si">{</span><span class="n">target_file</span><span class="si">}</span><span class="s2">&lt;/a&gt;...&lt;/p&gt;</span>
-<span class="s2">    &lt;/body&gt;</span>
-<span class="s2">    &lt;/html&gt;</span>
-<span class="s2">    """</span>
-
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">index_path</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">)</span> <span class="k">as</span> <span class="n">index_file</span><span class="p">:</span>
-        <span class="n">index_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">redirect_content</span><span class="p">)</span>
-
-<span class="c1"># Function to copy all HTML files and their resources, excluding specific files and directories</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">copy_all_html_and_resources</span><span class="p">(</span><span class="n">src_dir</span><span class="p">,</span> <span class="n">dst_dir</span><span class="p">):</span>
-    <span class="n">ensure_dir</span><span class="p">(</span><span class="n">dst_dir</span><span class="p">)</span>
-
-    <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">src_dir</span><span class="p">):</span>
-        <span class="c1"># Exclude directories</span>
-        <span class="n">dirs</span><span class="p">[:]</span> <span class="o">=</span> <span class="p">[</span><span class="n">d</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dirs</span> <span class="k">if</span> <span class="n">d</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">EXCLUDE_DIRS</span><span class="p">]</span>
-
-        <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
-            <span class="c1"># Skip excluded files</span>
-            <span class="k">if</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">EXCLUDE_FILES</span><span class="p">:</span>
-                <span class="k">continue</span>
-
-            <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">".html"</span><span class="p">):</span>
-                <span class="n">src_html_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
-
-                <span class="c1"># Copy HTML file</span>
-                <span class="n">relative_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">src_dir</span><span class="p">)</span>
-                <span class="n">target_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dst_dir</span><span class="p">,</span> <span class="n">relative_path</span><span class="p">)</span>
-                <span class="n">ensure_dir</span><span class="p">(</span><span class="n">target_dir</span><span class="p">)</span>
-
-                <span class="n">dst_html_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">target_dir</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
-                <span class="n">shutil</span><span class="o">.</span><span class="n">copy2</span><span class="p">(</span><span class="n">src_html_path</span><span class="p">,</span> <span class="n">dst_html_path</span><span class="p">)</span>
-
-                <span class="c1"># Analyze and copy resources</span>
-                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">src_html_path</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">)</span> <span class="k">as</span> <span class="n">html_file</span><span class="p">:</span>
-                    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html_file</span><span class="p">,</span> <span class="s2">"html.parser"</span><span class="p">)</span>
-                    <span class="k">for</span> <span class="n">img</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">"img"</span><span class="p">):</span>
-                        <span class="k">if</span> <span class="n">img</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"src"</span><span class="p">):</span>
-                            <span class="n">original_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">normpath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">img</span><span class="p">[</span><span class="s2">"src"</span><span class="p">]))</span>
-                            <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">original_path</span><span class="p">):</span>
-                                <span class="n">resource_target_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">target_dir</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">img</span><span class="p">[</span><span class="s2">"src"</span><span class="p">]))</span>
-                                <span class="n">ensure_dir</span><span class="p">(</span><span class="n">resource_target_dir</span><span class="p">)</span>
-                                <span class="n">shutil</span><span class="o">.</span><span class="n">copy2</span><span class="p">(</span><span class="n">original_path</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">resource_target_dir</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">img</span><span class="p">[</span><span class="s2">"src"</span><span class="p">])))</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
-    <span class="c1"># Variables for source directory, destination directory, and HTML file</span>
-    <span class="n">source_directory</span> <span class="o">=</span> <span class="s2">"."</span>
-    <span class="n">destination_directory</span> <span class="o">=</span> <span class="s2">"./website"</span>
-    <span class="n">source_html_file</span> <span class="o">=</span> <span class="s2">"./programming/abstract/Intro.de.html"</span>
-
-    <span class="n">source_html_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">source_directory</span><span class="p">,</span> <span class="n">source_html_file</span><span class="p">)</span>
-
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">source_directory</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">"Das Quellverzeichnis existiert nicht."</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">source_html_path</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">"Die angegebene Quelldatei existiert nicht."</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">destination_directory</span><span class="p">)</span>
-        <span class="n">copy_all_html_and_resources</span><span class="p">(</span><span class="n">source_directory</span><span class="p">,</span> <span class="n">destination_directory</span><span class="p">)</span>
-        <span class="n">create_redirect_index_html</span><span class="p">(</span><span class="n">source_html_file</span><span class="p">,</span> <span class="n">destination_directory</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">"Kopieren und Redirect abgeschlossen."</span><span class="p">)</span>
-</pre></div>
+<p><a href="abstract/Contents.de.html">Jeder kann coden</a> / <a href="Programming_And_TicTacToe.de.html">Programmieren &amp; TicTacToe</a> / <a href="Objectoriented_Programming.de.html">Objektorientierte Programmierung</a> / <a href="../../../WebAPIs.de.html">Was sind Web APIs?</a></p>
+<h1 id="Swagger">Swagger<a class="anchor-link" href="#Swagger">¶</a></h1><table border="0">
+<tr>
+<td>
+<img alt="No description has been provided for this image" src="Swagger.jpeg"/>
+</td>
+<td rowspan="2">
+<a href="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3458764554347680798&amp;cot=14"><img alt="No description has been provided for this image" src="../wpf/Radar_AccessingRestApi.jpg"/></a>
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://learn.microsoft.com/de-de/aspnet/core/tutorials/getting-started-with-swashbuckle" target="_blank">Swagger mit ASP.NET Core (offizielles Tutorial)</a><br/>
+<a href="https://learn.microsoft.com/de-de/aspnet/core/web-api/advanced/openapi" target="_blank">Erweiterte OpenAPI-Nutzung in ASP.NET Core</a><br/>
+<a href="https://github.com/domaindrivendev/Swashbuckle.AspNetCore" target="_blank">Swashbuckle.AspNetCore GitHub Repository</a><br/>
+<a href="https://swagger.io/docs/specification/about/" target="_blank">Offizielle OpenAPI/Swagger-Spezifikation (swagger.io)</a><br/>
+<a href="https://swagger.io/tools/swagger-ui/" target="_blank">Swagger UI – interaktive API Dokumentation</a><br/>
+<a href="https://swagger.io/tools/swagger-codegen/" target="_blank">Swagger Codegen – Client-Code generieren</a><br/>
+<a href="https://www.telerik.com/blogs/using-swagger-in-asp-net-core-web-api" target="_blank">Blog: Swagger in ASP.NET Core Web API verwenden</a><br/>
+<a href="https://learn.microsoft.com/de-de/dotnet/csharp/language-reference/xmldoc/" target="_blank">C# XML-Dokumentation für Swagger nutzen</a><br/>
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Kopieren und Redirect abgeschlossen.
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=23139267">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Create-menu-and-search">Create menu and search<a class="anchor-link" href="#Create-menu-and-search">¶</a></h2><p>In this step a menu is created from the titles of the html pages and the folder structure they are in.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">bs4</span><span class="w"> </span><span class="kn">import</span> <span class="n">BeautifulSoup</span>
-
-<span class="c1"># Configuration</span>
-<span class="n">BASE_DIR</span> <span class="o">=</span> <span class="s2">"./website"</span>  <span class="c1"># Base directory containing the HTML files</span>
-<span class="n">SEARCH_INDEX_FILE</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="s2">"search-index.json"</span><span class="p">)</span>
-<span class="n">STYLE_FILE</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="s2">"style.css"</span><span class="p">)</span>
-<span class="n">URL_PREFIX</span> <span class="o">=</span> <span class="s2">"/SoProMing/JederKannCoden/"</span>  <span class="c1"># Set the static prefix for URLs (e.g., "/subdir/")</span>
-
-
-<span class="k">def</span><span class="w"> </span><span class="nf">normalize_url</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""Normalize URLs by removing ../ and resolving redundant parts."""</span>
-    <span class="c1"># Remove "../" and normalize the path</span>
-    <span class="n">clean_url</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">normpath</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"</span><span class="se">\\</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"/"</span><span class="p">)</span>
-    <span class="n">clean_url</span> <span class="o">=</span> <span class="n">clean_url</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"../"</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span>
-    <span class="c1"># Ensure the URL starts with the configured prefix</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">clean_url</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">URL_PREFIX</span><span class="p">):</span>
-        <span class="n">clean_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">URL_PREFIX</span><span class="si">}{</span><span class="n">clean_url</span><span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
-    <span class="k">return</span> <span class="n">clean_url</span>
-
-
-<span class="c1"># Exclusion lists</span>
-<span class="n">EXCLUDE_FILES</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"index.html"</span><span class="p">,</span> <span class="s2">"exclude.html"</span><span class="p">]</span>  <span class="c1"># Add filenames you want to exclude</span>
-<span class="n">EXCLUDE_DIRS</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"website"</span><span class="p">]</span>                      <span class="c1"># Add directory names you want to exclude</span>
-
-
-<span class="k">def</span><span class="w"> </span><span class="nf">sanitize_title</span><span class="p">(</span><span class="n">title</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""Remove unwanted symbols like ¶ from the title."""</span>
-    <span class="k">if</span> <span class="n">title</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">title</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"¶"</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-    <span class="k">return</span> <span class="n">title</span>
-
-
-<span class="k">def</span><span class="w"> </span><span class="nf">get_title_from_h1</span><span class="p">(</span><span class="n">file_path</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""Extract the text of the first &lt;h1&gt; tag in the HTML file and sanitize it."""</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-            <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s2">"html.parser"</span><span class="p">)</span>
-            <span class="n">h1</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">"h1"</span><span class="p">)</span>
-            <span class="k">return</span> <span class="n">sanitize_title</span><span class="p">(</span><span class="n">h1</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="n">strip</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span> <span class="k">if</span> <span class="n">h1</span> <span class="k">else</span> <span class="kc">None</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Error reading </span><span class="si">{</span><span class="n">file_path</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-        <span class="k">return</span> <span class="kc">None</span>
-
-
-<span class="k">def</span><span class="w"> </span><span class="nf">extract_readable_text</span><span class="p">(</span><span class="n">file_path</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""Extract readable text from an HTML file, ignoring non-visible elements."""</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-            <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s2">"html.parser"</span><span class="p">)</span>
-            <span class="c1"># Remove script and style elements</span>
-            <span class="k">for</span> <span class="n">script_or_style</span> <span class="ow">in</span> <span class="n">soup</span><span class="p">([</span><span class="s2">"script"</span><span class="p">,</span> <span class="s2">"style"</span><span class="p">]):</span>
-                <span class="n">script_or_style</span><span class="o">.</span><span class="n">decompose</span><span class="p">()</span>
-
-            <span class="c1"># Extract visible text</span>
-            <span class="k">return</span> <span class="n">soup</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="n">separator</span><span class="o">=</span><span class="s2">" "</span><span class="p">,</span> <span class="n">strip</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Error extracting text from </span><span class="si">{</span><span class="n">file_path</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-        <span class="k">return</span> <span class="s2">""</span>
-
-
-<span class="k">def</span><span class="w"> </span><span class="nf">build_menu_tree</span><span class="p">(</span><span class="n">base_dir</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""Build a nested dictionary representing the menu structure."""</span>
-    <span class="n">menu_tree</span> <span class="o">=</span> <span class="p">{}</span>
-
-    <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">base_dir</span><span class="p">):</span>
-        <span class="c1"># Remove excluded directories from traversal</span>
-        <span class="n">dirs</span><span class="p">[:]</span> <span class="o">=</span> <span class="p">[</span><span class="n">d</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dirs</span> <span class="k">if</span> <span class="n">d</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">EXCLUDE_DIRS</span><span class="p">]</span>
-
-        <span class="n">rel_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">base_dir</span><span class="p">)</span>
-        <span class="n">current_level</span> <span class="o">=</span> <span class="n">menu_tree</span>
-
-        <span class="c1"># Navigate to the current directory level in the tree</span>
-        <span class="k">if</span> <span class="n">rel_dir</span> <span class="o">!=</span> <span class="s2">"."</span><span class="p">:</span>
-            <span class="k">for</span> <span class="n">part</span> <span class="ow">in</span> <span class="n">rel_dir</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">):</span>
-                <span class="n">current_level</span> <span class="o">=</span> <span class="n">current_level</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">part</span><span class="p">,</span> <span class="p">{})</span>
-
-        <span class="c1"># Add files to the current level</span>
-        <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">files</span><span class="p">):</span>
-            <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">".html"</span><span class="p">)</span> <span class="ow">and</span> <span class="n">file</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">EXCLUDE_FILES</span><span class="p">:</span>
-                <span class="n">file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
-                <span class="n">title</span> <span class="o">=</span> <span class="n">get_title_from_h1</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
-                <span class="k">if</span> <span class="n">title</span><span class="p">:</span>  <span class="c1"># Only include files with a valid &lt;h1&gt; title</span>
-                    <span class="n">current_level</span><span class="p">[</span><span class="n">file</span><span class="p">]</span> <span class="o">=</span> <span class="n">title</span>
-
-    <span class="k">return</span> <span class="n">menu_tree</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">generate_menu_html</span><span class="p">(</span><span class="n">menu_tree</span><span class="p">,</span> <span class="n">current_path</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span> <span class="n">relative_to</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""Generate HTML for the menu structure recursively with nested &lt;ul&gt;&lt;li&gt;,</span>
-<span class="sd">    only including folders on the top level, and skipping empty folders."""</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">is_non_empty_folder</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">any</span><span class="p">(</span><span class="n">is_non_empty_folder</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">value</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
-
-    <span class="n">html</span> <span class="o">=</span> <span class="s1">'&lt;ul class="</span><span class="si">{}</span><span class="s1">"&gt;</span><span class="se">\n</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">"menu"</span> <span class="k">if</span> <span class="n">level</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="s2">"submenu"</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">menu_tree</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
-        <span class="k">if</span> <span class="n">level</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
-            <span class="k">continue</span>  <span class="c1"># Skip files on top level</span>
-
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>  <span class="c1"># File</span>
-            <span class="n">rel_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">current_path</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
-            <span class="n">relative_link</span> <span class="o">=</span> <span class="n">normalize_url</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span><span class="n">rel_path</span><span class="p">,</span> <span class="n">relative_to</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"</span><span class="se">\\</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"/"</span><span class="p">))</span>
-            <span class="n">html</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">'  &lt;li&gt;&lt;a href="</span><span class="si">{</span><span class="n">relative_link</span><span class="si">}</span><span class="s1">"&gt;</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s1">&lt;/a&gt;&lt;/li&gt;</span><span class="se">\n</span><span class="s1">'</span>
-        <span class="k">elif</span> <span class="n">is_non_empty_folder</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>  <span class="c1"># Non-empty folder</span>
-            <span class="n">title</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
-            <span class="n">html</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">'  &lt;li class="menu-item"&gt;</span><span class="se">\n</span><span class="s1">'</span>
-            <span class="n">html</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">'    &lt;a href="#"&gt;</span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s1">&lt;/a&gt;</span><span class="se">\n</span><span class="s1">'</span>
-            <span class="n">html</span> <span class="o">+=</span> <span class="n">generate_menu_html</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">current_path</span><span class="p">,</span> <span class="n">key</span><span class="p">),</span> <span class="n">relative_to</span><span class="p">,</span> <span class="n">level</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-            <span class="n">html</span> <span class="o">+=</span> <span class="s1">'  &lt;/li&gt;</span><span class="se">\n</span><span class="s1">'</span>
-    <span class="n">html</span> <span class="o">+=</span> <span class="s1">'&lt;/ul&gt;</span><span class="se">\n</span><span class="s1">'</span>
-    <span class="k">return</span> <span class="n">html</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">generate_search_index</span><span class="p">(</span><span class="n">base_dir</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""Generate a JSON file for the search index."""</span>
-    <span class="n">search_index</span> <span class="o">=</span> <span class="p">[]</span>
-
-    <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">base_dir</span><span class="p">):</span>
-        <span class="c1"># Remove excluded directories from traversal</span>
-        <span class="n">dirs</span><span class="p">[:]</span> <span class="o">=</span> <span class="p">[</span><span class="n">d</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dirs</span> <span class="k">if</span> <span class="n">d</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">EXCLUDE_DIRS</span><span class="p">]</span>
-
-        <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">".html"</span><span class="p">)</span> <span class="ow">and</span> <span class="n">file</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">EXCLUDE_FILES</span><span class="p">:</span>
-                <span class="n">absolute_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">file</span><span class="p">),</span> <span class="n">base_dir</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"</span><span class="se">\\</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"/"</span><span class="p">)</span>
-                <span class="n">file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
-                <span class="n">title</span> <span class="o">=</span> <span class="n">get_title_from_h1</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
-                <span class="k">if</span> <span class="n">title</span><span class="p">:</span>  <span class="c1"># Only include files with a valid &lt;h1&gt; title</span>
-                    <span class="n">readable_text</span> <span class="o">=</span> <span class="n">extract_readable_text</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
-                    <span class="n">search_index</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
-                        <span class="s2">"url"</span><span class="p">:</span> <span class="n">normalize_url</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">absolute_path</span><span class="si">}</span><span class="s2">"</span><span class="p">),</span>  <span class="c1"># Normalize the URL</span>
-                        <span class="s2">"title"</span><span class="p">:</span> <span class="n">title</span><span class="p">,</span>
-                        <span class="s2">"content"</span><span class="p">:</span> <span class="n">readable_text</span>  <span class="c1"># Use readable text only</span>
-                    <span class="p">})</span>
-
-    <span class="c1"># Save the search index</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">SEARCH_INDEX_FILE</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">search_index</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">ensure_ascii</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Search index created: </span><span class="si">{</span><span class="n">SEARCH_INDEX_FILE</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-
-
-<span class="k">def</span><span class="w"> </span><span class="nf">generate_style</span><span class="p">():</span>
-<span class="w">    </span><span class="sd">"""Generate a CSS file for styling."""</span>
-    <span class="n">style_content</span> <span class="o">=</span> <span class="s2">"""</span>
-<span class="s2">    .menu {</span>
-<span class="s2">    display: flex;</span>
-<span class="s2">    list-style: none;</span>
-<span class="s2">    padding: 0;</span>
-<span class="s2">    margin: 0;</span>
-<span class="s2">    background-color: #f8f8f8;</span>
-<span class="s2">    gap: 20px;</span>
-<span class="s2">    }</span>
-
-<span class="s2">    .menu-item {</span>
-<span class="s2">    position: relative;</span>
-<span class="s2">    }</span>
-
-<span class="s2">    .menu &gt; .menu-item &gt; a {</span>
-<span class="s2">    display: block;</span>
-<span class="s2">    padding: 10px 16px;</span>
-<span class="s2">    text-decoration: none;</span>
-<span class="s2">    color: black;</span>
-<span class="s2">    }</span>
-
-<span class="s2">    .submenu {</span>
-<span class="s2">    display: none;</span>
-<span class="s2">    position: absolute;</span>
-<span class="s2">    top: 100%;</span>
-<span class="s2">    left: 0;</span>
-<span class="s2">    list-style: none;</span>
-<span class="s2">    background-color: white;</span>
-<span class="s2">    padding: 0;</span>
-<span class="s2">    margin: 0;</span>
-<span class="s2">    min-width: 160px;</span>
-<span class="s2">    box-shadow: 0 2px 8px rgba(0,0,0,0.15);</span>
-<span class="s2">    z-index: 1000;</span>
-<span class="s2">    }</span>
-
-<span class="s2">    .submenu li a {</span>
-<span class="s2">    display: block;</span>
-<span class="s2">    padding: 10px 16px;</span>
-<span class="s2">    text-decoration: none;</span>
-<span class="s2">    color: black;</span>
-<span class="s2">    white-space: nowrap;</span>
-<span class="s2">    }</span>
-
-<span class="s2">    .submenu li a:hover {</span>
-<span class="s2">    background-color: #f0f0f0;</span>
-<span class="s2">    }</span>
-
-<span class="s2">    /* Show submenu on hover */</span>
-<span class="s2">    .menu-item:hover &gt; .submenu {</span>
-<span class="s2">    display: block;</span>
-<span class="s2">    }</span>
-
-<span class="s2">    /* Nested submenu (submenu of submenu) */</span>
-<span class="s2">    .submenu .submenu {</span>
-<span class="s2">    top: 0;</span>
-<span class="s2">    left: 100%;</span>
-<span class="s2">    }</span>
-
-<span class="s2">    .menu,</span>
-<span class="s2">    .menu li,</span>
-<span class="s2">    .menu a,</span>
-<span class="s2">    .submenu li,</span>
-<span class="s2">    .submenu a {</span>
-<span class="s2">        font-family: Arial, sans-serif;</span>
-<span class="s2">    }</span>
-
-<span class="s2">    #search-container {</span>
-<span class="s2">        position: relative;</span>
-<span class="s2">        display: flex;</span>
-<span class="s2">        flex-direction: column;</span>
-<span class="s2">        align-items: flex-end;</span>
-<span class="s2">    }</span>
-
-<span class="s2">    #searchResults {</span>
-<span class="s2">        display: none;</span>
-<span class="s2">        position: absolute;</span>
-<span class="s2">        top: 100%;</span>
-<span class="s2">        right: 0;</span>
-<span class="s2">        background: white;</span>
-<span class="s2">        box-shadow: 0 2px 8px rgba(0,0,0,0.15);</span>
-<span class="s2">        margin-top: 5px;</span>
-<span class="s2">        width: 200px;</span>
-<span class="s2">        max-height: 300px;</span>
-<span class="s2">        overflow-y: auto;</span>
-<span class="s2">        z-index: 1000;</span>
-<span class="s2">    }</span>
-
-<span class="s2">    #searchResults.show {</span>
-<span class="s2">        display: block;</span>
-<span class="s2">    }</span>
-
-<span class="s2">    #searchResults div {</span>
-<span class="s2">        padding: 4px 8px;</span>
-<span class="s2">        cursor: pointer;</span>
-<span class="s2">    }</span>
-
-<span class="s2">    #searchResults div:hover {</span>
-<span class="s2">        background-color: #f0f0f0;</span>
-<span class="s2">    }</span>
-<span class="s2">    """</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">STYLE_FILE</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">style_content</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"CSS created: </span><span class="si">{</span><span class="n">STYLE_FILE</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-
-
-<span class="k">def</span><span class="w"> </span><span class="nf">inject_menu_and_search</span><span class="p">(</span><span class="n">base_dir</span><span class="p">,</span> <span class="n">menu_tree</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""Inject the menu and search functionality into each HTML file."""</span>
-    <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">base_dir</span><span class="p">):</span>
-        <span class="c1"># Remove excluded directories from traversal</span>
-        <span class="n">dirs</span><span class="p">[:]</span> <span class="o">=</span> <span class="p">[</span><span class="n">d</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dirs</span> <span class="k">if</span> <span class="n">d</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">EXCLUDE_DIRS</span><span class="p">]</span>
-
-        <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">".html"</span><span class="p">)</span> <span class="ow">and</span> <span class="n">file</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">EXCLUDE_FILES</span><span class="p">:</span>
-                <span class="n">file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
-                <span class="n">relative_to</span> <span class="o">=</span> <span class="n">root</span>
-
-                <span class="c1"># Generate menu HTML specific to the current file</span>
-                <span class="n">menu_html</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"""</span>
-<span class="s2">                </span><span class="si">{</span><span class="n">generate_menu_html</span><span class="p">(</span><span class="n">menu_tree</span><span class="p">,</span><span class="w"> </span><span class="n">current_path</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="n">relative_to</span><span class="o">=</span><span class="n">relative_to</span><span class="p">)</span><span class="si">}</span>
-<span class="s2">                """</span>
-
-                <span class="c1"># Adjust paths for style and search index</span>
-                <span class="n">relative_path_to_base</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="n">root</span><span class="p">)</span>
-                <span class="n">style_path</span> <span class="o">=</span> <span class="n">normalize_url</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">relative_path_to_base</span><span class="p">,</span> <span class="s2">"style.css"</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"</span><span class="se">\\</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"/"</span><span class="p">))</span>
-                <span class="n">search_index_path</span> <span class="o">=</span> <span class="n">normalize_url</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">relative_path_to_base</span><span class="p">,</span> <span class="s2">"search-index.json"</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"</span><span class="se">\\</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"/"</span><span class="p">))</span>
-
-                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-                    <span class="n">content</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-
-                <span class="c1"># Add the menu and search functionality to the HTML file</span>
-                <span class="n">new_content</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"""</span>
-<span class="s2">                &lt;!DOCTYPE html&gt;</span>
-<span class="s2">                &lt;html lang="en"&gt;</span>
-<span class="s2">                &lt;head&gt;</span>
-<span class="s2">                    &lt;meta charset="UTF-8"&gt;</span>
-<span class="s2">                    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span>
-<span class="s2">                    &lt;link rel="stylesheet" href="</span><span class="si">{</span><span class="n">style_path</span><span class="si">}</span><span class="s2">"&gt;</span>
-<span class="s2">                    &lt;title&gt;</span><span class="si">{</span><span class="n">get_title_from_h1</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="s2">"Untitled"</span><span class="si">}</span><span class="s2">&lt;/title&gt;</span>
-<span class="s2">                &lt;/head&gt;</span>
-<span class="s2">                &lt;body&gt;</span>
-<span class="s2">                    &lt;nav&gt;</span>
-<span class="s2">                        &lt;div class="menu"&gt;</span>
-<span class="s2">                            </span><span class="si">{</span><span class="n">menu_html</span><span class="si">}</span>
-<span class="s2">                        &lt;/div&gt;</span>
-<span class="s2">                        &lt;div id="search-container"&gt;</span>
-<span class="s2">                            &lt;input type="text" id="searchInput" placeholder="Search..."&gt;</span>
-<span class="s2">                            &lt;div id="searchResults"&gt;&lt;/div&gt;</span>
-<span class="s2">                        &lt;/div&gt;</span>
-<span class="s2">                    &lt;/nav&gt;</span>
-<span class="s2">                    &lt;div class="content"&gt;</span>
-<span class="s2">                        </span><span class="si">{</span><span class="n">content</span><span class="si">}</span>
-<span class="s2">                    &lt;/div&gt;</span>
-<span class="s2">                    &lt;script&gt;</span>
-<span class="s2">                        const input = document.getElementById("searchInput");</span>
-<span class="s2">                        const resultsContainer = document.getElementById("searchResults");</span>
-
-<span class="s2">                        input.addEventListener("input", async function () </span><span class="se">{{</span>
-<span class="s2">                            try </span><span class="se">{{</span>
-<span class="s2">                                const query = this.value.toLowerCase();</span>
-<span class="s2">                                if (!query) </span><span class="se">{{</span>
-<span class="s2">                                    resultsContainer.innerHTML = "";</span>
-<span class="s2">                                    resultsContainer.classList.remove("show");</span>
-<span class="s2">                                    return;</span>
-<span class="s2">                                </span><span class="se">}}</span>
-
-<span class="s2">                                const response = await fetch("</span><span class="si">{</span><span class="n">search_index_path</span><span class="si">}</span><span class="s2">");</span>
-<span class="s2">                                const pages = await response.json();</span>
-
-<span class="s2">                                const results = pages.filter(page =&gt;</span>
-<span class="s2">                                    page.title.toLowerCase().includes(query) || page.content.toLowerCase().includes(query)</span>
-<span class="s2">                                );</span>
-
-<span class="s2">                                resultsContainer.innerHTML = "";</span>
-<span class="s2">                                results.forEach(result =&gt; </span><span class="se">{{</span>
-<span class="s2">                                    const resultElement = document.createElement("div");</span>
-<span class="s2">                                    resultElement.innerHTML = `&lt;a href="$</span><span class="se">{{</span><span class="s2">result.url</span><span class="se">}}</span><span class="s2">"&gt;$</span><span class="se">{{</span><span class="s2">result.title</span><span class="se">}}</span><span class="s2">&lt;/a&gt;`;</span>
-<span class="s2">                                    resultsContainer.appendChild(resultElement);</span>
-<span class="s2">                                </span><span class="se">}}</span><span class="s2">);</span>
-
-<span class="s2">                                resultsContainer.classList.toggle("show", results.length &gt; 0);</span>
-
-<span class="s2">                            </span><span class="se">}}</span><span class="s2"> catch (error) </span><span class="se">{{</span>
-<span class="s2">                                console.error("Search error:", error);</span>
-<span class="s2">                            </span><span class="se">}}</span>
-<span class="s2">                        </span><span class="se">}}</span><span class="s2">);</span>
-
-<span class="s2">                        // Optional: hide results when clicking outside</span>
-<span class="s2">                        document.addEventListener("click", (event) =&gt; </span><span class="se">{{</span>
-<span class="s2">                            if (!document.getElementById("search-container").contains(event.target)) </span><span class="se">{{</span>
-<span class="s2">                                resultsContainer.classList.remove("show");</span>
-<span class="s2">                            </span><span class="se">}}</span>
-<span class="s2">                        </span><span class="se">}}</span><span class="s2">);</span>
-<span class="s2">                    &lt;/script&gt;</span>
-<span class="s2">                &lt;/body&gt;</span>
-<span class="s2">                &lt;/html&gt;</span>
-<span class="s2">                """</span>
-
-                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-                    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">new_content</span><span class="p">)</span>
-                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Menu and search added: </span><span class="si">{</span><span class="n">file_path</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"The directory </span><span class="si">{</span><span class="n">BASE_DIR</span><span class="si">}</span><span class="s2"> does not exist. Please create or adjust it."</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">generate_style</span><span class="p">()</span>
-        <span class="n">menu_tree</span> <span class="o">=</span> <span class="n">build_menu_tree</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">)</span>
-        <span class="n">generate_search_index</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">)</span>
-        <span class="n">inject_menu_and_search</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="n">menu_tree</span><span class="p">)</span>
-        <span class="c1"># Copy JederKannCoden.pdf to the website directory</span>
-        <span class="n">pdf_source</span> <span class="o">=</span> <span class="s2">"../JederKannCoden.pdf"</span>
-        <span class="n">pdf_destination</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="s2">"JederKannCoden.pdf"</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">pdf_source</span><span class="p">):</span>
-            <span class="n">shutil</span><span class="o">.</span><span class="n">copy2</span><span class="p">(</span><span class="n">pdf_source</span><span class="p">,</span> <span class="n">pdf_destination</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"PDF copied to </span><span class="si">{</span><span class="n">pdf_destination</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"PDF source file </span><span class="si">{</span><span class="n">pdf_source</span><span class="si">}</span><span class="s2"> does not exist."</span><span class="p">)</span>
+<h2 id="Was-ist-Swagger?">Was ist Swagger?<a class="anchor-link" href="#Was-ist-Swagger?">¶</a></h2><p><strong>Swagger</strong> (heute Teil von <strong>OpenAPI</strong>) ist ein Toolset zur:</p>
+<ul>
+<li>📄 Automatischen <strong>Dokumentation</strong> deiner REST-API</li>
+<li>🌐 Bereitstellung einer <strong>interaktiven UI</strong> im Browser zum Testen der Endpunkte</li>
+<li>🔧 Generierung von Clients (z. B. für C#, TypeScript)</li>
+</ul>
+<p>ASP.NET Core bringt ab Werk Unterstützung für Swagger mit dem NuGet-Paket <code>Swashbuckle.AspNetCore</code>.</p>
+<h2 id="Einrichtung-von-Swagger-in-ASP.NET-Core-(ab-.NET-6)">Einrichtung von Swagger in ASP.NET Core (ab .NET 6)<a class="anchor-link" href="#Einrichtung-von-Swagger-in-ASP.NET-Core-(ab-.NET-6)">¶</a></h2><h3 id="1.-Paketreferenz">1. Paketreferenz<a class="anchor-link" href="#1.-Paketreferenz">¶</a></h3><p>Normalerweise ist Swagger im Projekt-Template schon enthalten. Falls nicht, installiere es via NuGet:</p>
+<div class="highlight"><pre><span></span>dotnet<span class="w"> </span>add<span class="w"> </span>package<span class="w"> </span>Swashbuckle.AspNetCore
 </pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>CSS created: ./website/style.css
-Search index created: ./website/search-index.json
-Menu and search added: ./website/Deploy_Contents.en.html
-Menu and search added: ./website/Create_pdf.en.html
-Menu and search added: ./website/Create_Html_Tree.html
-Menu and search added: ./website/htw/Team_Signup.de.html
-Menu and search added: ./website/tools/GIT.de.html
-Menu and search added: ./website/tools/UTM_n_VS.de.html
-Menu and search added: ./website/programming/Number_Systems.de.html
-Menu and search added: ./website/programming/Programmieren1.de.html
-Menu and search added: ./website/programming/Objectoriented_Programming.de.html
-Menu and search added: ./website/programming/WebAPIs.de.html
-Menu and search added: ./website/programming/Programming_And_TicTacToe.de.html
-Menu and search added: ./website/programming/abstract/Intro.de.html
-Menu and search added: ./website/programming/abstract/Contents.de.html
-Menu and search added: ./website/programming/cmdline/Bash_Basics.de.html
-Menu and search added: ./website/programming/cmdline/Bash_Script_n_Sandbox.de.html
-Menu and search added: ./website/programming/cmdline/Linux_sys_info.de.html
-Menu and search added: ./website/programming/cmdline/Dirtree_Navigation.de.html
-Menu and search added: ./website/programming/cmdline/Howto.de.html
-Menu and search added: ./website/programming/cmdline/Shells.de.html
-Menu and search added: ./website/programming/csharp/CSharp_Introduction.de.html
-Menu and search added: ./website/programming/csharp/CSharp_icebreaker.de.html
-Menu and search added: ./website/programming/csharp/tools/Debugger.de.html
-Menu and search added: ./website/programming/csharp/tools/Toolchain.de.html
-Menu and search added: ./website/programming/csharp/procedural-functional/CSharp_Reference_Value.de.html
-Menu and search added: ./website/programming/csharp/procedural-functional/CSharp_Conditional_TicTacToe.de.html
-Menu and search added: ./website/programming/csharp/procedural-functional/CSharp_Methods_Functions.de.html
-Menu and search added: ./website/programming/csharp/procedural-functional/Console_ReadLine_Basics.de.html
-Menu and search added: ./website/programming/csharp/procedural-functional/CSharp_Conditional.de.html
-Menu and search added: ./website/programming/csharp/procedural-functional/CSharp_Enums.de.html
-Menu and search added: ./website/programming/csharp/procedural-functional/Console_WriteLine_Samples.de.html
-Menu and search added: ./website/programming/csharp/procedural-functional/CSharp_String_Type.de.html
-Menu and search added: ./website/programming/csharp/procedural-functional/Console_WriteLine_Basics.de.html
-Menu and search added: ./website/programming/csharp/procedural-functional/CSharp_Numerical_Floating_Types.de.html
-Menu and search added: ./website/programming/csharp/procedural-functional/CSharp_Structs.de.html
-Menu and search added: ./website/programming/csharp/procedural-functional/CSharp_Loops_TicTacToe.de.html
-Menu and search added: ./website/programming/csharp/procedural-functional/Console_WriteLine_TicTacToe.de.html
-Menu and search added: ./website/programming/csharp/procedural-functional/CSharp_Arrays.de.html
-Menu and search added: ./website/programming/csharp/procedural-functional/CSharp_Boolean_Operators_Basics.de.html
-Menu and search added: ./website/programming/csharp/procedural-functional/CSharp_HelloWorld_Explanation.de.html
-Menu and search added: ./website/programming/csharp/procedural-functional/CSharp_Other_Operators_Basics.de.html
-Menu and search added: ./website/programming/csharp/procedural-functional/CSharp_Loops.de.html
-Menu and search added: ./website/programming/csharp/procedural-functional/CSharp_Numerical_Types.de.html
-Menu and search added: ./website/programming/csharp/framework/Random.de.html
-Menu and search added: ./website/programming/csharp/framework/Exceptions.html
-Menu and search added: ./website/programming/csharp/framework/Files.de.html
-Menu and search added: ./website/programming/csharp/framework/Regular_Expressions.de.html
-Menu and search added: ./website/programming/csharp/framework/wpf/Basics.de.html
-Menu and search added: ./website/programming/csharp/framework/wpf/Binding.de.html
-Menu and search added: ./website/programming/csharp/CSharp_Introduction/Arrays.de.html
-Menu and search added: ./website/programming/csharp/CSharp_Introduction/Strings.de.html
-Menu and search added: ./website/programming/csharp/CSharp_Introduction/Complex_Datastructures.de.html
-Menu and search added: ./website/programming/csharp/CSharp_Introduction/Functions.de.html
-Menu and search added: ./website/programming/csharp/CSharp_Introduction/Operators.de.html
-Menu and search added: ./website/programming/csharp/CSharp_Introduction/Conditional_statements.de.html
-Menu and search added: ./website/programming/csharp/CSharp_Introduction/Loops.de.html
-Menu and search added: ./website/programming/csharp/CSharp_Introduction/Variables.de.html
-Menu and search added: ./website/programming/csharp/oop/CSharp_Access_Modifiers.de.html
-Menu and search added: ./website/programming/csharp/oop/CSharp_Samples.de.html
-Menu and search added: ./website/programming/csharp/oop/CSharp_Basics.de.html
-Menu and search added: ./website/programming/csharp/oop/Gameboard_store.de.html
-Menu and search added: ./website/programming/csharp/oop/Constructors.de.html
-Menu and search added: ./website/programming/csharp/oop/Compare_Objects.de.html
-Menu and search added: ./website/programming/csharp/oop/Properties.de.html
-PDF copied to ./website/JederKannCoden.pdf
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Upload-to-website">Upload to website<a class="anchor-link" href="#Upload-to-website">¶</a></h2><p>In this final step all data is transfered according to settings in a <code>.env</code> file.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">pip</span> install paramiko
+<h3 id="2.-Konfiguration-in-Program.cs">2. Konfiguration in <code>Program.cs</code><a class="anchor-link" href="#2.-Konfiguration-in-Program.cs">¶</a></h3><p>Wenn du ein neues Web API Projekt erstellst, sieht dein <code>Program.cs</code> ungefähr so aus:</p>
+<div class="highlight"><pre><span></span><span class="kt">var</span><span class="w"> </span><span class="n">builder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">WebApplication</span><span class="p">.</span><span class="n">CreateBuilder</span><span class="p">(</span><span class="n">args</span><span class="p">);</span>
+
+<span class="c1">// Swagger-Dienste registrieren</span>
+<span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddEndpointsApiExplorer</span><span class="p">();</span>
+<span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddSwaggerGen</span><span class="p">();</span>
+
+<span class="kt">var</span><span class="w"> </span><span class="n">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">Build</span><span class="p">();</span>
+
+<span class="c1">// Swagger nur in Entwicklung aktivieren</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">app</span><span class="p">.</span><span class="n">Environment</span><span class="p">.</span><span class="n">IsDevelopment</span><span class="p">())</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">app</span><span class="p">.</span><span class="n">UseSwagger</span><span class="p">();</span>
+<span class="w">    </span><span class="n">app</span><span class="p">.</span><span class="n">UseSwaggerUI</span><span class="p">();</span><span class="w"> </span><span class="c1">// optional: Konfiguration z. B. mit SwaggerUIOptions</span>
+<span class="p">}</span>
+
+<span class="n">app</span><span class="p">.</span><span class="n">UseHttpsRedirection</span><span class="p">();</span>
+<span class="n">app</span><span class="p">.</span><span class="n">UseAuthorization</span><span class="p">();</span>
+<span class="n">app</span><span class="p">.</span><span class="n">MapControllers</span><span class="p">();</span>
+<span class="n">app</span><span class="p">.</span><span class="n">Run</span><span class="p">();</span>
 </pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">paramiko</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">dotenv</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_dotenv</span>
-
-<span class="c1"># Load environment variables</span>
-<span class="n">load_dotenv</span><span class="p">()</span>
-
-<span class="c1"># Configuration</span>
-<span class="n">SFTP_HOST</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">"SFTP_HOST"</span><span class="p">)</span>
-<span class="n">SFTP_PORT</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">"SFTP_PORT"</span><span class="p">,</span> <span class="mi">22</span><span class="p">))</span>  <span class="c1"># Default port 22</span>
-<span class="n">SFTP_USERNAME</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">"SFTP_USERNAME"</span><span class="p">)</span>
-<span class="n">SFTP_PASSWORD</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">"SFTP_PASSWORD"</span><span class="p">)</span>
-<span class="n">REMOTE_DIR</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">"REMOTE_DIR"</span><span class="p">)</span>
-<span class="n">LOCAL_DIR</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">"LOCAL_DIR"</span><span class="p">)</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">ensure_remote_dir</span><span class="p">(</span><span class="n">sftp</span><span class="p">,</span> <span class="n">remote_path</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    Ensure that the remote directory exists, creating it if necessary.</span>
-<span class="sd">    """</span>
-    <span class="n">directories</span> <span class="o">=</span> <span class="n">remote_path</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">"/"</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"/"</span><span class="p">)</span>
-    <span class="n">current_dir</span> <span class="o">=</span> <span class="s2">""</span>
-    <span class="k">for</span> <span class="n">directory</span> <span class="ow">in</span> <span class="n">directories</span><span class="p">:</span>
-        <span class="n">current_dir</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">"/</span><span class="si">{</span><span class="n">directory</span><span class="si">}</span><span class="s2">"</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">sftp</span><span class="o">.</span><span class="n">stat</span><span class="p">(</span><span class="n">current_dir</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
-            <span class="n">sftp</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">current_dir</span><span class="p">)</span>
-
-
-<span class="k">def</span><span class="w"> </span><span class="nf">upload_directory</span><span class="p">(</span><span class="n">sftp</span><span class="p">,</span> <span class="n">local_dir</span><span class="p">,</span> <span class="n">remote_dir</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    Upload the contents of a local directory to a remote SFTP directory.</span>
-<span class="sd">    """</span>
-    <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">local_dir</span><span class="p">):</span>
-        <span class="c1"># Calculate the relative path and corresponding remote path</span>
-        <span class="n">relative_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">local_dir</span><span class="p">)</span>
-        <span class="n">remote_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">remote_dir</span><span class="p">,</span> <span class="n">relative_path</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"</span><span class="se">\\</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"/"</span><span class="p">)</span>
-
-        <span class="c1"># Ensure the remote directory exists</span>
-        <span class="n">ensure_remote_dir</span><span class="p">(</span><span class="n">sftp</span><span class="p">,</span> <span class="n">remote_path</span><span class="p">)</span>
-
-        <span class="c1"># Upload files</span>
-        <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
-            <span class="n">local_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
-            <span class="n">remote_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">remote_path</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"</span><span class="se">\\</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"/"</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Uploading </span><span class="si">{</span><span class="n">local_file</span><span class="si">}</span><span class="s2"> to </span><span class="si">{</span><span class="n">remote_file</span><span class="si">}</span><span class="s2">..."</span><span class="p">)</span>
-            <span class="n">sftp</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">local_file</span><span class="p">,</span> <span class="n">remote_file</span><span class="p">)</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
-<span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    Main function to handle the SFTP upload process.</span>
-<span class="sd">    """</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">([</span><span class="n">SFTP_HOST</span><span class="p">,</span> <span class="n">SFTP_USERNAME</span><span class="p">,</span> <span class="n">SFTP_PASSWORD</span><span class="p">,</span> <span class="n">REMOTE_DIR</span><span class="p">,</span> <span class="n">LOCAL_DIR</span><span class="p">]):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">"Error: Missing required environment variables in .env file."</span><span class="p">)</span>
-        <span class="k">return</span>
-
-    <span class="c1"># Establish SFTP connection</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">"Connecting to SFTP server..."</span><span class="p">)</span>
-        <span class="n">transport</span> <span class="o">=</span> <span class="n">paramiko</span><span class="o">.</span><span class="n">Transport</span><span class="p">((</span><span class="n">SFTP_HOST</span><span class="p">,</span> <span class="n">SFTP_PORT</span><span class="p">))</span>
-        <span class="n">transport</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="n">SFTP_USERNAME</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="n">SFTP_PASSWORD</span><span class="p">)</span>
-
-        <span class="n">sftp</span> <span class="o">=</span> <span class="n">paramiko</span><span class="o">.</span><span class="n">SFTPClient</span><span class="o">.</span><span class="n">from_transport</span><span class="p">(</span><span class="n">transport</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">"Connection established."</span><span class="p">)</span>
-
-        <span class="c1"># Upload the directory</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Uploading contents of </span><span class="si">{</span><span class="n">LOCAL_DIR</span><span class="si">}</span><span class="s2"> to </span><span class="si">{</span><span class="n">REMOTE_DIR</span><span class="si">}</span><span class="s2">..."</span><span class="p">)</span>
-        <span class="n">upload_directory</span><span class="p">(</span><span class="n">sftp</span><span class="p">,</span> <span class="n">LOCAL_DIR</span><span class="p">,</span> <span class="n">REMOTE_DIR</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">"Upload complete."</span><span class="p">)</span>
-
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"An error occurred: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-    <span class="k">finally</span><span class="p">:</span>
-        <span class="k">if</span> <span class="s1">'sftp'</span> <span class="ow">in</span> <span class="nb">locals</span><span class="p">():</span>
-            <span class="n">sftp</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-        <span class="k">if</span> <span class="s1">'transport'</span> <span class="ow">in</span> <span class="nb">locals</span><span class="p">():</span>
-            <span class="n">transport</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">"Connection closed."</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
-    <span class="n">main</span><span class="p">()</span>
+<h3 id="3.-Erkl%C3%A4rung-der-Komponenten">3. Erklärung der Komponenten<a class="anchor-link" href="#3.-Erkl%C3%A4rung-der-Komponenten">¶</a></h3><table>
+<thead>
+<tr>
+<th>Methode</th>
+<th>Bedeutung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>AddSwaggerGen()</code></td>
+<td>Registriert Swagger-Generator im DI-Container</td>
+</tr>
+<tr>
+<td><code>UseSwagger()</code></td>
+<td>Aktiviert die Middleware zur Generierung der Swagger JSON-Dokumentation</td>
+</tr>
+<tr>
+<td><code>UseSwaggerUI()</code></td>
+<td>Aktiviert die <strong>interaktive Oberfläche</strong> im Browser</td>
+</tr>
+<tr>
+<td><code>AddEndpointsApiExplorer()</code></td>
+<td>Macht minimal APIs und Controller sichtbar für Swagger</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4.-Zugriff-auf-Swagger-im-Browser">4. Zugriff auf Swagger im Browser<a class="anchor-link" href="#4.-Zugriff-auf-Swagger-im-Browser">¶</a></h3><p>Wenn das Backend läuft (z. B. auf Port <code>5001</code>), erreichst du Swagger unter:</p>
+<pre><code>https://localhost:5001/swagger
+</code></pre>
+<p>Dort kannst du:</p>
+<ul>
+<li>Alle Endpunkte sehen</li>
+<li>GET, POST etc. ausprobieren</li>
+<li>Parameter übergeben und Ergebnisse anzeigen lassen</li>
+</ul>
+<h3 id="5.-Optional:-Swagger-Dokumentation-erweitern">5. Optional: Swagger-Dokumentation erweitern<a class="anchor-link" href="#5.-Optional:-Swagger-Dokumentation-erweitern">¶</a></h3><p>Swagger liest automatisch:</p>
+<ul>
+<li><code>///</code>-Kommentare (XML-Dokumentation)</li>
+<li><code>[HttpGet]</code>, <code>[Route]</code>, <code>[Produces]</code>, <code>[Consumes]</code> usw.</li>
+</ul>
+<p>Beispiel:</p>
+<div class="highlight"><pre><span></span><span class="c1">/// &lt;summary&gt;</span>
+<span class="c1">/// Gibt eine zufällige Wettervorhersage zurück.</span>
+<span class="c1">/// &lt;/summary&gt;</span>
+<span class="na">[HttpGet(Name = "GetWeatherForecast")]</span>
+<span class="k">public</span><span class="w"> </span><span class="n">IEnumerable</span><span class="o">&lt;</span><span class="n">WeatherForecast</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Get</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="p">}</span>
 </pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Connecting to SFTP server...
-Connection established.
-Uploading contents of ./website to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden...
-Uploading ./website/index.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/./index.html...
-Uploading ./website/Create_Webpage.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/./Create_Webpage.webp...
-Uploading ./website/search-index.json to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/./search-index.json...
-Uploading ./website/JederKannCoden.pdf to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/./JederKannCoden.pdf...
-Uploading ./website/Deploy_Contents.en.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/./Deploy_Contents.en.html...
-Uploading ./website/Create_pdf.en.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/./Create_pdf.en.html...
-Uploading ./website/style.css to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/./style.css...
-Uploading ./website/Export_jupiter.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/./Export_jupiter.webp...
-Uploading ./website/Create_Html_Tree.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/./Create_Html_Tree.html...
-Uploading ./website/htw/Team_Signup.jpeg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/htw/Team_Signup.jpeg...
-Uploading ./website/htw/Team_Signup.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/htw/Team_Signup.de.html...
-Uploading ./website/htw/Team_Signup/Screenshot10.png to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/htw/Team_Signup/Screenshot10.png...
-Uploading ./website/htw/Team_Signup/Screenshot8.png to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/htw/Team_Signup/Screenshot8.png...
-Uploading ./website/htw/Team_Signup/Screenshot9.png to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/htw/Team_Signup/Screenshot9.png...
-Uploading ./website/htw/Team_Signup/Screenshot11.png to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/htw/Team_Signup/Screenshot11.png...
-Uploading ./website/htw/Team_Signup/Screenshot13.png to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/htw/Team_Signup/Screenshot13.png...
-Uploading ./website/htw/Team_Signup/Screenshot12.png to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/htw/Team_Signup/Screenshot12.png...
-Uploading ./website/htw/Team_Signup/Screenshot15.png to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/htw/Team_Signup/Screenshot15.png...
-Uploading ./website/htw/Team_Signup/Screenshot14.png to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/htw/Team_Signup/Screenshot14.png...
-Uploading ./website/htw/Team_Signup/Screenshot1.png to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/htw/Team_Signup/Screenshot1.png...
-Uploading ./website/htw/Team_Signup/Screenshot2.png to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/htw/Team_Signup/Screenshot2.png...
-Uploading ./website/htw/Team_Signup/Screenshot3.png to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/htw/Team_Signup/Screenshot3.png...
-Uploading ./website/htw/Team_Signup/Screenshot7.png to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/htw/Team_Signup/Screenshot7.png...
-Uploading ./website/htw/Team_Signup/Screenshot6.png to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/htw/Team_Signup/Screenshot6.png...
-Uploading ./website/htw/Team_Signup/Screenshot4.png to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/htw/Team_Signup/Screenshot4.png...
-Uploading ./website/htw/Team_Signup/Screenshot5.png to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/htw/Team_Signup/Screenshot5.png...
-Uploading ./website/tools/GIT.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/tools/GIT.de.html...
-Uploading ./website/tools/GIT.jpeg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/tools/GIT.jpeg...
-Uploading ./website/tools/UTM.jpeg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/tools/UTM.jpeg...
-Uploading ./website/tools/UTM_n_VS.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/tools/UTM_n_VS.de.html...
-Uploading ./website/programming/Programming_And_TicTacToe.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/Programming_And_TicTacToe.webp...
-Uploading ./website/programming/ASCII.miro.de.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/ASCII.miro.de.jpg...
-Uploading ./website/programming/Number_Systems.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/Number_Systems.de.html...
-Uploading ./website/programming/Modulo.miro.de.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/Modulo.miro.de.jpg...
-Uploading ./website/programming/JSON.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/JSON.jpg...
-Uploading ./website/programming/Programmieren1.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/Programmieren1.de.html...
-Uploading ./website/programming/Objectoriented_Programming.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/Objectoriented_Programming.de.html...
-Uploading ./website/programming/OOP_Basics.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/OOP_Basics.webp...
-Uploading ./website/programming/Kanban1.miro.de.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/Kanban1.miro.de.jpg...
-Uploading ./website/programming/Number_systems.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/Number_systems.webp...
-Uploading ./website/programming/WebAPIs.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/WebAPIs.de.html...
-Uploading ./website/programming/Number_systems.miro.de.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/Number_systems.miro.de.jpg...
-Uploading ./website/programming/REST.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/REST.jpg...
-Uploading ./website/programming/Programmieren1.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/Programmieren1.webp...
-Uploading ./website/programming/WebAPIs.png to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/WebAPIs.png...
-Uploading ./website/programming/Programming_And_TicTacToe.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/Programming_And_TicTacToe.de.html...
-Uploading ./website/programming/Radar_WebAPIs.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/Radar_WebAPIs.jpg...
-Uploading ./website/programming/abstract/Everybody_can_code.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/abstract/Everybody_can_code.webp...
-Uploading ./website/programming/abstract/Intro.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/abstract/Intro.de.html...
-Uploading ./website/programming/abstract/Contents.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/abstract/Contents.de.html...
-Uploading ./website/programming/abstract/Radar.de.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/abstract/Radar.de.jpg...
-Uploading ./website/programming/theory/Jagged_array.de.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/theory/Jagged_array.de.jpg...
-Uploading ./website/programming/theory/Array_logical_n_saved.de.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/theory/Array_logical_n_saved.de.jpg...
-Uploading ./website/programming/theory/Complex_Datastructures.de.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/theory/Complex_Datastructures.de.jpg...
-Uploading ./website/programming/cmdline/Bash_Basics.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/cmdline/Bash_Basics.de.html...
-Uploading ./website/programming/cmdline/Bash_Script_n_Sandbox.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/cmdline/Bash_Script_n_Sandbox.de.html...
-Uploading ./website/programming/cmdline/Linux_sys_info.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/cmdline/Linux_sys_info.de.html...
-Uploading ./website/programming/cmdline/Dirtree_Navigation.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/cmdline/Dirtree_Navigation.de.html...
-Uploading ./website/programming/cmdline/Howto.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/cmdline/Howto.de.html...
-Uploading ./website/programming/cmdline/Shells.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/cmdline/Shells.de.html...
-Uploading ./website/programming/csharp/Red_thread.miro.de.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/Red_thread.miro.de.jpg...
-Uploading ./website/programming/csharp/Icebreaker.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/Icebreaker.webp...
-Uploading ./website/programming/csharp/Introduction_csharp.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/Introduction_csharp.webp...
-Uploading ./website/programming/csharp/CSharp_Introduction.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/CSharp_Introduction.de.html...
-Uploading ./website/programming/csharp/CSharp_icebreaker.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/CSharp_icebreaker.de.html...
-Uploading ./website/programming/csharp/tools/Debugger.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/tools/Debugger.de.html...
-Uploading ./website/programming/csharp/tools/Radar_Debugger.de.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/tools/Radar_Debugger.de.jpg...
-Uploading ./website/programming/csharp/tools/Debugger.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/tools/Debugger.jpg...
-Uploading ./website/programming/csharp/tools/programmingtools.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/tools/programmingtools.webp...
-Uploading ./website/programming/csharp/tools/Toolchain.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/tools/Toolchain.de.html...
-Uploading ./website/programming/csharp/tools/Debugger.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/tools/Debugger.webp...
-Uploading ./website/programming/csharp/procedural-functional/CSharp_Reference_Value.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/procedural-functional/CSharp_Reference_Value.de.html...
-Uploading ./website/programming/csharp/procedural-functional/Radar_ReadLine.de.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/procedural-functional/Radar_ReadLine.de.jpg...
-Uploading ./website/programming/csharp/procedural-functional/Enums.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/procedural-functional/Enums.webp...
-Uploading ./website/programming/csharp/procedural-functional/CSharp_Conditional_TicTacToe.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/procedural-functional/CSharp_Conditional_TicTacToe.de.html...
-Uploading ./website/programming/csharp/procedural-functional/Radar_Structs.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/procedural-functional/Radar_Structs.jpg...
-Uploading ./website/programming/csharp/procedural-functional/Structs.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/procedural-functional/Structs.webp...
-Uploading ./website/programming/csharp/procedural-functional/Radar_Enums.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/procedural-functional/Radar_Enums.jpg...
-Uploading ./website/programming/csharp/procedural-functional/writeline.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/procedural-functional/writeline.webp...
-Uploading ./website/programming/csharp/procedural-functional/Radar_WriteLine.de.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/procedural-functional/Radar_WriteLine.de.jpg...
-Uploading ./website/programming/csharp/procedural-functional/CSharp_Methods_Functions.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/procedural-functional/CSharp_Methods_Functions.de.html...
-Uploading ./website/programming/csharp/procedural-functional/Console_ReadLine_Basics.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/procedural-functional/Console_ReadLine_Basics.de.html...
-Uploading ./website/programming/csharp/procedural-functional/CSharp_Conditional.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/procedural-functional/CSharp_Conditional.de.html...
-Uploading ./website/programming/csharp/procedural-functional/Radar_Conditions.de.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/procedural-functional/Radar_Conditions.de.jpg...
-Uploading ./website/programming/csharp/procedural-functional/CSharp_Enums.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/procedural-functional/CSharp_Enums.de.html...
-Uploading ./website/programming/csharp/procedural-functional/Console_WriteLine_Samples.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/procedural-functional/Console_WriteLine_Samples.de.html...
-Uploading ./website/programming/csharp/procedural-functional/Reference_Debugger.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/procedural-functional/Reference_Debugger.jpg...
-Uploading ./website/programming/csharp/procedural-functional/Methods.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/procedural-functional/Methods.webp...
-Uploading ./website/programming/csharp/procedural-functional/boolean_operators.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/procedural-functional/boolean_operators.webp...
-Uploading ./website/programming/csharp/procedural-functional/Radar_Numbers.de.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/procedural-functional/Radar_Numbers.de.jpg...
-Uploading ./website/programming/csharp/procedural-functional/CSharp_String_Type.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/procedural-functional/CSharp_String_Type.de.html...
-Uploading ./website/programming/csharp/procedural-functional/loops.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/procedural-functional/loops.webp...
-Uploading ./website/programming/csharp/procedural-functional/Console_WriteLine_Basics.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/procedural-functional/Console_WriteLine_Basics.de.html...
-Uploading ./website/programming/csharp/procedural-functional/Cheatsheet_programming.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/procedural-functional/Cheatsheet_programming.jpg...
-Uploading ./website/programming/csharp/procedural-functional/other_operators.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/procedural-functional/other_operators.webp...
-Uploading ./website/programming/csharp/procedural-functional/Floating.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/procedural-functional/Floating.webp...
-Uploading ./website/programming/csharp/procedural-functional/Radar_Arrays.de.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/procedural-functional/Radar_Arrays.de.jpg...
-Uploading ./website/programming/csharp/procedural-functional/numbers.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/procedural-functional/numbers.webp...
-Uploading ./website/programming/csharp/procedural-functional/CSharp_Numerical_Floating_Types.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/procedural-functional/CSharp_Numerical_Floating_Types.de.html...
-Uploading ./website/programming/csharp/procedural-functional/Visual_studio_hello_world.miro.de.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/procedural-functional/Visual_studio_hello_world.miro.de.jpg...
-Uploading ./website/programming/csharp/procedural-functional/CSharp_Structs.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/procedural-functional/CSharp_Structs.de.html...
-Uploading ./website/programming/csharp/procedural-functional/CSharp_Loops_TicTacToe.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/procedural-functional/CSharp_Loops_TicTacToe.de.html...
-Uploading ./website/programming/csharp/procedural-functional/helloworld.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/procedural-functional/helloworld.webp...
-Uploading ./website/programming/csharp/procedural-functional/arrays.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/procedural-functional/arrays.webp...
-Uploading ./website/programming/csharp/procedural-functional/Radar_methods.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/procedural-functional/Radar_methods.jpg...
-Uploading ./website/programming/csharp/procedural-functional/Console_WriteLine_TicTacToe.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/procedural-functional/Console_WriteLine_TicTacToe.de.html...
-Uploading ./website/programming/csharp/procedural-functional/readline.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/procedural-functional/readline.webp...
-Uploading ./website/programming/csharp/procedural-functional/Radar_Bool.de.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/procedural-functional/Radar_Bool.de.jpg...
-Uploading ./website/programming/csharp/procedural-functional/Radar_Ref.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/procedural-functional/Radar_Ref.jpg...
-Uploading ./website/programming/csharp/procedural-functional/Radar_Loops.de.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/procedural-functional/Radar_Loops.de.jpg...
-Uploading ./website/programming/csharp/procedural-functional/Radar_Operators.de.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/procedural-functional/Radar_Operators.de.jpg...
-Uploading ./website/programming/csharp/procedural-functional/stack_heap.png to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/procedural-functional/stack_heap.png...
-Uploading ./website/programming/csharp/procedural-functional/CSharp_Arrays.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/procedural-functional/CSharp_Arrays.de.html...
-Uploading ./website/programming/csharp/procedural-functional/CSharp_Boolean_Operators_Basics.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/procedural-functional/CSharp_Boolean_Operators_Basics.de.html...
-Uploading ./website/programming/csharp/procedural-functional/Reference_Value.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/procedural-functional/Reference_Value.webp...
-Uploading ./website/programming/csharp/procedural-functional/CSharp_HelloWorld_Explanation.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/procedural-functional/CSharp_HelloWorld_Explanation.de.html...
-Uploading ./website/programming/csharp/procedural-functional/CSharp_Other_Operators_Basics.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/procedural-functional/CSharp_Other_Operators_Basics.de.html...
-Uploading ./website/programming/csharp/procedural-functional/conditional.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/procedural-functional/conditional.webp...
-Uploading ./website/programming/csharp/procedural-functional/CSharp_Loops.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/procedural-functional/CSharp_Loops.de.html...
-Uploading ./website/programming/csharp/procedural-functional/CSharp_Numerical_Types.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/procedural-functional/CSharp_Numerical_Types.de.html...
-Uploading ./website/programming/csharp/framework/Regular_Expressions.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/framework/Regular_Expressions.webp...
-Uploading ./website/programming/csharp/framework/Random.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/framework/Random.de.html...
-Uploading ./website/programming/csharp/framework/Radar_Files.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/framework/Radar_Files.jpg...
-Uploading ./website/programming/csharp/framework/Cheatsheet_Exceptions.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/framework/Cheatsheet_Exceptions.jpg...
-Uploading ./website/programming/csharp/framework/Files.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/framework/Files.webp...
-Uploading ./website/programming/csharp/framework/Exceptions.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/framework/Exceptions.html...
-Uploading ./website/programming/csharp/framework/Random.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/framework/Random.webp...
-Uploading ./website/programming/csharp/framework/Exceptions.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/framework/Exceptions.webp...
-Uploading ./website/programming/csharp/framework/Files.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/framework/Files.de.html...
-Uploading ./website/programming/csharp/framework/Cheatsheet_Regular_Expressions.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/framework/Cheatsheet_Regular_Expressions.jpg...
-Uploading ./website/programming/csharp/framework/Radar_Exceptions.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/framework/Radar_Exceptions.jpg...
-Uploading ./website/programming/csharp/framework/Radar_Regular_Expressions.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/framework/Radar_Regular_Expressions.jpg...
-Uploading ./website/programming/csharp/framework/Regular_Expressions.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/framework/Regular_Expressions.de.html...
-Uploading ./website/programming/csharp/framework/wpf/XAML.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/framework/wpf/XAML.jpg...
-Uploading ./website/programming/csharp/framework/wpf/Basics.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/framework/wpf/Basics.webp...
-Uploading ./website/programming/csharp/framework/wpf/New_WPF_App.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/framework/wpf/New_WPF_App.jpg...
-Uploading ./website/programming/csharp/framework/wpf/XML.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/framework/wpf/XML.jpg...
-Uploading ./website/programming/csharp/framework/wpf/Radar_WPF_Basics.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/framework/wpf/Radar_WPF_Basics.jpg...
-Uploading ./website/programming/csharp/framework/wpf/Basics.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/framework/wpf/Basics.de.html...
-Uploading ./website/programming/csharp/framework/wpf/Databinding.png to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/framework/wpf/Databinding.png...
-Uploading ./website/programming/csharp/framework/wpf/Radar_Databinding.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/framework/wpf/Radar_Databinding.jpg...
-Uploading ./website/programming/csharp/framework/wpf/Binding.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/framework/wpf/Binding.de.html...
-Uploading ./website/programming/csharp/framework/wpf/Binding.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/framework/wpf/Binding.jpg...
-Uploading ./website/programming/csharp/CSharp_Introduction/Radar_Value_Types.de.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/CSharp_Introduction/Radar_Value_Types.de.jpg...
-Uploading ./website/programming/csharp/CSharp_Introduction/Complex_Datastructures.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/CSharp_Introduction/Complex_Datastructures.webp...
-Uploading ./website/programming/csharp/CSharp_Introduction/Arrays.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/CSharp_Introduction/Arrays.de.html...
-Uploading ./website/programming/csharp/CSharp_Introduction/Variables.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/CSharp_Introduction/Variables.webp...
-Uploading ./website/programming/csharp/CSharp_Introduction/Functions.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/CSharp_Introduction/Functions.webp...
-Uploading ./website/programming/csharp/CSharp_Introduction/Conditional_Statements.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/CSharp_Introduction/Conditional_Statements.webp...
-Uploading ./website/programming/csharp/CSharp_Introduction/Radar_Conditional_Statements.de.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/CSharp_Introduction/Radar_Conditional_Statements.de.jpg...
-Uploading ./website/programming/csharp/CSharp_Introduction/Strings.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/CSharp_Introduction/Strings.webp...
-Uploading ./website/programming/csharp/CSharp_Introduction/Loops.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/CSharp_Introduction/Loops.webp...
-Uploading ./website/programming/csharp/CSharp_Introduction/Strings.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/CSharp_Introduction/Strings.de.html...
-Uploading ./website/programming/csharp/CSharp_Introduction/Radar_Arrays.de.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/CSharp_Introduction/Radar_Arrays.de.jpg...
-Uploading ./website/programming/csharp/CSharp_Introduction/Complex_Datastructures.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/CSharp_Introduction/Complex_Datastructures.de.html...
-Uploading ./website/programming/csharp/CSharp_Introduction/Operators.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/CSharp_Introduction/Operators.webp...
-Uploading ./website/programming/csharp/CSharp_Introduction/Radar_Functions.de.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/CSharp_Introduction/Radar_Functions.de.jpg...
-Uploading ./website/programming/csharp/CSharp_Introduction/Functions.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/CSharp_Introduction/Functions.de.html...
-Uploading ./website/programming/csharp/CSharp_Introduction/Operators.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/CSharp_Introduction/Operators.de.html...
-Uploading ./website/programming/csharp/CSharp_Introduction/Arrays.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/CSharp_Introduction/Arrays.webp...
-Uploading ./website/programming/csharp/CSharp_Introduction/Radar_Loops.de.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/CSharp_Introduction/Radar_Loops.de.jpg...
-Uploading ./website/programming/csharp/CSharp_Introduction/Radar_Operators.de.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/CSharp_Introduction/Radar_Operators.de.jpg...
-Uploading ./website/programming/csharp/CSharp_Introduction/Radar_Complex_Datastructures.de.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/CSharp_Introduction/Radar_Complex_Datastructures.de.jpg...
-Uploading ./website/programming/csharp/CSharp_Introduction/Conditional_statements.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/CSharp_Introduction/Conditional_statements.de.html...
-Uploading ./website/programming/csharp/CSharp_Introduction/Loops.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/CSharp_Introduction/Loops.de.html...
-Uploading ./website/programming/csharp/CSharp_Introduction/Variables.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/CSharp_Introduction/Variables.de.html...
-Uploading ./website/programming/csharp/oop/Create_n_cleanup_objects.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/oop/Create_n_cleanup_objects.jpg...
-Uploading ./website/programming/csharp/oop/Gameboard_store.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/oop/Gameboard_store.webp...
-Uploading ./website/programming/csharp/oop/Visibility_n_lifespan.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/oop/Visibility_n_lifespan.jpg...
-Uploading ./website/programming/csharp/oop/CSharp_Basics.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/oop/CSharp_Basics.webp...
-Uploading ./website/programming/csharp/oop/Classes.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/oop/Classes.jpg...
-Uploading ./website/programming/csharp/oop/CSharp_Access_Modifiers.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/oop/CSharp_Access_Modifiers.de.html...
-Uploading ./website/programming/csharp/oop/CSharp_Samples.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/oop/CSharp_Samples.de.html...
-Uploading ./website/programming/csharp/oop/Properties.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/oop/Properties.webp...
-Uploading ./website/programming/csharp/oop/CSharp_Samples.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/oop/CSharp_Samples.webp...
-Uploading ./website/programming/csharp/oop/Compare_Objects.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/oop/Compare_Objects.webp...
-Uploading ./website/programming/csharp/oop/Static_n_not_static.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/oop/Static_n_not_static.jpg...
-Uploading ./website/programming/csharp/oop/Radar_OOP.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/oop/Radar_OOP.jpg...
-Uploading ./website/programming/csharp/oop/CSharp_Basics.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/oop/CSharp_Basics.de.html...
-Uploading ./website/programming/csharp/oop/Polymorphism_n_abstract.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/oop/Polymorphism_n_abstract.jpg...
-Uploading ./website/programming/csharp/oop/Access_Modifiers.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/oop/Access_Modifiers.webp...
-Uploading ./website/programming/csharp/oop/Gameboard_store.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/oop/Gameboard_store.de.html...
-Uploading ./website/programming/csharp/oop/Constructors.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/oop/Constructors.de.html...
-Uploading ./website/programming/csharp/oop/Constructors.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/oop/Constructors.webp...
-Uploading ./website/programming/csharp/oop/Compare_Objects.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/oop/Compare_Objects.de.html...
-Uploading ./website/programming/csharp/oop/Properties.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/JederKannCoden/programming/csharp/oop/Properties.de.html...
-Upload complete.
-Connection closed.
-</pre>
-</div>
+<p>Um <code>///</code>-Kommentare sichtbar zu machen, aktiviere in <code>.csproj</code>:</p>
+<div class="highlight"><pre><span></span><span class="nt">&lt;PropertyGroup&gt;</span>
+<span class="w">  </span><span class="nt">&lt;GenerateDocumentationFile&gt;</span>true<span class="nt">&lt;/GenerateDocumentationFile&gt;</span>
+<span class="nt">&lt;/PropertyGroup&gt;</span>
+</pre></div>
+<p>Und ergänze in <code>AddSwaggerGen()</code>:</p>
+<div class="highlight"><pre><span></span><span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddSwaggerGen</span><span class="p">(</span><span class="n">options</span><span class="w"> </span><span class="o">=&gt;</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">xmlFile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">$"{Assembly.GetExecutingAssembly().GetName().Name}.xml"</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">xmlPath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Path</span><span class="p">.</span><span class="n">Combine</span><span class="p">(</span><span class="n">AppContext</span><span class="p">.</span><span class="n">BaseDirectory</span><span class="p">,</span><span class="w"> </span><span class="n">xmlFile</span><span class="p">);</span>
+<span class="w">    </span><span class="n">options</span><span class="p">.</span><span class="n">IncludeXmlComments</span><span class="p">(</span><span class="n">xmlPath</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+<h3 id="Zusammenfassung">Zusammenfassung<a class="anchor-link" href="#Zusammenfassung">¶</a></h3><table>
+<thead>
+<tr>
+<th>Schritt</th>
+<th>Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>✅ NuGet-Paket installieren</td>
+<td><code>Swashbuckle.AspNetCore</code></td>
+</tr>
+<tr>
+<td>✅ In <code>Program.cs</code> integrieren</td>
+<td><code>.AddSwaggerGen()</code>, <code>.UseSwagger()</code></td>
+</tr>
+<tr>
+<td>✅ XML-Kommentare aktivieren (optional)</td>
+<td><code>&lt;GenerateDocumentationFile&gt;true&lt;/...&gt;</code></td>
+</tr>
+<tr>
+<td>✅ UI im Browser erreichbar</td>
+<td><code>https://localhost:&lt;port&gt;/swagger</code></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
