@@ -23,16 +23,19 @@ namespace WasMachenWirDenn
 
         public string ErsterBindingText { get; set; } = "Text1";
 
+        public SpielViewModel ViewModel { get; }
+
         int counter;
         public MainWindow()
         {
             InitializeComponent();
             counter = 0;
-            CreateGameBoard();
-            DataContext = new MainDataContext();
+            //CreateGameBoard();
+            ViewModel = new SpielViewModel();
+            DataContext = ViewModel;
         }
 
-        private void CreateGameBoard()
+        /*private void CreateGameBoard()
         {
             GameBoard.Rows = BoardSize;
             GameBoard.Columns = BoardSize;
@@ -47,7 +50,7 @@ namespace WasMachenWirDenn
                 button.Click += GameBoard_Button_Click;
                 GameBoard.Children.Add(button);
             }
-        }
+        }*/
 
         void GameBoard_Button_Click(object sender, RoutedEventArgs e)
         {
@@ -64,6 +67,14 @@ namespace WasMachenWirDenn
             //myTextBox.Text = "Geklickt";
             counter++;
             myButton.Content = $"Ich bin ein Osterei. Du hast mit {counter} Mal geklickt!";
+        }
+
+        private void FeldButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (sender is Button button && button.DataContext is Feld feld)
+            {
+                ViewModel.FeldClicked(feld);
+            }
         }
     }
 }
