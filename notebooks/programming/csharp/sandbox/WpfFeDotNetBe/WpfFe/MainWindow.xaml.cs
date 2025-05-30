@@ -19,21 +19,25 @@ namespace WpfFe
     public partial class MainWindow : Window
     {
         private readonly WeatherService _weatherService;
+        private readonly PlayerService _playerService;
 
         public MainWindow()
         {
             InitializeComponent();
             string baseUrl = ConfigurationManager.AppSettings["ApiBaseUrl"];
             _weatherService = new WeatherService(baseUrl);
-            LoadWeatherData();
+            _playerService = new PlayerService(baseUrl);
+            LoadData();
         }
 
-        private async void LoadWeatherData()
+        private async void LoadData()
         {
             try
             {
                 var data = await _weatherService.GetForecastAsync();
                 WeatherGrid.ItemsSource = data;
+                var data2 = await _playerService.GetPlayersAsync();
+                PlayerGrid.ItemsSource = data2;
             }
             catch (Exception ex)
             {

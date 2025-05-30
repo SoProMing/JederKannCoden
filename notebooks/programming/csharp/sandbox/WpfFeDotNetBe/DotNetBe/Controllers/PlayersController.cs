@@ -53,7 +53,7 @@ namespace DotNetBe.Controllers
         }
 
         // Initialisiert aus GitLab (einmalig aufrufbar)
-        [HttpPost("loadFromGitlab")]
+        [HttpGet("loadFromGitlab")]
         public async Task<IActionResult> LoadFromGitlab()
         {
             var gitlabUsers = await GitLabUserLoader.FetchUsersAsync(12983);
