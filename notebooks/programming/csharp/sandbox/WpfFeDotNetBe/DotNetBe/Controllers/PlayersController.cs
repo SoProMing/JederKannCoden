@@ -56,7 +56,7 @@ namespace DotNetBe.Controllers
         [HttpPost("loadFromGitlab")]
         public async Task<IActionResult> LoadFromGitlab()
         {
-            var gitlabUsers = await GitLabUserLoader.FetchUsersAsync();
+            var gitlabUsers = await GitLabUserLoader.FetchUsersAsync(12983);
 
             // Spieler aus GitLab-Daten erzeugen
             foreach (var user in gitlabUsers)
