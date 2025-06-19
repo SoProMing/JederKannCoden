@@ -7517,28 +7517,28 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Jeder-kann-coden---Inhaltsverzeichnis">Jeder kann coden - Inhaltsverzeichnis<a class="anchor-link" href="#Jeder-kann-coden---Inhaltsverzeichnis">¶</a></h1><table border="0">
+<p><a href="../../abstract/Contents.de.html">Jeder kann coden</a> / <a href="../../Programming_And_TicTacToe.de.html">Programmieren &amp; TicTacToe</a> / <a href="../../Objectoriented_Programming.de.html">Objektorientierte Programmierung</a> / <a href="CSharp_Basics.de.html">Objektorientierte Programmierung in C#</a></p>
+<h1 id="Events">Events<a class="anchor-link" href="#Events">¶</a></h1><table border="0">
 <tr>
 <td>
-<img alt="No description has been provided for this image" src="Everybody_can_code.webp"/>
+<img alt="No description has been provided for this image" src="Events.jpeg"/>
 </td>
 <td rowspan="2">
-<a href="https://miro.com/app/board/uXjVPm0lbTo=/?moveToWidget=3458764607889708296&amp;cot=14"><img alt="No description has been provided for this image" src="Radar.de.jpg"/></a>
+<a href="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3458764554347680798&amp;cot=14"><img alt="No description has been provided for this image" src="Radar_Lambda_n_Delegate.jpg"/></a>
 </td>
 </tr>
 <tr>
 <td>
-<a href="https://www.codewars.com">Link zu codewars</a><br/>
-<a href="https://www.hackerrank.com">Link zu hackerrank</a><br/>
-<a href="https://www.w3schools.com/">W3Schools: Programmier-Tutorials für Anfänger</a> <br/>
-<a href="https://www.freecodecamp.org/">freeCodeCamp: Interaktives Lernen für Programmieren</a> <br/>
-<a href="https://cs50.harvard.edu/x/">CS50 von Harvard: Einführung in Informatik</a> <br/>
-<a href="https://visualgo.net/">Visualgo: Visualisierung von Algorithmen</a> <br/>
-<a href="https://teachyourselfcs.com/">Teach Yourself Computer Science</a> <br/>
-<a href="https://guides.github.com/introduction/git-handbook/">Git und GitHub Einführung</a> <br/>
-<a href="https://refactoring.guru/">Refactoring Guru: Clean Code Konzepte</a> <br/>
-<a href="https://www.codewars.com/">Codewars: Programmier-Challenges für alle Niveaus</a> <br/>
-<a href="https://www.hackerrank.com/">HackerRank: Coding-Challenges und Wettbewerbe</a>
+<a href="https://learn.microsoft.com/de-de/dotnet/csharp/programming-guide/events/">Events (Microsoft Docs)</a><br/>
+<a href="https://learn.microsoft.com/de-de/dotnet/csharp/programming-guide/delegates/">Delegates (Microsoft Docs)</a><br/>
+<a href="https://learn.microsoft.com/de-de/dotnet/csharp/language-reference/operators/lambda-expressions">Lambda-Ausdrücke (Microsoft Docs)</a><br/>
+<a href="https://www.c-sharpcorner.com/UploadFile/1e050f/events-in-C-Sharp/">Events in C# – C# Corner</a><br/>
+<a href="https://code-maze.com/csharp-events/">Understanding Events in C# (Code Maze)</a><br/>
+<a href="https://www.tutorialsteacher.com/csharp/csharp-event">C# Event Tutorial – TutorialsTeacher</a><br/>
+<a href="https://www.dotnetperls.com/event">C# Event Examples – DotNetPerls</a><br/>
+<a href="https://refactoring.guru/design-patterns/observer/csharp/example">Observer Pattern in C# – Refactoring Guru</a><br/>
+<a href="https://learn.microsoft.com/de-de/dotnet/api/system.eventhandler-1">System.EventHandler&lt;T&gt; API-Dokumentation</a><br/>
+<a href="https://stackoverflow.com/questions/2406668/difference-between-event-and-delegate">StackOverflow: Unterschied zwischen Event und Delegate</a>
 </td>
 </tr>
 </table>
@@ -7552,95 +7552,270 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Inhaltsverzeichnis">Inhaltsverzeichnis<a class="anchor-link" href="#Inhaltsverzeichnis">¶</a></h2><h3 id="Vorbereitung">Vorbereitung<a class="anchor-link" href="#Vorbereitung">¶</a></h3><ul>
-<li><a href="../csharp/CSharp_icebreaker.de.html">Eisbrecher</a></li>
-<li><a href="Number_Systems.de.html">Zahlensysteme und Zeichen</a></li>
-<li><a href="../csharp/tools/Toolchain.de.html">Werkzeuge zur Vorlesung</a></li>
+<p>Ein <strong>Event</strong> ist ein Mechanismus, mit dem ein Objekt <strong>Benachrichtigungen</strong> über bestimmte Änderungen oder Aktionen an interessierte Abonnenten (Observer) senden kann. Es basiert auf dem <strong>Publisher/Subscriber-Prinzip</strong>.</p>
+<p><strong>Events nutzen Delegaten als Typ</strong> – also Methoden-Signaturen, die aufgerufen werden, wenn das Event ausgelöst wird.</p>
+<h3 id="Grundstruktur-eines-Events">Grundstruktur eines Events<a class="anchor-link" href="#Grundstruktur-eines-Events">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="k">class</span><span class="w"> </span><span class="nc">Alarm</span>
+<span class="p">{</span>
+    <span class="n">public</span> <span class="n">event</span> <span class="n">Action</span> <span class="n">AlarmAusgeloest</span><span class="p">;</span>
+
+    <span class="n">public</span> <span class="n">void</span> <span class="n">Ausloesen</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Alarm wird ausgelöst!"</span><span class="p">);</span>
+        <span class="n">AlarmAusgeloest</span><span class="err">?</span><span class="o">.</span><span class="n">Invoke</span><span class="p">();</span> <span class="o">//</span> <span class="n">Aufruf</span> <span class="n">aller</span> <span class="n">registrierten</span> <span class="n">Methoden</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Wichtige-Merkmale:">Wichtige Merkmale:<a class="anchor-link" href="#Wichtige-Merkmale:">¶</a></h4><ul>
+<li><code>event</code> schränkt den Zugriff ein (z. B. keine direkten Zuweisungen von außen)</li>
+<li>Nur <code>+=</code> (Abonnieren) und <code>-=</code> (Abmelden) sind erlaubt von außen</li>
 </ul>
-<h3 id="Grundlagen">Grundlagen<a class="anchor-link" href="#Grundlagen">¶</a></h3><ul>
-<li><a href="Programming_And_TicTacToe.de.html">Programmieren &amp; TicTacToe:</a> Prozedurale Programmierung am Beispiel von Python &amp; TicTacToe</li>
-<li><a href="../csharp/CSharp_Introduction.de.html">Einführung in C#:</a> Prozedurale Programmierung in C# als Übersicht<ul>
-<li><a href="../csharp/CSharp_Introduction/Variables.de.html">Weitere Grundlagen zu Variablen</a></li>
-<li><a href="../csharp/CSharp_Introduction/Strings.de.html">Weitere Grundlagen zu String</a></li>
-<li><a href="../csharp/CSharp_Introduction/Conditional_statements.de.html">Weitere Grundlagen zu bedingten Anweisungen</a></li>
-<li><a href="../csharp/CSharp_Introduction/Loops.de.html">Weitere Grundlagen zu Schleifen</a></li>
-<li><a href="../csharp/CSharp_Introduction/Operators.de.html">Weitere Grundlagen zu Operatoren</a></li>
-<li><a href="../csharp/CSharp_Introduction/Functions.de.html">Weitere Grundlagen zu Funktionen</a></li>
-<li><a href="../csharp/CSharp_Introduction/Arrays.de.html">Weitere Grundlagen zu Arrays</a></li>
-<li><a href="../csharp/CSharp_Introduction/Complex_Datastructures.de.html">Weitere Grundlagen zu komplexen Datenstrukturen</a></li>
-</ul>
-</li>
-</ul>
-<h3 id="Vertiefung">Vertiefung<a class="anchor-link" href="#Vertiefung">¶</a></h3><h4 id="Textausgabe">Textausgabe<a class="anchor-link" href="#Textausgabe">¶</a></h4><ul>
-<li><a href="../csharp/procedural-functional/Console_WriteLine_Basics.de.html">WriteLine Basiswissen</a></li>
-<li><a href="../csharp/procedural-functional/CSharp_HelloWorld_Explanation.de.html">Hallo Welt!</a></li>
-<li><a href="../csharp/procedural-functional/Console_WriteLine_Samples.de.html">WriteLine Samples</a></li>
-<li><a href="../csharp/procedural-functional/Console_WriteLine_TicTacToe.de.html">WriteLine &amp; TicTacToe</a></li>
-</ul>
-<h4 id="Texteingabe">Texteingabe<a class="anchor-link" href="#Texteingabe">¶</a></h4><ul>
-<li><a href="../csharp/procedural-functional/Console_ReadLine_Basics.de.html">ReadLine &amp; TicTacToe</a></li>
-</ul>
-<h4 id="Operatoren">Operatoren<a class="anchor-link" href="#Operatoren">¶</a></h4><ul>
-<li><a href="../csharp/procedural-functional/CSharp_Boolean_Operators_Basics.de.html">Boolesche Operatoren</a></li>
-<li><a href="../csharp/procedural-functional/CSharp_Other_Operators_Basics.de.html">Weitere Operatoren</a></li>
-</ul>
-<h4 id="Datentypen">Datentypen<a class="anchor-link" href="#Datentypen">¶</a></h4><ul>
-<li><a href="../csharp/procedural-functional/CSharp_Numerical_Types.de.html">Numerische Typen</a></li>
-<li><a href="../csharp/procedural-functional/CSharp_Numerical_Floating_Types.de.html">Numerische Gleitkomma-Typen</a></li>
-<li><a href="../csharp/procedural-functional/CSharp_String_Type.de.html">String Typen</a></li>
-<li><a href="../csharp/procedural-functional/CSharp_Arrays.de.html">Arrays</a></li>
-<li><a href="../csharp/procedural-functional/CSharp_Structs.de.html">Structs</a></li>
-<li><a href="../csharp/procedural-functional/CSharp_Enums.de.html">Enums</a></li>
-</ul>
-<h4 id="Kontrollstrukturen">Kontrollstrukturen<a class="anchor-link" href="#Kontrollstrukturen">¶</a></h4><ul>
-<li><a href="../csharp/procedural-functional/CSharp_Conditional.de.html">Bedingte Anweisungen</a></li>
-<li><a href="../csharp/procedural-functional/CSharp_Loops.de.html">Schleifen</a></li>
-<li><a href="../csharp/procedural-functional/CSharp_Conditional_TicTacToe.de.html">Bedingte Anweisungen &amp; TicTacToe</a></li>
-</ul>
-<h4 id=".NET-framework">.NET framework<a class="anchor-link" href="#.NET-framework">¶</a></h4><ul>
-<li><a href="../csharp/framework/Random.de.html">System.Random</a></li>
-<li><a href="../csharp/framework/Regular_Expressions.de.html">Reguläre Ausdrücke</a></li>
-<li><a href="../csharp/framework/Exceptions.html">Exceptions</a></li>
-<li><a href="../csharp/framework/Files.de.html">Dateioperationen</a></li>
-<li><a href="../csharp/framework/Async_n_await.de.html">Asynchrones Programmieren</a></li>
-</ul>
-<h3 id="TicTacToe-in-einer-einzelnen-Prozedur"><a href="../csharp/procedural-functional/CSharp_Loops_TicTacToe.de.html">TicTacToe in einer einzelnen Prozedur</a><a class="anchor-link" href="#TicTacToe-in-einer-einzelnen-Prozedur">¶</a></h3><h3 id="Funktionale-Programmierung">Funktionale Programmierung<a class="anchor-link" href="#Funktionale-Programmierung">¶</a></h3><ul>
-<li><a href="../csharp/procedural-functional/CSharp_Methods_Functions.de.html">Funktionen &amp; Prozeduren</a></li>
-</ul>
-<h3 id="Debugging">Debugging<a class="anchor-link" href="#Debugging">¶</a></h3><ul>
-<li><a href="../csharp/tools/Debugger.de.html">Debugging &amp; Breakpoints</a></li>
-<li><a href="../csharp/procedural-functional/CSharp_Reference_Value.de.html">Referenz- &amp; Werttypen</a></li>
-</ul>
-<h3 id="Objektorientierte-Programmierung">Objektorientierte Programmierung<a class="anchor-link" href="#Objektorientierte-Programmierung">¶</a></h3><h4 id="Grundlagen">Grundlagen<a class="anchor-link" href="#Grundlagen">¶</a></h4><ul>
-<li><a href="../Objectoriented_Programming.de.html">Einleitung</a></li>
-<li><a href="../csharp/oop/CSharp_Basics.de.html">Objektorientierte Programmierung in C# Grundlagen</a></li>
-</ul>
-<h4 id="Vertiefung">Vertiefung<a class="anchor-link" href="#Vertiefung">¶</a></h4><ul>
-<li><a href="../csharp/oop/CSharp_Samples.de.html">Objektorientierte Programmierung in C# Samples</a><ul>
-<li><a href="../csharp/oop/CSharp_Access_Modifiers.de.html">Zugriffsmodifizierer</a></li>
-<li><a href="../csharp/oop/Constructors.de.html">Konstruktoren</a></li>
-<li><a href="../csharp/oop/Properties.de.html">Properties</a></li>
-<li><a href="../csharp/oop/Lambdas_n_delegates.de.html">Lambda-Ausdrücke und Delegaten</a></li>
-<li><a href="../csharp/oop/Events.de.html">Events</a></li>
-</ul>
-</li>
-<li><a href="../csharp/oop/Compare_Objects.de.html">💡 Vergleich von Objekten</a></li>
-</ul>
-<h4 id="Anwendung">Anwendung<a class="anchor-link" href="#Anwendung">¶</a></h4><ul>
-<li><a href="../csharp/oop/Gameboard_store.de.html">Beispiel: ein Spielstandmanagement in C#</a></li>
-</ul>
-<h3 id="GUI-Programmierung">GUI-Programmierung<a class="anchor-link" href="#GUI-Programmierung">¶</a></h3><h4 id="Grundlagen">Grundlagen<a class="anchor-link" href="#Grundlagen">¶</a></h4><ul>
-<li><a href="../csharp/framework/wpf/Basics.de.html">C# und WPF</a></li>
-<li><a href="../csharp/framework/wpf/Binding.de.html">Data Binding mit WPF und C#</a></li>
-</ul>
-<h3 id="Grundlegende-Backend-Programmierung">Grundlegende Backend-Programmierung<a class="anchor-link" href="#Grundlegende-Backend-Programmierung">¶</a></h3><ul>
-<li><a href="../WebAPIs.de.html">Web-APIs</a></li>
-<li><a href="../csharp/framework/dotnet_core/DotNetCoreBackend.de.html">Backend-Programmierung mit ASP.NET Core</a></li>
-<li><a href="../csharp/framework/dotnet_core/SwaggerAddon.de.html">Swagger Addon</a></li>
-<li><a href="../csharp/framework/dotnet_core/SamplePlayerManagement.de.html">Beispiel einer Spielerverwaltung als Backend</a></li>
-</ul>
-<h3 id="Tools">Tools<a class="anchor-link" href="#Tools">¶</a></h3><ul>
-<li><a href="../../tools/GIT.de.html">Quellcodeverwaltung mit Git</a></li>
+<h3 id="Warum-event-statt-nur-Delegate?">Warum <code>event</code> statt nur <code>Delegate</code>?<a class="anchor-link" href="#Warum-event-statt-nur-Delegate?">¶</a></h3><p>Ohne <code>event</code> könnten andere Objekte die gesamte Delegatenliste <strong>überschreiben</strong> – mit <code>event</code> wird das verhindert:</p>
+<div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="n">Action</span><span class="w"> </span><span class="n">SomethingHappened</span><span class="p">;</span><span class="w"> </span><span class="c1">// gefährlich – kann überschrieben werden</span>
+<span class="k">public</span><span class="w"> </span><span class="k">event</span><span class="w"> </span><span class="n">Action</span><span class="w"> </span><span class="n">SaferEvent</span><span class="p">;</span><span class="w">  </span><span class="c1">// nur += und -= von außen erlaubt</span>
+</pre></div>
+<h3 id="Verwendung-mit-Lambdas">Verwendung mit Lambdas<a class="anchor-link" href="#Verwendung-mit-Lambdas">¶</a></h3><p>Wenn du Lambdas kennst, kannst du elegant Event-Handler registrieren:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">var</span> <span class="n">alarm</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Alarm</span><span class="p">();</span>
+<span class="n">alarm</span><span class="o">.</span><span class="n">AlarmAusgeloest</span> <span class="o">+=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Alarm wurde gehört!"</span><span class="p">);</span>
+<span class="n">alarm</span><span class="o">.</span><span class="n">Ausloesen</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Alarm wird ausgelöst!
+Alarm wurde gehört!
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Beispiel-mit-eigenen-EventArgs">Beispiel mit eigenen EventArgs<a class="anchor-link" href="#Beispiel-mit-eigenen-EventArgs">¶</a></h3><p>Für komplexere Daten kannst du eigene EventArgs-Klassen nutzen:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="k">class</span><span class="w"> </span><span class="nc">TemperatureEventArgs</span> <span class="p">:</span> <span class="n">EventArgs</span>
+<span class="p">{</span>
+    <span class="n">public</span> <span class="n">double</span> <span class="n">Temperatur</span> <span class="p">{</span> <span class="n">get</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="n">public</span> <span class="n">TemperatureEventArgs</span><span class="p">(</span><span class="n">double</span> <span class="n">temperatur</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Temperatur</span> <span class="o">=</span> <span class="n">temperatur</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">public</span> <span class="k">class</span><span class="w"> </span><span class="nc">Thermometer</span>
+<span class="p">{</span>
+    <span class="n">public</span> <span class="n">event</span> <span class="n">EventHandler</span><span class="o">&lt;</span><span class="n">TemperatureEventArgs</span><span class="o">&gt;</span> <span class="n">TemperaturGeaendert</span><span class="p">;</span>
+
+    <span class="n">public</span> <span class="n">void</span> <span class="n">NeueTemperatur</span><span class="p">(</span><span class="n">double</span> <span class="n">temperatur</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">TemperaturGeaendert</span><span class="err">?</span><span class="o">.</span><span class="n">Invoke</span><span class="p">(</span><span class="n">this</span><span class="p">,</span> <span class="n">new</span> <span class="n">TemperatureEventArgs</span><span class="p">(</span><span class="n">temperatur</span><span class="p">));</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Verwendung:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">Thermometer</span> <span class="n">thermometer</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Thermometer</span><span class="p">();</span> <span class="o">//</span> <span class="n">Erstellen</span> <span class="n">einer</span> <span class="n">Instanz</span> <span class="n">des</span> <span class="n">Thermometers</span>
+<span class="n">thermometer</span><span class="o">.</span><span class="n">NeueTemperatur</span><span class="p">(</span><span class="mf">25.0</span><span class="p">);</span> <span class="o">//</span> <span class="n">Nutzen</span> <span class="n">der</span> <span class="n">Methode</span><span class="p">,</span> <span class="n">um</span> <span class="n">eine</span> <span class="n">neue</span> <span class="n">Temperatur</span> <span class="n">zu</span> <span class="n">setzen</span>
+
+<span class="o">//</span> <span class="n">Registrieren</span> <span class="n">eines</span> <span class="n">Ereignishandlers</span> <span class="n">für</span> <span class="n">Temperaturänderungen</span>
+<span class="n">thermometer</span><span class="o">.</span><span class="n">TemperaturGeaendert</span> <span class="o">+=</span> <span class="p">(</span><span class="n">sender</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span> <span class="o">=&gt;</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Neue Temperatur: </span><span class="si">{args.Temperatur}</span><span class="s2"> °C"</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="n">thermometer</span><span class="o">.</span><span class="n">NeueTemperatur</span><span class="p">(</span><span class="mf">30.0</span><span class="p">);</span> <span class="o">//</span> <span class="n">Setzen</span> <span class="n">einer</span> <span class="n">neuen</span> <span class="n">Temperatur</span><span class="p">,</span> <span class="n">was</span> <span class="n">das</span> <span class="n">Ereignis</span> <span class="n">auslöst</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Neue Temperatur: 30 °C
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="%F0%9F%92%A1-Best-Practices">💡 Best Practices<a class="anchor-link" href="#%F0%9F%92%A1-Best-Practices">¶</a></h3><table>
+<thead>
+<tr>
+<th>Thema</th>
+<th>Empfehlung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EventHandler</td>
+<td>Nutze <code>EventHandler</code> oder <code>EventHandler&lt;T&gt;</code> für eigene Events</td>
+</tr>
+<tr>
+<td>Nullprüfung</td>
+<td>Verwende <code>?.Invoke()</code> oder sichere Aufrufe</td>
+</tr>
+<tr>
+<td>Kapselung</td>
+<td>Mach Events <code>public</code>, aber nur <code>private</code>-set für Auslöser</td>
+</tr>
+<tr>
+<td>Benennung</td>
+<td>Verwende das Verb in der Vergangenheitsform: <code>SomethingHappened</code></td>
+</tr>
+<tr>
+<td>Abmeldung</td>
+<td>Denke daran, Lambdas können nicht wieder abgemeldet werden (kein Handle!)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="%F0%9F%A7%A8-Schwachstelle:-Anonyme-Handler">🧨 Schwachstelle: Anonyme Handler<a class="anchor-link" href="#%F0%9F%A7%A8-Schwachstelle:-Anonyme-Handler">¶</a></h3><p>Du kannst einen Event-Handler mit Lambda registrieren, aber <strong>nicht wieder entfernen</strong>, wenn du kein Handle hast:</p>
+<div class="highlight"><pre><span></span><span class="c1">// Diese Zeile lässt sich nicht wieder entfernen!</span>
+<span class="n">obj</span><span class="p">.</span><span class="n">EinEvent</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"..."</span><span class="p">);</span><span class="w"> </span>
+</pre></div>
+<p>Alternative:</p>
+<div class="highlight"><pre><span></span><span class="n">EventHandler</span><span class="w"> </span><span class="n">handler</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"..."</span><span class="p">);</span>
+<span class="n">obj</span><span class="p">.</span><span class="n">EinEvent</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">handler</span><span class="p">;</span>
+<span class="c1">// später:</span>
+<span class="n">obj</span><span class="p">.</span><span class="n">EinEvent</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">handler</span><span class="p">;</span>
+</pre></div>
+<h3 id="Custom-Accessors-(fortgeschritten)">Custom Accessors (fortgeschritten)<a class="anchor-link" href="#Custom-Accessors-(fortgeschritten)">¶</a></h3><p>Du kannst eigene <code>add</code> / <code>remove</code> Accessoren definieren:</p>
+<div class="highlight"><pre><span></span><span class="k">private</span><span class="w"> </span><span class="n">EventHandler</span><span class="w"> </span><span class="n">myEvent</span><span class="p">;</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">event</span><span class="w"> </span><span class="n">EventHandler</span><span class="w"> </span><span class="n">MyEvent</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">add</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"Abonniert!"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">myEvent</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="k">value</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">remove</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"Abgemeldet!"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">myEvent</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="k">value</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<h3 id="Events-vs-Callbacks">Events vs Callbacks<a class="anchor-link" href="#Events-vs-Callbacks">¶</a></h3><table>
+<thead>
+<tr>
+<th>Aspekt</th>
+<th>Event</th>
+<th>Callback</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Teilnehmer</td>
+<td>Viele Abonnenten</td>
+<td>Genau eine Methode</td>
+</tr>
+<tr>
+<td>Bindung</td>
+<td>Dynamisch via <code>+=</code></td>
+<td>Direkt als Parameter übergeben</td>
+</tr>
+<tr>
+<td>Architektur</td>
+<td>Publisher/Subscriber</td>
+<td>Direkt gekoppelt</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Zusammenfassung">Zusammenfassung<a class="anchor-link" href="#Zusammenfassung">¶</a></h3><ul>
+<li>Events sind eine sichere, strukturierte Art, Delegaten zu veröffentlichen</li>
+<li>Verwende <code>event</code>-Schlüsselwort, um Zugriff einzuschränken</li>
+<li>Nutze <code>EventHandler</code> / <code>EventHandler&lt;T&gt;</code> für standardkonforme Signaturen</li>
+<li>Lambdas sind praktisch – aber ohne Referenz nicht wieder abzumelden</li>
+<li>Achte auf Speicherlecks durch nicht entfernte Handler (z. B. bei statischen Events!)</li>
 </ul>
 </div>
 </div>
@@ -7652,11 +7827,143 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Anhang">Anhang<a class="anchor-link" href="#Anhang">¶</a></Create_pdf.en.html">Erzeugen von HTML-Seiten aus den notebooks</a></p>
-<p><a href="../../Deploy_Contents.en.html">Erzeugen einer Webpage aus HTML-Seiten</a></p>
-<p><a href="../cmdline/Shells.de.html">Kommandozeile</a></p>
-<p><a href="../../tools/UTM_n_VS.de.html">Windows auf dem Mac mit UTM</a></p>
-<p><a href="../../htw/Team_Signup.de.html">Team Anmeldung</a></p>
+<h2 id="Cheatsheet-f%C3%BCr-Events">Cheatsheet für Events<a class="anchor-link" href="#Cheatsheet-f%C3%BCr-Events">¶</a></h2><p><a href="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3458764525304733582&amp;cot=14"><img alt="No description has been provided for this image" src="CheatsheetEvents.jpg"/></a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Vertiefung">Vertiefung<a class="anchor-link" href="#Vertiefung">¶</a></h2><h3 id="1.-Multicast-Delegaten-&amp;-Aufrufreihenfolge">1. Multicast-Delegaten &amp; Aufrufreihenfolge<a class="anchor-link" href="#1.-Multicast-Delegaten-&amp;-Aufrufreihenfolge">¶</a></h3><p>Ein Event in C# ist ein <strong>Multicast-Delegat</strong>. Das heißt: Mehrere Methoden können sich registrieren und werden <strong>in der Reihenfolge des <code>+=</code></strong> aufgerufen.</p>
+<div class="highlight"><pre><span></span><span class="n">myEvent</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">MethodeA</span><span class="p">;</span>
+<span class="n">myEvent</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">MethodeB</span><span class="p">;</span>
+</pre></div>
+<p>Wenn <code>myEvent</code> ausgelöst wird, geschieht dies in der Reihenfolge:</p>
+<ul>
+<li><code>MethodeA</code></li>
+<li><code>MethodeB</code></li>
+</ul>
+<p>Falls eine Methode eine <strong>Exception</strong> wirft, werden die <strong>restlichen nicht aufgerufen</strong>, es sei denn du fängst sie manuell ab:</p>
+<div class="highlight"><pre><span></span><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="kt">var</span><span class="w"> </span><span class="n">handler</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">myEvent</span><span class="p">.</span><span class="n">GetInvocationList</span><span class="p">())</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">handler</span><span class="p">.</span><span class="n">DynamicInvoke</span><span class="p">();</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">ex</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$"Fehler: {ex.Message}"</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<h3 id="2.-Memory-Leaks-durch-Event-Handler">2. Memory Leaks durch Event-Handler<a class="anchor-link" href="#2.-Memory-Leaks-durch-Event-Handler">¶</a></h3><p>Ein typischer Fehler: Du abonnierst ein Event, aber meldest dich nie wieder ab. Wenn der Publisher dann <strong>lange lebt (z. B. statisch oder Singleton)</strong>, wird der Subscriber <strong>niemals vom GC freigegeben</strong>.</p>
+<p>Beispiel:</p>
+<div class="highlight"><pre><span></span><span class="n">publisher</span><span class="p">.</span><span class="n">MyEvent</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">subscriber</span><span class="p">.</span><span class="n">HandleSomething</span><span class="p">;</span>
+<span class="c1">// subscriber wird nie vom GC freigegeben, solange publisher lebt!</span>
+</pre></div>
+<p><strong>Lösungen:</strong></p>
+<ul>
+<li><code>-=</code> bei <code>Dispose</code></li>
+<li><code>WeakEventManager</code> bei WPF</li>
+<li><code>IDisposable</code>-Pattern im Subscriber</li>
+</ul>
+<h3 id="3.-Schwache-Events-in-WPF-/-MVVM">3. Schwache Events in WPF / MVVM<a class="anchor-link" href="#3.-Schwache-Events-in-WPF-/-MVVM">¶</a></h3><p>WPF verwendet <strong><code>WeakEventManager</code></strong>, um Speicherlecks zu vermeiden:</p>
+<div class="highlight"><pre><span></span><span class="n">WeakEventManager</span><span class="o">&lt;</span><span class="n">Publisher</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="o">&gt;</span><span class="p">.</span><span class="n">AddHandler</span><span class="p">(</span><span class="n">publisher</span><span class="p">,</span><span class="w"> </span><span class="k">nameof</span><span class="p">(</span><span class="n">Publisher</span><span class="p">.</span><span class="n">MyEvent</span><span class="p">),</span><span class="w"> </span><span class="n">HandlerMethode</span><span class="p">);</span>
+</pre></div>
+<p>Vorteil: der Publisher hält keinen <strong>starken Verweis</strong>, sodass der Subscriber gesammelt werden kann.</p>
+<h3 id="4.-Testbarkeit-von-Events">4. Testbarkeit von Events<a class="anchor-link" href="#4.-Testbarkeit-von-Events">¶</a></h3><p>Events sind <strong>schwerer testbar</strong>, weil:</p>
+<ul>
+<li>Sie keine Rückgabewerte haben</li>
+<li>Sie keinen direkten Einfluss auf das Objekt selbst haben</li>
+</ul>
+<p><strong>Lösungen:</strong></p>
+<ul>
+<li>Event-Trigger beobachten via Mocks</li>
+<li>Oder: explizit <code>InvokeEventXYZ()</code> im Test aufrufen und Resultat prüfen</li>
+</ul>
+<h3 id="5.-Events-und-Interfaces">5. Events und Interfaces<a class="anchor-link" href="#5.-Events-und-Interfaces">¶</a></h3><p>Interfaces können Events enthalten:</p>
+<div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">interface</span><span class="w"> </span><span class="n">IDownloadTask</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">event</span><span class="w"> </span><span class="n">EventHandler</span><span class="o">&lt;</span><span class="n">ProgressEventArgs</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ProgressChanged</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+<p>Das ist nützlich für lose Kopplung und Substitution (z. B. in MVVM).</p>
+<h3 id="6.-Events-verketten-(Chaining)">6. Events verketten (Chaining)<a class="anchor-link" href="#6.-Events-verketten-(Chaining)">¶</a></h3><p>Du kannst Events an Events binden:</p>
+<div class="highlight"><pre><span></span><span class="n">obj1</span><span class="p">.</span><span class="n">Changed</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">obj2</span><span class="p">.</span><span class="n">OnChanged</span><span class="p">;</span>
+<span class="n">obj2</span><span class="p">.</span><span class="n">Changed</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">obj3</span><span class="p">.</span><span class="n">OnChanged</span><span class="p">;</span>
+<span class="c1">// Vorsicht mit Event Loops!</span>
+</pre></div>
+<p><strong>Tipp</strong>: Schütze dich vor Endlosschleifen durch einfache Logik:</p>
+<div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">alreadyHandled</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">alreadyHandled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+<span class="w">    </span><span class="n">RaiseChanged</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+<h3 id="7.-Thread-Sicherheit-beim-Event-Aufruf">7. Thread-Sicherheit beim Event-Aufruf<a class="anchor-link" href="#7.-Thread-Sicherheit-beim-Event-Aufruf">¶</a></h3><p>Events sind nicht automatisch <strong>Thread-safe</strong>. Ein häufiger Pattern:</p>
+<div class="highlight"><pre><span></span><span class="kt">var</span><span class="w"> </span><span class="n">handler</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MyEvent</span><span class="p">;</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">handler</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="p">)</span>
+<span class="w">    </span><span class="n">handler</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="p">.</span><span class="n">Empty</span><span class="p">);</span>
+</pre></div>
+<p>Oder ab C# 6+:</p>
+<div class="highlight"><pre><span></span><span class="n">MyEvent</span><span class="o">?.</span><span class="n">Invoke</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="p">.</span><span class="n">Empty</span><span class="p">);</span>
+</pre></div>
+<p>Wenn das Event von einem anderen Thread auf <code>null</code> gesetzt wird, kann es sonst zu <code>NullReferenceException</code> kommen.</p>
+<h3 id="8.-Events-serialisierbar-machen">8. Events serialisierbar machen<a class="anchor-link" href="#8.-Events-serialisierbar-machen">¶</a></h3><p>Events selbst sind <strong>nicht serialisierbar</strong> (weil Delegaten keine Daten sind). Du musst explizit <strong>vom Event ausgelöste Zustände speichern</strong> – nicht das Event selbst.</p>
+<h3 id="9.-Custom-Event-Pattern-f%C3%BCr-Fehlerbehandlung-oder-Logging">9. Custom Event Pattern für Fehlerbehandlung oder Logging<a class="anchor-link" href="#9.-Custom-Event-Pattern-f%C3%BCr-Fehlerbehandlung-oder-Logging">¶</a></h3><p>Du kannst eigene Event-Zwischenschichten bauen, z. B. für:</p>
+<ul>
+<li>Logging bei jeder Registrierung</li>
+<li>Fehlerbehandlung</li>
+<li>Synchronisierung</li>
+</ul>
+<p>Beispiel:</p>
+<div class="highlight"><pre><span></span><span class="k">private</span><span class="w"> </span><span class="n">EventHandler</span><span class="w"> </span><span class="n">myEvent</span><span class="p">;</span>
+<span class="k">public</span><span class="w"> </span><span class="k">event</span><span class="w"> </span><span class="n">EventHandler</span><span class="w"> </span><span class="n">MyEvent</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">add</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"Abonnent hinzugefügt"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">myEvent</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="k">value</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">remove</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"Abonnent entfernt"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">myEvent</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="k">value</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<h3 id="10.-Events-%C3%BCber-Netzwerke-(SignalR,-PubSub-etc.)">10. Events über Netzwerke (SignalR, PubSub etc.)<a class="anchor-link" href="#10.-Events-%C3%BCber-Netzwerke-(SignalR,-PubSub-etc.)">¶</a></h3><p>In verteilten Systemen (Blazor, WPF+Backend, Microservices) nutzt man <strong>Events als Konzept</strong>, aber technisch brauchst du:</p>
+<ul>
+<li><strong>SignalR/Websockets</strong> für UI</li>
+<li><strong>Message Broker</strong> (z. B. NATS, RabbitMQ) für Backend</li>
+</ul>
+<p>Ein Event in C# wird dann z. B. nach außen als Message serialisiert und verschickt.</p>
+<h3 id="Merks%C3%A4tze">Merksätze<a class="anchor-link" href="#Merks%C3%A4tze">¶</a></h3><table>
+<thead>
+<tr>
+<th>Thema</th>
+<th>Merksatz</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lebensdauer</td>
+<td>Wer sich anmeldet, sollte sich abmelden</td>
+</tr>
+<tr>
+<td>Zugriff</td>
+<td>Nur innerhalb der Klasse darf <code>Invoke</code> verwendet werden</td>
+</tr>
+<tr>
+<td>Lambdas</td>
+<td>Nur mit Handle wieder abmeldbar</td>
+</tr>
+<tr>
+<td>Standard</td>
+<td>Verwende <code>EventHandler&lt;T&gt;</code> mit <code>EventArgs</code></td>
+</tr>
+<tr>
+<td>Testbarkeit</td>
+<td>Lieber explizite Trigger oder Mock-Zugriffe nutzen</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>

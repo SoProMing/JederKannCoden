@@ -7517,7 +7517,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><a href="abstract/Contents.de.html">Jeder kann coden</a> / <a href="Programming_And_TicTacToe.de.html">Programmieren &amp; TicTacToe</a> / <a href="Objectoriented_Programming.de.html">Objektorientierte Programmierung</a> / <a href="../../../WebAPIs.de.html">Was sind Web APIs?</a></p>
+<p><a href="../../../abstract/Contents.de.html">Jeder kann coden</a> / <a href="../../../Programming_And_TicTacToe.de.html">Programmieren &amp; TicTacToe</a> / <a href="../../../Objectoriented_Programming.de.html">Objektorientierte Programmierung</a> / <a href="../../../WebAPIs.de.html">Was sind Web APIs?</a></p>
 <h1 id="Beispiel-einer-Spielerverwaltung-als-Backend">Beispiel einer Spielerverwaltung als Backend<a class="anchor-link" href="#Beispiel-einer-Spielerverwaltung-als-Backend">¶</a></h1><table border="0">
 <tr>
 <td>
@@ -7732,6 +7732,160 @@ a.anchor-link {
 curl<span class="w"> </span>http://localhost:5000/players
 curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:5000/players<span class="w"> </span>-H<span class="w"> </span><span class="s2">"Content-Type: application/json"</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">'{"firstName":"Max","lastName":"Mustermann"}'</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6a57a95b">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="%F0%9F%92%A1-Umgang-mit-secrets">💡 Umgang mit secrets<a class="anchor-link" href="#%F0%9F%92%A1-Umgang-mit-secrets">¶</a></h2><p>In C# ist es üblich, sensible Daten wie ein GitLab Access Token <strong>nicht im Quellcode</strong> zu speichern, sondern sie über <strong>Konfigurationsdateien</strong>, <strong>Umgebungsvariablen</strong> oder ein <strong>Secrets-Management-System</strong> zu verwalten. Ein pragmatischer Weg für dein Beispiel wäre, das Token in einer lokalen Datei wie <code>.secrets/gitlab_token.txt</code> zu speichern, die <strong>nicht ins Repository eingecheckt</strong> wird (per <code>.gitignore</code> ausgeschlossen).</p>
+<p>Hier ein vollständiger Weg für das obige Szenario:</p>
+<h3 id="1.-GitLab-Access-Token-lokal-speichern">1. GitLab Access Token lokal speichern<a class="anchor-link" href="#1.-GitLab-Access-Token-lokal-speichern">¶</a></h3><p>Erstelle eine Datei:</p>
+<pre><code>.secrets/gitlab_token.txt
+</code></pre>
+<p>Inhalt:</p>
+<pre><code>glpat-1234567890abcdefghijklmnop
+</code></pre>
+<p>Füge dies in deine <code>.gitignore</code> ein:</p>
+<pre><code class="language-gitignore">gitignore
+# secrets
+.secrets/
+</code></pre>
+<h3 id="2.-Token-in-deinem-C%23-Projekt-lesen">2. Token in deinem C#-Projekt lesen<a class="anchor-link" href="#2.-Token-in-deinem-C%23-Projekt-lesen">¶</a></h3><p>Füge in deinem Projekt eine Hilfsklasse hinzu, z. B. <code>SecretReader.cs</code>:</p>
+<div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.IO</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">SamplePlayerManagement</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">SecretReader</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">ReadGitlabToken</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Path</span><span class="p">.</span><span class="n">Combine</span><span class="p">(</span><span class="n">AppContext</span><span class="p">.</span><span class="n">BaseDirectory</span><span class="p">,</span><span class="w"> </span><span class="s">".secrets"</span><span class="p">,</span><span class="w"> </span><span class="s">"gitlab_token.txt"</span><span class="p">);</span>
+
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">File</span><span class="p">.</span><span class="n">Exists</span><span class="p">(</span><span class="n">path</span><span class="p">))</span>
+<span class="w">                </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="nf">FileNotFoundException</span><span class="p">(</span><span class="s">"GitLab token file not found"</span><span class="p">,</span><span class="w"> </span><span class="n">path</span><span class="p">);</span>
+
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">File</span><span class="p">.</span><span class="n">ReadAllText</span><span class="p">(</span><span class="n">path</span><span class="p">).</span><span class="n">Trim</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<h3 id="3.-Verwendung-in-deinem-GitLab-REST-API-Zugriff">3. Verwendung in deinem GitLab REST API Zugriff<a class="anchor-link" href="#3.-Verwendung-in-deinem-GitLab-REST-API-Zugriff">¶</a></h3><p>Wenn du z. B. <code>HttpClient</code> verwendest:</p>
+<div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="nn">System.Net.Http</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.Net.Http.Headers</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.Threading.Tasks</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">SamplePlayerManagement</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">GitlabService</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">HttpClient</span><span class="w"> </span><span class="n">_httpClient</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="nf">GitlabService</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">_httpClient</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HttpClient</span><span class="p">();</span>
+<span class="w">            </span><span class="kt">string</span><span class="w"> </span><span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SecretReader</span><span class="p">.</span><span class="n">ReadGitlabToken</span><span class="p">();</span>
+<span class="w">            </span><span class="n">_httpClient</span><span class="p">.</span><span class="n">DefaultRequestHeaders</span><span class="p">.</span><span class="n">Authorization</span><span class="w"> </span><span class="o">=</span>
+<span class="w">                </span><span class="k">new</span><span class="w"> </span><span class="nf">AuthenticationHeaderValue</span><span class="p">(</span><span class="s">"Bearer"</span><span class="p">,</span><span class="w"> </span><span class="n">token</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">GetMembersAsync</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">projectId</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="kt">string</span><span class="w"> </span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">$"https://gitlab.example.com/api/v4/projects/{projectId}/members/all"</span><span class="p">;</span>
+<span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">_httpClient</span><span class="p">.</span><span class="n">GetAsync</span><span class="p">(</span><span class="n">url</span><span class="p">);</span>
+<span class="w">            </span><span class="n">response</span><span class="p">.</span><span class="n">EnsureSuccessStatusCode</span><span class="p">();</span>
+
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">response</span><span class="p">.</span><span class="n">Content</span><span class="p">.</span><span class="n">ReadAsStringAsync</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<h3 id="Vorteile-dieser-L%C3%B6sung">Vorteile dieser Lösung<a class="anchor-link" href="#Vorteile-dieser-L%C3%B6sung">¶</a></h3><ul>
+<li>Kein Token im Git.</li>
+<li>Token kann auf jedem System separat verwaltet werden.</li>
+<li>Funktioniert plattformübergreifend (Linux/Mac/Windows).</li>
+<li>Einfach in bestehende C# .NET Core Anwendungen integrierbar.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=86505334">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="%F0%9F%92%A1-Secrets-per-Configuation">💡 Secrets per Configuation<a class="anchor-link" href="#%F0%9F%92%A1-Secrets-per-Configuation">¶</a></h2><p>Der Weg über die <strong>Configuration</strong> ist in .NET Core sehr sauber, weil er dich nicht an einen festen Pfad bindet und gut mit Umgebungsvariablen, Secrets, <code>appsettings.json</code> und sogar Azure Key Vault oder User Secrets funktioniert.</p>
+<p>Hier zeige ich dir den Weg, wie du dein GitLab Access Token über eine Datei wie <code>appsettings.Development.json</code> <strong>laden</strong> und <strong>verwenden</strong> kannst – und wie du es <strong>lokal behältst, ohne es einzuchecken</strong>.</p>
+<h3 id="1.-appsettings.Development.json-(lokal,-nicht-einchecken)">1. <code>appsettings.Development.json</code> (lokal, <strong>nicht einchecken</strong>)<a class="anchor-link" href="#1.-appsettings.Development.json-(lokal,-nicht-einchecken)">¶</a></h3><p>Erstelle diese Datei im Projektverzeichnis:</p>
+<div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">"Gitlab"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"AccessToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"glpat-1234567890abcdefghijklmnop"</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<p>🛡️ <strong>Achte darauf, dass <code>appsettings.Development.json</code> in <code>.gitignore</code> steht</strong>:</p>
+<pre><code class="language-gitignore">gitignore
+# Local config
+appsettings.Development.json
+</code></pre>
+<h3 id="2.-Konfiguration-einbinden-(Program.cs-oder-Main())">2. Konfiguration einbinden (<code>Program.cs</code> oder <code>Main()</code>)<a class="anchor-link" href="#2.-Konfiguration-einbinden-(Program.cs-oder-Main())">¶</a></h3><p>Wenn du ein Konsolenprogramm oder eine Web-API hast, kannst du die Konfiguration wie folgt laden:</p>
+<div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="nn">Microsoft.Extensions.Configuration</span><span class="p">;</span>
+
+<span class="kt">var</span><span class="w"> </span><span class="n">configuration</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ConfigurationBuilder</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="n">SetBasePath</span><span class="p">(</span><span class="n">Directory</span><span class="p">.</span><span class="n">GetCurrentDirectory</span><span class="p">())</span>
+<span class="w">    </span><span class="p">.</span><span class="n">AddJsonFile</span><span class="p">(</span><span class="s">"appsettings.json"</span><span class="p">,</span><span class="w"> </span><span class="n">optional</span><span class="p">:</span><span class="w"> </span><span class="k">true</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="n">AddJsonFile</span><span class="p">(</span><span class="s">"appsettings.Development.json"</span><span class="p">,</span><span class="w"> </span><span class="n">optional</span><span class="p">:</span><span class="w"> </span><span class="k">true</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="n">AddEnvironmentVariables</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="n">Build</span><span class="p">();</span>
+
+<span class="kt">string</span><span class="w"> </span><span class="n">gitlabToken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">configuration</span><span class="p">[</span><span class="s">"Gitlab:AccessToken"</span><span class="p">];</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$"Loaded GitLab Token: {gitlabToken.Substring(0, 5)}..."</span><span class="p">);</span>
+</pre></div>
+<h3 id="3.-Verwendung-im-Code-(z.%E2%80%AFB.-in-deinem-Service)">3. Verwendung im Code (z. B. in deinem Service)<a class="anchor-link" href="#3.-Verwendung-im-Code-(z.%E2%80%AFB.-in-deinem-Service)">¶</a></h3><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">GitlabService</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">HttpClient</span><span class="w"> </span><span class="n">_httpClient</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">GitlabService</span><span class="p">(</span><span class="n">IConfiguration</span><span class="w"> </span><span class="n">configuration</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">string</span><span class="w"> </span><span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">configuration</span><span class="p">[</span><span class="s">"Gitlab:AccessToken"</span><span class="p">];</span>
+
+<span class="w">        </span><span class="n">_httpClient</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HttpClient</span><span class="p">();</span>
+<span class="w">        </span><span class="n">_httpClient</span><span class="p">.</span><span class="n">DefaultRequestHeaders</span><span class="p">.</span><span class="n">Authorization</span><span class="w"> </span><span class="o">=</span>
+<span class="w">            </span><span class="k">new</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="n">Net</span><span class="p">.</span><span class="n">Http</span><span class="p">.</span><span class="n">Headers</span><span class="p">.</span><span class="n">AuthenticationHeaderValue</span><span class="p">(</span><span class="s">"Bearer"</span><span class="p">,</span><span class="w"> </span><span class="n">token</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">GetMembersAsync</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">projectId</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">string</span><span class="w"> </span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">$"https://gitlab.example.com/api/v4/projects/{projectId}/members/all"</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">_httpClient</span><span class="p">.</span><span class="n">GetAsync</span><span class="p">(</span><span class="n">url</span><span class="p">);</span>
+<span class="w">        </span><span class="n">response</span><span class="p">.</span><span class="n">EnsureSuccessStatusCode</span><span class="p">();</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">response</span><span class="p">.</span><span class="n">Content</span><span class="p">.</span><span class="n">ReadAsStringAsync</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<h3 id="Vorteile-dieser-Methode">Vorteile dieser Methode<a class="anchor-link" href="#Vorteile-dieser-Methode">¶</a></h3><ul>
+<li>Standardkonform und integriert in das .NET Ökosystem</li>
+<li>Leicht auf <code>appsettings.Production.json</code>, Azure Key Vault oder User Secrets erweiterbar</li>
+<li>Ermöglicht automatische Umgebungsumschaltung (dev/prod/test)</li>
+<li>Git-sicher – du checkst die Datei mit dem Token nicht ein</li>
+</ul>
+<h3 id="Optional:-Verwendung-von-User-Secrets-(nur-f%C3%BCr-Development)">Optional: Verwendung von User Secrets (nur für Development)<a class="anchor-link" href="#Optional:-Verwendung-von-User-Secrets-(nur-f%C3%BCr-Development)">¶</a></h3><p>Noch eine Stufe professioneller geht's mit <code>.NET User Secrets</code>, speziell für <strong>Entwicklung ohne Einchecken</strong>.</p>
+<p>Befehl im Projektverzeichnis:</p>
+<div class="highlight"><pre><span></span>dotnet<span class="w"> </span>user-secrets<span class="w"> </span>init
+dotnet<span class="w"> </span>user-secrets<span class="w"> </span><span class="nb">set</span><span class="w"> </span><span class="s2">"Gitlab:AccessToken"</span><span class="w"> </span><span class="s2">"glpat-..."</span>
+</pre></div>
+<p>In deinem <code>Program.cs</code>:</p>
+<div class="highlight"><pre><span></span><span class="p">.</span><span class="n">AddUserSecrets</span><span class="o">&lt;</span><span class="n">Program</span><span class="o">&gt;</span><span class="p">()</span><span class="w"> </span><span class="c1">// oder dein Typ, je nach Projekt</span>
+</pre></div>
+<p>Das ist besonders praktisch bei Open Source Projekten, wo niemand Tokens sehen sollte.</p>
 </div>
 </div>
 </div>

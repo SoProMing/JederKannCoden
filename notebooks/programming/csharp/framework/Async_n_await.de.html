@@ -7517,28 +7517,28 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Jeder-kann-coden---Inhaltsverzeichnis">Jeder kann coden - Inhaltsverzeichnis<a class="anchor-link" href="#Jeder-kann-coden---Inhaltsverzeichnis">¶</a></h1><table border="0">
+<p><a href="../../abstract/Contents.de.html">Jeder kann coden</a> / <a href="../../Programming_And_TicTacToe.de.html">Programmieren &amp; TicTacToe</a> / <a href="../CSharp_Introduction.de.html">C# Einführung</a></p>
+<h1 id="Asynchrone-Programmierung">Asynchrone Programmierung<a class="anchor-link" href="#Asynchrone-Programmierung">¶</a></h1><table border="0">
 <tr>
 <td>
-<img alt="No description has been provided for this image" src="Everybody_can_code.webp"/>
+<img alt="No description has been provided for this image" src="async_await.jpeg"/>
 </td>
 <td rowspan="2">
-<a href="https://miro.com/app/board/uXjVPm0lbTo=/?moveToWidget=3458764607889708296&amp;cot=14"><img alt="No description has been provided for this image" src="Radar.de.jpg"/></a>
+<a href="https://miro.com/app/board/uXjVPm0lbTo=/?moveToWidget=3458764607889708296&amp;cot=14"><img alt="No description has been provided for this image" src="Radar_Async_n_await.jpg"/></a>
 </td>
 </tr>
 <tr>
 <td>
-<a href="https://www.codewars.com">Link zu codewars</a><br/>
-<a href="https://www.hackerrank.com">Link zu hackerrank</a><br/>
-<a href="https://www.w3schools.com/">W3Schools: Programmier-Tutorials für Anfänger</a> <br/>
-<a href="https://www.freecodecamp.org/">freeCodeCamp: Interaktives Lernen für Programmieren</a> <br/>
-<a href="https://cs50.harvard.edu/x/">CS50 von Harvard: Einführung in Informatik</a> <br/>
-<a href="https://visualgo.net/">Visualgo: Visualisierung von Algorithmen</a> <br/>
-<a href="https://teachyourselfcs.com/">Teach Yourself Computer Science</a> <br/>
-<a href="https://guides.github.com/introduction/git-handbook/">Git und GitHub Einführung</a> <br/>
-<a href="https://refactoring.guru/">Refactoring Guru: Clean Code Konzepte</a> <br/>
-<a href="https://www.codewars.com/">Codewars: Programmier-Challenges für alle Niveaus</a> <br/>
-<a href="https://www.hackerrank.com/">HackerRank: Coding-Challenges und Wettbewerbe</a>
+<a href="https://learn.microsoft.com/en-us/dotnet/csharp/asynchronous-programming/">Asynchronous programming with async and await</a><br/>
+<a href="https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/">C# async programming overview</a><br/>
+<a href="https://devblogs.microsoft.com/premier-developer/dissecting-the-async-methods-in-c/">Dissecting the async methods in C#</a><br/>
+<a href="https://learn.microsoft.com/en-us/dotnet/standard/threading/managed-threading-best-practices">Managed threading best practices</a><br/>
+<a href="https://learn.microsoft.com/en-us/dotnet/standard/exceptions/">Exception handling (official docs)</a><br/>
+<a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/await">await Operator (C# reference)</a><br/>
+<a href="https://blog.stephencleary.com/2012/07/dont-block-on-async-code.html">Don’t block on async code (Stephen Cleary)</a><br/>
+<a href="https://blog.stephencleary.com/2013/11/taskrun-etiquette-examples-using.html">Task.Run etiquette and examples</a><br/>
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task?view=net-7.0">System.Threading.Tasks.Task class</a><br/>
+<a href="https://stackoverflow.com/questions/19794845/async-methods-callstack">StackOverflow: async methods and the call stack</a><br/>
 </td>
 </tr>
 </table>
@@ -7552,96 +7552,69 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Inhaltsverzeichnis">Inhaltsverzeichnis<a class="anchor-link" href="#Inhaltsverzeichnis">¶</a></h2><h3 id="Vorbereitung">Vorbereitung<a class="anchor-link" href="#Vorbereitung">¶</a></h3><ul>
-<li><a href="../csharp/CSharp_icebreaker.de.html">Eisbrecher</a></li>
-<li><a href="Number_Systems.de.html">Zahlensysteme und Zeichen</a></li>
-<li><a href="../csharp/tools/Toolchain.de.html">Werkzeuge zur Vorlesung</a></li>
+<p>Hier ist eine <strong>umfassende Erklärung zu <code>async</code> und <code>await</code> in C#</strong>, die dir als Entwickler helfen wird, asynchrone Programmierung zu verstehen und korrekt anzuwenden.</p>
+<h3 id="Ziel-von-async-und-await">Ziel von <code>async</code> und <code>await</code><a class="anchor-link" href="#Ziel-von-async-und-await">¶</a></h3><p>Asynchrone Programmierung hilft dabei:</p>
+<ul>
+<li>lang laufende Aufgaben (z. B. Webanfragen, Datenbankzugriffe) <strong>nicht blockierend</strong> auszuführen</li>
+<li>die <strong>Benutzeroberfläche (UI) responsiv</strong> zu halten</li>
+<li><strong>bessere Skalierbarkeit</strong> bei Serveranwendungen zu ermöglichen (z. B. Web-APIs)</li>
 </ul>
-<h3 id="Grundlagen">Grundlagen<a class="anchor-link" href="#Grundlagen">¶</a></h3><ul>
-<li><a href="Programming_And_TicTacToe.de.html">Programmieren &amp; TicTacToe:</a> Prozedurale Programmierung am Beispiel von Python &amp; TicTacToe</li>
-<li><a href="../csharp/CSharp_Introduction.de.html">Einführung in C#:</a> Prozedurale Programmierung in C# als Übersicht<ul>
-<li><a href="../csharp/CSharp_Introduction/Variables.de.html">Weitere Grundlagen zu Variablen</a></li>
-<li><a href="../csharp/CSharp_Introduction/Strings.de.html">Weitere Grundlagen zu String</a></li>
-<li><a href="../csharp/CSharp_Introduction/Conditional_statements.de.html">Weitere Grundlagen zu bedingten Anweisungen</a></li>
-<li><a href="../csharp/CSharp_Introduction/Loops.de.html">Weitere Grundlagen zu Schleifen</a></li>
-<li><a href="../csharp/CSharp_Introduction/Operators.de.html">Weitere Grundlagen zu Operatoren</a></li>
-<li><a href="../csharp/CSharp_Introduction/Functions.de.html">Weitere Grundlagen zu Funktionen</a></li>
-<li><a href="../csharp/CSharp_Introduction/Arrays.de.html">Weitere Grundlagen zu Arrays</a></li>
-<li><a href="../csharp/CSharp_Introduction/Complex_Datastructures.de.html">Weitere Grundlagen zu komplexen Datenstrukturen</a></li>
-</ul>
-</li>
-</ul>
-<h3 id="Vertiefung">Vertiefung<a class="anchor-link" href="#Vertiefung">¶</a></h3><h4 id="Textausgabe">Textausgabe<a class="anchor-link" href="#Textausgabe">¶</a></h4><ul>
-<li><a href="../csharp/procedural-functional/Console_WriteLine_Basics.de.html">WriteLine Basiswissen</a></li>
-<li><a href="../csharp/procedural-functional/CSharp_HelloWorld_Explanation.de.html">Hallo Welt!</a></li>
-<li><a href="../csharp/procedural-functional/Console_WriteLine_Samples.de.html">WriteLine Samples</a></li>
-<li><a href="../csharp/procedural-functional/Console_WriteLine_TicTacToe.de.html">WriteLine &amp; TicTacToe</a></li>
-</ul>
-<h4 id="Texteingabe">Texteingabe<a class="anchor-link" href="#Texteingabe">¶</a></h4><ul>
-<li><a href="../csharp/procedural-functional/Console_ReadLine_Basics.de.html">ReadLine &amp; TicTacToe</a></li>
-</ul>
-<h4 id="Operatoren">Operatoren<a class="anchor-link" href="#Operatoren">¶</a></h4><ul>
-<li><a href="../csharp/procedural-functional/CSharp_Boolean_Operators_Basics.de.html">Boolesche Operatoren</a></li>
-<li><a href="../csharp/procedural-functional/CSharp_Other_Operators_Basics.de.html">Weitere Operatoren</a></li>
-</ul>
-<h4 id="Datentypen">Datentypen<a class="anchor-link" href="#Datentypen">¶</a></h4><ul>
-<li><a href="../csharp/procedural-functional/CSharp_Numerical_Types.de.html">Numerische Typen</a></li>
-<li><a href="../csharp/procedural-functional/CSharp_Numerical_Floating_Types.de.html">Numerische Gleitkomma-Typen</a></li>
-<li><a href="../csharp/procedural-functional/CSharp_String_Type.de.html">String Typen</a></li>
-<li><a href="../csharp/procedural-functional/CSharp_Arrays.de.html">Arrays</a></li>
-<li><a href="../csharp/procedural-functional/CSharp_Structs.de.html">Structs</a></li>
-<li><a href="../csharp/procedural-functional/CSharp_Enums.de.html">Enums</a></li>
-</ul>
-<h4 id="Kontrollstrukturen">Kontrollstrukturen<a class="anchor-link" href="#Kontrollstrukturen">¶</a></h4><ul>
-<li><a href="../csharp/procedural-functional/CSharp_Conditional.de.html">Bedingte Anweisungen</a></li>
-<li><a href="../csharp/procedural-functional/CSharp_Loops.de.html">Schleifen</a></li>
-<li><a href="../csharp/procedural-functional/CSharp_Conditional_TicTacToe.de.html">Bedingte Anweisungen &amp; TicTacToe</a></li>
-</ul>
-<h4 id=".NET-framework">.NET framework<a class="anchor-link" href="#.NET-framework">¶</a></h4><ul>
-<li><a href="../csharp/framework/Random.de.html">System.Random</a></li>
-<li><a href="../csharp/framework/Regular_Expressions.de.html">Reguläre Ausdrücke</a></li>
-<li><a href="../csharp/framework/Exceptions.html">Exceptions</a></li>
-<li><a href="../csharp/framework/Files.de.html">Dateioperationen</a></li>
-<li><a href="../csharp/framework/Async_n_await.de.html">Asynchrones Programmieren</a></li>
-</ul>
-<h3 id="TicTacToe-in-einer-einzelnen-Prozedur"><a href="../csharp/procedural-functional/CSharp_Loops_TicTacToe.de.html">TicTacToe in einer einzelnen Prozedur</a><a class="anchor-link" href="#TicTacToe-in-einer-einzelnen-Prozedur">¶</a></h3><h3 id="Funktionale-Programmierung">Funktionale Programmierung<a class="anchor-link" href="#Funktionale-Programmierung">¶</a></h3><ul>
-<li><a href="../csharp/procedural-functional/CSharp_Methods_Functions.de.html">Funktionen &amp; Prozeduren</a></li>
-</ul>
-<h3 id="Debugging">Debugging<a class="anchor-link" href="#Debugging">¶</a></h3><ul>
-<li><a href="../csharp/tools/Debugger.de.html">Debugging &amp; Breakpoints</a></li>
-<li><a href="../csharp/procedural-functional/CSharp_Reference_Value.de.html">Referenz- &amp; Werttypen</a></li>
-</ul>
-<h3 id="Objektorientierte-Programmierung">Objektorientierte Programmierung<a class="anchor-link" href="#Objektorientierte-Programmierung">¶</a></h3><h4 id="Grundlagen">Grundlagen<a class="anchor-link" href="#Grundlagen">¶</a></h4><ul>
-<li><a href="../Objectoriented_Programming.de.html">Einleitung</a></li>
-<li><a href="../csharp/oop/CSharp_Basics.de.html">Objektorientierte Programmierung in C# Grundlagen</a></li>
-</ul>
-<h4 id="Vertiefung">Vertiefung<a class="anchor-link" href="#Vertiefung">¶</a></h4><ul>
-<li><a href="../csharp/oop/CSharp_Samples.de.html">Objektorientierte Programmierung in C# Samples</a><ul>
-<li><a href="../csharp/oop/CSharp_Access_Modifiers.de.html">Zugriffsmodifizierer</a></li>
-<li><a href="../csharp/oop/Constructors.de.html">Konstruktoren</a></li>
-<li><a href="../csharp/oop/Properties.de.html">Properties</a></li>
-<li><a href="../csharp/oop/Lambdas_n_delegates.de.html">Lambda-Ausdrücke und Delegaten</a></li>
-<li><a href="../csharp/oop/Events.de.html">Events</a></li>
-</ul>
-</li>
-<li><a href="../csharp/oop/Compare_Objects.de.html">💡 Vergleich von Objekten</a></li>
-</ul>
-<h4 id="Anwendung">Anwendung<a class="anchor-link" href="#Anwendung">¶</a></h4><ul>
-<li><a href="../csharp/oop/Gameboard_store.de.html">Beispiel: ein Spielstandmanagement in C#</a></li>
-</ul>
-<h3 id="GUI-Programmierung">GUI-Programmierung<a class="anchor-link" href="#GUI-Programmierung">¶</a></h3><h4 id="Grundlagen">Grundlagen<a class="anchor-link" href="#Grundlagen">¶</a></h4><ul>
-<li><a href="../csharp/framework/wpf/Basics.de.html">C# und WPF</a></li>
-<li><a href="../csharp/framework/wpf/Binding.de.html">Data Binding mit WPF und C#</a></li>
-</ul>
-<h3 id="Grundlegende-Backend-Programmierung">Grundlegende Backend-Programmierung<a class="anchor-link" href="#Grundlegende-Backend-Programmierung">¶</a></h3><ul>
-<li><a href="../WebAPIs.de.html">Web-APIs</a></li>
-<li><a href="../csharp/framework/dotnet_core/DotNetCoreBackend.de.html">Backend-Programmierung mit ASP.NET Core</a></li>
-<li><a href="../csharp/framework/dotnet_core/SwaggerAddon.de.html">Swagger Addon</a></li>
-<li><a href="../csharp/framework/dotnet_core/SamplePlayerManagement.de.html">Beispiel einer Spielerverwaltung als Backend</a></li>
-</ul>
-<h3 id="Tools">Tools<a class="anchor-link" href="#Tools">¶</a></h3><ul>
-<li><a href="../../tools/GIT.de.html">Quellcodeverwaltung mit Git</a></li>
-</ul>
+<h3 id="Grundbegriffe">Grundbegriffe<a class="anchor-link" href="#Grundbegriffe">¶</a></h3><table>
+<thead>
+<tr>
+<th>Begriff</th>
+<th>Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>async</code></td>
+<td>Markiert eine Methode als asynchron. Sie darf <code>await</code> verwenden und gibt typischerweise <code>Task</code>, <code>Task&lt;T&gt;</code> oder <code>ValueTask&lt;T&gt;</code> zurück.</td>
+</tr>
+<tr>
+<td><code>await</code></td>
+<td>Wartet auf den Abschluss einer asynchronen Operation, ohne den aktuellen Thread zu blockieren.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Beispiel:-Ohne-vs.-Mit-async">Beispiel: Ohne vs. Mit async<a class="anchor-link" href="#Beispiel:-Ohne-vs.-Mit-async">¶</a></h3><h4 id="Ohne-async-(blockierend)">Ohne async (blockierend)<a class="anchor-link" href="#Ohne-async-(blockierend)">¶</a></h4><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">GetData</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Thread</span><span class="p">.</span><span class="n">Sleep</span><span class="p">(</span><span class="mi">3000</span><span class="p">);</span><span class="w"> </span><span class="c1">// blockiert 3 Sekunden</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s">"Fertig!"</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+<h4 id="Mit-async-(nicht-blockierend)">Mit async (nicht blockierend)<a class="anchor-link" href="#Mit-async-(nicht-blockierend)">¶</a></h4><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">GetDataAsync</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="n">Task</span><span class="p">.</span><span class="n">Delay</span><span class="p">(</span><span class="mi">3000</span><span class="p">);</span><span class="w"> </span><span class="c1">// blockiert NICHT, wartet aber 3 Sekunden</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s">"Fertig!"</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+<h3 id="R%C3%BCckgabetypen">Rückgabetypen<a class="anchor-link" href="#R%C3%BCckgabetypen">¶</a></h3><table>
+<thead>
+<tr>
+<th>Rückgabetyp</th>
+<th>Bedeutung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Task</code></td>
+<td>Keine Rückgabe (<code>void</code>-äquivalent für async)</td>
+</tr>
+<tr>
+<td><code>Task&lt;T&gt;</code></td>
+<td>Gibt ein Ergebnis vom Typ <code>T</code> zurück</td>
+</tr>
+<tr>
+<td><code>ValueTask&lt;T&gt;</code></td>
+<td>Alternative zu <code>Task&lt;T&gt;</code>, kann effizienter sein bei vielen synchronen Ergebnissen</td>
+</tr>
+<tr>
+<td><code>void</code></td>
+<td>Nur für Eventhandler empfohlen, schwer testbar und fehleranfällig</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
@@ -7652,11 +7625,929 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Anhang">Anhang<a class="anchor-link" href="#Anhang">¶</a></Create_pdf.en.html">Erzeugen von HTML-Seiten aus den notebooks</a></p>
-<p><a href="../../Deploy_Contents.en.html">Erzeugen einer Webpage aus HTML-Seiten</a></p>
-<p><a href="../cmdline/Shells.de.html">Kommandozeile</a></p>
-<p><a href="../../tools/UTM_n_VS.de.html">Windows auf dem Mac mit UTM</a></p>
-<p><a href="../../htw/Team_Signup.de.html">Team Anmeldung</a></p>
+<h2 id="Technische-Hintergr%C3%BCnde">Technische Hintergründe<a class="anchor-link" href="#Technische-Hintergr%C3%BCnde">¶</a></h2><p>Um <code>async</code> und <code>await</code> <strong>wirklich tief zu verstehen</strong>, ist es essenziell zu wissen, was <strong>Threads</strong> und der <strong>Call Stack</strong> sind – und wie sie beim Ausführen von Code eine Rolle spielen.</p>
+<h3 id="Was-ist-ein-Thread?">Was ist ein Thread?<a class="anchor-link" href="#Was-ist-ein-Thread?">¶</a></h3><p>Ein <strong>Thread</strong> ist der kleinste Ausführungskontext eines Programms – also eine <strong>laufende Einheit von Code</strong>.
+Jede Anwendung startet mindestens mit <strong>einem Hauptthread</strong>.</p>
+<h4 id="Beispiel:">Beispiel:<a class="anchor-link" href="#Beispiel:">¶</a></h4><ul>
+<li>In einer WPF-App ist der <strong>UI-Thread</strong> der Hauptthread, der für <strong>Benutzeroberfläche und Benutzerinteraktion</strong> zuständig ist.</li>
+<li>Du kannst zusätzliche Threads starten, um parallele Arbeit zu leisten (z. B. mit <code>Thread</code>, <code>Task</code>, <code>ThreadPool</code>, etc.).</li>
+</ul>
+<h3 id="Was-ist-ein-Call-Stack?">Was ist ein Call Stack?<a class="anchor-link" href="#Was-ist-ein-Call-Stack?">¶</a></h3><p>Der <strong>Call Stack</strong> ist ein <strong>Speicherbereich</strong>, in dem .NET (bzw. jede Programmiersprache) sich <strong>merkt, welche Methoden gerade ausgeführt werden</strong> und in welcher Reihenfolge sie aufgerufen wurden.</p>
+<h4 id="Beispiel:">Beispiel:<a class="anchor-link" href="#Beispiel:">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">void</span> <span class="n">A</span><span class="p">()</span> <span class="p">{</span> <span class="n">B</span><span class="p">();</span> <span class="p">}</span>
+<span class="n">void</span> <span class="n">B</span><span class="p">()</span> <span class="p">{</span> <span class="n">C</span><span class="p">();</span> <span class="p">}</span>
+<span class="n">void</span> <span class="n">C</span><span class="p">()</span> <span class="p">{</span>
+    <span class="o">//</span> <span class="n">show</span> <span class="n">callstack</span> <span class="n">programmatically</span>
+    <span class="n">var</span> <span class="n">stack</span> <span class="o">=</span> <span class="n">new</span> <span class="n">System</span><span class="o">.</span><span class="n">Diagnostics</span><span class="o">.</span><span class="n">StackTrace</span><span class="p">();</span>
+    <span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">stack</span><span class="o">.</span><span class="n">FrameCount</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">var</span> <span class="n">frame</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="n">GetFrame</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">frame</span> <span class="o">!=</span> <span class="n">null</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">var</span> <span class="n">method</span> <span class="o">=</span> <span class="n">frame</span><span class="o">.</span><span class="n">GetMethod</span><span class="p">();</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">method</span> <span class="o">!=</span> <span class="n">null</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"{method.DeclaringType?.Name}.</span><span class="si">{method.Name}</span><span class="s2">"</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">A</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Submission#18.C
+Submission#18.B
+Submission#18.A
+&lt;&lt;Initialize&gt;&gt;d__0.MoveNext
+AsyncMethodBuilderCore.Start
+Submission#18.&lt;Initialize&gt;
+Submission#18.&lt;Factory&gt;
+&lt;RunSubmissionsAsync&gt;d__10`1.MoveNext
+AsyncMethodBuilderCore.Start
+AsyncTaskMethodBuilder`1.Start
+ScriptExecutionState.RunSubmissionsAsync
+&lt;RunSubmissionsAsync&gt;d__21.MoveNext
+AsyncMethodBuilderCore.Start
+AsyncTaskMethodBuilder`1.Start
+Script`1.RunSubmissionsAsync
+Script`1.RunFromAsync
+ScriptState.ContinueWithAsync
+&lt;RunAsync&gt;d__22.MoveNext
+AsyncMethodBuilderCore.Start
+AsyncTaskMethodBuilder.Start
+CSharpKernel.RunAsync
+&lt;Microsoft-DotNet-Interactive-IKernelCommandHandler&lt;Microsoft-DotNet-Interactive-Commands-SubmitCode&gt;-HandleAsync&gt;d__21.MoveNext
+AsyncMethodBuilderCore.Start
+AsyncTaskMethodBuilder.Start
+CSharpKernel.Microsoft.DotNet.Interactive.IKernelCommandHandler&lt;Microsoft.DotNet.Interactive.Commands.SubmitCode&gt;.HandleAsync
+&lt;HandleAsync&gt;d__60.MoveNext
+AsyncMethodBuilderCore.Start
+Kernel.HandleAsync
+&lt;&lt;BuildPipeline&gt;b__6_0&gt;d.MoveNext
+AsyncMethodBuilderCore.Start
+KernelCommandPipeline.&lt;BuildPipeline&gt;b__6_0
+&lt;SendAsync&gt;d__5.MoveNext
+AsyncMethodBuilderCore.Start
+&lt;HandleAsync&gt;d__17.MoveNext
+AsyncMethodBuilderCore.Start
+CompositeKernel.HandleAsync
+&lt;&lt;BuildPipeline&gt;b__6_0&gt;d.MoveNext
+AsyncMethodBuilderCore.Start
+KernelCommandPipeline.&lt;BuildPipeline&gt;b__6_0
+&lt;&lt;BuildPipeline&gt;b__3&gt;d.MoveNext
+AsyncMethodBuilderCore.Start
+&lt;&lt;UseTelemetrySender&gt;b__0&gt;d.MoveNext
+AsyncMethodBuilderCore.Start
+&lt;&gt;c__DisplayClass6_0.&lt;UseTelemetrySender&gt;b__0
+&lt;&lt;BuildPipeline&gt;b__3&gt;d.MoveNext
+AsyncMethodBuilderCore.Start
+&lt;&lt;UseNuGetExtensions&gt;b__0&gt;d.MoveNext
+AsyncMethodBuilderCore.Start
+&lt;&gt;c__DisplayClass0_0.&lt;UseNuGetExtensions&gt;b__0
+&lt;&lt;BuildPipeline&gt;b__3&gt;d.MoveNext
+AsyncMethodBuilderCore.Start
+&lt;&lt;UseSecretManager&gt;b__0&gt;d.MoveNext
+AsyncMethodBuilderCore.Start
+&lt;&gt;c__DisplayClass5_0.&lt;UseSecretManager&gt;b__0
+&lt;&lt;BuildPipeline&gt;g__Combine|2&gt;d.MoveNext
+AsyncMethodBuilderCore.Start
+&lt;&lt;BuildPipeline&gt;g__Combine|2&gt;d.MoveNext
+AsyncMethodBuilderCore.Start
+&lt;&lt;BuildPipeline&gt;g__Combine|2&gt;d.MoveNext
+AsyncMethodBuilderCore.Start
+&lt;&gt;c__DisplayClass6_0.&lt;BuildPipeline&gt;g__Combine|2
+&lt;SendAsync&gt;d__5.MoveNext
+AsyncMethodBuilderCore.Start
+&lt;InvokePipelineAndCommandHandler&gt;d__68.MoveNext
+AsyncMethodBuilderCore.Start
+ScheduledOperation.ExecuteAsync
+KernelScheduler`2.Run
+KernelScheduler`2.RunDeferredOperationsAndThen
+ExecutionContext.RunInternal
+KernelScheduler`2.ScheduledOperationRunLoop
+ExecutionContext.RunInternal
+Task.ExecuteWithThreadLocal
+Thread.StartCallback
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Sobald <code>C()</code> fertig ist, wird es <strong>vom Stack entfernt</strong> ("popped"), dann <code>B()</code>, dann <code>A()</code>.</p>
+<h3 id="Wie-h%C3%A4ngt-das-mit-async/await-zusammen?">Wie hängt das mit async/await zusammen?<a class="anchor-link" href="#Wie-h%C3%A4ngt-das-mit-async/await-zusammen?">¶</a></h3><h4 id="Normaler-(synchroner)-Ablauf">Normaler (synchroner) Ablauf<a class="anchor-link" href="#Normaler-(synchroner)-Ablauf">¶</a></h4><ul>
+<li>Der Call Stack <strong>bleibt voll</strong>, bis die Methode fertig ist.</li>
+<li>Wenn eine Methode blockiert (<code>Thread.Sleep</code>, Datenbank, Netzwerk), dann <strong>steht der Thread still</strong>, und nichts anderes kann auf ihm laufen.</li>
+</ul>
+<h4 id="Asynchroner-Ablauf-mit-async/await">Asynchroner Ablauf mit <code>async/await</code><a class="anchor-link" href="#Asynchroner-Ablauf-mit-async/await">¶</a></h4><h5 id="Was-passiert-bei-await?">Was passiert bei <code>await</code>?<a class="anchor-link" href="#Was-passiert-bei-await?">¶</a></h5><ul>
+<li><p>Wenn du <code>await</code> auf einen <code>Task</code> machst:</p>
+<ol>
+<li>Die Methode wird <strong>pausiert</strong>.</li>
+<li>Alles danach wird in einen sogenannten <strong>Continuation-Callback</strong> gepackt.</li>
+<li>Der aktuelle <strong>Thread (z. B. UI-Thread)</strong> wird <strong>freigegeben</strong>.</li>
+<li>Sobald der <code>Task</code> fertig ist, wird der Code <strong>fortgesetzt</strong> – meist auf dem gleichen Thread (UI), <strong>außer du nutzt <code>ConfigureAwait(false)</code></strong>.</li>
+</ol>
+</li>
+</ul>
+<h4 id="Beispiel:">Beispiel:<a class="anchor-link" href="#Beispiel:">¶</a></h4><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">LadeEtwasAsync</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"Start"</span><span class="p">);</span><span class="w">      </span><span class="c1">// 1</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="n">Task</span><span class="p">.</span><span class="n">Delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span><span class="w">          </span><span class="c1">// 2 – pausiert hier</span>
+<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"Fertig"</span><span class="p">);</span><span class="w">     </span><span class="c1">// 3 – wird später fortgesetzt</span>
+<span class="p">}</span>
+</pre></div>
+<h4 id="Ablauf-im-Call-Stack:">Ablauf im Call Stack:<a class="anchor-link" href="#Ablauf-im-Call-Stack:">¶</a></h4><p>Aufruf von LadeEtwasAsync() →</p>
+<ul>
+<li>"Start" wird ausgegeben</li>
+<li>Task.Delay wird gestartet</li>
+<li>"Fertig" wird in eine Fortsetzung gepackt</li>
+<li>Methode gibt die Kontrolle zurück → Call Stack ist leer</li>
+<li>Nach 1 Sekunde → Fortsetzung wird gestartet</li>
+</ul>
+<h3 id="Warum-ist-das-wichtig?">Warum ist das wichtig?<a class="anchor-link" href="#Warum-ist-das-wichtig?">¶</a></h3><ul>
+<li><strong>Der Thread ist nicht blockiert!</strong> Das ist <strong>besonders wichtig in GUIs oder Webservern</strong> (mehr gleichzeitige Benutzer!).</li>
+<li><strong>Continuation</strong> wird bei Bedarf zurück auf den ursprünglichen <code>SynchronizationContext</code> gebracht (z. B. UI-Thread in WPF).</li>
+</ul>
+<h3 id="Thread-vs.-Task-%E2%80%93-ein-h%C3%A4ufiges-Missverst%C3%A4ndnis">Thread vs. Task – ein häufiges Missverständnis<a class="anchor-link" href="#Thread-vs.-Task-%E2%80%93-ein-h%C3%A4ufiges-Missverst%C3%A4ndnis">¶</a></h3><table>
+<thead>
+<tr>
+<th>Begriff</th>
+<th>Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Thread</strong></td>
+<td>Physischer Ausführungskontext auf der CPU</td>
+</tr>
+<tr>
+<td><strong>Task</strong></td>
+<td>Logischer Ausführungskontext – kann auf beliebigem Thread laufen oder sogar rein logisch sein (ohne eigenen Thread)</td>
+</tr>
+<tr>
+<td><strong>await</strong></td>
+<td>Pausiert den Code, <strong>ohne einen neuen Thread zu starten</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>💡 Ein <code>Task</code> kann sich <strong>denselben Thread teilen</strong> oder sogar ganz <strong>ohne zusätzlichen Thread laufen</strong>, wenn die Operation z. B. I/O-gebunden ist.</p>
+</blockquote>
+<h3 id="Fazit">Fazit<a class="anchor-link" href="#Fazit">¶</a></h3><table>
+<thead>
+<tr>
+<th>Konzept</th>
+<th>Bedeutung in async-Kontext</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Thread</strong></td>
+<td>Führt den Code aus, wird bei <code>await</code> oft freigegeben</td>
+</tr>
+<tr>
+<td><strong>Call Stack</strong></td>
+<td>Wird bei <code>await</code> aufgelöst (pausiert), kein Stackoverflow</td>
+</tr>
+<tr>
+<td><strong>await</strong></td>
+<td>Trennt Code in zwei Abschnitte: vor dem <code>await</code> und nach dem <code>await</code></td>
+</tr>
+<tr>
+<td><strong>Continuation</strong></td>
+<td>Das, was nach dem <code>await</code> passiert – läuft ggf. auf einem anderen Thread</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Abl%C3%A4ufe-veranschaulicht">Abläufe veranschaulicht<a class="anchor-link" href="#Abl%C3%A4ufe-veranschaulicht">¶</a></h2><p>Hier ist ein <strong>Diagramm</strong>, das den Ablauf von <code>async</code>/<code>await</code> und den Einfluss auf den <strong>Call Stack</strong> visuell veranschaulicht:</p>
+<h3 id="Mermaid-Diagramm:-Call-Stack-&amp;-async/await">Mermaid-Diagramm: Call Stack &amp; async/await<a class="anchor-link" href="#Mermaid-Diagramm:-Call-Stack-&amp;-async/await">¶</a></h3><div class="jp-Mermaid"><pre class="mermaid">
+sequenceDiagram
+    participant MainThread
+    participant Task
+    participant Continuation
+
+    MainThread-&gt;&gt;MainThread: LadeEtwasAsync() aufrufen
+    MainThread-&gt;&gt;MainThread: Console.WriteLine("Start")
+    MainThread-&gt;&gt;Task: await Task.Delay(1000)
+    Note right of Task: Task wird gestartet (nicht blockierend)
+    Task--&gt;&gt;MainThread: Kontrolle sofort zurück
+
+    Note over MainThread: Call Stack ist leer – Thread ist frei
+
+    Task-&gt;&gt;Continuation: Nach 1 Sekunde → Fortsetzung aufrufen
+    Continuation-&gt;&gt;MainThread: Console.WriteLine("Fertig")
+</pre></div><h3 id="Erkl%C3%A4rung">Erklärung<a class="anchor-link" href="#Erkl%C3%A4rung">¶</a></h3><ul>
+<li><strong><code>LadeEtwasAsync()</code></strong> wird aufgerufen → landet im Call Stack</li>
+<li>Bei <code>await Task.Delay(...)</code> wird der <strong>Call Stack verlassen</strong></li>
+<li>Die Methode "parkt" die Fortsetzung (alles nach dem <code>await</code>)</li>
+<li>Nach Ablauf des Tasks wird die <strong>Continuation</strong> ausgeführt – <strong>meist auf dem ursprünglichen Thread</strong></li>
+</ul>
+<h3 id="Variante-mit-ConfigureAwait(false):">Variante mit <code>ConfigureAwait(false)</code>:<a class="anchor-link" href="#Variante-mit-ConfigureAwait(false):">¶</a></h3><div class="jp-Mermaid"><pre class="mermaid">
+sequenceDiagram
+    participant MainThread
+    participant BackgroundThread
+    participant Task
+    participant Continuation
+
+    MainThread-&gt;&gt;MainThread: LadeEtwasAsync() aufrufen
+    MainThread-&gt;&gt;Task: await Task.Delay(1000).ConfigureAwait(false)
+    Task--&gt;&gt;MainThread: Kontrolle zurückgeben
+    Note over MainThread: UI-Thread ist frei
+
+    Task-&gt;&gt;Continuation: Nach 1 Sekunde → Fortsetzung starten
+    Continuation-&gt;&gt;BackgroundThread: Console.WriteLine("Fertig")
+</pre></div><blockquote>
+<p>🛡️ <code>ConfigureAwait(false)</code> sorgt dafür, dass die Fortsetzung <strong>nicht auf dem ursprünglichen SynchronizationContext</strong> (z. B. UI-Thread) läuft – hilfreich in Bibliotheken und Servercode.</p>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Verwendung-in-der-Praxis">Verwendung in der Praxis<a class="anchor-link" href="#Verwendung-in-der-Praxis">¶</a></h3><h4 id="Webanfrage-(z.%E2%80%AFB.-in-Web-API)">Webanfrage (z. B. in Web API)<a class="anchor-link" href="#Webanfrage-(z.%E2%80%AFB.-in-Web-API)">¶</a></h4><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">IActionResult</span><span class="o">&gt;</span><span class="w"> </span><span class="n">GetUserData</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">_httpClient</span><span class="p">.</span><span class="n">GetAsync</span><span class="p">(</span><span class="s">"https://api.example.com/user"</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">content</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">response</span><span class="p">.</span><span class="n">Content</span><span class="p">.</span><span class="n">ReadAsStringAsync</span><span class="p">();</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nf">Ok</span><span class="p">(</span><span class="n">content</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+<h4 id="UI-Anwendung-(z.%E2%80%AFB.-WPF)">UI-Anwendung (z. B. WPF)<a class="anchor-link" href="#UI-Anwendung-(z.%E2%80%AFB.-WPF)">¶</a></h4><div class="highlight"><pre><span></span><span class="k">private</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Button_Click</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">RoutedEventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Button</span><span class="p">.</span><span class="n">IsEnabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">GetDataAsync</span><span class="p">();</span><span class="w"> </span><span class="c1">// UI friert nicht ein!</span>
+<span class="w">    </span><span class="n">MessageBox</span><span class="p">.</span><span class="n">Show</span><span class="p">(</span><span class="n">result</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Button</span><span class="p">.</span><span class="n">IsEnabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+<h3 id="Typische-Fehler">Typische Fehler<a class="anchor-link" href="#Typische-Fehler">¶</a></h3><table>
+<thead>
+<tr>
+<th>Fehlerbeschreibung</th>
+<th>Beispiel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>async void</code> in normalen Methoden</td>
+<td>Nur in Eventhandlern erlaubt</td>
+</tr>
+<tr>
+<td><code>Task.Run(...).Result</code> oder <code>.Wait()</code></td>
+<td>Verursacht Deadlocks in UI-Anwendungen</td>
+</tr>
+<tr>
+<td><code>await</code> vergessen</td>
+<td>Die Methode läuft, aber du bekommst das Ergebnis nicht</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Parallele-Aufgaben-mit-await-Task.WhenAll(...)">Parallele Aufgaben mit <code>await Task.WhenAll(...)</code><a class="anchor-link" href="#Parallele-Aufgaben-mit-await-Task.WhenAll(...)">¶</a></h3><div class="highlight"><pre><span></span><span class="kt">var</span><span class="w"> </span><span class="n">task1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GetDataFromSource1Async</span><span class="p">();</span>
+<span class="kt">var</span><span class="w"> </span><span class="n">task2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GetDataFromSource2Async</span><span class="p">();</span>
+
+<span class="k">await</span><span class="w"> </span><span class="n">Task</span><span class="p">.</span><span class="n">WhenAll</span><span class="p">(</span><span class="n">task1</span><span class="p">,</span><span class="w"> </span><span class="n">task2</span><span class="p">);</span>
+
+<span class="kt">var</span><span class="w"> </span><span class="n">result1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">task1</span><span class="p">;</span>
+<span class="kt">var</span><span class="w"> </span><span class="n">result2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">task2</span><span class="p">;</span>
+</pre></div>
+<h3 id="Steuerfluss-bei-async/await">Steuerfluss bei async/await<a class="anchor-link" href="#Steuerfluss-bei-async/await">¶</a></h3><ol>
+<li>Der Aufrufer startet die <code>async</code>-Methode.</li>
+<li>Bei <code>await</code> wird der Task registriert und die Methode <strong>verlässt den aktuellen Ausführungskontext</strong>.</li>
+<li>Sobald der Task abgeschlossen ist, wird die Ausführung <strong>fortgesetzt</strong>.</li>
+</ol>
+<h3 id="Best-Practices">Best Practices<a class="anchor-link" href="#Best-Practices">¶</a></h3><ul>
+<li><strong>Benutze async bis ganz nach oben:</strong> Vom UI bis zur letzten Methode.</li>
+<li><strong>Vermeide <code>.Result</code> und <code>.Wait()</code></strong></li>
+<li><strong>Verwende ConfigureAwait(false)</strong> in Bibliotheken ohne UI, um Deadlocks zu vermeiden:</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nf">SomeLibraryCall</span><span class="p">().</span><span class="n">ConfigureAwait</span><span class="p">(</span><span class="k">false</span><span class="p">);</span>
+</pre></div>
+<ul>
+<li><strong>Behandle Exceptions mit <code>try-catch</code>:</strong></li>
+</ul>
+<div class="highlight"><pre><span></span><span class="k">try</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">LoadDataAsync</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">ex</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Log</span><span class="p">(</span><span class="n">ex</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+<h2 id="Zusammenfassung">Zusammenfassung<a class="anchor-link" href="#Zusammenfassung">¶</a></h2><table>
+<thead>
+<tr>
+<th>Du willst…</th>
+<th>Dann nutze…</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nicht blockierend warten</td>
+<td><code>await</code></td>
+</tr>
+<tr>
+<td>Einen Hintergrundtask starten</td>
+<td><code>Task.Run(...)</code></td>
+</tr>
+<tr>
+<td>Mehrere Tasks parallel abwarten</td>
+<td><code>await Task.WhenAll(...)</code></td>
+</tr>
+<tr>
+<td>Die UI responsiv halten</td>
+<td><code>async</code> + <code>await</code></td>
+</tr>
+<tr>
+<td>Fehler behandeln</td>
+<td><code>try-catch</code> um <code>await</code>-Aufruf</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Ein-perfektes-Fr%C3%BChst%C3%BCck">Ein perfektes Frühstück<a class="anchor-link" href="#Ein-perfektes-Fr%C3%BChst%C3%BCck">¶</a></h2><p>Das "Frühstücksbeispiel" aus der Microsoft-Doku ist eine tolle, anschauliche Art, <strong>asynchrone Programmierung in C#</strong> zu erklären.
+Wir bauen es <strong>Schritt für Schritt auf</strong>, vom <strong>synchronen Ablauf</strong> bis zum <strong>vollständig asynchronen Parallel-Frühstück mit <code>async</code>/<code>await</code></strong>.</p>
+<h3 id="Szenario:-Ein-Fr%C3%BChst%C3%BCck-machen">Szenario: Ein Frühstück machen<a class="anchor-link" href="#Szenario:-Ein-Fr%C3%BChst%C3%BCck-machen">¶</a></h3><p>Du möchtest folgendes zubereiten:</p>
+<ul>
+<li>Kaffee</li>
+<li>Eier</li>
+<li>Speck</li>
+<li>Toast mit Butter und Marmelade</li>
+<li>Orangensaft</li>
+</ul>
+<h3 id="Schritt-1:-Synchrone-Version">Schritt 1: Synchrone Version<a class="anchor-link" href="#Schritt-1:-Synchrone-Version">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">using</span> <span class="n">System</span><span class="p">;</span>
+<span class="n">using</span> <span class="n">System</span><span class="o">.</span><span class="n">Threading</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="k">class</span><span class="w"> </span><span class="nc">Frühstück</span>
+<span class="p">{</span>
+    <span class="n">public</span> <span class="n">void</span> <span class="n">MacheFrühstück</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">GießeKaffee</span><span class="p">();</span>        <span class="o">//</span> <span class="mi">1</span> <span class="n">Sekunde</span>
+        <span class="n">BrateEier</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>         <span class="o">//</span> <span class="mi">3</span> <span class="n">Sekunden</span>
+        <span class="n">BrateSpeck</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>        <span class="o">//</span> <span class="mi">4</span> <span class="n">Sekunden</span>
+        <span class="n">ToasteBrot</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>        <span class="o">//</span> <span class="mi">2</span> <span class="n">Sekunden</span>
+        <span class="n">StreicheButter</span><span class="p">();</span>
+        <span class="n">StreicheMarmelade</span><span class="p">();</span>
+        <span class="n">GießeSaft</span><span class="p">();</span>          <span class="o">//</span> <span class="mf">0.5</span> <span class="n">Sekunden</span>
+
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"✅ Frühstück ist fertig!"</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="n">void</span> <span class="n">GießeKaffee</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"⏳ Kaffee wird eingegossen..."</span><span class="p">);</span>
+        <span class="n">Thread</span><span class="o">.</span><span class="n">Sleep</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"☕ Kaffee fertig"</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="n">void</span> <span class="n">BrateEier</span><span class="p">(</span><span class="nb">int</span> <span class="n">anzahl</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"⏳ Brate </span><span class="si">{anzahl}</span><span class="s2"> Eier..."</span><span class="p">);</span>
+        <span class="n">Thread</span><span class="o">.</span><span class="n">Sleep</span><span class="p">(</span><span class="mi">3000</span><span class="p">);</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"🍳 Eier sind fertig"</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="n">void</span> <span class="n">BrateSpeck</span><span class="p">(</span><span class="nb">int</span> <span class="n">streifen</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"⏳ Brate </span><span class="si">{streifen}</span><span class="s2"> Speckstreifen..."</span><span class="p">);</span>
+        <span class="n">Thread</span><span class="o">.</span><span class="n">Sleep</span><span class="p">(</span><span class="mi">4000</span><span class="p">);</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"🥓 Speck ist fertig"</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="n">void</span> <span class="n">ToasteBrot</span><span class="p">(</span><span class="nb">int</span> <span class="n">scheiben</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"⏳ Toastet </span><span class="si">{scheiben}</span><span class="s2"> Scheiben Brot..."</span><span class="p">);</span>
+        <span class="n">Thread</span><span class="o">.</span><span class="n">Sleep</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"🍞 Toast ist fertig"</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="n">void</span> <span class="n">StreicheButter</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"🧈 Butter auf Toast gestrichen"</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="n">void</span> <span class="n">StreicheMarmelade</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"🍓 Marmelade auf Toast gestrichen"</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="n">void</span> <span class="n">GießeSaft</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"⏳ Saft wird eingeschenkt..."</span><span class="p">);</span>
+        <span class="n">Thread</span><span class="o">.</span><span class="n">Sleep</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"🧃 Saft ist fertig"</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">new</span> <span class="n">Frühstück</span><span class="p">()</span><span class="o">.</span><span class="n">MacheFrühstück</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>⏳ Kaffee wird eingegossen...
+☕ Kaffee fertig
+⏳ Brate 2 Eier...
+🍳 Eier sind fertig
+⏳ Brate 3 Speckstreifen...
+🥓 Speck ist fertig
+⏳ Toastet 2 Scheiben Brot...
+🍞 Toast ist fertig
+🧈 Butter auf Toast gestrichen
+🍓 Marmelade auf Toast gestrichen
+⏳ Saft wird eingeschenkt...
+🧃 Saft ist fertig
+✅ Frühstück ist fertig!
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="%E2%96%B6%EF%B8%8F-Problem:">▶️ Problem:<a class="anchor-link" href="#%E2%96%B6%EF%B8%8F-Problem:">¶</a></h4><p>Alles läuft <strong>nacheinander</strong>. Die Zeit wird <strong>nicht effizient</strong> genutzt. Du wartest z. B. aufs Toasten, statt in der Zeit Eier zu braten.</p>
+<h3 id="Schritt-2:-Asynchrone-Aufgaben-mit-async/await">Schritt 2: Asynchrone Aufgaben mit <code>async</code>/<code>await</code><a class="anchor-link" href="#Schritt-2:-Asynchrone-Aufgaben-mit-async/await">¶</a></h3><p>Wir bauen das um – jetzt <strong>mit Zeitverzögerungen</strong> und <code>Task</code>s.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="k">class</span><span class="w"> </span><span class="nc">Frühstück_Parallel</span>
+<span class="p">{</span>
+    <span class="n">public</span> <span class="k">async</span> <span class="n">Task</span> <span class="n">MacheFrühstückAsync</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">var</span> <span class="n">kaffeeTask</span> <span class="o">=</span> <span class="n">GießeKaffeeAsync</span><span class="p">();</span>
+        <span class="n">var</span> <span class="n">eierTask</span> <span class="o">=</span> <span class="n">BrateEierAsync</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+        <span class="n">var</span> <span class="n">speckTask</span> <span class="o">=</span> <span class="n">BrateSpeckAsync</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+        <span class="n">var</span> <span class="n">toastTask</span> <span class="o">=</span> <span class="n">ToasteBrotAsync</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+
+        <span class="n">var</span> <span class="n">toast</span> <span class="o">=</span> <span class="k">await</span> <span class="n">toastTask</span><span class="p">;</span>
+        <span class="n">StreicheButter</span><span class="p">(</span><span class="n">toast</span><span class="p">);</span>
+        <span class="n">StreicheMarmelade</span><span class="p">(</span><span class="n">toast</span><span class="p">);</span>
+
+        <span class="k">await</span> <span class="n">Task</span><span class="o">.</span><span class="n">WhenAll</span><span class="p">(</span><span class="n">kaffeeTask</span><span class="p">,</span> <span class="n">eierTask</span><span class="p">,</span> <span class="n">speckTask</span><span class="p">);</span>
+
+        <span class="k">await</span> <span class="n">GießeSaftAsync</span><span class="p">();</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"✅ Frühstück ist fertig!"</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">async</span> <span class="n">Task</span> <span class="n">GießeKaffeeAsync</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"⏳ Kaffee wird eingegossen..."</span><span class="p">);</span>
+        <span class="k">await</span> <span class="n">Task</span><span class="o">.</span><span class="n">Delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"☕ Kaffee fertig"</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">async</span> <span class="n">Task</span> <span class="n">BrateEierAsync</span><span class="p">(</span><span class="nb">int</span> <span class="n">anzahl</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"⏳ Brate </span><span class="si">{anzahl}</span><span class="s2"> Eier..."</span><span class="p">);</span>
+        <span class="k">await</span> <span class="n">Task</span><span class="o">.</span><span class="n">Delay</span><span class="p">(</span><span class="mi">3000</span><span class="p">);</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"🍳 Eier sind fertig"</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">async</span> <span class="n">Task</span> <span class="n">BrateSpeckAsync</span><span class="p">(</span><span class="nb">int</span> <span class="n">streifen</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"⏳ Brate </span><span class="si">{streifen}</span><span class="s2"> Speckstreifen..."</span><span class="p">);</span>
+        <span class="k">await</span> <span class="n">Task</span><span class="o">.</span><span class="n">Delay</span><span class="p">(</span><span class="mi">4000</span><span class="p">);</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"🥓 Speck ist fertig"</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">async</span> <span class="n">Task</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">ToasteBrotAsync</span><span class="p">(</span><span class="nb">int</span> <span class="n">scheiben</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"⏳ Toastet </span><span class="si">{scheiben}</span><span class="s2"> Scheiben Brot..."</span><span class="p">);</span>
+        <span class="k">await</span> <span class="n">Task</span><span class="o">.</span><span class="n">Delay</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"🍞 Toast ist fertig"</span><span class="p">);</span>
+        <span class="k">return</span> <span class="s2">"Toast"</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">void</span> <span class="n">StreicheButter</span><span class="p">(</span><span class="n">string</span> <span class="n">toast</span><span class="p">)</span> <span class="o">=&gt;</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"🧈 Butter auf </span><span class="si">{toast}</span><span class="s2"> gestrichen"</span><span class="p">);</span>
+
+    <span class="n">void</span> <span class="n">StreicheMarmelade</span><span class="p">(</span><span class="n">string</span> <span class="n">toast</span><span class="p">)</span> <span class="o">=&gt;</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"🍓 Marmelade auf </span><span class="si">{toast}</span><span class="s2"> gestrichen"</span><span class="p">);</span>
+
+    <span class="k">async</span> <span class="n">Task</span> <span class="n">GießeSaftAsync</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"⏳ Saft wird eingeschenkt..."</span><span class="p">);</span>
+        <span class="k">await</span> <span class="n">Task</span><span class="o">.</span><span class="n">Delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"🧃 Saft ist fertig"</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Was-passiert-hier?">Was passiert hier?<a class="anchor-link" href="#Was-passiert-hier?">¶</a></h3><ul>
+<li>Die "langsameren" Tasks (<code>BrateEierAsync</code>, <code>BrateSpeckAsync</code>, <code>ToasteBrotAsync</code>) starten <strong>parallel</strong>.</li>
+<li>Mit <code>await</code> holen wir das Ergebnis (z. B. Toast), <strong>wenn es fertig ist</strong>.</li>
+<li>Wir verwenden <code>Task.WhenAll(...)</code>, um auf mehrere Tasks zu warten.</li>
+<li><strong>Die UI oder andere Logik blockiert dabei nicht.</strong></li>
+</ul>
+<h3 id="Bonus:-Fehlerbehandlung">Bonus: Fehlerbehandlung<a class="anchor-link" href="#Bonus:-Fehlerbehandlung">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="k">try</span>
+<span class="p">{</span>
+    <span class="k">await</span> <span class="n">new</span> <span class="n">Frühstück_Parallel</span><span class="p">()</span><span class="o">.</span><span class="n">MacheFrühstückAsync</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="n">catch</span> <span class="p">(</span><span class="ne">Exception</span> <span class="n">ex</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"💣 Fehler beim Frühstück: </span><span class="si">{ex.Message}</span><span class="s2">"</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>⏳ Kaffee wird eingegossen...
+⏳ Brate 2 Eier...
+⏳ Brate 3 Speckstreifen...
+⏳ Toastet 2 Scheiben Brot...
+☕ Kaffee fertig
+🍞 Toast ist fertig
+🧈 Butter auf Toast gestrichen
+🍓 Marmelade auf Toast gestrichen
+🍳 Eier sind fertig
+🥓 Speck ist fertig
+⏳ Saft wird eingeschenkt...
+🧃 Saft ist fertig
+✅ Frühstück ist fertig!
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<blockquote>
+<p>In jeder <code>async</code> Methode kannst du mit <code>try-catch</code> <strong>fehlerhafte Tasks abfangen</strong> – z. B. wenn der Toaster kaputt geht 😉</p>
+</blockquote>
+<h3 id="So-kannst-du-es-auch-ausf%C3%BChren">So kannst du es auch ausführen<a class="anchor-link" href="#So-kannst-du-es-auch-ausf%C3%BChren">¶</a></h3><p>Füge in <code>Program.cs</code>:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="k">await</span> <span class="n">new</span> <span class="n">Frühstück_Parallel</span><span class="p">()</span><span class="o">.</span><span class="n">MacheFrühstückAsync</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Oder in Main (vor C# 9):</p>
+<div class="highlight"><pre><span></span><span class="k">static</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="nf">Frühstück_Parallel</span><span class="p">().</span><span class="n">MacheFrühstückAsync</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="try--und-catch-Bl%C3%B6cke-in-threads"><code>try</code>- und <code>catch</code>-Blöcke in threads<a class="anchor-link" href="#try--und-catch-Bl%C3%B6cke-in-threads">¶</a></h2><p>Nehmen wir folgendes Beispiel:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">using</span> <span class="n">System</span><span class="p">;</span>
+<span class="n">using</span> <span class="n">System</span><span class="o">.</span><span class="n">Threading</span><span class="o">.</span><span class="n">Tasks</span><span class="p">;</span>
+
+<span class="k">try</span>
+<span class="p">{</span>
+    <span class="n">MethodeA</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="n">catch</span> <span class="p">(</span><span class="ne">Exception</span> <span class="n">ex</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"❌ Exception in: </span><span class="si">{ex.Message}</span><span class="s2">"</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">finally</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Fertig!"</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">static</span> <span class="n">void</span> <span class="n">MethodeA</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"▶ MethodeA gestartet"</span><span class="p">);</span>
+    <span class="n">MethodeB</span><span class="p">();</span> <span class="o">//</span> <span class="err">⚠️</span> <span class="k">await</span> <span class="n">fehlt</span><span class="err">!</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"◀ MethodeA fertig"</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">static</span> <span class="k">async</span> <span class="n">Task</span> <span class="n">MethodeB</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"  ▶ MethodeB gestartet"</span><span class="p">);</span>
+    <span class="k">await</span> <span class="n">Task</span><span class="o">.</span><span class="n">Delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span> <span class="o">//</span> <span class="n">trennt</span> <span class="n">den</span> <span class="n">Stack</span>
+    <span class="n">throw</span> <span class="n">new</span> <span class="n">InvalidOperationException</span><span class="p">(</span><span class="s2">"Boom in MethodeB"</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>▶ MethodeA gestartet
+  ▶ MethodeB gestartet
+◀ MethodeA fertig
+Fertig!
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<blockquote>
+<p>💥 Die Exception geht verloren oder stürzt das Programm ab – <strong>weil <code>MethodeB()</code> nie awaited wurde!</strong></p>
+</blockquote>
+<h3 id="Warum-passiert-das?">Warum passiert das?<a class="anchor-link" href="#Warum-passiert-das?">¶</a></h3><ul>
+<li><code>MethodeB()</code> wird <strong>gestartet</strong>, aber nicht <code>await</code>et.</li>
+<li>Dadurch geht die Exception <strong>in einen Fire-and-Forget-Task</strong>.</li>
+<li>.NET weiß nicht, <strong>wer verantwortlich ist</strong>, sie zu fangen.</li>
+</ul>
+<div class="jp-Mermaid"><pre class="mermaid">
+sequenceDiagram
+    participant Main
+    participant MethodeA
+    participant MethodeB
+    participant HintergrundTask
+
+    Main-&gt;&gt;MethodeA: await MethodeA()
+    MethodeA-&gt;&gt;MethodeB: MethodeB() (ohne await)
+    MethodeB-&gt;&gt;HintergrundTask: Task.Delay + throw
+
+    Note over MethodeA: MethodeB() wird aufgerufen, aber nicht awaited
+    Note over HintergrundTask: Exception tritt später im Hintergrund auf
+
+    HintergrundTask--&gt;&gt;Main: ❌ Keine Verbindung mehr zum Call Stack
+    Note right of Main: Exception kann nicht gefangen werden
+</pre></div><h3 id="Richtige-Variante">Richtige Variante<a class="anchor-link" href="#Richtige-Variante">¶</a></h3><div class="highlight"><pre><span></span><span class="k">static</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">MethodeA</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"▶ MethodeA gestartet"</span><span class="p">);</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nf">MethodeB</span><span class="p">();</span><span class="w"> </span><span class="c1">// korrekt</span>
+<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"◀ MethodeA fertig"</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+<blockquote>
+<p>Jetzt <strong>funktioniert das Exception-Handling wie erwartet.</strong></p>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Vertiefung">Vertiefung<a class="anchor-link" href="#Vertiefung">¶</a></h2><p>Hinter <code>async</code>/<code>await</code> steckt noch <strong>mehr Tiefe</strong>, als man auf den ersten Blick sieht. Hier kommen fortgeschrittene Themen, Fallstricke und seltene, aber wichtige Details, die du kennen solltest:</p>
+<h3 id="Tiefergehende-Themen-zu-async-und-await">Tiefergehende Themen zu <code>async</code> und <code>await</code><a class="anchor-link" href="#Tiefergehende-Themen-zu-async-und-await">¶</a></h3><h4 id="SynchronizationContext-&amp;-Deadlocks"><code>SynchronizationContext</code> &amp; Deadlocks<a class="anchor-link" href="#SynchronizationContext-&amp;-Deadlocks">¶</a></h4><ul>
+<li>In UI-Anwendungen (WPF, WinForms) kehrt <code>await</code> <strong>standardmäßig zurück zum UI-Thread</strong>, weil es den aktuellen <code>SynchronizationContext</code> beibehält.</li>
+<li>Wenn du <code>.Result</code> oder <code>.Wait()</code> verwendest, während du auf einen Task wartest, der zurück zum UI-Thread möchte → <strong>Deadlock!</strong></li>
+</ul>
+<h5 id="L%C3%B6sung:">Lösung:<a class="anchor-link" href="#L%C3%B6sung:">¶</a></h5><div class="highlight"><pre><span></span><span class="k">await</span><span class="w"> </span><span class="nf">SomeAsyncMethod</span><span class="p">().</span><span class="n">ConfigureAwait</span><span class="p">(</span><span class="k">false</span><span class="p">);</span>
+</pre></div>
+<blockquote>
+<p>In UI-unabhängigen Projekten (z. B. ASP.NET Core) brauchst du das oft nicht, da dort kein spezieller <code>SynchronizationContext</code> existiert.</p>
+</blockquote>
+<h4 id="Performance-Tipp:-ValueTask%3CT%3E">Performance-Tipp: <code>ValueTask&lt;T&gt;</code><a class="anchor-link" href="#Performance-Tipp:-ValueTask%3CT%3E">¶</a></h4><p><code>ValueTask&lt;T&gt;</code> ist effizienter als <code>Task&lt;T&gt;</code>, <strong>wenn die Antwort oft synchron</strong> verfügbar ist.</p>
+<div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="n">ValueTask</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">GetCachedValueAsync</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">_cache</span><span class="p">.</span><span class="n">HasValue</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ValueTask</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_cache</span><span class="p">.</span><span class="n">Value</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ValueTask</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">LoadValueFromDbAsync</span><span class="p">());</span>
+<span class="p">}</span>
+</pre></div>
+<p><strong>Achtung:</strong> <code>ValueTask&lt;T&gt;</code> darf nur <strong>einmal <code>await</code>et</strong> oder <code>.Result</code> gelesen werden!</p>
+<h4 id="Zeit%C3%BCberschreitungen-und-Abbruch-(Cancellation)">Zeitüberschreitungen und Abbruch (Cancellation)<a class="anchor-link" href="#Zeit%C3%BCberschreitungen-und-Abbruch-(Cancellation)">¶</a></h4><p>Asynchrone Methoden sollten <strong><code>CancellationToken</code></strong> akzeptieren:</p>
+<div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">DoWorkAsync</span><span class="p">(</span><span class="n">CancellationToken</span><span class="w"> </span><span class="n">cancellationToken</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="n">Task</span><span class="p">.</span><span class="n">Delay</span><span class="p">(</span><span class="mi">5000</span><span class="p">,</span><span class="w"> </span><span class="n">cancellationToken</span><span class="p">);</span><span class="w"> </span><span class="c1">// unterstützt Abbruch</span>
+<span class="p">}</span>
+</pre></div>
+<p>Aufrufer:</p>
+<div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="nn">var</span><span class="w"> </span><span class="n">cts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CancellationTokenSource</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span><span class="w"> </span><span class="c1">// bricht nach 1 Sekunde ab</span>
+<span class="k">await</span><span class="w"> </span><span class="nf">DoWorkAsync</span><span class="p">(</span><span class="n">cts</span><span class="p">.</span><span class="n">Token</span><span class="p">);</span>
+</pre></div>
+<h4 id="Unit-Testing-mit-async">Unit Testing mit async<a class="anchor-link" href="#Unit-Testing-mit-async">¶</a></h4><p>Testmethoden sollten <code>async Task</code> zurückgeben:</p>
+<div class="highlight"><pre><span></span><span class="na">[TestMethod]</span>
+<span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">TestSomethingAsync</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">SomeAsyncMethod</span><span class="p">();</span>
+<span class="w">    </span><span class="n">Assert</span><span class="p">.</span><span class="n">AreEqual</span><span class="p">(</span><span class="s">"Erwartet"</span><span class="p">,</span><span class="w"> </span><span class="n">result</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+<h4 id="Async-Void-=-gef%C3%A4hrlich">Async Void = gefährlich<a class="anchor-link" href="#Async-Void-=-gef%C3%A4hrlich">¶</a></h4><p><code>async void</code> solltest du <strong>nur für Eventhandler</strong> verwenden, niemals für Logik:</p>
+<div class="highlight"><pre><span></span><span class="c1">// OK</span>
+<span class="k">private</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Button_Click</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+
+<span class="c1">// NICHT OK</span>
+<span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">LoadData</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="c1">// Exceptions können nicht abgefangen werden!</span>
+</pre></div>
+<h4 id="Thread.Sleep-vs-Task.Delay"><code>Thread.Sleep</code> vs <code>Task.Delay</code><a class="anchor-link" href="#Thread.Sleep-vs-Task.Delay">¶</a></h4><table>
+<thead>
+<tr>
+<th>Methode</th>
+<th>Wirkung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Thread.Sleep</code></td>
+<td>Blockiert Thread (synchron)</td>
+</tr>
+<tr>
+<td><code>Task.Delay</code></td>
+<td>Gibt Thread sofort frei (async)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Fazit:</strong> Nutze in async Code niemals <code>Thread.Sleep</code>, sondern immer <code>Task.Delay</code>.</p>
+<h4 id="Async-in-Konstruktoren?">Async in Konstruktoren?<a class="anchor-link" href="#Async-in-Konstruktoren?">¶</a></h4><p>Geht nicht direkt. Stattdessen:</p>
+<div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">MyService</span><span class="o">&gt;</span><span class="w"> </span><span class="n">CreateAsync</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">service</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MyService</span><span class="p">();</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="n">service</span><span class="p">.</span><span class="n">InitializeAsync</span><span class="p">();</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">service</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+<h4 id="Was-passiert-hinter-den-Kulissen?">Was passiert hinter den Kulissen?<a class="anchor-link" href="#Was-passiert-hinter-den-Kulissen?">¶</a></h4><ul>
+<li>Der Compiler wandelt <code>async</code> Methoden in <strong>State Machines</strong> um.</li>
+<li>Das heißt: Aus deinem Code wird etwas wie ein Automat, der sich merkt, an welcher Stelle er fortfahren muss.</li>
+<li>Deshalb kann <code>await</code> "pausieren" und später wieder "weitermachen".</li>
+</ul>
+<h3 id="Typische-Szenarien">Typische Szenarien<a class="anchor-link" href="#Typische-Szenarien">¶</a></h3><table>
+<thead>
+<tr>
+<th>Szenario</th>
+<th>Lösung mit <code>async</code>/<code>await</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Responsives UI</td>
+<td><code>await</code> in Eventhandlern</td>
+</tr>
+<tr>
+<td>Parallelisierung</td>
+<td><code>await Task.WhenAll(...)</code></td>
+</tr>
+<tr>
+<td>Webanfragen in WebAPI</td>
+<td><code>await _httpClient.GetAsync(...)</code></td>
+</tr>
+<tr>
+<td>I/O ohne Thread-Blocking</td>
+<td><code>await File.ReadAllTextAsync(...)</code></td>
+</tr>
+<tr>
+<td>Hintergrunddienste</td>
+<td><code>async Task ExecuteAsync(...)</code> in Worker-Services</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>

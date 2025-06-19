@@ -7517,28 +7517,28 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Jeder-kann-coden---Inhaltsverzeichnis">Jeder kann coden - Inhaltsverzeichnis<a class="anchor-link" href="#Jeder-kann-coden---Inhaltsverzeichnis">¶</a></h1><table border="0">
+<p><a href="../../abstract/Contents.de.html">Jeder kann coden</a> / <a href="../../Programming_And_TicTacToe.de.html">Programmieren &amp; TicTacToe</a> / <a href="../../Objectoriented_Programming.de.html">Objektorientierte Programmierung</a> / <a href="CSharp_Basics.de.html">Objektorientierte Programmierung in C#</a></p>
+<h1 id="Lambda-Ausdr%C3%BCcke-und-Delegaten">Lambda-Ausdrücke und Delegaten<a class="anchor-link" href="#Lambda-Ausdr%C3%BCcke-und-Delegaten">¶</a></h1><table border="0">
 <tr>
 <td>
-<img alt="No description has been provided for this image" src="Everybody_can_code.webp"/>
+<img alt="No description has been provided for this image" src="Lambda_n_Delegate.jpeg"/>
 </td>
 <td rowspan="2">
-<a href="https://miro.com/app/board/uXjVPm0lbTo=/?moveToWidget=3458764607889708296&amp;cot=14"><img alt="No description has been provided for this image" src="Radar.de.jpg"/></a>
+<a href="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3458764554347680798&amp;cot=14"><img alt="No description has been provided for this image" src="Radar_Lambda_n_Delegate.jpg"/></a>
 </td>
 </tr>
 <tr>
 <td>
-<a href="https://www.codewars.com">Link zu codewars</a><br/>
-<a href="https://www.hackerrank.com">Link zu hackerrank</a><br/>
-<a href="https://www.w3schools.com/">W3Schools: Programmier-Tutorials für Anfänger</a> <br/>
-<a href="https://www.freecodecamp.org/">freeCodeCamp: Interaktives Lernen für Programmieren</a> <br/>
-<a href="https://cs50.harvard.edu/x/">CS50 von Harvard: Einführung in Informatik</a> <br/>
-<a href="https://visualgo.net/">Visualgo: Visualisierung von Algorithmen</a> <br/>
-<a href="https://teachyourselfcs.com/">Teach Yourself Computer Science</a> <br/>
-<a href="https://guides.github.com/introduction/git-handbook/">Git und GitHub Einführung</a> <br/>
-<a href="https://refactoring.guru/">Refactoring Guru: Clean Code Konzepte</a> <br/>
-<a href="https://www.codewars.com/">Codewars: Programmier-Challenges für alle Niveaus</a> <br/>
-<a href="https://www.hackerrank.com/">HackerRank: Coding-Challenges und Wettbewerbe</a>
+<a href="https://learn.microsoft.com/de-de/dotnet/csharp/programming-guide/statements-expressions-operators/lambda-expressions">Lambda-Ausdrücke – Microsoft Docs</a><br/>
+<a href="https://learn.microsoft.com/de-de/dotnet/csharp/programming-guide/delegates/">Delegaten – Microsoft Docs</a><br/>
+<a href="https://learn.microsoft.com/de-de/dotnet/csharp/language-reference/operators/lambda-operator">Lambda-Operator – Microsoft Docs</a><br/>
+<a href="https://learn.microsoft.com/de-de/dotnet/standard/delegates-lambdas">Delegates &amp; Lambdas – .NET Standard</a><br/>
+<a href="https://learn.microsoft.com/de-de/dotnet/csharp/language-reference/keywords/delegate">delegate Schlüsselwort – Microsoft Docs</a><br/>
+<a href="https://learn.microsoft.com/de-de/dotnet/csharp/fundamentals/functional/delegates">Funktionale Programmierung mit Delegates</a><br/>
+<a href="https://www.c-sharpcorner.com/UploadFile/0c1bb2/delegates-in-C-Sharp/">Delegates in C# – C# Corner</a><br/>
+<a href="https://www.tutorialsteacher.com/csharp/csharp-delegates">C# Delegates – TutorialsTeacher</a><br/>
+<a href="https://www.tutorialsteacher.com/linq/linq-lambda-expressions">LINQ Lambda Expressions – TutorialsTeacher</a><br/>
+<a href="https://code-maze.com/csharp-func-action-predicate-delegates/">Func, Action &amp; Predicate – Code Maze</a><br/>
 </td>
 </tr>
 </table>
@@ -7552,96 +7552,43 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Inhaltsverzeichnis">Inhaltsverzeichnis<a class="anchor-link" href="#Inhaltsverzeichnis">¶</a></h2><h3 id="Vorbereitung">Vorbereitung<a class="anchor-link" href="#Vorbereitung">¶</a></h3><ul>
-<li><a href="../csharp/CSharp_icebreaker.de.html">Eisbrecher</a></li>
-<li><a href="Number_Systems.de.html">Zahlensysteme und Zeichen</a></li>
-<li><a href="../csharp/tools/Toolchain.de.html">Werkzeuge zur Vorlesung</a></li>
+<p>Lambda-Funktionen, auch <strong>anonyme Funktionen</strong> genannt, sind ein zentrales Konzept in vielen Programmiersprachen – auch in <strong>C#</strong>, <strong>Python</strong>, <strong>JavaScript</strong>, etc. – und werden vor allem dort verwendet, wo eine Funktion „on the fly“ gebraucht wird, z. B. als Argument einer Methode.</p>
+<h3 id="Allgemeine-Eigenschaften">Allgemeine Eigenschaften<a class="anchor-link" href="#Allgemeine-Eigenschaften">¶</a></h3><ul>
+<li><strong>Kurz &amp; anonym:</strong> Keine <code>def</code>, <code>function</code> oder <code>Methodenname</code> notwendig.</li>
+<li><strong>Funktionaler Stil:</strong> Besonders nützlich mit <code>map</code>, <code>filter</code>, <code>reduce</code>, LINQ, Delegates etc.</li>
+<li><strong>Einfacher Syntax:</strong> Ideal für kleine Funktionen mit einer einzigen Anweisung.</li>
 </ul>
-<h3 id="Grundlagen">Grundlagen<a class="anchor-link" href="#Grundlagen">¶</a></h3><ul>
-<li><a href="Programming_And_TicTacToe.de.html">Programmieren &amp; TicTacToe:</a> Prozedurale Programmierung am Beispiel von Python &amp; TicTacToe</li>
-<li><a href="../csharp/CSharp_Introduction.de.html">Einführung in C#:</a> Prozedurale Programmierung in C# als Übersicht<ul>
-<li><a href="../csharp/CSharp_Introduction/Variables.de.html">Weitere Grundlagen zu Variablen</a></li>
-<li><a href="../csharp/CSharp_Introduction/Strings.de.html">Weitere Grundlagen zu String</a></li>
-<li><a href="../csharp/CSharp_Introduction/Conditional_statements.de.html">Weitere Grundlagen zu bedingten Anweisungen</a></li>
-<li><a href="../csharp/CSharp_Introduction/Loops.de.html">Weitere Grundlagen zu Schleifen</a></li>
-<li><a href="../csharp/CSharp_Introduction/Operators.de.html">Weitere Grundlagen zu Operatoren</a></li>
-<li><a href="../csharp/CSharp_Introduction/Functions.de.html">Weitere Grundlagen zu Funktionen</a></li>
-<li><a href="../csharp/CSharp_Introduction/Arrays.de.html">Weitere Grundlagen zu Arrays</a></li>
-<li><a href="../csharp/CSharp_Introduction/Complex_Datastructures.de.html">Weitere Grundlagen zu komplexen Datenstrukturen</a></li>
-</ul>
-</li>
-</ul>
-<h3 id="Vertiefung">Vertiefung<a class="anchor-link" href="#Vertiefung">¶</a></h3><h4 id="Textausgabe">Textausgabe<a class="anchor-link" href="#Textausgabe">¶</a></h4><ul>
-<li><a href="../csharp/procedural-functional/Console_WriteLine_Basics.de.html">WriteLine Basiswissen</a></li>
-<li><a href="../csharp/procedural-functional/CSharp_HelloWorld_Explanation.de.html">Hallo Welt!</a></li>
-<li><a href="../csharp/procedural-functional/Console_WriteLine_Samples.de.html">WriteLine Samples</a></li>
-<li><a href="../csharp/procedural-functional/Console_WriteLine_TicTacToe.de.html">WriteLine &amp; TicTacToe</a></li>
-</ul>
-<h4 id="Texteingabe">Texteingabe<a class="anchor-link" href="#Texteingabe">¶</a></h4><ul>
-<li><a href="../csharp/procedural-functional/Console_ReadLine_Basics.de.html">ReadLine &amp; TicTacToe</a></li>
-</ul>
-<h4 id="Operatoren">Operatoren<a class="anchor-link" href="#Operatoren">¶</a></h4><ul>
-<li><a href="../csharp/procedural-functional/CSharp_Boolean_Operators_Basics.de.html">Boolesche Operatoren</a></li>
-<li><a href="../csharp/procedural-functional/CSharp_Other_Operators_Basics.de.html">Weitere Operatoren</a></li>
-</ul>
-<h4 id="Datentypen">Datentypen<a class="anchor-link" href="#Datentypen">¶</a></h4><ul>
-<li><a href="../csharp/procedural-functional/CSharp_Numerical_Types.de.html">Numerische Typen</a></li>
-<li><a href="../csharp/procedural-functional/CSharp_Numerical_Floating_Types.de.html">Numerische Gleitkomma-Typen</a></li>
-<li><a href="../csharp/procedural-functional/CSharp_String_Type.de.html">String Typen</a></li>
-<li><a href="../csharp/procedural-functional/CSharp_Arrays.de.html">Arrays</a></li>
-<li><a href="../csharp/procedural-functional/CSharp_Structs.de.html">Structs</a></li>
-<li><a href="../csharp/procedural-functional/CSharp_Enums.de.html">Enums</a></li>
-</ul>
-<h4 id="Kontrollstrukturen">Kontrollstrukturen<a class="anchor-link" href="#Kontrollstrukturen">¶</a></h4><ul>
-<li><a href="../csharp/procedural-functional/CSharp_Conditional.de.html">Bedingte Anweisungen</a></li>
-<li><a href="../csharp/procedural-functional/CSharp_Loops.de.html">Schleifen</a></li>
-<li><a href="../csharp/procedural-functional/CSharp_Conditional_TicTacToe.de.html">Bedingte Anweisungen &amp; TicTacToe</a></li>
-</ul>
-<h4 id=".NET-framework">.NET framework<a class="anchor-link" href="#.NET-framework">¶</a></h4><ul>
-<li><a href="../csharp/framework/Random.de.html">System.Random</a></li>
-<li><a href="../csharp/framework/Regular_Expressions.de.html">Reguläre Ausdrücke</a></li>
-<li><a href="../csharp/framework/Exceptions.html">Exceptions</a></li>
-<li><a href="../csharp/framework/Files.de.html">Dateioperationen</a></li>
-<li><a href="../csharp/framework/Async_n_await.de.html">Asynchrones Programmieren</a></li>
-</ul>
-<h3 id="TicTacToe-in-einer-einzelnen-Prozedur"><a href="../csharp/procedural-functional/CSharp_Loops_TicTacToe.de.html">TicTacToe in einer einzelnen Prozedur</a><a class="anchor-link" href="#TicTacToe-in-einer-einzelnen-Prozedur">¶</a></h3><h3 id="Funktionale-Programmierung">Funktionale Programmierung<a class="anchor-link" href="#Funktionale-Programmierung">¶</a></h3><ul>
-<li><a href="../csharp/procedural-functional/CSharp_Methods_Functions.de.html">Funktionen &amp; Prozeduren</a></li>
-</ul>
-<h3 id="Debugging">Debugging<a class="anchor-link" href="#Debugging">¶</a></h3><ul>
-<li><a href="../csharp/tools/Debugger.de.html">Debugging &amp; Breakpoints</a></li>
-<li><a href="../csharp/procedural-functional/CSharp_Reference_Value.de.html">Referenz- &amp; Werttypen</a></li>
-</ul>
-<h3 id="Objektorientierte-Programmierung">Objektorientierte Programmierung<a class="anchor-link" href="#Objektorientierte-Programmierung">¶</a></h3><h4 id="Grundlagen">Grundlagen<a class="anchor-link" href="#Grundlagen">¶</a></h4><ul>
-<li><a href="../Objectoriented_Programming.de.html">Einleitung</a></li>
-<li><a href="../csharp/oop/CSharp_Basics.de.html">Objektorientierte Programmierung in C# Grundlagen</a></li>
-</ul>
-<h4 id="Vertiefung">Vertiefung<a class="anchor-link" href="#Vertiefung">¶</a></h4><ul>
-<li><a href="../csharp/oop/CSharp_Samples.de.html">Objektorientierte Programmierung in C# Samples</a><ul>
-<li><a href="../csharp/oop/CSharp_Access_Modifiers.de.html">Zugriffsmodifizierer</a></li>
-<li><a href="../csharp/oop/Constructors.de.html">Konstruktoren</a></li>
-<li><a href="../csharp/oop/Properties.de.html">Properties</a></li>
-<li><a href="../csharp/oop/Lambdas_n_delegates.de.html">Lambda-Ausdrücke und Delegaten</a></li>
-<li><a href="../csharp/oop/Events.de.html">Events</a></li>
-</ul>
-</li>
-<li><a href="../csharp/oop/Compare_Objects.de.html">💡 Vergleich von Objekten</a></li>
-</ul>
-<h4 id="Anwendung">Anwendung<a class="anchor-link" href="#Anwendung">¶</a></h4><ul>
-<li><a href="../csharp/oop/Gameboard_store.de.html">Beispiel: ein Spielstandmanagement in C#</a></li>
-</ul>
-<h3 id="GUI-Programmierung">GUI-Programmierung<a class="anchor-link" href="#GUI-Programmierung">¶</a></h3><h4 id="Grundlagen">Grundlagen<a class="anchor-link" href="#Grundlagen">¶</a></h4><ul>
-<li><a href="../csharp/framework/wpf/Basics.de.html">C# und WPF</a></li>
-<li><a href="../csharp/framework/wpf/Binding.de.html">Data Binding mit WPF und C#</a></li>
-</ul>
-<h3 id="Grundlegende-Backend-Programmierung">Grundlegende Backend-Programmierung<a class="anchor-link" href="#Grundlegende-Backend-Programmierung">¶</a></h3><ul>
-<li><a href="../WebAPIs.de.html">Web-APIs</a></li>
-<li><a href="../csharp/framework/dotnet_core/DotNetCoreBackend.de.html">Backend-Programmierung mit ASP.NET Core</a></li>
-<li><a href="../csharp/framework/dotnet_core/SwaggerAddon.de.html">Swagger Addon</a></li>
-<li><a href="../csharp/framework/dotnet_core/SamplePlayerManagement.de.html">Beispiel einer Spielerverwaltung als Backend</a></li>
-</ul>
-<h3 id="Tools">Tools<a class="anchor-link" href="#Tools">¶</a></h3><ul>
-<li><a href="../../tools/GIT.de.html">Quellcodeverwaltung mit Git</a></li>
-</ul>
+<h3 id="In-C%23-erkl%C3%A4rt">In C# erklärt<a class="anchor-link" href="#In-C%23-erkl%C3%A4rt">¶</a></h3><h4 id="Syntax">Syntax<a class="anchor-link" href="#Syntax">¶</a></h4><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">parameter</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">Ausdruck</span>
+</pre></div>
+<h4 id="Beispiel:-Quadratzahl-berechnen">Beispiel: Quadratzahl berechnen<a class="anchor-link" href="#Beispiel:-Quadratzahl-berechnen">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">Func</span><span class="o">&lt;</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="o">&gt;</span> <span class="n">quadrat</span> <span class="o">=</span> <span class="n">x</span> <span class="o">=&gt;</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span><span class="p">;</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">quadrat</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>25
+</pre>
+</div>
 </div>
 </div>
 </div>
@@ -7652,11 +7599,1339 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Anhang">Anhang<a class="anchor-link" href="#Anhang">¶</a></Create_pdf.en.html">Erzeugen von HTML-Seiten aus den notebooks</a></p>
-<p><a href="../../Deploy_Contents.en.html">Erzeugen einer Webpage aus HTML-Seiten</a></p>
-<p><a href="../cmdline/Shells.de.html">Kommandozeile</a></p>
-<p><a href="../../tools/UTM_n_VS.de.html">Windows auf dem Mac mit UTM</a></p>
-<p><a href="../../htw/Team_Signup.de.html">Team Anmeldung</a></p>
+<h4 id="Mehrere-Parameter">Mehrere Parameter<a class="anchor-link" href="#Mehrere-Parameter">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">Func</span><span class="o">&lt;</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="o">&gt;</span> <span class="n">addiere</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">addiere</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>7
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Kein-R%C3%BCckgabewert">Kein Rückgabewert<a class="anchor-link" href="#Kein-R%C3%BCckgabewert">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">Action</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">drucke</span> <span class="o">=</span> <span class="n">s</span> <span class="o">=&gt;</span> <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
+<span class="n">drucke</span><span class="p">(</span><span class="s2">"Hallo Lambda!"</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Hallo Lambda!
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Unterschiede:-Func%3C%3E,-Action%3C%3E,-Predicate%3C%3E">Unterschiede: <code>Func&lt;&gt;</code>, <code>Action&lt;&gt;</code>, <code>Predicate&lt;&gt;</code><a class="anchor-link" href="#Unterschiede:-Func%3C%3E,-Action%3C%3E,-Predicate%3C%3E">¶</a></h4><table>
+<thead>
+<tr>
+<th>Typ</th>
+<th>Rückgabewert?</th>
+<th>Parameter</th>
+<th>Beispiel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Func&lt;T&gt;</code></td>
+<td>✅ ja</td>
+<td>0–16</td>
+<td><code>Func&lt;int, string&gt;</code></td>
+</tr>
+<tr>
+<td><code>Action&lt;T&gt;</code></td>
+<td>❌ nein</td>
+<td>0–16</td>
+<td><code>Action&lt;string&gt;</code></td>
+</tr>
+<tr>
+<td><code>Predicate&lt;T&gt;</code></td>
+<td>✅ bool</td>
+<td>genau 1 TODO: check</td>
+<td><code>Predicate&lt;int&gt; istGerade = x =&gt; x % 2 == 0;</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="Kombination-mit-LINQ">Kombination mit LINQ<a class="anchor-link" href="#Kombination-mit-LINQ">¶</a></h3><p>Lambda-Ausdrücke sind besonders nützlich in Kombination mit LINQ (Language Integrated Query) in C#. Sie ermöglichen es, Datenabfragen auf Sammlungen wie Listen, Arrays oder Datenbanken elegant und lesbar zu gestalten.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [44]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="nb">int</span><span class="o">&gt;</span> <span class="n">zahlen</span> <span class="o">=</span> <span class="n">new</span> <span class="n">List</span><span class="o">&lt;</span><span class="nb">int</span><span class="o">&gt;</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span> <span class="p">};</span>
+
+<span class="n">Predicate</span><span class="o">&lt;</span><span class="nb">int</span><span class="o">&gt;</span> <span class="n">istGerade</span> <span class="o">=</span> <span class="n">x</span> <span class="o">=&gt;</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;</span> <span class="o">//</span> <span class="n">Das</span> <span class="k">lambda</span> <span class="n">könnte</span> <span class="n">auch</span> <span class="n">anonym</span> <span class="n">sein</span> <span class="n">und</span> <span class="n">direkt</span> <span class="ow">in</span> <span class="n">Where</span> <span class="n">verwendet</span> <span class="n">werden</span>
+
+<span class="o">//</span> <span class="n">Predicate</span><span class="o">&lt;</span><span class="nb">int</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="n">Func</span><span class="o">&lt;</span><span class="nb">int</span><span class="p">,</span> <span class="nb">bool</span><span class="o">&gt;</span> <span class="n">umwandeln</span><span class="p">,</span> <span class="n">da</span> <span class="n">Where</span> <span class="n">Func</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="nb">bool</span><span class="o">&gt;</span> <span class="n">erwartet</span>
+<span class="n">Func</span><span class="o">&lt;</span><span class="nb">int</span><span class="p">,</span> <span class="nb">bool</span><span class="o">&gt;</span> <span class="n">funcIstGerade</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Func</span><span class="o">&lt;</span><span class="nb">int</span><span class="p">,</span> <span class="nb">bool</span><span class="o">&gt;</span><span class="p">(</span><span class="n">istGerade</span><span class="p">);</span>
+
+<span class="o">//</span> <span class="n">var</span> <span class="n">gerade</span> <span class="o">=</span> <span class="n">zahlen</span><span class="o">.</span><span class="n">Where</span><span class="p">(</span><span class="n">x</span> <span class="o">=&gt;</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">)</span><span class="o">.</span><span class="n">ToList</span><span class="p">();</span> <span class="o">//</span> <span class="n">Verwendung</span> <span class="n">eines</span> <span class="n">Lambda</span><span class="o">-</span><span class="n">Ausdrucks</span> <span class="n">direkt</span> <span class="ow">in</span> <span class="n">Where</span>
+<span class="n">var</span> <span class="n">gerade</span> <span class="o">=</span> <span class="n">zahlen</span><span class="o">.</span><span class="n">Where</span><span class="p">(</span><span class="n">funcIstGerade</span><span class="p">)</span><span class="o">.</span><span class="n">ToList</span><span class="p">();</span> <span class="o">//</span> <span class="n">Verwendung</span> <span class="n">der</span> <span class="n">umgewandelten</span> <span class="n">Funktion</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">Join</span><span class="p">(</span><span class="s2">", "</span><span class="p">,</span> <span class="n">gerade</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>2, 4
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">Predicate</span><span class="o">&lt;</span><span class="nb">int</span><span class="o">&gt;</span> <span class="n">istGerade</span> <span class="o">=</span> <span class="n">x</span> <span class="o">=&gt;</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">istGerade</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="err">?</span> <span class="s2">"Gerade"</span> <span class="p">:</span> <span class="s2">"Ungerade"</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Gerade
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Einschr%C3%A4nkungen">Einschränkungen<a class="anchor-link" href="#Einschr%C3%A4nkungen">¶</a></h3><ul>
+<li>Lambda-Ausdrücke können <strong>nur einen Ausdruck</strong> enthalten – keine vollständigen Codeblöcke (außer bei "Statement Lambdas").</li>
+<li>Kein Zugriff auf <code>goto</code>, <code>break</code>, <code>continue</code> (außer über <code>yield</code> oder <code>return</code> in komplexeren Versionen).</li>
+<li>Schließen über sogenannte <strong>"Closures"</strong> auf äußere Variablen.</li>
+</ul>
+<h3 id="Statement-Lambdas">Statement-Lambdas<a class="anchor-link" href="#Statement-Lambdas">¶</a></h3><p>Wenn du mehr als nur einen Ausdruck brauchst:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">Func</span><span class="o">&lt;</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="o">&gt;</span> <span class="n">komplex</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nb">int</span> <span class="n">ergebnis</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">ergebnis</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">komplex</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>10
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Closures">Closures<a class="anchor-link" href="#Closures">¶</a></h4><p>Lambdas können auf Variablen zugreifen, die im äußeren Kontext definiert sind:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [45]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">Func</span><span class="o">&lt;</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="o">&gt;</span> <span class="n">multiplizieren</span> <span class="o">=</span> <span class="n">x</span> <span class="o">=&gt;</span> <span class="n">x</span> <span class="o">*</span> <span class="n">faktor</span><span class="p">;</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">multiplizieren</span><span class="p">(</span><span class="mi">4</span><span class="p">));</span>   <span class="o">//</span> <span class="n">Diese</span> <span class="n">Zeile</span> <span class="n">wird</span> <span class="n">einen</span> <span class="n">Fehler</span> <span class="ow">in</span> <span class="n">der</span> <span class="n">normalen</span> <span class="o">.</span><span class="n">NET</span> <span class="n">runtime</span>
+                                        <span class="o">//</span> <span class="n">verursachen</span><span class="p">,</span> <span class="n">da</span> <span class="s1">'faktor'</span> <span class="n">nicht</span> <span class="n">definiert</span> <span class="n">ist</span><span class="o">.</span> <span class="n">In</span> <span class="o">.</span><span class="n">NET</span> <span class="n">Interactive</span>
+                                        <span class="o">//</span> <span class="n">wird</span> <span class="n">es</span> <span class="n">jedoch</span> <span class="n">funktionieren</span><span class="p">,</span> <span class="n">da</span> <span class="n">die</span> <span class="n">Variable</span> <span class="s1">'faktor'</span> <span class="n">im</span> <span class="n">globalen</span> <span class="n">Kontext</span> <span class="n">definiert</span> <span class="n">ist</span><span class="o">.</span>
+<span class="nb">int</span> <span class="n">faktor</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">multiplizieren</span><span class="p">(</span><span class="mi">4</span><span class="p">));</span>
+
+<span class="n">Func</span><span class="o">&lt;</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="o">&gt;</span> <span class="n">internalLambda</span><span class="p">;</span>
+
+<span class="n">void</span> <span class="n">erzeugeLambda</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nb">int</span> <span class="n">faktor</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="n">internalLambda</span> <span class="o">=</span> <span class="n">x</span> <span class="o">=&gt;</span> <span class="n">x</span> <span class="o">*</span> <span class="n">faktor</span><span class="p">;</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">internalLambda</span><span class="p">(</span><span class="mi">10</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="n">void</span> <span class="n">nutzeLambda</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">erzeugeLambda</span><span class="p">();</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">internalLambda</span><span class="p">(</span><span class="mi">4</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="n">nutzeLambda</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>0
+12
+20
+8
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<blockquote>
+<p>⚠️ <code>faktor</code> wird <strong>by reference</strong> gehalten – Änderungen beeinflussen das Verhalten des Lambdas!</p>
+</blockquote>
+<h3 id="Anwendungen">Anwendungen<a class="anchor-link" href="#Anwendungen">¶</a></h3><ul>
+<li><strong>Callbacks und Eventhandler</strong></li>
+<li><strong>Filter und Projektionen mit LINQ</strong></li>
+<li><strong>Code-Kompaktierung</strong></li>
+<li><strong>Funktionen als Werte weitergeben</strong></li>
+</ul>
+<h3 id="Zusammenfassung">Zusammenfassung<a class="anchor-link" href="#Zusammenfassung">¶</a></h3><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Anonyme Funktion</td>
+<td>Kein Name nötig</td>
+</tr>
+<tr>
+<td>Kürzere Syntax</td>
+<td><code>(x) =&gt; x * x</code></td>
+</tr>
+<tr>
+<td><code>Func&lt;&gt;</code></td>
+<td>Gibt einen Wert zurück</td>
+</tr>
+<tr>
+<td><code>Action&lt;&gt;</code></td>
+<td>Gibt nichts zurück</td>
+</tr>
+<tr>
+<td>In LINQ weit verbreitet</td>
+<td><code>.Where(x =&gt; x &gt; 0)</code></td>
+</tr>
+<tr>
+<td>Zugriff auf äußere Variablen</td>
+<td>Closures</td>
+</tr>
+<tr>
+<td>Erweiterbar zu Statement-Lambdas</td>
+<td>mit <code>{}</code> und <code>return</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Einsatzm%C3%B6glichkeiten">Einsatzmöglichkeiten<a class="anchor-link" href="#Einsatzm%C3%B6glichkeiten">¶</a></h2><p>Hier sind <strong>konkrete, praxisnahe Beispiele</strong>, wie man Lambda-Funktionen in <strong>C#</strong> sinnvoll einsetzen kann – von einfach bis komplex, für Lernen, Alltag und professionelle Softwareentwicklung:</p>
+<h3 id="1.-Mathematische-Berechnung">1. Mathematische Berechnung<a class="anchor-link" href="#1.-Mathematische-Berechnung">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">Func</span><span class="o">&lt;</span><span class="n">double</span><span class="p">,</span> <span class="n">double</span><span class="o">&gt;</span> <span class="n">flaecheKreis</span> <span class="o">=</span> <span class="n">r</span> <span class="o">=&gt;</span> <span class="n">Math</span><span class="o">.</span><span class="n">PI</span> <span class="o">*</span> <span class="n">r</span> <span class="o">*</span> <span class="n">r</span><span class="p">;</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">flaecheKreis</span><span class="p">(</span><span class="mi">3</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="2.-Filtern-in-einer-Liste-mit-LINQ">2. Filtern in einer Liste mit LINQ<a class="anchor-link" href="#2.-Filtern-in-einer-Liste-mit-LINQ">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">var</span> <span class="n">zahlen</span> <span class="o">=</span> <span class="n">new</span> <span class="n">List</span><span class="o">&lt;</span><span class="nb">int</span><span class="o">&gt;</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span> <span class="p">};</span>
+<span class="n">var</span> <span class="n">ungerade</span> <span class="o">=</span> <span class="n">zahlen</span><span class="o">.</span><span class="n">Where</span><span class="p">(</span><span class="n">x</span> <span class="o">=&gt;</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">ToList</span><span class="p">();</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">Join</span><span class="p">(</span><span class="s2">", "</span><span class="p">,</span> <span class="n">ungerade</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>1, 3, 5
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="3.-Projektion-in-LINQ-(Select)">3. Projektion in LINQ (Select)<a class="anchor-link" href="#3.-Projektion-in-LINQ-(Select)">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">var</span> <span class="n">namen</span> <span class="o">=</span> <span class="n">new</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="p">{</span> <span class="s2">"Anna"</span><span class="p">,</span> <span class="s2">"Ben"</span><span class="p">,</span> <span class="s2">"Clara"</span> <span class="p">};</span>
+<span class="n">var</span> <span class="n">mitLaenge</span> <span class="o">=</span> <span class="n">namen</span><span class="o">.</span><span class="n">Select</span><span class="p">(</span><span class="n">n</span> <span class="o">=&gt;</span> <span class="err">$</span><span class="s2">"</span><span class="si">{n}</span><span class="s2"> (</span><span class="si">{n.Length}</span><span class="s2"> Buchstaben)"</span><span class="p">)</span><span class="o">.</span><span class="n">ToList</span><span class="p">();</span>
+<span class="n">mitLaenge</span><span class="o">.</span><span class="n">ForEach</span><span class="p">(</span><span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Anna (4 Buchstaben)
+Ben (3 Buchstaben)
+Clara (5 Buchstaben)
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="4.-Eigene-Sortierlogik">4. Eigene Sortierlogik<a class="anchor-link" href="#4.-Eigene-Sortierlogik">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">var</span> <span class="n">woerter</span> <span class="o">=</span> <span class="n">new</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="p">{</span> <span class="s2">"Apfel"</span><span class="p">,</span> <span class="s2">"Banane"</span><span class="p">,</span> <span class="s2">"Kiwi"</span><span class="p">,</span> <span class="s2">"Pflaume"</span> <span class="p">};</span>
+<span class="n">woerter</span><span class="o">.</span><span class="n">Sort</span><span class="p">((</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">a</span><span class="o">.</span><span class="n">Length</span><span class="o">.</span><span class="n">CompareTo</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">Length</span><span class="p">));</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">Join</span><span class="p">(</span><span class="s2">", "</span><span class="p">,</span> <span class="n">woerter</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Kiwi, Apfel, Banane, Pflaume
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="5.-Eventhandler-in-GUI-Anwendungen-(z.%E2%80%AFB.-WPF)">5. Eventhandler in GUI-Anwendungen (z. B. WPF)<a class="anchor-link" href="#5.-Eventhandler-in-GUI-Anwendungen-(z.%E2%80%AFB.-WPF)">¶</a></h3><div class="highlight"><pre><span></span><span class="n">button</span><span class="p">.</span><span class="n">Click</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">MessageBox</span><span class="p">.</span><span class="n">Show</span><span class="p">(</span><span class="s">"Button geklickt!"</span><span class="p">);</span>
+</pre></div>
+<h3 id="6.-Anonyme-Callback-Funktion">6. Anonyme Callback-Funktion<a class="anchor-link" href="#6.-Anonyme-Callback-Funktion">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">void</span> <span class="n">FuehreAus</span><span class="p">(</span><span class="n">Func</span><span class="o">&lt;</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="o">&gt;</span> <span class="n">operation</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">operation</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="n">FuehreAus</span><span class="p">(</span><span class="n">x</span> <span class="o">=&gt;</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">10</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>50
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="7.-Verwendung-in-Dictionary-mit-Bedingungen">7. Verwendung in <code>Dictionary</code> mit Bedingungen<a class="anchor-link" href="#7.-Verwendung-in-Dictionary-mit-Bedingungen">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [25]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">var</span> <span class="n">aktionen</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Dictionary</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="n">Action</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="p">[</span><span class="s2">"start"</span><span class="p">]</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Gestartet"</span><span class="p">),</span>
+    <span class="p">[</span><span class="s2">"stop"</span><span class="p">]</span>  <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Gestoppt"</span><span class="p">),</span>
+    <span class="p">[</span><span class="s2">"pause"</span><span class="p">]</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Pausiert"</span><span class="p">)</span>
+<span class="p">};</span>
+
+<span class="n">string</span> <span class="n">aktion</span> <span class="o">=</span> <span class="s2">"pause"</span><span class="p">;</span>
+
+<span class="n">aktionen</span><span class="p">[</span><span class="n">aktion</span><span class="p">]();</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Pausiert
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="8.-Filter-f%C3%BCr-Dateinamen">8. Filter für Dateinamen<a class="anchor-link" href="#8.-Filter-f%C3%BCr-Dateinamen">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [26]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">string</span><span class="p">[]</span> <span class="n">dateien</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">"test.txt"</span><span class="p">,</span> <span class="s2">"readme.md"</span><span class="p">,</span> <span class="s2">"app.cs"</span><span class="p">,</span> <span class="s2">"data.json"</span> <span class="p">};</span>
+<span class="n">var</span> <span class="n">nurTxt</span> <span class="o">=</span> <span class="n">dateien</span><span class="o">.</span><span class="n">Where</span><span class="p">(</span><span class="n">f</span> <span class="o">=&gt;</span> <span class="n">f</span><span class="o">.</span><span class="n">EndsWith</span><span class="p">(</span><span class="s2">".txt"</span><span class="p">));</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">Join</span><span class="p">(</span><span class="s2">", "</span><span class="p">,</span> <span class="n">nurTxt</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>test.txt
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="9.-Predicate-f%C3%BCr-eigene-Suche">9. Predicate für eigene Suche<a class="anchor-link" href="#9.-Predicate-f%C3%BCr-eigene-Suche">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [40]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">Predicate</span><span class="o">&lt;</span><span class="nb">int</span><span class="o">&gt;</span> <span class="n">istPrim</span> <span class="o">=</span> <span class="n">n</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">)</span> <span class="k">return</span> <span class="n">false</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">Enumerable</span><span class="o">.</span><span class="n">Range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">All</span><span class="p">(</span><span class="n">i</span> <span class="o">=&gt;</span> <span class="n">n</span> <span class="o">%</span> <span class="n">i</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">istPrim</span><span class="p">(</span><span class="mi">2010100001</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>False
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="10.-Verzeichnisdateien-nach-Gr%C3%B6%C3%9Fe-sortieren">10. Verzeichnisdateien nach Größe sortieren<a class="anchor-link" href="#10.-Verzeichnisdateien-nach-Gr%C3%B6%C3%9Fe-sortieren">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">using</span> <span class="n">System</span><span class="o">.</span><span class="n">IO</span><span class="p">;</span>
+<span class="n">var</span> <span class="n">dateien</span> <span class="o">=</span> <span class="n">new</span> <span class="n">DirectoryInfo</span><span class="p">(</span><span class="s2">"."</span><span class="p">)</span><span class="o">.</span><span class="n">GetFiles</span><span class="p">();</span>
+<span class="n">var</span> <span class="n">groesste</span> <span class="o">=</span> <span class="n">dateien</span><span class="o">.</span><span class="n">OrderByDescending</span><span class="p">(</span><span class="n">f</span> <span class="o">=&gt;</span> <span class="n">f</span><span class="o">.</span><span class="n">Length</span><span class="p">)</span><span class="o">.</span><span class="n">First</span><span class="p">();</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Größte Datei: </span><span class="si">{groesste.Name}</span><span class="s2"> (</span><span class="si">{groesste.Length}</span><span class="s2"> Bytes)"</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="11.-Asynchrone-Lambda-f%C3%BCr-Web-Requests">11. Asynchrone Lambda für Web-Requests<a class="anchor-link" href="#11.-Asynchrone-Lambda-f%C3%BCr-Web-Requests">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [41]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">using</span> <span class="n">System</span><span class="o">.</span><span class="n">Net</span><span class="o">.</span><span class="n">Http</span><span class="p">;</span>
+<span class="n">Func</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="n">Task</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&gt;</span> <span class="n">ladeSeite</span> <span class="o">=</span> <span class="k">async</span> <span class="n">url</span> <span class="o">=&gt;</span>
+<span class="p">{</span>
+    <span class="n">using</span> <span class="n">var</span> <span class="n">client</span> <span class="o">=</span> <span class="n">new</span> <span class="n">HttpClient</span><span class="p">();</span>
+    <span class="k">return</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">GetStringAsync</span><span class="p">(</span><span class="n">url</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="n">string</span> <span class="n">html</span> <span class="o">=</span> <span class="k">await</span> <span class="n">ladeSeite</span><span class="p">(</span><span class="s2">"https://www8.2hands.de/SoProMing/JederKannCoden/programming/abstract/Intro.de.html"</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">html</span><span class="p">[</span><span class="o">.</span><span class="mf">.1000</span><span class="p">]);</span> <span class="o">//</span> <span class="n">Zeigt</span> <span class="n">die</span> <span class="n">ersten</span> <span class="mi">100</span> <span class="n">Zeichen</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>
+                &lt;!DOCTYPE html&gt;
+                &lt;html lang="en"&gt;
+                &lt;head&gt;
+                    &lt;meta charset="UTF-8"&gt;
+                    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+                    &lt;link rel="stylesheet" href="/SoProMing/JederKannCoden/style.css"&gt;
+                    &lt;title&gt;Jeder kann coden - Einleitung&lt;/title&gt;
+                &lt;/head&gt;
+                &lt;body&gt;
+                    &lt;nav&gt;
+                        &lt;div class="menu"&gt;
+                            
+                &lt;ul class="menu"&gt;
+  &lt;li class="menu-item"&gt;
+    &lt;a href="#"&gt;Htw&lt;/a&gt;
+&lt;ul class="submenu"&gt;
+  &lt;li&gt;&lt;a href="/SoProMing/JederKannCoden/htw/Team_Signup.de.html"&gt;Anleitung zur Prüfungsgruppenanmeldung&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li class="menu-item"&gt;
+    &lt;a href="#"&gt;Programming&lt;/a&gt;
+&lt;ul class="submenu"&gt;
+  &lt;li&gt;&lt;a href="/SoProMing/JederKannCoden/programming/Number_Systems.de.html"&gt;Zahlensysteme und Zeichendarstellung&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="/SoProMing/JederKannCoden/progra
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="12.-Transformation-von-Objekten-(Projektion)">12. Transformation von Objekten (Projektion)<a class="anchor-link" href="#12.-Transformation-von-Objekten-(Projektion)">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [43]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Person</span> <span class="p">{</span> <span class="n">public</span> <span class="n">string</span> <span class="n">Name</span><span class="p">;</span> <span class="n">public</span> <span class="nb">int</span> <span class="n">Alter</span><span class="p">;</span> <span class="p">}</span>
+<span class="n">var</span> <span class="n">personen</span> <span class="o">=</span> <span class="n">new</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="n">new</span> <span class="n">Person</span> <span class="p">{</span> <span class="n">Name</span> <span class="o">=</span> <span class="s2">"Lisa"</span><span class="p">,</span> <span class="n">Alter</span> <span class="o">=</span> <span class="mi">25</span> <span class="p">},</span>
+    <span class="n">new</span> <span class="n">Person</span> <span class="p">{</span> <span class="n">Name</span> <span class="o">=</span> <span class="s2">"Tom"</span><span class="p">,</span> <span class="n">Alter</span> <span class="o">=</span> <span class="mi">32</span> <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="n">var</span> <span class="n">namen</span> <span class="o">=</span> <span class="n">personen</span><span class="o">.</span><span class="n">Select</span><span class="p">(</span><span class="n">p</span> <span class="o">=&gt;</span> <span class="n">p</span><span class="o">.</span><span class="n">Name</span><span class="p">)</span><span class="o">.</span><span class="n">ToList</span><span class="p">();</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">Join</span><span class="p">(</span><span class="s2">", "</span><span class="p">,</span> <span class="n">namen</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Lisa, Tom
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Delegaten-in-C%23">Delegaten in C#<a class="anchor-link" href="#Delegaten-in-C%23">¶</a></h2><p>Delegaten (Delegates) sind ein zentrales Konzept in <strong>C#</strong>, auf dem <strong>Events</strong>, <strong>Lambdas</strong>, <strong>Callbacks</strong> und sogar <strong>asynchrone Programmierung</strong> basieren. Sie sind – vereinfacht gesagt – <strong>Typen für Funktionen</strong>.</p>
+<h3 id="Was-ist-ein-Delegat?">Was ist ein Delegat?<a class="anchor-link" href="#Was-ist-ein-Delegat?">¶</a></h3><p>Ein <strong>Delegat</strong> ist ein <strong>Typ</strong>, der auf <strong>Methoden mit einer bestimmten Signatur</strong> zeigt – vergleichbar mit einem <strong>Funktionszeiger</strong> in C oder einem <strong>Callback</strong> in JavaScript.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [46]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="n">delegate</span> <span class="nb">int</span> <span class="n">Rechenart</span><span class="p">(</span><span class="nb">int</span> <span class="n">x</span><span class="p">,</span> <span class="nb">int</span> <span class="n">y</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Dieser Delegattyp kann <strong>alle Methoden aufnehmen</strong>, die zwei <code>int</code> entgegennehmen und einen <code>int</code> zurückgeben.</p>
+<h3 id="Beispiel-mit-Delegat">Beispiel mit Delegat<a class="anchor-link" href="#Beispiel-mit-Delegat">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="nb">int</span> <span class="n">Addiere</span><span class="p">(</span><span class="nb">int</span> <span class="n">a</span><span class="p">,</span> <span class="nb">int</span> <span class="n">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
+<span class="nb">int</span> <span class="n">Multipliziere</span><span class="p">(</span><span class="nb">int</span> <span class="n">a</span><span class="p">,</span> <span class="nb">int</span> <span class="n">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">;</span>
+
+<span class="n">Rechenart</span> <span class="n">rechner</span> <span class="o">=</span> <span class="n">Addiere</span><span class="p">;</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">rechner</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">));</span>
+
+<span class="n">rechner</span> <span class="o">=</span> <span class="n">Multipliziere</span><span class="p">;</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">rechner</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>5
+6
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Grundlagenwissen-kompakt">Grundlagenwissen kompakt<a class="anchor-link" href="#Grundlagenwissen-kompakt">¶</a></h3><table>
+<thead>
+<tr>
+<th>Konzept</th>
+<th>Erklärung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Definition</strong></td>
+<td><code>delegate Rückgabetyp Name(Typ parameter, …);</code></td>
+</tr>
+<tr>
+<td><strong>Zuweisung</strong></td>
+<td>Mit Methodennamen ohne Klammern: <code>meinDelegat = Methode;</code></td>
+</tr>
+<tr>
+<td><strong>Aufruf</strong></td>
+<td><code>meinDelegat(arg1, arg2);</code></td>
+</tr>
+<tr>
+<td><strong>Multicast</strong></td>
+<td>Delegaten können mehrere Methoden enthalten</td>
+</tr>
+<tr>
+<td><strong>Verwendung</strong></td>
+<td>Callbacks, Events, LINQ, Lambdas, API-Design</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Multicast-Delegates">Multicast-Delegates<a class="anchor-link" href="#Multicast-Delegates">¶</a></h3><p>Ein Delegat kann mehrere Methoden "verketten", <strong>wenn der Rückgabetyp <code>void</code> ist</strong>:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [48]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="n">delegate</span> <span class="n">void</span> <span class="n">Info</span><span class="p">();</span>
+
+<span class="n">void</span> <span class="n">Begruessung</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Hallo"</span><span class="p">);</span>
+<span class="n">void</span> <span class="n">Verabschiedung</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Tschüss"</span><span class="p">);</span>
+
+<span class="n">Info</span> <span class="n">meldung</span> <span class="o">=</span> <span class="n">Begruessung</span><span class="p">;</span>
+<span class="n">meldung</span> <span class="o">+=</span> <span class="n">Verabschiedung</span><span class="p">;</span>
+
+<span class="n">meldung</span><span class="p">();</span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Hallo
+Tschüss
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Vergleich:-Delegat-vs.-Func-/-Action">Vergleich: Delegat vs. Func / Action<a class="anchor-link" href="#Vergleich:-Delegat-vs.-Func-/-Action">¶</a></h3><table>
+<thead>
+<tr>
+<th>Typ</th>
+<th>Parameter</th>
+<th>Rückgabewert</th>
+<th>Verwendung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>delegate</code></td>
+<td>beliebig</td>
+<td>beliebig</td>
+<td>eigene Typdefinition</td>
+</tr>
+<tr>
+<td><code>Func&lt;T,...&gt;</code></td>
+<td>ja</td>
+<td>ja</td>
+<td>vordefinierter Rückgabewert</td>
+</tr>
+<tr>
+<td><code>Action&lt;T,...&gt;</code></td>
+<td>ja</td>
+<td>nein (<code>void</code>)</td>
+<td>vordefinierter void</td>
+</tr>
+<tr>
+<td><code>Predicate&lt;T&gt;</code></td>
+<td>genau 1</td>
+<td><code>bool</code></td>
+<td>Filterfunktion</td>
+</tr>
+</tbody>
+</table>
+<p>Beispiel mit <code>Func</code> statt Delegat:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">Func</span><span class="o">&lt;</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="o">&gt;</span> <span class="n">rechnen</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">rechnen</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>9
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Delegaten-als-Parameter-%C3%BCbergeben">Delegaten als Parameter übergeben<a class="anchor-link" href="#Delegaten-als-Parameter-%C3%BCbergeben">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [50]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">void</span> <span class="n">BerechneUndZeige</span><span class="p">(</span><span class="nb">int</span> <span class="n">a</span><span class="p">,</span> <span class="nb">int</span> <span class="n">b</span><span class="p">,</span> <span class="n">Rechenart</span> <span class="n">methode</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Ergebnis: "</span> <span class="o">+</span> <span class="n">methode</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="n">BerechneUndZeige</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">Addiere</span><span class="p">);</span>
+<span class="n">BerechneUndZeige</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">Multipliziere</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Ergebnis: 7
+Ergebnis: 12
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Delegaten-sind-typsicher">Delegaten sind <strong>typsicher</strong><a class="anchor-link" href="#Delegaten-sind-typsicher">¶</a></h3><p>Du kannst nur Methoden zuweisen, die genau die Signatur erfüllen. Das unterscheidet Delegaten von unsicheren Funktionszeigern.</p>
+<h3 id="Wichtige-Hinweise">Wichtige Hinweise<a class="anchor-link" href="#Wichtige-Hinweise">¶</a></h3><table>
+<thead>
+<tr>
+<th>Thema</th>
+<th>Erklärung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Null-Prüfung</strong></td>
+<td>Vor dem Aufruf sicherstellen, dass der Delegat gesetzt ist: <code>?.Invoke(...)</code></td>
+</tr>
+<tr>
+<td><strong>Multicast mit Rückgabewert</strong></td>
+<td>Nur der Rückgabewert der <strong>letzten</strong> Methode wird zurückgegeben</td>
+</tr>
+<tr>
+<td><strong>Lambdas sind automatisch Delegaten</strong></td>
+<td>C# erzeugt passende Typen im Hintergrund</td>
+</tr>
+<tr>
+<td><strong>Events kapseln Delegaten</strong></td>
+<td>Von außen nur <code>+=</code>/<code>-=</code> möglich, kein direkter Aufruf</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Beispiel:-Delegat-mit-R%C3%BCckgabe-von-mehreren-Methoden">Beispiel: Delegat mit Rückgabe von mehreren Methoden<a class="anchor-link" href="#Beispiel:-Delegat-mit-R%C3%BCckgabe-von-mehreren-Methoden">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [55]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="n">delegate</span> <span class="nb">int</span> <span class="n">Rechne</span><span class="p">(</span><span class="nb">int</span> <span class="n">x</span><span class="p">,</span> <span class="nb">int</span> <span class="n">y</span><span class="p">);</span>
+
+<span class="n">static</span> <span class="nb">int</span> <span class="n">Eins</span><span class="p">(</span><span class="nb">int</span> <span class="n">x</span><span class="p">,</span> <span class="nb">int</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span> <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Eins"</span><span class="p">);</span> <span class="k">return</span> <span class="mi">1</span><span class="p">;</span> <span class="p">}</span>
+<span class="n">static</span> <span class="nb">int</span> <span class="n">Zwei</span><span class="p">(</span><span class="nb">int</span> <span class="n">x</span><span class="p">,</span> <span class="nb">int</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span> <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Zwei"</span><span class="p">);</span> <span class="k">return</span> <span class="mi">2</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="n">Rechne</span> <span class="n">d</span> <span class="o">=</span> <span class="n">Eins</span><span class="p">;</span>
+<span class="n">d</span> <span class="o">+=</span> <span class="n">Zwei</span><span class="p">;</span>
+
+<span class="nb">int</span> <span class="n">result</span> <span class="o">=</span> <span class="n">d</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Ergebnis: </span><span class="si">{result}</span><span class="s2">"</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Eins
+Zwei
+Ergebnis: 2
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Zusammenfassung">Zusammenfassung<a class="anchor-link" href="#Zusammenfassung">¶</a></h3><table>
+<thead>
+<tr>
+<th>Thema</th>
+<th>Erklärung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Delegat = Typ für Methode</td>
+<td><code>delegate int MeinDelegate(int a, int b);</code></td>
+</tr>
+<tr>
+<td>Verwendung</td>
+<td>Callbacks, Events, LINQ</td>
+</tr>
+<tr>
+<td>Unterstützt Multicast</td>
+<td>mehrere Methoden bei <code>void</code></td>
+</tr>
+<tr>
+<td>Funktioniert mit Lambdas</td>
+<td><code>d = (x, y) =&gt; x + y;</code></td>
+</tr>
+<tr>
+<td>Typensicherheit</td>
+<td>nur passende Signaturen erlaubt</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Cheatsheet-Lambdas-und-Delegaten">Cheatsheet Lambdas und Delegaten<a class="anchor-link" href="#Cheatsheet-Lambdas-und-Delegaten">¶</a></h3><p><a href="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3458764525293354341&amp;cot=14"><img alt="No description has been provided for this image" src="Cheatsheet_Lambdas_n_delegates"/></a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Vertiefung">Vertiefung<a class="anchor-link" href="#Vertiefung">¶</a></h2><p>Es gibt noch <strong>mehr zu wissen</strong> über Lambda-Funktionen, besonders in <strong>C#</strong>. Hier sind weiterführende und oft übersehene Aspekte:</p>
+<h3 id="1.-Typinferenz-und-implizite-Konvertierung">1. Typinferenz und implizite Konvertierung<a class="anchor-link" href="#1.-Typinferenz-und-implizite-Konvertierung">¶</a></h3><p>Du kannst den Typ meistens weglassen:</p>
+<div class="highlight"><pre><span></span><span class="kt">var</span><span class="w"> </span><span class="n">verdoppeln</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+</pre></div>
+<p>Aber nicht immer:</p>
+<div class="highlight"><pre><span></span><span class="kt">var</span><span class="w"> </span><span class="n">falsch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="c1">// ❌ Fehler: Typ nicht ableitbar</span>
+</pre></div>
+<p>Manchmal hilft explizite Typangabe:</p>
+<div class="highlight"><pre><span></span><span class="n">Func</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">korrekt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+</pre></div>
+<h3 id="2.-Lambda-vs.-Delegates-(Unterschiede)">2. Lambda vs. Delegates (Unterschiede)<a class="anchor-link" href="#2.-Lambda-vs.-Delegates-(Unterschiede)">¶</a></h3><div class="highlight"><pre><span></span><span class="k">delegate</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">MeinDelegate</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">);</span>
+<span class="n">MeinDelegate</span><span class="w"> </span><span class="n">del</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">delegate</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="p">};</span>
+
+<span class="n">Func</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">lambda</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</pre></div>
+<table>
+<thead>
+<tr>
+<th>Aspekt</th>
+<th>Delegate</th>
+<th>Lambda</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Syntax</td>
+<td><code>delegate (...) {}</code></td>
+<td><code>(...) =&gt; ...</code></td>
+</tr>
+<tr>
+<td>Klarheit</td>
+<td>etwas länger</td>
+<td>sehr kompakt</td>
+</tr>
+<tr>
+<td>Capturing</td>
+<td>ja</td>
+<td>ja</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3.-Capturing-von-Variablen-(Closures)">3. Capturing von Variablen (Closures)<a class="anchor-link" href="#3.-Capturing-von-Variablen-(Closures)">¶</a></h3><p>Das ist <strong>mächtig, aber gefährlich</strong>, z. B. in Schleifen:</p>
+<div class="highlight"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Func</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">funktionen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="p">();</span>
+
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">funktionen</span><span class="p">.</span><span class="n">Add</span><span class="p">(()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">i</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="kt">var</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">funktionen</span><span class="p">)</span>
+<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">f</span><span class="p">());</span><span class="w"> </span><span class="c1">// Gibt 3, 3, 3 aus! Nicht 0, 1, 2</span>
+</pre></div>
+<p>👉 <strong>Fix:</strong> Lokale Kopie der Schleifenvariablen:</p>
+<div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">kopie</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<span class="w">    </span><span class="n">funktionen</span><span class="p">.</span><span class="n">Add</span><span class="p">(()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">kopie</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+<h3 id="4.-Lambda-Ausdr%C3%BCcke-in-Expression-Trees">4. Lambda-Ausdrücke in Expression Trees<a class="anchor-link" href="#4.-Lambda-Ausdr%C3%BCcke-in-Expression-Trees">¶</a></h3><p>Normalerweise: <code>Func&lt;T&gt;</code> ist <strong>compiled delegate</strong>.</p>
+<p>Aber <code>Expression&lt;Func&lt;T&gt;&gt;</code> ist <strong>Datenstruktur</strong>, die den Ausdruck <strong>beschreibbar und analysierbar</strong> macht (z. B. in ORMs wie Entity Framework):</p>
+<div class="highlight"><pre><span></span><span class="n">Expression</span><span class="o">&lt;</span><span class="n">Func</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">ausdruck</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+</pre></div>
+<p>Du kannst den Baum analysieren:</p>
+<div class="highlight"><pre><span></span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">ausdruck</span><span class="p">.</span><span class="n">Body</span><span class="p">);</span><span class="w"> </span><span class="c1">// x &gt; 5</span>
+</pre></div>
+<h3 id="5.-Asynchrone-Lambda-Funktionen">5. Asynchrone Lambda-Funktionen<a class="anchor-link" href="#5.-Asynchrone-Lambda-Funktionen">¶</a></h3><div class="highlight"><pre><span></span><span class="n">Func</span><span class="o">&lt;</span><span class="n">Task</span><span class="o">&gt;</span><span class="w"> </span><span class="n">asyncAktion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="n">Task</span><span class="p">.</span><span class="n">Delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"Fertig"</span><span class="p">);</span>
+<span class="p">};</span>
+</pre></div>
+<p>Oder mit Rückgabewert:</p>
+<div class="highlight"><pre><span></span><span class="n">Func</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">fetch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="n">Task</span><span class="p">.</span><span class="n">Delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s">$"Wert für {id}"</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+<h3 id="6.-Lambdas-f%C3%BCr-Custom-Sortierung-oder-Events">6. Lambdas für Custom Sortierung oder Events<a class="anchor-link" href="#6.-Lambdas-f%C3%BCr-Custom-Sortierung-oder-Events">¶</a></h3><div class="highlight"><pre><span></span><span class="kt">var</span><span class="w"> </span><span class="n">liste</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">"Banane"</span><span class="p">,</span><span class="w"> </span><span class="s">"Apfel"</span><span class="p">,</span><span class="w"> </span><span class="s">"Kirsche"</span><span class="w"> </span><span class="p">};</span>
+<span class="n">liste</span><span class="p">.</span><span class="n">Sort</span><span class="p">((</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">Length</span><span class="p">.</span><span class="n">CompareTo</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">Length</span><span class="p">));</span><span class="w"> </span><span class="c1">// nach Länge sortieren</span>
+</pre></div>
+<p>Oder als Eventhandler:</p>
+<div class="highlight"><pre><span></span><span class="n">button</span><span class="p">.</span><span class="n">Click</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">MessageBox</span><span class="p">.</span><span class="n">Show</span><span class="p">(</span><span class="s">"Geklickt!"</span><span class="p">);</span>
+</pre></div>
+<h3 id="7.-Lambdas-vs.-Methoden-Referenzen">7. Lambdas vs. Methoden-Referenzen<a class="anchor-link" href="#7.-Lambdas-vs.-Methoden-Referenzen">¶</a></h3><div class="highlight"><pre><span></span><span class="n">Func</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">lambda</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">Quadrat</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="n">Func</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">methodenReferenz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Quadrat</span><span class="p">;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">Quadrat</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+</pre></div>
+<p>Beide funktionieren gleich – Referenzen sind oft lesbarer, wenn die Methode bereits existiert.</p>
+<h3 id="8.-Lambda-in-benutzerdefinierten-Delegates">8. Lambda in benutzerdefinierten Delegates<a class="anchor-link" href="#8.-Lambda-in-benutzerdefinierten-Delegates">¶</a></h3><p>Du kannst Lambdas auch für eigene Delegate-Typen nutzen:</p>
+<div class="highlight"><pre><span></span><span class="k">delegate</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">Begruessung</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">name</span><span class="p">);</span>
+<span class="n">Begruessung</span><span class="w"> </span><span class="n">sagHallo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s">$"Hallo {name}"</span><span class="p">;</span>
+</pre></div>
+<h2 id="%E2%9C%85-Fazit:-Wann-Lambdas-benutzen?">✅ Fazit: Wann Lambdas benutzen?<a class="anchor-link" href="#%E2%9C%85-Fazit:-Wann-Lambdas-benutzen?">¶</a></h2><table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>Lambda sinnvoll?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kleine Funktion on-the-fly</td>
+<td>✅ ja</td>
+</tr>
+<tr>
+<td>Wiederverwendbare Logik</td>
+<td>❌ besser Methode</td>
+</tr>
+<tr>
+<td>Callback oder Filterfunktion</td>
+<td>✅ ja</td>
+</tr>
+<tr>
+<td>Komplexe Logik mit mehreren Zeilen</td>
+<td>❌ besser Methode oder Statement-Lambda</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
