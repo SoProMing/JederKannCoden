@@ -7555,8 +7555,8 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="nb">int</span><span class="p">[]</span> <span class="n">numbers</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span> <span class="p">};</span>
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">numbers</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>  <span class="o">//</span> <span class="n">Ausgabe</span><span class="p">:</span> <span class="mi">3</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>int[] numbers = { 1, 2, 3, 4, 5 };
+Console.WriteLine(numbers[2]);  // Ausgabe: 3
 </pre></div>
 </div>
 </div>
@@ -7587,12 +7587,12 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">fruits</span> <span class="o">=</span> <span class="n">new</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="p">{</span> <span class="s2">"Apple"</span><span class="p">,</span> <span class="s2">"Banana"</span><span class="p">,</span> <span class="s2">"Cherry"</span> <span class="p">};</span>
-<span class="n">fruits</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span><span class="s2">"Orange"</span><span class="p">);</span>
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">fruits</span><span class="p">[</span><span class="n">s</span><span class="p">]);</span>
-<span class="n">foreach</span> <span class="p">(</span> <span class="n">string</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">fruits</span> <span class="p">)</span> <span class="p">{</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>  <span class="o">//</span> <span class="n">Ausgabe</span><span class="p">:</span> <span class="n">Cherry</span>
-<span class="p">}</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>List&lt;string&gt; fruits = new List&lt;string&gt; { "Apple", "Banana", "Cherry" };
+fruits.Add("Orange");
+Console.WriteLine(fruits[s]);
+foreach ( string s in fruits ) {
+    Console.WriteLine(s);  // Ausgabe: Cherry
+}
 </pre></div>
 </div>
 </div>
@@ -7638,10 +7638,10 @@ Orange
 <div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">Dictionary</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="nb">int</span><span class="o">&gt;</span> <span class="n">ages</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Dictionary</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="nb">int</span><span class="o">&gt;</span><span class="p">();</span>
-<span class="n">ages</span><span class="p">[</span><span class="s2">"Alice"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">30</span><span class="p">;</span>
-<span class="n">ages</span><span class="p">[</span><span class="s2">"Bob"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">25</span><span class="p">;</span>
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">ages</span><span class="p">[</span><span class="s2">"Alice"</span><span class="p">]);</span>  <span class="o">//</span> <span class="n">Ausgabe</span><span class="p">:</span> <span class="mi">30</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>Dictionary&lt;string, int&gt; ages = new Dictionary&lt;string, int&gt;();
+ages["Alice"] = 30;
+ages["Bob"] = 25;
+Console.WriteLine(ages["Alice"]);  // Ausgabe: 30
 </pre></div>
 </div>
 </div>
@@ -7685,10 +7685,10 @@ Orange
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">Queue</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">queue</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Queue</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">();</span>
-<span class="n">queue</span><span class="o">.</span><span class="n">Enqueue</span><span class="p">(</span><span class="s2">"First"</span><span class="p">);</span>
-<span class="n">queue</span><span class="o">.</span><span class="n">Enqueue</span><span class="p">(</span><span class="s2">"Second"</span><span class="p">);</span>
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">queue</span><span class="o">.</span><span class="n">Dequeue</span><span class="p">());</span>  <span class="o">//</span> <span class="n">Ausgabe</span><span class="p">:</span> <span class="n">First</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>Queue&lt;string&gt; queue = new Queue&lt;string&gt;();
+queue.Enqueue("First");
+queue.Enqueue("Second");
+Console.WriteLine(queue.Dequeue());  // Ausgabe: First
 </pre></div>
 </div>
 </div>
@@ -7719,10 +7719,10 @@ Orange
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">Stack</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">stack</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Stack</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">();</span>
-<span class="n">stack</span><span class="o">.</span><span class="n">Push</span><span class="p">(</span><span class="s2">"Bottom"</span><span class="p">);</span>
-<span class="n">stack</span><span class="o">.</span><span class="n">Push</span><span class="p">(</span><span class="s2">"Top"</span><span class="p">);</span>
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">stack</span><span class="o">.</span><span class="n">Pop</span><span class="p">());</span>  <span class="o">//</span> <span class="n">Ausgabe</span><span class="p">:</span> <span class="n">Top</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>Stack&lt;string&gt; stack = new Stack&lt;string&gt;();
+stack.Push("Bottom");
+stack.Push("Top");
+Console.WriteLine(stack.Pop());  // Ausgabe: Top
 </pre></div>
 </div>
 </div>
@@ -7752,9 +7752,9 @@ Orange
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">HashSet</span><span class="o">&lt;</span><span class="nb">int</span><span class="o">&gt;</span> <span class="n">uniqueNumbers</span> <span class="o">=</span> <span class="n">new</span> <span class="n">HashSet</span><span class="o">&lt;</span><span class="nb">int</span><span class="o">&gt;</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span> <span class="p">};</span>
-<span class="n">uniqueNumbers</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">uniqueNumbers</span><span class="o">.</span><span class="n">Contains</span><span class="p">(</span><span class="mi">3</span><span class="p">));</span>  <span class="o">//</span> <span class="n">Ausgabe</span><span class="p">:</span> <span class="kc">True</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>HashSet&lt;int&gt; uniqueNumbers = new HashSet&lt;int&gt; { 1, 2, 3, 3 };
+uniqueNumbers.Add(4);
+Console.WriteLine(uniqueNumbers.Contains(3));  // Ausgabe: True
 </pre></div>
 </div>
 </div>
@@ -7784,11 +7784,11 @@ Orange
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">linkedList</span> <span class="o">=</span> <span class="n">new</span> <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">();</span>
-<span class="n">linkedList</span><span class="o">.</span><span class="n">AddLast</span><span class="p">(</span><span class="s2">"First"</span><span class="p">);</span>
-<span class="n">linkedList</span><span class="o">.</span><span class="n">AddLast</span><span class="p">(</span><span class="s2">"Second"</span><span class="p">);</span>
-<span class="n">linkedList</span><span class="o">.</span><span class="n">AddFirst</span><span class="p">(</span><span class="s2">"Zeroth"</span><span class="p">);</span>
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">linkedList</span><span class="o">.</span><span class="n">First</span><span class="o">.</span><span class="n">Value</span><span class="p">);</span>  <span class="o">//</span> <span class="n">Ausgabe</span><span class="p">:</span> <span class="n">Zeroth</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>LinkedList&lt;string&gt; linkedList = new LinkedList&lt;string&gt;();
+linkedList.AddLast("First");
+linkedList.AddLast("Second");
+linkedList.AddFirst("Zeroth");
+Console.WriteLine(linkedList.First.Value);  // Ausgabe: Zeroth
 </pre></div>
 </div>
 </div>
@@ -7819,17 +7819,17 @@ Orange
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">TreeNode</span> <span class="p">{</span>
-    <span class="n">public</span> <span class="nb">int</span> <span class="n">Value</span><span class="p">;</span>
-    <span class="n">public</span> <span class="n">TreeNode</span> <span class="n">Left</span><span class="p">;</span>
-    <span class="n">public</span> <span class="n">TreeNode</span> <span class="n">Right</span><span class="p">;</span>
-    <span class="n">public</span> <span class="n">TreeNode</span><span class="p">(</span><span class="nb">int</span> <span class="n">value</span><span class="p">)</span> <span class="p">{</span> <span class="n">Value</span> <span class="o">=</span> <span class="n">value</span><span class="p">;</span> <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>class TreeNode {
+    public int Value;
+    public TreeNode Left;
+    public TreeNode Right;
+    public TreeNode(int value) { Value = value; }
+}
 
-<span class="n">TreeNode</span> <span class="n">root</span> <span class="o">=</span> <span class="n">new</span> <span class="n">TreeNode</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-<span class="n">root</span><span class="o">.</span><span class="n">Left</span> <span class="o">=</span> <span class="n">new</span> <span class="n">TreeNode</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-<span class="n">root</span><span class="o">.</span><span class="n">Right</span> <span class="o">=</span> <span class="n">new</span> <span class="n">TreeNode</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">Left</span><span class="o">.</span><span class="n">Value</span><span class="p">);</span>  <span class="o">//</span> <span class="n">Ausgabe</span><span class="p">:</span> <span class="mi">2</span>
+TreeNode root = new TreeNode(1);
+root.Left = new TreeNode(2);
+root.Right = new TreeNode(3);
+Console.WriteLine(root.Left.Value);  // Ausgabe: 2
 </pre></div>
 </div>
 </div>
@@ -7859,20 +7859,20 @@ Orange
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Graph</span> <span class="p">{</span>
-    <span class="n">public</span> <span class="n">Dictionary</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&gt;</span> <span class="n">AdjacencyList</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Dictionary</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&gt;</span><span class="p">();</span>
-    <span class="n">public</span> <span class="n">void</span> <span class="n">AddEdge</span><span class="p">(</span><span class="n">string</span> <span class="n">node</span><span class="p">,</span> <span class="n">string</span> <span class="n">neighbor</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="err">!</span><span class="n">AdjacencyList</span><span class="o">.</span><span class="n">ContainsKey</span><span class="p">(</span><span class="n">node</span><span class="p">))</span> <span class="p">{</span>
-            <span class="n">AdjacencyList</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="n">new</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">();</span>
-        <span class="p">}</span>
-        <span class="n">AdjacencyList</span><span class="p">[</span><span class="n">node</span><span class="p">]</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span><span class="n">neighbor</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>class Graph {
+    public Dictionary&lt;string, List&lt;string&gt;&gt; AdjacencyList = new Dictionary&lt;string, List&lt;string&gt;&gt;();
+    public void AddEdge(string node, string neighbor) {
+        if (!AdjacencyList.ContainsKey(node)) {
+            AdjacencyList[node] = new List&lt;string&gt;();
+        }
+        AdjacencyList[node].Add(neighbor);
+    }
+}
 
-<span class="n">Graph</span> <span class="n">graph</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Graph</span><span class="p">();</span>
-<span class="n">graph</span><span class="o">.</span><span class="n">AddEdge</span><span class="p">(</span><span class="s2">"A"</span><span class="p">,</span> <span class="s2">"B"</span><span class="p">);</span>
-<span class="n">graph</span><span class="o">.</span><span class="n">AddEdge</span><span class="p">(</span><span class="s2">"A"</span><span class="p">,</span> <span class="s2">"C"</span><span class="p">);</span>
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">Join</span><span class="p">(</span><span class="s2">", "</span><span class="p">,</span> <span class="n">graph</span><span class="o">.</span><span class="n">AdjacencyList</span><span class="p">[</span><span class="s2">"A"</span><span class="p">]));</span>  <span class="o">//</span> <span class="n">Ausgabe</span><span class="p">:</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span>
+Graph graph = new Graph();
+graph.AddEdge("A", "B");
+graph.AddEdge("A", "C");
+Console.WriteLine(string.Join(", ", graph.AdjacencyList["A"]));  // Ausgabe: B, C
 </pre></div>
 </div>
 </div>

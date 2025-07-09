@@ -7588,6 +7588,14 @@ a.anchor-link {
 <div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/username/repository.git
 </pre></div>
 <p>Dadurch wird das ganze Projekt lokal auf deinen Rechner kopiert.</p>
+<h3 id="Git-Client-Tools">Git Client-Tools<a class="anchor-link" href="#Git-Client-Tools">¶</a></h3><p>Es gibt viele Programme, die dir die Arbeit mit Git erleichtern, z. B.:</p>
+<ul>
+<li><a href="https://www.gitkraken.com/">GitKraken</a></li>
+<li><a href="https://www.sourcetreeapp.com/">Sourcetree</a></li>
+<li><a href="https://desktop.github.com/">GitHub Desktop</a></li>
+</ul>
+<p>Hier ein Beispiel, wie graphische Git-Clients aussehen können:</p>
+<p><a href="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3074457357266301234&amp;cot=14"><img alt="No description has been provided for this image" src="Sourcetree.jpg"/></a></p>
 <h2 id="Arbeiten-mit-GitHub-(oder-GitLab,-etc.)">Arbeiten mit GitHub (oder GitLab, etc.)<a class="anchor-link" href="#Arbeiten-mit-GitHub-(oder-GitLab,-etc.)">¶</a></h2><p>Wenn du deine Änderungen online speichern willst, brauchst du ein Remote-Repository.</p>
 <h3 id="1.-GitHub-Repository-anlegen-(z.%E2%80%AFB.-%C3%BCber-die-Webseite)">1. GitHub-Repository anlegen (z. B. über die Webseite)<a class="anchor-link" href="#1.-GitHub-Repository-anlegen-(z.%E2%80%AFB.-%C3%BCber-die-Webseite)">¶</a></h3><h3 id="2.-Repository-verkn%C3%BCpfen:">2. Repository verknüpfen:<a class="anchor-link" href="#2.-Repository-verkn%C3%BCpfen:">¶</a></h3><div class="highlight"><pre><span></span>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>https://github.com/deinname/projekt.git
 </pre></div>
@@ -7596,6 +7604,7 @@ a.anchor-link {
 <p>Beim ersten Mal mit <code>-u</code>, danach reicht:</p>
 <div class="highlight"><pre><span></span>git<span class="w"> </span>push
 </pre></div>
+<h3 id="Lokales-Repository-aus-Visual-Studio-publizieren">Lokales Repository aus Visual Studio publizieren<a class="anchor-link" href="#Lokales-Repository-aus-Visual-Studio-publizieren">¶</a></h3><p><a href="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3074457359526052526&amp;cot=14"><img alt="No description has been provided for this image" src="VS_gitpub.jpg"/></a></p>
 <h2 id="%C3%84nderungen-herunterladen-(Pull)">Änderungen herunterladen (Pull)<a class="anchor-link" href="#%C3%84nderungen-herunterladen-(Pull)">¶</a></h2><p>Wenn andere etwas verändert haben, kannst du dir die Änderungen holen:</p>
 <div class="highlight"><pre><span></span>git<span class="w"> </span>pull
 </pre></div>
@@ -7606,6 +7615,8 @@ a.anchor-link {
 </pre></div>
 <h3 id="%C3%84nderungen-zusammenf%C3%BChren:">Änderungen zusammenführen:<a class="anchor-link" href="#%C3%84nderungen-zusammenf%C3%BChren:">¶</a></h3><div class="highlight"><pre><span></span>git<span class="w"> </span>merge<span class="w"> </span>neuer-branch
 </pre></div>
+<h3 id="Branching-Modelle">Branching-Modelle<a class="anchor-link" href="#Branching-Modelle">¶</a></h3><p>Es gibt verschiedene Modelle, wie Branches organisiert werden können, z. B. <strong>Git Flow</strong> oder <strong>GitHub Flow</strong>. Diese helfen, den Überblick zu behalten und die Zusammenarbeit zu strukturieren.</p>
+<p><a href="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3074457360820819879&amp;cot=14"><img alt="No description has been provided for this image" src="Branching Modell.jpg"/></a></p>
 <h2 id="H%C3%A4ufige-Befehle-auf-einen-Blick">Häufige Befehle auf einen Blick<a class="anchor-link" href="#H%C3%A4ufige-Befehle-auf-einen-Blick">¶</a></h2><table>
 <thead>
 <tr>
@@ -7661,6 +7672,7 @@ a.anchor-link {
 <li><a href="https://learngitbranching.js.org/">https://learngitbranching.js.org/</a></li>
 <li><a href="https://git-school.github.io/visualizing-git/">https://git-school.github.io/visualizing-git/</a></li>
 </ul>
+<h2 id="Git-Cheatsheet">Git Cheatsheet<a class="anchor-link" href="#Git-Cheatsheet">¶</a></h2><p><a href="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3458764523874833010&amp;cot=14"><img alt="No description has been provided for this image" src="Git_cheat_sheet.en.jpg"/></a></p>
 </div>
 </div>
 </div>
@@ -7884,314 +7896,420 @@ Denke wie ein Autor: Entwürfe schreiben (add), speichern (commit), veröffentli
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=214ea651">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=464e4504">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="%C3%9Cbung">Übung<a class="anchor-link" href="#%C3%9Cbung">¶</a></h2><p>Da das Verzeichnis <code>notebooks/tools/sandbox</code> <strong>Teil eines bereits bestehenden Git-Repositories</strong> ist, <strong>solltest du kein <code>git init</code> darin ausführen</strong>, sondern innerhalb dieses Subverzeichnisses arbeiten, <strong>ohne ein neues Repository zu initialisieren</strong>.</p>
-<p>Hier probieren wir die Git-Befehle aus, um:</p>
-<ul>
-<li>alle Git-Befehle lokal im Verzeichnis <code>notebooks/tools/sandbox</code> wirken,</li>
-<li>der bestehende Git-Kontext genutzt wird,</li>
-<li>keine Störungen für das Hauptrepo auftreten.</li>
-</ul>
+<h2 id="%C3%9Cbung">Übung<a class="anchor-link" href="#%C3%9Cbung">¶</a></h2><blockquote>
+<p>In dieser Übung erzeugst du ein temporäres Git-Repository, führst parallele Änderungen aus und löst einen Merge-Konflikt beim Rebase.</p>
+</blockquote>
+<h3 id="Aufgabe-1:-Neues-Repository-erstellen">Aufgabe 1: Neues Repository erstellen<a class="anchor-link" href="#Aufgabe-1:-Neues-Repository-erstellen">¶</a></h3>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=51c85eff">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=2001e51d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Gehe in das Unterverzeichnis, falls nötig</span>
-<span class="o">%</span><span class="k">cd</span> notebooks/tools/sandbox
+<div class="highlight hl-ipython3"><pre><span></span>%%bash
+<span class="nb">cd</span><span class="w"> </span>../../..<span class="w"> </span><span class="c1"># Gehe zum übergeordneten Verzeichnis</span>
+rm<span class="w"> </span>-rf<span class="w"> </span>temp-repo<span class="w"> </span><span class="c1"># Entferne das temporäre Verzeichnis, falls es existiert</span>
+<span class="c1"># Erstelle ein neues temporäres Git-Repository</span>
+mkdir<span class="w"> </span>temp-repo
+<span class="nb">cd</span><span class="w"> </span>temp-repo
+git<span class="w"> </span>init
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"Zeile aus main"</span><span class="w"> </span>&gt;<span class="w"> </span>beispiel.txt
+git<span class="w"> </span>add<span class="w"> </span>beispiel.txt
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Initialer Commit auf main"</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"Zeige den aktuellen Stand des Repositories an:"</span>
+git<span class="w"> </span>log<span class="w"> </span>--oneline<span class="w"> </span>--graph<span class="w"> </span>--all
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=7b8da6e3">
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Initialized empty Git repository in /Users/starkj/Documents/2hands/Soproming/Repo/temp-repo/.git/
+[main (root-commit) d09d1ba] Initialer Commit auf main
+ 1 file changed, 1 insertion(+)
+ create mode 100644 beispiel.txt
+Zeige den aktuellen Stand des Repositories an:
+* d09d1ba Initialer Commit auf main
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=aa77103e">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Aktueller-Stand">Aktueller Stand<a class="anchor-link" href="#Aktueller-Stand">¶</a></h4><div class="jp-Mermaid"><pre class="mermaid">
+gitGraph
+   commit id: "Initial commit"
+</pre></div><h3 id="Aufgabe-2:-Neuen-Feature-Branch-anlegen">Aufgabe 2: Neuen Feature-Branch anlegen<a class="anchor-link" href="#Aufgabe-2:-Neuen-Feature-Branch-anlegen">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=6b9ca87a">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Bestehende Datei löschen (falls vorhanden, damit es "frisch" ist)</span>
-<span class="o">!</span>rm<span class="w"> </span>-f<span class="w"> </span>projekt.md
+<div class="highlight hl-ipython3"><pre><span></span>%%bash
+<span class="nb">cd</span><span class="w"> </span>../../../temp-repo
+git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>feature-a
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"Änderung aus feature-a"</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>beispiel.txt
+git<span class="w"> </span>commit<span class="w"> </span>-am<span class="w"> </span><span class="s2">"Änderung auf feature-a"</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"Zeige den aktuellen Stand des Repositories an:"</span>
+git<span class="w"> </span>log<span class="w"> </span>--oneline<span class="w"> </span>--graph<span class="w"> </span>--all
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=368b0287">
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>Switched to a new branch 'feature-a'
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>[feature-a 416c451] Änderung auf feature-a
+ 1 file changed, 1 insertion(+)
+Zeige den aktuellen Stand des Repositories an:
+* 416c451 Änderung auf feature-a
+* d09d1ba Initialer Commit auf main
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9259c5a6">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Aktueller-Stand">Aktueller Stand<a class="anchor-link" href="#Aktueller-Stand">¶</a></h4><div class="jp-Mermaid"><pre class="mermaid">
+gitGraph
+   commit id: "Initial commit"
+   branch feature-a
+   commit id: "Änderung auf feature-a"
+</pre></div><h3 id="Aufgabe-3:-%C3%84nderung-auf-main-durchf%C3%BChren">Aufgabe 3: Änderung auf <code>main</code> durchführen<a class="anchor-link" href="#Aufgabe-3:-%C3%84nderung-auf-main-durchf%C3%BChren">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=229fbb87">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Neue Projektdatei anlegen</span>
-<span class="o">%%writefile</span> projekt.md
-<span class="c1"># Unser Projekt</span>
+<div class="highlight hl-ipython3"><pre><span></span>%%bash
+<span class="nb">cd</span><span class="w"> </span>../../../temp-repo
+git<span class="w"> </span>checkout<span class="w"> </span>main
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"Änderung aus main"</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>beispiel.txt
+git<span class="w"> </span>commit<span class="w"> </span>-am<span class="w"> </span><span class="s2">"Änderung auf main"</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"Zeige den aktuellen Stand des Repositories an:"</span>
+git<span class="w"> </span>log<span class="w"> </span>--oneline<span class="w"> </span>--graph<span class="w"> </span>--all
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>Switched to branch 'main'
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>[main f3e418d] Änderung auf main
+ 1 file changed, 1 insertion(+)
+Zeige den aktuellen Stand des Repositories an:
+* f3e418d Änderung auf main
+| * 416c451 Änderung auf feature-a
+|/  
+* d09d1ba Initialer Commit auf main
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=73163801">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Aktueller-Stand">Aktueller Stand<a class="anchor-link" href="#Aktueller-Stand">¶</a></h4><div class="jp-Mermaid"><pre class="mermaid">
+gitGraph
+   commit id: "Initial commit"
+   branch feature-a
+   commit id: "Änderung auf feature-a"
+   checkout main
+   commit id: "Änderung auf main"
+</pre></div><h3 id="Aufgabe-4:-Rebase-mit-Konflikt">Aufgabe 4: Rebase mit Konflikt<a class="anchor-link" href="#Aufgabe-4:-Rebase-mit-Konflikt">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=28801d8a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span>%%bash
+<span class="nb">cd</span><span class="w"> </span>../../../temp-repo
+git<span class="w"> </span>checkout<span class="w"> </span>feature-a
+git<span class="w"> </span>rebase<span class="w"> </span>main
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>Switched to branch 'feature-a'
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Auto-merging beispiel.txt
+CONFLICT (content): Merge conflict in beispiel.txt
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>error: could not apply 416c451... Änderung auf feature-a
+hint: Resolve all conflicts manually, mark them as resolved with
+hint: "git add/rm &lt;conflicted_files&gt;", then run "git rebase --continue".
+hint: You can instead skip this commit: run "git rebase --skip".
+hint: To abort and get back to the state before "git rebase", run "git rebase --abort".
+Could not apply 416c451... Änderung auf feature-a
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">CalledProcessError</span>                        Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[4], line 1</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">get_ipython</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">run_cell_magic</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">'</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">bash</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">'</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">'</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">'</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">'</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">cd ../../../temp-repo</span><span class="ansi-yellow-bg ansi-bold" style="color: rgb(175,95,0)">\n</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">git checkout feature-a</span><span class="ansi-yellow-bg ansi-bold" style="color: rgb(175,95,0)">\n</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">git rebase main</span><span class="ansi-yellow-bg ansi-bold" style="color: rgb(175,95,0)">\n</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">'</span><span class="ansi-yellow-bg">)</span>
 
-<span class="n">Dieses</span> <span class="n">Projekt</span> <span class="n">dokumentiert</span> <span class="n">die</span> <span class="n">Zusammenarbeit</span> <span class="n">im</span> <span class="n">Team</span> <span class="n">mit</span> <span class="n">Git</span><span class="o">.</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=81311a9a">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Datei zur Staging Area hinzufügen und initial committen</span>
-<span class="o">!</span>git<span class="w"> </span>add<span class="w"> </span>projekt.md
-<span class="o">!</span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Initiale Projektbeschreibung"</span><span class="w"> </span>--no-verify
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=f99a95f0">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Neuen Branch "alice" erstellen und wechseln</span>
-<span class="o">!</span>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>alice
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=af7cd117">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Alice ergänzt den Zielbereich</span>
-<span class="o">%%writefile</span> projekt.md
-<span class="c1"># Unser Projekt</span>
+File <span class="ansi-green-fg">~/Library/Python/3.9/lib/python/site-packages/IPython/core/interactiveshell.py:2517</span>, in <span class="ansi-cyan-fg">InteractiveShell.run_cell_magic</span><span class="ansi-blue-fg">(self, magic_name, line, cell)</span>
+<span class="ansi-green-intense-fg ansi-bold">   2515</span> <span class="ansi-bold" style="color: rgb(0,135,0)">with</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>builtin_trap:
+<span class="ansi-green-intense-fg ansi-bold">   2516</span>     args <span style="color: rgb(98,98,98)">=</span> (magic_arg_s, cell)
+<span class="ansi-green-fg">-&gt; 2517</span>     result <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">fn</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg">args</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg">kwargs</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">   2519</span> <span style="color: rgb(95,135,135)"># The code below prevents the output from being displayed</span>
+<span class="ansi-green-intense-fg ansi-bold">   2520</span> <span style="color: rgb(95,135,135)"># when using magics with decorator @output_can_be_silenced</span>
+<span class="ansi-green-intense-fg ansi-bold">   2521</span> <span style="color: rgb(95,135,135)"># when the last Python token in the expression is a ';'.</span>
+<span class="ansi-green-intense-fg ansi-bold">   2522</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span style="color: rgb(0,135,0)">getattr</span>(fn, magic<span style="color: rgb(98,98,98)">.</span>MAGIC_OUTPUT_CAN_BE_SILENCED, <span class="ansi-bold" style="color: rgb(0,135,0)">False</span>):
 
-<span class="n">Dieses</span> <span class="n">Projekt</span> <span class="n">dokumentiert</span> <span class="n">die</span> <span class="n">Zusammenarbeit</span> <span class="n">im</span> <span class="n">Team</span> <span class="n">mit</span> <span class="n">Git</span><span class="o">.</span>
+File <span class="ansi-green-fg">~/Library/Python/3.9/lib/python/site-packages/IPython/core/magics/script.py:154</span>, in <span class="ansi-cyan-fg">ScriptMagics._make_script_magic.&lt;locals&gt;.named_script_magic</span><span class="ansi-blue-fg">(line, cell)</span>
+<span class="ansi-green-intense-fg ansi-bold">    152</span> <span class="ansi-bold" style="color: rgb(0,135,0)">else</span>:
+<span class="ansi-green-intense-fg ansi-bold">    153</span>     line <span style="color: rgb(98,98,98)">=</span> script
+<span class="ansi-green-fg">--&gt; 154</span> <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">shebang</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">line</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">cell</span><span class="ansi-yellow-bg">)</span>
 
-<span class="c1">## Ziel</span>
+File <span class="ansi-green-fg">~/Library/Python/3.9/lib/python/site-packages/IPython/core/magics/script.py:314</span>, in <span class="ansi-cyan-fg">ScriptMagics.shebang</span><span class="ansi-blue-fg">(self, line, cell)</span>
+<span class="ansi-green-intense-fg ansi-bold">    309</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> args<span style="color: rgb(98,98,98)">.</span>raise_error <span class="ansi-bold" style="color: rgb(175,0,255)">and</span> p<span style="color: rgb(98,98,98)">.</span>returncode <span style="color: rgb(98,98,98)">!=</span> <span style="color: rgb(98,98,98)">0</span>:
+<span class="ansi-green-intense-fg ansi-bold">    310</span>     <span style="color: rgb(95,135,135)"># If we get here and p.returncode is still None, we must have</span>
+<span class="ansi-green-intense-fg ansi-bold">    311</span>     <span style="color: rgb(95,135,135)"># killed it but not yet seen its return code. We don't wait for it,</span>
+<span class="ansi-green-intense-fg ansi-bold">    312</span>     <span style="color: rgb(95,135,135)"># in case it's stuck in uninterruptible sleep. -9 = SIGKILL</span>
+<span class="ansi-green-intense-fg ansi-bold">    313</span>     rc <span style="color: rgb(98,98,98)">=</span> p<span style="color: rgb(98,98,98)">.</span>returncode <span class="ansi-bold" style="color: rgb(175,0,255)">or</span> <span style="color: rgb(98,98,98)">-</span><span style="color: rgb(98,98,98)">9</span>
+<span class="ansi-green-fg">--&gt; 314</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> CalledProcessError(rc, cell)
 
-<span class="n">Ein</span> <span class="n">Werkzeug</span> <span class="n">für</span> <span class="n">Nachhaltigkeit</span> <span class="n">entwickeln</span><span class="o">.</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=dec3df41">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Commit auf alices Branch</span>
-<span class="o">!</span>git<span class="w"> </span>add<span class="w"> </span>projekt.md
-<span class="o">!</span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Alice ergänzt den Zielbereich"</span><span class="w"> </span>--no-verify
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=dffa02a9">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Zurück zu main und neuen Branch "bob" erstellen</span>
-<span class="o">!</span>git<span class="w"> </span>checkout<span class="w"> </span>main
-<span class="o">!</span>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>bob
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=6870c94b">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Bob bearbeitet dieselbe Stelle auf seine Weise</span>
-<span class="o">%%writefile</span> projekt.md
-<span class="c1"># Unser Projekt</span>
-
-<span class="n">Dieses</span> <span class="n">Projekt</span> <span class="n">dokumentiert</span> <span class="n">die</span> <span class="n">Zusammenarbeit</span> <span class="n">im</span> <span class="n">Team</span> <span class="n">mit</span> <span class="n">Git</span><span class="o">.</span>
-
-<span class="c1">## Ziel</span>
-
-<span class="n">Eine</span> <span class="n">Anwendung</span> <span class="n">für</span> <span class="n">Umweltbildung</span> <span class="n">erstellen</span><span class="o">.</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=20c2c4fa">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Commit auf bobs Branch</span>
-<span class="o">!</span>git<span class="w"> </span>add<span class="w"> </span>projekt.md
-<span class="o">!</span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Bob ergänzt eine alternative Zielbeschreibung"</span><span class="w"> </span>--no-verify
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=ebbdf74f">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Zurück zu main und merge von Alice (funktioniert)</span>
-<span class="o">!</span>git<span class="w"> </span>checkout<span class="w"> </span>SoSe25
-<span class="o">!</span>git<span class="w"> </span>merge<span class="w"> </span>alice
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=45fa2780">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Merge von Bob versuchen – das erzeugt den Konflikt!</span>
-<span class="o">!</span>git<span class="w"> </span>merge<span class="w"> </span>bob<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"💥 Merge-Konflikt erkannt!"</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=75bdfe7c">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Konflikt zeigen</span>
-<span class="o">!</span>cat<span class="w"> </span>projekt.md
-</pre></div>
+<span class="ansi-red-fg">CalledProcessError</span>: Command 'b'cd ../../../temp-repo\ngit checkout feature-a\ngit rebase main\n'' returned non-zero exit status 1.</pre>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=134a11b4">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e29d4eae">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <blockquote>
-<p>Jetzt kannst du manuell im Notebook den Konflikt in <code>projekt.md</code> auflösen.</p>
+<p>⚠️ Jetzt entsteht ein <strong>Konflikt</strong>, weil <code>beispiel.txt</code> in beiden Branches verändert wurde.</p>
 </blockquote>
-<h3 id="Manuelle-Konfliktl%C3%B6sung">Manuelle Konfliktlösung<a class="anchor-link" href="#Manuelle-Konfliktl%C3%B6sung">¶</a></h3>
+<h4 id="Visualisierung-des-Rebase-Versuchs">Visualisierung des Rebase-Versuchs<a class="anchor-link" href="#Visualisierung-des-Rebase-Versuchs">¶</a></h4><div class="jp-Mermaid"><pre class="mermaid">
+gitGraph
+   commit id: "Initial commit"
+   commit id: "Änderung auf main"
+   branch feature-a
+   commit id: "Änderung auf feature-a (rebased, CONFLICT)"
+</pre></div><h3 id="Aufgabe-5:-Konflikt-aufl%C3%B6sen">Aufgabe 5: Konflikt auflösen<a class="anchor-link" href="#Aufgabe-5:-Konflikt-aufl%C3%B6sen">¶</a></h3><ol>
+<li>Datei <code>beispiel.txt</code> bearbeiten:</li>
+</ol>
+<pre><code class="language-txt">txt
+Zeile aus main
+Änderung aus main
+Änderung aus feature-a
+</code></pre>
+<ol start="2">
+<li>Konflikt beenden:</li>
+</ol>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=b9e6879f">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=7c09615a">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> projekt.md
-<span class="c1"># Unser Projekt</span>
-
-<span class="n">Dieses</span> <span class="n">Projekt</span> <span class="n">dokumentiert</span> <span class="n">die</span> <span class="n">Zusammenarbeit</span> <span class="n">im</span> <span class="n">Team</span> <span class="n">mit</span> <span class="n">Git</span><span class="o">.</span>
-
-<span class="c1">## Ziel</span>
-
-<span class="n">Ein</span> <span class="n">Werkzeug</span> <span class="n">für</span> <span class="n">Umweltbildung</span> <span class="n">und</span> <span class="n">Nachhaltigkeit</span> <span class="n">entwickeln</span><span class="o">.</span>
+<div class="highlight hl-ipython3"><pre><span></span>%%bash
+<span class="nb">cd</span><span class="w"> </span>../../../temp-repo
+git<span class="w"> </span>add<span class="w"> </span>beispiel.txt
+<span class="nv">GIT_EDITOR</span><span class="o">=</span><span class="nb">true</span><span class="w"> </span>git<span class="w"> </span>rebase<span class="w"> </span>--continue<span class="w"> </span><span class="c1"># GIT_EDITOR=true überspringt den Editor, was wir hier im Notebook wollen</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=332db11a">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Konflikt beheben &amp; Commit</span>
-<span class="o">!</span>git<span class="w"> </span>add<span class="w"> </span>projekt.md
-<span class="o">!</span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Konflikt manuell gelöst – Ziel kombiniert"</span><span class="w"> </span>--no-verify
-</pre></div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>[detached HEAD bc17928] Änderung auf feature-a
+ 1 file changed, 1 insertion(+)
+</pre>
 </div>
 </div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=69d9fb96">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Git-Log mit Verlauf anzeigen</span>
-<span class="o">!</span>git<span class="w"> </span>log<span class="w"> </span>--oneline<span class="w"> </span>--graph<span class="w"> </span>--all
-</pre></div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>Successfully rebased and updated refs/heads/feature-a.
+</pre>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e5cdc090">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1010c4e9">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Hinweis</strong>:<br>
-Falls das Haupt-Repository Hooks oder Commit-Policies hat, kannst du <code>--no-verify</code> verwenden, damit es im Notebook nicht zu Abbrüchen kommt.</br></p>
+<h4 id="Rebase-abgeschlossen">Rebase abgeschlossen<a class="anchor-link" href="#Rebase-abgeschlossen">¶</a></h4><div class="jp-Mermaid"><pre class="mermaid">
+gitGraph
+   commit id: "Initial commit"
+   commit id: "Änderung auf main"
+   commit id: "Änderung auf feature-a (rebased)"
+</pre></div><h3 id="Aufgabe-6:-Log-anzeigen">Aufgabe 6: Log anzeigen<a class="anchor-link" href="#Aufgabe-6:-Log-anzeigen">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=8e70618e">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span>%%bash
+<span class="nb">cd</span><span class="w"> </span>../../../temp-repo
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"Zeige den aktuellen Stand des Repositories an:"</span>
+git<span class="w"> </span>log<span class="w"> </span>--oneline<span class="w"> </span>--graph<span class="w"> </span>--all
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Zeige den aktuellen Stand des Repositories an:
+* caf82e8 Änderung auf feature-a
+* bddfa1d Änderung auf main
+* d210be7 Initialer Commit auf main
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e9a9bd4a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>➤ <strong>Frage:</strong> Was fällt dir am Verlauf auf?</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ed111cda">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Konfliktl%C3%B6sung-mit-KDiff">Konfliktlösung mit KDiff<a class="anchor-link" href="#Konfliktl%C3%B6sung-mit-KDiff">¶</a></h2><p><a href="https://miro.com/app/board/o9J_lOJi2o0=/?moveToWidget=3074457357267705130&amp;cot=14"><img alt="No description has been provided for this image" src="KDiff.jpg"/></a></p>
 </div>
 </div>
 </div>

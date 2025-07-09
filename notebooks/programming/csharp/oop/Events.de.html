@@ -7566,16 +7566,16 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="k">class</span><span class="w"> </span><span class="nc">Alarm</span>
-<span class="p">{</span>
-    <span class="n">public</span> <span class="n">event</span> <span class="n">Action</span> <span class="n">AlarmAusgeloest</span><span class="p">;</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>public class Alarm
+{
+    public event Action AlarmAusgeloest;
 
-    <span class="n">public</span> <span class="n">void</span> <span class="n">Ausloesen</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Alarm wird ausgelöst!"</span><span class="p">);</span>
-        <span class="n">AlarmAusgeloest</span><span class="err">?</span><span class="o">.</span><span class="n">Invoke</span><span class="p">();</span> <span class="o">//</span> <span class="n">Aufruf</span> <span class="n">aller</span> <span class="n">registrierten</span> <span class="n">Methoden</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+    public void Ausloesen()
+    {
+        Console.WriteLine("Alarm wird ausgelöst!");
+        AlarmAusgeloest?.Invoke(); // Aufruf aller registrierten Methoden
+    }
+}
 </pre></div>
 </div>
 </div>
@@ -7608,9 +7608,9 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">var</span> <span class="n">alarm</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Alarm</span><span class="p">();</span>
-<span class="n">alarm</span><span class="o">.</span><span class="n">AlarmAusgeloest</span> <span class="o">+=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Alarm wurde gehört!"</span><span class="p">);</span>
-<span class="n">alarm</span><span class="o">.</span><span class="n">Ausloesen</span><span class="p">();</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>var alarm = new Alarm();
+alarm.AlarmAusgeloest += () =&gt; Console.WriteLine("Alarm wurde gehört!");
+alarm.Ausloesen();
 </pre></div>
 </div>
 </div>
@@ -7649,25 +7649,25 @@ Alarm wurde gehört!
 <div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="k">class</span><span class="w"> </span><span class="nc">TemperatureEventArgs</span> <span class="p">:</span> <span class="n">EventArgs</span>
-<span class="p">{</span>
-    <span class="n">public</span> <span class="n">double</span> <span class="n">Temperatur</span> <span class="p">{</span> <span class="n">get</span><span class="p">;</span> <span class="p">}</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>public class TemperatureEventArgs : EventArgs
+{
+    public double Temperatur { get; }
 
-    <span class="n">public</span> <span class="n">TemperatureEventArgs</span><span class="p">(</span><span class="n">double</span> <span class="n">temperatur</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">Temperatur</span> <span class="o">=</span> <span class="n">temperatur</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+    public TemperatureEventArgs(double temperatur)
+    {
+        Temperatur = temperatur;
+    }
+}
 
-<span class="n">public</span> <span class="k">class</span><span class="w"> </span><span class="nc">Thermometer</span>
-<span class="p">{</span>
-    <span class="n">public</span> <span class="n">event</span> <span class="n">EventHandler</span><span class="o">&lt;</span><span class="n">TemperatureEventArgs</span><span class="o">&gt;</span> <span class="n">TemperaturGeaendert</span><span class="p">;</span>
+public class Thermometer
+{
+    public event EventHandler&lt;TemperatureEventArgs&gt; TemperaturGeaendert;
 
-    <span class="n">public</span> <span class="n">void</span> <span class="n">NeueTemperatur</span><span class="p">(</span><span class="n">double</span> <span class="n">temperatur</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">TemperaturGeaendert</span><span class="err">?</span><span class="o">.</span><span class="n">Invoke</span><span class="p">(</span><span class="n">this</span><span class="p">,</span> <span class="n">new</span> <span class="n">TemperatureEventArgs</span><span class="p">(</span><span class="n">temperatur</span><span class="p">));</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+    public void NeueTemperatur(double temperatur)
+    {
+        TemperaturGeaendert?.Invoke(this, new TemperatureEventArgs(temperatur));
+    }
+}
 </pre></div>
 </div>
 </div>
@@ -7692,16 +7692,16 @@ Alarm wurde gehört!
 <div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">Thermometer</span> <span class="n">thermometer</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Thermometer</span><span class="p">();</span> <span class="o">//</span> <span class="n">Erstellen</span> <span class="n">einer</span> <span class="n">Instanz</span> <span class="n">des</span> <span class="n">Thermometers</span>
-<span class="n">thermometer</span><span class="o">.</span><span class="n">NeueTemperatur</span><span class="p">(</span><span class="mf">25.0</span><span class="p">);</span> <span class="o">//</span> <span class="n">Nutzen</span> <span class="n">der</span> <span class="n">Methode</span><span class="p">,</span> <span class="n">um</span> <span class="n">eine</span> <span class="n">neue</span> <span class="n">Temperatur</span> <span class="n">zu</span> <span class="n">setzen</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>Thermometer thermometer = new Thermometer(); // Erstellen einer Instanz des Thermometers
+thermometer.NeueTemperatur(25.0); // Nutzen der Methode, um eine neue Temperatur zu setzen
 
-<span class="o">//</span> <span class="n">Registrieren</span> <span class="n">eines</span> <span class="n">Ereignishandlers</span> <span class="n">für</span> <span class="n">Temperaturänderungen</span>
-<span class="n">thermometer</span><span class="o">.</span><span class="n">TemperaturGeaendert</span> <span class="o">+=</span> <span class="p">(</span><span class="n">sender</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span> <span class="o">=&gt;</span>
-<span class="p">{</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Neue Temperatur: </span><span class="si">{args.Temperatur}</span><span class="s2"> °C"</span><span class="p">);</span>
-<span class="p">};</span>
+// Registrieren eines Ereignishandlers für Temperaturänderungen
+thermometer.TemperaturGeaendert += (sender, args) =&gt;
+{
+    Console.WriteLine($"Neue Temperatur: {args.Temperatur} °C");
+};
 
-<span class="n">thermometer</span><span class="o">.</span><span class="n">NeueTemperatur</span><span class="p">(</span><span class="mf">30.0</span><span class="p">);</span> <span class="o">//</span> <span class="n">Setzen</span> <span class="n">einer</span> <span class="n">neuen</span> <span class="n">Temperatur</span><span class="p">,</span> <span class="n">was</span> <span class="n">das</span> <span class="n">Ereignis</span> <span class="n">auslöst</span>
+thermometer.NeueTemperatur(30.0); // Setzen einer neuen Temperatur, was das Ereignis auslöst
 </pre></div>
 </div>
 </div>

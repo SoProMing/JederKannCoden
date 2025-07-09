@@ -7613,30 +7613,30 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">using</span> <span class="n">System</span><span class="p">;</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>using System;
 
-<span class="k">class</span><span class="w"> </span><span class="nc">Program</span>
-<span class="p">{</span>
-    <span class="k">class</span><span class="w"> </span><span class="nc">Person</span>
-    <span class="p">{</span>
-        <span class="n">public</span> <span class="n">string</span> <span class="n">Name</span> <span class="p">{</span> <span class="n">get</span><span class="p">;</span> <span class="nb">set</span><span class="p">;</span> <span class="p">}</span>
-    <span class="p">}</span>
+class Program
+{
+    class Person
+    {
+        public string Name { get; set; }
+    }
 
-    <span class="n">static</span> <span class="n">void</span> <span class="n">ChangeName</span><span class="p">(</span><span class="n">Person</span> <span class="n">person</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">person</span><span class="o">.</span><span class="n">Name</span> <span class="o">=</span> <span class="s2">"Changed"</span><span class="p">;</span>
-    <span class="p">}</span>
+    static void ChangeName(Person person)
+    {
+        person.Name = "Changed";
+    }
 
-    <span class="n">static</span> <span class="n">void</span> <span class="n">Main</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="n">Person</span> <span class="n">p</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Person</span> <span class="p">{</span> <span class="n">Name</span> <span class="o">=</span> <span class="s2">"Original"</span> <span class="p">};</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Before: </span><span class="si">{p.Name}</span><span class="s2">"</span><span class="p">);</span>
+    static void Main()
+    {
+        Person p = new Person { Name = "Original" };
+        Console.WriteLine($"Before: {p.Name}");
 
-        <span class="n">ChangeName</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
+        ChangeName(p);
 
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"After: </span><span class="si">{p.Name}</span><span class="s2">"</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+        Console.WriteLine($"After: {p.Name}");
+    }
+}
 </pre></div>
 </div>
 </div>
@@ -7662,25 +7662,25 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">using</span> <span class="n">System</span><span class="p">;</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>using System;
 
-<span class="k">class</span><span class="w"> </span><span class="nc">Program</span>
-<span class="p">{</span>
-    <span class="n">static</span> <span class="n">void</span> <span class="n">ChangeValue</span><span class="p">(</span><span class="n">ref</span> <span class="nb">int</span> <span class="n">x</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">x</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
-    <span class="p">}</span>
+class Program
+{
+    static void ChangeValue(ref int x)
+    {
+        x = 100;
+    }
 
-    <span class="n">static</span> <span class="n">void</span> <span class="n">Main</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="nb">int</span> <span class="n">value</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Before: </span><span class="si">{value}</span><span class="s2">"</span><span class="p">);</span>
+    static void Main()
+    {
+        int value = 10;
+        Console.WriteLine($"Before: {value}");
 
-        <span class="n">ChangeValue</span><span class="p">(</span><span class="n">ref</span> <span class="n">value</span><span class="p">);</span>
+        ChangeValue(ref value);
 
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"After: </span><span class="si">{value}</span><span class="s2">"</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+        Console.WriteLine($"After: {value}");
+    }
+}
 </pre></div>
 </div>
 </div>
@@ -7706,30 +7706,30 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">using</span> <span class="n">System</span><span class="p">;</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>using System;
 
-<span class="k">class</span><span class="w"> </span><span class="nc">Program</span>
-<span class="p">{</span>
-    <span class="k">class</span><span class="w"> </span><span class="nc">Person</span>
-    <span class="p">{</span>
-        <span class="n">public</span> <span class="n">string</span> <span class="n">Name</span> <span class="p">{</span> <span class="n">get</span><span class="p">;</span> <span class="nb">set</span><span class="p">;</span> <span class="p">}</span>
-    <span class="p">}</span>
+class Program
+{
+    class Person
+    {
+        public string Name { get; set; }
+    }
 
-    <span class="n">static</span> <span class="n">void</span> <span class="n">ChangeReference</span><span class="p">(</span><span class="n">ref</span> <span class="n">Person</span> <span class="n">person</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">person</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Person</span> <span class="p">{</span> <span class="n">Name</span> <span class="o">=</span> <span class="s2">"New Person"</span> <span class="p">};</span>
-    <span class="p">}</span>
+    static void ChangeReference(ref Person person)
+    {
+        person = new Person { Name = "New Person" };
+    }
 
-    <span class="n">static</span> <span class="n">void</span> <span class="n">Main</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="n">Person</span> <span class="n">p</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Person</span> <span class="p">{</span> <span class="n">Name</span> <span class="o">=</span> <span class="s2">"Original"</span> <span class="p">};</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Before: </span><span class="si">{p.Name}</span><span class="s2">"</span><span class="p">);</span>
+    static void Main()
+    {
+        Person p = new Person { Name = "Original" };
+        Console.WriteLine($"Before: {p.Name}");
 
-        <span class="n">ChangeReference</span><span class="p">(</span><span class="n">ref</span> <span class="n">p</span><span class="p">);</span>
+        ChangeReference(ref p);
 
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"After: </span><span class="si">{p.Name}</span><span class="s2">"</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+        Console.WriteLine($"After: {p.Name}");
+    }
+}
 </pre></div>
 </div>
 </div>

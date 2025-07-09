@@ -7645,22 +7645,22 @@ Jede Anwendung startet mindestens mit <strong>einem Hauptthread</strong>.</p>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">void</span> <span class="n">A</span><span class="p">()</span> <span class="p">{</span> <span class="n">B</span><span class="p">();</span> <span class="p">}</span>
-<span class="n">void</span> <span class="n">B</span><span class="p">()</span> <span class="p">{</span> <span class="n">C</span><span class="p">();</span> <span class="p">}</span>
-<span class="n">void</span> <span class="n">C</span><span class="p">()</span> <span class="p">{</span>
-    <span class="o">//</span> <span class="n">show</span> <span class="n">callstack</span> <span class="n">programmatically</span>
-    <span class="n">var</span> <span class="n">stack</span> <span class="o">=</span> <span class="n">new</span> <span class="n">System</span><span class="o">.</span><span class="n">Diagnostics</span><span class="o">.</span><span class="n">StackTrace</span><span class="p">();</span>
-    <span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">stack</span><span class="o">.</span><span class="n">FrameCount</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">var</span> <span class="n">frame</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="n">GetFrame</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">frame</span> <span class="o">!=</span> <span class="n">null</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">var</span> <span class="n">method</span> <span class="o">=</span> <span class="n">frame</span><span class="o">.</span><span class="n">GetMethod</span><span class="p">();</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">method</span> <span class="o">!=</span> <span class="n">null</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"{method.DeclaringType?.Name}.</span><span class="si">{method.Name}</span><span class="s2">"</span><span class="p">);</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-<span class="n">A</span><span class="p">();</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>void A() { B(); }
+void B() { C(); }
+void C() {
+    // show callstack programmatically
+    var stack = new System.Diagnostics.StackTrace();
+    for (int i = 0; i &lt; stack.FrameCount; i++) {
+        var frame = stack.GetFrame(i);
+        if (frame != null) {
+            var method = frame.GetMethod();
+            if (method != null) {
+                Console.WriteLine($"{method.DeclaringType?.Name}.{method.Name}");
+            }
+        }
+    }
+}
+A();
 </pre></div>
 </div>
 </div>
@@ -8034,71 +8034,71 @@ Wir bauen es <strong>Schritt für Schritt auf</strong>, vom <strong>synchronen A
 <div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">using</span> <span class="n">System</span><span class="p">;</span>
-<span class="n">using</span> <span class="n">System</span><span class="o">.</span><span class="n">Threading</span><span class="p">;</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>using System;
+using System.Threading;
 
-<span class="n">public</span> <span class="k">class</span><span class="w"> </span><span class="nc">Frühstück</span>
-<span class="p">{</span>
-    <span class="n">public</span> <span class="n">void</span> <span class="n">MacheFrühstück</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="n">GießeKaffee</span><span class="p">();</span>        <span class="o">//</span> <span class="mi">1</span> <span class="n">Sekunde</span>
-        <span class="n">BrateEier</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>         <span class="o">//</span> <span class="mi">3</span> <span class="n">Sekunden</span>
-        <span class="n">BrateSpeck</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>        <span class="o">//</span> <span class="mi">4</span> <span class="n">Sekunden</span>
-        <span class="n">ToasteBrot</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>        <span class="o">//</span> <span class="mi">2</span> <span class="n">Sekunden</span>
-        <span class="n">StreicheButter</span><span class="p">();</span>
-        <span class="n">StreicheMarmelade</span><span class="p">();</span>
-        <span class="n">GießeSaft</span><span class="p">();</span>          <span class="o">//</span> <span class="mf">0.5</span> <span class="n">Sekunden</span>
+public class Frühstück
+{
+    public void MacheFrühstück()
+    {
+        GießeKaffee();        // 1 Sekunde
+        BrateEier(2);         // 3 Sekunden
+        BrateSpeck(3);        // 4 Sekunden
+        ToasteBrot(2);        // 2 Sekunden
+        StreicheButter();
+        StreicheMarmelade();
+        GießeSaft();          // 0.5 Sekunden
 
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"✅ Frühstück ist fertig!"</span><span class="p">);</span>
-    <span class="p">}</span>
+        Console.WriteLine("✅ Frühstück ist fertig!");
+    }
 
-    <span class="n">void</span> <span class="n">GießeKaffee</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"⏳ Kaffee wird eingegossen..."</span><span class="p">);</span>
-        <span class="n">Thread</span><span class="o">.</span><span class="n">Sleep</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"☕ Kaffee fertig"</span><span class="p">);</span>
-    <span class="p">}</span>
+    void GießeKaffee()
+    {
+        Console.WriteLine("⏳ Kaffee wird eingegossen...");
+        Thread.Sleep(1000);
+        Console.WriteLine("☕ Kaffee fertig");
+    }
 
-    <span class="n">void</span> <span class="n">BrateEier</span><span class="p">(</span><span class="nb">int</span> <span class="n">anzahl</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"⏳ Brate </span><span class="si">{anzahl}</span><span class="s2"> Eier..."</span><span class="p">);</span>
-        <span class="n">Thread</span><span class="o">.</span><span class="n">Sleep</span><span class="p">(</span><span class="mi">3000</span><span class="p">);</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"🍳 Eier sind fertig"</span><span class="p">);</span>
-    <span class="p">}</span>
+    void BrateEier(int anzahl)
+    {
+        Console.WriteLine($"⏳ Brate {anzahl} Eier...");
+        Thread.Sleep(3000);
+        Console.WriteLine("🍳 Eier sind fertig");
+    }
 
-    <span class="n">void</span> <span class="n">BrateSpeck</span><span class="p">(</span><span class="nb">int</span> <span class="n">streifen</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"⏳ Brate </span><span class="si">{streifen}</span><span class="s2"> Speckstreifen..."</span><span class="p">);</span>
-        <span class="n">Thread</span><span class="o">.</span><span class="n">Sleep</span><span class="p">(</span><span class="mi">4000</span><span class="p">);</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"🥓 Speck ist fertig"</span><span class="p">);</span>
-    <span class="p">}</span>
+    void BrateSpeck(int streifen)
+    {
+        Console.WriteLine($"⏳ Brate {streifen} Speckstreifen...");
+        Thread.Sleep(4000);
+        Console.WriteLine("🥓 Speck ist fertig");
+    }
 
-    <span class="n">void</span> <span class="n">ToasteBrot</span><span class="p">(</span><span class="nb">int</span> <span class="n">scheiben</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"⏳ Toastet </span><span class="si">{scheiben}</span><span class="s2"> Scheiben Brot..."</span><span class="p">);</span>
-        <span class="n">Thread</span><span class="o">.</span><span class="n">Sleep</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"🍞 Toast ist fertig"</span><span class="p">);</span>
-    <span class="p">}</span>
+    void ToasteBrot(int scheiben)
+    {
+        Console.WriteLine($"⏳ Toastet {scheiben} Scheiben Brot...");
+        Thread.Sleep(2000);
+        Console.WriteLine("🍞 Toast ist fertig");
+    }
 
-    <span class="n">void</span> <span class="n">StreicheButter</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"🧈 Butter auf Toast gestrichen"</span><span class="p">);</span>
-    <span class="p">}</span>
+    void StreicheButter()
+    {
+        Console.WriteLine("🧈 Butter auf Toast gestrichen");
+    }
 
-    <span class="n">void</span> <span class="n">StreicheMarmelade</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"🍓 Marmelade auf Toast gestrichen"</span><span class="p">);</span>
-    <span class="p">}</span>
+    void StreicheMarmelade()
+    {
+        Console.WriteLine("🍓 Marmelade auf Toast gestrichen");
+    }
 
-    <span class="n">void</span> <span class="n">GießeSaft</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"⏳ Saft wird eingeschenkt..."</span><span class="p">);</span>
-        <span class="n">Thread</span><span class="o">.</span><span class="n">Sleep</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"🧃 Saft ist fertig"</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+    void GießeSaft()
+    {
+        Console.WriteLine("⏳ Saft wird eingeschenkt...");
+        Thread.Sleep(500);
+        Console.WriteLine("🧃 Saft ist fertig");
+    }
+}
 
-<span class="n">new</span> <span class="n">Frühstück</span><span class="p">()</span><span class="o">.</span><span class="n">MacheFrühstück</span><span class="p">();</span>
+new Frühstück().MacheFrühstück();
 </pre></div>
 </div>
 </div>
@@ -8149,67 +8149,67 @@ Wir bauen es <strong>Schritt für Schritt auf</strong>, vom <strong>synchronen A
 <div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="k">class</span><span class="w"> </span><span class="nc">Frühstück_Parallel</span>
-<span class="p">{</span>
-    <span class="n">public</span> <span class="k">async</span> <span class="n">Task</span> <span class="n">MacheFrühstückAsync</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="n">var</span> <span class="n">kaffeeTask</span> <span class="o">=</span> <span class="n">GießeKaffeeAsync</span><span class="p">();</span>
-        <span class="n">var</span> <span class="n">eierTask</span> <span class="o">=</span> <span class="n">BrateEierAsync</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-        <span class="n">var</span> <span class="n">speckTask</span> <span class="o">=</span> <span class="n">BrateSpeckAsync</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
-        <span class="n">var</span> <span class="n">toastTask</span> <span class="o">=</span> <span class="n">ToasteBrotAsync</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>public class Frühstück_Parallel
+{
+    public async Task MacheFrühstückAsync()
+    {
+        var kaffeeTask = GießeKaffeeAsync();
+        var eierTask = BrateEierAsync(2);
+        var speckTask = BrateSpeckAsync(3);
+        var toastTask = ToasteBrotAsync(2);
 
-        <span class="n">var</span> <span class="n">toast</span> <span class="o">=</span> <span class="k">await</span> <span class="n">toastTask</span><span class="p">;</span>
-        <span class="n">StreicheButter</span><span class="p">(</span><span class="n">toast</span><span class="p">);</span>
-        <span class="n">StreicheMarmelade</span><span class="p">(</span><span class="n">toast</span><span class="p">);</span>
+        var toast = await toastTask;
+        StreicheButter(toast);
+        StreicheMarmelade(toast);
 
-        <span class="k">await</span> <span class="n">Task</span><span class="o">.</span><span class="n">WhenAll</span><span class="p">(</span><span class="n">kaffeeTask</span><span class="p">,</span> <span class="n">eierTask</span><span class="p">,</span> <span class="n">speckTask</span><span class="p">);</span>
+        await Task.WhenAll(kaffeeTask, eierTask, speckTask);
 
-        <span class="k">await</span> <span class="n">GießeSaftAsync</span><span class="p">();</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"✅ Frühstück ist fertig!"</span><span class="p">);</span>
-    <span class="p">}</span>
+        await GießeSaftAsync();
+        Console.WriteLine("✅ Frühstück ist fertig!");
+    }
 
-    <span class="k">async</span> <span class="n">Task</span> <span class="n">GießeKaffeeAsync</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"⏳ Kaffee wird eingegossen..."</span><span class="p">);</span>
-        <span class="k">await</span> <span class="n">Task</span><span class="o">.</span><span class="n">Delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"☕ Kaffee fertig"</span><span class="p">);</span>
-    <span class="p">}</span>
+    async Task GießeKaffeeAsync()
+    {
+        Console.WriteLine("⏳ Kaffee wird eingegossen...");
+        await Task.Delay(1000);
+        Console.WriteLine("☕ Kaffee fertig");
+    }
 
-    <span class="k">async</span> <span class="n">Task</span> <span class="n">BrateEierAsync</span><span class="p">(</span><span class="nb">int</span> <span class="n">anzahl</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"⏳ Brate </span><span class="si">{anzahl}</span><span class="s2"> Eier..."</span><span class="p">);</span>
-        <span class="k">await</span> <span class="n">Task</span><span class="o">.</span><span class="n">Delay</span><span class="p">(</span><span class="mi">3000</span><span class="p">);</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"🍳 Eier sind fertig"</span><span class="p">);</span>
-    <span class="p">}</span>
+    async Task BrateEierAsync(int anzahl)
+    {
+        Console.WriteLine($"⏳ Brate {anzahl} Eier...");
+        await Task.Delay(3000);
+        Console.WriteLine("🍳 Eier sind fertig");
+    }
 
-    <span class="k">async</span> <span class="n">Task</span> <span class="n">BrateSpeckAsync</span><span class="p">(</span><span class="nb">int</span> <span class="n">streifen</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"⏳ Brate </span><span class="si">{streifen}</span><span class="s2"> Speckstreifen..."</span><span class="p">);</span>
-        <span class="k">await</span> <span class="n">Task</span><span class="o">.</span><span class="n">Delay</span><span class="p">(</span><span class="mi">4000</span><span class="p">);</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"🥓 Speck ist fertig"</span><span class="p">);</span>
-    <span class="p">}</span>
+    async Task BrateSpeckAsync(int streifen)
+    {
+        Console.WriteLine($"⏳ Brate {streifen} Speckstreifen...");
+        await Task.Delay(4000);
+        Console.WriteLine("🥓 Speck ist fertig");
+    }
 
-    <span class="k">async</span> <span class="n">Task</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">ToasteBrotAsync</span><span class="p">(</span><span class="nb">int</span> <span class="n">scheiben</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"⏳ Toastet </span><span class="si">{scheiben}</span><span class="s2"> Scheiben Brot..."</span><span class="p">);</span>
-        <span class="k">await</span> <span class="n">Task</span><span class="o">.</span><span class="n">Delay</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"🍞 Toast ist fertig"</span><span class="p">);</span>
-        <span class="k">return</span> <span class="s2">"Toast"</span><span class="p">;</span>
-    <span class="p">}</span>
+    async Task&lt;string&gt; ToasteBrotAsync(int scheiben)
+    {
+        Console.WriteLine($"⏳ Toastet {scheiben} Scheiben Brot...");
+        await Task.Delay(2000);
+        Console.WriteLine("🍞 Toast ist fertig");
+        return "Toast";
+    }
 
-    <span class="n">void</span> <span class="n">StreicheButter</span><span class="p">(</span><span class="n">string</span> <span class="n">toast</span><span class="p">)</span> <span class="o">=&gt;</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"🧈 Butter auf </span><span class="si">{toast}</span><span class="s2"> gestrichen"</span><span class="p">);</span>
+    void StreicheButter(string toast) =&gt;
+        Console.WriteLine($"🧈 Butter auf {toast} gestrichen");
 
-    <span class="n">void</span> <span class="n">StreicheMarmelade</span><span class="p">(</span><span class="n">string</span> <span class="n">toast</span><span class="p">)</span> <span class="o">=&gt;</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"🍓 Marmelade auf </span><span class="si">{toast}</span><span class="s2"> gestrichen"</span><span class="p">);</span>
+    void StreicheMarmelade(string toast) =&gt;
+        Console.WriteLine($"🍓 Marmelade auf {toast} gestrichen");
 
-    <span class="k">async</span> <span class="n">Task</span> <span class="n">GießeSaftAsync</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"⏳ Saft wird eingeschenkt..."</span><span class="p">);</span>
-        <span class="k">await</span> <span class="n">Task</span><span class="o">.</span><span class="n">Delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"🧃 Saft ist fertig"</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+    async Task GießeSaftAsync()
+    {
+        Console.WriteLine("⏳ Saft wird eingeschenkt...");
+        await Task.Delay(500);
+        Console.WriteLine("🧃 Saft ist fertig");
+    }
+}
 </pre></div>
 </div>
 </div>
@@ -8240,14 +8240,14 @@ Wir bauen es <strong>Schritt für Schritt auf</strong>, vom <strong>synchronen A
 <div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="k">try</span>
-<span class="p">{</span>
-    <span class="k">await</span> <span class="n">new</span> <span class="n">Frühstück_Parallel</span><span class="p">()</span><span class="o">.</span><span class="n">MacheFrühstückAsync</span><span class="p">();</span>
-<span class="p">}</span>
-<span class="n">catch</span> <span class="p">(</span><span class="ne">Exception</span> <span class="n">ex</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"💣 Fehler beim Frühstück: </span><span class="si">{ex.Message}</span><span class="s2">"</span><span class="p">);</span>
-<span class="p">}</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>try
+{
+    await new Frühstück_Parallel().MacheFrühstückAsync();
+}
+catch (Exception ex)
+{
+    Console.WriteLine($"💣 Fehler beim Frühstück: {ex.Message}");
+}
 </pre></div>
 </div>
 </div>
@@ -8300,7 +8300,7 @@ Wir bauen es <strong>Schritt für Schritt auf</strong>, vom <strong>synchronen A
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="k">await</span> <span class="n">new</span> <span class="n">Frühstück_Parallel</span><span class="p">()</span><span class="o">.</span><span class="n">MacheFrühstückAsync</span><span class="p">();</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>await new Frühstück_Parallel().MacheFrühstückAsync();
 </pre></div>
 </div>
 </div>
@@ -8341,35 +8341,35 @@ Wir bauen es <strong>Schritt für Schritt auf</strong>, vom <strong>synchronen A
 <div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">using</span> <span class="n">System</span><span class="p">;</span>
-<span class="n">using</span> <span class="n">System</span><span class="o">.</span><span class="n">Threading</span><span class="o">.</span><span class="n">Tasks</span><span class="p">;</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>using System;
+using System.Threading.Tasks;
 
-<span class="k">try</span>
-<span class="p">{</span>
-    <span class="n">MethodeA</span><span class="p">();</span>
-<span class="p">}</span>
-<span class="n">catch</span> <span class="p">(</span><span class="ne">Exception</span> <span class="n">ex</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"❌ Exception in: </span><span class="si">{ex.Message}</span><span class="s2">"</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="k">finally</span>
-<span class="p">{</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Fertig!"</span><span class="p">);</span>
-<span class="p">}</span>
+try
+{
+    MethodeA();
+}
+catch (Exception ex)
+{
+    Console.WriteLine($"❌ Exception in: {ex.Message}");
+}
+finally
+{
+    Console.WriteLine("Fertig!");
+}
 
-<span class="n">static</span> <span class="n">void</span> <span class="n">MethodeA</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"▶ MethodeA gestartet"</span><span class="p">);</span>
-    <span class="n">MethodeB</span><span class="p">();</span> <span class="o">//</span> <span class="err">⚠️</span> <span class="k">await</span> <span class="n">fehlt</span><span class="err">!</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"◀ MethodeA fertig"</span><span class="p">);</span>
-<span class="p">}</span>
+static void MethodeA()
+{
+    Console.WriteLine("▶ MethodeA gestartet");
+    MethodeB(); // ⚠️ await fehlt!
+    Console.WriteLine("◀ MethodeA fertig");
+}
 
-<span class="n">static</span> <span class="k">async</span> <span class="n">Task</span> <span class="n">MethodeB</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"  ▶ MethodeB gestartet"</span><span class="p">);</span>
-    <span class="k">await</span> <span class="n">Task</span><span class="o">.</span><span class="n">Delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span> <span class="o">//</span> <span class="n">trennt</span> <span class="n">den</span> <span class="n">Stack</span>
-    <span class="n">throw</span> <span class="n">new</span> <span class="n">InvalidOperationException</span><span class="p">(</span><span class="s2">"Boom in MethodeB"</span><span class="p">);</span>
-<span class="p">}</span>
+static async Task MethodeB()
+{
+    Console.WriteLine("  ▶ MethodeB gestartet");
+    await Task.Delay(100); // trennt den Stack
+    throw new InvalidOperationException("Boom in MethodeB");
+}
 </pre></div>
 </div>
 </div>
