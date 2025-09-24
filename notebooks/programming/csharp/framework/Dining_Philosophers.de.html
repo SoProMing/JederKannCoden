@@ -7675,6 +7675,250 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Weitere-Probleme-in-der-nebenl%C3%A4ufigen-Programmierung">Weitere Probleme in der nebenläufigen Programmierung<a class="anchor-link" href="#Weitere-Probleme-in-der-nebenl%C3%A4ufigen-Programmierung">¶</a></h2><h3 id="Race-Condition-(Wettlaufsituation)">Race Condition (Wettlaufsituation)<a class="anchor-link" href="#Race-Condition-(Wettlaufsituation)">¶</a></h3><p>Ein Race Condition tritt auf, wenn das Ergebnis vom Timing oder der Reihenfolge abhängt, in der Threads auf gemeinsame Daten zugreifen.</p>
+<h4 id="Beispiel:">Beispiel:<a class="anchor-link" href="#Beispiel:">¶</a></h4><p>Zwei Threads erhöhen gleichzeitig denselben Zähler → Ergebnis kann falsch sein, wenn kein Lock verwendet wird.</p>
+<h4 id="L%C3%B6sungsm%C3%B6glichkeiten:">Lösungsmöglichkeiten:<a class="anchor-link" href="#L%C3%B6sungsm%C3%B6glichkeiten:">¶</a></h4><ul>
+<li><strong>Locking</strong> (Mutex, Semaphore)</li>
+<li><strong>Atomare Operationen</strong></li>
+<li><strong>Immutability</strong> (unveränderliche Objekte)</li>
+</ul>
+<h3 id="Livelock">Livelock<a class="anchor-link" href="#Livelock">¶</a></h3><p>Ein Livelock ähnelt einem Deadlock – nur dass die Threads nicht blockiert sind, sondern ständig in einer Schleife aktiv bleiben, ohne Fortschritt zu machen.</p>
+<h4 id="Beispiel:">Beispiel:<a class="anchor-link" href="#Beispiel:">¶</a></h4><p>Zwei Personen weichen sich gegenseitig ständig aus, um durch eine Tür zu gehen, blockieren sich dabei aber weiterhin.</p>
+<h4 id="L%C3%B6sungsm%C3%B6glichkeiten:">Lösungsmöglichkeiten:<a class="anchor-link" href="#L%C3%B6sungsm%C3%B6glichkeiten:">¶</a></h4><ul>
+<li>Backoff-Strategien</li>
+<li>Zufallsverzögerungen</li>
+</ul>
+<h3 id="Starvation-(Verhungern)">Starvation (Verhungern)<a class="anchor-link" href="#Starvation-(Verhungern)">¶</a></h3><p>Ein Thread bekommt nie CPU-Zeit oder keinen Zugriff auf Ressourcen, weil andere ständig bevorzugt werden.</p>
+<h4 id="Ursachen:">Ursachen:<a class="anchor-link" href="#Ursachen:">¶</a></h4><ul>
+<li>Ungerechte Scheduler</li>
+<li>Prioritätsinversion (niedrigpriorisierter Thread hält Ressource, die ein höherpriorisierter braucht)</li>
+</ul>
+<h4 id="L%C3%B6sung:">Lösung:<a class="anchor-link" href="#L%C3%B6sung:">¶</a></h4><ul>
+<li><strong>Faire Locks</strong></li>
+<li><strong>Priority Inheritance</strong></li>
+</ul>
+<h3 id="Race-Hazard-/-Data-Hazard">Race Hazard / Data Hazard<a class="anchor-link" href="#Race-Hazard-/-Data-Hazard">¶</a></h3><p>Kommt aus der Hardware-Programmierung (z. B. Pipelines in CPUs), aber ähnlich wie Race Conditions in Software.</p>
+<h3 id="Priority-Inversion">Priority Inversion<a class="anchor-link" href="#Priority-Inversion">¶</a></h3><p>Ein niedriger Thread hält eine Ressource, die ein höherpriorisierter Thread benötigt, aber wird nicht unterbrochen → hoher Thread blockiert.</p>
+<h4 id="L%C3%B6sung:">Lösung:<a class="anchor-link" href="#L%C3%B6sung:">¶</a></h4><ul>
+<li><strong>Priority Inheritance Protocol</strong></li>
+</ul>
+<h3 id="Zusammenfassung-als-Tabelle">Zusammenfassung als Tabelle<a class="anchor-link" href="#Zusammenfassung-als-Tabelle">¶</a></h3><table>
+<thead>
+<tr>
+<th>Phänomen</th>
+<th>Ursache</th>
+<th>Symptom</th>
+<th>Lösung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Deadlock</td>
+<td>Zirkuläres Warten auf Locks</td>
+<td>Alle Threads warten unbegrenzt</td>
+<td>Feste Lock-Reihenfolge</td>
+</tr>
+<tr>
+<td>Race Condition</td>
+<td>Kein synchroner Zugriff auf gemeinsame Daten</td>
+<td>Zufällige/fehlerhafte Ergebnisse</td>
+<td>Locking, Atomics</td>
+</tr>
+<tr>
+<td>Livelock</td>
+<td>Threads reagieren ständig, machen aber keinen Fortschritt</td>
+<td>CPU-Auslastung, kein Fortschritt</td>
+<td>Zufall, Backoff</td>
+</tr>
+<tr>
+<td>Starvation</td>
+<td>Ungerechte Ressourcenzuweisung</td>
+<td>Einzelne Threads arbeiten nie</td>
+<td>Faire Scheduler</td>
+</tr>
+<tr>
+<td>Priority Inversion</td>
+<td>Niedriger Thread blockiert höheren</td>
+<td>Hänger trotz hoher Priorität</td>
+<td>Priority Inheritance</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="L%C3%B6sungsans%C3%A4tze-in-C%23">Lösungsansätze in C#<a class="anchor-link" href="#L%C3%B6sungsans%C3%A4tze-in-C%23">¶</a></h2><p>In C# gibt es verschiedene <strong>Locking-Mechanismen</strong>, um nebenläufige Zugriffe zu koordinieren und Race Conditions oder Deadlocks zu vermeiden. Hier ist eine Übersicht:</p>
+<h3 id="1.-lock-Statement-(Monitor)">1. <code>lock</code>-Statement (Monitor)<a class="anchor-link" href="#1.-lock-Statement-(Monitor)">¶</a></h3><p>Der einfachste und gebräuchlichste Mechanismus für exklusive Sperren.</p>
+<div class="highlight"><pre><span></span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="kt">object</span><span class="w"> </span><span class="n">_lockObj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="p">();</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">KritischerAbschnitt</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">lock</span><span class="w"> </span><span class="p">(</span><span class="n">_lockObj</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Nur ein Thread gleichzeitig hier drin</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<h4 id="Intern:-verwendet-Monitor.Enter()-und-Monitor.Exit()">Intern: verwendet <code>Monitor.Enter()</code> und <code>Monitor.Exit()</code><a class="anchor-link" href="#Intern:-verwendet-Monitor.Enter()-und-Monitor.Exit()">¶</a></h4><h3 id="2.-Monitor-Klasse">2. <code>Monitor</code>-Klasse<a class="anchor-link" href="#2.-Monitor-Klasse">¶</a></h3><p>Mehr Kontrolle als <code>lock</code>, z. B. mit Timeout oder TryEnter:</p>
+<div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Monitor</span><span class="p">.</span><span class="n">TryEnter</span><span class="p">(</span><span class="n">_lockObj</span><span class="p">,</span><span class="w"> </span><span class="n">TimeSpan</span><span class="p">.</span><span class="n">FromSeconds</span><span class="p">(</span><span class="mi">2</span><span class="p">)))</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">try</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// geschützter Zugriff</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">finally</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Monitor</span><span class="p">.</span><span class="n">Exit</span><span class="p">(</span><span class="n">_lockObj</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<h3 id="3.-Mutex-(Systemweite-Sperre)">3. <code>Mutex</code> (Systemweite Sperre)<a class="anchor-link" href="#3.-Mutex-(Systemweite-Sperre)">¶</a></h3><p>Kann auch über Prozessgrenzen hinweg sperren.</p>
+<div class="highlight"><pre><span></span><span class="n">Mutex</span><span class="w"> </span><span class="n">mutex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Mutex</span><span class="p">(</span><span class="k">false</span><span class="p">,</span><span class="w"> </span><span class="s">"Global\\MeinMutex"</span><span class="p">);</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">mutex</span><span class="p">.</span><span class="n">WaitOne</span><span class="p">(</span><span class="n">TimeSpan</span><span class="p">.</span><span class="n">FromSeconds</span><span class="p">(</span><span class="mi">1</span><span class="p">)))</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">try</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Zugriff gesichert</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">finally</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">mutex</span><span class="p">.</span><span class="n">ReleaseMutex</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<h4 id="Nachteile:">Nachteile:<a class="anchor-link" href="#Nachteile:">¶</a></h4><ul>
+<li>Teurer als <code>lock</code></li>
+<li>Für interprozessuale Koordination gedacht</li>
+</ul>
+<h3 id="4.-Semaphore-&amp;-SemaphoreSlim">4. <code>Semaphore</code> &amp; <code>SemaphoreSlim</code><a class="anchor-link" href="#4.-Semaphore-&amp;-SemaphoreSlim">¶</a></h3><p>Erlaubt eine bestimmte Anzahl paralleler Zugriffe.</p>
+<div class="highlight"><pre><span></span><span class="n">SemaphoreSlim</span><span class="w"> </span><span class="n">sem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SemaphoreSlim</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span><span class="w"> </span><span class="c1">// max 3 Threads</span>
+
+<span class="k">await</span><span class="w"> </span><span class="n">sem</span><span class="p">.</span><span class="n">WaitAsync</span><span class="p">();</span>
+<span class="k">try</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// geschützter Bereich</span>
+<span class="p">}</span>
+<span class="k">finally</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">sem</span><span class="p">.</span><span class="n">Release</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+<h4 id="Unterschied:">Unterschied:<a class="anchor-link" href="#Unterschied:">¶</a></h4><ul>
+<li><code>SemaphoreSlim</code> ist nur innerhalb eines Prozesses und performanter</li>
+<li><code>Semaphore</code> auch systemweit möglich</li>
+</ul>
+<h3 id="5.-ReaderWriterLockSlim">5. <code>ReaderWriterLockSlim</code><a class="anchor-link" href="#5.-ReaderWriterLockSlim">¶</a></h3><p>Optimiert für Szenarien mit vielen Lesern und wenigen Schreibern.</p>
+<div class="highlight"><pre><span></span><span class="n">ReaderWriterLockSlim</span><span class="w"> </span><span class="n">rwLock</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="p">();</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Lesen</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">rwLock</span><span class="p">.</span><span class="n">EnterReadLock</span><span class="p">();</span>
+<span class="w">    </span><span class="k">try</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// lesen</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">finally</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">rwLock</span><span class="p">.</span><span class="n">ExitReadLock</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Schreiben</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">rwLock</span><span class="p">.</span><span class="n">EnterWriteLock</span><span class="p">();</span>
+<span class="w">    </span><span class="k">try</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// schreiben</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">finally</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">rwLock</span><span class="p">.</span><span class="n">ExitWriteLock</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<h3 id="6.-SpinLock-(System.Threading)">6. <code>SpinLock</code> (System.Threading)<a class="anchor-link" href="#6.-SpinLock-(System.Threading)">¶</a></h3><p>Leichtgewichtige Sperre, die aktiv wartet (Spinning) – sinnvoll nur bei sehr kurzer Sperrdauer und hohem Durchsatzbedarf.</p>
+<div class="highlight"><pre><span></span><span class="n">SpinLock</span><span class="w"> </span><span class="n">spinLock</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="p">();</span>
+<span class="kt">bool</span><span class="w"> </span><span class="n">lockTaken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+
+<span class="n">spinLock</span><span class="p">.</span><span class="n">Enter</span><span class="p">(</span><span class="k">ref</span><span class="w"> </span><span class="n">lockTaken</span><span class="p">);</span>
+<span class="k">try</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// kritischer Abschnitt</span>
+<span class="p">}</span>
+<span class="k">finally</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">lockTaken</span><span class="p">)</span>
+<span class="w">        </span><span class="n">spinLock</span><span class="p">.</span><span class="n">Exit</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+<h3 id="7.-Interlocked-(Atomare-Operationen,-kein-echter-Lock)">7. <code>Interlocked</code> (Atomare Operationen, kein echter Lock)<a class="anchor-link" href="#7.-Interlocked-(Atomare-Operationen,-kein-echter-Lock)">¶</a></h3><p>Nützlich für einfache atomare Zähler oder Flags:</p>
+<div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">counter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="n">Interlocked</span><span class="p">.</span><span class="n">Increment</span><span class="p">(</span><span class="k">ref</span><span class="w"> </span><span class="n">counter</span><span class="p">);</span>
+</pre></div>
+<h3 id="Zusammenfassung:-Wann-was?">Zusammenfassung: Wann was?<a class="anchor-link" href="#Zusammenfassung:-Wann-was?">¶</a></h3><table>
+<thead>
+<tr>
+<th>Mechanismus</th>
+<th>Use Case</th>
+<th>Besonderheiten</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>lock</code></td>
+<td>Standard-Locking</td>
+<td>Einfach &amp; sicher</td>
+</tr>
+<tr>
+<td><code>Monitor</code></td>
+<td>Feiner kontrolliertes Locking</td>
+<td>TryEnter, Timeout</td>
+</tr>
+<tr>
+<td><code>Mutex</code></td>
+<td>Prozessübergreifendes Locking</td>
+<td>Teuer, aber mächtig</td>
+</tr>
+<tr>
+<td><code>Semaphore(Slim)</code></td>
+<td>Begrenzte gleichzeitige Zugriffe</td>
+<td>Gut für Throttling</td>
+</tr>
+<tr>
+<td><code>ReaderWriterLockSlim</code></td>
+<td>Viele Leser, wenige Schreiber</td>
+<td>Gute Performance</td>
+</tr>
+<tr>
+<td><code>SpinLock</code></td>
+<td>Sehr kurze Sperren</td>
+<td>Aktives Warten, keine Blockierung</td>
+</tr>
+<tr>
+<td><code>Interlocked</code></td>
+<td>Atomare Operationen</td>
+<td>Kein echter Lock, sehr performant</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Beispiel:-Dining-Philosophers-mit-SemaphoreSlim">Beispiel: Dining Philosophers mit <code>SemaphoreSlim</code><a class="anchor-link" href="#Beispiel:-Dining-Philosophers-mit-SemaphoreSlim">¶</a></h2><p>Hier ist ein <strong>vollständiges, aber einfach gehaltenes C#-Beispiel</strong> für das <strong>Dining Philosophers Problem</strong> mit Vermeidung von <strong>Deadlocks</strong> durch einen sogenannten <strong>"Butler"</strong>, der maximal vier der fünf Philosophen gleichzeitig Essen serviert. So wird ein zyklisches Warten verhindert.</p>
 </div>
 </div>

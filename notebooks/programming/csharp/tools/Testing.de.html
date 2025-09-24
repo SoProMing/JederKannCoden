@@ -7744,6 +7744,110 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div style="border:2px solid #008CBA; padding:10px; background-color:#E0F7FA;">
+<h2 id="%F0%9F%92%A1-Testabdeckung-(Code-Coverage)-in-Visual-Studio">💡 Testabdeckung (Code Coverage) in Visual Studio<a class="anchor-link" href="#%F0%9F%92%A1-Testabdeckung-(Code-Coverage)-in-Visual-Studio">¶</a></h2><p>In <strong>Visual Studio</strong> kannst du die <strong>Testabdeckung (Code Coverage)</strong> auf einfache Weise messen – allerdings hängt es davon ab, <strong>welche Edition</strong> du verwendest:</p>
+<h3 id="Voraussetzungen">Voraussetzungen<a class="anchor-link" href="#Voraussetzungen">¶</a></h3><table>
+<thead>
+<tr>
+<th>Visual Studio Edition</th>
+<th>Unterstützt Code Coverage?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Enterprise</strong></td>
+<td>✅ Ja, direkt integriert</td>
+</tr>
+<tr>
+<td><strong>Professional / Community</strong></td>
+<td>❌ Nein, nur über Dritttools</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Code-Coverage-mit-Visual-Studio-Enterprise">Code Coverage mit Visual Studio Enterprise<a class="anchor-link" href="#Code-Coverage-mit-Visual-Studio-Enterprise">¶</a></h3><h4 id="Schritt-f%C3%BCr-Schritt:">Schritt-für-Schritt:<a class="anchor-link" href="#Schritt-f%C3%BCr-Schritt:">¶</a></h4><ol>
+<li><p><strong>Tests schreiben</strong> (z. B. mit xUnit, MSTest oder NUnit)</p>
+</li>
+<li><p>Im Menü: <code>Test</code> → <code>Test Explorer</code> öffnen</p>
+</li>
+<li><p>Im <strong>Test Explorer</strong>:</p>
+<ul>
+<li>Tests ausführen</li>
+<li>Danach: Rechtsklick → <strong>Analyze Code Coverage for All Tests</strong></li>
+</ul>
+</li>
+<li><p>Ergebnis:</p>
+<ul>
+<li><p>Es öffnet sich das Fenster <strong>Code Coverage Results</strong></p>
+</li>
+<li><p>Du siehst Abdeckungsgrade pro Projekt, Klasse und Methode</p>
+</li>
+<li><p>Der Code ist farbig markiert:</p>
+<ul>
+<li><strong>Blau</strong>: getestet</li>
+<li><strong>Rot</strong>: nicht getestet</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="Exportieren-der-Ergebnisse">Exportieren der Ergebnisse<a class="anchor-link" href="#Exportieren-der-Ergebnisse">¶</a></h3><ul>
+<li><p>Im Fenster <strong>Code Coverage Results</strong>:</p>
+<ul>
+<li>Rechtsklick → <code>Export Coverage Results</code></li>
+<li>Format: <code>.coverage</code> → Optional konvertieren zu <code>.xml</code> mit <code>CodeCoverage.exe</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="Alternativen-f%C3%BCr-Nicht-Enterprise-User">Alternativen für Nicht-Enterprise-User<a class="anchor-link" href="#Alternativen-f%C3%BCr-Nicht-Enterprise-User">¶</a></h3><p>Falls du <strong>Community</strong> oder <strong>Professional</strong> nutzt, kannst du Tools wie diese verwenden:</p>
+<h4 id="Coverlet"><a href="https://github.com/coverlet-coverage/coverlet">Coverlet</a><a class="anchor-link" href="#Coverlet">¶</a></h4><ul>
+<li>Open-Source</li>
+<li>Funktioniert mit xUnit, MSTest, NUnit</li>
+<li>Integration in <code>dotnet test</code></li>
+</ul>
+<p><strong>Installation (einmalig):</strong></p>
+<div class="highlight"><pre><span></span>dotnet<span class="w"> </span>add<span class="w"> </span>package<span class="w"> </span>coverlet.collector
+</pre></div>
+<p><strong>Ausführen mit Coverage:</strong></p>
+<div class="highlight"><pre><span></span>dotnet<span class="w"> </span><span class="nb">test</span><span class="w"> </span>/p:CollectCoverage<span class="o">=</span><span class="nb">true</span><span class="w"> </span>/p:CoverletOutputFormat<span class="o">=</span>cobertura
+</pre></div>
+<p><strong>Optional: Report anzeigen mit ReportGenerator:</strong></p>
+<div class="highlight"><pre><span></span>dotnet<span class="w"> </span>tool<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>dotnet-reportgenerator-globaltool
+reportgenerator<span class="w"> </span>-reports:coverage.cobertura.xml<span class="w"> </span>-targetdir:coveragereport
+</pre></div>
+<p>Dann kannst du <code>coveragereport/index.html</code> im Browser öffnen.</p>
+<h3 id="Empfehlung">Empfehlung<a class="anchor-link" href="#Empfehlung">¶</a></h3><table>
+<thead>
+<tr>
+<th>Ziel</th>
+<th>Tool / Methode</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Du hast <strong>VS Enterprise</strong></td>
+<td>Integrierte Code Coverage</td>
+</tr>
+<tr>
+<td>Du nutzt <strong>.NET CLI / GitHub</strong></td>
+<td><code>coverlet</code> + <code>reportgenerator</code></td>
+</tr>
+<tr>
+<td>CI/CD</td>
+<td>Kombination aus Coverlet + HTML-Ausgabe</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Entscheidungshilfen-f%C3%BCr-den-Einsatz-von-Tests">Entscheidungshilfen für den Einsatz von Tests<a class="anchor-link" href="#Entscheidungshilfen-f%C3%BCr-den-Einsatz-von-Tests">¶</a></h2><p>Die jeweilig gut einsetzbare Testmethodik hängt stark von deinem <strong>Ziel</strong>, dem <strong>Reifegrad deiner Software</strong> und dem <strong>Kontext (z. B. Web, App, eingebettetes System)</strong> ab. Hier ist eine <strong>strukturierte Entscheidungshilfe</strong>, wie du die <strong>richtige Testart für verschiedene Situationen</strong> findest.</p>
 <h3 id="Entscheidungshilfe:-Welche-Testart-f%C3%BCr-welchen-Zweck?">Entscheidungshilfe: Welche Testart für welchen Zweck?<a class="anchor-link" href="#Entscheidungshilfe:-Welche-Testart-f%C3%BCr-welchen-Zweck?">¶</a></h3><table>
 <thead>
