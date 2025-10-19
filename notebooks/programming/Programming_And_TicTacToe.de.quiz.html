@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<title>Programmieren & Tic-Tac-Toe – Mini-Quiz</title>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 780px; margin: 1em auto; line-height: 1.4; }
+  #quiz-card { border:1px solid #ddd; border-radius:12px; padding:16px; box-shadow:0 2px 8px rgba(0,0,0,.04); }
+  button { cursor:pointer; }
+</style>
+</head>
+<body>
+
+<h2>Programmieren & Tic-Tac-Toe – Mini-Quiz</h2>
+<p>10 Fragen zu Regeln, Datenstrukturen, Gewinnlogik und einfacher KI-Heuristik.</p>
+
+<div id="quiz-card">
+  <div id="progress" style="font-size:14px;color:#555;margin-bottom:8px;"></div>
+  <div id="question" style="font-size:18px;font-weight:600;margin:8px 0 12px;"></div>
+  <div id="choices" style="display:grid;gap:8px;"></div>
+  <div id="feedback" style="margin-top:12px;min-height:24px;"></div>
+  <div style="display:flex;gap:8px;margin-top:16px;">
+    <button id="skipBtn" style="padding:8px 12px;border:1px solid #999;border-radius:8px;background:#f7f7f7;">Überspringen</button>
+    <button id="nextBtn" style="padding:8px 12px;border:1px solid #0b5;border-radius:8px;background:#0b5;color:white;">Weiter</button>
+    <button id="restartBtn" style="padding:8px 12px;border:1px solid #555;border-radius:8px;background:white;display:none;">Nochmal</button>
+    <div style="margin-left:auto;align-self:center;font-size:13px;color:#666;">Tipp: Antworten anklicken</div>
+  </div>
+</div>
+
+<div id="result" style="display:none;margin-top:16px;border:1px solid #ddd;border-radius:12px;padding:16px;">
+  <h3>Auswertung</h3>
+  <p id="score"></p>
+  <details><summary style="cursor:pointer;">Erklärungen anzeigen</summary><ol id="review"></ol></details>
+</div>
+
+<script>
+(function(){
+  const $ = s => document.querySelector(s);
+
+  const QUESTIONS = [
+    {
+      q: "Wie groß ist das Spielfeld bei klassischem Tic-Tac-Toe?",
+      choices: ["2×2", "3×3", "4×4", "variabel"],
+      correct: 1,
+      explain: "Klassisch wird auf einem 3×3-Raster gespielt."
+    },
+    {
+      q: "Wieviele Gewinnlinien gibt es insgesamt (Zeilen, Spalten, Diagonalen)?",
+      choices: ["6", "7", "8", "9"],
+      correct: 2,
+      explain: "3 Zeilen + 3 Spalten + 2 Diagonalen = 8 Gewinnlinien."
+    },
+    {
+      q: "Wodurch entsteht ein Sieg?",
+      choices: [
+        "Drei gleiche Symbole in einer Linie",
+        "Zwei beliebige Symbole nebeneinander",
+        "Eines in jeder Ecke",
+        "Ein Symbol in der Mitte"
+      ],
+      correct: 0,
+      explain: "Drei gleiche Symbole (X oder O) in Reihe, Spalte oder Diagonale."
+    },
+    {
+      q: "Wann endet eine Partie mit Remis (\"Cat’s game\")?",
+      choices: [
+        "Wenn beide Spieler gleich viele Züge haben",
+        "Wenn das Board voll ist und keine Gewinnlinie existiert",
+        "Wenn die Mitte frei bleibt",
+        "Wenn ein Spieler aussetzt"
+      ],
+      correct: 1,
+      explain: "Remis: Alle 9 Felder belegt, aber keine Gewinnbedingung erfüllt."
+    },
+    {
+      q: "Wie viele Züge gibt es maximal in einer Partie?",
+      choices: ["7", "8", "9", "10"],
+      correct: 2,
+      explain: "Maximal 9 Züge (alle Felder belegt)."
+    },
+    {
+      q: "Welche Datenstruktur eignet sich typischerweise zur Board-Repräsentation?",
+      choices: [
+        "Ein einzelner Integer",
+        "Ein 3×3-Array (z. B. char[3,3] oder string[][])",
+        "Ein Dictionary ohne Schlüssel",
+        "Ein Stack"
+      ],
+      correct: 1,
+      explain: "Ein 3×3-Array bildet das Raster direkt ab und erleichtert Prüfungen."
+    },
+    {
+      q: "Welche Bedingung sollte ein gültiger Zug erfüllen?",
+      choices: [
+        "Das Ziel-Feld ist leer und innerhalb der Grenzen 0..2/0..2",
+        "Das Feld ist bereits belegt",
+        "Mindestens eine Diagonale ist frei",
+        "Der Gegner hat zuletzt die Mitte belegt"
+      ],
+      correct: 0,
+      explain: "Zug = gültige Koordinate + Feld ist frei."
+    },
+    {
+      q: "Was prüft man bei einer Gewinnkontrolle am einfachsten zuerst?",
+      choices: [
+        "Ob die Mitte frei ist",
+        "Alle Zeilen, Spalten und Diagonalen auf drei gleiche, nicht-leere Symbole",
+        "Ob die letzte Eingabe gerade/ungerade war",
+        "Ob die Ecken symmetrisch sind"
+      ],
+      correct: 1,
+      explain: "Standard-Check: Jede Zeile/Spalte/Diagonale auf 3 gleiche, nicht-leere Symbole."
+    },
+    {
+      q: "Welcher einfache KI-Heuristik-Zug ist oft stark (ohne vollständiges Minimax)?",
+      choices: [
+        "Immer das erste freie Feld",
+        "Zufälliges Feld",
+        "Mitte → Ecke → Seite (falls möglich)",
+        "Zug überspringen"
+      ],
+      correct: 2,
+      explain: "Die Priorität Mitte > Ecken > Seiten ist in TTT meist vorteilhaft."
+    },
+    {
+      q: "Wie endet Tic-Tac-Toe bei perfektem Spiel beider Seiten?",
+      choices: ["X gewinnt", "O gewinnt", "Immer Unentschieden", "Unentschieden ist unmöglich"],
+      correct: 2,
+      explain: "TTT ist gelöst: Bei perfektem Spiel endet die Partie unentschieden."
+    }
+  ];
+
+  function shuffle(a){const arr=a.slice();for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]];}return arr;}
+  const state = { order: shuffle([...Array(QUESTIONS.length).keys()]), i: 0, correct: 0, answers: [] };
+
+  const qEl = $("#question"), cEl = $("#choices"), fEl = $("#feedback"), pEl = $("#progress");
+  const next = $("#nextBtn"), skip = $("#skipBtn"), restart = $("#restartBtn");
+  const resultBox = $("#result"), score = $("#score"), review = $("#review");
+
+  function render(){
+    const qi = state.order[state.i], item = QUESTIONS[qi];
+    pEl.textContent = `Frage ${state.i+1}/${QUESTIONS.length}`;
+    qEl.innerHTML = item.q; cEl.innerHTML = ""; fEl.innerHTML = "";
+    item.choices.forEach((c,idx)=>{
+      const b = document.createElement("button");
+      b.innerHTML = c;
+      Object.assign(b.style,{padding:"10px 12px",border:"1px solid #ccc",borderRadius:"8px",background:"white",textAlign:"left"});
+      b.onclick = () => answer(idx);
+      cEl.appendChild(b);
+    });
+  }
+
+  function answer(chosen){
+    const qi = state.order[state.i], item = QUESTIONS[qi];
+    const good = chosen === item.correct;
+    state.answers[qi] = { chosen, good };
+    if (good) state.correct++;
+
+    [...cEl.children].forEach((b,i)=>{
+      b.disabled = true;
+      if (i === item.correct){ b.style.borderColor="#0b5"; b.style.background="rgba(0,180,80,.08)"; }
+      if (i === chosen && !good){ b.style.borderColor="#b00"; b.style.background="rgba(200,0,0,.06)"; }
+    });
+
+    fEl.innerHTML = (good ? "✔️ Richtig" : "✖️ Falsch") + " — " + item.explain;
+  }
+
+  function nextQ(){
+    if (state.i < QUESTIONS.length - 1){ state.i++; render(); }
+    else { showResult(); }
+  }
+
+  function skipQ(){
+    if (state.i < QUESTIONS.length - 1){ state.i++; render(); }
+    else { showResult(); }
+  }
+
+  function showResult(){
+    $("#quiz-card").style.display = "none";
+    resultBox.style.display = "";
+    const percent = Math.round(state.correct / QUESTIONS.length * 100);
+    score.textContent = `${state.correct} von ${QUESTIONS.length} korrekt (${percent}%)`;
+    review.innerHTML = "";
+    state.order.forEach(qi=>{
+      const it = QUESTIONS[qi], a = state.answers[qi];
+      const li = document.createElement("li");
+      const chosen = a ? it.choices[a.chosen] : "—";
+      li.innerHTML = `<strong>${it.q}</strong><br>Deine Antwort: ${chosen}<br>Korrekt: ${it.choices[it.correct]}<br><span style="color:#555">${it.explain}</span>`;
+      review.appendChild(li);
+    });
+    restart.style.display = "";
+  }
+
+  restart.onclick = () => {
+    state.i = 0; state.correct = 0;
+    state.order = shuffle([...Array(QUESTIONS.length).keys()]);
+    $("#quiz-card").style.display = ""; resultBox.style.display = "none";
+    render();
+  };
+  $("#nextBtn").onclick = nextQ;
+  $("#skipBtn").onclick = skipQ;
+
+  render();
+})();
+</script>
+
+</body>
+</html>

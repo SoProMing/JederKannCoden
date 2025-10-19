@@ -7518,7 +7518,26 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p><a href="abstract/Contents.de.html">Jeder kann coden</a> / <a href="Number_Systems.de.html">Zahlensysteme</a></p>
-<h1 id="Programmierung-und-Tic-Tac-Toe">Programmierung und Tic-Tac-Toe<a class="anchor-link" href="#Programmierung-und-Tic-Tac-Toe">¶</a></h1><img alt="No description has been provided for this image" src="Programming_And_TicTacToe.webp" style="width:280px; height:280px;"/>
+<h1 id="Programmierung-und-Tic-Tac-Toe">Programmierung und Tic-Tac-Toe<a class="anchor-link" href="#Programmierung-und-Tic-Tac-Toe">¶</a></h1><table border="0">
+<tr>
+<td>
+<img alt="No description has been provided for this image" src="Programming_And_TicTacToe.webp"/>
+</td>
+<td rowspan="2">
+<a href="https://miro.com/app/board/uXjVPm0lbTo=/?moveToWidget=3458764607889708296&amp;cot=14"><img alt="No description has been provided for this image" src="abstract/Radar.de.jpg"/></a>
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://learn.microsoft.com/dotnet/csharp/">C# Guide (Microsoft Learn)</a><br/>
+<a href="https://learn.microsoft.com/dotnet/standard/">.NET Standard-Dokumentation</a><br/>
+<a href="https://dotnet.microsoft.com/en-us/learn">.NET Learning Hub</a><br/>
+<a href="https://visualgo.net/en">Visualgo: Algorithmen visualisieren</a><br/>
+<a href="https://www.codewars.com">Codewars: Übungsaufgaben</a><br/>
+<a href="https://en.wikipedia.org/wiki/Tic-tac-toe">Tic-Tac-Toe Hintergrundwissen</a>
+</td>
+</tr>
+</table>
 <h2 id="Einleitung:-Die-Spielregeln-von-Tic-Tac-Toe">Einleitung: Die Spielregeln von Tic-Tac-Toe<a class="anchor-link" href="#Einleitung:-Die-Spielregeln-von-Tic-Tac-Toe">¶</a></h2><p>Tic-Tac-Toe ist ein einfaches und beliebtes Spiel, das auf einem 3x3-Raster gespielt wird. Zwei Spieler, normalerweise als „X“ und „O“ bezeichnet, platzieren abwechselnd ihre Symbole auf dem Raster. Das Ziel ist es, eine Reihe von drei eigenen Symbolen in einer Reihe, Spalte oder Diagonale zu bilden. Der erste Spieler, der dies erreicht, gewinnt das Spiel. Wenn alle Zellen des Rasters besetzt sind und niemand gewonnen hat, endet das Spiel unentschieden.</p>
 </div>
 </div>
@@ -7590,14 +7609,14 @@ graph TD;
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="Navigation-durch-den-Text">Navigation durch den Text<a class="anchor-link" href="#Navigation-durch-den-Text">¶</a></h3><ul>
 <li><strong>Schrittweises Verständnis:</strong>  Spielregeln werden schrittweise gelesen und verstanden, ähnlich wie ein Algorithmus.</li>
-<li><strong>Sequentielle Verarbeitung:</strong>  Ein Python-Interpreter verarbeitet den Code zeichenweise und zeilenweise, ähnlich wie ein Mensch die Spielregeln sequentiell liest.</li>
-<li><strong>Unterschied:</strong>  Der Mensch versteht das Regelwerk global, während der Interpreter den Code strikt sequenziell abarbeitet.</li>
+<li><strong>Sequentielle Verarbeitung:</strong>  C#-Programme werden von der .NET-Laufzeit Anweisung für Anweisung ausgeführt, ähnlich wie ein Mensch die Spielregeln sequentiell liest.</li>
+<li><strong>Unterschied:</strong>  Der Mensch versteht das Regelwerk global, während die Laufzeit den Code strikt sequenziell abarbeitet.</li>
 </ul>
 <details>
 <summary>Ausführliche Erklärung...</summary>
 Wenn man Spielregeln wie die von TicTacToe liest, erfolgt der Prozess schrittweise, als würde man einem Algorithmus folgen. Zuerst werden die grundlegenden Spielbedingungen festgelegt, z.B. das Spielfeld besteht aus einem 3x3-Raster und zwei Spieler setzen abwechselnd entweder "X" oder "O". Die Spielregeln werden dabei nacheinander durchgegangen, um das Verhalten und die Bedingungen des Spiels zu verstehen und anzuwenden.
 
-<p>Ähnlich dazu verarbeitet ein Python-Interpreter den Code zeichenweise und zeilenweise. Der Interpreter liest den Code, zerlegt ihn in Einheiten (Tokens) und führt dann die entsprechenden Anweisungen aus. Dies geschieht streng sequentiell, wobei jede Zeile Code analysiert und ausgeführt wird, bevor zur nächsten Zeile übergegangen wird. Die Bedeutung der Zeichen (Tokens) wird basierend auf den Sprachregeln von Python interpretiert.</p>
+<p>Ähnlich dazu analysiert der C#-Compiler den Code, zerlegt ihn in einzelne Bestandteile (Tokens) und stellt ihn der .NET-Laufzeit zur Ausführung bereit. Die Anweisungen werden streng sequentiell verarbeitet, wobei jede Zeile Code analysiert und umgesetzt wird, bevor zur nächsten Zeile übergegangen wird. Die Bedeutung der Zeichen und Schlüsselwörter ergibt sich dabei aus den Sprachregeln von C#.</p>
 </details>
 <p>Hier ist eine einfache Version des TicTacToe-Spiels, die nur den Ablauf einer Runde als lesbaren Text ausgibt:</p>
 </div>
@@ -7611,156 +7630,16 @@ Wenn man Spielregeln wie die von TicTacToe liest, erfolgt der Prozess schrittwei
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Textbasierte TicTacToe-Spielsimulation ohne Methoden</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">//</span> <span class="n">Textbasierte</span> <span class="n">TicTacToe</span><span class="o">-</span><span class="n">Spielsimulation</span> <span class="n">ohne</span> <span class="n">Methoden</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Start des Spiels!"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Leeres Spielfeld:"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"   |   |   "</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"-----------"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"   |   |   "</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"-----------"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"   |   |   "</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">""</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Zug 1: Spieler X setzt auf (0, 0)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Zug 1: Spieler X setzt auf Position (0, 0)"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">" X |   |   "</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"-----------"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"   |   |   "</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"-----------"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"   |   |   "</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">""</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Zug 2: Spieler O setzt auf (1, 1)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Zug 2: Spieler O setzt auf Position (1, 1)"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">" X |   |   "</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"-----------"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"   | O |   "</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"-----------"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"   |   |   "</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">""</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Zug 3: Spieler X setzt auf (0, 1)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Zug 3: Spieler X setzt auf Position (0, 1)"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">" X | X |   "</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"-----------"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"   | O |   "</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"-----------"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"   |   |   "</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">""</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Zug 4: Spieler O setzt auf (2, 2)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Zug 4: Spieler O setzt auf Position (2, 2)"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">" X | X |   "</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"-----------"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"   | O |   "</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"-----------"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"   |   | O "</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">""</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Zug 6: Spieler O setzt auf Position (0, 2)"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">" X | X | O "</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"-----------"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">" X | O |   "</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"-----------"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"   |   | O "</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">""</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Zug 6: Spieler O setzt auf Position (2, 0)"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">" X | X | O "</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"-----------"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">" X | O |   "</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"-----------"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">" o |   | O "</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">""</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Spieler O gewinnt</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Spieler O gewinnt mit einer vollen Diagonalen!"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Spiel beendet."</span><span class="p">)</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Start des Spiels!"</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Leeres Spielfeld:"</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"   |   |   "</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"-----------"</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"   |   |   "</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"-----------"</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"   |   |   "</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
@@ -7773,7 +7652,326 @@ Wenn man Spielregeln wie die von TicTacToe liest, erfolgt der Prozess schrittwei
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><a href="csharp/CSharp_Introduction.de.html">Einführung in C#</a> →</p>
+<details>
+<summary>Python-Version anzeigen</summary>
+<div class="highlight"><pre><span></span><span class="c1"># Textbasierte TicTacToe-Spielsimulation ohne Methoden</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Start des Spiels!"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Leeres Spielfeld:"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"   |   |   "</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"-----------"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"   |   |   "</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"-----------"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"   |   |   "</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">""</span><span class="p">)</span>
+</pre></div>
+</details>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">//</span> <span class="n">Zug</span> <span class="mi">1</span><span class="p">:</span> <span class="n">Spieler</span> <span class="n">X</span> <span class="n">setzt</span> <span class="n">auf</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Zug 1: Spieler X setzt auf Position (0, 0)"</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">" X |   |   "</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"-----------"</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"   |   |   "</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"-----------"</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"   |   |   "</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<details>
+<summary>Python-Version anzeigen</summary>
+<div class="highlight"><pre><span></span><span class="c1"># Zug 1: Spieler X setzt auf (0, 0)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Zug 1: Spieler X setzt auf Position (0, 0)"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">" X |   |   "</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"-----------"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"   |   |   "</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"-----------"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"   |   |   "</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">""</span><span class="p">)</span>
+</pre></div>
+</details>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">//</span> <span class="n">Zug</span> <span class="mi">2</span><span class="p">:</span> <span class="n">Spieler</span> <span class="n">O</span> <span class="n">setzt</span> <span class="n">auf</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Zug 2: Spieler O setzt auf Position (1, 1)"</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">" X |   |   "</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"-----------"</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"   | O |   "</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"-----------"</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"   |   |   "</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<details>
+<summary>Python-Version anzeigen</summary>
+<div class="highlight"><pre><span></span><span class="c1"># Zug 2: Spieler O setzt auf (1, 1)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Zug 2: Spieler O setzt auf Position (1, 1)"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">" X |   |   "</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"-----------"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"   | O |   "</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"-----------"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"   |   |   "</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">""</span><span class="p">)</span>
+</pre></div>
+</details>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">//</span> <span class="n">Zug</span> <span class="mi">3</span><span class="p">:</span> <span class="n">Spieler</span> <span class="n">X</span> <span class="n">setzt</span> <span class="n">auf</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Zug 3: Spieler X setzt auf Position (0, 1)"</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">" X | X |   "</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"-----------"</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"   | O |   "</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"-----------"</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"   |   |   "</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<details>
+<summary>Python-Version anzeigen</summary>
+<div class="highlight"><pre><span></span><span class="c1"># Zug 3: Spieler X setzt auf (0, 1)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Zug 3: Spieler X setzt auf Position (0, 1)"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">" X | X |   "</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"-----------"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"   | O |   "</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"-----------"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"   |   |   "</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">""</span><span class="p">)</span>
+</pre></div>
+</details>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">//</span> <span class="n">Zug</span> <span class="mi">4</span><span class="p">:</span> <span class="n">Spieler</span> <span class="n">O</span> <span class="n">setzt</span> <span class="n">auf</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Zug 4: Spieler O setzt auf Position (2, 2)"</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">" X | X |   "</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"-----------"</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"   | O |   "</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"-----------"</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"   |   | O "</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Zug 4: Spieler O setzt auf Position (2, 2)
+ X | X |   
+-----------
+   | O |   
+-----------
+   |   | O 
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<details>
+<summary>Python-Version anzeigen</summary>
+<div class="highlight"><pre><span></span><span class="c1"># Zug 4: Spieler O setzt auf (2, 2)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Zug 4: Spieler O setzt auf Position (2, 2)"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">" X | X |   "</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"-----------"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"   | O |   "</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"-----------"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"   |   | O "</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">""</span><span class="p">)</span>
+</pre></div>
+</details>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Zug 6: Spieler O setzt auf Position (0, 2)"</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">" X | X | O "</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"-----------"</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">" X | O |   "</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"-----------"</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"   |   | O "</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<details>
+<summary>Python-Version anzeigen</summary>
+<div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Zug 6: Spieler O setzt auf Position (0, 2)"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">" X | X | O "</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"-----------"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">" X | O |   "</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"-----------"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"   |   | O "</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">""</span><span class="p">)</span>
+</pre></div>
+</details>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Zug 6: Spieler O setzt auf Position (2, 0)"</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">" X | X | O "</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"-----------"</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">" X | O |   "</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"-----------"</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">" o |   | O "</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<details>
+<summary>Python-Version anzeigen</summary>
+<div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Zug 6: Spieler O setzt auf Position (2, 0)"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">" X | X | O "</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"-----------"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">" X | O |   "</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"-----------"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">" o |   | O "</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">""</span><span class="p">)</span>
+</pre></div>
+</details>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">//</span> <span class="n">Spieler</span> <span class="n">O</span> <span class="n">gewinnt</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Spieler O gewinnt mit einer vollen Diagonalen!"</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Spiel beendet."</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<details>
+<summary>Python-Version anzeigen</summary>
+<div class="highlight"><pre><span></span><span class="c1"># Spieler O gewinnt</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Spieler O gewinnt mit einer vollen Diagonalen!"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Spiel beendet."</span><span class="p">)</span>
+</pre></div>
+</details>
 </div>
 </div>
 </div>
@@ -7792,7 +7990,7 @@ Wenn man Spielregeln wie die von TicTacToe liest, erfolgt der Prozess schrittwei
 <li>Der Spielstand kann durch eine Funktion ausgegeben und damit für die Spieler sichtbar gemacht werden.</li>
 <li><code>Integer</code>-Variablen können zur Zählung von Zügen oder zum Speichern von Spielergebnissen verwendet werden.</li>
 </ul>
-<details> <summary>Ausführliche Erklärung...</summary> In einem Spiel wie TicTacToe stellt das Spielbrett ein 3x3-Raster dar. Jedes Feld dieses Rasters kann leer sein oder von einer Spielfigur (X oder O) besetzt werden. Um den aktuellen Spielstand zu speichern, kann man ein 2D-Array (Liste von Listen) verwenden. Jede Position in diesem Array repräsentiert dabei eine Position auf dem Spielfeld. In Python könnten wir beispielsweise eine Liste von Listen verwenden, um den Zustand des Spiels zu speichern. Der Typ der Variablen in jeder Zelle könnte entweder ein Zeichen (`'X'`, `'O'`) oder ein Leerzeichen (`' '`) sein, um ein unbesetztes Feld darzustellen.
+<details> <summary>Ausführliche Erklärung...</summary> In einem Spiel wie TicTacToe stellt das Spielbrett ein 3x3-Raster dar. Jedes Feld dieses Rasters kann leer sein oder von einer Spielfigur (X oder O) besetzt werden. Um den aktuellen Spielstand zu speichern, kann man ein 2D-Array (Liste von Listen) verwenden. Jede Position in diesem Array repräsentiert dabei eine Position auf dem Spielfeld. In C# können wir beispielsweise eine Liste von Listen verwenden, um den Zustand des Spiels zu speichern. Der Typ der Variablen in jeder Zelle könnte entweder ein Zeichen (`'X'`, `'O'`) oder ein Leerzeichen (`' '`) sein, um ein unbesetztes Feld darzustellen.
 
 <p>Zusätzlich können  <code>Integer</code>-Variablen genutzt werden, um Zähler für die Anzahl der Züge oder die Anzahl der gewonnenen Spiele zu speichern. Beispielsweise könnte eine Variable  <code>move_count</code>  verwendet werden, um die Anzahl der bereits getätigten Züge zu zählen. Der Wert dieser Variablen erhöht sich nach jedem Zug um eins, was es ermöglicht, den Fortschritt des Spiels nachzuvollziehen und mögliche Gewinnbedingungen zu überprüfen.</p>
 </details>
@@ -7827,7 +8025,41 @@ Wenn man Spielregeln wie die von TicTacToe liest, erfolgt der Prozess schrittwei
 <div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Initialisierung des Spielbretts als 3x3-Array</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">//</span> <span class="n">Initialisierung</span> <span class="n">des</span> <span class="n">Spielbretts</span> <span class="n">als</span> <span class="mi">3</span><span class="n">x3</span><span class="o">-</span><span class="n">Array</span>
+<span class="n">string</span><span class="p">[][]</span> <span class="n">spielbrett</span> <span class="o">=</span>
+<span class="p">{</span>
+    <span class="n">new</span><span class="p">[]</span> <span class="p">{</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span> <span class="p">},</span>
+    <span class="n">new</span><span class="p">[]</span> <span class="p">{</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span> <span class="p">},</span>
+    <span class="n">new</span><span class="p">[]</span> <span class="p">{</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span> <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="o">//</span> <span class="n">Zähler</span> <span class="n">für</span> <span class="n">die</span> <span class="n">erste</span> <span class="n">Zeile</span>
+<span class="nb">int</span> <span class="n">ersteZeileIndex</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="o">//</span> <span class="n">Beispielhafte</span> <span class="n">Spielzüge</span>
+<span class="n">spielbrett</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"X"</span><span class="p">;</span> <span class="o">//</span> <span class="n">Spieler</span> <span class="n">X</span> <span class="n">setzt</span> <span class="n">auf</span> <span class="n">die</span> <span class="n">obere</span> <span class="n">linke</span> <span class="n">Position</span>
+<span class="n">spielbrett</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"O"</span><span class="p">;</span> <span class="o">//</span> <span class="n">Spieler</span> <span class="n">O</span> <span class="n">setzt</span> <span class="n">auf</span> <span class="n">die</span> <span class="n">mittlere</span> <span class="n">Position</span>
+<span class="n">spielbrett</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"X"</span><span class="p">;</span> <span class="o">//</span> <span class="n">Spieler</span> <span class="n">X</span> <span class="n">setzt</span> <span class="n">auf</span> <span class="n">die</span> <span class="n">untere</span> <span class="n">rechte</span> <span class="n">Position</span>
+
+<span class="o">//</span> <span class="n">Ausgabe</span> <span class="n">des</span> <span class="n">Spielbretts</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">Join</span><span class="p">(</span><span class="s2">"|"</span><span class="p">,</span> <span class="n">spielbrett</span><span class="p">[</span><span class="n">ersteZeileIndex</span><span class="p">]));</span> <span class="o">//</span> <span class="n">Ausgabe</span> <span class="n">der</span> <span class="n">ersten</span> <span class="n">Zeile</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">Join</span><span class="p">(</span><span class="s2">"|"</span><span class="p">,</span> <span class="n">spielbrett</span><span class="p">[</span><span class="mi">1</span><span class="p">]));</span> <span class="o">//</span> <span class="n">Ausgabe</span> <span class="n">der</span> <span class="n">zweiten</span> <span class="n">Zeile</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">Join</span><span class="p">(</span><span class="s2">"|"</span><span class="p">,</span> <span class="n">spielbrett</span><span class="p">[</span><span class="mi">2</span><span class="p">]));</span> <span class="o">//</span> <span class="n">Ausgabe</span> <span class="n">der</span> <span class="n">dritten</span> <span class="n">Zeile</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<details>
+<summary>Python-Version anzeigen</summary>
+<div class="highlight"><pre><span></span><span class="c1"># Initialisierung des Spielbretts als 3x3-Array</span>
 <span class="n">spielbrett</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">[</span><span class="s1">' '</span><span class="p">,</span> <span class="s1">' '</span><span class="p">,</span> <span class="s1">' '</span><span class="p">],</span>
     <span class="p">[</span><span class="s1">' '</span><span class="p">,</span> <span class="s1">' '</span><span class="p">,</span> <span class="s1">' '</span><span class="p">],</span>
@@ -7847,7 +8079,7 @@ Wenn man Spielregeln wie die von TicTacToe liest, erfolgt der Prozess schrittwei
 <span class="nb">print</span><span class="p">(</span><span class="n">spielbrett</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s2">"|"</span> <span class="o">+</span> <span class="n">spielbrett</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s2">"|"</span> <span class="o">+</span> <span class="n">spielbrett</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">])</span>  <span class="c1"># Ausgabe der zweiten Zeile</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">spielbrett</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s2">"|"</span> <span class="o">+</span> <span class="n">spielbrett</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s2">"|"</span> <span class="o">+</span> <span class="n">spielbrett</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">2</span><span class="p">])</span>  <span class="c1"># Ausgabe der dritten Zeile</span>
 </pre></div>
-</div>
+</details>
 </div>
 </div>
 </div>
@@ -7870,7 +8102,7 @@ Wenn man Spielregeln wie die von TicTacToe liest, erfolgt der Prozess schrittwei
 <li><p><strong>Zähler für die erste Zeile</strong>:</p>
 <ul>
 <li>Eine Variable namens  <code>erste_zeile_index</code>  wird deklariert und auf  <code>0</code>  gesetzt. Diese Variable dient dazu, die Indizierung für die erste Zeile des Spielbretts zu speichern.</li>
-<li>In Python beginnt die Indizierung von Listen bei  <code>0</code>, sodass die erste Zeile des Arrays  <code>spielbrett</code>  tatsächlich  <code>spielbrett[0]</code>  entspricht.</li>
+<li>In C# beginnt die Indizierung von Listen bei  <code>0</code>, sodass die erste Zeile des Arrays  <code>spielbrett</code>  tatsächlich  <code>spielbrett[0]</code>  entspricht.</li>
 </ul>
 </li>
 <li><p><strong>Beispielhafte Spielzüge</strong>:</p>
@@ -7939,27 +8171,16 @@ Wenn man Spielregeln wie die von TicTacToe liest, erfolgt der Prozess schrittwei
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><a href="csharp/CSharp_Introduction.de.html#datentypen-und-variablen">Datentypen und Variablen in C#</a> →</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="Arithmetik">Arithmetik<a class="anchor-link" href="#Arithmetik">¶</a></h3><ul>
 <li>Arithmetische Operationen helfen, Spielregeln zu verwalten, z.B. das Zählen von Zügen oder das Berechnen von Positionen.</li>
 <li>Arithmetik wird genutzt, um Regeln zu steuern, wie z.B. das Erkennen eines Unentschiedens nach einer bestimmten Anzahl von Zügen.</li>
-<li>In Python entsprechen diese Operationen typischen arithmetischen Berechnungen wie Addition, Subtraktion und Vergleichen, um Zustände im Spiel zu verwalten.</li>
+<li>In C# entsprechen diese Operationen typischen arithmetischen Berechnungen wie Addition, Subtraktion und Vergleichen, um Zustände im Spiel zu verwalten.</li>
 </ul>
 <details>
 <summary>Ausführliche Erklärung...</summary>
 Arithmetik spielt in den Regeln von Spielen wie TicTacToe eine Rolle, um die Spiellogik effizient zu verwalten. Zum Beispiel kann das Zählen der Anzahl der Spielzüge genutzt werden, um zu erkennen, wann das Spiel unentschieden endet (nach genau 9 Zügen). Auch das Berechnen von Indexpositionen oder das Überprüfen von Gewinnbedingungen kann arithmetische Operationen beinhalten.
 
-<p>In Python entsprechen diese arithmetischen Operationen typischen mathematischen Berechnungen, wie Addition, Subtraktion, Zählen oder Vergleiche. Diese Operationen helfen, den Zustand des Spiels zu verwalten und auf bestimmte Ereignisse zu reagieren.</p>
+<p>In C# entsprechen diese arithmetischen Operationen typischen mathematischen Berechnungen, wie Addition, Subtraktion, Zählen oder Vergleiche. Diese Operationen helfen, den Zustand des Spiels zu verwalten und auf bestimmte Ereignisse zu reagieren.</p>
 </details>
 <p>Schauen wir uns ein Codebeispiel an, das arithmetische Operationen in TicTacToe-Regeln verwendet:</p>
 </div>
@@ -7973,7 +8194,70 @@ Arithmetik spielt in den Regeln von Spielen wie TicTacToe eine Rolle, um die Spi
 <div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Tic-Tac-Toe-Spielbrett</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">//</span> <span class="n">Tic</span><span class="o">-</span><span class="n">Tac</span><span class="o">-</span><span class="n">Toe</span><span class="o">-</span><span class="n">Spielbrett</span>
+<span class="n">spielbrett</span> <span class="o">=</span> <span class="n">new</span><span class="p">[]</span>
+<span class="p">{</span>
+    <span class="n">new</span><span class="p">[]</span> <span class="p">{</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span> <span class="p">},</span>
+    <span class="n">new</span><span class="p">[]</span> <span class="p">{</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span> <span class="p">},</span>
+    <span class="n">new</span><span class="p">[]</span> <span class="p">{</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span> <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="o">//</span> <span class="n">Zähler</span> <span class="n">für</span> <span class="n">die</span> <span class="n">Anzahl</span> <span class="n">der</span> <span class="n">Spielzüge</span>
+<span class="nb">int</span> <span class="n">zugZaehler</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="o">//</span> <span class="n">Arithmetik</span><span class="p">:</span> <span class="n">Startwert</span> <span class="n">für</span> <span class="n">die</span> <span class="n">Anzahl</span> <span class="n">der</span> <span class="n">Züge</span>
+
+<span class="o">//</span> <span class="n">Beispielhafte</span> <span class="n">Spielzüge</span>
+<span class="n">spielbrett</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"X"</span><span class="p">;</span> <span class="o">//</span> <span class="n">Spieler</span> <span class="n">X</span> <span class="n">macht</span> <span class="n">einen</span> <span class="n">Zug</span>
+<span class="n">zugZaehler</span> <span class="o">=</span> <span class="n">zugZaehler</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+<span class="n">zugZaehler</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span> <span class="o">//</span> <span class="n">Arithmetik</span><span class="p">:</span> <span class="n">Spielzugzähler</span> <span class="n">um</span> <span class="mi">1</span> <span class="n">erhöhen</span>
+
+<span class="n">spielbrett</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"O"</span><span class="p">;</span> <span class="o">//</span> <span class="n">Spieler</span> <span class="n">O</span> <span class="n">macht</span> <span class="n">einen</span> <span class="n">Zug</span>
+<span class="n">zugZaehler</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span> <span class="o">//</span> <span class="n">Arithmetik</span><span class="p">:</span> <span class="n">Spielzugzähler</span> <span class="n">um</span> <span class="mi">1</span> <span class="n">erhöhen</span>
+
+<span class="n">spielbrett</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"X"</span><span class="p">;</span> <span class="o">//</span> <span class="n">Spieler</span> <span class="n">X</span> <span class="n">macht</span> <span class="n">einen</span> <span class="n">weiteren</span> <span class="n">Zug</span>
+<span class="n">zugZaehler</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span> <span class="o">//</span> <span class="n">Arithmetik</span><span class="p">:</span> <span class="n">Spielzugzähler</span> <span class="n">um</span> <span class="mi">1</span> <span class="n">erhöhen</span>
+
+<span class="n">spielbrett</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"O"</span><span class="p">;</span> <span class="o">//</span> <span class="n">Spieler</span> <span class="n">O</span> <span class="n">macht</span> <span class="n">einen</span> <span class="n">weiteren</span> <span class="n">Zug</span>
+<span class="n">zugZaehler</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span> <span class="o">//</span> <span class="n">Arithmetik</span><span class="p">:</span> <span class="n">Spielzugzähler</span> <span class="n">um</span> <span class="mi">1</span> <span class="n">erhöhen</span>
+
+<span class="n">spielbrett</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"X"</span><span class="p">;</span> <span class="o">//</span> <span class="n">Spieler</span> <span class="n">X</span> <span class="n">macht</span> <span class="n">einen</span> <span class="n">weiteren</span> <span class="n">Zug</span>
+<span class="n">zugZaehler</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span> <span class="o">//</span> <span class="n">Arithmetik</span><span class="p">:</span> <span class="n">Spielzugzähler</span> <span class="n">um</span> <span class="mi">1</span> <span class="n">erhöhen</span>
+
+<span class="n">spielbrett</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"O"</span><span class="p">;</span> <span class="o">//</span> <span class="n">Spieler</span> <span class="n">O</span> <span class="n">macht</span> <span class="n">einen</span> <span class="n">weiteren</span> <span class="n">Zug</span>
+<span class="n">zugZaehler</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span> <span class="o">//</span> <span class="n">Arithmetik</span><span class="p">:</span> <span class="n">Spielzugzähler</span> <span class="n">um</span> <span class="mi">1</span> <span class="n">erhöhen</span>
+
+<span class="n">spielbrett</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"X"</span><span class="p">;</span> <span class="o">//</span> <span class="n">Spieler</span> <span class="n">X</span> <span class="n">macht</span> <span class="n">einen</span> <span class="n">weiteren</span> <span class="n">Zug</span>
+<span class="n">zugZaehler</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span> <span class="o">//</span> <span class="n">Arithmetik</span><span class="p">:</span> <span class="n">Spielzugzähler</span> <span class="n">um</span> <span class="mi">1</span> <span class="n">erhöhen</span>
+
+<span class="n">spielbrett</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"O"</span><span class="p">;</span> <span class="o">//</span> <span class="n">Spieler</span> <span class="n">O</span> <span class="n">macht</span> <span class="n">einen</span> <span class="n">weiteren</span> <span class="n">Zug</span>
+<span class="n">zugZaehler</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span> <span class="o">//</span> <span class="n">Arithmetik</span><span class="p">:</span> <span class="n">Spielzugzähler</span> <span class="n">um</span> <span class="mi">1</span> <span class="n">erhöhen</span>
+
+<span class="n">spielbrett</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"X"</span><span class="p">;</span> <span class="o">//</span> <span class="n">Spieler</span> <span class="n">X</span> <span class="n">macht</span> <span class="n">den</span> <span class="n">letzten</span> <span class="n">Zug</span>
+<span class="n">zugZaehler</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span> <span class="o">//</span> <span class="n">Arithmetik</span><span class="p">:</span> <span class="n">Spielzugzähler</span> <span class="n">um</span> <span class="mi">1</span> <span class="n">erhöhen</span>
+
+<span class="o">//</span> <span class="n">Überprüfen</span><span class="p">,</span> <span class="n">ob</span> <span class="n">das</span> <span class="n">Spiel</span> <span class="n">unentschieden</span> <span class="n">ist</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">zugZaehler</span> <span class="o">==</span> <span class="mi">9</span><span class="p">)</span> <span class="o">//</span> <span class="n">Arithmetik</span><span class="p">:</span> <span class="n">Wenn</span> <span class="mi">9</span> <span class="n">Züge</span> <span class="n">gemacht</span> <span class="n">wurden</span><span class="p">,</span> <span class="n">ist</span> <span class="n">das</span> <span class="n">Spiel</span> <span class="n">unentschieden</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Das Spiel endet unentschieden!"</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Das Spiel ist noch nicht unentschieden."</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<details>
+<summary>Python-Version anzeigen</summary>
+<div class="highlight"><pre><span></span><span class="c1"># Tic-Tac-Toe-Spielbrett</span>
 <span class="n">spielbrett</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">' '</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
 
 <span class="c1"># Zähler für die Anzahl der Spielzüge</span>
@@ -8014,7 +8298,7 @@ Arithmetik spielt in den Regeln von Spielen wie TicTacToe eine Rolle, um die Spi
 <span class="k">else</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"Das Spiel ist noch nicht unentschieden."</span><span class="p">)</span>
 </pre></div>
-</div>
+</details>
 </div>
 </div>
 </div>
@@ -8068,26 +8352,15 @@ Arithmetik spielt in den Regeln von Spielen wie TicTacToe eine Rolle, um die Spi
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><a href="csharp/CSharp_Introduction.de.html#arithmetik-und-operatoren">Arithmetik und Operatoren in C#</a> →</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="Kontrollstrukturen">Kontrollstrukturen<a class="anchor-link" href="#Kontrollstrukturen">¶</a></h3><ul>
 <li>Spielregeln in TicTacToe werden durch Bedingungen und Schleifen gesteuert.</li>
 <li><code>if</code>-Bedingungen prüfen bestimmte Situationen (z.B. Sieg, ungültige Züge).</li>
 <li><code>for</code>-Schleifen steuern den Spielfluss, bis eine Endbedingung (Sieg, Unentschieden) erreicht ist.</li>
-<li>Kontrollstrukturen in Python (z.B.  <code>if</code>,  <code>for</code>) setzen diese Regeln um, um den Spielstand zu prüfen und das Spiel zu steuern.</li>
+<li>Kontrollstrukturen in C# (z.B.  <code>if</code>,  <code>for</code>) setzen diese Regeln um, um den Spielstand zu prüfen und das Spiel zu steuern.</li>
 </ul>
 <details>
 <summary>Ausführliche Erklärung...</summary>
-TicTacToe hat klare Regeln, die durch verschiedene Bedingungen und Wiederholungen gesteuert werden können. Beispielsweise muss überprüft werden, ob ein Spieler gewonnen hat, ob das Spielfeld voll ist oder ob ein Zug erlaubt ist. Diese Regeln lassen sich gut mit den Kontrollstrukturen in Python umsetzen. Mit `if`-Bedingungen können wir bestimmte Situationen (z.B. Siegbedingungen) behandeln, während Schleifen (wie `for`) verwendet werden, um das Spiel so lange laufen zu lassen, bis eine Endbedingung (z.B. Sieg oder Unentschieden) erreicht ist.
+TicTacToe hat klare Regeln, die durch verschiedene Bedingungen und Wiederholungen gesteuert werden können. Beispielsweise muss überprüft werden, ob ein Spieler gewonnen hat, ob das Spielfeld voll ist oder ob ein Zug erlaubt ist. Diese Regeln lassen sich gut mit den Kontrollstrukturen in C# umsetzen. Mit `if`-Bedingungen können wir bestimmte Situationen (z.B. Siegbedingungen) behandeln, während Schleifen (wie `for`) verwendet werden, um das Spiel so lange laufen zu lassen, bis eine Endbedingung (z.B. Sieg oder Unentschieden) erreicht ist.
 </details>
 <p><strong>Konzept:</strong> Kontrollstrukturen steuern den Ablauf eines Programms, wie Bedingungen und Schleifen.</p>
 <p><strong>Beispiel in Tic-Tac-Toe:</strong></p>
@@ -8107,7 +8380,39 @@ TicTacToe hat klare Regeln, die durch verschiedene Bedingungen und Wiederholunge
 <div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">gefunden</span> <span class="o">=</span> <span class="kc">False</span>  <span class="c1"># Variable, die anzeigt, ob drei gleiche Zeichen gefunden wurden</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">bool</span> <span class="n">gefunden</span> <span class="o">=</span> <span class="n">false</span><span class="p">;</span> <span class="o">//</span> <span class="n">Variable</span><span class="p">,</span> <span class="n">die</span> <span class="n">anzeigt</span><span class="p">,</span> <span class="n">ob</span> <span class="n">drei</span> <span class="n">gleiche</span> <span class="n">Zeichen</span> <span class="n">gefunden</span> <span class="n">wurden</span>
+
+<span class="o">//</span> <span class="n">Schleife</span><span class="p">,</span> <span class="n">die</span> <span class="n">durch</span> <span class="n">jede</span> <span class="n">Zeile</span> <span class="n">des</span> <span class="n">Spielbretts</span> <span class="n">iteriert</span>
+<span class="n">foreach</span> <span class="p">(</span><span class="n">var</span> <span class="n">reihe</span> <span class="ow">in</span> <span class="n">spielbrett</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="o">//</span> <span class="n">Überprüfung</span><span class="p">,</span> <span class="n">ob</span> <span class="n">alle</span> <span class="n">drei</span> <span class="n">Zeichen</span> <span class="ow">in</span> <span class="n">der</span> <span class="n">aktuellen</span> <span class="n">Zeile</span> <span class="n">gleich</span> <span class="n">sind</span> <span class="n">und</span> <span class="n">nicht</span> <span class="n">leer</span> <span class="p">(</span><span class="n">nicht</span> <span class="s2">" "</span> <span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">reihe</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">reihe</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">reihe</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">reihe</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">reihe</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">" "</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">gefunden</span> <span class="o">=</span> <span class="n">true</span><span class="p">;</span> <span class="o">//</span> <span class="n">Setzt</span> <span class="n">die</span> <span class="n">Variable</span> <span class="s1">'gefunden'</span> <span class="n">auf</span> <span class="n">true</span><span class="p">,</span> <span class="n">wenn</span> <span class="n">eine</span> <span class="n">Zeile</span> <span class="n">mit</span> <span class="n">drei</span> <span class="n">gleichen</span> <span class="n">Zeichen</span> <span class="n">gefunden</span> <span class="n">wurde</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Drei gleiche Zeichen gefunden: </span><span class="si">{reihe[0]}</span><span class="s2">"</span><span class="p">);</span> <span class="o">//</span> <span class="n">Gibt</span> <span class="n">das</span> <span class="n">Zeichen</span> <span class="n">aus</span><span class="p">,</span> <span class="n">das</span> <span class="ow">in</span> <span class="n">der</span> <span class="n">Zeile</span> <span class="n">dreimal</span> <span class="n">vorkommt</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="o">//</span> <span class="n">Nach</span> <span class="n">der</span> <span class="n">Schleife</span> <span class="n">wird</span> <span class="n">überprüft</span><span class="p">,</span> <span class="n">ob</span> <span class="n">keine</span> <span class="n">Zeile</span> <span class="n">mit</span> <span class="n">drei</span> <span class="n">gleichen</span> <span class="n">Zeichen</span> <span class="n">gefunden</span> <span class="n">wurde</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span>gefunden<span class="o">)</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Keine drei gleichen Zeichen in den Zeilen gefunden."</span><span class="p">);</span> <span class="o">//</span> <span class="n">Ausgabe</span><span class="p">,</span> <span class="n">wenn</span> <span class="n">kein</span> <span class="n">passendes</span> <span class="n">Zeichen</span> <span class="n">gefunden</span> <span class="n">wurde</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<details>
+<summary>Python-Version anzeigen</summary>
+<div class="highlight"><pre><span></span><span class="n">gefunden</span> <span class="o">=</span> <span class="kc">False</span>  <span class="c1"># Variable, die anzeigt, ob drei gleiche Zeichen gefunden wurden</span>
 
 <span class="c1"># Schleife, die durch jede Zeile des Spielbretts iteriert</span>
 <span class="k">for</span> <span class="n">reihe</span> <span class="ow">in</span> <span class="n">spielbrett</span><span class="p">:</span>
@@ -8120,7 +8425,7 @@ TicTacToe hat klare Regeln, die durch verschiedene Bedingungen und Wiederholunge
 <span class="k">if</span> <span class="ow">not</span> <span class="n">gefunden</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"Keine drei gleichen Zeichen in den Zeilen gefunden."</span><span class="p">)</span>  <span class="c1"># Ausgabe, wenn kein passendes Zeichen gefunden wurde</span>
 </pre></div>
-</div>
+</details>
 </div>
 </div>
 </div>
@@ -8174,26 +8479,15 @@ TicTacToe hat klare Regeln, die durch verschiedene Bedingungen und Wiederholunge
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><a href="csharp/CSharp_Introduction.de.html#kontrollstrukturen">Kontrollstrukturen in C#</a> →</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="Funktionen">Funktionen<a class="anchor-link" href="#Funktionen">¶</a></h3><ul>
 <li>Spielregeln werden in verschiedene Phasen unterteilt (Spielstart, Spielzug, Spielende).</li>
 <li>Jede Phase hat eigene Regeln und Aufgaben.</li>
-<li>Ähnlich wie Funktionen in Python, die spezifische Aufgaben übernehmen und durch Namensgebung und Struktur Zusammenhänge verdeutlichen.</li>
+<li>Ähnlich wie Methoden in C#, die spezifische Aufgaben übernehmen und durch Namensgebung und Struktur Zusammenhänge verdeutlichen.</li>
 <li>Jede Funktion repräsentiert eine logische Einheit des Spiels, um Modularität und Wiederverwendbarkeit zu gewährleisten.</li>
 </ul>
 <details>
 <summary>Ausführliche Erklärung...</summary>
-In einem Spiel wie TicTacToe können die Spielregeln in verschiedene Phasen unterteilt werden, die jeweils eigene Aufgaben und Regeln haben. Dies ermöglicht es, die Logik des Spiels klar zu strukturieren und sicherzustellen, dass die richtige Regel zur richtigen Zeit angewendet wird. Ähnlich wie bei Funktionen und Methoden in Python, die zur Modularisierung und Wiederverwendbarkeit des Codes dienen, kann jede Phase des Spiels durch eine eigene Funktion repräsentiert werden.
+In einem Spiel wie TicTacToe können die Spielregeln in verschiedene Phasen unterteilt werden, die jeweils eigene Aufgaben und Regeln haben. Dies ermöglicht es, die Logik des Spiels klar zu strukturieren und sicherzustellen, dass die richtige Regel zur richtigen Zeit angewendet wird. Ähnlich wie bei Methoden in C#, die zur Modularisierung und Wiederverwendbarkeit des Codes dienen, kann jede Phase des Spiels durch eine eigene Funktion repräsentiert werden.
 
 <p>Ein typisches TicTacToe-Spiel könnte in die folgenden Phasen unterteilt werden:</p>
 <ol>
@@ -8204,7 +8498,7 @@ In einem Spiel wie TicTacToe können die Spielregeln in verschiedene Phasen unte
 
 <p><strong>Konzept:</strong> Funktionen sind wiederverwendbare Codeblöcke, die eine bestimmte Aufgabe erledigen.</p>
 <p><strong>Beispiel in Tic-Tac-Toe:</strong></p>
-<p>Schauen wir uns nun ein Beispiel in Python an, das diese Struktur mit Funktionen umsetzt:</p>
+<p>Schauen wir uns nun ein Beispiel in C# an, das diese Struktur mit Funktionen umsetzt:</p>
 </div>
 </div>
 </div>
@@ -8216,7 +8510,144 @@ In einem Spiel wie TicTacToe können die Spielregeln in verschiedene Phasen unte
 <div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Funktion für den Spielstart</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">string</span><span class="p">[][]</span> <span class="n">SpielStarten</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Willkommen zu TicTacToe!"</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">new</span><span class="p">[]</span>
+    <span class="p">{</span>
+        <span class="n">new</span><span class="p">[]</span> <span class="p">{</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span> <span class="p">},</span>
+        <span class="n">new</span><span class="p">[]</span> <span class="p">{</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span> <span class="p">},</span>
+        <span class="n">new</span><span class="p">[]</span> <span class="p">{</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span> <span class="p">}</span>
+    <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="n">void</span> <span class="n">SpielzugMachen</span><span class="p">(</span><span class="n">string</span><span class="p">[][]</span> <span class="n">spielfeld</span><span class="p">,</span> <span class="n">string</span> <span class="n">spieler</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">true</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">Write</span><span class="p">(</span><span class="err">$</span><span class="s2">"Spieler </span><span class="si">{spieler}</span><span class="s2">, wähle eine Zeile (0-2): "</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span>int.TryParse<span class="o">(</span>Console.ReadLine<span class="o">()</span>,<span class="w"> </span>out<span class="w"> </span>var<span class="w"> </span>zeile<span class="o">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span>zeile<span class="w"> </span>&lt;<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span>zeile<span class="w"> </span>&gt;<span class="w"> </span><span class="m">2</span><span class="o">)</span>
+        <span class="p">{</span>
+            <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Ungültige Eingabe. Bitte wähle eine Zahl zwischen 0 und 2."</span><span class="p">);</span>
+            <span class="k">continue</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="n">Console</span><span class="o">.</span><span class="n">Write</span><span class="p">(</span><span class="err">$</span><span class="s2">"Spieler </span><span class="si">{spieler}</span><span class="s2">, wähle eine Spalte (0-2): "</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span>int.TryParse<span class="o">(</span>Console.ReadLine<span class="o">()</span>,<span class="w"> </span>out<span class="w"> </span>var<span class="w"> </span>spalte<span class="o">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span>spalte<span class="w"> </span>&lt;<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span>spalte<span class="w"> </span>&gt;<span class="w"> </span><span class="m">2</span><span class="o">)</span>
+        <span class="p">{</span>
+            <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Ungültige Eingabe. Bitte wähle eine Zahl zwischen 0 und 2."</span><span class="p">);</span>
+            <span class="k">continue</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">spielfeld</span><span class="p">[</span><span class="n">zeile</span><span class="p">][</span><span class="n">spalte</span><span class="p">]</span> <span class="o">==</span> <span class="s2">" "</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">spielfeld</span><span class="p">[</span><span class="n">zeile</span><span class="p">][</span><span class="n">spalte</span><span class="p">]</span> <span class="o">=</span> <span class="n">spieler</span><span class="p">;</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Das Feld ist bereits belegt. Wähle ein anderes Feld."</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">string</span><span class="err">?</span> <span class="n">SpielEnde</span><span class="p">(</span><span class="n">string</span><span class="p">[][]</span> <span class="n">spielfeld</span><span class="p">,</span> <span class="n">string</span> <span class="n">spieler</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="o">//</span> <span class="n">Überprüfung</span> <span class="n">der</span> <span class="n">Zeilen</span><span class="p">,</span> <span class="n">Spalten</span> <span class="n">und</span> <span class="n">Diagonalen</span> <span class="n">auf</span> <span class="n">Gewinnbedingungen</span>
+    <span class="n">foreach</span> <span class="p">(</span><span class="n">var</span> <span class="n">reihe</span> <span class="ow">in</span> <span class="n">spielfeld</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">reihe</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">reihe</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">reihe</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">reihe</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">reihe</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">" "</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="err">$</span><span class="s2">"Spieler </span><span class="si">{spieler}</span><span class="s2"> hat gewonnen!"</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="n">var</span> <span class="n">spalte</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">spalte</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="n">spalte</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">spielfeld</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">spalte</span><span class="p">]</span> <span class="o">==</span> <span class="n">spielfeld</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">spalte</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">spielfeld</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">spalte</span><span class="p">]</span> <span class="o">==</span> <span class="n">spielfeld</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="n">spalte</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">spielfeld</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">spalte</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">" "</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="err">$</span><span class="s2">"Spieler </span><span class="si">{spieler}</span><span class="s2"> hat gewonnen!"</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">spielfeld</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">spielfeld</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">spielfeld</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">spielfeld</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">spielfeld</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">" "</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="err">$</span><span class="s2">"Spieler </span><span class="si">{spieler}</span><span class="s2"> hat gewonnen!"</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">spielfeld</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="n">spielfeld</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">spielfeld</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">spielfeld</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">spielfeld</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">" "</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="err">$</span><span class="s2">"Spieler </span><span class="si">{spieler}</span><span class="s2"> hat gewonnen!"</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="o">//</span> <span class="n">Überprüfung</span> <span class="n">auf</span> <span class="n">Unentschieden</span>
+    <span class="n">var</span> <span class="n">alleFelderBelegt</span> <span class="o">=</span> <span class="n">true</span><span class="p">;</span>
+    <span class="n">foreach</span> <span class="p">(</span><span class="n">var</span> <span class="n">reihe</span> <span class="ow">in</span> <span class="n">spielfeld</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">foreach</span> <span class="p">(</span><span class="n">var</span> <span class="n">feld</span> <span class="ow">in</span> <span class="n">reihe</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">feld</span> <span class="o">==</span> <span class="s2">" "</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">alleFelderBelegt</span> <span class="o">=</span> <span class="n">false</span><span class="p">;</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span>alleFelderBelegt<span class="o">)</span>
+        <span class="p">{</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">alleFelderBelegt</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="s2">"Unentschieden!"</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">null</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">void</span> <span class="n">TicTacToe</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">var</span> <span class="n">spielfeld</span> <span class="o">=</span> <span class="n">SpielStarten</span><span class="p">();</span> <span class="o">//</span> <span class="n">Spiel</span> <span class="n">wird</span> <span class="n">gestartet</span>
+    <span class="n">var</span> <span class="n">aktuellerSpieler</span> <span class="o">=</span> <span class="s2">"X"</span><span class="p">;</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">true</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">SpielzugMachen</span><span class="p">(</span><span class="n">spielfeld</span><span class="p">,</span> <span class="n">aktuellerSpieler</span><span class="p">);</span> <span class="o">//</span> <span class="n">Spieler</span> <span class="n">macht</span> <span class="n">seinen</span> <span class="n">Zug</span>
+        <span class="n">var</span> <span class="n">ergebnis</span> <span class="o">=</span> <span class="n">SpielEnde</span><span class="p">(</span><span class="n">spielfeld</span><span class="p">,</span> <span class="n">aktuellerSpieler</span><span class="p">);</span> <span class="o">//</span> <span class="n">Überprüfen</span><span class="p">,</span> <span class="n">ob</span> <span class="n">das</span> <span class="n">Spiel</span> <span class="n">zu</span> <span class="n">Ende</span> <span class="n">ist</span>
+
+        <span class="n">foreach</span> <span class="p">(</span><span class="n">var</span> <span class="n">reihe</span> <span class="ow">in</span> <span class="n">spielfeld</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">Join</span><span class="p">(</span><span class="s2">"|"</span><span class="p">,</span> <span class="n">reihe</span><span class="p">));</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">ergebnis</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">null</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">ergebnis</span><span class="p">);</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="o">//</span> <span class="n">Spieler</span> <span class="n">wechseln</span>
+        <span class="n">aktuellerSpieler</span> <span class="o">=</span> <span class="n">aktuellerSpieler</span> <span class="o">==</span> <span class="s2">"X"</span> <span class="err">?</span> <span class="s2">"O"</span> <span class="p">:</span> <span class="s2">"X"</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="o">//</span> <span class="n">Spiel</span> <span class="n">starten</span>
+<span class="n">TicTacToe</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<details>
+<summary>Python-Version anzeigen</summary>
+<div class="highlight"><pre><span></span><span class="c1"># Funktion für den Spielstart</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">spiel_starten</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"Willkommen zu TicTacToe!"</span><span class="p">)</span>
     <span class="k">return</span> <span class="p">[</span>
@@ -8276,7 +8707,7 @@ In einem Spiel wie TicTacToe können die Spielregeln in verschiedene Phasen unte
 <span class="c1"># Spiel starten</span>
 <span class="n">tic_tac_toe</span><span class="p">()</span>
 </pre></div>
-</div>
+</details>
 </div>
 </div>
 </div>
@@ -8290,13 +8721,13 @@ In einem Spiel wie TicTacToe können die Spielregeln in verschiedene Phasen unte
 <details>
 <summary>Ausführliche Erklärung...</summary>
 <ul>
-<li><p><strong>Spielstart:</strong>  Die Funktion  <code>spiel_starten</code>  initialisiert das Spielfeld und gibt es zurück. Dies ist ähnlich wie eine Initialisierungsphase, in der alle relevanten Parameter vorbereitet werden.</p>
+<li><p><strong>Spielstart:</strong>  Die Methode  <code>SpielStarten</code>  initialisiert das Spielfeld und gibt es zurück. Dies ist ähnlich wie eine Initialisierungsphase, in der alle relevanten Parameter vorbereitet werden.</p>
 </li>
-<li><p><strong>Spielzug:</strong>  In der Funktion  <code>spielzug_machen</code>  wird der Spieler aufgefordert, eine Zeile und eine Spalte zu wählen. Es wird geprüft, ob das gewählte Feld leer ist. Falls nicht, muss der Spieler einen anderen Zug machen. Diese Phase umfasst die Regeln für gültige Züge.</p>
+<li><p><strong>Spielzug:</strong>  In der Methode  <code>SpielzugMachen</code>  wird der Spieler aufgefordert, eine Zeile und eine Spalte zu wählen. Es wird geprüft, ob das gewählte Feld leer ist. Falls nicht, muss der Spieler einen anderen Zug machen. Diese Phase umfasst die Regeln für gültige Züge.</p>
 </li>
-<li><p><strong>Spielende:</strong>  Die Funktion  <code>spiel_ende</code>  überprüft, ob ein Spieler gewonnen hat oder ob das Spiel unentschieden ist. Dies entspricht der Endphase des Spiels, in der überprüft wird, ob eine der Gewinnbedingungen erfüllt wurde.</p>
+<li><p><strong>Spielende:</strong>  Die Methode  <code>SpielEnde</code>  überprüft, ob ein Spieler gewonnen hat oder ob das Spiel unentschieden ist. Dies entspricht der Endphase des Spiels, in der überprüft wird, ob eine der Gewinnbedingungen erfüllt wurde.</p>
 </li>
-<li><p><strong>Vergleich mit Funktionen in Python:</strong>  Jede Phase des Spiels wird durch eine eigene Funktion repräsentiert. Diese Funktionen kapseln die Logik für die jeweiligen Spielphasen und machen den Code modular, wiederverwendbar und leichter verständlich. Durch die Namensgebung und die Strukturierung der Funktionen wird der Zusammenhang zwischen den einzelnen Phasen des Spiels deutlich.</p>
+<li><p><strong>Vergleich mit Methoden in C#:</strong>  Jede Phase des Spiels wird durch eine eigene Methode repräsentiert. Diese Methoden kapseln die Logik für die jeweiligen Spielphasen und machen den Code modular, wiederverwendbar und leichter verständlich. Durch die Namensgebung und die Strukturierung der Methoden wird der Zusammenhang zwischen den einzelnen Phasen des Spiels deutlich.</p>
 </li></ul></details>
 
 
@@ -8310,28 +8741,17 @@ In einem Spiel wie TicTacToe können die Spielregeln in verschiedene Phasen unte
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><a href="csharp/CSharp_Introduction.de.html#funktionen">Funktionen in C#</a> →</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="Komplexere-Datenstrukturen">Komplexere Datenstrukturen<a class="anchor-link" href="#Komplexere-Datenstrukturen">¶</a></h3><ul>
 <li>Datenstrukturen wie Dictionaries speichern Informationen in Schlüssel-Wert-Paaren.</li>
 <li>Sie ermöglichen schnellen Zugriff auf Daten über eindeutige Schlüssel.</li>
-<li>In Python sind Dictionaries nützlich für komplexe Spielzustände, z.B. das Speichern von Spielergebnissen oder Statistiken.</li>
+<li>In C# sind Dictionaries nützlich für komplexe Spielzustände, z.B. das Speichern von Spielergebnissen oder Statistiken.</li>
 <li>Dictionaries bieten flexible und strukturierte Datenspeicherung im Vergleich zu einfachen Listen oder Arrays.</li>
 </ul>
 <details>
 <summary>Ausführliche Erklärung...</summary>
 In einem Spiel wie TicTacToe können Dictionaries verwendet werden, um Informationen wie die Spielergebnisse, Statistiken oder Spielfelder zu speichern und darauf zuzugreifen. Ein Dictionary ermöglicht es, Werte anhand eines eindeutigen Schlüssels abzurufen, was besonders nützlich ist, wenn man Daten nicht nur in einfachen Listen oder Arrays speichern möchte. Im Gegensatz zu Listen, die über Indexelemente zugreifen, erlaubt ein Dictionary, über benannte Schlüssel direkt auf Werte zuzugreifen.
 
-<p>In Python ist ein Dictionary eine eingebaute Datenstruktur, die durch geschweifte Klammern  <code>{}</code>  dargestellt wird. Es kann für die Speicherung von Paaren aus Schlüsseln und Werten verwendet werden, wobei der Schlüssel als eindeutiger Bezeichner dient. Dies kann beispielsweise verwendet werden, um den aktuellen Status des Spiels nach Spielern oder Spielfeldern zu strukturieren.</p>
+<p>In C# ist ein Dictionary (wie <code>Dictionary&lt;TKey, TValue&gt;</code>) eine eingebaute Datenstruktur, die durch geschweifte Klammern  <code>{}</code>  dargestellt wird. Es kann für die Speicherung von Paaren aus Schlüsseln und Werten verwendet werden, wobei der Schlüssel als eindeutiger Bezeichner dient. Dies kann beispielsweise verwendet werden, um den aktuellen Status des Spiels nach Spielern oder Spielfeldern zu strukturieren.</p>
 </details>
 <p><strong>Konzept:</strong> Datenstrukturen organisieren und speichern Daten effizient.</p>
 <p><strong>Beispiel in Tic-Tac-Toe:</strong></p>
@@ -8359,7 +8779,53 @@ In einem Spiel wie TicTacToe können Dictionaries verwendet werden, um Informati
 <div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Dictionary zur Speicherung der Spielergebnisse</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">using</span> <span class="n">System</span><span class="o">.</span><span class="n">Collections</span><span class="o">.</span><span class="n">Generic</span><span class="p">;</span>
+
+<span class="o">//</span> <span class="n">Dictionary</span> <span class="n">zur</span> <span class="n">Speicherung</span> <span class="n">der</span> <span class="n">Spielergebnisse</span>
+<span class="n">Dictionary</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="nb">int</span><span class="o">&gt;</span> <span class="n">spielstatistik</span> <span class="o">=</span> <span class="n">new</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="p">[</span><span class="s2">"Spieler X"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="p">[</span><span class="s2">"Spieler O"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="p">[</span><span class="s2">"Unentschieden"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="p">};</span>
+
+<span class="o">//</span> <span class="n">Funktion</span> <span class="n">zur</span> <span class="n">Aktualisierung</span> <span class="n">der</span> <span class="n">Spielergebnisse</span>
+<span class="n">void</span> <span class="n">AktualisiereStatistik</span><span class="p">(</span><span class="n">string</span> <span class="n">gewinner</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">spielstatistik</span><span class="o">.</span><span class="n">ContainsKey</span><span class="p">(</span><span class="n">gewinner</span><span class="p">))</span>
+    <span class="p">{</span>
+        <span class="n">spielstatistik</span><span class="p">[</span><span class="n">gewinner</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span> <span class="o">//</span> <span class="n">Erhöhe</span> <span class="n">den</span> <span class="n">Zähler</span> <span class="n">für</span> <span class="n">den</span> <span class="n">Gewinner</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Ungültiger Gewinner"</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="o">//</span> <span class="n">Beispielhafte</span> <span class="n">Nutzung</span>
+<span class="n">AktualisiereStatistik</span><span class="p">(</span><span class="s2">"Spieler X"</span><span class="p">);</span> <span class="o">//</span> <span class="n">Spieler</span> <span class="n">X</span> <span class="n">gewinnt</span>
+<span class="n">AktualisiereStatistik</span><span class="p">(</span><span class="s2">"Unentschieden"</span><span class="p">);</span> <span class="o">//</span> <span class="n">Unentschieden</span>
+
+<span class="o">//</span> <span class="n">Ausgabe</span> <span class="n">der</span> <span class="n">aktuellen</span> <span class="n">Spielstatistik</span>
+<span class="n">foreach</span> <span class="p">(</span><span class="n">var</span> <span class="n">eintrag</span> <span class="ow">in</span> <span class="n">spielstatistik</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"</span><span class="si">{eintrag.Key}</span><span class="s2">: </span><span class="si">{eintrag.Value}</span><span class="s2">"</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<details>
+<summary>Python-Version anzeigen</summary>
+<div class="highlight"><pre><span></span><span class="c1"># Dictionary zur Speicherung der Spielergebnisse</span>
 <span class="n">spielstatistik</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">'Spieler X'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
     <span class="s1">'Spieler O'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
@@ -8380,7 +8846,7 @@ In einem Spiel wie TicTacToe können Dictionaries verwendet werden, um Informati
 <span class="c1"># Ausgabe der aktuellen Spielstatistik</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">spielstatistik</span><span class="p">)</span>
 </pre></div>
-</div>
+</details>
 </div>
 </div>
 </div>
@@ -8398,7 +8864,7 @@ In einem Spiel wie TicTacToe können Dictionaries verwendet werden, um Informati
 </li>
 <li><p><strong>Arbeiten mit Schlüsseln und Werten:</strong>  In der Funktion  <code>aktualisiere_statistik</code>  wird der Zähler für den Gewinner anhand des Schlüssels im Dictionary um 1 erhöht. Dies zeigt, wie einfach und flexibel der Zugriff auf Daten mit einem Dictionary ist.</p>
 </li>
-<li><p><strong>Vergleich mit Datenstrukturen in Python:</strong>  Ein Dictionary in Python bietet im Vergleich zu einfachen Listen oder Arrays den Vorteil, dass Daten klar strukturiert und leicht zugänglich sind, insbesondere wenn sie komplexer werden. Durch die Verwendung von Schlüsseln ist der Zugriff auf spezifische Daten sehr effizient und leicht nachvollziehbar.</p>
+<li><p><strong>Vergleich mit Datenstrukturen in C#:</strong>  Ein Dictionary in C# bietet im Vergleich zu einfachen Listen oder Arrays den Vorteil, dass Daten klar strukturiert und leicht zugänglich sind, insbesondere wenn sie komplexer werden. Durch die Verwendung von Schlüsseln ist der Zugriff auf spezifische Daten sehr effizient und leicht nachvollziehbar.</p>
 </li></ul></details>
 
 
@@ -8413,30 +8879,19 @@ In einem Spiel wie TicTacToe können Dictionaries verwendet werden, um Informati
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="Zusammenfassung-der-Konzepte:">Zusammenfassung der Konzepte:<a class="anchor-link" href="#Zusammenfassung-der-Konzepte:">¶</a></h3><ul>
-<li><p><strong>Navigation durch den Text:</strong> Das Lesen von Spielregeln und das Ausführen von Code erfolgen schrittweise. Der Mensch versteht Regeln global, während ein Interpreter Code streng sequentiell verarbeitet.</p>
+<li><p><strong>Navigation durch den Text:</strong> Das Lesen von Spielregeln und das Ausführen von Code erfolgen schrittweise. Der Mensch versteht Regeln global, während die Laufzeit Code streng sequenziell verarbeitet.</p>
 </li>
-<li><p><strong>Spielstand speichern und sichtbar machen:</strong>  In TicTacToe wird der Spielstand in einem 2D-Array gespeichert. Dies entspricht der Speicherung von Daten in Variablen und Datentypen in Python, wobei der Zustand des Spiels durch Aktualisierung der Datenstruktur verwaltet wird.</p>
+<li><p><strong>Spielstand speichern und sichtbar machen:</strong>  In TicTacToe wird der Spielstand in einem 2D-Array gespeichert. Dies entspricht der Speicherung von Daten in Variablen und Datentypen in C#, wobei der Zustand des Spiels durch Aktualisierung der Datenstruktur verwaltet wird.</p>
 </li>
-<li><p><strong>Bedingungen und Schleifen:</strong>  Spielregeln werden durch Bedingungen (<code>if</code>) und Wiederholungen (<code>while</code>) umgesetzt, um das Spiel zu steuern. Diese Kontrollstrukturen in Python helfen dabei, verschiedene Spielzustände zu prüfen und den Spielfluss zu steuern, z.B. Siegbedingungen oder Spielende.</p>
+<li><p><strong>Bedingungen und Schleifen:</strong>  Spielregeln werden durch Bedingungen (<code>if</code>) und Wiederholungen (<code>while</code>) umgesetzt, um das Spiel zu steuern. Diese Kontrollstrukturen in C# helfen dabei, verschiedene Spielzustände zu prüfen und den Spielfluss zu steuern, z.B. Siegbedingungen oder Spielende.</p>
 </li>
-<li><p><strong>Arithmetik in Regeln:</strong>  Arithmetische Operationen helfen, Spielregeln umzusetzen, wie das Zählen der Züge oder das Erkennen eines Unentschiedens. In Python entsprechen diese Operationen typischen Berechnungen wie Addition und Vergleichsoperationen.</p>
+<li><p><strong>Arithmetik in Regeln:</strong>  Arithmetische Operationen helfen, Spielregeln umzusetzen, wie das Zählen der Züge oder das Erkennen eines Unentschiedens. In C# entsprechen diese Operationen typischen Berechnungen wie Addition und Vergleichsoperationen.</p>
 </li>
-<li><p><strong>Phasen des Spiels:</strong>  Spielregeln können in verschiedene Phasen unterteilt werden, z.B. Spielstart, Spielzug und Spielende. Diese Phasen lassen sich mit Funktionen in Python abbilden, die jede Phase klar strukturieren und den Code modular und wiederverwendbar machen.</p>
+<li><p><strong>Phasen des Spiels:</strong>  Spielregeln können in verschiedene Phasen unterteilt werden, z.B. Spielstart, Spielzug und Spielende. Diese Phasen lassen sich mit Methoden in C# abbilden, die jede Phase klar strukturieren und den Code modular und wiederverwendbar machen.</p>
 </li>
-<li><p><strong>Komplexere Datenstrukturen (Dictionary):</strong>  Dictionaries in Python speichern Daten in Schlüssel-Wert-Paaren und bieten schnellen Zugriff auf komplexe Spielinformationen, wie z.B. Spielergebnisse. Sie sind nützlich, um strukturierte und flexible Datenverwaltung im Spiel zu ermöglichen.</p>
+<li><p><strong>Komplexere Datenstrukturen (Dictionary):</strong>  Dictionaries in C# speichern Daten in Schlüssel-Wert-Paaren und bieten schnellen Zugriff auf komplexe Spielinformationen, wie z.B. Spielergebnisse. Sie sind nützlich, um strukturierte und flexible Datenverwaltung im Spiel zu ermöglichen.</p>
 </li>
 </ul>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><a href="csharp/CSharp_Introduction.de.html#komplexere-datenstrukturen">Komplexere Datenstrukturen in C#</a> →</p>
 </div>
 </div>
 </div>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Zahlensysteme – Mini-Quiz</title>
+<style>
+body { font-family: system-ui, sans-serif; max-width: 780px; margin: 1em auto; line-height: 1.4; }
+#quiz-card { border:1px solid #ddd; border-radius:12px; padding:16px; box-shadow:0 2px 8px rgba(0,0,0,.04); }
+button { cursor:pointer; }
+</style>
+</head>
+<body>
+
+<h2>Zahlensysteme – Mini-Quiz</h2>
+<p>10 kurze Fragen zu Binär-, Dezimal-, Hexadezimal- und Stellenwertsystemen.</p>
+
+<div id="quiz-card">
+  <div id="progress" style="font-size:14px;color:#555;margin-bottom:8px;"></div>
+  <div id="question" style="font-size:18px;font-weight:600;margin:8px 0 12px;"></div>
+  <div id="choices" style="display:grid;gap:8px;"></div>
+  <div id="feedback" style="margin-top:12px;min-height:24px;"></div>
+  <div style="display:flex;gap:8px;margin-top:16px;">
+    <button id="skipBtn" style="padding:8px 12px;border:1px solid #999;border-radius:8px;background:#f7f7f7;">Überspringen</button>
+    <button id="nextBtn" style="padding:8px 12px;border:1px solid #0b5;border-radius:8px;background:#0b5;color:white;">Weiter</button>
+    <button id="restartBtn" style="padding:8px 12px;border:1px solid #555;border-radius:8px;background:white;display:none;">Nochmal</button>
+    <div style="margin-left:auto;align-self:center;font-size:13px;color:#666;">Tipp: Antworten anklicken</div>
+  </div>
+</div>
+
+<div id="result" style="display:none;margin-top:16px;border:1px solid #ddd;border-radius:12px;padding:16px;">
+  <h3>Auswertung</h3>
+  <p id="score"></p>
+  <details><summary style="cursor:pointer;">Erklärungen anzeigen</summary><ol id="review"></ol></details>
+</div>
+
+<script>
+(function(){
+  const $ = (s)=>document.querySelector(s);
+
+  const QUESTIONS = [
+    {
+      q:"Welches Zahlensystem verwendet nur die Ziffern 0 und 1?",
+      choices:["Dezimalsystem","Hexadezimalsystem","Binärsystem","Oktalsystem"],
+      correct:2,
+      explain:"Das Binärsystem (Basis 2) arbeitet mit den Ziffern 0 und 1."
+    },
+    {
+      q:"Wie viele verschiedene Ziffern hat das Dezimalsystem?",
+      choices:["2","8","10","16"],
+      correct:2,
+      explain:"Im Dezimalsystem (Basis 10) gibt es 10 Ziffern: 0–9."
+    },
+    {
+      q:"Welche Ziffern sind im Hexadezimalsystem zusätzlich zu 0–9 enthalten?",
+      choices:["A–F","G–L","K–P","X–Z"],
+      correct:0,
+      explain:"Das Hexadezimalsystem (Basis 16) nutzt 0–9 und A–F für 10–15."
+    },
+    {
+      q:"Was bedeutet die tiefgestellte Zahl in <code>1011<sub>2</sub></code>?",
+      choices:["Die Anzahl der Ziffern","Die Basis des Zahlensystems","Den Exponenten","Die Wertigkeit der höchsten Stelle"],
+      correct:1,
+      explain:"Die tiefgestellte 2 zeigt die Basis (hier Binärsystem) an."
+    },
+    {
+      q:"Wie lautet der Dezimalwert von <code>1011<sub>2</sub></code>?",
+      choices:["10","11","13","15"],
+      correct:2,
+      explain:"1×8 + 0×4 + 1×2 + 1×1 = 8 + 2 + 1 = 11 (Fehler?) Wait; Actually 11? Wait compute: 1011₂ = 8+2+1 = 11 -> correct is 11. Let's adjust correct index accordingly."
+    }
+  ];
+  // Correct fix for previous explanation:
+  QUESTIONS[4].choices=["10","11","13","15"]; QUESTIONS[4].correct=1; QUESTIONS[4].explain="1×8 + 0×4 + 1×2 + 1×1 = 11.";
+
+  QUESTIONS.push(
+    {
+      q:"Wie schreibt man die Dezimalzahl 15 im Binärsystem?",
+      choices:["1111","1101","1011","1001"],
+      correct:0,
+      explain:"15 = 8+4+2+1 → 1111₂."
+    },
+    {
+      q:"Welchen Dezimalwert hat <code>FF<sub>16</sub></code>?",
+      choices:["15","240","254","255"],
+      correct:3,
+      explain:"F steht für 15 → 15×16 + 15 = 255."
+    },
+    {
+      q:"Welche Aussage beschreibt den Stellenwert richtig?",
+      choices:[
+        "Jede Stelle hat denselben Wert.",
+        "Der Wert einer Stelle hängt von ihrer Position und der Basis ab.",
+        "Die höchste Stelle hat immer den Wert 10.",
+        "Stellenwerte sind nur in Binärsystemen definiert."
+      ],
+      correct:1,
+      explain:"In Positionssystemen bestimmt die Position den Stellenwert (Basis^Position)."
+    },
+    {
+      q:"Was ergibt <code>10000<sub>2</sub></code> im Dezimalsystem?",
+      choices:["4","8","16","32"],
+      correct:2,
+      explain:"1×16 + 0×8 + 0×4 + 0×2 + 0×1 = 16."
+    },
+    {
+      q:"Welche Basis wird beim Oktalsystem verwendet?",
+      choices:["2","8","10","16"],
+      correct:1,
+      explain:"Oktalsystem = Basis 8 (Ziffern 0–7)."
+    }
+  );
+
+  // --- quiz logic (same as your previous version) ---
+  function shuffle(a){const arr=a.slice();for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]];}return arr;}
+  const state={order:shuffle([...Array(QUESTIONS.length).keys()]),i:0,correct:0,answers:[]};
+
+  const qEl=$("#question"), cEl=$("#choices"), fEl=$("#feedback"), pEl=$("#progress");
+  const next=$("#nextBtn"), skip=$("#skipBtn"), restart=$("#restartBtn");
+  const resultBox=$("#result"), score=$("#score"), review=$("#review");
+
+  function render(){
+    const qi=state.order[state.i], item=QUESTIONS[qi];
+    pEl.textContent=`Frage ${state.i+1}/${QUESTIONS.length}`;
+    qEl.innerHTML=item.q; cEl.innerHTML=""; fEl.innerHTML="";
+    item.choices.forEach((c,idx)=>{
+      const b=document.createElement("button");
+      b.innerHTML=c;
+      Object.assign(b.style,{padding:"10px 12px",border:"1px solid #ccc",borderRadius:"8px",background:"white",textAlign:"left"});
+      b.onclick=()=>answer(idx);
+      cEl.appendChild(b);
+    });
+  }
+
+  function answer(chosen){
+    const qi=state.order[state.i], item=QUESTIONS[qi];
+    const good=chosen===item.correct;
+    state.answers[qi]={chosen,good};
+    if(good) state.correct++;
+    [...cEl.children].forEach((b,i)=>{
+      b.disabled=true;
+      if(i===item.correct){b.style.borderColor="#0b5";b.style.background="rgba(0,180,80,.08)";}
+      if(i===chosen&&!good){b.style.borderColor="#b00";b.style.background="rgba(200,0,0,.06)";}
+    });
+    fEl.innerHTML=(good?"✔️ Richtig":"✖️ Falsch")+" — "+item.explain;
+  }
+
+  function nextQ(){
+    if(state.i<QUESTIONS.length-1){state.i++;render();}
+    else showResult();
+  }
+  function skipQ(){state.i<QUESTIONS.length-1?state.i++:null;render();}
+  function showResult(){
+    $("#quiz-card").style.display="none";
+    resultBox.style.display="";
+    const percent=Math.round(state.correct/QUESTIONS.length*100);
+    score.textContent=`${state.correct} von ${QUESTIONS.length} korrekt (${percent}%)`;
+    review.innerHTML="";
+    state.order.forEach(qi=>{
+      const it=QUESTIONS[qi]; const a=state.answers[qi];
+      const li=document.createElement("li");
+      const chosen=a?it.choices[a.chosen]:"—";
+      li.innerHTML=`<strong>${it.q}</strong><br>Deine Antwort: ${chosen}<br>Korrekt: ${it.choices[it.correct]}<br><span style="color:#555">${it.explain}</span>`;
+      review.appendChild(li);
+    });
+    restart.style.display="";
+  }
+  restart.onclick=()=>{state.i=0;state.correct=0;state.order=shuffle([...Array(QUESTIONS.length).keys()]);$("#quiz-card").style.display="";resultBox.style.display="none";render();}
+  next.onclick=nextQ; skip.onclick=skipQ;
+  render();
+})();
+</script>
+</body>
+</html>
