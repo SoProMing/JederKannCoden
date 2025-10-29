@@ -7672,16 +7672,66 @@ graph TD;
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-polyglot-notebook"><pre><span></span>public static class MathHelper 
+{
+    public static int Add(int a, int b) 
+    {
+        return a + b;
+    }
+}
+int Ergebnis = MathHelper.Add(5, 10);
+int Ergebnis2 = 2;
+Console.WriteLine($"Das Ergebnis der Addition ist: {Ergebnis2}");
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Das Ergebnis der Addition ist: 2
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-polyglot-notebook"><pre><span></span>// Schreibe hier eine Begrüßung für die Studierenden
+Console.WriteLine("Hallo, das Ergebnis ist {0} und das zweite {1}", Ergebnis, Ergebnis2);
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Hallo, das Ergebnis ist 15 und das zweite 2
+</pre>
 </div>
 </div>
 </div>
@@ -7714,10 +7764,20 @@ graph TD;
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-polyglot-notebook"><pre><span></span>&lt;iframe src="CSharp_icebreaker.de.quiz.html" style="width:100%; height:500px; border:none;"&gt;&lt;/iframe&gt;
+<div class="highlight hl-polyglot-notebook"><pre><span></span>#!csharp
+#r "nuget: Microsoft.AspNetCore.Html.Abstractions, 2.3.0"
+
+using System.IO;
+using Microsoft.AspNetCore.Html;
+
+var path = "CSharp_icebreaker.de.quiz.html";
+var html = await File.ReadAllTextAsync(path);
+
+// HtmlString implements IHtmlContent; .NET Interactive renders it as HTML
+display(new HtmlString(html));
 </pre></div>
 </div>
 </div>
@@ -7730,7 +7790,182 @@ graph TD;
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<iframe src="CSharp_icebreaker.de.quiz.html" style="width:100%; height:500px; border:none;"></iframe>
+<div><div></div><div></div><div><strong>Installed Packages</strong><ul><li><span>Microsoft.AspNetCore.Html.Abstractions, 2.3.0</span></li></ul></div></div>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<div id="csharp-icebreaker-quiz" style="font-family: system-ui, sans-serif; max-width: 780px; line-height: 1.4;">
+<h2 style="margin: 0.2rem 0 0.6rem;">C# Icebreaker – Mini-Quiz</h2>
+<p style="margin: 0 0 1rem;">10 kurze Fragen – sofortiges Feedback, am Ende gibt’s die Auswertung.</p>
+<div id="quiz-card" style="border:1px solid #ddd;border-radius:12px;padding:16px;box-shadow:0 2px 8px rgba(0,0,0,.04);">
+<div id="progress" style="font-size: 14px; color:#555; margin-bottom:8px;">Frage 1/10</div>
+<div id="question" style="font-size: 18px; font-weight:600; margin:8px 0 12px;"></div>
+<div id="choices" style="display:grid; gap:8px;"></div>
+<div id="feedback" style="margin-top:12px; min-height: 24px;"></div>
+<div style="display:flex; gap:8px; margin-top:16px;">
+<button id="skipBtn" style="padding:8px 12px;border:1px solid #999;border-radius:8px;background:#f7f7f7;cursor:pointer;">Überspringen</button>
+<button id="nextBtn" style="padding:8px 12px;border:1px solid #0b5;border-radius:8px;background:#0b5;color:white;cursor:pointer;">Weiter</button>
+<button id="restartBtn" style="padding:8px 12px;border:1px solid #555;border-radius:8px;background:white;cursor:pointer;display:none;">Nochmal</button>
+<div style="margin-left:auto; align-self:center; font-size:13px; color:#666;">Tipp: Antworten anklicken</div>
+</div>
+</div>
+<div id="result" style="display:none; margin-top:16px; border:1px solid #ddd;border-radius:12px;padding:16px;">
+<h3 style="margin-top:0;">Auswertung</h3>
+<p id="score"></p>
+<details>
+<summary style="cursor:pointer;">Erklärungen anzeigen</summary>
+<ol id="review" style="margin-top:8px;"></ol>
+</details>
+</div>
+<div style="font-size:12px;color:#777;margin-top:12px;">
+    Inhalte angelehnt an deinen Icebreaker (Console.WriteLine, Arithmetik, Bool, statisch/nicht-statisch, Events, Delegates, async/await, Lambda, MVVM).
+  </div>
+</div>
+<script>
+(function(){
+  const $ = (sel) => document.querySelector(sel);
+
+  const QUESTIONS = [
+    { q:'Was macht der Ausdruck: Console.WriteLine("Hallo, Welt!"); ?', choices:[
+      'Er liest eine Zeile aus der Konsole.','Er schreibt eine Zeile Text in die Konsole.','Er beendet das Programm.','Er pausiert das Programm für 1 Sekunde.'
+    ], correct:1, explain:'Console.WriteLine(...) gibt Text auf der Standardausgabe (Konsole) aus.'},
+    { q:'Welchen Wert hat: int sum = 5 + 3; ?', choices:['5','3','8','53'], correct:2, explain:'5 + 3 ist 8.'},
+    { q:'Welches Ergebnis hat: bool isTrue = (5 > 3) && (2 < 4); ?', choices:['true','false','5','2'], correct:0, explain:'true && true → true.'},
+    { q:'Wofür ist eine <em>statische Klasse</em> typisch?', choices:[
+      'Instanziierbar für mehrere Objekte.','Nur statische Member; Nutzung ohne Objekt.','Überschreibt automatisch ToString().','Nur für Events.'
+    ], correct:1, explain:'Beispiel: Math – nur statische Member, keine Instanzen.'},
+    { q:'Welche Aussage passt zu einer <em>nicht-statischen</em> Klasse?', choices:[
+      'Nicht instanziierbar.','Darf keine Properties haben.','Vorlage für Objekte (Instanzen).','Darf keine Methoden enthalten.'
+    ], correct:2, explain:'Nicht-statisch = Bauplan für Instanzen mit Zustand und Verhalten.'},
+    { q:'Wofür wird ein <em>Event</em> genutzt?', choices:[
+      'Methode asynchron ausführen.','Benachrichtigung an Abonnenten auslösen.','Klassen abstrakt machen.','Ressourcen automatisch freigeben.'
+    ], correct:1, explain:'Publish/Subscribe – Handler werden benachrichtigt.'},
+    { q:'Was ist ein <em>Delegate</em>?', choices:[
+      'Datentabelle.','Funktionszeiger/Methoden-Typ.','Konstante.','Ausnahmebehandlung.'
+    ], correct:1, explain:'Delegates sind Typsignaturen für Methoden.'},
+    { q:'Was bewirkt <em>await</em> in <code>await Task.Delay(1000);</code>?', choices:[
+      'Blockiert 1 Sekunde.','Wartet asynchron ohne Thread zu blockieren.','Startet neuen Prozess.','Kompiliert neu.'
+    ], correct:1, explain:'await wartet asynchron; der Thread bleibt frei.'},
+    { q:'Welcher Ausdruck ist ein <em>Lambda</em>?', choices:[
+      '<code>Func&lt;int,int,int&gt; multiply = (x, y) =&gt; x * y;</code>','<code>int x = 0;</code>','<code>Console.ReadLine();</code>','<code>new Person();</code>'
+    ], correct:0, explain:'(x, y) => x * y ist ein Lambda-Ausdruck.'},
+    { q:'Welche Verbindung beschreibt MVVM korrekt?', choices:[
+      'View ↔ Controller ↔ Model','View → ViewModel → Model → ViewModel → View','Model → View → ViewModel','View → Model → ViewModel'
+    ], correct:1, explain:'View ↔ ViewModel ↔ Model mit Rückfluss der Änderungen.'}
+  ];
+
+  function shuffle(arr){ const a=arr.slice(); for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];} return a; }
+
+  const state = { order: shuffle([...Array(QUESTIONS.length).keys()]), i:0, answered:0, correct:0, userAnswers:[] };
+
+  const progressEl = $('#progress');
+  const questionEl = $('#question');
+  const choicesEl = $('#choices');
+  const feedbackEl = $('#feedback');
+  const nextBtn = document.createElement('button');
+  const skipBtn = document.createElement('button');
+  const restartBtn = document.createElement('button');
+
+  // Buttons exist already in HTML; query them instead:
+  const next = document.getElementById('nextBtn');
+  const skip = document.getElementById('skipBtn');
+  const restart = document.getElementById('restartBtn');
+  const resultBox = document.getElementById('result');
+  const scoreEl = document.getElementById('score');
+  const reviewEl = document.getElementById('review');
+
+  function renderQuestion(){
+    const qi = state.order[state.i];
+    const item = QUESTIONS[qi];
+    progressEl.textContent = `Frage ${state.i+1}/${QUESTIONS.length}`;
+    questionEl.innerHTML = item.q;
+    choicesEl.innerHTML = '';
+    feedbackEl.innerHTML = '';
+
+    item.choices.forEach((c, idx) => {
+      const btn = document.createElement('button');
+      btn.innerHTML = c;
+      Object.assign(btn.style, { padding:'10px 12px', border:'1px solid #ccc', borderRadius:'8px', background:'white', cursor:'pointer', textAlign:'left' });
+      btn.addEventListener('click', ()=>handleAnswer(idx));
+      choicesEl.appendChild(btn);
+    });
+
+    next.disabled=false; skip.disabled=false;
+  }
+
+  function handleAnswer(chosenIdx){
+    const qi = state.order[state.i];
+    const item = QUESTIONS[qi];
+    const isCorrect = chosenIdx === item.correct;
+    state.userAnswers[qi] = { chosenIdx, isCorrect };
+    if (isCorrect) state.correct++;
+    state.answered++;
+
+    [...choicesEl.children].forEach((btn, idx) => {
+      btn.disabled = true;
+      if (idx === item.correct){ btn.style.borderColor='#0b5'; btn.style.background='rgba(0,180,80,.08)'; }
+      if (idx === chosenIdx && !isCorrect){ btn.style.borderColor='#b00'; btn.style.background='rgba(200,0,0,.06)'; }
+    });
+
+    feedbackEl.innerHTML = (isCorrect
+      ? '<span style="color:#0a7; font-weight:600;">✔️ Richtig!</span>'
+      : '<span style="color:#b00; font-weight:600;">✖️ Falsch</span>'
+    ) + (item.explain ? ` — <span style="color:#555">${item.explain}</span>` : '');
+  }
+
+  function nextQuestion(){
+    if (state.i < QUESTIONS.length-1){ state.i++; renderQuestion(); }
+    else { showResults(); }
+  }
+
+  function skipQuestion(){
+    const qi = state.order[state.i];
+    if (!state.userAnswers[qi]) state.userAnswers[qi] = { chosenIdx:null, isCorrect:false, skipped:true };
+    nextQuestion();
+  }
+
+  function showResults(){
+    document.getElementById('quiz-card').style.display='none';
+    resultBox.style.display='';
+    const percent = Math.round((state.correct/QUESTIONS.length)*100);
+    scoreEl.textContent = `Du hast ${state.correct} von ${QUESTIONS.length} korrekt beantwortet (${percent}%).`;
+
+    reviewEl.innerHTML='';
+    state.order.forEach(qi => {
+      const item = QUESTIONS[qi];
+      const li = document.createElement('li');
+      const ua = state.userAnswers[qi] || {};
+      const chosen = ua.chosenIdx != null ? item.choices[ua.chosenIdx] : '—';
+      const correct = item.choices[item.correct];
+      li.innerHTML = `
+        <div style="margin-bottom:6px;"><strong>${item.q}</strong></div>
+        <div><em>Deine Antwort:</em> ${chosen}</div>
+        <div><em>Korrekt:</em> ${correct}</div>
+        <div style="color:#555; margin-top:4px;">${item.explain || ''}</div>`;
+      reviewEl.appendChild(li);
+    });
+
+    restart.style.display='';
+  }
+
+  function doRestart(){
+    state.order = shuffle([...Array(QUESTIONS.length).keys()]);
+    state.i = 0; state.answered = 0; state.correct = 0; state.userAnswers = [];
+    document.getElementById('quiz-card').style.display='';
+    resultBox.style.display='none';
+    restart.style.display='none';
+    renderQuestion();
+  }
+
+  document.getElementById('nextBtn').addEventListener('click', nextQuestion);
+  document.getElementById('skipBtn').addEventListener('click', skipQuestion);
+  document.getElementById('restartBtn').addEventListener('click', doRestart);
+
+  renderQuestion();
+})();
+</script>
 </div>
 </div>
 </div>

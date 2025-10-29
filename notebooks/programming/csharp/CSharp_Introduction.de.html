@@ -7715,10 +7715,10 @@ Diese Plattform bietet eine Einführung in C# mit Übungen, die grundlegende und
 <div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="nb">int</span> <span class="n">alter</span> <span class="o">=</span> <span class="mi">25</span><span class="p">;</span>        <span class="o">//</span> <span class="n">Ganze</span> <span class="n">Zahl</span>
-<span class="n">double</span> <span class="n">temperatur</span> <span class="o">=</span> <span class="mf">23.5</span><span class="p">;</span> <span class="o">//</span> <span class="n">Dezimalzahl</span>
-<span class="n">string</span> <span class="n">ort</span> <span class="o">=</span> <span class="s2">"Berlin"</span><span class="p">;</span> <span class="o">//</span> <span class="n">Zeichenkette</span>
-<span class="nb">bool</span> <span class="n">istRegen</span> <span class="o">=</span> <span class="n">true</span><span class="p">;</span>  <span class="o">//</span> <span class="n">Wahrheitswert</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>int alter = 25;        // Ganze Zahl
+double temperatur = 23.5; // Dezimalzahl
+string ort = "Berlin"; // Zeichenkette
+bool istRegen = true;  // Wahrheitswert
 </pre></div>
 </div>
 </div>
@@ -7756,14 +7756,14 @@ Diese Plattform bietet eine Einführung in C# mit Übungen, die grundlegende und
 <div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">istRegen</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Es regnet. Bitte einen Regenschirm mitnehmen!"</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="k">else</span>
-<span class="p">{</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Es ist trocken. Genieße das Wetter!"</span><span class="p">);</span>
-<span class="p">}</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>if (istRegen)
+{
+    Console.WriteLine("Es regnet. Bitte einen Regenschirm mitnehmen!");
+}
+else
+{
+    Console.WriteLine("Es ist trocken. Genieße das Wetter!");
+}
 </pre></div>
 </div>
 </div>
@@ -7813,10 +7813,10 @@ Diese Plattform bietet eine Einführung in C# mit Übungen, die grundlegende und
 <div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">3</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Messung </span><span class="si">{i}</span><span class="s2">: Temperatur ist </span><span class="si">{temperatur}</span><span class="s2"> °C"</span><span class="p">);</span>
-<span class="p">}</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>for (int i = 1; i &lt;= 3; i++)
+{
+    Console.WriteLine($"Messung {i}: Temperatur ist {temperatur} °C");
+}
 </pre></div>
 </div>
 </div>
@@ -7868,11 +7868,11 @@ Messung 3: Temperatur ist 23,5 °C
 <div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">double</span> <span class="n">kohlendioxidEmission</span> <span class="o">=</span> <span class="mf">10.5</span><span class="p">;</span> <span class="o">//</span> <span class="ow">in</span> <span class="n">kg</span>
-<span class="n">double</span> <span class="n">emissionsReduktion</span> <span class="o">=</span> <span class="mf">2.5</span><span class="p">;</span>   <span class="o">//</span> <span class="ow">in</span> <span class="n">kg</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>double kohlendioxidEmission = 10.5; // in kg
+double emissionsReduktion = 2.5;   // in kg
 
-<span class="n">double</span> <span class="n">verbleibend</span> <span class="o">=</span> <span class="n">kohlendioxidEmission</span> <span class="o">-</span> <span class="n">emissionsReduktion</span><span class="p">;</span>
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Verbleibende Emissionen: </span><span class="si">{verbleibend}</span><span class="s2"> kg"</span><span class="p">);</span>
+double verbleibend = kohlendioxidEmission - emissionsReduktion;
+Console.WriteLine($"Verbleibende Emissionen: {verbleibend} kg");
 </pre></div>
 </div>
 </div>
@@ -7922,8 +7922,8 @@ Messung 3: Temperatur ist 23,5 °C
 <div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="nb">int</span> <span class="n">kleineZahl</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
-<span class="n">double</span> <span class="n">grosseZahl</span> <span class="o">=</span> <span class="p">(</span><span class="n">double</span><span class="p">)</span><span class="n">kleineZahl</span><span class="p">;</span> <span class="o">//</span> <span class="n">Explizites</span> <span class="n">Casting</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>int kleineZahl = 10;
+double grosseZahl = (double)kleineZahl; // Explizites Casting
 </pre></div>
 </div>
 </div>
@@ -7949,7 +7949,7 @@ Messung 3: Temperatur ist 23,5 °C
 <div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">var</span> <span class="n">durchschnitt</span> <span class="o">=</span> <span class="mf">12.34</span><span class="p">;</span> <span class="o">//</span> <span class="n">Compiler</span> <span class="n">erkennt</span> <span class="n">den</span> <span class="n">Typ</span> <span class="n">als</span> <span class="n">double</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>var durchschnitt = 12.34; // Compiler erkennt den Typ als double
 </pre></div>
 </div>
 </div>
@@ -7974,9 +7974,9 @@ Messung 3: Temperatur ist 23,5 °C
 <div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="o">//</span> <span class="n">Das</span> <span class="n">ist</span> <span class="n">ein</span> <span class="n">einzeiliger</span> <span class="n">Kommentar</span>
-<span class="o">/*</span> <span class="n">Das</span> <span class="n">ist</span> <span class="n">ein</span> 
-   <span class="n">mehrzeiliger</span> <span class="n">Kommentar</span> <span class="o">*/</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>// Das ist ein einzeiliger Kommentar
+/* Das ist ein 
+   mehrzeiliger Kommentar */
 </pre></div>
 </div>
 </div>
@@ -8002,10 +8002,10 @@ Messung 3: Temperatur ist 23,5 °C
 <div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">static</span> <span class="n">double</span> <span class="n">BerechneEmission</span><span class="p">(</span><span class="n">double</span> <span class="n">energieVerbrauch</span><span class="p">,</span> <span class="n">double</span> <span class="n">emissionsFaktor</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">return</span> <span class="n">energieVerbrauch</span> <span class="o">*</span> <span class="n">emissionsFaktor</span><span class="p">;</span>
-<span class="p">}</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>static double BerechneEmission(double energieVerbrauch, double emissionsFaktor)
+{
+    return energieVerbrauch * emissionsFaktor;
+}
 </pre></div>
 </div>
 </div>
@@ -8042,12 +8042,12 @@ Messung 3: Temperatur ist 23,5 °C
 <div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">double</span><span class="p">[]</span> <span class="n">temperaturen</span> <span class="o">=</span> <span class="p">{</span> <span class="mf">22.5</span><span class="p">,</span> <span class="mf">23.0</span><span class="p">,</span> <span class="mf">21.8</span> <span class="p">};</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>double[] temperaturen = { 22.5, 23.0, 21.8 };
 
-<span class="n">foreach</span> <span class="p">(</span><span class="n">double</span> <span class="n">temp</span> <span class="ow">in</span> <span class="n">temperaturen</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Gemessene Temperatur: </span><span class="si">{temp}</span><span class="s2"> °C"</span><span class="p">);</span>
-<span class="p">}</span>
+foreach (double temp in temperaturen)
+{
+    Console.WriteLine($"Gemessene Temperatur: {temp} °C");
+}
 </pre></div>
 </div>
 </div>
@@ -8099,45 +8099,45 @@ Gemessene Temperatur: 21,8 °C
 <div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="o">//</span> <span class="n">Variablen</span> <span class="n">und</span> <span class="n">Datentypen</span>
-<span class="n">string</span> <span class="n">projektName</span> <span class="o">=</span> <span class="s2">"CO2-Reduktion"</span><span class="p">;</span>
-<span class="n">double</span><span class="p">[]</span> <span class="n">emissionen</span> <span class="o">=</span> <span class="p">{</span> <span class="mf">10.5</span><span class="p">,</span> <span class="mf">12.3</span><span class="p">,</span> <span class="mf">9.8</span> <span class="p">};</span> <span class="o">//</span> <span class="ow">in</span> <span class="n">kg</span>
-<span class="n">double</span> <span class="n">emissionsFaktor</span> <span class="o">=</span> <span class="mf">0.25</span><span class="p">;</span>            <span class="o">//</span> <span class="n">Faktor</span> <span class="n">pro</span> <span class="n">kWh</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>// Variablen und Datentypen
+string projektName = "CO2-Reduktion";
+double[] emissionen = { 10.5, 12.3, 9.8 }; // in kg
+double emissionsFaktor = 0.25;            // Faktor pro kWh
 
-<span class="o">//</span> <span class="n">Ausgabe</span> <span class="n">von</span> <span class="n">Informationen</span>
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Projekt: </span><span class="si">{projektName}</span><span class="s2">"</span><span class="p">);</span>
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Berechnung der Emissionen:"</span><span class="p">);</span>
+// Ausgabe von Informationen
+Console.WriteLine($"Projekt: {projektName}");
+Console.WriteLine("Berechnung der Emissionen:");
 
-<span class="o">//</span> <span class="n">Schleifen</span> <span class="n">und</span> <span class="n">Arithmetik</span>
-<span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">emissionen</span><span class="o">.</span><span class="n">Length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Messung {i + 1}: </span><span class="si">{emissionen[i]}</span><span class="s2"> kg"</span><span class="p">);</span>
-<span class="p">}</span>
+// Schleifen und Arithmetik
+for (int i = 0; i &lt; emissionen.Length; i++)
+{
+    Console.WriteLine($"Messung {i + 1}: {emissionen[i]} kg");
+}
 
-<span class="o">//</span> <span class="n">Funktion</span> <span class="n">und</span> <span class="n">komplexe</span> <span class="n">Berechnung</span>
-<span class="n">double</span> <span class="n">gesamtEmission</span> <span class="o">=</span> <span class="n">BerechneEmission</span><span class="p">(</span><span class="n">emissionen</span><span class="p">,</span> <span class="n">emissionsFaktor</span><span class="p">);</span>
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Gesamte Emissionen nach Faktor: </span><span class="si">{gesamtEmission}</span><span class="s2"> kg"</span><span class="p">);</span>
+// Funktion und komplexe Berechnung
+double gesamtEmission = BerechneEmission(emissionen, emissionsFaktor);
+Console.WriteLine($"Gesamte Emissionen nach Faktor: {gesamtEmission} kg");
 
-<span class="o">//</span> <span class="n">Bedingte</span> <span class="n">Anweisung</span>
-<span class="k">if</span> <span class="p">(</span><span class="n">gesamtEmission</span> <span class="o">&gt;</span> <span class="mi">25</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Warnung: Emissionen zu hoch!"</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="k">else</span>
-<span class="p">{</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Emissionen im akzeptablen Bereich."</span><span class="p">);</span>
-<span class="p">}</span>
+// Bedingte Anweisung
+if (gesamtEmission &gt; 25)
+{
+    Console.WriteLine("Warnung: Emissionen zu hoch!");
+}
+else
+{
+    Console.WriteLine("Emissionen im akzeptablen Bereich.");
+}
 
-<span class="o">//</span> <span class="n">Funktion</span> <span class="n">zur</span> <span class="n">Berechnung</span> <span class="n">der</span> <span class="n">Gesamtemissionen</span>
-<span class="n">static</span> <span class="n">double</span> <span class="n">BerechneEmission</span><span class="p">(</span><span class="n">double</span><span class="p">[]</span> <span class="n">emissionen</span><span class="p">,</span> <span class="n">double</span> <span class="n">faktor</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">double</span> <span class="n">summe</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="n">foreach</span> <span class="p">(</span><span class="n">double</span> <span class="n">emission</span> <span class="ow">in</span> <span class="n">emissionen</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">summe</span> <span class="o">+=</span> <span class="n">emission</span> <span class="o">*</span> <span class="n">faktor</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="n">summe</span><span class="p">;</span>
-<span class="p">}</span>
+// Funktion zur Berechnung der Gesamtemissionen
+static double BerechneEmission(double[] emissionen, double faktor)
+{
+    double summe = 0;
+    foreach (double emission in emissionen)
+    {
+        summe += emission * faktor;
+    }
+    return summe;
+}
 </pre></div>
 </div>
 </div>
