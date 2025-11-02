@@ -7558,27 +7558,27 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [46]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="nb">int</span> <span class="n">age</span> <span class="o">=</span> <span class="mi">65</span><span class="p">;</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>int age = 65;
 
-<span class="k">if</span> <span class="p">(</span><span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"You are an adult."</span><span class="p">);</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">64</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"With pension."</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-<span class="k">else</span> <span class="k">if</span> <span class="p">(</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="mi">4</span> <span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"You are a toddler."</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="k">else</span>
-<span class="p">{</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"You are not an adult."</span><span class="p">);</span>
-<span class="p">}</span>
+if (age &gt;= 18)
+{
+    Console.WriteLine("You are an adult.");
+    if (age &gt;= 64)
+    {
+        Console.WriteLine("With pension.");
+    }
+}
+else if ( age &lt; 4 )
+{
+    Console.WriteLine("You are a toddler.");
+}
+else
+{
+    Console.WriteLine("You are not an adult.");
+}
 </pre></div>
 </div>
 </div>
@@ -7590,10 +7590,19 @@ a.anchor-link {
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>You are an adult.
-With pension.
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>
+(14,6): error CS8641: 'else' cannot start a statement.
+
+(14,6): error CS1003: Syntax error, '(' expected
+
+(14,6): error CS1525: Invalid expression term 'else'
+
+(14,6): error CS1026: ) expected
+
+(14,6): error CS1525: Invalid expression term 'else'
+
+(14,6): error CS1002: ; expected</pre>
 </div>
 </div>
 </div>
@@ -7617,19 +7626,19 @@ With pension.
 <div class="jp-InputPrompt jp-InputArea-prompt">In [39]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="nb">int</span> <span class="n">day</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
-<span class="n">switch</span> <span class="p">(</span><span class="n">day</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">case</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Monday"</span><span class="p">);</span>
-        <span class="k">break</span><span class="p">;</span>
-    <span class="k">case</span> <span class="mi">2</span><span class="p">:</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Tuesday"</span><span class="p">);</span>
-        <span class="k">break</span><span class="p">;</span>
-    <span class="n">default</span><span class="p">:</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Another day"</span><span class="p">);</span>
-        <span class="k">break</span><span class="p">;</span>
-<span class="p">}</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>int day = 3;
+switch (day)
+{
+    case 1:
+        Console.WriteLine("Monday");
+        break;
+    case 2:
+        Console.WriteLine("Tuesday");
+        break;
+    default:
+        Console.WriteLine("Another day");
+        break;
+}
 </pre></div>
 </div>
 </div>

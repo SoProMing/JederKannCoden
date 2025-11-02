@@ -8001,23 +8001,23 @@ Wenn man Spielregeln wie die von TicTacToe liest, erfolgt der Prozess schrittwei
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="Datentypen-und-Variablen">Datentypen und Variablen<a class="anchor-link" href="#Datentypen-und-Variablen">¶</a></h3><ul>
-<li>Das TicTacToe-Spielbrett kann als 2D-Array (Liste von Listen) gespeichert werden.</li>
+<li>Das TicTacToe-Spielbrett wird als zweidimensionales Array (<code>string[,]</code>) gespeichert.</li>
 <li>Jede Zelle des Arrays repräsentiert den Zustand eines Spielfeldes (leer, X, O).</li>
 <li>In Programmiersprachen können Variablen und Datentypen genutzt werden, um den Spielstand zu speichern und zu verwalten.</li>
-<li>Durch das Aktualisieren der Datenstruktur (Liste von Listen) wird der Spielstand im Programm gespeichert.</li>
+<li>Durch das Aktualisieren der Array-Einträge wird der Spielstand im Programm gespeichert.</li>
 <li>Der Spielstand kann durch eine Funktion ausgegeben und damit für die Spieler sichtbar gemacht werden.</li>
 <li><code>Integer</code>-Variablen können zur Zählung von Zügen oder zum Speichern von Spielergebnissen verwendet werden.</li>
 </ul>
-<details> <summary>Ausführliche Erklärung...</summary> In einem Spiel wie TicTacToe stellt das Spielbrett ein 3x3-Raster dar. Jedes Feld dieses Rasters kann leer sein oder von einer Spielfigur (X oder O) besetzt werden. Um den aktuellen Spielstand zu speichern, kann man ein 2D-Array (Liste von Listen) verwenden. Jede Position in diesem Array repräsentiert dabei eine Position auf dem Spielfeld. In C# können wir beispielsweise eine Liste von Listen verwenden, um den Zustand des Spiels zu speichern. Der Typ der Variablen in jeder Zelle könnte entweder ein Zeichen (`'X'`, `'O'`) oder ein Leerzeichen (`' '`) sein, um ein unbesetztes Feld darzustellen.
+<details> <summary>Ausführliche Erklärung...</summary> In einem Spiel wie TicTacToe stellt das Spielbrett ein 3x3-Raster dar. Jedes Feld dieses Rasters kann leer sein oder von einer Spielfigur (X oder O) besetzt werden. Um den aktuellen Spielstand zu speichern, wird ein zweidimensionales Array vom Typ <code>string[,]</code> genutzt. Jede Position in diesem Array repräsentiert dabei eine Position auf dem Spielfeld. Die Einträge enthalten Zeichenketten wie <code>"X"</code>, <code>"O"</code> oder <code>" "</code>, um ein unbesetztes Feld darzustellen.
 
-<p>Zusätzlich können  <code>Integer</code>-Variablen genutzt werden, um Zähler für die Anzahl der Züge oder die Anzahl der gewonnenen Spiele zu speichern. Beispielsweise könnte eine Variable  <code>move_count</code>  verwendet werden, um die Anzahl der bereits getätigten Züge zu zählen. Der Wert dieser Variablen erhöht sich nach jedem Zug um eins, was es ermöglicht, den Fortschritt des Spiels nachzuvollziehen und mögliche Gewinnbedingungen zu überprüfen.</p>
+<p>Zusätzlich können  <code>Integer</code>-Variablen genutzt werden, um Zähler für die Anzahl der Züge oder die Anzahl der gewonnenen Spiele zu speichern. Im Beispiel übernimmt beispielsweise die Variable  <code>zugZaehler</code>  diese Aufgabe und wird nach jedem Zug erhöht, sodass der Spielfortschritt nachvollziehbar bleibt und Gewinnbedingungen geprüft werden können.</p>
 </details>
 <p><strong>Konzept:</strong>  Datentypen definieren die Art der Daten, die in Variablen gespeichert werden können.</p>
 <p><strong>Beispiel in Tic-Tac-Toe:</strong></p>
 <ol>
 <li><p><strong>Datentyp  <code>Array</code>  für das Board:</strong></p>
 <ul>
-<li>Das  <code>board</code>  ist eine Liste von Listen (2D-Array), wobei jede innere Liste eine Reihe des Boards darstellt. Die Elemente der Listen sind Zeichen (<code>'X'</code>,  <code>'O'</code>  oder  <code>' '</code>).</li>
+<li>Das  <code>spielbrett</code>  ist ein zweidimensionales Array (<code>string[,]</code>), dessen Elemente Zeichenketten wie <code>"X"</code>,  <code>"O"</code>  oder  <code>" "</code> enthalten.</li>
 </ul>
 </li>
 <li><p><strong>Datentyp  <code>String</code>  für die Spielerzeichen:</strong></p>
@@ -8027,7 +8027,7 @@ Wenn man Spielregeln wie die von TicTacToe liest, erfolgt der Prozess schrittwei
 </li>
 <li><p><strong>Datentyp  <code>Integer</code>  für Zählvariablen:</strong></p>
 <ul>
-<li><code>Integer</code>  kann verwendet werden, um Zähler für die Anzahl der Züge oder die Anzahl der gewonnenen Spiele zu speichern. Beispielsweise könnte eine Variable  <code>move_count</code>  verwendet werden, um die Anzahl der bereits getätigten Züge zu zählen. Der Wert dieser Variablen erhöht sich nach jedem Zug um eins.</li>
+<li><code>Integer</code>  kann verwendet werden, um Zähler für die Anzahl der Züge oder die Anzahl der gewonnenen Spiele zu speichern. Im Beispiel erhöht eine Variable wie  <code>zugZaehler</code>  ihren Wert nach jedem Zug um eins.</li>
 </ul>
 </li>
 </ol>
@@ -8035,12 +8035,12 @@ Wenn man Spielregeln wie die von TicTacToe liest, erfolgt der Prozess schrittwei
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">//</span> <span class="n">Initialisierung</span> <span class="n">des</span> <span class="n">Spielbretts</span> <span class="n">als</span> <span class="mi">3</span><span class="n">x3</span><span class="o">-</span><span class="n">Array</span>
@@ -8050,9 +8050,6 @@ Wenn man Spielregeln wie die von TicTacToe liest, erfolgt der Prozess schrittwei
     <span class="p">{</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span> <span class="p">},</span>
     <span class="p">{</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span> <span class="p">}</span>
 <span class="p">};</span>
-
-<span class="o">//</span> <span class="n">Zähler</span> <span class="n">für</span> <span class="n">die</span> <span class="n">erste</span> <span class="n">Zeile</span>
-<span class="nb">int</span> <span class="n">ersteZeileIndex</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
 <span class="o">//</span> <span class="n">Beispielhafte</span> <span class="n">Spielzüge</span>
 <span class="n">spielbrett</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"X"</span><span class="p">;</span> <span class="o">//</span> <span class="n">Spieler</span> <span class="n">X</span> <span class="n">setzt</span> <span class="n">auf</span> <span class="n">die</span> <span class="n">obere</span> <span class="n">linke</span> <span class="n">Position</span>
@@ -8066,6 +8063,23 @@ Wenn man Spielregeln wie die von TicTacToe liest, erfolgt der Prozess schrittwei
 <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"---------"</span><span class="p">);</span>
 <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"</span><span class="si">{spielbrett[2,0]}</span><span class="s2"> | </span><span class="si">{spielbrett[2,1]}</span><span class="s2"> | </span><span class="si">{spielbrett[2,2]}</span><span class="s2">"</span><span class="p">);</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>X |   |  
+---------
+  | O |  
+---------
+  |   | X
+</pre>
 </div>
 </div>
 </div>
@@ -8115,22 +8129,16 @@ Wenn man Spielregeln wie die von TicTacToe liest, erfolgt der Prozess schrittwei
 <ul>
 <li><p><strong>Initialisierung des Spielbretts</strong>:</p>
 <ul>
-<li>Der Code erstellt ein 2D-Array (Liste von Listen) namens  <code>spielbrett</code>, das ein 3x3-Raster darstellt, welches dem TicTacToe-Spielbrett entspricht.</li>
-<li>Zu Beginn wird jede Zelle des Arrays mit einem Leerzeichen (<code>' '</code>) initialisiert, um anzuzeigen, dass das Spielfeld leer ist.</li>
-</ul>
-</li>
-<li><p><strong>Zähler für die erste Zeile</strong>:</p>
-<ul>
-<li>Eine Variable namens  <code>erste_zeile_index</code>  wird deklariert und auf  <code>0</code>  gesetzt. Diese Variable dient dazu, die Indizierung für die erste Zeile des Spielbretts zu speichern.</li>
-<li>In C# beginnt die Indizierung von Listen bei  <code>0</code>, sodass die erste Zeile des Arrays  <code>spielbrett</code>  tatsächlich  <code>spielbrett[0]</code>  entspricht.</li>
+<li>Der Code erzeugt ein zweidimensionales Array <code>string[,]</code> namens  <code>spielbrett</code>, das das 3x3-Raster eines TicTacToe-Bretts repräsentiert.</li>
+<li>Zu Beginn wird jede Zelle des Arrays mit einem Leerzeichen (<code>" "</code>) initialisiert, um ein leeres Feld zu markieren.</li>
 </ul>
 </li>
 <li><p><strong>Beispielhafte Spielzüge</strong>:</p>
 <ul>
 <li>Im Code werden drei Spielzüge durchgeführt:<ul>
-<li>Spieler X setzt ein X in die obere linke Position des Spielbretts (0. Zeile, 0. Spalte).</li>
-<li>Spieler O setzt ein O in die mittlere Position des Spielbretts (1. Zeile, 1. Spalte).</li>
-<li>Spieler X setzt ein X in die untere rechte Position des Spielbretts (2. Zeile, 2. Spalte).</li>
+<li>Spieler X setzt ein <code>"X"</code> an Position <code>[0,0]</code>.</li>
+<li>Spieler O setzt ein <code>"O"</code> an Position <code>[1,1]</code>.</li>
+<li>Spieler X setzt ein weiteres <code>"X"</code> an Position <code>[2,2]</code>.</li>
 </ul>
 </li>
 <li>Diese Zuweisungen aktualisieren den Zustand des Spielbretts entsprechend den Spielzügen der Spieler.</li>
@@ -8138,10 +8146,9 @@ Wenn man Spielregeln wie die von TicTacToe liest, erfolgt der Prozess schrittwei
 </li>
 <li><p><strong>Ausgabe des Spielbretts</strong>:</p>
 <ul>
-<li>Der aktuelle Zustand des Spielbretts wird ausgegeben.</li>
-<li>Die erste Zeile wird mit Hilfe der  <code>erste_zeile_index</code>-Variable ausgegeben, indem die Werte der ersten Zeile in einen String kombiniert werden.</li>
-<li>Für die zweite und dritte Zeile werden die Indizes direkt verwendet, um die Werte der entsprechenden Zeilen auszugeben.</li>
-<li>Das Ergebnis zeigt den aktuellen Zustand des Spielbretts in der Konsole, sodass die Spieler den Fortschritt des Spiels sehen können.</li></ul></li></ul></details>
+<li>Die anschließenden <code>Console.WriteLine</code>-Anweisungen nutzen String-Interpolation, um jede Zeile des Arrays mit Trennern auszugeben.</li>
+<li>Zwischen den Zeilen wird eine Trennlinie ausgegeben, sodass das Layout des Spielbretts klar erkennbar bleibt.</li>
+<li>Das Ergebnis zeigt den aktuellen Zustand des Spielbretts in der Konsole und macht den Fortschritt für die Spielenden nachvollziehbar.</li></ul></li></ul></details>
 
 
 
@@ -8206,22 +8213,22 @@ Arithmetik spielt in den Regeln von Spielen wie TicTacToe eine Rolle, um die Spi
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">//</span> <span class="n">Zähler</span> <span class="n">für</span> <span class="n">die</span> <span class="n">Anzahl</span> <span class="n">der</span> <span class="n">Spielzüge</span>
 <span class="nb">int</span> <span class="n">zugZaehler</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="o">//</span> <span class="n">Arithmetik</span><span class="p">:</span> <span class="n">Startwert</span> <span class="n">für</span> <span class="n">die</span> <span class="n">Anzahl</span> <span class="n">der</span> <span class="n">Züge</span>
 
 <span class="o">//</span> <span class="n">Beispielhafte</span> <span class="n">Spielzüge</span>
-<span class="n">spielbrett</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"X"</span><span class="p">;</span> <span class="o">//</span> <span class="n">Spieler</span> <span class="n">X</span> <span class="n">macht</span> <span class="n">einen</span> <span class="n">Zug</span>
+<span class="n">spielbrett</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"X"</span><span class="p">;</span> <span class="o">//</span> <span class="n">Spieler</span> <span class="n">X</span> <span class="n">macht</span> <span class="n">einen</span> <span class="n">Zug</span>
 <span class="n">zugZaehler</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span> <span class="o">//</span> <span class="n">Arithmetik</span><span class="p">:</span> <span class="n">Spielzugzähler</span> <span class="n">um</span> <span class="mi">1</span> <span class="n">erhöhen</span>
 
-<span class="n">spielbrett</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"O"</span><span class="p">;</span> <span class="o">//</span> <span class="n">Spieler</span> <span class="n">O</span> <span class="n">macht</span> <span class="n">einen</span> <span class="n">Zug</span>
+<span class="n">spielbrett</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"O"</span><span class="p">;</span> <span class="o">//</span> <span class="n">Spieler</span> <span class="n">O</span> <span class="n">macht</span> <span class="n">einen</span> <span class="n">Zug</span>
 <span class="n">zugZaehler</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span> <span class="o">//</span> <span class="n">Arithmetik</span><span class="p">:</span> <span class="n">Spielzugzähler</span> <span class="n">um</span> <span class="mi">1</span> <span class="n">erhöhen</span>
 
 <span class="n">spielbrett</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"X"</span><span class="p">;</span> <span class="o">//</span> <span class="n">Spieler</span> <span class="n">X</span> <span class="n">macht</span> <span class="n">einen</span> <span class="n">weiteren</span> <span class="n">Zug</span>
@@ -8266,6 +8273,24 @@ Arithmetik spielt in den Regeln von Spielen wie TicTacToe eine Rolle, um die Spi
 <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"---------"</span><span class="p">);</span>
 <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"</span><span class="si">{spielbrett[2,0]}</span><span class="s2"> | </span><span class="si">{spielbrett[2,1]}</span><span class="s2"> | </span><span class="si">{spielbrett[2,2]}</span><span class="s2">"</span><span class="p">);</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Das Spiel endet nach 9 Zügen!
+O | X | O
+---------
+X | X | O
+---------
+X | O | X
+</pre>
 </div>
 </div>
 </div>
@@ -8394,7 +8419,7 @@ TicTacToe hat klare Regeln, die durch verschiedene Bedingungen und Wiederholunge
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8420,7 +8445,47 @@ TicTacToe hat klare Regeln, die durch verschiedene Bedingungen und Wiederholunge
 <span class="p">{</span>
     <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Keine drei gleichen Zeichen in den Zeilen gefunden."</span><span class="p">);</span> <span class="o">//</span> <span class="n">Ausgabe</span><span class="p">,</span> <span class="n">wenn</span> <span class="n">kein</span> <span class="n">passendes</span> <span class="n">Zeichen</span> <span class="n">gefunden</span> <span class="n">wurde</span>
 <span class="p">}</span>
+
+<span class="o">/*</span>
+<span class="o">//</span> <span class="n">Dasselbe</span> <span class="n">als</span> <span class="n">kopfgesteuerte</span> <span class="n">Schleife</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">while</span> <span class="p">(</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">3</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="o">//</span> <span class="n">Überprüfung</span><span class="p">,</span> <span class="n">ob</span> <span class="n">alle</span> <span class="n">drei</span> <span class="n">Zeichen</span> <span class="ow">in</span> <span class="n">der</span> <span class="n">aktuellen</span> <span class="n">Zeile</span> <span class="n">gleich</span> <span class="n">sind</span> <span class="n">und</span> <span class="n">nicht</span> <span class="n">leer</span> <span class="p">(</span><span class="n">nicht</span> <span class="s2">" "</span> <span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">spielbrett</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">spielbrett</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">spielbrett</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">spielbrett</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">spielbrett</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">" "</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">gefunden</span> <span class="o">=</span> <span class="n">true</span><span class="p">;</span> <span class="o">//</span> <span class="n">Setzt</span> <span class="n">die</span> <span class="n">Variable</span> <span class="s1">'gefunden'</span> <span class="n">auf</span> <span class="n">true</span><span class="p">,</span> <span class="n">wenn</span> <span class="n">eine</span> <span class="n">Zeile</span> <span class="n">mit</span> <span class="n">drei</span> <span class="n">gleichen</span> <span class="n">Zeichen</span> <span class="n">gefunden</span> <span class="n">wurde</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Drei gleiche Zeichen gefunden: </span><span class="si">{spielbrett[i,0]}</span><span class="s2">"</span><span class="p">);</span> <span class="o">//</span> <span class="n">Gibt</span> <span class="n">das</span> <span class="n">Zeichen</span> <span class="n">aus</span><span class="p">,</span> <span class="n">das</span> <span class="ow">in</span> <span class="n">der</span> <span class="n">Zeile</span> <span class="n">dreimal</span> <span class="n">vorkommt</span>
+    <span class="p">}</span>
+    <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="o">//</span> <span class="n">Dasselbe</span> <span class="n">als</span> <span class="n">fußgesteuerte</span> <span class="n">Schleife</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">do</span>
+<span class="p">{</span>
+    <span class="o">//</span> <span class="n">Überprüfung</span><span class="p">,</span> <span class="n">ob</span> <span class="n">alle</span> <span class="n">drei</span> <span class="n">Zeichen</span> <span class="ow">in</span> <span class="n">der</span> <span class="n">aktuellen</span> <span class="n">Zeile</span> <span class="n">gleich</span> <span class="n">sind</span> <span class="n">und</span> <span class="n">nicht</span> <span class="n">leer</span> <span class="p">(</span><span class="n">nicht</span> <span class="s2">" "</span> <span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">spielbrett</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">spielbrett</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">spielbrett</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">spielbrett</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">spielbrett</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">" "</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">gefunden</span> <span class="o">=</span> <span class="n">true</span><span class="p">;</span> <span class="o">//</span> <span class="n">Setzt</span> <span class="n">die</span> <span class="n">Variable</span> <span class="s1">'gefunden'</span> <span class="n">auf</span> <span class="n">true</span><span class="p">,</span> <span class="n">wenn</span> <span class="n">eine</span> <span class="n">Zeile</span> <span class="n">mit</span> <span class="n">drei</span> <span class="n">gleichen</span> <span class="n">Zeichen</span> <span class="n">gefunden</span> <span class="n">wurde</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Drei gleiche Zeichen gefunden: </span><span class="si">{spielbrett[i,0]}</span><span class="s2">"</span><span class="p">);</span> <span class="o">//</span> <span class="n">Gibt</span> <span class="n">das</span> <span class="n">Zeichen</span> <span class="n">aus</span><span class="p">,</span> <span class="n">das</span> <span class="ow">in</span> <span class="n">der</span> <span class="n">Zeile</span> <span class="n">dreimal</span> <span class="n">vorkommt</span>
+    <span class="p">}</span>
+    <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">while</span> <span class="p">(</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">3</span> <span class="p">);</span>
+<span class="o">*/</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Keine drei gleichen Zeichen in den Zeilen gefunden.
+</pre>
 </div>
 </div>
 </div>
@@ -8463,30 +8528,29 @@ TicTacToe hat klare Regeln, die durch verschiedene Bedingungen und Wiederholunge
 <ul>
 <li><p><strong>Initialisierung der Variable  <code>gefunden</code>:</strong></p>
 <ul>
-<li>Zu Beginn wird die Variable  <code>gefunden</code>  auf  <code>False</code>  gesetzt. Diese Variable dient als Flag, um festzustellen, ob eine Zeile mit drei gleichen Zeichen gefunden wurde.</li>
+<li>Zu Beginn wird die Variable  <code>gefunden</code>  auf  <code>false</code>  gesetzt. Diese Variable dient als Flag, um festzustellen, ob eine Zeile mit drei gleichen Zeichen gefunden wurde.</li>
 </ul>
 </li>
-<li><p><strong>Schleife über das Spielbrett (<code>for reihe in spielbrett</code>):</strong></p>
+<li><p><strong>for-Schleife über die Zeilen des Arrays:</strong></p>
 <ul>
-<li>Der Code durchläuft jede Zeile (<code>reihe</code>) des 2D-Arrays  <code>spielbrett</code>.</li>
+<li>Der Code durchläuft jede Zeile des Arrays mit  <code>for (int i = 0; i &lt; 3; i++)</code>  und überprüft damit nacheinander die drei Zeilen des Spielbretts.</li>
 </ul>
 </li>
 <li><p><strong>Bedingung zur Überprüfung der Zeilen:</strong></p>
 <ul>
-<li>Innerhalb der Schleife wird mit  <code>if reihe[0] == reihe[1] == reihe[2] and reihe[0] != ' '</code>  überprüft, ob alle drei Zeichen in der aktuellen Zeile gleich sind und ob das Zeichen nicht leer (<code>' '</code>) ist.</li>
-<li>Falls diese Bedingung erfüllt ist, bedeutet das, dass drei gleiche Zeichen in der Zeile gefunden wurden.</li>
+<li>Innerhalb der Schleife kombiniert die Bedingung die Vergleiche  <code>spielbrett[i,0] == spielbrett[i,1]</code>  und  <code>spielbrett[i,1] == spielbrett[i,2]</code>  sowie einen Test auf <code>" "</code>, um festzustellen, ob alle drei Einträge einer Zeile identisch und nicht leer sind.</li>
+<li>Ist das der Fall, wurde eine Gewinnzeile gefunden.</li>
 </ul>
 </li>
 <li><p><strong>Aktion bei gefundenen Zeichen:</strong></p>
 <ul>
-<li>Wenn drei gleiche Zeichen gefunden werden, wird die Variable  <code>gefunden</code>  auf  <code>True</code>  gesetzt, um anzuzeigen, dass eine passende Zeile gefunden wurde.</li>
-<li>Außerdem wird das Zeichen, das dreimal vorkommt, mittels  <code>print(f"Drei gleiche Zeichen gefunden: {reihe[0]}")</code>  ausgegeben.</li>
+<li>Wenn drei gleiche Zeichen gefunden werden, setzt der Code  <code>gefunden</code>  auf  <code>true</code>  und gibt mit  <code>Console.WriteLine</code>  das gefundene Zeichen aus.</li>
 </ul>
 </li>
 <li><p><strong>Überprüfung nach der Schleife:</strong></p>
 <ul>
-<li>Nach dem Durchlaufen aller Zeilen wird überprüft, ob die Variable  <code>gefunden</code>  immer noch  <code>False</code>  ist, was bedeutet, dass keine Zeile mit drei gleichen Zeichen gefunden wurde.</li>
-<li>In diesem Fall wird die Meldung  <code>"Keine drei gleichen Zeichen in den Zeilen gefunden."</code>  ausgegeben.</li></ul></li></ul></details>
+<li>Nach dem Durchlaufen aller Zeilen wird geprüft, ob  <code>gefunden</code>  weiterhin  <code>false</code>  ist.</li>
+<li>Nur in diesem Fall gibt der Code die Meldung  <code>"Keine drei gleichen Zeichen in den Zeilen gefunden."</code>  aus.</li></ul></li></ul></details>
 
 
 
@@ -8635,7 +8699,7 @@ In einem Spiel wie TicTacToe können die Spielregeln in verschiedene Phasen unte
 
 <span class="k">void</span><span class="w"> </span><span class="nf">TicTacToe</span><span class="p">()</span>
 <span class="p">{</span>
-<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">spielfeld</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SpielStarten</span><span class="p">();</span>
+<span class="w">    </span><span class="kt">string</span><span class="p">[,]</span><span class="w"> </span><span class="n">spielfeld</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SpielStarten</span><span class="p">();</span>
 <span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">aktuellerSpieler</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"X"</span><span class="p">;</span>
 
 <span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="k">true</span><span class="p">)</span>
@@ -8783,9 +8847,9 @@ In einem Spiel wie TicTacToe können Dictionaries verwendet werden, um Informati
 <p><strong>Konzept:</strong> Datenstrukturen organisieren und speichern Daten effizient.</p>
 <p><strong>Beispiel in Tic-Tac-Toe:</strong></p>
 <ol>
-<li><p><strong>Datenstruktur <code>List</code> für das Board:</strong></p>
+<li><p><strong>Datenstruktur <code>string[,]</code> für das Board:</strong></p>
 <ul>
-<li>Das <code>spielbrett</code> ist eine Liste von Listen, die den aktuellen Zustand des Spiels speichert.</li>
+<li>Das <code>spielbrett</code> ist ein zweidimensionales Array, das den aktuellen Zustand des Spiels speichert.</li>
 </ul>
 </li>
 <li><p><strong>Datenstruktur <code>Dictionary</code> für mehrere Spiele:</strong></p>
