@@ -7622,12 +7622,12 @@ Wenn man Spielregeln wie die von TicTacToe liest, erfolgt der Prozess schrittwei
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">//</span> <span class="n">Textbasierte</span> <span class="n">TicTacToe</span><span class="o">-</span><span class="n">Spielsimulation</span> <span class="n">ohne</span> <span class="n">Methoden</span>
@@ -7641,26 +7641,6 @@ Wenn man Spielregeln wie die von TicTacToe liest, erfolgt der Prozess schrittwei
 <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"   |   |   "</span><span class="p">);</span>
 <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">();</span>
 </pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Start des Spiels!
-Leeres Spielfeld:
-   |   |   
------------
-   |   |   
------------
-   |   |   
-
-</pre>
 </div>
 </div>
 </div>
@@ -7983,6 +7963,43 @@ Leeres Spielfeld:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Eingaben-mit-Console.ReadLine()">Eingaben mit <code>Console.ReadLine()</code><a class="anchor-link" href="#Eingaben-mit-Console.ReadLine()">¶</a></h3><p>Damit dein Programm nicht nur Dinge <strong>ausgibt</strong>, sondern auch <strong>mit dir interagiert</strong>, kannst du in C# mit der Methode <code>Console.ReadLine()</code> eine <strong>Benutzereingabe</strong> von der Konsole einlesen. Das Programm wartet dabei, bis der Nutzer etwas eintippt und die Eingabetaste drückt. Der eingegebene Text wird als <strong>String</strong> zurückgegeben und kann anschließend weiterverarbeitet werden. So kannst du beispielsweise die Spielzüge im TicTacToe direkt von der Tastatur einlesen:</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div class="highlight"><pre><span></span><span class="c1">// Interaktive Eingabe mit Console.ReadLine() -&gt; funktioniert nur in einer echten Konsole oder auf z.B. dotnetfiddle.net</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="s">"Bitte gib deine nächste Position (1–9) ein: "</span><span class="p">);</span>
+<span class="kt">string</span><span class="w"> </span><span class="n">eingabe</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">();</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$"Du hast Feld {eingabe} gewählt!"</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Mit <code>Console.ReadLine()</code> wird dein TicTacToe-Spiel interaktiv – statt nur zuzuschauen, darfst du jetzt <strong>selbst mitspielen</strong>!</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="Datentypen-und-Variablen">Datentypen und Variablen<a class="anchor-link" href="#Datentypen-und-Variablen">¶</a></h3><ul>
 <li>Das TicTacToe-Spielbrett kann als 2D-Array (Liste von Listen) gespeichert werden.</li>
 <li>Jede Zelle des Arrays repräsentiert den Zustand eines Spielfeldes (leer, X, O).</li>
@@ -7998,7 +8015,7 @@ Leeres Spielfeld:
 <p><strong>Konzept:</strong>  Datentypen definieren die Art der Daten, die in Variablen gespeichert werden können.</p>
 <p><strong>Beispiel in Tic-Tac-Toe:</strong></p>
 <ol>
-<li><p><strong>Datentyp  <code>List</code>  für das Board:</strong></p>
+<li><p><strong>Datentyp  <code>Array</code>  für das Board:</strong></p>
 <ul>
 <li>Das  <code>board</code>  ist eine Liste von Listen (2D-Array), wobei jede innere Liste eine Reihe des Boards darstellt. Die Elemente der Listen sind Zeichen (<code>'X'</code>,  <code>'O'</code>  oder  <code>' '</code>).</li>
 </ul>
@@ -8027,25 +8044,27 @@ Leeres Spielfeld:
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">//</span> <span class="n">Initialisierung</span> <span class="n">des</span> <span class="n">Spielbretts</span> <span class="n">als</span> <span class="mi">3</span><span class="n">x3</span><span class="o">-</span><span class="n">Array</span>
-<span class="n">string</span><span class="p">[][]</span> <span class="n">spielbrett</span> <span class="o">=</span>
+<span class="n">string</span><span class="p">[,]</span> <span class="n">spielbrett</span> <span class="o">=</span>
 <span class="p">{</span>
-    <span class="n">new</span><span class="p">[]</span> <span class="p">{</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span> <span class="p">},</span>
-    <span class="n">new</span><span class="p">[]</span> <span class="p">{</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span> <span class="p">},</span>
-    <span class="n">new</span><span class="p">[]</span> <span class="p">{</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span> <span class="p">}</span>
+    <span class="p">{</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span> <span class="p">}</span>
 <span class="p">};</span>
 
 <span class="o">//</span> <span class="n">Zähler</span> <span class="n">für</span> <span class="n">die</span> <span class="n">erste</span> <span class="n">Zeile</span>
 <span class="nb">int</span> <span class="n">ersteZeileIndex</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
 <span class="o">//</span> <span class="n">Beispielhafte</span> <span class="n">Spielzüge</span>
-<span class="n">spielbrett</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"X"</span><span class="p">;</span> <span class="o">//</span> <span class="n">Spieler</span> <span class="n">X</span> <span class="n">setzt</span> <span class="n">auf</span> <span class="n">die</span> <span class="n">obere</span> <span class="n">linke</span> <span class="n">Position</span>
-<span class="n">spielbrett</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"O"</span><span class="p">;</span> <span class="o">//</span> <span class="n">Spieler</span> <span class="n">O</span> <span class="n">setzt</span> <span class="n">auf</span> <span class="n">die</span> <span class="n">mittlere</span> <span class="n">Position</span>
-<span class="n">spielbrett</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"X"</span><span class="p">;</span> <span class="o">//</span> <span class="n">Spieler</span> <span class="n">X</span> <span class="n">setzt</span> <span class="n">auf</span> <span class="n">die</span> <span class="n">untere</span> <span class="n">rechte</span> <span class="n">Position</span>
+<span class="n">spielbrett</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"X"</span><span class="p">;</span> <span class="o">//</span> <span class="n">Spieler</span> <span class="n">X</span> <span class="n">setzt</span> <span class="n">auf</span> <span class="n">die</span> <span class="n">obere</span> <span class="n">linke</span> <span class="n">Position</span>
+<span class="n">spielbrett</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"O"</span><span class="p">;</span> <span class="o">//</span> <span class="n">Spieler</span> <span class="n">O</span> <span class="n">setzt</span> <span class="n">auf</span> <span class="n">die</span> <span class="n">mittlere</span> <span class="n">Position</span>
+<span class="n">spielbrett</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"X"</span><span class="p">;</span> <span class="o">//</span> <span class="n">Spieler</span> <span class="n">X</span> <span class="n">setzt</span> <span class="n">auf</span> <span class="n">die</span> <span class="n">untere</span> <span class="n">rechte</span> <span class="n">Position</span>
 
 <span class="o">//</span> <span class="n">Ausgabe</span> <span class="n">des</span> <span class="n">Spielbretts</span>
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">Join</span><span class="p">(</span><span class="s2">"|"</span><span class="p">,</span> <span class="n">spielbrett</span><span class="p">[</span><span class="n">ersteZeileIndex</span><span class="p">]));</span> <span class="o">//</span> <span class="n">Ausgabe</span> <span class="n">der</span> <span class="n">ersten</span> <span class="n">Zeile</span>
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">Join</span><span class="p">(</span><span class="s2">"|"</span><span class="p">,</span> <span class="n">spielbrett</span><span class="p">[</span><span class="mi">1</span><span class="p">]));</span> <span class="o">//</span> <span class="n">Ausgabe</span> <span class="n">der</span> <span class="n">zweiten</span> <span class="n">Zeile</span>
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">Join</span><span class="p">(</span><span class="s2">"|"</span><span class="p">,</span> <span class="n">spielbrett</span><span class="p">[</span><span class="mi">2</span><span class="p">]));</span> <span class="o">//</span> <span class="n">Ausgabe</span> <span class="n">der</span> <span class="n">dritten</span> <span class="n">Zeile</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"</span><span class="si">{spielbrett[0,0]}</span><span class="s2"> | </span><span class="si">{spielbrett[0,1]}</span><span class="s2"> | </span><span class="si">{spielbrett[0,2]}</span><span class="s2">"</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"---------"</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"</span><span class="si">{spielbrett[1,0]}</span><span class="s2"> | </span><span class="si">{spielbrett[1,1]}</span><span class="s2"> | </span><span class="si">{spielbrett[1,2]}</span><span class="s2">"</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"---------"</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"</span><span class="si">{spielbrett[2,0]}</span><span class="s2"> | </span><span class="si">{spielbrett[2,1]}</span><span class="s2"> | </span><span class="si">{spielbrett[2,2]}</span><span class="s2">"</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -8195,55 +8214,57 @@ Arithmetik spielt in den Regeln von Spielen wie TicTacToe eine Rolle, um die Spi
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="o">//</span> <span class="n">Tic</span><span class="o">-</span><span class="n">Tac</span><span class="o">-</span><span class="n">Toe</span><span class="o">-</span><span class="n">Spielbrett</span>
-<span class="n">spielbrett</span> <span class="o">=</span> <span class="n">new</span><span class="p">[]</span>
-<span class="p">{</span>
-    <span class="n">new</span><span class="p">[]</span> <span class="p">{</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span> <span class="p">},</span>
-    <span class="n">new</span><span class="p">[]</span> <span class="p">{</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span> <span class="p">},</span>
-    <span class="n">new</span><span class="p">[]</span> <span class="p">{</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span> <span class="p">}</span>
-<span class="p">};</span>
-
-<span class="o">//</span> <span class="n">Zähler</span> <span class="n">für</span> <span class="n">die</span> <span class="n">Anzahl</span> <span class="n">der</span> <span class="n">Spielzüge</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">//</span> <span class="n">Zähler</span> <span class="n">für</span> <span class="n">die</span> <span class="n">Anzahl</span> <span class="n">der</span> <span class="n">Spielzüge</span>
 <span class="nb">int</span> <span class="n">zugZaehler</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="o">//</span> <span class="n">Arithmetik</span><span class="p">:</span> <span class="n">Startwert</span> <span class="n">für</span> <span class="n">die</span> <span class="n">Anzahl</span> <span class="n">der</span> <span class="n">Züge</span>
 
 <span class="o">//</span> <span class="n">Beispielhafte</span> <span class="n">Spielzüge</span>
-<span class="n">spielbrett</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"X"</span><span class="p">;</span> <span class="o">//</span> <span class="n">Spieler</span> <span class="n">X</span> <span class="n">macht</span> <span class="n">einen</span> <span class="n">Zug</span>
-<span class="n">zugZaehler</span> <span class="o">=</span> <span class="n">zugZaehler</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+<span class="n">spielbrett</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"X"</span><span class="p">;</span> <span class="o">//</span> <span class="n">Spieler</span> <span class="n">X</span> <span class="n">macht</span> <span class="n">einen</span> <span class="n">Zug</span>
 <span class="n">zugZaehler</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span> <span class="o">//</span> <span class="n">Arithmetik</span><span class="p">:</span> <span class="n">Spielzugzähler</span> <span class="n">um</span> <span class="mi">1</span> <span class="n">erhöhen</span>
 
-<span class="n">spielbrett</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"O"</span><span class="p">;</span> <span class="o">//</span> <span class="n">Spieler</span> <span class="n">O</span> <span class="n">macht</span> <span class="n">einen</span> <span class="n">Zug</span>
+<span class="n">spielbrett</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"O"</span><span class="p">;</span> <span class="o">//</span> <span class="n">Spieler</span> <span class="n">O</span> <span class="n">macht</span> <span class="n">einen</span> <span class="n">Zug</span>
 <span class="n">zugZaehler</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span> <span class="o">//</span> <span class="n">Arithmetik</span><span class="p">:</span> <span class="n">Spielzugzähler</span> <span class="n">um</span> <span class="mi">1</span> <span class="n">erhöhen</span>
 
-<span class="n">spielbrett</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"X"</span><span class="p">;</span> <span class="o">//</span> <span class="n">Spieler</span> <span class="n">X</span> <span class="n">macht</span> <span class="n">einen</span> <span class="n">weiteren</span> <span class="n">Zug</span>
+<span class="n">spielbrett</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"X"</span><span class="p">;</span> <span class="o">//</span> <span class="n">Spieler</span> <span class="n">X</span> <span class="n">macht</span> <span class="n">einen</span> <span class="n">weiteren</span> <span class="n">Zug</span>
 <span class="n">zugZaehler</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span> <span class="o">//</span> <span class="n">Arithmetik</span><span class="p">:</span> <span class="n">Spielzugzähler</span> <span class="n">um</span> <span class="mi">1</span> <span class="n">erhöhen</span>
 
-<span class="n">spielbrett</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"O"</span><span class="p">;</span> <span class="o">//</span> <span class="n">Spieler</span> <span class="n">O</span> <span class="n">macht</span> <span class="n">einen</span> <span class="n">weiteren</span> <span class="n">Zug</span>
+<span class="n">spielbrett</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"O"</span><span class="p">;</span> <span class="o">//</span> <span class="n">Spieler</span> <span class="n">O</span> <span class="n">macht</span> <span class="n">einen</span> <span class="n">weiteren</span> <span class="n">Zug</span>
 <span class="n">zugZaehler</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span> <span class="o">//</span> <span class="n">Arithmetik</span><span class="p">:</span> <span class="n">Spielzugzähler</span> <span class="n">um</span> <span class="mi">1</span> <span class="n">erhöhen</span>
 
-<span class="n">spielbrett</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"X"</span><span class="p">;</span> <span class="o">//</span> <span class="n">Spieler</span> <span class="n">X</span> <span class="n">macht</span> <span class="n">einen</span> <span class="n">weiteren</span> <span class="n">Zug</span>
+<span class="n">spielbrett</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"X"</span><span class="p">;</span> <span class="o">//</span> <span class="n">Spieler</span> <span class="n">X</span> <span class="n">macht</span> <span class="n">einen</span> <span class="n">weiteren</span> <span class="n">Zug</span>
 <span class="n">zugZaehler</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span> <span class="o">//</span> <span class="n">Arithmetik</span><span class="p">:</span> <span class="n">Spielzugzähler</span> <span class="n">um</span> <span class="mi">1</span> <span class="n">erhöhen</span>
 
-<span class="n">spielbrett</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"O"</span><span class="p">;</span> <span class="o">//</span> <span class="n">Spieler</span> <span class="n">O</span> <span class="n">macht</span> <span class="n">einen</span> <span class="n">weiteren</span> <span class="n">Zug</span>
+<span class="n">spielbrett</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"O"</span><span class="p">;</span> <span class="o">//</span> <span class="n">Spieler</span> <span class="n">O</span> <span class="n">macht</span> <span class="n">einen</span> <span class="n">weiteren</span> <span class="n">Zug</span>
 <span class="n">zugZaehler</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span> <span class="o">//</span> <span class="n">Arithmetik</span><span class="p">:</span> <span class="n">Spielzugzähler</span> <span class="n">um</span> <span class="mi">1</span> <span class="n">erhöhen</span>
 
-<span class="n">spielbrett</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"X"</span><span class="p">;</span> <span class="o">//</span> <span class="n">Spieler</span> <span class="n">X</span> <span class="n">macht</span> <span class="n">einen</span> <span class="n">weiteren</span> <span class="n">Zug</span>
+<span class="n">spielbrett</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"X"</span><span class="p">;</span> <span class="o">//</span> <span class="n">Spieler</span> <span class="n">X</span> <span class="n">macht</span> <span class="n">einen</span> <span class="n">weiteren</span> <span class="n">Zug</span>
 <span class="n">zugZaehler</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span> <span class="o">//</span> <span class="n">Arithmetik</span><span class="p">:</span> <span class="n">Spielzugzähler</span> <span class="n">um</span> <span class="mi">1</span> <span class="n">erhöhen</span>
 
-<span class="n">spielbrett</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"O"</span><span class="p">;</span> <span class="o">//</span> <span class="n">Spieler</span> <span class="n">O</span> <span class="n">macht</span> <span class="n">einen</span> <span class="n">weiteren</span> <span class="n">Zug</span>
+<span class="n">spielbrett</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"O"</span><span class="p">;</span> <span class="o">//</span> <span class="n">Spieler</span> <span class="n">O</span> <span class="n">macht</span> <span class="n">einen</span> <span class="n">weiteren</span> <span class="n">Zug</span>
 <span class="n">zugZaehler</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span> <span class="o">//</span> <span class="n">Arithmetik</span><span class="p">:</span> <span class="n">Spielzugzähler</span> <span class="n">um</span> <span class="mi">1</span> <span class="n">erhöhen</span>
 
-<span class="n">spielbrett</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"X"</span><span class="p">;</span> <span class="o">//</span> <span class="n">Spieler</span> <span class="n">X</span> <span class="n">macht</span> <span class="n">den</span> <span class="n">letzten</span> <span class="n">Zug</span>
+<span class="n">spielbrett</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"X"</span><span class="p">;</span> <span class="o">//</span> <span class="n">Spieler</span> <span class="n">X</span> <span class="n">macht</span> <span class="n">den</span> <span class="n">letzten</span> <span class="n">Zug</span>
 <span class="n">zugZaehler</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span> <span class="o">//</span> <span class="n">Arithmetik</span><span class="p">:</span> <span class="n">Spielzugzähler</span> <span class="n">um</span> <span class="mi">1</span> <span class="n">erhöhen</span>
 
 <span class="o">//</span> <span class="n">Überprüfen</span><span class="p">,</span> <span class="n">ob</span> <span class="n">das</span> <span class="n">Spiel</span> <span class="n">unentschieden</span> <span class="n">ist</span>
 <span class="k">if</span> <span class="p">(</span><span class="n">zugZaehler</span> <span class="o">==</span> <span class="mi">9</span><span class="p">)</span> <span class="o">//</span> <span class="n">Arithmetik</span><span class="p">:</span> <span class="n">Wenn</span> <span class="mi">9</span> <span class="n">Züge</span> <span class="n">gemacht</span> <span class="n">wurden</span><span class="p">,</span> <span class="n">ist</span> <span class="n">das</span> <span class="n">Spiel</span> <span class="n">unentschieden</span>
 <span class="p">{</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Das Spiel endet unentschieden!"</span><span class="p">);</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Das Spiel endet nach 9 Zügen!"</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">zugZaehler</span> <span class="o">&lt;</span> <span class="mi">9</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Das Spiel ist noch nicht beendet."</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="k">else</span>
 <span class="p">{</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Das Spiel ist noch nicht unentschieden."</span><span class="p">);</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Ungültiger Zugzähler!"</span><span class="p">);</span>
 <span class="p">}</span>
+
+<span class="o">//</span> <span class="n">Ausgabe</span> <span class="n">des</span> <span class="n">Spielbretts</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"</span><span class="si">{spielbrett[0,0]}</span><span class="s2"> | </span><span class="si">{spielbrett[0,1]}</span><span class="s2"> | </span><span class="si">{spielbrett[0,2]}</span><span class="s2">"</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"---------"</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"</span><span class="si">{spielbrett[1,0]}</span><span class="s2"> | </span><span class="si">{spielbrett[1,1]}</span><span class="s2"> | </span><span class="si">{spielbrett[1,2]}</span><span class="s2">"</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"---------"</span><span class="p">);</span>
+<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"</span><span class="si">{spielbrett[2,0]}</span><span class="s2"> | </span><span class="si">{spielbrett[2,1]}</span><span class="s2"> | </span><span class="si">{spielbrett[2,2]}</span><span class="s2">"</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -8384,13 +8405,13 @@ TicTacToe hat klare Regeln, die durch verschiedene Bedingungen und Wiederholunge
 <div class="highlight hl-ipython3"><pre><span></span><span class="nb">bool</span> <span class="n">gefunden</span> <span class="o">=</span> <span class="n">false</span><span class="p">;</span> <span class="o">//</span> <span class="n">Variable</span><span class="p">,</span> <span class="n">die</span> <span class="n">anzeigt</span><span class="p">,</span> <span class="n">ob</span> <span class="n">drei</span> <span class="n">gleiche</span> <span class="n">Zeichen</span> <span class="n">gefunden</span> <span class="n">wurden</span>
 
 <span class="o">//</span> <span class="n">Schleife</span><span class="p">,</span> <span class="n">die</span> <span class="n">durch</span> <span class="n">jede</span> <span class="n">Zeile</span> <span class="n">des</span> <span class="n">Spielbretts</span> <span class="n">iteriert</span>
-<span class="n">foreach</span> <span class="p">(</span><span class="n">var</span> <span class="n">reihe</span> <span class="ow">in</span> <span class="n">spielbrett</span><span class="p">)</span>
+<span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="o">//</span> <span class="n">Überprüfung</span><span class="p">,</span> <span class="n">ob</span> <span class="n">alle</span> <span class="n">drei</span> <span class="n">Zeichen</span> <span class="ow">in</span> <span class="n">der</span> <span class="n">aktuellen</span> <span class="n">Zeile</span> <span class="n">gleich</span> <span class="n">sind</span> <span class="n">und</span> <span class="n">nicht</span> <span class="n">leer</span> <span class="p">(</span><span class="n">nicht</span> <span class="s2">" "</span> <span class="p">)</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">reihe</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">reihe</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">reihe</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">reihe</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">reihe</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">" "</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">spielbrett</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">spielbrett</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">spielbrett</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">spielbrett</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">spielbrett</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">" "</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="n">gefunden</span> <span class="o">=</span> <span class="n">true</span><span class="p">;</span> <span class="o">//</span> <span class="n">Setzt</span> <span class="n">die</span> <span class="n">Variable</span> <span class="s1">'gefunden'</span> <span class="n">auf</span> <span class="n">true</span><span class="p">,</span> <span class="n">wenn</span> <span class="n">eine</span> <span class="n">Zeile</span> <span class="n">mit</span> <span class="n">drei</span> <span class="n">gleichen</span> <span class="n">Zeichen</span> <span class="n">gefunden</span> <span class="n">wurde</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Drei gleiche Zeichen gefunden: </span><span class="si">{reihe[0]}</span><span class="s2">"</span><span class="p">);</span> <span class="o">//</span> <span class="n">Gibt</span> <span class="n">das</span> <span class="n">Zeichen</span> <span class="n">aus</span><span class="p">,</span> <span class="n">das</span> <span class="ow">in</span> <span class="n">der</span> <span class="n">Zeile</span> <span class="n">dreimal</span> <span class="n">vorkommt</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Drei gleiche Zeichen gefunden: </span><span class="si">{spielbrett[i,0]}</span><span class="s2">"</span><span class="p">);</span> <span class="o">//</span> <span class="n">Gibt</span> <span class="n">das</span> <span class="n">Zeichen</span> <span class="n">aus</span><span class="p">,</span> <span class="n">das</span> <span class="ow">in</span> <span class="n">der</span> <span class="n">Zeile</span> <span class="n">dreimal</span> <span class="n">vorkommt</span>
     <span class="p">}</span>
 <span class="p">}</span>
 
@@ -8503,139 +8524,144 @@ In einem Spiel wie TicTacToe können die Spielregeln in verschiedene Phasen unte
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">string</span><span class="p">[][]</span> <span class="n">SpielStarten</span><span class="p">()</span>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div class="highlight"><pre><span></span><span class="kt">string</span><span class="p">[,]</span><span class="w"> </span><span class="n">SpielStarten</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Willkommen zu TicTacToe!"</span><span class="p">);</span>
-    <span class="k">return</span> <span class="n">new</span><span class="p">[]</span>
-    <span class="p">{</span>
-        <span class="n">new</span><span class="p">[]</span> <span class="p">{</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span> <span class="p">},</span>
-        <span class="n">new</span><span class="p">[]</span> <span class="p">{</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span> <span class="p">},</span>
-        <span class="n">new</span><span class="p">[]</span> <span class="p">{</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span><span class="p">,</span> <span class="s2">" "</span> <span class="p">}</span>
-    <span class="p">};</span>
+<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"Willkommen zu TicTacToe!"</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">string</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">]</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="s">" "</span><span class="p">,</span><span class="w"> </span><span class="s">" "</span><span class="p">,</span><span class="w"> </span><span class="s">" "</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="s">" "</span><span class="p">,</span><span class="w"> </span><span class="s">" "</span><span class="p">,</span><span class="w"> </span><span class="s">" "</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="s">" "</span><span class="p">,</span><span class="w"> </span><span class="s">" "</span><span class="p">,</span><span class="w"> </span><span class="s">" "</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">};</span>
 <span class="p">}</span>
 
-<span class="n">void</span> <span class="n">SpielzugMachen</span><span class="p">(</span><span class="n">string</span><span class="p">[][]</span> <span class="n">spielfeld</span><span class="p">,</span> <span class="n">string</span> <span class="n">spieler</span><span class="p">)</span>
+<span class="k">void</span><span class="w"> </span><span class="nf">SpielzugMachen</span><span class="p">(</span><span class="kt">string</span><span class="p">[,]</span><span class="w"> </span><span class="n">spielfeld</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">spieler</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="k">while</span> <span class="p">(</span><span class="n">true</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">Write</span><span class="p">(</span><span class="err">$</span><span class="s2">"Spieler </span><span class="si">{spieler}</span><span class="s2">, wähle eine Zeile (0-2): "</span><span class="p">);</span>
-        <span class="k">if</span> <span class="p">(</span><span class="o">!</span>int.TryParse<span class="o">(</span>Console.ReadLine<span class="o">()</span>,<span class="w"> </span>out<span class="w"> </span>var<span class="w"> </span>zeile<span class="o">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span>zeile<span class="w"> </span>&lt;<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span>zeile<span class="w"> </span>&gt;<span class="w"> </span><span class="m">2</span><span class="o">)</span>
-        <span class="p">{</span>
-            <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Ungültige Eingabe. Bitte wähle eine Zahl zwischen 0 und 2."</span><span class="p">);</span>
-            <span class="k">continue</span><span class="p">;</span>
-        <span class="p">}</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="k">true</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="s">$"Spieler {spieler}, wähle eine Zeile (0-2): "</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="kt">int</span><span class="p">.</span><span class="n">TryParse</span><span class="p">(</span><span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">(),</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="kt">var</span><span class="w"> </span><span class="n">zeile</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">zeile</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">zeile</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"Ungültige Eingabe. Bitte wähle eine Zahl zwischen 0 und 2."</span><span class="p">);</span>
+<span class="w">            </span><span class="k">continue</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
 
-        <span class="n">Console</span><span class="o">.</span><span class="n">Write</span><span class="p">(</span><span class="err">$</span><span class="s2">"Spieler </span><span class="si">{spieler}</span><span class="s2">, wähle eine Spalte (0-2): "</span><span class="p">);</span>
-        <span class="k">if</span> <span class="p">(</span><span class="o">!</span>int.TryParse<span class="o">(</span>Console.ReadLine<span class="o">()</span>,<span class="w"> </span>out<span class="w"> </span>var<span class="w"> </span>spalte<span class="o">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span>spalte<span class="w"> </span>&lt;<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span>spalte<span class="w"> </span>&gt;<span class="w"> </span><span class="m">2</span><span class="o">)</span>
-        <span class="p">{</span>
-            <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Ungültige Eingabe. Bitte wähle eine Zahl zwischen 0 und 2."</span><span class="p">);</span>
-            <span class="k">continue</span><span class="p">;</span>
-        <span class="p">}</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="s">$"Spieler {spieler}, wähle eine Spalte (0-2): "</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="kt">int</span><span class="p">.</span><span class="n">TryParse</span><span class="p">(</span><span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">(),</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="kt">var</span><span class="w"> </span><span class="n">spalte</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">spalte</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">spalte</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"Ungültige Eingabe. Bitte wähle eine Zahl zwischen 0 und 2."</span><span class="p">);</span>
+<span class="w">            </span><span class="k">continue</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
 
-        <span class="k">if</span> <span class="p">(</span><span class="n">spielfeld</span><span class="p">[</span><span class="n">zeile</span><span class="p">][</span><span class="n">spalte</span><span class="p">]</span> <span class="o">==</span> <span class="s2">" "</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="n">spielfeld</span><span class="p">[</span><span class="n">zeile</span><span class="p">][</span><span class="n">spalte</span><span class="p">]</span> <span class="o">=</span> <span class="n">spieler</span><span class="p">;</span>
-            <span class="k">break</span><span class="p">;</span>
-        <span class="p">}</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">spielfeld</span><span class="p">[</span><span class="n">zeile</span><span class="p">,</span><span class="w"> </span><span class="n">spalte</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">" "</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">spielfeld</span><span class="p">[</span><span class="n">zeile</span><span class="p">,</span><span class="w"> </span><span class="n">spalte</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">spieler</span><span class="p">;</span>
+<span class="w">            </span><span class="k">break</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
 
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Das Feld ist bereits belegt. Wähle ein anderes Feld."</span><span class="p">);</span>
-    <span class="p">}</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"Das Feld ist bereits belegt. Wähle ein anderes Feld."</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 
-<span class="n">string</span><span class="err">?</span> <span class="n">SpielEnde</span><span class="p">(</span><span class="n">string</span><span class="p">[][]</span> <span class="n">spielfeld</span><span class="p">,</span> <span class="n">string</span> <span class="n">spieler</span><span class="p">)</span>
+<span class="kt">string?</span><span class="w"> </span><span class="n">SpielEnde</span><span class="p">(</span><span class="kt">string</span><span class="p">[,]</span><span class="w"> </span><span class="n">spielfeld</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">spieler</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="o">//</span> <span class="n">Überprüfung</span> <span class="n">der</span> <span class="n">Zeilen</span><span class="p">,</span> <span class="n">Spalten</span> <span class="n">und</span> <span class="n">Diagonalen</span> <span class="n">auf</span> <span class="n">Gewinnbedingungen</span>
-    <span class="n">foreach</span> <span class="p">(</span><span class="n">var</span> <span class="n">reihe</span> <span class="ow">in</span> <span class="n">spielfeld</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">reihe</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">reihe</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">reihe</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">reihe</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">reihe</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">" "</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="k">return</span> <span class="err">$</span><span class="s2">"Spieler </span><span class="si">{spieler}</span><span class="s2"> hat gewonnen!"</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="c1">// Zeilen prüfen</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">var</span><span class="w"> </span><span class="n">zeile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">zeile</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="n">zeile</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">spielfeld</span><span class="p">[</span><span class="n">zeile</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">spielfeld</span><span class="p">[</span><span class="n">zeile</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">&amp;&amp;</span>
+<span class="w">            </span><span class="n">spielfeld</span><span class="p">[</span><span class="n">zeile</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">spielfeld</span><span class="p">[</span><span class="n">zeile</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">&amp;&amp;</span>
+<span class="w">            </span><span class="n">spielfeld</span><span class="p">[</span><span class="n">zeile</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s">" "</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="s">$"Spieler {spieler} hat gewonnen!"</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
 
-    <span class="k">for</span> <span class="p">(</span><span class="n">var</span> <span class="n">spalte</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">spalte</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="n">spalte</span><span class="o">++</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">spielfeld</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">spalte</span><span class="p">]</span> <span class="o">==</span> <span class="n">spielfeld</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">spalte</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">spielfeld</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">spalte</span><span class="p">]</span> <span class="o">==</span> <span class="n">spielfeld</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="n">spalte</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">spielfeld</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">spalte</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">" "</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="k">return</span> <span class="err">$</span><span class="s2">"Spieler </span><span class="si">{spieler}</span><span class="s2"> hat gewonnen!"</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="c1">// Spalten prüfen</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">var</span><span class="w"> </span><span class="n">spalte</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">spalte</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="n">spalte</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">spielfeld</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">spalte</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">spielfeld</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">spalte</span><span class="p">]</span><span class="w"> </span><span class="o">&amp;&amp;</span>
+<span class="w">            </span><span class="n">spielfeld</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">spalte</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">spielfeld</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">spalte</span><span class="p">]</span><span class="w"> </span><span class="o">&amp;&amp;</span>
+<span class="w">            </span><span class="n">spielfeld</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">spalte</span><span class="p">]</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s">" "</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="s">$"Spieler {spieler} hat gewonnen!"</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
 
-    <span class="k">if</span> <span class="p">(</span><span class="n">spielfeld</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">spielfeld</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">spielfeld</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">spielfeld</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">spielfeld</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">" "</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="err">$</span><span class="s2">"Spieler </span><span class="si">{spieler}</span><span class="s2"> hat gewonnen!"</span><span class="p">;</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="c1">// Diagonalen prüfen</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">spielfeld</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">spielfeld</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">&amp;&amp;</span>
+<span class="w">        </span><span class="n">spielfeld</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">spielfeld</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">&amp;&amp;</span>
+<span class="w">        </span><span class="n">spielfeld</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s">" "</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">$"Spieler {spieler} hat gewonnen!"</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    <span class="k">if</span> <span class="p">(</span><span class="n">spielfeld</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="n">spielfeld</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">spielfeld</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">spielfeld</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">spielfeld</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">" "</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="err">$</span><span class="s2">"Spieler </span><span class="si">{spieler}</span><span class="s2"> hat gewonnen!"</span><span class="p">;</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">spielfeld</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">spielfeld</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">&amp;&amp;</span>
+<span class="w">        </span><span class="n">spielfeld</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">spielfeld</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">&amp;&amp;</span>
+<span class="w">        </span><span class="n">spielfeld</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s">" "</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">$"Spieler {spieler} hat gewonnen!"</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    <span class="o">//</span> <span class="n">Überprüfung</span> <span class="n">auf</span> <span class="n">Unentschieden</span>
-    <span class="n">var</span> <span class="n">alleFelderBelegt</span> <span class="o">=</span> <span class="n">true</span><span class="p">;</span>
-    <span class="n">foreach</span> <span class="p">(</span><span class="n">var</span> <span class="n">reihe</span> <span class="ow">in</span> <span class="n">spielfeld</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">foreach</span> <span class="p">(</span><span class="n">var</span> <span class="n">feld</span> <span class="ow">in</span> <span class="n">reihe</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">feld</span> <span class="o">==</span> <span class="s2">" "</span><span class="p">)</span>
-            <span class="p">{</span>
-                <span class="n">alleFelderBelegt</span> <span class="o">=</span> <span class="n">false</span><span class="p">;</span>
-                <span class="k">break</span><span class="p">;</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
+<span class="w">    </span><span class="c1">// Auf Unentschieden prüfen</span>
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">alleFelderBelegt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">var</span><span class="w"> </span><span class="n">zeile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">zeile</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="n">zeile</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">var</span><span class="w"> </span><span class="n">spalte</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">spalte</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="n">spalte</span><span class="o">++</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">spielfeld</span><span class="p">[</span><span class="n">zeile</span><span class="p">,</span><span class="w"> </span><span class="n">spalte</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">" "</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">alleFelderBelegt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">alleFelderBelegt</span><span class="p">)</span>
+<span class="w">            </span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-        <span class="k">if</span> <span class="p">(</span><span class="o">!</span>alleFelderBelegt<span class="o">)</span>
-        <span class="p">{</span>
-            <span class="k">break</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">alleFelderBelegt</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">"Unentschieden!"</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    <span class="k">if</span> <span class="p">(</span><span class="n">alleFelderBelegt</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="s2">"Unentschieden!"</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="k">return</span> <span class="n">null</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="n">void</span> <span class="n">TicTacToe</span><span class="p">()</span>
+<span class="k">void</span><span class="w"> </span><span class="nf">TicTacToe</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="n">var</span> <span class="n">spielfeld</span> <span class="o">=</span> <span class="n">SpielStarten</span><span class="p">();</span> <span class="o">//</span> <span class="n">Spiel</span> <span class="n">wird</span> <span class="n">gestartet</span>
-    <span class="n">var</span> <span class="n">aktuellerSpieler</span> <span class="o">=</span> <span class="s2">"X"</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">spielfeld</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SpielStarten</span><span class="p">();</span>
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">aktuellerSpieler</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"X"</span><span class="p">;</span>
 
-    <span class="k">while</span> <span class="p">(</span><span class="n">true</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">SpielzugMachen</span><span class="p">(</span><span class="n">spielfeld</span><span class="p">,</span> <span class="n">aktuellerSpieler</span><span class="p">);</span> <span class="o">//</span> <span class="n">Spieler</span> <span class="n">macht</span> <span class="n">seinen</span> <span class="n">Zug</span>
-        <span class="n">var</span> <span class="n">ergebnis</span> <span class="o">=</span> <span class="n">SpielEnde</span><span class="p">(</span><span class="n">spielfeld</span><span class="p">,</span> <span class="n">aktuellerSpieler</span><span class="p">);</span> <span class="o">//</span> <span class="n">Überprüfen</span><span class="p">,</span> <span class="n">ob</span> <span class="n">das</span> <span class="n">Spiel</span> <span class="n">zu</span> <span class="n">Ende</span> <span class="n">ist</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="k">true</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">SpielzugMachen</span><span class="p">(</span><span class="n">spielfeld</span><span class="p">,</span><span class="w"> </span><span class="n">aktuellerSpieler</span><span class="p">);</span>
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">ergebnis</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SpielEnde</span><span class="p">(</span><span class="n">spielfeld</span><span class="p">,</span><span class="w"> </span><span class="n">aktuellerSpieler</span><span class="p">);</span>
 
-        <span class="n">foreach</span> <span class="p">(</span><span class="n">var</span> <span class="n">reihe</span> <span class="ow">in</span> <span class="n">spielfeld</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">Join</span><span class="p">(</span><span class="s2">"|"</span><span class="p">,</span> <span class="n">reihe</span><span class="p">));</span>
-        <span class="p">}</span>
+<span class="w">        </span><span class="c1">// Spielfeld anzeigen</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">var</span><span class="w"> </span><span class="n">zeile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">zeile</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="n">zeile</span><span class="o">++</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$"{spielfeld[zeile, 0]}|{spielfeld[zeile, 1]}|{spielfeld[zeile, 2]}"</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
 
-        <span class="k">if</span> <span class="p">(</span><span class="n">ergebnis</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">null</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">ergebnis</span><span class="p">);</span>
-            <span class="k">break</span><span class="p">;</span>
-        <span class="p">}</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ergebnis</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">ergebnis</span><span class="p">);</span>
+<span class="w">            </span><span class="k">break</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
 
-        <span class="o">//</span> <span class="n">Spieler</span> <span class="n">wechseln</span>
-        <span class="n">aktuellerSpieler</span> <span class="o">=</span> <span class="n">aktuellerSpieler</span> <span class="o">==</span> <span class="s2">"X"</span> <span class="err">?</span> <span class="s2">"O"</span> <span class="p">:</span> <span class="s2">"X"</span><span class="p">;</span>
-    <span class="p">}</span>
+<span class="w">        </span><span class="n">aktuellerSpieler</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">aktuellerSpieler</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">"X"</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">"O"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s">"X"</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 
-<span class="o">//</span> <span class="n">Spiel</span> <span class="n">starten</span>
+<span class="c1">// Spiel starten</span>
 <span class="n">TicTacToe</span><span class="p">();</span>
 </pre></div>
-</div>
 </div>
 </div>
 </div>
