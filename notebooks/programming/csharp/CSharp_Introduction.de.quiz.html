@@ -1,7 +1,7 @@
-<div id="programming-ttt-quiz" style="font-family: system-ui, sans-serif; max-width: 780px; line-height: 1.4;">
+<div id="csharp-intro-quiz" style="font-family: system-ui, sans-serif; max-width: 780px; line-height: 1.4;">
 
-  <h2 style="margin: 0.2rem 0 0.6rem;">Programmieren & Tic-Tac-Toe – Mini-Quiz</h2>
-  <p style="margin: 0 0 1rem;">10 Fragen zu Regeln, Datenstrukturen, Gewinnlogik und einfacher KI-Heuristik.</p>
+  <h2 style="margin: 0.2rem 0 0.6rem;">C# Einführung – Mini-Quiz</h2>
+  <p style="margin: 0 0 1rem;">10 Fragen zu Basics: Syntax, Datentypen, Properties, Zugriff, Arrays/Listen, Entry-Point, Exceptions, async/await.</p>
 
   <div id="quiz-card" style="border:1px solid #ddd;border-radius:12px;padding:16px;box-shadow:0 2px 8px rgba(0,0,0,.04);">
     <div id="progress" style="font-size:14px;color:#555;margin-bottom:8px;"></div>
@@ -29,94 +29,114 @@
 
   const QUESTIONS = [
     {
-      q: "Wie groß ist das Spielfeld bei klassischem Tic-Tac-Toe?",
-      choices: ["2×2", "3×3", "4×4", "variabel"],
-      correct: 1,
-      explain: "Klassisch wird auf einem 3×3-Raster gespielt."
-    },
-    {
-      q: "Wieviele Gewinnlinien gibt es insgesamt (Zeilen, Spalten, Diagonalen)?",
-      choices: ["6", "7", "8", "9"],
-      correct: 2,
-      explain: "3 Zeilen + 3 Spalten + 2 Diagonalen = 8 Gewinnlinien."
-    },
-    {
-      q: "Wodurch entsteht ein Sieg?",
+      q: 'Welche Anweisung schreibt eine Zeile auf die Konsole?',
       choices: [
-        "Drei gleiche Symbole in einer Linie",
-        "Zwei beliebige Symbole nebeneinander",
-        "Eines in jeder Ecke",
-        "Ein Symbol in der Mitte"
-      ],
-      correct: 0,
-      explain: "Drei gleiche Symbole (X oder O) in Reihe, Spalte oder Diagonale."
-    },
-    {
-      q: "Wann endet eine Partie mit Remis (\"Cat’s game\")?",
-      choices: [
-        "Wenn beide Spieler gleich viele Züge haben",
-        "Wenn das Board voll ist und keine Gewinnlinie existiert",
-        "Wenn die Mitte frei bleibt",
-        "Wenn ein Spieler aussetzt"
+        'Console.ReadLine("Hallo");',
+        'Console.WriteLine("Hallo");',
+        'System.Out("Hallo");',
+        'print("Hallo");'
       ],
       correct: 1,
-      explain: "Remis: Alle 9 Felder belegt, aber keine Gewinnbedingung erfüllt."
+      explain: 'Console.WriteLine(...) gibt Text auf der Standardausgabe aus.'
     },
     {
-      q: "Wie viele Züge gibt es maximal in einer Partie?",
-      choices: ["7", "8", "9", "10"],
-      correct: 2,
-      explain: "Maximal 9 Züge (alle Felder belegt)."
-    },
-    {
-      q: "Welche Datenstruktur eignet sich typischerweise zur Board-Repräsentation?",
+      q: 'Welche der folgenden Bezeichner ist ohne Sonderbehandlung (@) ein gültiger C#-Bezeichner?',
       choices: [
-        "Ein einzelner Integer",
-        "Ein 3×3-Array (z. B. char[3,3] oder string[][])",
-        "Ein Dictionary ohne Schlüssel",
-        "Ein Stack"
+        'class',
+        '2name',
+        '_name',
+        'first-name'
+      ],
+      correct: 2,
+      explain: 'Bezeichner dürfen nicht mit Ziffern beginnen und keine Bindestriche enthalten; Schlüsselwörter wie "class" sind reserviert.'
+    },
+    {
+      q: 'Welche Aussage zu Wert- und Referenztypen ist korrekt?',
+      choices: [
+        'string ist ein Werttyp, int ist ein Referenztyp.',
+        'int und bool sind Referenztypen.',
+        'int ist ein Werttyp, string ist ein Referenztyp (immutable).',
+        'Alle Typen sind Referenztypen.'
+      ],
+      correct: 2,
+      explain: 'int/bool sind Werttypen (stack-basiert); string ist ein Referenztyp und unveränderlich.'
+    },
+    {
+      q: 'Welche Deklaration ist eine Auto-Property?',
+      choices: [
+        'public int Age;',
+        'public int Age { get; set; }',
+        'public int GetAge() => age;',
+        'int Age() { return 0; }'
       ],
       correct: 1,
-      explain: "Ein 3×3-Array bildet das Raster direkt ab und erleichtert Prüfungen."
+      explain: 'Auto-Properties kapseln Feld + Getter/Setter: public int Age { get; set; }.'
     },
     {
-      q: "Welche Bedingung sollte ein gültiger Zug erfüllen?",
+      q: 'Welcher Zugriffsmodifizierer ist standardmäßig für Klassenmember (z. B. Felder) innerhalb einer Klasse, wenn keiner angegeben wird?',
       choices: [
-        "Das Ziel-Feld ist leer und innerhalb der Grenzen 0..2/0..2",
-        "Das Feld ist bereits belegt",
-        "Mindestens eine Diagonale ist frei",
-        "Der Gegner hat zuletzt die Mitte belegt"
+        'public',
+        'internal',
+        'private',
+        'protected'
       ],
-      correct: 0,
-      explain: "Zug = gültige Koordinate + Feld ist frei."
+      correct: 2,
+      explain: 'Mitglieds-Standard in Klassen ist private. (Bei Top-Level-Typen ist es internal.)'
     },
     {
-      q: "Was prüft man bei einer Gewinnkontrolle am einfachsten zuerst?",
+      q: 'Welche String-Interpolation ist korrekt?',
       choices: [
-        "Ob die Mitte frei ist",
-        "Alle Zeilen, Spalten und Diagonalen auf drei gleiche, nicht-leere Symbole",
-        "Ob die letzte Eingabe gerade/ungerade war",
-        "Ob die Ecken symmetrisch sind"
+        '"Name: {name}"',
+        '$"Name: {name}"',
+        '$( "Name: {name}" )',
+        'string.Format("Name: {name}")'
       ],
       correct: 1,
-      explain: "Standard-Check: Jede Zeile/Spalte/Diagonale auf 3 gleiche, nicht-leere Symbole."
+      explain: 'C#-Interpolation: $ vor dem String, Platzhalter in { }.'
     },
     {
-      q: "Welcher einfache KI-Heuristik-Zug ist oft stark (ohne vollständiges Minimax)?",
+      q: 'Wie erzeugt man ein int-Array mit drei Elementen (Standardwerte 0)?',
       choices: [
-        "Immer das erste freie Feld",
-        "Zufälliges Feld",
-        "Mitte → Ecke → Seite (falls möglich)",
-        "Zug überspringen"
+        'int[] a = new int(3);',
+        'var a = int[3];',
+        'int[] a = new int[3];',
+        'array<int> a = 3;'
       ],
       correct: 2,
-      explain: "Die Priorität Mitte > Ecken > Seiten ist in TTT meist vorteilhaft."
+      explain: 'Arrays werden mit new int[3] angelegt; Indizes 0..2.'
     },
     {
-      q: "Wie endet Tic-Tac-Toe bei perfektem Spiel beider Seiten?",
-      choices: ["X gewinnt", "O gewinnt", "Immer Unentschieden", "Unentschieden ist unmöglich"],
+      q: 'Welche Signatur ist ein klassischer (nicht top-level) Einstiegspunkt?',
+      choices: [
+        'public void Main()',
+        'static void Main(string[] args)',
+        'async void Main()',
+        'int Main()'
+      ],
+      correct: 1,
+      explain: 'Klassisch: static void Main(string[] args). (Moderne C#-Versionen erlauben Top-Level-Statements.)'
+    },
+    {
+      q: 'Welche Struktur fängt Ausnahmen korrekt ab?',
+      choices: [
+        'try { … } finally { … } catch (Exception ex) { … }',
+        'catch (Exception ex) { … } try { … } finally { … }',
+        'try { … } catch (Exception ex) { … } finally { … }',
+        'finally { … } try { … } catch (Exception ex) { … }'
+      ],
       correct: 2,
-      explain: "TTT ist gelöst: Bei perfektem Spiel endet die Partie unentschieden."
+      explain: 'Reihenfolge: try → catch → finally (optional).'
+    },
+    {
+      q: 'Was bewirkt <code>await Task.Delay(1000);</code> typischerweise?',
+      choices: [
+        'Blockiert den Thread für 1 Sekunde.',
+        'Wartet asynchron ca. 1 Sekunde, ohne den Thread zu blockieren.',
+        'Startet einen neuen Prozess.',
+        'Kompiliert den Code neu.'
+      ],
+      correct: 1,
+      explain: 'await wartet asynchron, der aufrufende Thread bleibt i. d. R. frei.'
     }
   ];
 

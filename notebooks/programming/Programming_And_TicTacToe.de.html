@@ -8008,7 +8008,7 @@ Wenn man Spielregeln wie die von TicTacToe liest, erfolgt der Prozess schrittwei
 <li>Der Spielstand kann durch eine Funktion ausgegeben und damit für die Spieler sichtbar gemacht werden.</li>
 <li><code>Integer</code>-Variablen können zur Zählung von Zügen oder zum Speichern von Spielergebnissen verwendet werden.</li>
 </ul>
-<details> <summary>Ausführliche Erklärung...</summary> In einem Spiel wie TicTacToe stellt das Spielbrett ein 3x3-Raster dar. Jedes Feld dieses Rasters kann leer sein oder von einer Spielfigur (X oder O) besetzt werden. Um den aktuellen Spielstand zu speichern, wird ein zweidimensionales Array vom Typ <code>string[,]</code> genutzt. Jede Position in diesem Array repräsentiert dabei eine Position auf dem Spielfeld. Die Einträge enthalten Zeichenketten wie <code>"X"</code>, <code>"O"</code> oder <code>" "</code>, um ein unbesetztes Feld darzustellen.
+<details> <summary>Ausführliche Erklärung...</summary> In einem Spiel wie TicTacToe stellt das Spielbrett ein 3x3-Raster dar. Jedes Feld dieses Rasters kann leer sein oder von einer Spielfigur (X oder O) besetzt werden. Um den aktuellen Spielstand zu speichern, wird ein zweidimensionales Array vom Typ `string[,]` genutzt. Jede Position in diesem Array repräsentiert dabei eine Position auf dem Spielfeld. Die Einträge enthalten Zeichenketten wie "X", "O" oder " ", um ein unbesetztes Feld darzustellen.
 
 <p>Zusätzlich können  <code>Integer</code>-Variablen genutzt werden, um Zähler für die Anzahl der Züge oder die Anzahl der gewonnenen Spiele zu speichern. Im Beispiel übernimmt beispielsweise die Variable  <code>zugZaehler</code>  diese Aufgabe und wird nach jedem Zug erhöht, sodass der Spielfortschritt nachvollziehbar bleibt und Gewinnbedingungen geprüft werden können.</p>
 </details>
@@ -8017,12 +8017,12 @@ Wenn man Spielregeln wie die von TicTacToe liest, erfolgt der Prozess schrittwei
 <ol>
 <li><p><strong>Datentyp  <code>Array</code>  für das Board:</strong></p>
 <ul>
-<li>Das  <code>spielbrett</code>  ist ein zweidimensionales Array (<code>string[,]</code>), dessen Elemente Zeichenketten wie <code>"X"</code>,  <code>"O"</code>  oder  <code>" "</code> enthalten.</li>
+<li>Das  <code>spielbrett</code>  ist ein zweidimensionales Array (<code>string[,]</code>), dessen Elemente Zeichenketten wie "X",  "O"  oder  " " enthalten.</li>
 </ul>
 </li>
 <li><p><strong>Datentyp  <code>String</code>  für die Spielerzeichen:</strong></p>
 <ul>
-<li>Die Spielerzeichen sind Strings (<code>'X'</code>  und  <code>'O'</code>), die in den Zellen des Boards gespeichert werden.</li>
+<li>Die Spielerzeichen sind Strings ("X"  und  "O"), die in den Zellen des Boards gespeichert werden.</li>
 </ul>
 </li>
 <li><p><strong>Datentyp  <code>Integer</code>  für Zählvariablen:</strong></p>
@@ -8130,15 +8130,15 @@ Wenn man Spielregeln wie die von TicTacToe liest, erfolgt der Prozess schrittwei
 <li><p><strong>Initialisierung des Spielbretts</strong>:</p>
 <ul>
 <li>Der Code erzeugt ein zweidimensionales Array <code>string[,]</code> namens  <code>spielbrett</code>, das das 3x3-Raster eines TicTacToe-Bretts repräsentiert.</li>
-<li>Zu Beginn wird jede Zelle des Arrays mit einem Leerzeichen (<code>" "</code>) initialisiert, um ein leeres Feld zu markieren.</li>
+<li>Zu Beginn wird jede Zelle des Arrays mit einem Leerzeichen (" ") initialisiert, um ein leeres Feld zu markieren.</li>
 </ul>
 </li>
 <li><p><strong>Beispielhafte Spielzüge</strong>:</p>
 <ul>
 <li>Im Code werden drei Spielzüge durchgeführt:<ul>
-<li>Spieler X setzt ein <code>"X"</code> an Position <code>[0,0]</code>.</li>
-<li>Spieler O setzt ein <code>"O"</code> an Position <code>[1,1]</code>.</li>
-<li>Spieler X setzt ein weiteres <code>"X"</code> an Position <code>[2,2]</code>.</li>
+<li>Spieler X setzt ein "X" an Position <code>[0,0]</code>.</li>
+<li>Spieler O setzt ein "O" an Position <code>[1,1]</code>.</li>
+<li>Spieler X setzt ein weiteres "X" an Position <code>[2,2]</code>.</li>
 </ul>
 </li>
 <li>Diese Zuweisungen aktualisieren den Zustand des Spielbretts entsprechend den Spielzügen der Spieler.</li>
@@ -8840,9 +8840,9 @@ In einem Spiel wie TicTacToe können die Spielregeln in verschiedene Phasen unte
 </ul>
 <details>
 <summary>Ausführliche Erklärung...</summary>
-In einem Spiel wie TicTacToe können Dictionaries verwendet werden, um Informationen wie die Spielergebnisse, Statistiken oder Spielfelder zu speichern und darauf zuzugreifen. Ein Dictionary ermöglicht es, Werte anhand eines eindeutigen Schlüssels abzurufen, was besonders nützlich ist, wenn man Daten nicht nur in einfachen Listen oder Arrays speichern möchte. Im Gegensatz zu Listen, die über Indexelemente zugreifen, erlaubt ein Dictionary, über benannte Schlüssel direkt auf Werte zuzugreifen.
+In einem Spiel wie TicTacToe können Dictionaries verwendet werden, um Informationen wie die Spielergebnisse, Statistiken oder Spielfelder zu speichern und darauf zuzugreifen. Ein Dictionary ermöglicht es, Werte anhand eines eindeutigen Schlüssels abzurufen, was besonders nützlich ist, wenn man Daten nicht nur in einfachen Arrays speichern möchte. Im Gegensatz zu Indexzugriffen erlaubt ein Dictionary, über benannte Schlüssel direkt auf Werte zuzugreifen.
 
-<p>In C# ist ein Dictionary (wie <code>Dictionary&lt;TKey, TValue&gt;</code>) eine eingebaute Datenstruktur, die durch geschweifte Klammern  <code>{}</code>  dargestellt wird. Es kann für die Speicherung von Paaren aus Schlüsseln und Werten verwendet werden, wobei der Schlüssel als eindeutiger Bezeichner dient. Dies kann beispielsweise verwendet werden, um den aktuellen Status des Spiels nach Spielern oder Spielfeldern zu strukturieren.</p>
+<p>In C# ist ein Dictionary (wie <code>Dictionary&lt;TKey, TValue&gt;</code>) eine eingebaute Datenstruktur, die Paare aus Schlüsseln und Werten verwaltet. Dies kann beispielsweise verwendet werden, um den aktuellen Status des Spiels nach Spielern oder Spielfeldern zu strukturieren.</p>
 </details>
 <p><strong>Konzept:</strong> Datenstrukturen organisieren und speichern Daten effizient.</p>
 <p><strong>Beispiel in Tic-Tac-Toe:</strong></p>
