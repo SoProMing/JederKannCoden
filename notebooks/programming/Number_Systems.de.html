@@ -7933,7 +7933,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="ch">#!csharp</span>
@@ -7965,37 +7965,26 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<!DOCTYPE html>
-
-<html lang="de">
-<head>
-<meta charset="utf-8"/>
-<title>Zahlensysteme – Mini-Quiz</title>
-<style>
-body { font-family: system-ui, sans-serif; max-width: 780px; margin: 1em auto; line-height: 1.4; }
-#quiz-card { border:1px solid #ddd; border-radius:12px; padding:16px; box-shadow:0 2px 8px rgba(0,0,0,.04); }
-button { cursor:pointer; }
-</style>
-</head>
-<body>
-<h2>Zahlensysteme – Mini-Quiz</h2>
-<p>10 kurze Fragen zu Binär-, Dezimal-, Hexadezimal- und Stellenwertsystemen.</p>
-<div id="quiz-card">
+<div id="number-systems-quiz" style="font-family: system-ui, sans-serif; max-width: 780px; line-height: 1.4;">
+<h2 style="margin: 0.2rem 0 0.6rem;">Zahlensysteme – Mini-Quiz</h2>
+<p style="margin: 0 0 1rem;">10 kurze Fragen zu Binär-, Dezimal-, Hexadezimal- und Stellenwertsystemen.</p>
+<div id="quiz-card" style="border:1px solid #ddd;border-radius:12px;padding:16px;box-shadow:0 2px 8px rgba(0,0,0,.04);">
 <div id="progress" style="font-size:14px;color:#555;margin-bottom:8px;"></div>
 <div id="question" style="font-size:18px;font-weight:600;margin:8px 0 12px;"></div>
 <div id="choices" style="display:grid;gap:8px;"></div>
 <div id="feedback" style="margin-top:12px;min-height:24px;"></div>
 <div style="display:flex;gap:8px;margin-top:16px;">
-<button id="skipBtn" style="padding:8px 12px;border:1px solid #999;border-radius:8px;background:#f7f7f7;">Überspringen</button>
-<button id="nextBtn" style="padding:8px 12px;border:1px solid #0b5;border-radius:8px;background:#0b5;color:white;">Weiter</button>
-<button id="restartBtn" style="padding:8px 12px;border:1px solid #555;border-radius:8px;background:white;display:none;">Nochmal</button>
+<button id="skipBtn" style="padding:8px 12px;border:1px solid #999;border-radius:8px;background:#f7f7f7;cursor:pointer;">Überspringen</button>
+<button id="nextBtn" style="padding:8px 12px;border:1px solid #0b5;border-radius:8px;background:#0b5;color:white;cursor:pointer;">Weiter</button>
+<button id="restartBtn" style="padding:8px 12px;border:1px solid #555;border-radius:8px;background:white;cursor:pointer;display:none;">Nochmal</button>
 <div style="margin-left:auto;align-self:center;font-size:13px;color:#666;">Tipp: Antworten anklicken</div>
 </div>
 </div>
 <div id="result" style="display:none;margin-top:16px;border:1px solid #ddd;border-radius:12px;padding:16px;">
-<h3>Auswertung</h3>
+<h3 style="margin-top:0;">Auswertung</h3>
 <p id="score"></p>
 <details><summary style="cursor:pointer;">Erklärungen anzeigen</summary><ol id="review"></ol></details>
+</div>
 </div>
 <script>
 (function(){
@@ -8029,14 +8018,9 @@ button { cursor:pointer; }
     {
       q:"Wie lautet der Dezimalwert von <code>1011<sub>2</sub></code>?",
       choices:["10","11","13","15"],
-      correct:2,
-      explain:"1×8 + 0×4 + 1×2 + 1×1 = 8 + 2 + 1 = 11 (Fehler?) Wait; Actually 11? Wait compute: 1011₂ = 8+2+1 = 11 -> correct is 11. Let's adjust correct index accordingly."
-    }
-  ];
-  // Correct fix for previous explanation:
-  QUESTIONS[4].choices=["10","11","13","15"]; QUESTIONS[4].correct=1; QUESTIONS[4].explain="1×8 + 0×4 + 1×2 + 1×1 = 11.";
-
-  QUESTIONS.push(
+      correct:1,
+      explain:"1×8 + 0×4 + 1×2 + 1×1 = 11."
+    },
     {
       q:"Wie schreibt man die Dezimalzahl 15 im Binärsystem?",
       choices:["1111","1101","1011","1001"],
@@ -8072,9 +8056,8 @@ button { cursor:pointer; }
       correct:1,
       explain:"Oktalsystem = Basis 8 (Ziffern 0–7)."
     }
-  );
+  ];
 
-  // --- quiz logic (same as your previous version) ---
   function shuffle(a){const arr=a.slice();for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]];}return arr;}
   const state={order:shuffle([...Array(QUESTIONS.length).keys()]),i:0,correct:0,answers:[]};
 
@@ -8110,9 +8093,14 @@ button { cursor:pointer; }
 
   function nextQ(){
     if(state.i<QUESTIONS.length-1){state.i++;render();}
-    else showResult();
+    else { showResult(); }
   }
-  function skipQ(){state.i<QUESTIONS.length-1?state.i++:null;render();}
+
+  function skipQ(){
+    if(state.i<QUESTIONS.length-1){state.i++;render();}
+    else { showResult(); }
+  }
+
   function showResult(){
     $("#quiz-card").style.display="none";
     resultBox.style.display="";
@@ -8128,13 +8116,12 @@ button { cursor:pointer; }
     });
     restart.style.display="";
   }
-  restart.onclick=()=>{state.i=0;state.correct=0;state.order=shuffle([...Array(QUESTIONS.length).keys()]);$("#quiz-card").style.display="";resultBox.style.display="none";render();}
+
+  restart.onclick=()=>{state.i=0;state.correct=0;state.order=shuffle([...Array(QUESTIONS.length).keys()]);$("#quiz-card").style.display="";resultBox.style.display="none";render();};
   next.onclick=nextQ; skip.onclick=skipQ;
   render();
 })();
 </script>
-</body>
-</html>
 </div>
 </div>
 </div>
