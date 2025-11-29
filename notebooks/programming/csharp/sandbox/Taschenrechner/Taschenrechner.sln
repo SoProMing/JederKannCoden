@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36212.18 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taschenrechner", "Taschenrechner\Taschenrechner.csproj", "{43963145-062A-4A9F-A71F-EE0ED395C2A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaschenrechnerTest", "TaschenrechnerTest\TaschenrechnerTest.csproj", "{08D09430-9AA6-4E2C-BC89-418CDB8025B6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{43963145-062A-4A9F-A71F-EE0ED395C2A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43963145-062A-4A9F-A71F-EE0ED395C2A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43963145-062A-4A9F-A71F-EE0ED395C2A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43963145-062A-4A9F-A71F-EE0ED395C2A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08D09430-9AA6-4E2C-BC89-418CDB8025B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08D09430-9AA6-4E2C-BC89-418CDB8025B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08D09430-9AA6-4E2C-BC89-418CDB8025B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08D09430-9AA6-4E2C-BC89-418CDB8025B6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BD122320-B1F2-47FC-BFA8-6C8F307B2CCC}
+	EndGlobalSection
+EndGlobal
