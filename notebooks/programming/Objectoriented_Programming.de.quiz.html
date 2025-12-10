@@ -1,0 +1,206 @@
+<div id="oop-quiz" style="font-family: system-ui, sans-serif; max-width: 780px; line-height: 1.4;">
+
+  <h2 style="margin: 0.2rem 0 0.6rem;">Objektorientierung – Mini-Quiz</h2>
+  <p style="margin: 0 0 1rem;">10 kurze Fragen zu Klassen, Objekten, Kapselung, Vererbung und Polymorphismus im Ökosystem-Beispiel.</p>
+
+  <div id="quiz-card" style="border:1px solid #ddd;border-radius:12px;padding:16px;box-shadow:0 2px 8px rgba(0,0,0,.04);">
+    <div id="progress" style="font-size:14px;color:#555;margin-bottom:8px;"></div>
+    <div id="question" style="font-size:18px;font-weight:600;margin:8px 0 12px;"></div>
+    <div id="choices" style="display:grid;gap:8px;"></div>
+    <div id="feedback" style="margin-top:12px;min-height:24px;"></div>
+    <div style="display:flex;gap:8px;margin-top:16px;">
+      <button id="skipBtn" style="padding:8px 12px;border:1px solid #999;border-radius:8px;background:#f7f7f7;cursor:pointer;">Überspringen</button>
+      <button id="nextBtn" style="padding:8px 12px;border:1px solid #0b5;border-radius:8px;background:#0b5;color:white;cursor:pointer;">Weiter</button>
+      <button id="restartBtn" style="padding:8px 12px;border:1px solid #555;border-radius:8px;background:white;cursor:pointer;display:none;">Nochmal</button>
+      <div style="margin-left:auto;align-self:center;font-size:13px;color:#666;">Tipp: Antworten anklicken</div>
+    </div>
+  </div>
+
+  <div id="result" style="display:none;margin-top:16px;border:1px solid #ddd;border-radius:12px;padding:16px;">
+    <h3 style="margin-top:0;">Auswertung</h3>
+    <p id="score"></p>
+    <details><summary style="cursor:pointer;">Erklärungen anzeigen</summary><ol id="review"></ol></details>
+  </div>
+</div>
+
+<script>
+(function(){
+  const $ = (s)=>document.querySelector(s);
+
+  const QUESTIONS = [
+    {
+      q:"Was beschreibt eine Klasse im Ökosystem-Beispiel?",
+      choices:[
+        "Einen Bauplan für Lebewesen mit gemeinsamen Eigenschaften und Methoden",
+        "Ein einzelnes Lebewesen wie ein konkreter Baum",
+        "Eine Datenbanktabelle für Messwerte",
+        "Eine reine Visualisierung ohne Bezug zum Code"
+      ],
+      correct:0,
+      explain:"Die Klasse ist der Bauplan; daraus entstehen Objekte wie Bäume oder Tiere."
+    },
+    {
+      q:"Was ist ein Objekt in diesem Kontext?",
+      choices:[
+        "Die Vorlage, nach der andere Instanzen gebaut werden",
+        "Eine konkrete Instanz wie ein Reh oder eine Eiche",
+        "Ein Kommentar im Code",
+        "Ein Modul zum Importieren"
+      ],
+      correct:1,
+      explain:"Ein Objekt ist die konkrete Ausprägung der Klasse, z.B. ein bestimmtes Reh."
+    },
+    {
+      q:"Welche Aussage zur Kapselung im Baum-Beispiel stimmt?",
+      choices:[
+        "__photosynthese_aktiv und __photosynthese_starten sind als interne Details verborgen",
+        "Privat bedeutet, dass auch Methoden innerhalb der Klasse keinen Zugriff haben",
+        "Kapselung heißt, dass Variablen immer global sein müssen",
+        "Kapselung betrifft nur Vererbungshierarchien"
+      ],
+      correct:0,
+      explain:"Doppelt unterstrichene Attribute/Methoden sollen von außen nicht direkt genutzt werden."
+    },
+    {
+      q:"Warum ruft die Methode wachsen() im Baum __photosynthese_starten() auf?",
+      choices:[
+        "Um interne Abläufe zu kapseln und das Flag zu setzen, bevor gewachsen wird",
+        "Um den Baum zu löschen",
+        "Um den Konstruktor erneut auszuführen",
+        "Um alle Lebewesen-Objekte zu erzeugen"
+      ],
+      correct:0,
+      explain:"Die Details der Photosynthese bleiben intern, wachsen() steuert nur den Ablauf."
+    },
+    {
+      q:"Was drückt die Beziehung Lebewesen <|-- Tier im Diagramm aus?",
+      choices:[
+        "Lebewesen erbt von Tier",
+        "Tier erbt von Lebewesen",
+        "Tier und Lebewesen sind identisch",
+        "Lebewesen ist eine Instanz von Tier"
+      ],
+      correct:1,
+      explain:"Der Pfeil zeigt, dass Tier eine Spezialisierung von Lebewesen ist."
+    },
+    {
+      q:"Welche Aufgabe erfüllt super().__init__(name, alter) im Beispiel Tier?",
+      choices:[
+        "Es ruft den Konstruktor der Basisklasse auf und initialisiert gemeinsame Felder",
+        "Es setzt automatisch art auf 'Vogel'",
+        "Es verhindert, dass Tier geerbt werden kann",
+        "Es startet die Photosynthese"
+      ],
+      correct:0,
+      explain:"So werden name und alter aus der Basisklasse korrekt gesetzt."
+    },
+    {
+      q:"Welcher Vorteil entsteht durch Vererbung im Beispiel Vogel?",
+      choices:[
+        "Vogel übernimmt atmen() und muss nur fliegen() ergänzen",
+        "Vogel kann keine eigenen Methoden besitzen",
+        "Vogel ersetzt den Konstruktor von Tier vollständig",
+        "Vogel benötigt keine Klasse Lebewesen mehr"
+      ],
+      correct:0,
+      explain:"Gemeinsames Verhalten kommt aus Tier, spezifisches Verhalten wird ergänzt."
+    },
+    {
+      q:"Was bedeutet Polymorphismus im Abschnitt leben()?",
+      choices:[
+        "Dieselbe Methodensignatur löst je nach Klasse unterschiedliches Verhalten aus",
+        "Alle Klassen müssen exakt dieselbe Implementierung teilen",
+        "Polymorphismus verhindert Überschreiben von Methoden",
+        "Nur Basisklassen dürfen Methoden besitzen"
+      ],
+      correct:0,
+      explain:"Pflanze, Tier und Pilz reagieren unterschiedlich auf denselben Aufruf leben()."
+    },
+    {
+      q:"Was passiert in der Schleife for leb in lebewesen: leb.leben()?",
+      choices:[
+        "Alle Objekte geben denselben Text aus",
+        "Jedes Objekt nutzt seine eigene Implementierung von leben()",
+        "Die Schleife wird nur einmal ausgeführt",
+        "Es werden neue Objekte erzeugt"
+      ],
+      correct:1,
+      explain:"Polymorphismus sorgt dafür, dass jede Klasse ihre Variante der Methode ausführt."
+    },
+    {
+      q:"Welches Ziel verfolgt das Ökosystem-Beispiel insgesamt?",
+      choices:[
+        "OOP-Konzepte über bekannte Natur-Elemente greifbar zu machen",
+        "Nur die Syntax von Python zu wiederholen",
+        "Den Einsatz von Datenbanken zu üben",
+        "Ausschließlich Design-Pattern zu erklären"
+      ],
+      correct:0,
+      explain:"Die Analogie verankert Klassen, Kapselung, Vererbung und Polymorphismus in vertrauten Bildern."
+    }
+  ];
+
+  function shuffle(a){const arr=a.slice();for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]];}return arr;}
+  const state={order:shuffle([...Array(QUESTIONS.length).keys()]),i:0,correct:0,answers:[]};
+
+  const qEl=$("#question"), cEl=$("#choices"), fEl=$("#feedback"), pEl=$("#progress");
+  const next=$("#nextBtn"), skip=$("#skipBtn"), restart=$("#restartBtn");
+  const resultBox=$("#result"), score=$("#score"), review=$("#review");
+
+  function render(){
+    const qi=state.order[state.i], item=QUESTIONS[qi];
+    pEl.textContent=`Frage ${state.i+1}/${QUESTIONS.length}`;
+    qEl.innerHTML=item.q; cEl.innerHTML=""; fEl.innerHTML="";
+    item.choices.forEach((c,idx)=>{
+      const b=document.createElement("button");
+      b.innerHTML=c;
+      Object.assign(b.style,{padding:"10px 12px",border:"1px solid #ccc",borderRadius:"8px",background:"white",textAlign:"left"});
+      b.onclick=()=>answer(idx);
+      cEl.appendChild(b);
+    });
+  }
+
+  function answer(chosen){
+    const qi=state.order[state.i], item=QUESTIONS[qi];
+    const good=chosen===item.correct;
+    state.answers[qi]={chosen,good};
+    if(good) state.correct++;
+    [...cEl.children].forEach((b,i)=>{
+      b.disabled=true;
+      if(i===item.correct){b.style.borderColor="#0b5";b.style.background="rgba(0,180,80,.08)";}
+      if(i===chosen&&!good){b.style.borderColor="#b00";b.style.background="rgba(200,0,0,.06)";}
+    });
+    fEl.innerHTML=(good?"✔️ Richtig":"✖️ Falsch")+" — "+item.explain;
+  }
+
+  function nextQ(){
+    if(state.i<QUESTIONS.length-1){state.i++;render();}
+    else { showResult(); }
+  }
+
+  function skipQ(){
+    if(state.i<QUESTIONS.length-1){state.i++;render();}
+    else { showResult(); }
+  }
+
+  function showResult(){
+    $("#quiz-card").style.display="none";
+    resultBox.style.display="";
+    const percent=Math.round(state.correct/QUESTIONS.length*100);
+    score.textContent=`${state.correct} von ${QUESTIONS.length} korrekt (${percent}%)`;
+    review.innerHTML="";
+    state.order.forEach(qi=>{
+      const it=QUESTIONS[qi]; const a=state.answers[qi];
+      const li=document.createElement("li");
+      const chosen=a?it.choices[a.chosen]:"—";
+      li.innerHTML=`<strong>${it.q}</strong><br>Deine Antwort: ${chosen}<br>Korrekt: ${it.choices[it.correct]}<br><span style="color:#555">${it.explain}</span>`;
+      review.appendChild(li);
+    });
+    restart.style.display="";
+  }
+
+  restart.onclick=()=>{state.i=0;state.correct=0;state.order=shuffle([...Array(QUESTIONS.length).keys()]);$("#quiz-card").style.display="";resultBox.style.display="none";render();};
+  next.onclick=nextQ; skip.onclick=skipQ;
+  render();
+})();
+</script>
