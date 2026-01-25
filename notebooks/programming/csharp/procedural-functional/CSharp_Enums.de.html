@@ -7562,13 +7562,13 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">enum</span> <span class="n">PollutionLevel</span>
-<span class="p">{</span>
-    <span class="n">Low</span><span class="p">,</span>       <span class="o">//</span> <span class="n">Standardmäßig</span> <span class="mi">0</span>
-    <span class="n">Medium</span><span class="p">,</span>    <span class="o">//</span> <span class="mi">1</span>
-    <span class="n">High</span><span class="p">,</span>      <span class="o">//</span> <span class="mi">2</span>
-    <span class="n">Critical</span>   <span class="o">//</span> <span class="mi">3</span>
-<span class="p">}</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>enum PollutionLevel
+{
+    Low,       // Standardmäßig 0
+    Medium,    // 1
+    High,      // 2
+    Critical   // 3
+}
 </pre></div>
 </div>
 </div>
@@ -7591,41 +7591,41 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">using</span> <span class="n">System</span><span class="p">;</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>using System;
 
-<span class="n">enum</span> <span class="n">PollutionLevel</span>
-<span class="p">{</span>
-    <span class="n">Low</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="n">Medium</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
-    <span class="n">High</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span>
-    <span class="n">Critical</span> <span class="o">=</span> <span class="mi">4</span>
-<span class="p">}</span>
+enum PollutionLevel
+{
+    Low = 1,
+    Medium = 2,
+    High = 3,
+    Critical = 4
+}
 
-<span class="n">PollutionLevel</span> <span class="n">currentLevel</span> <span class="o">=</span> <span class="n">PollutionLevel</span><span class="o">.</span><span class="n">High</span><span class="p">;</span>
+PollutionLevel currentLevel = PollutionLevel.High;
 
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Aktuelle Verschmutzungsstufe: "</span> <span class="o">+</span> <span class="n">currentLevel</span><span class="p">);</span>
+Console.WriteLine("Aktuelle Verschmutzungsstufe: " + currentLevel);
 
-<span class="n">switch</span> <span class="p">(</span><span class="n">currentLevel</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">case</span> <span class="n">PollutionLevel</span><span class="o">.</span><span class="n">Low</span><span class="p">:</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Die Luftqualität ist gut."</span><span class="p">);</span>
-        <span class="k">break</span><span class="p">;</span>
-    <span class="k">case</span> <span class="n">PollutionLevel</span><span class="o">.</span><span class="n">Medium</span><span class="p">:</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Die Luftqualität ist akzeptabel, aber Vorsicht ist geboten."</span><span class="p">);</span>
-        <span class="k">break</span><span class="p">;</span>
-    <span class="k">case</span> <span class="n">PollutionLevel</span><span class="o">.</span><span class="n">High</span><span class="p">:</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Die Luftqualität ist schlecht. Empfindliche Gruppen sollten Aktivitäten im Freien vermeiden."</span><span class="p">);</span>
-        <span class="k">break</span><span class="p">;</span>
-    <span class="k">case</span> <span class="n">PollutionLevel</span><span class="o">.</span><span class="n">Critical</span><span class="p">:</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Kritische Luftqualität! Vermeiden Sie alle Outdoor-Aktivitäten."</span><span class="p">);</span>
-        <span class="k">break</span><span class="p">;</span>
-    <span class="n">default</span><span class="p">:</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Unbekannte Verschmutzungsstufe."</span><span class="p">);</span>
-        <span class="k">break</span><span class="p">;</span>
-<span class="p">}</span>
+switch (currentLevel)
+{
+    case PollutionLevel.Low:
+        Console.WriteLine("Die Luftqualität ist gut.");
+        break;
+    case PollutionLevel.Medium:
+        Console.WriteLine("Die Luftqualität ist akzeptabel, aber Vorsicht ist geboten.");
+        break;
+    case PollutionLevel.High:
+        Console.WriteLine("Die Luftqualität ist schlecht. Empfindliche Gruppen sollten Aktivitäten im Freien vermeiden.");
+        break;
+    case PollutionLevel.Critical:
+        Console.WriteLine("Kritische Luftqualität! Vermeiden Sie alle Outdoor-Aktivitäten.");
+        break;
+    default:
+        Console.WriteLine("Unbekannte Verschmutzungsstufe.");
+        break;
+}
 </pre></div>
 </div>
 </div>
@@ -7672,11 +7672,11 @@ Die Luftqualität ist schlecht. Empfindliche Gruppen sollten Aktivitäten im Fre
 <div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="nb">int</span> <span class="n">levelValue</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">)</span><span class="n">PollutionLevel</span><span class="o">.</span><span class="n">Critical</span><span class="p">;</span>
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Der numerische Wert der Verschmutzungsstufe 'Critical' ist: "</span> <span class="o">+</span> <span class="n">levelValue</span><span class="p">);</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>int levelValue = (int)PollutionLevel.Critical;
+Console.WriteLine("Der numerische Wert der Verschmutzungsstufe 'Critical' ist: " + levelValue);
 
-<span class="n">PollutionLevel</span> <span class="n">newLevel</span> <span class="o">=</span> <span class="p">(</span><span class="n">PollutionLevel</span><span class="p">)</span><span class="mi">2</span><span class="p">;</span>
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Die Verschmutzungsstufe mit dem numerischen Wert 2 ist: "</span> <span class="o">+</span> <span class="n">newLevel</span><span class="p">);</span>
+PollutionLevel newLevel = (PollutionLevel)2;
+Console.WriteLine("Die Verschmutzungsstufe mit dem numerischen Wert 2 ist: " + newLevel);
 </pre></div>
 </div>
 </div>
@@ -7715,31 +7715,31 @@ Die Verschmutzungsstufe mit dem numerischen Wert 2 ist: Medium
 <div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">enum</span> <span class="n">WaterQuality</span>
-<span class="p">{</span>
-    <span class="n">Excellent</span><span class="p">,</span>
-    <span class="n">Good</span><span class="p">,</span>
-    <span class="n">Fair</span><span class="p">,</span>
-    <span class="n">Poor</span><span class="p">,</span>
-    <span class="n">Hazardous</span>
-<span class="p">}</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>enum WaterQuality
+{
+    Excellent,
+    Good,
+    Fair,
+    Poor,
+    Hazardous
+}
 
-<span class="n">WaterQuality</span> <span class="n">riverQuality</span> <span class="o">=</span> <span class="n">WaterQuality</span><span class="o">.</span><span class="n">Poor</span><span class="p">;</span>
+WaterQuality riverQuality = WaterQuality.Poor;
 
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Aktuelle Wasserqualität des Flusses: "</span> <span class="o">+</span> <span class="n">riverQuality</span><span class="p">);</span>
+Console.WriteLine("Aktuelle Wasserqualität des Flusses: " + riverQuality);
 
-<span class="k">if</span> <span class="p">(</span><span class="n">riverQuality</span> <span class="o">==</span> <span class="n">WaterQuality</span><span class="o">.</span><span class="n">Hazardous</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Warnung: Wasser ist gefährlich! Kein Kontakt empfohlen."</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">riverQuality</span> <span class="o">==</span> <span class="n">WaterQuality</span><span class="o">.</span><span class="n">Poor</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Wasserqualität ist schlecht. Vorsicht beim Schwimmen oder Konsum."</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="k">else</span>
-<span class="p">{</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Wasserqualität ist akzeptabel."</span><span class="p">);</span>
-<span class="p">}</span>
+if (riverQuality == WaterQuality.Hazardous)
+{
+    Console.WriteLine("Warnung: Wasser ist gefährlich! Kein Kontakt empfohlen.");
+}
+else if (riverQuality == WaterQuality.Poor)
+{
+    Console.WriteLine("Wasserqualität ist schlecht. Vorsicht beim Schwimmen oder Konsum.");
+}
+else
+{
+    Console.WriteLine("Wasserqualität ist akzeptabel.");
+}
 </pre></div>
 </div>
 </div>
@@ -7793,13 +7793,13 @@ Enum-Werte können auch explizit numerische Werte zugewiesen bekommen. Dies ist 
 <div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span>   <span class="n">enum</span> <span class="n">PollutionLevel</span>
-   <span class="p">{</span>
-       <span class="n">Low</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>
-       <span class="n">Medium</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span>
-       <span class="n">High</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span>
-       <span class="n">Critical</span> <span class="o">=</span> <span class="mi">40</span>
-   <span class="p">}</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>   enum PollutionLevel
+   {
+       Low = 10,
+       Medium = 20,
+       High = 30,
+       Critical = 40
+   }
 </pre></div>
 </div>
 </div>
@@ -7828,24 +7828,24 @@ Mit dem <code>[Flags]</code>-Attribut kann ein Enum als Bitfeld verwendet werden
 <div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span>    <span class="p">[</span><span class="n">Flags</span><span class="p">]</span>
-    <span class="n">enum</span> <span class="n">PollutionSources</span>
-    <span class="p">{</span>
-        <span class="kc">None</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
-        <span class="n">Vehicles</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="n">Factories</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
-        <span class="n">Agriculture</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span>
-        <span class="n">NaturalDisasters</span> <span class="o">=</span> <span class="mi">8</span>
-    <span class="p">}</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>    [Flags]
+    enum PollutionSources
+    {
+        None = 0,
+        Vehicles = 1,
+        Factories = 2,
+        Agriculture = 4,
+        NaturalDisasters = 8
+    }
 
-    <span class="n">PollutionSources</span> <span class="n">currentSources</span> <span class="o">=</span> <span class="n">PollutionSources</span><span class="o">.</span><span class="n">Vehicles</span> <span class="o">|</span> <span class="n">PollutionSources</span><span class="o">.</span><span class="n">Factories</span><span class="p">;</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Aktuelle Verschmutzungsquellen: "</span> <span class="o">+</span> <span class="n">currentSources</span><span class="p">);</span>
+    PollutionSources currentSources = PollutionSources.Vehicles | PollutionSources.Factories;
+    Console.WriteLine("Aktuelle Verschmutzungsquellen: " + currentSources);
 
-    <span class="o">//</span> <span class="n">Überprüfen</span><span class="p">,</span> <span class="n">ob</span> <span class="n">Fahrzeuge</span> <span class="n">eine</span> <span class="n">Quelle</span> <span class="n">sind</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">currentSources</span><span class="o">.</span><span class="n">HasFlag</span><span class="p">(</span><span class="n">PollutionSources</span><span class="o">.</span><span class="n">Vehicles</span><span class="p">))</span>
-    <span class="p">{</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Fahrzeuge tragen zur Verschmutzung bei."</span><span class="p">);</span>
-    <span class="p">}</span>
+    // Überprüfen, ob Fahrzeuge eine Quelle sind
+    if (currentSources.HasFlag(PollutionSources.Vehicles))
+    {
+        Console.WriteLine("Fahrzeuge tragen zur Verschmutzung bei.");
+    }
 </pre></div>
 </div>
 </div>
@@ -7892,14 +7892,14 @@ Enum-Werte können in Zeichenfolgen umgewandelt werden, um sie benutzerfreundlic
 <div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span>   <span class="n">string</span> <span class="n">levelName</span> <span class="o">=</span> <span class="n">PollutionLevel</span><span class="o">.</span><span class="n">High</span><span class="o">.</span><span class="n">ToString</span><span class="p">();</span>
-   <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Verschmutzungslevel als String: "</span> <span class="o">+</span> <span class="n">levelName</span><span class="p">);</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>   string levelName = PollutionLevel.High.ToString();
+   Console.WriteLine("Verschmutzungslevel als String: " + levelName);
 
-   <span class="n">PollutionLevel</span> <span class="n">parsedLevel</span><span class="p">;</span>
-   <span class="k">if</span> <span class="p">(</span><span class="n">Enum</span><span class="o">.</span><span class="n">TryParse</span><span class="p">(</span><span class="s2">"Critical"</span><span class="p">,</span> <span class="n">out</span> <span class="n">parsedLevel</span><span class="p">))</span>
-   <span class="p">{</span>
-       <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Geparstes Level: "</span> <span class="o">+</span> <span class="n">parsedLevel</span><span class="p">);</span>
-   <span class="p">}</span>
+   PollutionLevel parsedLevel;
+   if (Enum.TryParse("Critical", out parsedLevel))
+   {
+       Console.WriteLine("Geparstes Level: " + parsedLevel);
+   }
 </pre></div>
 </div>
 </div>
@@ -7941,10 +7941,10 @@ Es ist möglich, alle Werte eines Enums zu durchlaufen, um sie beispielsweise in
 <div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span>   <span class="n">foreach</span> <span class="p">(</span><span class="n">var</span> <span class="n">level</span> <span class="ow">in</span> <span class="n">Enum</span><span class="o">.</span><span class="n">GetValues</span><span class="p">(</span><span class="n">typeof</span><span class="p">(</span><span class="n">PollutionLevel</span><span class="p">)))</span>
-   <span class="p">{</span>
-       <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Verschmutzungslevel: "</span> <span class="o">+</span> <span class="n">level</span><span class="p">);</span>
-   <span class="p">}</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>   foreach (var level in Enum.GetValues(typeof(PollutionLevel)))
+   {
+       Console.WriteLine("Verschmutzungslevel: " + level);
+   }
 </pre></div>
 </div>
 </div>
@@ -7988,28 +7988,28 @@ Enums können mit Attributen erweitert werden, um benutzerfreundliche Beschriftu
 <div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span>    <span class="n">using</span> <span class="n">System</span><span class="o">.</span><span class="n">ComponentModel</span><span class="p">;</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>    using System.ComponentModel;
 
-    <span class="n">enum</span> <span class="n">PollutionLevel</span>
-    <span class="p">{</span>
-        <span class="p">[</span><span class="n">Description</span><span class="p">(</span><span class="s2">"Niedrig"</span><span class="p">)]</span>
-        <span class="n">Low</span><span class="p">,</span>
-        <span class="p">[</span><span class="n">Description</span><span class="p">(</span><span class="s2">"Mittel"</span><span class="p">)]</span>
-        <span class="n">Medium</span><span class="p">,</span>
-        <span class="p">[</span><span class="n">Description</span><span class="p">(</span><span class="s2">"Hoch"</span><span class="p">)]</span>
-        <span class="n">High</span><span class="p">,</span>
-        <span class="p">[</span><span class="n">Description</span><span class="p">(</span><span class="s2">"Kritisch"</span><span class="p">)]</span>
-        <span class="n">Critical</span>
-    <span class="p">}</span>
+    enum PollutionLevel
+    {
+        [Description("Niedrig")]
+        Low,
+        [Description("Mittel")]
+        Medium,
+        [Description("Hoch")]
+        High,
+        [Description("Kritisch")]
+        Critical
+    }
 
-    <span class="n">static</span> <span class="n">string</span> <span class="n">GetDescription</span><span class="p">(</span><span class="n">Enum</span> <span class="n">value</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">var</span> <span class="n">field</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">GetType</span><span class="p">()</span><span class="o">.</span><span class="n">GetField</span><span class="p">(</span><span class="n">value</span><span class="o">.</span><span class="n">ToString</span><span class="p">());</span>
-        <span class="n">var</span> <span class="n">attribute</span> <span class="o">=</span> <span class="p">(</span><span class="n">DescriptionAttribute</span><span class="p">)</span><span class="n">Attribute</span><span class="o">.</span><span class="n">GetCustomAttribute</span><span class="p">(</span><span class="n">field</span><span class="p">,</span> <span class="n">typeof</span><span class="p">(</span><span class="n">DescriptionAttribute</span><span class="p">));</span>
-        <span class="k">return</span> <span class="n">attribute</span> <span class="o">==</span> <span class="n">null</span> <span class="err">?</span> <span class="n">value</span><span class="o">.</span><span class="n">ToString</span><span class="p">()</span> <span class="p">:</span> <span class="n">attribute</span><span class="o">.</span><span class="n">Description</span><span class="p">;</span>
-    <span class="p">}</span>
+    static string GetDescription(Enum value)
+    {
+        var field = value.GetType().GetField(value.ToString());
+        var attribute = (DescriptionAttribute)Attribute.GetCustomAttribute(field, typeof(DescriptionAttribute));
+        return attribute == null ? value.ToString() : attribute.Description;
+    }
 
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Beschreibung: "</span> <span class="o">+</span> <span class="n">GetDescription</span><span class="p">(</span><span class="n">PollutionLevel</span><span class="o">.</span><span class="n">High</span><span class="p">));</span>
+    Console.WriteLine("Beschreibung: " + GetDescription(PollutionLevel.High));
 </pre></div>
 </div>
 </div>

@@ -7572,8 +7572,8 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">Func</span><span class="o">&lt;</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="o">&gt;</span> <span class="n">quadrat</span> <span class="o">=</span> <span class="n">x</span> <span class="o">=&gt;</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span><span class="p">;</span>
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">quadrat</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>Func&lt;int, int&gt; quadrat = x =&gt; x * x;
+Console.WriteLine(quadrat(5));
 </pre></div>
 </div>
 </div>
@@ -7611,8 +7611,8 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">Func</span><span class="o">&lt;</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="o">&gt;</span> <span class="n">addiere</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">addiere</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">));</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>Func&lt;int, int, int&gt; addiere = (a, b) =&gt; a + b;
+Console.WriteLine(addiere(3, 4));
 </pre></div>
 </div>
 </div>
@@ -7650,8 +7650,8 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">Action</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">drucke</span> <span class="o">=</span> <span class="n">s</span> <span class="o">=&gt;</span> <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
-<span class="n">drucke</span><span class="p">(</span><span class="s2">"Hallo Lambda!"</span><span class="p">);</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>Action&lt;string&gt; drucke = s =&gt; Console.WriteLine(s);
+drucke("Hallo Lambda!");
 </pre></div>
 </div>
 </div>
@@ -7716,19 +7716,19 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [44]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="nb">int</span><span class="o">&gt;</span> <span class="n">zahlen</span> <span class="o">=</span> <span class="n">new</span> <span class="n">List</span><span class="o">&lt;</span><span class="nb">int</span><span class="o">&gt;</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span> <span class="p">};</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>List&lt;int&gt; zahlen = new List&lt;int&gt; { 1, 2, 3, 4, 5, 6 };
 
-<span class="n">Predicate</span><span class="o">&lt;</span><span class="nb">int</span><span class="o">&gt;</span> <span class="n">istGerade</span> <span class="o">=</span> <span class="n">x</span> <span class="o">=&gt;</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;</span> <span class="o">//</span> <span class="n">Das</span> <span class="k">lambda</span> <span class="n">könnte</span> <span class="n">auch</span> <span class="n">anonym</span> <span class="n">sein</span> <span class="n">und</span> <span class="n">direkt</span> <span class="ow">in</span> <span class="n">Where</span> <span class="n">verwendet</span> <span class="n">werden</span>
+Predicate&lt;int&gt; istGerade = x =&gt; x % 2 == 0; // Das lambda könnte auch anonym sein und direkt in Where verwendet werden
 
-<span class="o">//</span> <span class="n">Predicate</span><span class="o">&lt;</span><span class="nb">int</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="n">Func</span><span class="o">&lt;</span><span class="nb">int</span><span class="p">,</span> <span class="nb">bool</span><span class="o">&gt;</span> <span class="n">umwandeln</span><span class="p">,</span> <span class="n">da</span> <span class="n">Where</span> <span class="n">Func</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="nb">bool</span><span class="o">&gt;</span> <span class="n">erwartet</span>
-<span class="n">Func</span><span class="o">&lt;</span><span class="nb">int</span><span class="p">,</span> <span class="nb">bool</span><span class="o">&gt;</span> <span class="n">funcIstGerade</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Func</span><span class="o">&lt;</span><span class="nb">int</span><span class="p">,</span> <span class="nb">bool</span><span class="o">&gt;</span><span class="p">(</span><span class="n">istGerade</span><span class="p">);</span>
+// Predicate&lt;int&gt; in Func&lt;int, bool&gt; umwandeln, da Where Func&lt;T, bool&gt; erwartet
+Func&lt;int, bool&gt; funcIstGerade = new Func&lt;int, bool&gt;(istGerade);
 
-<span class="o">//</span> <span class="n">var</span> <span class="n">gerade</span> <span class="o">=</span> <span class="n">zahlen</span><span class="o">.</span><span class="n">Where</span><span class="p">(</span><span class="n">x</span> <span class="o">=&gt;</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">)</span><span class="o">.</span><span class="n">ToList</span><span class="p">();</span> <span class="o">//</span> <span class="n">Verwendung</span> <span class="n">eines</span> <span class="n">Lambda</span><span class="o">-</span><span class="n">Ausdrucks</span> <span class="n">direkt</span> <span class="ow">in</span> <span class="n">Where</span>
-<span class="n">var</span> <span class="n">gerade</span> <span class="o">=</span> <span class="n">zahlen</span><span class="o">.</span><span class="n">Where</span><span class="p">(</span><span class="n">funcIstGerade</span><span class="p">)</span><span class="o">.</span><span class="n">ToList</span><span class="p">();</span> <span class="o">//</span> <span class="n">Verwendung</span> <span class="n">der</span> <span class="n">umgewandelten</span> <span class="n">Funktion</span>
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">Join</span><span class="p">(</span><span class="s2">", "</span><span class="p">,</span> <span class="n">gerade</span><span class="p">));</span>
+// var gerade = zahlen.Where(x =&gt; x % 2 == 0 ).ToList(); // Verwendung eines Lambda-Ausdrucks direkt in Where
+var gerade = zahlen.Where(funcIstGerade).ToList(); // Verwendung der umgewandelten Funktion
+Console.WriteLine(String.Join(", ", gerade));
 </pre></div>
 </div>
 </div>
@@ -7741,7 +7741,7 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>2, 4
+<pre>2, 4, 6
 </pre>
 </div>
 </div>
@@ -7755,8 +7755,8 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">Predicate</span><span class="o">&lt;</span><span class="nb">int</span><span class="o">&gt;</span> <span class="n">istGerade</span> <span class="o">=</span> <span class="n">x</span> <span class="o">=&gt;</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;</span>
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">istGerade</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="err">?</span> <span class="s2">"Gerade"</span> <span class="p">:</span> <span class="s2">"Ungerade"</span><span class="p">);</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>Predicate&lt;int&gt; istGerade = x =&gt; x % 2 == 0;
+Console.WriteLine(istGerade(4) ? "Gerade" : "Ungerade");
 </pre></div>
 </div>
 </div>
@@ -7799,11 +7799,11 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">Func</span><span class="o">&lt;</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="o">&gt;</span> <span class="n">komplex</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nb">int</span> <span class="n">ergebnis</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
-    <span class="k">return</span> <span class="n">ergebnis</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
-<span class="p">};</span>
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">komplex</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">));</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>Func&lt;int, int, int&gt; komplex = (a, b) =&gt; {
+    int ergebnis = a + b;
+    return ergebnis * 2;
+};
+Console.WriteLine(komplex(2, 3));
 </pre></div>
 </div>
 </div>
@@ -7838,32 +7838,32 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [45]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">Func</span><span class="o">&lt;</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="o">&gt;</span> <span class="n">multiplizieren</span> <span class="o">=</span> <span class="n">x</span> <span class="o">=&gt;</span> <span class="n">x</span> <span class="o">*</span> <span class="n">faktor</span><span class="p">;</span>
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">multiplizieren</span><span class="p">(</span><span class="mi">4</span><span class="p">));</span>   <span class="o">//</span> <span class="n">Diese</span> <span class="n">Zeile</span> <span class="n">wird</span> <span class="n">einen</span> <span class="n">Fehler</span> <span class="ow">in</span> <span class="n">der</span> <span class="n">normalen</span> <span class="o">.</span><span class="n">NET</span> <span class="n">runtime</span>
-                                        <span class="o">//</span> <span class="n">verursachen</span><span class="p">,</span> <span class="n">da</span> <span class="s1">'faktor'</span> <span class="n">nicht</span> <span class="n">definiert</span> <span class="n">ist</span><span class="o">.</span> <span class="n">In</span> <span class="o">.</span><span class="n">NET</span> <span class="n">Interactive</span>
-                                        <span class="o">//</span> <span class="n">wird</span> <span class="n">es</span> <span class="n">jedoch</span> <span class="n">funktionieren</span><span class="p">,</span> <span class="n">da</span> <span class="n">die</span> <span class="n">Variable</span> <span class="s1">'faktor'</span> <span class="n">im</span> <span class="n">globalen</span> <span class="n">Kontext</span> <span class="n">definiert</span> <span class="n">ist</span><span class="o">.</span>
-<span class="nb">int</span> <span class="n">faktor</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">multiplizieren</span><span class="p">(</span><span class="mi">4</span><span class="p">));</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>Func&lt;int, int&gt; multiplizieren = x =&gt; x * faktor;
+Console.WriteLine(multiplizieren(4));   // Diese Zeile wird einen Fehler in der normalen .NET runtime
+                                        // verursachen, da 'faktor' nicht definiert ist. In .NET Interactive
+                                        // wird es jedoch funktionieren, da die Variable 'faktor' im globalen Kontext definiert ist.
+int faktor = 3;
+Console.WriteLine(multiplizieren(4));
 
-<span class="n">Func</span><span class="o">&lt;</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="o">&gt;</span> <span class="n">internalLambda</span><span class="p">;</span>
+Func&lt;int, int&gt; internalLambda;
 
-<span class="n">void</span> <span class="n">erzeugeLambda</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="nb">int</span> <span class="n">faktor</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
-    <span class="n">internalLambda</span> <span class="o">=</span> <span class="n">x</span> <span class="o">=&gt;</span> <span class="n">x</span> <span class="o">*</span> <span class="n">faktor</span><span class="p">;</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">internalLambda</span><span class="p">(</span><span class="mi">10</span><span class="p">));</span>
-<span class="p">}</span>
+void erzeugeLambda()
+{
+    int faktor = 2;
+    internalLambda = x =&gt; x * faktor;
+    Console.WriteLine(internalLambda(10));
+}
 
-<span class="n">void</span> <span class="n">nutzeLambda</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">erzeugeLambda</span><span class="p">();</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">internalLambda</span><span class="p">(</span><span class="mi">4</span><span class="p">));</span>
-<span class="p">}</span>
+void nutzeLambda()
+{
+    erzeugeLambda();
+    Console.WriteLine(internalLambda(4));
+}
 
-<span class="n">nutzeLambda</span><span class="p">();</span>
+nutzeLambda();
 </pre></div>
 </div>
 </div>
@@ -7962,8 +7962,8 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">Func</span><span class="o">&lt;</span><span class="n">double</span><span class="p">,</span> <span class="n">double</span><span class="o">&gt;</span> <span class="n">flaecheKreis</span> <span class="o">=</span> <span class="n">r</span> <span class="o">=&gt;</span> <span class="n">Math</span><span class="o">.</span><span class="n">PI</span> <span class="o">*</span> <span class="n">r</span> <span class="o">*</span> <span class="n">r</span><span class="p">;</span>
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">flaecheKreis</span><span class="p">(</span><span class="mi">3</span><span class="p">));</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>Func&lt;double, double&gt; flaecheKreis = r =&gt; Math.PI * r * r;
+Console.WriteLine(flaecheKreis(3));
 </pre></div>
 </div>
 </div>
@@ -7988,9 +7988,9 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">var</span> <span class="n">zahlen</span> <span class="o">=</span> <span class="n">new</span> <span class="n">List</span><span class="o">&lt;</span><span class="nb">int</span><span class="o">&gt;</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span> <span class="p">};</span>
-<span class="n">var</span> <span class="n">ungerade</span> <span class="o">=</span> <span class="n">zahlen</span><span class="o">.</span><span class="n">Where</span><span class="p">(</span><span class="n">x</span> <span class="o">=&gt;</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">ToList</span><span class="p">();</span>
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">Join</span><span class="p">(</span><span class="s2">", "</span><span class="p">,</span> <span class="n">ungerade</span><span class="p">));</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>var zahlen = new List&lt;int&gt; { 1, 2, 3, 4, 5, 6 };
+var ungerade = zahlen.Where(x =&gt; x % 2 == 1).ToList();
+Console.WriteLine(string.Join(", ", ungerade));
 </pre></div>
 </div>
 </div>
@@ -8028,9 +8028,9 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">var</span> <span class="n">namen</span> <span class="o">=</span> <span class="n">new</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="p">{</span> <span class="s2">"Anna"</span><span class="p">,</span> <span class="s2">"Ben"</span><span class="p">,</span> <span class="s2">"Clara"</span> <span class="p">};</span>
-<span class="n">var</span> <span class="n">mitLaenge</span> <span class="o">=</span> <span class="n">namen</span><span class="o">.</span><span class="n">Select</span><span class="p">(</span><span class="n">n</span> <span class="o">=&gt;</span> <span class="err">$</span><span class="s2">"</span><span class="si">{n}</span><span class="s2"> (</span><span class="si">{n.Length}</span><span class="s2"> Buchstaben)"</span><span class="p">)</span><span class="o">.</span><span class="n">ToList</span><span class="p">();</span>
-<span class="n">mitLaenge</span><span class="o">.</span><span class="n">ForEach</span><span class="p">(</span><span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">);</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>var namen = new List&lt;string&gt; { "Anna", "Ben", "Clara" };
+var mitLaenge = namen.Select(n =&gt; $"{n} ({n.Length} Buchstaben)").ToList();
+mitLaenge.ForEach(Console.WriteLine);
 </pre></div>
 </div>
 </div>
@@ -8070,9 +8070,9 @@ Clara (5 Buchstaben)
 <div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">var</span> <span class="n">woerter</span> <span class="o">=</span> <span class="n">new</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="p">{</span> <span class="s2">"Apfel"</span><span class="p">,</span> <span class="s2">"Banane"</span><span class="p">,</span> <span class="s2">"Kiwi"</span><span class="p">,</span> <span class="s2">"Pflaume"</span> <span class="p">};</span>
-<span class="n">woerter</span><span class="o">.</span><span class="n">Sort</span><span class="p">((</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">a</span><span class="o">.</span><span class="n">Length</span><span class="o">.</span><span class="n">CompareTo</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">Length</span><span class="p">));</span>
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">Join</span><span class="p">(</span><span class="s2">", "</span><span class="p">,</span> <span class="n">woerter</span><span class="p">));</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>var woerter = new List&lt;string&gt; { "Apfel", "Banane", "Kiwi", "Pflaume" };
+woerter.Sort((a, b) =&gt; a.Length.CompareTo(b.Length));
+Console.WriteLine(string.Join(", ", woerter));
 </pre></div>
 </div>
 </div>
@@ -8112,12 +8112,12 @@ Clara (5 Buchstaben)
 <div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">void</span> <span class="n">FuehreAus</span><span class="p">(</span><span class="n">Func</span><span class="o">&lt;</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="o">&gt;</span> <span class="n">operation</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">operation</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
-<span class="p">}</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>void FuehreAus(Func&lt;int, int&gt; operation)
+{
+    Console.WriteLine(operation(5));
+}
 
-<span class="n">FuehreAus</span><span class="p">(</span><span class="n">x</span> <span class="o">=&gt;</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">10</span><span class="p">);</span>
+FuehreAus(x =&gt; x * 10);
 </pre></div>
 </div>
 </div>
@@ -8155,15 +8155,15 @@ Clara (5 Buchstaben)
 <div class="jp-InputPrompt jp-InputArea-prompt">In [25]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">var</span> <span class="n">aktionen</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Dictionary</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="n">Action</span><span class="o">&gt;</span> <span class="p">{</span>
-    <span class="p">[</span><span class="s2">"start"</span><span class="p">]</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Gestartet"</span><span class="p">),</span>
-    <span class="p">[</span><span class="s2">"stop"</span><span class="p">]</span>  <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Gestoppt"</span><span class="p">),</span>
-    <span class="p">[</span><span class="s2">"pause"</span><span class="p">]</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Pausiert"</span><span class="p">)</span>
-<span class="p">};</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>var aktionen = new Dictionary&lt;string, Action&gt; {
+    ["start"] = () =&gt; Console.WriteLine("Gestartet"),
+    ["stop"]  = () =&gt; Console.WriteLine("Gestoppt"),
+    ["pause"] = () =&gt; Console.WriteLine("Pausiert")
+};
 
-<span class="n">string</span> <span class="n">aktion</span> <span class="o">=</span> <span class="s2">"pause"</span><span class="p">;</span>
+string aktion = "pause";
 
-<span class="n">aktionen</span><span class="p">[</span><span class="n">aktion</span><span class="p">]();</span>
+aktionen[aktion]();
 </pre></div>
 </div>
 </div>
@@ -8201,9 +8201,9 @@ Clara (5 Buchstaben)
 <div class="jp-InputPrompt jp-InputArea-prompt">In [26]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">string</span><span class="p">[]</span> <span class="n">dateien</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">"test.txt"</span><span class="p">,</span> <span class="s2">"readme.md"</span><span class="p">,</span> <span class="s2">"app.cs"</span><span class="p">,</span> <span class="s2">"data.json"</span> <span class="p">};</span>
-<span class="n">var</span> <span class="n">nurTxt</span> <span class="o">=</span> <span class="n">dateien</span><span class="o">.</span><span class="n">Where</span><span class="p">(</span><span class="n">f</span> <span class="o">=&gt;</span> <span class="n">f</span><span class="o">.</span><span class="n">EndsWith</span><span class="p">(</span><span class="s2">".txt"</span><span class="p">));</span>
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">Join</span><span class="p">(</span><span class="s2">", "</span><span class="p">,</span> <span class="n">nurTxt</span><span class="p">));</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>string[] dateien = { "test.txt", "readme.md", "app.cs", "data.json" };
+var nurTxt = dateien.Where(f =&gt; f.EndsWith(".txt"));
+Console.WriteLine(string.Join(", ", nurTxt));
 </pre></div>
 </div>
 </div>
@@ -8241,12 +8241,12 @@ Clara (5 Buchstaben)
 <div class="jp-InputPrompt jp-InputArea-prompt">In [40]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">Predicate</span><span class="o">&lt;</span><span class="nb">int</span><span class="o">&gt;</span> <span class="n">istPrim</span> <span class="o">=</span> <span class="n">n</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">)</span> <span class="k">return</span> <span class="n">false</span><span class="p">;</span>
-    <span class="k">return</span> <span class="n">Enumerable</span><span class="o">.</span><span class="n">Range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">All</span><span class="p">(</span><span class="n">i</span> <span class="o">=&gt;</span> <span class="n">n</span> <span class="o">%</span> <span class="n">i</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">);</span>
-<span class="p">};</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>Predicate&lt;int&gt; istPrim = n =&gt; {
+    if (n &lt; 2) return false;
+    return Enumerable.Range(2, n - 2).All(i =&gt; n % i != 0);
+};
 
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">istPrim</span><span class="p">(</span><span class="mi">2010100001</span><span class="p">));</span>
+Console.WriteLine(istPrim(2010100001));
 </pre></div>
 </div>
 </div>
@@ -8284,10 +8284,10 @@ Clara (5 Buchstaben)
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">using</span> <span class="n">System</span><span class="o">.</span><span class="n">IO</span><span class="p">;</span>
-<span class="n">var</span> <span class="n">dateien</span> <span class="o">=</span> <span class="n">new</span> <span class="n">DirectoryInfo</span><span class="p">(</span><span class="s2">"."</span><span class="p">)</span><span class="o">.</span><span class="n">GetFiles</span><span class="p">();</span>
-<span class="n">var</span> <span class="n">groesste</span> <span class="o">=</span> <span class="n">dateien</span><span class="o">.</span><span class="n">OrderByDescending</span><span class="p">(</span><span class="n">f</span> <span class="o">=&gt;</span> <span class="n">f</span><span class="o">.</span><span class="n">Length</span><span class="p">)</span><span class="o">.</span><span class="n">First</span><span class="p">();</span>
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Größte Datei: </span><span class="si">{groesste.Name}</span><span class="s2"> (</span><span class="si">{groesste.Length}</span><span class="s2"> Bytes)"</span><span class="p">);</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>using System.IO;
+var dateien = new DirectoryInfo(".").GetFiles();
+var groesste = dateien.OrderByDescending(f =&gt; f.Length).First();
+Console.WriteLine($"Größte Datei: {groesste.Name} ({groesste.Length} Bytes)");
 </pre></div>
 </div>
 </div>
@@ -8312,15 +8312,15 @@ Clara (5 Buchstaben)
 <div class="jp-InputPrompt jp-InputArea-prompt">In [41]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">using</span> <span class="n">System</span><span class="o">.</span><span class="n">Net</span><span class="o">.</span><span class="n">Http</span><span class="p">;</span>
-<span class="n">Func</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="n">Task</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&gt;</span> <span class="n">ladeSeite</span> <span class="o">=</span> <span class="k">async</span> <span class="n">url</span> <span class="o">=&gt;</span>
-<span class="p">{</span>
-    <span class="n">using</span> <span class="n">var</span> <span class="n">client</span> <span class="o">=</span> <span class="n">new</span> <span class="n">HttpClient</span><span class="p">();</span>
-    <span class="k">return</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">GetStringAsync</span><span class="p">(</span><span class="n">url</span><span class="p">);</span>
-<span class="p">};</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>using System.Net.Http;
+Func&lt;string, Task&lt;string&gt;&gt; ladeSeite = async url =&gt;
+{
+    using var client = new HttpClient();
+    return await client.GetStringAsync(url);
+};
 
-<span class="n">string</span> <span class="n">html</span> <span class="o">=</span> <span class="k">await</span> <span class="n">ladeSeite</span><span class="p">(</span><span class="s2">"https://www8.2hands.de/SoProMing/JederKannCoden/programming/abstract/Intro.de.html"</span><span class="p">);</span>
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">html</span><span class="p">[</span><span class="o">.</span><span class="mf">.1000</span><span class="p">]);</span> <span class="o">//</span> <span class="n">Zeigt</span> <span class="n">die</span> <span class="n">ersten</span> <span class="mi">100</span> <span class="n">Zeichen</span>
+string html = await ladeSeite("https://www8.2hands.de/SoProMing/JederKannCoden/programming/abstract/Intro.de.html");
+Console.WriteLine(html[..1000]); // Zeigt die ersten 100 Zeichen
 </pre></div>
 </div>
 </div>
@@ -8382,14 +8382,14 @@ Clara (5 Buchstaben)
 <div class="jp-InputPrompt jp-InputArea-prompt">In [43]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Person</span> <span class="p">{</span> <span class="n">public</span> <span class="n">string</span> <span class="n">Name</span><span class="p">;</span> <span class="n">public</span> <span class="nb">int</span> <span class="n">Alter</span><span class="p">;</span> <span class="p">}</span>
-<span class="n">var</span> <span class="n">personen</span> <span class="o">=</span> <span class="n">new</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Person</span><span class="o">&gt;</span> <span class="p">{</span>
-    <span class="n">new</span> <span class="n">Person</span> <span class="p">{</span> <span class="n">Name</span> <span class="o">=</span> <span class="s2">"Lisa"</span><span class="p">,</span> <span class="n">Alter</span> <span class="o">=</span> <span class="mi">25</span> <span class="p">},</span>
-    <span class="n">new</span> <span class="n">Person</span> <span class="p">{</span> <span class="n">Name</span> <span class="o">=</span> <span class="s2">"Tom"</span><span class="p">,</span> <span class="n">Alter</span> <span class="o">=</span> <span class="mi">32</span> <span class="p">}</span>
-<span class="p">};</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>class Person { public string Name; public int Alter; }
+var personen = new List&lt;Person&gt; {
+    new Person { Name = "Lisa", Alter = 25 },
+    new Person { Name = "Tom", Alter = 32 }
+};
 
-<span class="n">var</span> <span class="n">namen</span> <span class="o">=</span> <span class="n">personen</span><span class="o">.</span><span class="n">Select</span><span class="p">(</span><span class="n">p</span> <span class="o">=&gt;</span> <span class="n">p</span><span class="o">.</span><span class="n">Name</span><span class="p">)</span><span class="o">.</span><span class="n">ToList</span><span class="p">();</span>
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">Join</span><span class="p">(</span><span class="s2">", "</span><span class="p">,</span> <span class="n">namen</span><span class="p">));</span>
+var namen = personen.Select(p =&gt; p.Name).ToList();
+Console.WriteLine(string.Join(", ", namen));
 </pre></div>
 </div>
 </div>
@@ -8425,10 +8425,10 @@ Clara (5 Buchstaben)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [46]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="n">delegate</span> <span class="nb">int</span> <span class="n">Rechenart</span><span class="p">(</span><span class="nb">int</span> <span class="n">x</span><span class="p">,</span> <span class="nb">int</span> <span class="n">y</span><span class="p">);</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>public delegate int Rechenart(int x, int y);
 </pre></div>
 </div>
 </div>
@@ -8451,17 +8451,17 @@ Clara (5 Buchstaben)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="nb">int</span> <span class="n">Addiere</span><span class="p">(</span><span class="nb">int</span> <span class="n">a</span><span class="p">,</span> <span class="nb">int</span> <span class="n">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
-<span class="nb">int</span> <span class="n">Multipliziere</span><span class="p">(</span><span class="nb">int</span> <span class="n">a</span><span class="p">,</span> <span class="nb">int</span> <span class="n">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">;</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>int Addiere(int a, int b) =&gt; a + b;
+int Multipliziere(int a, int b) =&gt; a * b;
 
-<span class="n">Rechenart</span> <span class="n">rechner</span> <span class="o">=</span> <span class="n">Addiere</span><span class="p">;</span>
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">rechner</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">));</span>
+Rechenart rechner = Addiere;
+Console.WriteLine(rechner(2, 3));
 
-<span class="n">rechner</span> <span class="o">=</span> <span class="n">Multipliziere</span><span class="p">;</span>
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">rechner</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">));</span>
+rechner = Multipliziere;
+Console.WriteLine(rechner(2, 3));
 </pre></div>
 </div>
 </div>
@@ -8527,18 +8527,18 @@ Clara (5 Buchstaben)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [48]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="n">delegate</span> <span class="n">void</span> <span class="n">Info</span><span class="p">();</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>public delegate void Info();
 
-<span class="n">void</span> <span class="n">Begruessung</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Hallo"</span><span class="p">);</span>
-<span class="n">void</span> <span class="n">Verabschiedung</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Tschüss"</span><span class="p">);</span>
+void Begruessung() =&gt; Console.WriteLine("Hallo");
+void Verabschiedung() =&gt; Console.WriteLine("Tschüss");
 
-<span class="n">Info</span> <span class="n">meldung</span> <span class="o">=</span> <span class="n">Begruessung</span><span class="p">;</span>
-<span class="n">meldung</span> <span class="o">+=</span> <span class="n">Verabschiedung</span><span class="p">;</span>
+Info meldung = Begruessung;
+meldung += Verabschiedung;
 
-<span class="n">meldung</span><span class="p">();</span> 
+meldung(); 
 </pre></div>
 </div>
 </div>
@@ -8613,8 +8613,8 @@ Tschüss
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">Func</span><span class="o">&lt;</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="o">&gt;</span> <span class="n">rechnen</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">rechnen</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">));</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>Func&lt;int, int, int&gt; rechnen = (a, b) =&gt; a + b;
+Console.WriteLine(rechnen(4, 5));
 </pre></div>
 </div>
 </div>
@@ -8649,16 +8649,16 @@ Tschüss
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [50]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">void</span> <span class="n">BerechneUndZeige</span><span class="p">(</span><span class="nb">int</span> <span class="n">a</span><span class="p">,</span> <span class="nb">int</span> <span class="n">b</span><span class="p">,</span> <span class="n">Rechenart</span> <span class="n">methode</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Ergebnis: "</span> <span class="o">+</span> <span class="n">methode</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">));</span>
-<span class="p">}</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>void BerechneUndZeige(int a, int b, Rechenart methode)
+{
+    Console.WriteLine("Ergebnis: " + methode(a, b));
+}
 
-<span class="n">BerechneUndZeige</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">Addiere</span><span class="p">);</span>
-<span class="n">BerechneUndZeige</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">Multipliziere</span><span class="p">);</span>
+BerechneUndZeige(3, 4, Addiere);
+BerechneUndZeige(3, 4, Multipliziere);
 </pre></div>
 </div>
 </div>
@@ -8721,20 +8721,20 @@ Ergebnis: 12
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [55]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="n">delegate</span> <span class="nb">int</span> <span class="n">Rechne</span><span class="p">(</span><span class="nb">int</span> <span class="n">x</span><span class="p">,</span> <span class="nb">int</span> <span class="n">y</span><span class="p">);</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>public delegate int Rechne(int x, int y);
 
-<span class="n">static</span> <span class="nb">int</span> <span class="n">Eins</span><span class="p">(</span><span class="nb">int</span> <span class="n">x</span><span class="p">,</span> <span class="nb">int</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span> <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Eins"</span><span class="p">);</span> <span class="k">return</span> <span class="mi">1</span><span class="p">;</span> <span class="p">}</span>
-<span class="n">static</span> <span class="nb">int</span> <span class="n">Zwei</span><span class="p">(</span><span class="nb">int</span> <span class="n">x</span><span class="p">,</span> <span class="nb">int</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span> <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Zwei"</span><span class="p">);</span> <span class="k">return</span> <span class="mi">2</span><span class="p">;</span> <span class="p">}</span>
+static int Eins(int x, int y) { Console.WriteLine("Eins"); return x + y; }
+static int Zwei(int x, int y) { Console.WriteLine("Zwei"); return 2 * (x + y); }
 
-<span class="n">Rechne</span> <span class="n">d</span> <span class="o">=</span> <span class="n">Eins</span><span class="p">;</span>
-<span class="n">d</span> <span class="o">+=</span> <span class="n">Zwei</span><span class="p">;</span>
+Rechne d = Eins;
+d += Zwei;
 
-<span class="nb">int</span> <span class="n">result</span> <span class="o">=</span> <span class="n">d</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+int result = d(3, 4);
 
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Ergebnis: </span><span class="si">{result}</span><span class="s2">"</span><span class="p">);</span>
+Console.WriteLine($"Ergebnis: {result}");
 </pre></div>
 </div>
 </div>
@@ -8749,7 +8749,7 @@ Ergebnis: 12
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>Eins
 Zwei
-Ergebnis: 2
+Ergebnis: 14
 </pre>
 </div>
 </div>
@@ -8932,6 +8932,269 @@ Ergebnis: 2
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Quiz">Quiz<a class="anchor-link" href="#Quiz">¶</a></h2><p>Hier ein kleines Quiz (eingebettet als html + javascript)</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [56]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-polyglot-notebook"><pre><span></span>#!csharp
+#r "nuget: Microsoft.AspNetCore.Html.Abstractions, 2.3.0"
+
+using System.IO;
+using Microsoft.AspNetCore.Html;
+
+var path = "Lambdas_n_delegates.de.quiz.html";
+var html = await File.ReadAllTextAsync(path);
+
+// HtmlString implements IHtmlContent; .NET Interactive renders it as HTML
+display(new HtmlString(html));
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<div><div></div><div></div><div><strong>Installed Packages</strong><ul><li><span>Microsoft.AspNetCore.Html.Abstractions, 2.3.0</span></li></ul></div></div>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<div id="lambdas-delegates-quiz" style="font-family: system-ui, sans-serif; max-width: 780px; line-height: 1.4;">
+<h2 style="margin: 0.2rem 0 0.6rem;">Lambdas &amp; Delegaten – Mini-Quiz</h2>
+<p style="margin: 0 0 1rem;">10 Fragen zu Syntax, Func/Action/Predicate, Closures und Delegates.</p>
+<div id="quiz-card" style="border:1px solid #ddd;border-radius:12px;padding:16px;box-shadow:0 2px 8px rgba(0,0,0,.04);">
+<div id="progress" style="font-size:14px;color:#555;margin-bottom:8px;"></div>
+<div id="question" style="font-size:18px;font-weight:600;margin:8px 0 12px;"></div>
+<div id="choices" style="display:grid;gap:8px;"></div>
+<div id="feedback" style="margin-top:12px;min-height:24px;"></div>
+<div style="display:flex;gap:8px;margin-top:16px;">
+<button id="skipBtn" style="padding:8px 12px;border:1px solid #999;border-radius:8px;background:#f7f7f7;cursor:pointer;">Überspringen</button>
+<button id="nextBtn" style="padding:8px 12px;border:1px solid #0b5;border-radius:8px;background:#0b5;color:white;cursor:pointer;">Weiter</button>
+<button id="restartBtn" style="padding:8px 12px;border:1px solid #555;border-radius:8px;background:white;cursor:pointer;display:none;">Nochmal</button>
+<div style="margin-left:auto;align-self:center;font-size:13px;color:#666;">Tipp: Antworten anklicken</div>
+</div>
+</div>
+<div id="result" style="display:none;margin-top:16px;border:1px solid #ddd;border-radius:12px;padding:16px;">
+<h3 style="margin-top:0;">Auswertung</h3>
+<p id="score"></p>
+<details><summary style="cursor:pointer;">Erklärungen anzeigen</summary><ol id="review"></ol></details>
+</div>
+</div>
+<script>
+(function(){
+  const $ = s => document.querySelector(s);
+
+  const QUESTIONS = [
+    {
+      q: 'Was ist ein Lambda-Ausdruck in C#?',
+      choices: [
+        'Eine anonyme Funktion ohne eigenen Methodennamen',
+        'Ein neuer Datentyp für Klassen',
+        'Ein Ersatz für Schleifen',
+        'Ein spezieller Exception-Typ'
+      ],
+      correct: 0,
+      explain: 'Lambdas sind anonyme Funktionen, die wie Werte übergeben werden können.'
+    },
+    {
+      q: 'Welche Syntax ist ein gültiger Lambda-Ausdruck für das Quadrat?',
+      choices: [
+        '<code>x =&gt; x * x</code>',
+        '<code>x -&gt; x * x</code>',
+        '<code>lambda x: x * x</code>',
+        '<code>(x) = x * x</code>'
+      ],
+      correct: 0,
+      explain: 'In C# nutzt man die Syntax <code>=&gt;</code>.'
+    },
+    {
+      q: 'Welche Form zeigt eine Statement-Lambda mit mehreren Zeilen?',
+      choices: [
+        '<code>x =&gt; { return x * 2; }</code>',
+        '<code>x =&gt; x * 2</code>',
+        '<code>{ x =&gt; x * 2 }</code>',
+        '<code>return x =&gt; x * 2</code>'
+      ],
+      correct: 0,
+      explain: 'Statement-Lambdas nutzen <code>{}</code> und benötigen ein <code>return</code>.'
+    },
+    {
+      q: 'Welcher Typ ist für genau einen Parameter und Rückgabe <code>bool</code> vorgesehen?',
+      choices: [
+        '<code>Predicate&lt;T&gt;</code>',
+        '<code>Action&lt;T&gt;</code>',
+        '<code>Func&lt;T&gt;</code>',
+        '<code>Delegate</code>'
+      ],
+      correct: 0,
+      explain: '<code>Predicate&lt;T&gt;</code> hat genau einen Parameter und liefert <code>bool</code>.'
+    },
+    {
+      q: 'Welcher Typ steht für Methoden ohne Rückgabewert?',
+      choices: [
+        '<code>Action&lt;T&gt;</code>',
+        '<code>Func&lt;T, TResult&gt;</code>',
+        '<code>Predicate&lt;T&gt;</code>',
+        '<code>Tuple&lt;T&gt;</code>'
+      ],
+      correct: 0,
+      explain: '<code>Action&lt;...&gt;</code> entspricht <code>void</code>-Methoden.'
+    },
+    {
+      q: 'Was bedeutet bei <code>Func&lt;int, string&gt;</code> der letzte Typ?',
+      choices: [
+        'Rückgabetyp',
+        'Parametername',
+        'Namespace',
+        'Zugriffsmodifizierer'
+      ],
+      correct: 0,
+      explain: 'Bei <code>Func</code> ist der letzte Typ immer der Rückgabetyp.'
+    },
+    {
+      q: 'Wie nennt man das Erfassen einer äußeren Variablen durch ein Lambda?',
+      choices: [
+        'Closure',
+        'Casting',
+        'Boxing',
+        'Overload'
+      ],
+      correct: 0,
+      explain: 'Lambdas können Variablen aus dem äußeren Kontext als Closure capturen.'
+    },
+    {
+      q: 'Welche LINQ-Methode verwendet man typischerweise zum Filtern?',
+      choices: [
+        '<code>Where</code>',
+        '<code>Select</code>',
+        '<code>OrderBy</code>',
+        '<code>Aggregate</code>'
+      ],
+      correct: 0,
+      explain: '<code>Where</code> filtert eine Sequenz anhand eines Prädikats.'
+    },
+    {
+      q: 'Welche Deklaration definiert einen Delegattyp korrekt?',
+      choices: [
+        '<code>public delegate int Rechenart(int x, int y);</code>',
+        '<code>public delegat int Rechenart(int x, int y);</code>',
+        '<code>public delegate Rechenart(int x, int y);</code>',
+        '<code>delegate Rechenart = (int x, int y);</code>'
+      ],
+      correct: 0,
+      explain: 'Die Syntax lautet: <code>delegate Rückgabetyp Name(...)</code>.'
+    },
+    {
+      q: 'Was passiert bei einem Multicast-Delegaten mit Rückgabewert?',
+      choices: [
+        'Nur der Rückgabewert der letzten Methode zählt',
+        'Alle Rückgabewerte werden addiert',
+        'Es kommt zu einer Exception',
+        'Nur die erste Methode wird ausgeführt'
+      ],
+      correct: 0,
+      explain: 'Bei Multicast-Delegaten zählt der Rückgabewert der letzten Methode.'
+    }
+  ];
+
+  function shuffle(a){const arr=a.slice();for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]];}return arr;}
+  const state = { order: shuffle([...Array(QUESTIONS.length).keys()]), i: 0, correct: 0, answers: [] };
+
+  const qEl = $("#question"), cEl = $("#choices"), fEl = $("#feedback"), pEl = $("#progress");
+  const next = $("#nextBtn"), skip = $("#skipBtn"), restart = $("#restartBtn");
+  const resultBox = $("#result"), score = $("#score"), review = $("#review");
+
+  function render(){
+    const qi = state.order[state.i], item = QUESTIONS[qi];
+    pEl.textContent = `Frage ${state.i+1}/${QUESTIONS.length}`;
+    qEl.innerHTML = item.q; cEl.innerHTML = ""; fEl.innerHTML = "";
+    item.choices.forEach((c,idx)=>{
+      const b = document.createElement("button");
+      b.innerHTML = c;
+      Object.assign(b.style,{padding:"10px 12px",border:"1px solid #ccc",borderRadius:"8px",background:"white",textAlign:"left"});
+      b.onclick = () => answer(idx);
+      cEl.appendChild(b);
+    });
+  }
+
+  function answer(chosen){
+    const qi = state.order[state.i], item = QUESTIONS[qi];
+    const good = chosen === item.correct;
+    state.answers[qi] = { chosen, good };
+    if (good) state.correct++;
+
+    [...cEl.children].forEach((b,i)=>{
+      b.disabled = true;
+      if (i === item.correct){ b.style.borderColor="#0b5"; b.style.background="rgba(0,180,80,.08)"; }
+      if (i === chosen && !good){ b.style.borderColor="#b00"; b.style.background="rgba(200,0,0,.06)"; }
+    });
+
+    fEl.innerHTML = (good ? "✔️ Richtig" : "✖️ Falsch") + " — " + item.explain;
+  }
+
+  function nextQ(){
+    if (state.i < QUESTIONS.length - 1){ state.i++; render(); }
+    else { showResult(); }
+  }
+
+  function skipQ(){
+    if (state.i < QUESTIONS.length - 1){ state.i++; render(); }
+    else { showResult(); }
+  }
+
+  function showResult(){
+    $("#quiz-card").style.display = "none";
+    resultBox.style.display = "";
+    const percent = Math.round(state.correct / QUESTIONS.length * 100);
+    score.textContent = `${state.correct} von ${QUESTIONS.length} korrekt (${percent}%)`;
+    review.innerHTML = "";
+    state.order.forEach(qi=>{
+      const it = QUESTIONS[qi], a = state.answers[qi];
+      const li = document.createElement("li");
+      const chosen = a ? it.choices[a.chosen] : "—";
+      li.innerHTML = `<strong>${it.q}</strong><br>Deine Antwort: ${chosen}<br>Korrekt: ${it.choices[it.correct]}<br><span style="color:#555">${it.explain}</span>`;
+      review.appendChild(li);
+    });
+    restart.style.display = "";
+  }
+
+  restart.onclick = () => {
+    state.i = 0; state.correct = 0;
+    state.order = shuffle([...Array(QUESTIONS.length).keys()]);
+    $("#quiz-card").style.display = ""; resultBox.style.display = "none";
+    render();
+  };
+  $("#nextBtn").onclick = nextQ;
+  $("#skipBtn").onclick = skipQ;
+
+  render();
+})();
+</script>
+</div>
 </div>
 </div>
 </div>

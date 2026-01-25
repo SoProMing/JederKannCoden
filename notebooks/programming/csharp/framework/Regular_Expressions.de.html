@@ -7694,16 +7694,20 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">using</span> <span class="n">System</span><span class="o">.</span><span class="n">Text</span><span class="o">.</span><span class="n">RegularExpressions</span><span class="p">;</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>using System.Text.RegularExpressions;
 
-<span class="n">string</span> <span class="n">pattern</span> <span class="o">=</span> <span class="o">@</span><span class="s2">"</span><span class="se">\b</span><span class="s2">word</span><span class="se">\b</span><span class="s2">"</span><span class="p">;</span>
-<span class="n">string</span> <span class="nb">input</span> <span class="o">=</span> <span class="s2">"Word, word, WORD!"</span><span class="p">;</span>
-<span class="n">Regex</span> <span class="n">regex</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Regex</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">RegexOptions</span><span class="o">.</span><span class="n">IgnoreCase</span><span class="p">);</span>
-<span class="nb">bool</span> <span class="n">isMatch</span> <span class="o">=</span> <span class="n">regex</span><span class="o">.</span><span class="n">IsMatch</span><span class="p">(</span><span class="nb">input</span><span class="p">);</span>
-<span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">isMatch</span><span class="p">);</span> <span class="o">//</span> <span class="kc">True</span>
+string pattern = @"\bword\b";
+string input = "Word, word, WORD!";
+Regex regex = new Regex(pattern, RegexOptions.IgnoreCase);
+bool isMatch = regex.IsMatch(input);
+Console.WriteLine(isMatch); // True
+MatchCollection matches = Regex.Matches(input, pattern, RegexOptions.IgnoreCase);
+foreach( var match in matches ) {
+    Console.WriteLine(match);
+}
 </pre></div>
 </div>
 </div>
@@ -7717,6 +7721,9 @@ a.anchor-link {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>True
+Word
+word
+WORD
 </pre>
 </div>
 </div>
@@ -7896,6 +7903,269 @@ a.anchor-link {
 <li>Beachte Performance-Aspekte, besonders bei großen Datenmengen oder komplexen Mustern.</li>
 <li>Verwende Debugging-Tools, um Regex besser zu verstehen und zu optimieren.</li>
 </ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Quiz">Quiz<a class="anchor-link" href="#Quiz">¶</a></h2><p>Hier ein kleines Quiz (eingebettet als html + javascript)</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-polyglot-notebook"><pre><span></span>#!csharp
+#r "nuget: Microsoft.AspNetCore.Html.Abstractions, 2.3.0"
+
+using System.IO;
+using Microsoft.AspNetCore.Html;
+
+var path = "Regular_Expressions.de.quiz.html";
+var html = await File.ReadAllTextAsync(path);
+
+// HtmlString implements IHtmlContent; .NET Interactive renders it as HTML
+display(new HtmlString(html));
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<div><div></div><div></div><div><strong>Installed Packages</strong><ul><li><span>Microsoft.AspNetCore.Html.Abstractions, 2.3.0</span></li></ul></div></div>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<div id="regular-expressions-quiz" style="font-family: system-ui, sans-serif; max-width: 780px; line-height: 1.4;">
+<h2 style="margin: 0.2rem 0 0.6rem;">Reguläre Ausdrücke – Mini-Quiz</h2>
+<p style="margin: 0 0 1rem;">10 Fragen zu Syntax, Klassen, Quantifizierern, Optionen und C#-Methoden.</p>
+<div id="quiz-card" style="border:1px solid #ddd;border-radius:12px;padding:16px;box-shadow:0 2px 8px rgba(0,0,0,.04);">
+<div id="progress" style="font-size:14px;color:#555;margin-bottom:8px;"></div>
+<div id="question" style="font-size:18px;font-weight:600;margin:8px 0 12px;"></div>
+<div id="choices" style="display:grid;gap:8px;"></div>
+<div id="feedback" style="margin-top:12px;min-height:24px;"></div>
+<div style="display:flex;gap:8px;margin-top:16px;">
+<button id="skipBtn" style="padding:8px 12px;border:1px solid #999;border-radius:8px;background:#f7f7f7;cursor:pointer;">Überspringen</button>
+<button id="nextBtn" style="padding:8px 12px;border:1px solid #0b5;border-radius:8px;background:#0b5;color:white;cursor:pointer;">Weiter</button>
+<button id="restartBtn" style="padding:8px 12px;border:1px solid #555;border-radius:8px;background:white;cursor:pointer;display:none;">Nochmal</button>
+<div style="margin-left:auto;align-self:center;font-size:13px;color:#666;">Tipp: Antworten anklicken</div>
+</div>
+</div>
+<div id="result" style="display:none;margin-top:16px;border:1px solid #ddd;border-radius:12px;padding:16px;">
+<h3 style="margin-top:0;">Auswertung</h3>
+<p id="score"></p>
+<details><summary style="cursor:pointer;">Erklärungen anzeigen</summary><ol id="review"></ol></details>
+</div>
+</div>
+<script>
+(function(){
+  const $ = s => document.querySelector(s);
+
+  const QUESTIONS = [
+    {
+      q: 'Was bedeutet der Punkt <code>.</code> in einem Regex (ohne Optionen)?',
+      choices: [
+        'Beliebiges Zeichen außer Zeilenumbruch',
+        'Beliebige Ziffer',
+        'Beliebiges Leerzeichen',
+        'Nur ein Punkt-Zeichen'
+      ],
+      correct: 0,
+      explain: 'Der Punkt matcht ein beliebiges Zeichen, standardmäßig ohne Zeilenumbruch.'
+    },
+    {
+      q: 'Welche Bedeutung hat der Quantifizierer <code>+</code>?',
+      choices: [
+        '0 oder 1 Vorkommen',
+        '0 oder mehr Vorkommen',
+        '1 oder mehr Vorkommen',
+        'Genau 1 Vorkommen'
+      ],
+      correct: 2,
+      explain: '<code>+</code> steht für "eins oder mehr".'
+    },
+    {
+      q: 'Welche Zeichenklasse steht für eine Ziffer (0-9)?',
+      choices: [
+        '<code>\\d</code>',
+        '<code>\\w</code>',
+        '<code>\\s</code>',
+        '<code>\\b</code>'
+      ],
+      correct: 0,
+      explain: '<code>\\d</code> entspricht einer Ziffer.'
+    },
+    {
+      q: 'Wofür steht <code>\\b</code> in C#-Regex?',
+      choices: [
+        'Beginn der Zeile',
+        'Wortgrenze',
+        'Beliebiges Leerzeichen',
+        'Rückverweis auf Gruppe 1'
+      ],
+      correct: 1,
+      explain: '<code>\\b</code> markiert eine Wortgrenze zwischen Wort- und Nicht-Wortzeichen.'
+    },
+    {
+      q: 'Welche Option sorgt dafür, dass <code>^</code> und <code>$</code> jede Zeile in einem mehrzeiligen Text matchen?',
+      choices: [
+        'RegexOptions.Singleline',
+        'RegexOptions.Multiline',
+        'RegexOptions.IgnoreCase',
+        'RegexOptions.Compiled'
+      ],
+      correct: 1,
+      explain: '<code>RegexOptions.Multiline</code> macht ^ und $ zeilenbasiert.'
+    },
+    {
+      q: 'Welche Methode liefert alle Treffer als Sammlung zurück?',
+      choices: [
+        'Regex.Match',
+        'Regex.Matches',
+        'Regex.IsMatch',
+        'Regex.Replace'
+      ],
+      correct: 1,
+      explain: '<code>Regex.Matches</code> gibt eine <code>MatchCollection</code> aller Treffer zurück.'
+    },
+    {
+      q: 'Was ergibt <code>Regex.Replace("abc123", @"\\d", "#")</code>?',
+      choices: [
+        'abc123',
+        'abc###',
+        '###123',
+        'abc#'
+      ],
+      correct: 1,
+      explain: 'Jede Ziffer wird durch <code>#</code> ersetzt → abc###.'
+    },
+    {
+      q: 'Welche Syntax definiert eine benannte Gruppe?',
+      choices: [
+        '<code>(?<Name>...)</code>',
+        '<code>(?:Name...)</code>',
+        '<code>(#Name...)</code>',
+        '<code>("Name"...)</code>'
+      ],
+      correct: 0,
+      explain: 'Benannte Gruppen nutzen die Syntax <code>(?<Name>...)</code>.'
+    },
+    {
+      q: 'Was liefert das Muster <code>\\d+(?= dollars)</code> in "I have 100 dollars."?',
+      choices: [
+        '100',
+        '100 dollars',
+        'dollars',
+        'I have'
+      ],
+      correct: 0,
+      explain: 'Der Lookahead prüft "dollars" danach, konsumiert es aber nicht.'
+    },
+    {
+      q: 'Warum verwendet man in C# häufig ein <code>@</code> vor dem Regex-String?',
+      choices: [
+        'Damit Backslashes nicht doppelt escaped werden müssen',
+        'Damit der Regex automatisch kompiliert wird',
+        'Damit Groß-/Kleinschreibung ignoriert wird',
+        'Damit der Regex Multiline wird'
+      ],
+      correct: 0,
+      explain: 'Verbatim-Strings (<code>@</code>) ersparen doppeltes Escaping von Backslashes.'
+    }
+  ];
+
+  function shuffle(a){const arr=a.slice();for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]];}return arr;}
+  const state = { order: shuffle([...Array(QUESTIONS.length).keys()]), i: 0, correct: 0, answers: [] };
+
+  const qEl = $("#question"), cEl = $("#choices"), fEl = $("#feedback"), pEl = $("#progress");
+  const next = $("#nextBtn"), skip = $("#skipBtn"), restart = $("#restartBtn");
+  const resultBox = $("#result"), score = $("#score"), review = $("#review");
+
+  function render(){
+    const qi = state.order[state.i], item = QUESTIONS[qi];
+    pEl.textContent = `Frage ${state.i+1}/${QUESTIONS.length}`;
+    qEl.innerHTML = item.q; cEl.innerHTML = ""; fEl.innerHTML = "";
+    item.choices.forEach((c,idx)=>{
+      const b = document.createElement("button");
+      b.innerHTML = c;
+      Object.assign(b.style,{padding:"10px 12px",border:"1px solid #ccc",borderRadius:"8px",background:"white",textAlign:"left"});
+      b.onclick = () => answer(idx);
+      cEl.appendChild(b);
+    });
+  }
+
+  function answer(chosen){
+    const qi = state.order[state.i], item = QUESTIONS[qi];
+    const good = chosen === item.correct;
+    state.answers[qi] = { chosen, good };
+    if (good) state.correct++;
+
+    [...cEl.children].forEach((b,i)=>{
+      b.disabled = true;
+      if (i === item.correct){ b.style.borderColor="#0b5"; b.style.background="rgba(0,180,80,.08)"; }
+      if (i === chosen && !good){ b.style.borderColor="#b00"; b.style.background="rgba(200,0,0,.06)"; }
+    });
+
+    fEl.innerHTML = (good ? "✔️ Richtig" : "✖️ Falsch") + " — " + item.explain;
+  }
+
+  function nextQ(){
+    if (state.i < QUESTIONS.length - 1){ state.i++; render(); }
+    else { showResult(); }
+  }
+
+  function skipQ(){
+    if (state.i < QUESTIONS.length - 1){ state.i++; render(); }
+    else { showResult(); }
+  }
+
+  function showResult(){
+    $("#quiz-card").style.display = "none";
+    resultBox.style.display = "";
+    const percent = Math.round(state.correct / QUESTIONS.length * 100);
+    score.textContent = `${state.correct} von ${QUESTIONS.length} korrekt (${percent}%)`;
+    review.innerHTML = "";
+    state.order.forEach(qi=>{
+      const it = QUESTIONS[qi], a = state.answers[qi];
+      const li = document.createElement("li");
+      const chosen = a ? it.choices[a.chosen] : "—";
+      li.innerHTML = `<strong>${it.q}</strong><br>Deine Antwort: ${chosen}<br>Korrekt: ${it.choices[it.correct]}<br><span style="color:#555">${it.explain}</span>`;
+      review.appendChild(li);
+    });
+    restart.style.display = "";
+  }
+
+  restart.onclick = () => {
+    state.i = 0; state.correct = 0;
+    state.order = shuffle([...Array(QUESTIONS.length).keys()]);
+    $("#quiz-card").style.display = ""; resultBox.style.display = "none";
+    render();
+  };
+  $("#nextBtn").onclick = nextQ;
+  $("#skipBtn").onclick = skipQ;
+
+  render();
+})();
+</script>
+</div>
 </div>
 </div>
 </div>

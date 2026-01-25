@@ -7558,21 +7558,21 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="k">class</span><span class="w"> </span><span class="nc">CO2Berechnung</span>
-<span class="p">{</span>
-    <span class="o">//</span> <span class="n">Methode</span> <span class="n">ohne</span> <span class="n">Rückgabewert</span> <span class="p">(</span><span class="n">Prozedur</span><span class="p">)</span>
-    <span class="n">public</span> <span class="n">void</span> <span class="n">Begrüßung</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Willkommen zur CO₂-Fußabdruck-Berechnung!"</span><span class="p">);</span>
-    <span class="p">}</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>public class CO2Berechnung
+{
+    // Methode ohne Rückgabewert (Prozedur)
+    public void Begrüßung()
+    {
+        Console.WriteLine("Willkommen zur CO₂-Fußabdruck-Berechnung!");
+    }
 
-    <span class="o">//</span> <span class="n">Methode</span> <span class="n">mit</span> <span class="n">Rückgabewert</span> <span class="p">(</span><span class="n">Funktion</span><span class="p">)</span>
-    <span class="n">public</span> <span class="n">double</span> <span class="n">BerechneEmissionen</span><span class="p">(</span><span class="n">double</span> <span class="n">streckeInKm</span><span class="p">,</span> <span class="n">double</span> <span class="n">emissionsFaktor</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="o">//</span> <span class="n">Signatur</span><span class="p">:</span> <span class="n">BerechneEmissionen</span><span class="p">(</span><span class="n">double</span><span class="p">,</span> <span class="n">double</span><span class="p">)</span> <span class="p">:</span> <span class="n">double</span>
-        <span class="k">return</span> <span class="n">streckeInKm</span> <span class="o">*</span> <span class="n">emissionsFaktor</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+    // Methode mit Rückgabewert (Funktion)
+    public double BerechneEmissionen(double streckeInKm, double emissionsFaktor)
+    {
+        // Signatur: BerechneEmissionen(double, double) : double
+        return streckeInKm * emissionsFaktor;
+    }
+}
 </pre></div>
 </div>
 </div>
@@ -7605,15 +7605,15 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="k">class</span><span class="w"> </span><span class="nc">CO2Berechnung</span>
-<span class="p">{</span>
-    <span class="n">private</span> <span class="n">double</span> <span class="n">emissionsFaktor</span> <span class="o">=</span> <span class="mf">0.21</span><span class="p">;</span> <span class="o">//</span> <span class="n">nur</span> <span class="n">innerhalb</span> <span class="n">der</span> <span class="n">Klasse</span> <span class="n">sichtbar</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>public class CO2Berechnung
+{
+    private double emissionsFaktor = 0.21; // nur innerhalb der Klasse sichtbar
 
-    <span class="n">public</span> <span class="n">double</span> <span class="n">BerechneEmissionen</span><span class="p">(</span><span class="n">double</span> <span class="n">streckeInKm</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="n">streckeInKm</span> <span class="o">*</span> <span class="n">emissionsFaktor</span><span class="p">;</span> <span class="o">//</span> <span class="n">Zugriff</span> <span class="n">auf</span> <span class="n">private</span> <span class="n">Variable</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+    public double BerechneEmissionen(double streckeInKm)
+    {
+        return streckeInKm * emissionsFaktor; // Zugriff auf private Variable
+    }
+}
 </pre></div>
 </div>
 </div>
@@ -7639,13 +7639,13 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="n">double</span> <span class="n">BerechneEmissionen</span><span class="p">(</span><span class="n">double</span> <span class="n">streckeInKm</span><span class="p">,</span> <span class="n">double</span> <span class="n">emissionsFaktor</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">return</span> <span class="n">streckeInKm</span> <span class="o">*</span> <span class="n">emissionsFaktor</span><span class="p">;</span>
-<span class="p">}</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>public double BerechneEmissionen(double streckeInKm, double emissionsFaktor)
+{
+    return streckeInKm * emissionsFaktor;
+}
 
-<span class="o">//</span> <span class="n">Aufruf</span>
-<span class="n">double</span> <span class="n">ergebnis</span> <span class="o">=</span> <span class="n">BerechneEmissionen</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mf">0.21</span><span class="p">);</span>
+// Aufruf
+double ergebnis = BerechneEmissionen(100, 0.21);
 </pre></div>
 </div>
 </div>
@@ -7674,10 +7674,10 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="n">void</span> <span class="n">ÄndereWert</span><span class="p">(</span><span class="n">ref</span> <span class="n">double</span> <span class="n">emissionsFaktor</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">emissionsFaktor</span> <span class="o">=</span> <span class="mf">0.25</span><span class="p">;</span> <span class="o">//</span> <span class="n">Originalvariable</span> <span class="n">wird</span> <span class="n">geändert</span>
-<span class="p">}</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>public void ÄndereWert(ref double emissionsFaktor)
+{
+    emissionsFaktor = 0.25; // Originalvariable wird geändert
+}
 </pre></div>
 </div>
 </div>
@@ -7707,10 +7707,10 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="n">double</span> <span class="n">BerechneEmissionen</span><span class="p">(</span><span class="n">double</span> <span class="n">streckeInKm</span><span class="p">,</span> <span class="n">double</span> <span class="n">emissionsFaktor</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">return</span> <span class="n">streckeInKm</span> <span class="o">*</span> <span class="n">emissionsFaktor</span><span class="p">;</span>
-<span class="p">}</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>public double BerechneEmissionen(double streckeInKm, double emissionsFaktor)
+{
+    return streckeInKm * emissionsFaktor;
+}
 </pre></div>
 </div>
 </div>
@@ -7736,15 +7736,15 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">using</span> <span class="n">System</span><span class="o">.</span><span class="n">Net</span><span class="o">.</span><span class="n">Http</span><span class="p">;</span>
-<span class="n">using</span> <span class="n">System</span><span class="o">.</span><span class="n">Threading</span><span class="o">.</span><span class="n">Tasks</span><span class="p">;</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>using System.Net.Http;
+using System.Threading.Tasks;
 
-<span class="n">public</span> <span class="k">async</span> <span class="n">Task</span><span class="o">&lt;</span><span class="n">double</span><span class="o">&gt;</span> <span class="n">LadeEmissionsFaktorAsync</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">HttpClient</span> <span class="n">client</span> <span class="o">=</span> <span class="n">new</span> <span class="n">HttpClient</span><span class="p">();</span>
-    <span class="n">string</span> <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">GetStringAsync</span><span class="p">(</span><span class="s2">"https://api.umweltinfo.de/emissionsfaktor"</span><span class="p">);</span>
-    <span class="k">return</span> <span class="n">double</span><span class="o">.</span><span class="n">Parse</span><span class="p">(</span><span class="n">response</span><span class="p">);</span> <span class="o">//</span> <span class="n">Beispielwert</span>
-<span class="p">}</span>
+public async Task&lt;double&gt; LadeEmissionsFaktorAsync()
+{
+    HttpClient client = new HttpClient();
+    string response = await client.GetStringAsync("https://api.umweltinfo.de/emissionsfaktor");
+    return double.Parse(response); // Beispielwert
+}
 </pre></div>
 </div>
 </div>
@@ -7770,7 +7770,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="n">double</span> <span class="n">BerechneEmissionen</span><span class="p">(</span><span class="n">double</span> <span class="n">streckeInKm</span><span class="p">,</span> <span class="n">double</span> <span class="n">emissionsFaktor</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">streckeInKm</span> <span class="o">*</span> <span class="n">emissionsFaktor</span><span class="p">;</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>public double BerechneEmissionen(double streckeInKm, double emissionsFaktor) =&gt; streckeInKm * emissionsFaktor;
 </pre></div>
 </div>
 </div>
@@ -7796,12 +7796,12 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="n">IEnumerable</span><span class="o">&lt;</span><span class="n">double</span><span class="o">&gt;</span> <span class="n">Emissionsfaktoren</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="k">yield</span> <span class="k">return</span> <span class="mf">0.21</span><span class="p">;</span> <span class="o">//</span> <span class="n">Auto</span>
-    <span class="k">yield</span> <span class="k">return</span> <span class="mf">0.05</span><span class="p">;</span> <span class="o">//</span> <span class="n">Zug</span>
-    <span class="k">yield</span> <span class="k">return</span> <span class="mf">0.12</span><span class="p">;</span> <span class="o">//</span> <span class="n">Flugzeug</span>
-<span class="p">}</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>public IEnumerable&lt;double&gt; Emissionsfaktoren()
+{
+    yield return 0.21; // Auto
+    yield return 0.05; // Zug
+    yield return 0.12; // Flugzeug
+}
 </pre></div>
 </div>
 </div>
@@ -7826,56 +7826,56 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">using</span> <span class="n">System</span><span class="p">;</span>
-<span class="n">using</span> <span class="n">System</span><span class="o">.</span><span class="n">Collections</span><span class="o">.</span><span class="n">Generic</span><span class="p">;</span>
-<span class="n">using</span> <span class="n">System</span><span class="o">.</span><span class="n">Net</span><span class="o">.</span><span class="n">Http</span><span class="p">;</span>
-<span class="n">using</span> <span class="n">System</span><span class="o">.</span><span class="n">Threading</span><span class="o">.</span><span class="n">Tasks</span><span class="p">;</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>using System;
+using System.Collections.Generic;
+using System.Net.Http;
+using System.Threading.Tasks;
 
-<span class="n">public</span> <span class="k">class</span><span class="w"> </span><span class="nc">CO2Berechnung</span>
-<span class="p">{</span>
-    <span class="n">public</span> <span class="n">void</span> <span class="n">Begrüßung</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Willkommen zur CO₂-Fußabdruck-Berechnung!"</span><span class="p">);</span>
-    <span class="p">}</span>
+public class CO2Berechnung
+{
+    public void Begrüßung()
+    {
+        Console.WriteLine("Willkommen zur CO₂-Fußabdruck-Berechnung!");
+    }
 
-    <span class="n">public</span> <span class="n">double</span> <span class="n">BerechneEmissionen</span><span class="p">(</span><span class="n">double</span> <span class="n">streckeInKm</span><span class="p">,</span> <span class="n">double</span> <span class="n">emissionsFaktor</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">streckeInKm</span> <span class="o">*</span> <span class="n">emissionsFaktor</span><span class="p">;</span>
+    public double BerechneEmissionen(double streckeInKm, double emissionsFaktor) =&gt; streckeInKm * emissionsFaktor;
 
-    <span class="n">public</span> <span class="k">async</span> <span class="n">Task</span><span class="o">&lt;</span><span class="n">double</span><span class="o">&gt;</span> <span class="n">LadeEmissionsFaktorAsync</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="n">HttpClient</span> <span class="n">client</span> <span class="o">=</span> <span class="n">new</span> <span class="n">HttpClient</span><span class="p">();</span>
-        <span class="n">string</span> <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">GetStringAsync</span><span class="p">(</span><span class="s2">"https://api.umweltinfo.de/emissionsfaktor"</span><span class="p">);</span>
-        <span class="k">return</span> <span class="n">double</span><span class="o">.</span><span class="n">Parse</span><span class="p">(</span><span class="n">response</span><span class="p">);</span>
-    <span class="p">}</span>
+    public async Task&lt;double&gt; LadeEmissionsFaktorAsync()
+    {
+        HttpClient client = new HttpClient();
+        string response = await client.GetStringAsync("https://api.umweltinfo.de/emissionsfaktor");
+        return double.Parse(response);
+    }
 
-    <span class="n">public</span> <span class="n">IEnumerable</span><span class="o">&lt;</span><span class="n">double</span><span class="o">&gt;</span> <span class="n">Emissionsfaktoren</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="k">yield</span> <span class="k">return</span> <span class="mf">0.21</span><span class="p">;</span> <span class="o">//</span> <span class="n">Auto</span>
-        <span class="k">yield</span> <span class="k">return</span> <span class="mf">0.05</span><span class="p">;</span> <span class="o">//</span> <span class="n">Zug</span>
-        <span class="k">yield</span> <span class="k">return</span> <span class="mf">0.12</span><span class="p">;</span> <span class="o">//</span> <span class="n">Flugzeug</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+    public IEnumerable&lt;double&gt; Emissionsfaktoren()
+    {
+        yield return 0.21; // Auto
+        yield return 0.05; // Zug
+        yield return 0.12; // Flugzeug
+    }
+}
 
-<span class="k">class</span><span class="w"> </span><span class="nc">Program</span>
-<span class="p">{</span>
-    <span class="n">static</span> <span class="k">async</span> <span class="n">Task</span> <span class="n">Main</span><span class="p">(</span><span class="n">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">CO2Berechnung</span> <span class="n">co2Berechnung</span> <span class="o">=</span> <span class="n">new</span> <span class="n">CO2Berechnung</span><span class="p">();</span>
-        <span class="n">co2Berechnung</span><span class="o">.</span><span class="n">Begrüßung</span><span class="p">();</span>
+class Program
+{
+    static async Task Main(string[] args)
+    {
+        CO2Berechnung co2Berechnung = new CO2Berechnung();
+        co2Berechnung.Begrüßung();
 
-        <span class="n">double</span> <span class="n">strecke</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span> <span class="o">//</span> <span class="mi">100</span> <span class="n">km</span>
-        <span class="n">double</span> <span class="n">emissionsFaktor</span> <span class="o">=</span> <span class="mf">0.21</span><span class="p">;</span> <span class="o">//</span> <span class="n">Auto</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Emissionen: {co2Berechnung.BerechneEmissionen(strecke, emissionsFaktor)} kg CO₂"</span><span class="p">);</span>
+        double strecke = 100; // 100 km
+        double emissionsFaktor = 0.21; // Auto
+        Console.WriteLine($"Emissionen: {co2Berechnung.BerechneEmissionen(strecke, emissionsFaktor)} kg CO₂");
 
-        <span class="n">double</span> <span class="n">apiFaktor</span> <span class="o">=</span> <span class="k">await</span> <span class="n">co2Berechnung</span><span class="o">.</span><span class="n">LadeEmissionsFaktorAsync</span><span class="p">();</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Lade Emissionsfaktor von API: </span><span class="si">{apiFaktor}</span><span class="s2">"</span><span class="p">);</span>
+        double apiFaktor = await co2Berechnung.LadeEmissionsFaktorAsync();
+        Console.WriteLine($"Lade Emissionsfaktor von API: {apiFaktor}");
 
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Verfügbare Emissionsfaktoren:"</span><span class="p">);</span>
-        <span class="n">foreach</span> <span class="p">(</span><span class="n">double</span> <span class="n">faktor</span> <span class="ow">in</span> <span class="n">co2Berechnung</span><span class="o">.</span><span class="n">Emissionsfaktoren</span><span class="p">())</span>
-        <span class="p">{</span>
-            <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"- </span><span class="si">{faktor}</span><span class="s2"> kg/km"</span><span class="p">);</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+        Console.WriteLine("Verfügbare Emissionsfaktoren:");
+        foreach (double faktor in co2Berechnung.Emissionsfaktoren())
+        {
+            Console.WriteLine($"- {faktor} kg/km");
+        }
+    }
+}
 </pre></div>
 </div>
 </div>

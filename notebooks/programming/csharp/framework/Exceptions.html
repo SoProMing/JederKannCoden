@@ -7555,22 +7555,22 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="k">try</span>
-<span class="p">{</span>
-    <span class="nb">int</span> <span class="n">divisor</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="nb">int</span> <span class="n">result</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">/</span> <span class="n">divisor</span><span class="p">;</span> <span class="o">//</span> <span class="n">Dies</span> <span class="n">löst</span> <span class="n">eine</span> <span class="n">Division</span> <span class="n">durch</span> <span class="n">Null</span> <span class="n">Ausnahme</span> <span class="n">aus</span>
-<span class="p">}</span>
-<span class="n">catch</span> <span class="p">(</span><span class="n">DivideByZeroException</span> <span class="n">ex</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Fehler: Division durch Null ist nicht erlaubt."</span><span class="p">);</span> <span class="o">//</span> <span class="n">Fehlerbehandlung</span>
-<span class="p">}</span>
-<span class="k">finally</span>
-<span class="p">{</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Dieser Block wird immer ausgeführt, egal ob eine Ausnahme auftritt oder nicht."</span><span class="p">);</span> <span class="o">//</span> <span class="n">Cleanup</span><span class="o">-</span><span class="n">Code</span>
-<span class="p">}</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>try
+{
+    int divisor = 0;
+    int result = 10 / divisor; // Dies löst eine Division durch Null Ausnahme aus
+}
+catch (DivideByZeroException ex)
+{
+    Console.WriteLine("Fehler: Division durch Null ist nicht erlaubt."); // Fehlerbehandlung
+}
+finally
+{
+    Console.WriteLine("Dieser Block wird immer ausgeführt, egal ob eine Ausnahme auftritt oder nicht."); // Cleanup-Code
+}
 </pre></div>
 </div>
 </div>
@@ -7610,22 +7610,22 @@ Dieser Block wird immer ausgeführt, egal ob eine Ausnahme auftritt oder nicht.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="k">try</span>
-<span class="p">{</span>
-    <span class="n">string</span><span class="p">[]</span> <span class="n">names</span> <span class="o">=</span> <span class="n">null</span><span class="p">;</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">names</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span> <span class="o">//</span> <span class="n">Zugriff</span> <span class="n">auf</span> <span class="n">null</span><span class="o">-</span><span class="n">Array</span> <span class="n">löst</span> <span class="n">eine</span> <span class="n">NullReferenceException</span> <span class="n">aus</span>
-<span class="p">}</span>
-<span class="n">catch</span> <span class="p">(</span><span class="n">NullReferenceException</span> <span class="n">ex</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Fehler: Es wurde auf ein null-Array zugegriffen."</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="n">catch</span> <span class="p">(</span><span class="n">IndexOutOfRangeException</span> <span class="n">ex</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Fehler: Index außerhalb des Bereichs."</span><span class="p">);</span>
-<span class="p">}</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>try
+{
+    string[] names = null;
+    Console.WriteLine(names[0]); // Zugriff auf null-Array löst eine NullReferenceException aus
+}
+catch (NullReferenceException ex)
+{
+    Console.WriteLine("Fehler: Es wurde auf ein null-Array zugegriffen.");
+}
+catch (IndexOutOfRangeException ex)
+{
+    Console.WriteLine("Fehler: Index außerhalb des Bereichs.");
+}
 </pre></div>
 </div>
 </div>
@@ -7664,26 +7664,26 @@ Dieser Block wird immer ausgeführt, egal ob eine Ausnahme auftritt oder nicht.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="k">class</span><span class="w"> </span><span class="nc">InvalidAgeException</span> <span class="p">:</span> <span class="ne">Exception</span>
-<span class="p">{</span>
-    <span class="n">public</span> <span class="n">InvalidAgeException</span><span class="p">(</span><span class="n">string</span> <span class="n">message</span><span class="p">)</span> <span class="p">:</span> <span class="n">base</span><span class="p">(</span><span class="n">message</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>public class InvalidAgeException : Exception
+{
+    public InvalidAgeException(string message) : base(message) { }
+}
 
-<span class="k">try</span>
-<span class="p">{</span>
-    <span class="nb">int</span> <span class="n">age</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span><span class="p">;</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">age</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">throw</span> <span class="n">new</span> <span class="n">InvalidAgeException</span><span class="p">(</span><span class="s2">"Alter kann nicht negativ sein."</span><span class="p">);</span> <span class="o">//</span> <span class="n">Benutzerdefinierte</span> <span class="ne">Exception</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-<span class="n">catch</span> <span class="p">(</span><span class="n">InvalidAgeException</span> <span class="n">ex</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Benutzerdefinierte Exception abgefangen: </span><span class="si">{ex.Message}</span><span class="s2">"</span><span class="p">);</span>
-<span class="p">}</span>
+try
+{
+    int age = -5;
+    if (age &lt; 0)
+    {
+        throw new InvalidAgeException("Alter kann nicht negativ sein."); // Benutzerdefinierte Exception
+    }
+}
+catch (InvalidAgeException ex)
+{
+    Console.WriteLine($"Benutzerdefinierte Exception abgefangen: {ex.Message}");
+}
 </pre></div>
 </div>
 </div>
@@ -7722,25 +7722,25 @@ Dieser Block wird immer ausgeführt, egal ob eine Ausnahme auftritt oder nicht.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">CheckPositive</span><span class="p">(</span><span class="nb">int</span> <span class="n">number</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">number</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">throw</span> <span class="n">new</span> <span class="n">ArgumentException</span><span class="p">(</span><span class="s2">"Die Zahl muss positiv sein."</span><span class="p">);</span> <span class="o">//</span> <span class="n">Ausnahme</span> <span class="n">wird</span> <span class="n">explizit</span> <span class="n">ausgelöst</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>public static void CheckPositive(int number)
+{
+    if (number &lt;= 0)
+    {
+        throw new ArgumentException("Die Zahl muss positiv sein."); // Ausnahme wird explizit ausgelöst
+    }
+}
 
-<span class="k">try</span>
-<span class="p">{</span>
-    <span class="n">CheckPositive</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="n">catch</span> <span class="p">(</span><span class="n">ArgumentException</span> <span class="n">ex</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Fehler: </span><span class="si">{ex.Message}</span><span class="s2">"</span><span class="p">);</span>
-<span class="p">}</span>
+try
+{
+    CheckPositive(-1);
+}
+catch (ArgumentException ex)
+{
+    Console.WriteLine($"Fehler: {ex.Message}");
+}
 </pre></div>
 </div>
 </div>
@@ -7779,26 +7779,26 @@ Dieser Block wird immer ausgeführt, egal ob eine Ausnahme auftritt oder nicht.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="k">try</span>
-<span class="p">{</span>
-    <span class="k">try</span>
-    <span class="p">{</span>
-        <span class="nb">int</span><span class="p">[]</span> <span class="n">numbers</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span> <span class="p">};</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">numbers</span><span class="p">[</span><span class="mi">5</span><span class="p">]);</span> <span class="o">//</span> <span class="n">Ausnahme</span> <span class="n">auslösen</span>
-    <span class="p">}</span>
-    <span class="n">catch</span> <span class="p">(</span><span class="n">IndexOutOfRangeException</span> <span class="n">ex</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Fehler in innerem Block."</span><span class="p">);</span>
-        <span class="n">throw</span><span class="p">;</span> <span class="o">//</span> <span class="n">Ausnahme</span> <span class="n">weitergeben</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-<span class="n">catch</span> <span class="p">(</span><span class="n">IndexOutOfRangeException</span> <span class="n">ex</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Fehler im äußeren Block."</span><span class="p">);</span>
-<span class="p">}</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>try
+{
+    try
+    {
+        int[] numbers = { 1, 2, 3 };
+        Console.WriteLine(numbers[5]); // Ausnahme auslösen
+    }
+    catch (IndexOutOfRangeException ex)
+    {
+        Console.WriteLine("Fehler in innerem Block.");
+        throw; // Ausnahme weitergeben
+    }
+}
+catch (IndexOutOfRangeException ex)
+{
+    Console.WriteLine("Fehler im äußeren Block.");
+}
 </pre></div>
 </div>
 </div>
@@ -7838,24 +7838,24 @@ Fehler im äußeren Block.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="n">public</span> <span class="n">void</span> <span class="n">methodeMitException</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="k">try</span>
-    <span class="p">{</span>
-        <span class="nb">int</span> <span class="n">divisor</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-        <span class="nb">int</span> <span class="n">result</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">/</span> <span class="n">divisor</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="n">catch</span> <span class="p">(</span><span class="n">DivideByZeroException</span> <span class="n">ex</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Fehler: </span><span class="si">{ex.Message}</span><span class="s2">"</span><span class="p">);</span> <span class="o">//</span> <span class="n">Fehlermeldung</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s2">"Stapelverfolgung: </span><span class="si">{ex.StackTrace}</span><span class="s2">"</span><span class="p">);</span> <span class="o">//</span> <span class="n">StackTrace</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>public void methodeMitException()
+{
+    try
+    {
+        int divisor = 0;
+        int result = 10 / divisor;
+    }
+    catch (DivideByZeroException ex)
+    {
+        Console.WriteLine($"Fehler: {ex.Message}"); // Fehlermeldung
+        Console.WriteLine($"Stapelverfolgung: {ex.StackTrace}"); // StackTrace
+    }
+}
 
-<span class="n">methodeMitException</span><span class="p">();</span>
+methodeMitException();
 </pre></div>
 </div>
 </div>
@@ -7869,7 +7869,7 @@ Fehler im äußeren Block.
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>Fehler: Attempted to divide by zero.
-Stapelverfolgung:    at Submission#22.methodeMitException()
+Stapelverfolgung:    at Submission#5.methodeMitException()
 </pre>
 </div>
 </div>
@@ -7895,21 +7895,21 @@ Stapelverfolgung:    at Submission#22.methodeMitException()
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-python"><pre><span></span><span class="k">try</span>
-<span class="p">{</span>
-    <span class="nb">int</span> <span class="n">value</span> <span class="o">=</span> <span class="o">-</span><span class="mi">10</span><span class="p">;</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">value</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">throw</span> <span class="n">new</span> <span class="n">ArgumentOutOfRangeException</span><span class="p">(</span><span class="s2">"value"</span><span class="p">,</span> <span class="s2">"Wert darf nicht negativ sein."</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-<span class="n">catch</span> <span class="p">(</span><span class="n">ArgumentOutOfRangeException</span> <span class="n">ex</span><span class="p">)</span> <span class="n">when</span> <span class="p">(</span><span class="n">ex</span><span class="o">.</span><span class="n">ParamName</span> <span class="o">==</span> <span class="s2">"value"</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">Console</span><span class="o">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s2">"Der Wert-Parameter war negativ."</span><span class="p">);</span>
-<span class="p">}</span>
+<div class="highlight hl-polyglot-notebook"><pre><span></span>try
+{
+    int value = -10;
+    if (value &lt; 0)
+    {
+        throw new ArgumentOutOfRangeException("value", "Wert darf nicht negativ sein.");
+    }
+}
+catch (ArgumentOutOfRangeException ex) when (ex.ParamName == "value")
+{
+    Console.WriteLine("Der Wert-Parameter war negativ.");
+}
 </pre></div>
 </div>
 </div>
@@ -8071,6 +8071,269 @@ Stapelverfolgung:    at Submission#22.methodeMitException()
 <span class="w">    </span><span class="n">Log</span><span class="p">.</span><span class="n">Error</span><span class="p">(</span><span class="n">ex</span><span class="p">,</span><span class="w"> </span><span class="s">"Ein Fehler ist aufgetreten."</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Quiz">Quiz<a class="anchor-link" href="#Quiz">¶</a></h2><p>Hier ein kleines Quiz (eingebettet als html + javascript)</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-polyglot-notebook"><pre><span></span>#!csharp
+#r "nuget: Microsoft.AspNetCore.Html.Abstractions, 2.3.0"
+
+using System.IO;
+using Microsoft.AspNetCore.Html;
+
+var path = "Exceptions.quiz.html";
+var html = await File.ReadAllTextAsync(path);
+
+// HtmlString implements IHtmlContent; .NET Interactive renders it as HTML
+display(new HtmlString(html));
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<div><div></div><div></div><div><strong>Installed Packages</strong><ul><li><span>Microsoft.AspNetCore.Html.Abstractions, 2.3.0</span></li></ul></div></div>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<div id="exceptions-quiz" style="font-family: system-ui, sans-serif; max-width: 780px; line-height: 1.4;">
+<h2 style="margin: 0.2rem 0 0.6rem;">Exceptions – Mini-Quiz</h2>
+<p style="margin: 0 0 1rem;">10 Fragen zu try/catch/finally, throw, Exception-Typen und Best Practices.</p>
+<div id="quiz-card" style="border:1px solid #ddd;border-radius:12px;padding:16px;box-shadow:0 2px 8px rgba(0,0,0,.04);">
+<div id="progress" style="font-size:14px;color:#555;margin-bottom:8px;"></div>
+<div id="question" style="font-size:18px;font-weight:600;margin:8px 0 12px;"></div>
+<div id="choices" style="display:grid;gap:8px;"></div>
+<div id="feedback" style="margin-top:12px;min-height:24px;"></div>
+<div style="display:flex;gap:8px;margin-top:16px;">
+<button id="skipBtn" style="padding:8px 12px;border:1px solid #999;border-radius:8px;background:#f7f7f7;cursor:pointer;">Überspringen</button>
+<button id="nextBtn" style="padding:8px 12px;border:1px solid #0b5;border-radius:8px;background:#0b5;color:white;cursor:pointer;">Weiter</button>
+<button id="restartBtn" style="padding:8px 12px;border:1px solid #555;border-radius:8px;background:white;cursor:pointer;display:none;">Nochmal</button>
+<div style="margin-left:auto;align-self:center;font-size:13px;color:#666;">Tipp: Antworten anklicken</div>
+</div>
+</div>
+<div id="result" style="display:none;margin-top:16px;border:1px solid #ddd;border-radius:12px;padding:16px;">
+<h3 style="margin-top:0;">Auswertung</h3>
+<p id="score"></p>
+<details><summary style="cursor:pointer;">Erklärungen anzeigen</summary><ol id="review"></ol></details>
+</div>
+</div>
+<script>
+(function(){
+  const $ = s => document.querySelector(s);
+
+  const QUESTIONS = [
+    {
+      q: 'Welche Aussage zu <code>finally</code> ist korrekt?',
+      choices: [
+        'Wird nur ausgeführt, wenn eine Exception auftritt.',
+        'Wird nur ausgeführt, wenn keine Exception auftritt.',
+        'Wird immer ausgeführt, egal ob eine Exception auftritt oder nicht.',
+        'Wird nur nach einem <code>throw</code> ausgeführt.'
+      ],
+      correct: 2,
+      explain: '<code>finally</code> läuft immer und ist ideal für Cleanup.'
+    },
+    {
+      q: 'Welche Exception entsteht typischerweise bei <code>int x = 10 / 0;</code>?',
+      choices: [
+        'DivideByZeroException',
+        'NullReferenceException',
+        'ArgumentException',
+        'IndexOutOfRangeException'
+      ],
+      correct: 0,
+      explain: 'Division durch Null führt in C# zu <code>DivideByZeroException</code>.'
+    },
+    {
+      q: 'Wie löst man eine Exception explizit aus?',
+      choices: [
+        '<code>throw new ArgumentException("...")</code>',
+        '<code>catch new ArgumentException("...")</code>',
+        '<code>raise ArgumentException</code>',
+        '<code>error ArgumentException</code>'
+      ],
+      correct: 0,
+      explain: 'Mit <code>throw new ...</code> wird eine Exception bewusst ausgelöst.'
+    },
+    {
+      q: 'Was bewirkt <code>throw;</code> im <code>catch</code>-Block?',
+      choices: [
+        'Wirft die aktuelle Exception erneut.',
+        'Wirft eine neue Exception ohne Nachricht.',
+        'Unterdrückt die Exception.',
+        'Beendet das Programm sofort.'
+      ],
+      correct: 0,
+      explain: '<code>throw;</code> gibt die aktuelle Ausnahme weiter.'
+    },
+    {
+      q: 'Wie definiert man eine benutzerdefinierte Exception?',
+      choices: [
+        '<code>class MyEx { }</code>',
+        '<code>class MyEx : Exception { }</code>',
+        '<code>struct MyEx : Exception { }</code>',
+        '<code>interface MyEx : Exception { }</code>'
+      ],
+      correct: 1,
+      explain: 'Custom Exceptions erben von <code>System.Exception</code>.'
+    },
+    {
+      q: 'Welche Eigenschaft liefert die Stapelverfolgung einer Exception?',
+      choices: [
+        '<code>Message</code>',
+        '<code>StackTrace</code>',
+        '<code>InnerException</code>',
+        '<code>Source</code>'
+      ],
+      correct: 1,
+      explain: '<code>StackTrace</code> enthält die Aufrufkette.'
+    },
+    {
+      q: 'Wofür steht <code>InnerException</code>?',
+      choices: [
+        'Ursprüngliche Exception, die eine weitere ausgelöst hat',
+        'Name des Parameters, der ungültig war',
+        'Stacktrace als String',
+        'Ausnahme, die zuletzt gefangen wurde'
+      ],
+      correct: 0,
+      explain: '<code>InnerException</code> enthält die zugrunde liegende Ausnahme.'
+    },
+    {
+      q: 'Wofür ist <code>catch (...) when (...)</code> gedacht?',
+      choices: [
+        'Catch-Block nur bei erfüllter Bedingung ausführen',
+        'Catch-Block asynchron ausführen',
+        'Catch-Block immer überspringen',
+        'Exception automatisch protokollieren'
+      ],
+      correct: 0,
+      explain: 'Mit <code>when</code> filterst du Exceptions nach Bedingungen.'
+    },
+    {
+      q: 'Welche Aussage zur Reihenfolge mehrerer <code>catch</code>-Blöcke stimmt?',
+      choices: [
+        'Allgemeine Exceptions vor spezifischen behandeln',
+        'Spezifische Exceptions vor allgemeinen behandeln',
+        'Die Reihenfolge ist egal',
+        'Es darf nur einen <code>catch</code>-Block geben'
+      ],
+      correct: 1,
+      explain: 'Spezifische <code>catch</code>-Blöcke müssen vor allgemeinen stehen.'
+    },
+    {
+      q: 'Welches Sprachelement stellt sicher, dass <code>Dispose</code> aufgerufen wird?',
+      choices: [
+        '<code>using</code>',
+        '<code>lock</code>',
+        '<code>yield return</code>',
+        '<code>goto</code>'
+      ],
+      correct: 0,
+      explain: '<code>using</code> sorgt für automatische Ressourcenfreigabe.'
+    }
+  ];
+
+  function shuffle(a){const arr=a.slice();for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]];}return arr;}
+  const state = { order: shuffle([...Array(QUESTIONS.length).keys()]), i: 0, correct: 0, answers: [] };
+
+  const qEl = $("#question"), cEl = $("#choices"), fEl = $("#feedback"), pEl = $("#progress");
+  const next = $("#nextBtn"), skip = $("#skipBtn"), restart = $("#restartBtn");
+  const resultBox = $("#result"), score = $("#score"), review = $("#review");
+
+  function render(){
+    const qi = state.order[state.i], item = QUESTIONS[qi];
+    pEl.textContent = `Frage ${state.i+1}/${QUESTIONS.length}`;
+    qEl.innerHTML = item.q; cEl.innerHTML = ""; fEl.innerHTML = "";
+    item.choices.forEach((c,idx)=>{
+      const b = document.createElement("button");
+      b.innerHTML = c;
+      Object.assign(b.style,{padding:"10px 12px",border:"1px solid #ccc",borderRadius:"8px",background:"white",textAlign:"left"});
+      b.onclick = () => answer(idx);
+      cEl.appendChild(b);
+    });
+  }
+
+  function answer(chosen){
+    const qi = state.order[state.i], item = QUESTIONS[qi];
+    const good = chosen === item.correct;
+    state.answers[qi] = { chosen, good };
+    if (good) state.correct++;
+
+    [...cEl.children].forEach((b,i)=>{
+      b.disabled = true;
+      if (i === item.correct){ b.style.borderColor="#0b5"; b.style.background="rgba(0,180,80,.08)"; }
+      if (i === chosen && !good){ b.style.borderColor="#b00"; b.style.background="rgba(200,0,0,.06)"; }
+    });
+
+    fEl.innerHTML = (good ? "✔️ Richtig" : "✖️ Falsch") + " — " + item.explain;
+  }
+
+  function nextQ(){
+    if (state.i < QUESTIONS.length - 1){ state.i++; render(); }
+    else { showResult(); }
+  }
+
+  function skipQ(){
+    if (state.i < QUESTIONS.length - 1){ state.i++; render(); }
+    else { showResult(); }
+  }
+
+  function showResult(){
+    $("#quiz-card").style.display = "none";
+    resultBox.style.display = "";
+    const percent = Math.round(state.correct / QUESTIONS.length * 100);
+    score.textContent = `${state.correct} von ${QUESTIONS.length} korrekt (${percent}%)`;
+    review.innerHTML = "";
+    state.order.forEach(qi=>{
+      const it = QUESTIONS[qi], a = state.answers[qi];
+      const li = document.createElement("li");
+      const chosen = a ? it.choices[a.chosen] : "—";
+      li.innerHTML = `<strong>${it.q}</strong><br>Deine Antwort: ${chosen}<br>Korrekt: ${it.choices[it.correct]}<br><span style="color:#555">${it.explain}</span>`;
+      review.appendChild(li);
+    });
+    restart.style.display = "";
+  }
+
+  restart.onclick = () => {
+    state.i = 0; state.correct = 0;
+    state.order = shuffle([...Array(QUESTIONS.length).keys()]);
+    $("#quiz-card").style.display = ""; resultBox.style.display = "none";
+    render();
+  };
+  $("#nextBtn").onclick = nextQ;
+  $("#skipBtn").onclick = skipQ;
+
+  render();
+})();
+</script>
+</div>
 </div>
 </div>
 </div>

@@ -1,0 +1,215 @@
+<div id="files-quiz" style="font-family: system-ui, sans-serif; max-width: 780px; line-height: 1.4;">
+
+  <h2 style="margin: 0.2rem 0 0.6rem;">Dateioperationen – Mini-Quiz</h2>
+  <p style="margin: 0 0 1rem;">10 Fragen zu File, Streams, Pfaden, Exceptions und Best Practices.</p>
+
+  <div id="quiz-card" style="border:1px solid #ddd;border-radius:12px;padding:16px;box-shadow:0 2px 8px rgba(0,0,0,.04);">
+    <div id="progress" style="font-size:14px;color:#555;margin-bottom:8px;"></div>
+    <div id="question" style="font-size:18px;font-weight:600;margin:8px 0 12px;"></div>
+    <div id="choices" style="display:grid;gap:8px;"></div>
+    <div id="feedback" style="margin-top:12px;min-height:24px;"></div>
+    <div style="display:flex;gap:8px;margin-top:16px;">
+      <button id="skipBtn" style="padding:8px 12px;border:1px solid #999;border-radius:8px;background:#f7f7f7;cursor:pointer;">Überspringen</button>
+      <button id="nextBtn" style="padding:8px 12px;border:1px solid #0b5;border-radius:8px;background:#0b5;color:white;cursor:pointer;">Weiter</button>
+      <button id="restartBtn" style="padding:8px 12px;border:1px solid #555;border-radius:8px;background:white;cursor:pointer;display:none;">Nochmal</button>
+      <div style="margin-left:auto;align-self:center;font-size:13px;color:#666;">Tipp: Antworten anklicken</div>
+    </div>
+  </div>
+
+  <div id="result" style="display:none;margin-top:16px;border:1px solid #ddd;border-radius:12px;padding:16px;">
+    <h3 style="margin-top:0;">Auswertung</h3>
+    <p id="score"></p>
+    <details><summary style="cursor:pointer;">Erklärungen anzeigen</summary><ol id="review"></ol></details>
+  </div>
+</div>
+
+<script>
+(function(){
+  const $ = s => document.querySelector(s);
+
+  const QUESTIONS = [
+    {
+      q: 'Welche Methode liest den gesamten Inhalt einer Textdatei als <code>string</code>?',
+      choices: [
+        'File.ReadAllText',
+        'File.ReadAllLines',
+        'File.OpenText',
+        'File.ReadAllBytes'
+      ],
+      correct: 0,
+      explain: '<code>File.ReadAllText</code> liefert den kompletten Inhalt als String.'
+    },
+    {
+      q: 'Welche Methode schreibt einen gesamten String und überschreibt eine bestehende Datei?',
+      choices: [
+        'File.WriteAllText',
+        'File.AppendAllText',
+        'File.Create',
+        'File.OpenText'
+      ],
+      correct: 0,
+      explain: '<code>File.WriteAllText</code> überschreibt den Inhalt der Datei.'
+    },
+    {
+      q: 'Welche Methode fügt Text am Ende einer Datei an?',
+      choices: [
+        'File.AppendAllText',
+        'File.WriteAllText',
+        'File.ReadAllText',
+        'File.OpenRead'
+      ],
+      correct: 0,
+      explain: '<code>File.AppendAllText</code> hängt Text an die Datei an.'
+    },
+    {
+      q: 'Wofür steht der dritte Parameter in <code>File.Copy(source, dest, true)</code>?',
+      choices: [
+        'Kopieren mit Überschreiben erlauben',
+        'Nur lesen statt kopieren',
+        'Dateiattribute übernehmen',
+        'Asynchron kopieren'
+      ],
+      correct: 0,
+      explain: 'Der Bool bestimmt, ob eine bestehende Zieldatei überschrieben wird.'
+    },
+    {
+      q: 'Wie prüfst du, ob eine Datei existiert?',
+      choices: [
+        'File.Exists(path)',
+        'File.IsFile(path)',
+        'Directory.Exists(path)',
+        'Path.Exists(path)'
+      ],
+      correct: 0,
+      explain: '<code>File.Exists</code> liefert true/false für eine Datei.'
+    },
+    {
+      q: 'Welche Klasse hilft beim plattformunabhängigen Zusammenbauen von Pfaden?',
+      choices: [
+        'Path',
+        'FileInfo',
+        'DirectoryInfo',
+        'Environment'
+      ],
+      correct: 0,
+      explain: '<code>Path.Combine</code> baut Pfade korrekt für das Betriebssystem.'
+    },
+    {
+      q: 'Warum nutzt man für sehr große Dateien eher Streams?',
+      choices: [
+        'Weil Streams Daten stückweise verarbeiten und Speicher sparen',
+        'Weil Streams nur für binäre Dateien funktionieren',
+        'Weil Streams automatisch JSON erzeugen',
+        'Weil Streams schneller kompilieren'
+      ],
+      correct: 0,
+      explain: 'Streams vermeiden das Laden der kompletten Datei in den Speicher.'
+    },
+    {
+      q: 'Welche Exception ist typisch, wenn eine Datei nicht existiert?',
+      choices: [
+        'FileNotFoundException',
+        'NullReferenceException',
+        'ArgumentException',
+        'DivideByZeroException'
+      ],
+      correct: 0,
+      explain: 'Fehlende Dateien führen häufig zu <code>FileNotFoundException</code>.'
+    },
+    {
+      q: 'Welches Sprachkonstrukt sorgt für das automatische Freigeben von Streams?',
+      choices: [
+        'using',
+        'lock',
+        'yield return',
+        'goto'
+      ],
+      correct: 0,
+      explain: '<code>using</code> ruft am Ende <code>Dispose</code> auf.'
+    },
+    {
+      q: 'Welche Methode liest Textdateien asynchron?',
+      choices: [
+        'File.ReadAllTextAsync',
+        'File.ReadAllText',
+        'File.ReadAllLines',
+        'File.OpenText'
+      ],
+      correct: 0,
+      explain: '<code>File.ReadAllTextAsync</code> ist die asynchrone Variante.'
+    }
+  ];
+
+  function shuffle(a){const arr=a.slice();for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]];}return arr;}
+  const state = { order: shuffle([...Array(QUESTIONS.length).keys()]), i: 0, correct: 0, answers: [] };
+
+  const qEl = $("#question"), cEl = $("#choices"), fEl = $("#feedback"), pEl = $("#progress");
+  const next = $("#nextBtn"), skip = $("#skipBtn"), restart = $("#restartBtn");
+  const resultBox = $("#result"), score = $("#score"), review = $("#review");
+
+  function render(){
+    const qi = state.order[state.i], item = QUESTIONS[qi];
+    pEl.textContent = `Frage ${state.i+1}/${QUESTIONS.length}`;
+    qEl.innerHTML = item.q; cEl.innerHTML = ""; fEl.innerHTML = "";
+    item.choices.forEach((c,idx)=>{
+      const b = document.createElement("button");
+      b.innerHTML = c;
+      Object.assign(b.style,{padding:"10px 12px",border:"1px solid #ccc",borderRadius:"8px",background:"white",textAlign:"left"});
+      b.onclick = () => answer(idx);
+      cEl.appendChild(b);
+    });
+  }
+
+  function answer(chosen){
+    const qi = state.order[state.i], item = QUESTIONS[qi];
+    const good = chosen === item.correct;
+    state.answers[qi] = { chosen, good };
+    if (good) state.correct++;
+
+    [...cEl.children].forEach((b,i)=>{
+      b.disabled = true;
+      if (i === item.correct){ b.style.borderColor="#0b5"; b.style.background="rgba(0,180,80,.08)"; }
+      if (i === chosen && !good){ b.style.borderColor="#b00"; b.style.background="rgba(200,0,0,.06)"; }
+    });
+
+    fEl.innerHTML = (good ? "✔️ Richtig" : "✖️ Falsch") + " — " + item.explain;
+  }
+
+  function nextQ(){
+    if (state.i < QUESTIONS.length - 1){ state.i++; render(); }
+    else { showResult(); }
+  }
+
+  function skipQ(){
+    if (state.i < QUESTIONS.length - 1){ state.i++; render(); }
+    else { showResult(); }
+  }
+
+  function showResult(){
+    $("#quiz-card").style.display = "none";
+    resultBox.style.display = "";
+    const percent = Math.round(state.correct / QUESTIONS.length * 100);
+    score.textContent = `${state.correct} von ${QUESTIONS.length} korrekt (${percent}%)`;
+    review.innerHTML = "";
+    state.order.forEach(qi=>{
+      const it = QUESTIONS[qi], a = state.answers[qi];
+      const li = document.createElement("li");
+      const chosen = a ? it.choices[a.chosen] : "—";
+      li.innerHTML = `<strong>${it.q}</strong><br>Deine Antwort: ${chosen}<br>Korrekt: ${it.choices[it.correct]}<br><span style="color:#555">${it.explain}</span>`;
+      review.appendChild(li);
+    });
+    restart.style.display = "";
+  }
+
+  restart.onclick = () => {
+    state.i = 0; state.correct = 0;
+    state.order = shuffle([...Array(QUESTIONS.length).keys()]);
+    $("#quiz-card").style.display = ""; resultBox.style.display = "none";
+    render();
+  };
+  $("#nextBtn").onclick = nextQ;
+  $("#skipBtn").onclick = skipQ;
+
+  render();
+})();
+</script>

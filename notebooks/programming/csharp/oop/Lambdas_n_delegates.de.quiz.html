@@ -1,0 +1,215 @@
+<div id="lambdas-delegates-quiz" style="font-family: system-ui, sans-serif; max-width: 780px; line-height: 1.4;">
+
+  <h2 style="margin: 0.2rem 0 0.6rem;">Lambdas & Delegaten – Mini-Quiz</h2>
+  <p style="margin: 0 0 1rem;">10 Fragen zu Syntax, Func/Action/Predicate, Closures und Delegates.</p>
+
+  <div id="quiz-card" style="border:1px solid #ddd;border-radius:12px;padding:16px;box-shadow:0 2px 8px rgba(0,0,0,.04);">
+    <div id="progress" style="font-size:14px;color:#555;margin-bottom:8px;"></div>
+    <div id="question" style="font-size:18px;font-weight:600;margin:8px 0 12px;"></div>
+    <div id="choices" style="display:grid;gap:8px;"></div>
+    <div id="feedback" style="margin-top:12px;min-height:24px;"></div>
+    <div style="display:flex;gap:8px;margin-top:16px;">
+      <button id="skipBtn" style="padding:8px 12px;border:1px solid #999;border-radius:8px;background:#f7f7f7;cursor:pointer;">Überspringen</button>
+      <button id="nextBtn" style="padding:8px 12px;border:1px solid #0b5;border-radius:8px;background:#0b5;color:white;cursor:pointer;">Weiter</button>
+      <button id="restartBtn" style="padding:8px 12px;border:1px solid #555;border-radius:8px;background:white;cursor:pointer;display:none;">Nochmal</button>
+      <div style="margin-left:auto;align-self:center;font-size:13px;color:#666;">Tipp: Antworten anklicken</div>
+    </div>
+  </div>
+
+  <div id="result" style="display:none;margin-top:16px;border:1px solid #ddd;border-radius:12px;padding:16px;">
+    <h3 style="margin-top:0;">Auswertung</h3>
+    <p id="score"></p>
+    <details><summary style="cursor:pointer;">Erklärungen anzeigen</summary><ol id="review"></ol></details>
+  </div>
+</div>
+
+<script>
+(function(){
+  const $ = s => document.querySelector(s);
+
+  const QUESTIONS = [
+    {
+      q: 'Was ist ein Lambda-Ausdruck in C#?',
+      choices: [
+        'Eine anonyme Funktion ohne eigenen Methodennamen',
+        'Ein neuer Datentyp für Klassen',
+        'Ein Ersatz für Schleifen',
+        'Ein spezieller Exception-Typ'
+      ],
+      correct: 0,
+      explain: 'Lambdas sind anonyme Funktionen, die wie Werte übergeben werden können.'
+    },
+    {
+      q: 'Welche Syntax ist ein gültiger Lambda-Ausdruck für das Quadrat?',
+      choices: [
+        '<code>x =&gt; x * x</code>',
+        '<code>x -&gt; x * x</code>',
+        '<code>lambda x: x * x</code>',
+        '<code>(x) = x * x</code>'
+      ],
+      correct: 0,
+      explain: 'In C# nutzt man die Syntax <code>=&gt;</code>.'
+    },
+    {
+      q: 'Welche Form zeigt eine Statement-Lambda mit mehreren Zeilen?',
+      choices: [
+        '<code>x =&gt; { return x * 2; }</code>',
+        '<code>x =&gt; x * 2</code>',
+        '<code>{ x =&gt; x * 2 }</code>',
+        '<code>return x =&gt; x * 2</code>'
+      ],
+      correct: 0,
+      explain: 'Statement-Lambdas nutzen <code>{}</code> und benötigen ein <code>return</code>.'
+    },
+    {
+      q: 'Welcher Typ ist für genau einen Parameter und Rückgabe <code>bool</code> vorgesehen?',
+      choices: [
+        '<code>Predicate&lt;T&gt;</code>',
+        '<code>Action&lt;T&gt;</code>',
+        '<code>Func&lt;T&gt;</code>',
+        '<code>Delegate</code>'
+      ],
+      correct: 0,
+      explain: '<code>Predicate&lt;T&gt;</code> hat genau einen Parameter und liefert <code>bool</code>.'
+    },
+    {
+      q: 'Welcher Typ steht für Methoden ohne Rückgabewert?',
+      choices: [
+        '<code>Action&lt;T&gt;</code>',
+        '<code>Func&lt;T, TResult&gt;</code>',
+        '<code>Predicate&lt;T&gt;</code>',
+        '<code>Tuple&lt;T&gt;</code>'
+      ],
+      correct: 0,
+      explain: '<code>Action&lt;...&gt;</code> entspricht <code>void</code>-Methoden.'
+    },
+    {
+      q: 'Was bedeutet bei <code>Func&lt;int, string&gt;</code> der letzte Typ?',
+      choices: [
+        'Rückgabetyp',
+        'Parametername',
+        'Namespace',
+        'Zugriffsmodifizierer'
+      ],
+      correct: 0,
+      explain: 'Bei <code>Func</code> ist der letzte Typ immer der Rückgabetyp.'
+    },
+    {
+      q: 'Wie nennt man das Erfassen einer äußeren Variablen durch ein Lambda?',
+      choices: [
+        'Closure',
+        'Casting',
+        'Boxing',
+        'Overload'
+      ],
+      correct: 0,
+      explain: 'Lambdas können Variablen aus dem äußeren Kontext als Closure capturen.'
+    },
+    {
+      q: 'Welche LINQ-Methode verwendet man typischerweise zum Filtern?',
+      choices: [
+        '<code>Where</code>',
+        '<code>Select</code>',
+        '<code>OrderBy</code>',
+        '<code>Aggregate</code>'
+      ],
+      correct: 0,
+      explain: '<code>Where</code> filtert eine Sequenz anhand eines Prädikats.'
+    },
+    {
+      q: 'Welche Deklaration definiert einen Delegattyp korrekt?',
+      choices: [
+        '<code>public delegate int Rechenart(int x, int y);</code>',
+        '<code>public delegat int Rechenart(int x, int y);</code>',
+        '<code>public delegate Rechenart(int x, int y);</code>',
+        '<code>delegate Rechenart = (int x, int y);</code>'
+      ],
+      correct: 0,
+      explain: 'Die Syntax lautet: <code>delegate Rückgabetyp Name(...)</code>.'
+    },
+    {
+      q: 'Was passiert bei einem Multicast-Delegaten mit Rückgabewert?',
+      choices: [
+        'Nur der Rückgabewert der letzten Methode zählt',
+        'Alle Rückgabewerte werden addiert',
+        'Es kommt zu einer Exception',
+        'Nur die erste Methode wird ausgeführt'
+      ],
+      correct: 0,
+      explain: 'Bei Multicast-Delegaten zählt der Rückgabewert der letzten Methode.'
+    }
+  ];
+
+  function shuffle(a){const arr=a.slice();for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]];}return arr;}
+  const state = { order: shuffle([...Array(QUESTIONS.length).keys()]), i: 0, correct: 0, answers: [] };
+
+  const qEl = $("#question"), cEl = $("#choices"), fEl = $("#feedback"), pEl = $("#progress");
+  const next = $("#nextBtn"), skip = $("#skipBtn"), restart = $("#restartBtn");
+  const resultBox = $("#result"), score = $("#score"), review = $("#review");
+
+  function render(){
+    const qi = state.order[state.i], item = QUESTIONS[qi];
+    pEl.textContent = `Frage ${state.i+1}/${QUESTIONS.length}`;
+    qEl.innerHTML = item.q; cEl.innerHTML = ""; fEl.innerHTML = "";
+    item.choices.forEach((c,idx)=>{
+      const b = document.createElement("button");
+      b.innerHTML = c;
+      Object.assign(b.style,{padding:"10px 12px",border:"1px solid #ccc",borderRadius:"8px",background:"white",textAlign:"left"});
+      b.onclick = () => answer(idx);
+      cEl.appendChild(b);
+    });
+  }
+
+  function answer(chosen){
+    const qi = state.order[state.i], item = QUESTIONS[qi];
+    const good = chosen === item.correct;
+    state.answers[qi] = { chosen, good };
+    if (good) state.correct++;
+
+    [...cEl.children].forEach((b,i)=>{
+      b.disabled = true;
+      if (i === item.correct){ b.style.borderColor="#0b5"; b.style.background="rgba(0,180,80,.08)"; }
+      if (i === chosen && !good){ b.style.borderColor="#b00"; b.style.background="rgba(200,0,0,.06)"; }
+    });
+
+    fEl.innerHTML = (good ? "✔️ Richtig" : "✖️ Falsch") + " — " + item.explain;
+  }
+
+  function nextQ(){
+    if (state.i < QUESTIONS.length - 1){ state.i++; render(); }
+    else { showResult(); }
+  }
+
+  function skipQ(){
+    if (state.i < QUESTIONS.length - 1){ state.i++; render(); }
+    else { showResult(); }
+  }
+
+  function showResult(){
+    $("#quiz-card").style.display = "none";
+    resultBox.style.display = "";
+    const percent = Math.round(state.correct / QUESTIONS.length * 100);
+    score.textContent = `${state.correct} von ${QUESTIONS.length} korrekt (${percent}%)`;
+    review.innerHTML = "";
+    state.order.forEach(qi=>{
+      const it = QUESTIONS[qi], a = state.answers[qi];
+      const li = document.createElement("li");
+      const chosen = a ? it.choices[a.chosen] : "—";
+      li.innerHTML = `<strong>${it.q}</strong><br>Deine Antwort: ${chosen}<br>Korrekt: ${it.choices[it.correct]}<br><span style="color:#555">${it.explain}</span>`;
+      review.appendChild(li);
+    });
+    restart.style.display = "";
+  }
+
+  restart.onclick = () => {
+    state.i = 0; state.correct = 0;
+    state.order = shuffle([...Array(QUESTIONS.length).keys()]);
+    $("#quiz-card").style.display = ""; resultBox.style.display = "none";
+    render();
+  };
+  $("#nextBtn").onclick = nextQ;
+  $("#skipBtn").onclick = skipQ;
+
+  render();
+})();
+</script>
